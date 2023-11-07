@@ -1023,6 +1023,34 @@ SECTIONS {
         data/multiboot_pokemon_colosseum.o(.rodata);
     } =0
 
+    . = 0x08A00000;
+    empty_data_1 :
+    ALIGN(4)
+    {
+        data/emptydata_insttext.o(.rodata);
+    } =0
+
+    . = 0x08A80000;
+    empty_data_2 :
+    ALIGN(4)
+    {
+        data/emptydata_marowak.o(.rodata);
+    } =0
+
+    . = 0x08A80100;
+    empty_data_3 :
+    ALIGN(4)
+    {
+        data/emptydata_musicfix.o(.rodata);
+    } =0
+
+    . = 0x08A80200;
+    empty_data_4 :
+    ALIGN(4)
+    {
+        data/emptydata_roamers.o(.rodata);
+    } =0
+
     . = 0x08D00000;
     gfx_data :
     ALIGN(4)

@@ -73,6 +73,7 @@ OBJ_DIR := build/$(BUILD_NAME)
 
 ELF = $(ROM:.gba=.elf)
 MAP = $(ROM:.gba=.map)
+INI = $(ROM:.gba=.ini)
 SYM = $(ROM:.gba=.sym)
 
 C_SUBDIR = src
@@ -114,6 +115,7 @@ RAMSCRGEN := tools/ramscrgen/ramscrgen
 FIX := tools/gbafix/gbafix
 MAPJSON := tools/mapjson/mapjson
 JSONPROC := tools/jsonproc/jsonproc
+INIGEN := tools/inigen/inigen
 
 PERL := perl
 
@@ -133,7 +135,7 @@ infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst 
 
 # Build tools when building the rom
 # Disable dependency scanning for clean/tidy/tools
-ifeq (,$(filter-out all compare syms modern,$(MAKECMDGOALS)))
+ifeq (,$(filter-out all ini release compare syms modern,$(MAKECMDGOALS)))
 $(call infoshell, $(MAKE) tools)
 else
 NODEP := 1
@@ -170,7 +172,7 @@ TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
 ALL_BUILDS := firered firered_rev1 leafgreen leafgreen_rev1
 ALL_BUILDS += $(ALL_BUILDS:%=%_modern)
 
-.PHONY: all rom tools clean-tools mostlyclean clean compare tidy syms $(TOOLDIRS) $(ALL_BUILDS) $(ALL_BUILDS:%=compare_%) modern
+.PHONY: all rom tools clean-tools mostlyclean clean compare tidy syms $(TOOLDIRS) $(ALL_BUILDS) $(ALL_BUILDS:%=compare_%) modern ini release
 
 MAKEFLAGS += --no-print-directory
 
@@ -189,6 +191,10 @@ tools: $(TOOLDIRS)
 
 $(TOOLDIRS):
 	@$(MAKE) -C $@
+
+release: ini syms
+
+ini: $(INI)
 
 # For contributors to make sure a change didn't affect the contents of the ROM.
 compare:
@@ -210,8 +216,8 @@ clean-tools:
 clean: mostlyclean clean-tools
 
 tidy:
-	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map})
-	$(RM) -r build
+	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map,.ini,.sym})
+#	$(RM) -r build
 
 include graphics_file_rules.mk
 include tileset_rules.mk
@@ -358,6 +364,9 @@ leafgreen_modern:      ; @$(MAKE) GAME_VERSION=LEAFGREEN MODERN=1
 leafgreen_rev1_modern: ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_REVISION=1 MODERN=1
 
 modern: ; @$(MAKE) MODERN=1
+
+$(INI): $(ROM)
+	$(INIGEN) $(ELF) $@ --name "Fire Red (U) 1.1" --code $(GAME_CODE)
 
 ###################
 ### Symbol file ###
