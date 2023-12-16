@@ -44,7 +44,7 @@ CeladonCity_GameCorner_EventScript_PrintTypeSepia::
 CeladonCity_GameCorner_EventScript_PrintPhoto::
 	message CeladonCity_GameCorner_Text_BigSmileForPhoto
 	waitmessage
-	playse MUS_PHOTO
+	playse MUS_RG_PHOTO
 	dofieldeffect FLDEFF_PHOTO_FLASH
 	delay 60
 	special UpdateTrainerCardPhotoIcons

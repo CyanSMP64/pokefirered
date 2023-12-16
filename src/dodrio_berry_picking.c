@@ -737,7 +737,7 @@ void StartDodrioBerryPicking(u16 partyId, MainCallback exitCallback)
         SetRandomPrize();
         GetActiveBerryColumns(sGame->numPlayers, &sGame->berryColStart, &sGame->berryColEnd);
         StopMapMusic();
-        PlayNewMapMusic(MUS_BERRY_PICK);
+        PlayNewMapMusic(MUS_RG_BERRY_PICK);
     }
     else
     {
@@ -1111,7 +1111,7 @@ static void InitResults_Leader(void)
         if (WaitFanfare(TRUE))
         {
             SetGameFunc(FUNC_RESULTS);
-            FadeOutAndPlayNewMapMusic(MUS_VICTORY_WILD, 4);
+            FadeOutAndPlayNewMapMusic(MUS_RG_VICTORY_WILD, 4);
         }
         break;
     }
@@ -1154,7 +1154,7 @@ static void InitResults_Member(void)
         {
             sGame->maxBerriesPickedInRow = sGame->berryResults[sGame->multiplayerId][BERRY_IN_ROW];
             SetGameFunc(FUNC_RESULTS);
-            FadeOutAndPlayNewMapMusic(MUS_VICTORY_WILD, 4);
+            FadeOutAndPlayNewMapMusic(MUS_RG_VICTORY_WILD, 4);
         }
         break;
     }
@@ -1395,7 +1395,7 @@ static void ResetGame(void)
         sGame->state++;
         break;
     case 4:
-        PlayNewMapMusic(MUS_BERRY_PICK);
+        PlayNewMapMusic(MUS_RG_BERRY_PICK);
         StartCloudMovement();
         sGame->state++;
         break;
@@ -4634,7 +4634,7 @@ static void ShowResults(void)
             PutWindowTilemap(sGfx->windowIds[1]);
         }
         CopyBgTilemapBufferToVram(BG_INTERFACE);
-        FadeOutAndFadeInNewMapMusic(MUS_VICTORY_WILD, 20, 10);
+        FadeOutAndFadeInNewMapMusic(MUS_RG_VICTORY_WILD, 20, 10);
         sGfx->state++;
         break;
     case 11:

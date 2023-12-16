@@ -82,15 +82,166 @@ void HandleLoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *des
 
 void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality, bool8 isFrontPic)
 {
-    if (species == SPECIES_UNOWN)
+    if (species == SPECIES_UNOWN || species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_HIPPOPOTAS || species == SPECIES_HIPPOWDON || species == SPECIES_BASCULIN
+        || species == SPECIES_UNFEZANT || species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_FRILLISH || species == SPECIES_JELLICENT || species == SPECIES_VIVILLON
+        || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES || species == SPECIES_MEOWSTIC || species == SPECIES_PUMPKABOO
+        || species == SPECIES_GOURGEIST || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_TOXTRICITY || species == SPECIES_ALCREMIE || species == SPECIES_BASCULEGION
+        || species == SPECIES_OINKOLOGNE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE
+        || species == SPECIES_AEGISLASH || species == SPECIES_LYCANROC || species == SPECIES_EISCUE)
     {
-        u16 i = (((personality & 0x3000000) >> 18) | ((personality & 0x30000) >> 12) | ((personality & 0x300) >> 6) | (personality & 3)) % 0x1C;
+        u16 i;
 
-        // The other Unowns are separate from Unown A.
-        if (i == 0)
-            i = SPECIES_UNOWN;
+        if (species == SPECIES_UNOWN)
+        {
+            // The other Unowns are separate from Unown A.
+            i = GET_UNOWN_LETTER(personality);
+            if (i == 0)
+                i = SPECIES_UNOWN;
+            else
+                i += SPECIES_UNOWN_B - 1;
+        }
+        else if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_BASCULIN || species == SPECIES_AEGISLASH || species == SPECIES_EISCUE)
+        {
+            i = (personality >> 8) % 2;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_SHELLOS)
+                    i = SPECIES_SHELLOS_EAST_SEA;
+                else if (species == SPECIES_BASCULIN)
+                    i = SPECIES_BASCULIN_BLUE_STRIPED;
+                else if (species == SPECIES_AEGISLASH)
+                    i = SPECIES_AEGISLASH_BLADE;
+                else if (species == SPECIES_EISCUE)
+                    i = SPECIES_EISCUE_NOICE_FACE;
+                else
+                    i = SPECIES_GASTRODON_EAST_SEA;
+            }
+        }
+        else if (species == SPECIES_MAUSHOLD || species == SPECIES_DUDUNSPARCE)
+        {
+            i = (personality >> 8) % 100;
+            if (i != 69) //  nice
+                i = species;
+            else
+            {
+                if (species == SPECIES_MAUSHOLD)
+                    i = SPECIES_MAUSHOLD_FAMILY_OF_THREE;
+                else
+                    i = SPECIES_DUDUNSPARCE_THREE_SEGMENT;
+            }
+        }
+        else if (species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_PUMPKABOO || species == SPECIES_GOURGEIST || species == SPECIES_SQUAWKABILLY)
+        {
+            i = (personality >> 8) % 4;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_DEERLING)
+                    i += SPECIES_DEERLING_SUMMER - 1;
+                else if (species == SPECIES_SAWSBUCK)
+                    i += SPECIES_SAWSBUCK_SUMMER - 1;
+                else if (species == SPECIES_SQUAWKABILLY)
+                    i += SPECIES_SQUAWKABILLY_BLUE_PLUMAGE - 1;
+                else if (species == SPECIES_PUMPKABOO)
+                    i += SPECIES_PUMPKABOO_SMALL - 1;
+                else
+                    i += SPECIES_GOURGEIST_SMALL - 1;
+            }
+        }
+        else if (species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES)
+        {
+            i = (personality >> 8) % 5;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_FLABEBE)
+                    i += SPECIES_FLABEBE_YELLOW_FLOWER - 1;
+                else if (species == SPECIES_FLOETTE)
+                    i += SPECIES_FLOETTE_YELLOW_FLOWER - 1;
+                else
+                    i += SPECIES_FLORGES_YELLOW_FLOWER - 1;
+            }
+        }
+        else if (species == SPECIES_VIVILLON)
+        {
+            i = (personality >> 8) % 20;
+            if (!i)
+                i = species;
+            else
+                i += SPECIES_VIVILLON_POLAR - 1;
+        }
+        else if (species == SPECIES_MINIOR_CORE_RED)
+        {
+            i = (personality >> 8) % 7;
+            if (!i)
+                i = species;
+            else
+                i += SPECIES_MINIOR_CORE_ORANGE - 1;
+        }
+        else if (species == SPECIES_ALCREMIE)
+        {
+            i = (personality >> 8) % 63;
+            if (!i)
+                i = species;
+            else
+                i += SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM - 1;
+        }
+        else if (species == SPECIES_TATSUGIRI || species == SPECIES_LYCANROC)
+        {
+            i = (personality >> 8) % 3;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_LYCANROC)
+                    i += SPECIES_LYCANROC_MIDNIGHT - 1;
+                else
+                    i += SPECIES_TATSUGIRI_DROOPY - 1;
+            }
+        }
+        else if (species == SPECIES_TOXTRICITY)
+        {
+            if ((personality % 25) == 0 || (personality % 25) == 2 || (personality % 25) == 3 || (personality % 25) == 4 ||
+            (personality % 25) == 6 || (personality % 25) == 8 || (personality % 25) == 9 || (personality % 25) == 11 || 
+            (personality % 25) == 13 || (personality % 25) == 14 || (personality % 25) == 19 || (personality % 25) == 22 || (personality % 25) == 24)
+                i = species;
+            else
+                i = SPECIES_TOXTRICITY_LOW_KEY;
+        }
+        else if (species == SPECIES_PYROAR)
+        {
+            if ((personality % 0x100) >= 0xDF)
+                i = species;
+            else
+                i = SPECIES_PYROAR_FEMALE;
+        }
         else
-            i += SPECIES_UNOWN_B - 1;
+        {
+            if ((personality % 0x100) >= 0x7F)
+                i = species;
+            else
+                if (species == SPECIES_HIPPOPOTAS)
+                    i = SPECIES_HIPPOPOTAS_FEMALE;
+                else if (species == SPECIES_HIPPOWDON)
+                    i = SPECIES_HIPPOWDON_FEMALE;
+                else if (species == SPECIES_UNFEZANT)
+                    i = SPECIES_UNFEZANT_FEMALE;
+                else if (species == SPECIES_FRILLISH)
+                    i = SPECIES_FRILLISH_FEMALE;
+                else if (species == SPECIES_JELLICENT)
+                    i = SPECIES_JELLICENT_FEMALE;
+                else if (species == SPECIES_MEOWSTIC)
+                    i = SPECIES_MEOWSTIC_FEMALE;
+                else if (species == SPECIES_OINKOLOGNE)
+                    i = SPECIES_OINKOLOGNE_FEMALE;
+                else
+                    i = SPECIES_BASCULEGION_FEMALE;
+        }
+
         if (!isFrontPic)
             LZ77UnCompWram(gMonBackPicTable[i].data, dest);
         else
@@ -326,15 +477,166 @@ void HandleLoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteShee
 
 void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality, bool8 isFrontPic)
 {
-    if (species == SPECIES_UNOWN)
+    if (species == SPECIES_UNOWN || species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_HIPPOPOTAS || species == SPECIES_HIPPOWDON || species == SPECIES_BASCULIN
+        || species == SPECIES_UNFEZANT || species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_FRILLISH || species == SPECIES_JELLICENT || species == SPECIES_VIVILLON
+        || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES || species == SPECIES_MEOWSTIC || species == SPECIES_PUMPKABOO
+        || species == SPECIES_GOURGEIST || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_TOXTRICITY || species == SPECIES_ALCREMIE || species == SPECIES_BASCULEGION
+        || species == SPECIES_OINKOLOGNE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE
+        || species == SPECIES_AEGISLASH || species == SPECIES_LYCANROC || species == SPECIES_EISCUE)
     {
-        u16 i = (((personality & 0x3000000) >> 18) | ((personality & 0x30000) >> 12) | ((personality & 0x300) >> 6) | (personality & 3)) % 0x1C;
+        u16 i;
 
-        // The other Unowns are separate from Unown A.
-        if (i == 0)
-            i = SPECIES_UNOWN;
+        if (species == SPECIES_UNOWN)
+        {
+            // The other Unowns are separate from Unown A.
+            i = GET_UNOWN_LETTER(personality);
+            if (i == 0)
+                i = SPECIES_UNOWN;
+            else
+                i += SPECIES_UNOWN_B - 1;
+        }
+        else if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_BASCULIN || species == SPECIES_AEGISLASH || species == SPECIES_EISCUE)
+        {
+            i = (personality >> 8) % 2;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_SHELLOS)
+                    i = SPECIES_SHELLOS_EAST_SEA;
+                else if (species == SPECIES_BASCULIN)
+                    i = SPECIES_BASCULIN_BLUE_STRIPED;
+                else if (species == SPECIES_AEGISLASH)
+                    i = SPECIES_AEGISLASH_BLADE;
+                else if (species == SPECIES_EISCUE)
+                    i = SPECIES_EISCUE_NOICE_FACE;
+                else
+                    i = SPECIES_GASTRODON_EAST_SEA;
+            }
+        }
+        else if (species == SPECIES_MAUSHOLD || species == SPECIES_DUDUNSPARCE)
+        {
+            i = (personality >> 8) % 100;
+            if (i != 69) //  nice
+                i = species;
+            else
+            {
+                if (species == SPECIES_MAUSHOLD)
+                    i = SPECIES_MAUSHOLD_FAMILY_OF_THREE;
+                else
+                    i = SPECIES_DUDUNSPARCE_THREE_SEGMENT;
+            }
+        }
+        else if (species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_PUMPKABOO || species == SPECIES_GOURGEIST || species == SPECIES_SQUAWKABILLY)
+        {
+            i = (personality >> 8) % 4;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_DEERLING)
+                    i += SPECIES_DEERLING_SUMMER - 1;
+                else if (species == SPECIES_SAWSBUCK)
+                    i += SPECIES_SAWSBUCK_SUMMER - 1;
+                else if (species == SPECIES_SQUAWKABILLY)
+                    i += SPECIES_SQUAWKABILLY_BLUE_PLUMAGE - 1;
+                else if (species == SPECIES_PUMPKABOO)
+                    i += SPECIES_PUMPKABOO_SMALL - 1;
+                else
+                    i += SPECIES_GOURGEIST_SMALL - 1;
+            }
+        }
+        else if (species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES)
+        {
+            i = (personality >> 8) % 5;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_FLABEBE)
+                    i += SPECIES_FLABEBE_YELLOW_FLOWER - 1;
+                else if (species == SPECIES_FLOETTE)
+                    i += SPECIES_FLOETTE_YELLOW_FLOWER - 1;
+                else
+                    i += SPECIES_FLORGES_YELLOW_FLOWER - 1;
+            }
+        }
+        else if (species == SPECIES_VIVILLON)
+        {
+            i = (personality >> 8) % 20;
+            if (!i)
+                i = species;
+            else
+                i += SPECIES_VIVILLON_POLAR - 1;
+        }
+        else if (species == SPECIES_MINIOR_CORE_RED)
+        {
+            i = (personality >> 8) % 7;
+            if (!i)
+                i = species;
+            else
+                i += SPECIES_MINIOR_CORE_ORANGE - 1;
+        }
+        else if (species == SPECIES_ALCREMIE)
+        {
+            i = (personality >> 8) % 63;
+            if (!i)
+                i = species;
+            else
+                i += SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM - 1;
+        }
+        else if (species == SPECIES_TATSUGIRI || species == SPECIES_LYCANROC)
+        {
+            i = (personality >> 8) % 3;
+            if (!i)
+                i = species;
+            else
+            {
+                if (species == SPECIES_LYCANROC)
+                    i += SPECIES_LYCANROC_MIDNIGHT - 1;
+                else
+                    i += SPECIES_TATSUGIRI_DROOPY - 1;
+            }
+        }
+        else if (species == SPECIES_TOXTRICITY)
+        {
+            if ((personality % 25) == 0 || (personality % 25) == 2 || (personality % 25) == 3 || (personality % 25) == 4 ||
+            (personality % 25) == 6 || (personality % 25) == 8 || (personality % 25) == 9 || (personality % 25) == 11 || 
+            (personality % 25) == 13 || (personality % 25) == 14 || (personality % 25) == 19 || (personality % 25) == 22 || (personality % 25) == 24)
+                i = species;
+            else
+                i = SPECIES_TOXTRICITY_LOW_KEY;
+        }
+        else if (species == SPECIES_PYROAR)
+        {
+            if ((personality % 0x100) >= 0xDF)
+                i = species;
+            else
+                i = SPECIES_PYROAR_FEMALE;
+        }
         else
-            i += SPECIES_UNOWN_B - 1;
+        {
+            if ((personality % 0x100) >= 0x7F)
+                i = species;
+            else
+                if (species == SPECIES_HIPPOPOTAS)
+                    i = SPECIES_HIPPOPOTAS_FEMALE;
+                else if (species == SPECIES_HIPPOWDON)
+                    i = SPECIES_HIPPOWDON_FEMALE;
+                else if (species == SPECIES_UNFEZANT)
+                    i = SPECIES_UNFEZANT_FEMALE;
+                else if (species == SPECIES_FRILLISH)
+                    i = SPECIES_FRILLISH_FEMALE;
+                else if (species == SPECIES_JELLICENT)
+                    i = SPECIES_JELLICENT_FEMALE;
+                else if (species == SPECIES_MEOWSTIC)
+                    i = SPECIES_MEOWSTIC_FEMALE;
+                else if (species == SPECIES_OINKOLOGNE)
+                    i = SPECIES_OINKOLOGNE_FEMALE;
+                else
+                    i = SPECIES_BASCULEGION_FEMALE;
+        }
+
         if (!isFrontPic)
             LZ77UnCompWram(gMonBackPicTable[i].data, dest);
         else

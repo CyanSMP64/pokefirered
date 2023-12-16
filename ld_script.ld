@@ -55,7 +55,17 @@ SECTIONS {
         src/dma3_manager.o(.text);
         src/bg.o(.text);
         src/malloc.o(.text);
+    } =0
+
+    .text_1 0x08002c30:
+    ALIGN(4)
+    {
         src/text_printer.o(.text);
+    } =0
+
+    .text_2 0x08003b34:
+    ALIGN(4)
+    {
         src/window.o(.text);
         src/blit.o(.text);
         src/window_8bpp.o(.text);
@@ -76,8 +86,13 @@ SECTIONS {
         src/battle_gfx_sfx_util.o(.text);
         src/battle_controller_opponent.o(.text);
         src/battle_ai_switch_items.o(.text);
-        src/battle_controller_link_opponent.o(.text);
+    } =0
+
+    .text_3 0x0803d990:
+    ALIGN(4)
+    {
         src/pokemon.o(.text);
+        src/battle_controller_link_opponent.o(.text);
         src/trig.o(.text);
         src/random.o(.text);
         src/util.o(.text);
@@ -118,12 +133,17 @@ SECTIONS {
         src/battle_anim_status_effects.o(.text);
         src/title_screen.o(.text);
         src/reset_save_heap.o(.text);
+    } =0
+
+    .text_4 0x0807f634:
+    ALIGN(4)
+    {
+        src/battle_setup.o(.text);
         src/field_weather.o(.text);
         src/field_weather_util.o(.text);
         src/field_weather_effects.o(.text);
         src/field_fadetransition.o(.text);
         src/field_screen_effect.o(.text);
-        src/battle_setup.o(.text);
         src/cable_club.o(.text);
         src/trainer_see.o(.text);
         src/wild_encounter.o(.text);
@@ -216,7 +236,6 @@ SECTIONS {
         src/battle_anim_effects_3.o(.text);
         src/learn_move.o(.text);
         src/fldeff_softboiled.o(.text);
-        src/battle_tower.o(.text);
         src/battle_controller_oak_old_man.o(.text);
         src/player_pc.o(.text);
         src/intro.o(.text);
@@ -260,7 +279,6 @@ SECTIONS {
         src/union_room_chat.o(.text);
         src/union_room_chat_display.o(.text);
         src/union_room_chat_objects.o(.text);
-        src/help_system.o(.text);
         src/quest_log_battle.o(.text);
         src/fame_checker.o(.text);
         src/menu2.o(.text);
@@ -269,14 +287,18 @@ SECTIONS {
         src/menu_indicators.o(.text);
         src/pokedex_area_markers.o(.text);
         src/pokemon_summary_screen.o(.text);
-        src/help_system_util.o(.text);
         src/wild_pokemon_area.o(.text);
         src/dynamic_placeholder_text_util.o(.text);
+    } =0
+
+    .text_5 0x08141ccc:
+    ALIGN(4)
+    {
+        src/roamer.o(.text);
         src/berry_pouch.o(.text);
         src/itemfinder.o(.text);
         src/buy_menu_helpers.o(.text);
         src/slot_machine.o(.text);
-        src/roamer.o(.text);
         src/mystery_gift_menu.o(.text);
         src/ereader_screen.o(.text);
         src/mystery_gift.o(.text);
@@ -327,6 +349,12 @@ SECTIONS {
         src/libgcnmultiboot.o(.text);
         src/m4a_1.o(.text);
         src/m4a.o(.text);
+    } =0
+
+    lib_text_1 0x081e3c18:
+    ALIGN(4)
+    {
+        *libgcc.a:_call_via_rX.o(.text);
         src/agb_flash.o(.text);
         src/agb_flash_1m.o(.text);
         src/agb_flash_mx.o(.text);
@@ -337,7 +365,6 @@ SECTIONS {
         src/librfu_sio32id.o(.text);
         src/isagbprn.o(.text);
         src/libagbsyscall.o(.text);
-        *libgcc.a:_call_via_rX.o(.text);
         *libgcc.a:_divdi3.o(.text);
         *libgcc.a:_divsi3.o(.text);
         *libgcc.a:_dvmd_tls.o(.text);
@@ -492,6 +519,12 @@ SECTIONS {
         src/battle_anim_utility_funcs.o(.rodata);
         src/battle_intro.o(.rodata);
         src/bike.o(.rodata);
+    } =0
+
+    .rodata_1 0x0841efb8:
+    SUBALIGN(4)
+    {
+        src/new_menu_helpers.o(.rodata);
         src/easy_chat.o(.rodata);
         src/mon_markings.o(.rodata);
         src/mail.o(.rodata);
@@ -511,7 +544,6 @@ SECTIONS {
         src/battle_controller_safari.o(.rodata);
         src/battle_anim_effects_3.o(.rodata);
         src/learn_move.o(.rodata);
-        src/battle_tower.o(.rodata);
         src/battle_controller_oak_old_man.o(.rodata);
         src/player_pc.o(.rodata);
         src/intro.o(.rodata);
@@ -523,7 +555,6 @@ SECTIONS {
         src/save_failed_screen.o(.rodata);
         src/clear_save_data_screen.o(.rodata);
         src/evolution_graphics.o(.rodata);
-        src/new_menu_helpers.o(.rodata);
         src/tilemap_util.o(.rodata);
         src/map_preview_screen.o(.rodata);
         src/link_rfu_2.o(.rodata);
@@ -555,7 +586,6 @@ SECTIONS {
         src/union_room_chat.o(.rodata);
         src/union_room_chat_display.o(.rodata);
         src/union_room_chat_objects.o(.rodata);
-        src/help_system.o(.rodata);
         src/fame_checker.o(.rodata);
         src/menu2.o(.rodata);
         src/oak_speech.o(.rodata);
@@ -563,7 +593,6 @@ SECTIONS {
         src/menu_indicators.o(.rodata);
         src/pokedex_area_markers.o(.rodata);
         src/pokemon_summary_screen.o(.rodata);
-        src/help_system_util.o(.rodata);
         src/wild_pokemon_area.o(.rodata);
         src/dynamic_placeholder_text_util.o(.rodata);
         src/berry_pouch.o(.rodata);
@@ -607,7 +636,6 @@ SECTIONS {
         src/mystery_event_msg.o(.rodata);
         data/mystery_event_msg.o(.rodata);
         src/m4a_tables.o(.rodata);
-        data/sound_data.o(.rodata);
     } =0
 
     song_data :
@@ -878,88 +906,88 @@ SECTIONS {
         sound/songs/midi/mus_obtain_berry.o(.rodata);
         sound/songs/midi/mus_evolution_intro.o(.rodata);
         sound/songs/midi/mus_evolution.o(.rodata);
-        sound/songs/midi/mus_rs_vs_gym_leader.o(.rodata);
-        sound/songs/midi/mus_rs_vs_trainer.o(.rodata);
+        sound/songs/midi/mus_vs_gym_leader.o(.rodata);
+        sound/songs/midi/mus_vs_trainer.o(.rodata);
         sound/songs/midi/mus_school.o(.rodata);
         sound/songs/midi/mus_slots_jackpot.o(.rodata);
         sound/songs/midi/mus_slots_win.o(.rodata);
         sound/songs/midi/mus_move_deleted.o(.rodata);
         sound/songs/midi/mus_too_bad.o(.rodata);
-        sound/songs/midi/mus_follow_me.o(.rodata);
-        sound/songs/midi/mus_game_corner.o(.rodata);
-        sound/songs/midi/mus_rocket_hideout.o(.rodata);
-        sound/songs/midi/mus_gym.o(.rodata);
-        sound/songs/midi/mus_jigglypuff.o(.rodata);
-        sound/songs/midi/mus_intro_fight.o(.rodata);
-        sound/songs/midi/mus_title.o(.rodata);
-        sound/songs/midi/mus_cinnabar.o(.rodata);
-        sound/songs/midi/mus_lavender.o(.rodata);
-        sound/songs/midi/mus_heal_unused.o(.rodata);
-        sound/songs/midi/mus_cycling.o(.rodata);
-        sound/songs/midi/mus_encounter_rocket.o(.rodata);
-        sound/songs/midi/mus_encounter_girl.o(.rodata);
-        sound/songs/midi/mus_encounter_boy.o(.rodata);
-        sound/songs/midi/mus_hall_of_fame.o(.rodata);
-        sound/songs/midi/mus_viridian_forest.o(.rodata);
-        sound/songs/midi/mus_mt_moon.o(.rodata);
-        sound/songs/midi/mus_poke_mansion.o(.rodata);
-        sound/songs/midi/mus_credits.o(.rodata);
-        sound/songs/midi/mus_route1.o(.rodata);
-        sound/songs/midi/mus_route24.o(.rodata);
-        sound/songs/midi/mus_route3.o(.rodata);
-        sound/songs/midi/mus_route11.o(.rodata);
-        sound/songs/midi/mus_victory_road.o(.rodata);
-        sound/songs/midi/mus_vs_gym_leader.o(.rodata);
-        sound/songs/midi/mus_vs_trainer.o(.rodata);
-        sound/songs/midi/mus_vs_wild.o(.rodata);
-        sound/songs/midi/mus_vs_champion.o(.rodata);
-        sound/songs/midi/mus_pallet.o(.rodata);
-        sound/songs/midi/mus_oak_lab.o(.rodata);
-        sound/songs/midi/mus_oak.o(.rodata);
-        sound/songs/midi/mus_poke_center.o(.rodata);
-        sound/songs/midi/mus_ss_anne.o(.rodata);
-        sound/songs/midi/mus_surf.o(.rodata);
-        sound/songs/midi/mus_poke_tower.o(.rodata);
-        sound/songs/midi/mus_silph.o(.rodata);
-        sound/songs/midi/mus_fuchsia.o(.rodata);
-        sound/songs/midi/mus_celadon.o(.rodata);
-        sound/songs/midi/mus_victory_trainer.o(.rodata);
-        sound/songs/midi/mus_victory_wild.o(.rodata);
-        sound/songs/midi/mus_victory_gym_leader.o(.rodata);
-        sound/songs/midi/mus_vermillion.o(.rodata);
-        sound/songs/midi/mus_pewter.o(.rodata);
-        sound/songs/midi/mus_encounter_rival.o(.rodata);
-        sound/songs/midi/mus_rival_exit.o(.rodata);
-        sound/songs/midi/mus_dex_rating.o(.rodata);
-        sound/songs/midi/mus_obtain_key_item.o(.rodata);
-        sound/songs/midi/mus_caught_intro.o(.rodata);
-        sound/songs/midi/mus_photo.o(.rodata);
-        sound/songs/midi/mus_game_freak.o(.rodata);
-        sound/songs/midi/mus_caught.o(.rodata);
-        sound/songs/midi/mus_new_game_instruct.o(.rodata);
-        sound/songs/midi/mus_new_game_intro.o(.rodata);
-        sound/songs/midi/mus_new_game_exit.o(.rodata);
-        sound/songs/midi/mus_poke_jump.o(.rodata);
-        sound/songs/midi/mus_union_room.o(.rodata);
-        sound/songs/midi/mus_net_center.o(.rodata);
-        sound/songs/midi/mus_mystery_gift.o(.rodata);
-        sound/songs/midi/mus_berry_pick.o(.rodata);
-        sound/songs/midi/mus_sevii_cave.o(.rodata);
-        sound/songs/midi/mus_teachy_tv_show.o(.rodata);
-        sound/songs/midi/mus_sevii_route.o(.rodata);
-        sound/songs/midi/mus_sevii_dungeon.o(.rodata);
-        sound/songs/midi/mus_sevii_123.o(.rodata);
-        sound/songs/midi/mus_sevii_45.o(.rodata);
-        sound/songs/midi/mus_sevii_67.o(.rodata);
-        sound/songs/midi/mus_poke_flute.o(.rodata);
-        sound/songs/midi/mus_vs_deoxys.o(.rodata);
-        sound/songs/midi/mus_vs_mewtwo.o(.rodata);
-        sound/songs/midi/mus_vs_legend.o(.rodata);
-        sound/songs/midi/mus_encounter_gym_leader.o(.rodata);
-        sound/songs/midi/mus_encounter_deoxys.o(.rodata);
-        sound/songs/midi/mus_trainer_tower.o(.rodata);
-        sound/songs/midi/mus_slow_pallet.o(.rodata);
-        sound/songs/midi/mus_teachy_tv_menu.o(.rodata);
+        sound/songs/midi/mus_rg_follow_me.o(.rodata);
+        sound/songs/midi/mus_rg_game_corner.o(.rodata);
+        sound/songs/midi/mus_rg_rocket_hideout.o(.rodata);
+        sound/songs/midi/mus_rg_gym.o(.rodata);
+        sound/songs/midi/mus_rg_jigglypuff.o(.rodata);
+        sound/songs/midi/mus_rg_intro_fight.o(.rodata);
+        sound/songs/midi/mus_rg_title.o(.rodata);
+        sound/songs/midi/mus_rg_cinnabar.o(.rodata);
+        sound/songs/midi/mus_rg_lavender.o(.rodata);
+        sound/songs/midi/mus_rg_heal.o(.rodata);
+        sound/songs/midi/mus_rg_cycling.o(.rodata);
+        sound/songs/midi/mus_rg_encounter_rocket.o(.rodata);
+        sound/songs/midi/mus_rg_encounter_girl.o(.rodata);
+        sound/songs/midi/mus_rg_encounter_boy.o(.rodata);
+        sound/songs/midi/mus_rg_hall_of_fame.o(.rodata);
+        sound/songs/midi/mus_rg_viridian_forest.o(.rodata);
+        sound/songs/midi/mus_rg_mt_moon.o(.rodata);
+        sound/songs/midi/mus_rg_poke_mansion.o(.rodata);
+        sound/songs/midi/mus_rg_credits.o(.rodata);
+        sound/songs/midi/mus_rg_route1.o(.rodata);
+        sound/songs/midi/mus_rg_route24.o(.rodata);
+        sound/songs/midi/mus_rg_route3.o(.rodata);
+        sound/songs/midi/mus_rg_route11.o(.rodata);
+        sound/songs/midi/mus_rg_victory_road.o(.rodata);
+        sound/songs/midi/mus_rg_vs_gym_leader.o(.rodata);
+        sound/songs/midi/mus_rg_vs_trainer.o(.rodata);
+        sound/songs/midi/mus_rg_vs_wild.o(.rodata);
+        sound/songs/midi/mus_rg_vs_champion.o(.rodata);
+        sound/songs/midi/mus_rg_pallet.o(.rodata);
+        sound/songs/midi/mus_rg_oak_lab.o(.rodata);
+        sound/songs/midi/mus_rg_oak.o(.rodata);
+        sound/songs/midi/mus_rg_poke_center.o(.rodata);
+        sound/songs/midi/mus_rg_ss_anne.o(.rodata);
+        sound/songs/midi/mus_rg_surf.o(.rodata);
+        sound/songs/midi/mus_rg_poke_tower.o(.rodata);
+        sound/songs/midi/mus_rg_silph.o(.rodata);
+        sound/songs/midi/mus_rg_fuchsia.o(.rodata);
+        sound/songs/midi/mus_rg_celadon.o(.rodata);
+        sound/songs/midi/mus_rg_victory_trainer.o(.rodata);
+        sound/songs/midi/mus_rg_victory_wild.o(.rodata);
+        sound/songs/midi/mus_rg_victory_gym_leader.o(.rodata);
+        sound/songs/midi/mus_rg_vermillion.o(.rodata);
+        sound/songs/midi/mus_rg_pewter.o(.rodata);
+        sound/songs/midi/mus_rg_encounter_rival.o(.rodata);
+        sound/songs/midi/mus_rg_rival_exit.o(.rodata);
+        sound/songs/midi/mus_rg_dex_rating.o(.rodata);
+        sound/songs/midi/mus_rg_obtain_key_item.o(.rodata);
+        sound/songs/midi/mus_rg_caught_intro.o(.rodata);
+        sound/songs/midi/mus_rg_photo.o(.rodata);
+        sound/songs/midi/mus_rg_game_freak.o(.rodata);
+        sound/songs/midi/mus_rg_caught.o(.rodata);
+        sound/songs/midi/mus_rg_new_game_instruct.o(.rodata);
+        sound/songs/midi/mus_rg_new_game_intro.o(.rodata);
+        sound/songs/midi/mus_rg_new_game_exit.o(.rodata);
+        sound/songs/midi/mus_rg_poke_jump.o(.rodata);
+        sound/songs/midi/mus_rg_union_room.o(.rodata);
+        sound/songs/midi/mus_rg_net_center.o(.rodata);
+        sound/songs/midi/mus_rg_mystery_gift.o(.rodata);
+        sound/songs/midi/mus_rg_berry_pick.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_cave.o(.rodata);
+        sound/songs/midi/mus_rg_teachy_tv_show.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_route.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_dungeon.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_123.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_45.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_67.o(.rodata);
+        sound/songs/midi/mus_rg_poke_flute.o(.rodata);
+        sound/songs/midi/mus_rg_vs_deoxys.o(.rodata);
+        sound/songs/midi/mus_rg_vs_mewtwo.o(.rodata);
+        sound/songs/midi/mus_rg_vs_legend.o(.rodata);
+        sound/songs/midi/mus_rg_encounter_gym_leader.o(.rodata);
+        sound/songs/midi/mus_rg_encounter_deoxys.o(.rodata);
+        sound/songs/midi/mus_rg_trainer_tower.o(.rodata);
+        sound/songs/midi/mus_rg_slow_pallet.o(.rodata);
+        sound/songs/midi/mus_rg_teachy_tv_menu.o(.rodata);
     }
 
     lib_rodata :
@@ -1023,6 +1051,12 @@ SECTIONS {
         data/multiboot_pokemon_colosseum.o(.rodata);
     } =0
 
+    gfx_data :
+    ALIGN(4)
+    {
+        src/graphics.o(.rodata);
+    } =0
+
     . = 0x08A00000;
     empty_data_1 :
     ALIGN(4)
@@ -1051,11 +1085,11 @@ SECTIONS {
         data/emptydata_roamers.o(.rodata);
     } =0
 
-    . = 0x08D00000;
-    gfx_data :
+    . = 0x08A84000;
+    .rodata_2 :
     ALIGN(4)
     {
-        src/graphics.o(.rodata);
+        data/sound_data.o(.rodata);
     } =0
 
     extra :

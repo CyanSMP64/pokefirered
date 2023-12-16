@@ -1046,7 +1046,7 @@ static void CB2_CreateTradeMenu(void)
         sTradeMenu->bg3hofs = 0;
         SetActiveMenuOptions();
         gMain.state++;
-        PlayBGM(MUS_GAME_CORNER);
+        PlayBGM(MUS_RG_GAME_CORNER);
         break;
     case 15:
         ComputePartyTradeableFlags(TRADE_PARTNER);

@@ -30,7 +30,7 @@ CeruleanCity_BikeShop_EventScript_ClerkGoodbye::
 
 CeruleanCity_BikeShop_EventScript_ExchangeBikeVoucher::
 	msgbox CeruleanCity_BikeShop_Text_OhBikeVoucherHereYouGo
-	msgreceiveditem CeruleanCity_BikeShop_Text_ExchangedVoucherForBicycle, ITEM_BICYCLE, 1, MUS_OBTAIN_KEY_ITEM
+	msgreceiveditem CeruleanCity_BikeShop_Text_ExchangedVoucherForBicycle, ITEM_BICYCLE, 1, MUS_RG_OBTAIN_KEY_ITEM
 	setflag FLAG_GOT_BICYCLE
 	additem ITEM_BICYCLE
 	removeitem ITEM_BIKE_VOUCHER

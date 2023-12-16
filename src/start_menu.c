@@ -33,7 +33,6 @@
 #include "trainer_card.h"
 #include "option_menu.h"
 #include "save_menu_util.h"
-#include "help_system.h"
 #include "constants/songs.h"
 #include "constants/field_weather.h"
 
@@ -132,18 +131,6 @@ static const struct WindowTemplate sSafariZoneStatsWindowTemplate = {
     .height = 4,
     .paletteNum = 15,
     .baseBlock = 0x008
-};
-
-static const u8 *const sStartMenuDescPointers[] = {
-    gStartMenuDesc_Pokedex,
-    gStartMenuDesc_Pokemon,
-    gStartMenuDesc_Bag,
-    gStartMenuDesc_Player,
-    gStartMenuDesc_Save,
-    gStartMenuDesc_Option,
-    gStartMenuDesc_Exit,
-    gStartMenuDesc_Retire,
-    gStartMenuDesc_Player
 };
 
 static const struct BgTemplate sBGTemplates_AfterLinkSaveMessage[] = {
@@ -326,10 +313,6 @@ static s8 DoDrawStartMenu(void)
         break;
     case 5:
         sStartMenuCursorPos = Menu_InitCursor(GetStartMenuWindowId(), FONT_NORMAL, 0, 0, 15, sNumStartMenuItems, sStartMenuCursorPos);
-        if (!MenuHelpers_IsLinkActive() && InUnionRoom() != TRUE && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_HELP)
-        {
-            DrawHelpMessageWindowWithText(sStartMenuDescPointers[sStartMenuOrder[sStartMenuCursorPos]]);
-        }
         CopyWindowToVram(GetStartMenuWindowId(), COPYWIN_MAP);
         return TRUE;
     }
@@ -410,19 +393,11 @@ static bool8 StartCB_HandleInput(void)
     {
         PlaySE(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(-1);
-        if (!MenuHelpers_IsLinkActive() && InUnionRoom() != TRUE && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_HELP)
-        {
-            PrintTextOnHelpMessageWindow(sStartMenuDescPointers[sStartMenuOrder[sStartMenuCursorPos]], 2);
-        }
     }
     if (JOY_NEW(DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(+1);
-        if (!MenuHelpers_IsLinkActive() && InUnionRoom() != TRUE && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_HELP)
-        {
-            PrintTextOnHelpMessageWindow(sStartMenuDescPointers[sStartMenuOrder[sStartMenuCursorPos]], 2);
-        }
     }
     if (JOY_NEW(A_BUTTON))
     {
@@ -566,8 +541,6 @@ static bool8 StartMenuLinkPlayerCallback(void)
 
 static bool8 StartCB_Save1(void)
 {
-    BackupHelpContext();
-    SetHelpContext(HELPCONTEXT_SAVE);
     StartMenu_PrepareForSave();
     sStartMenuCallback = StartCB_Save2;
     return FALSE;
@@ -583,19 +556,16 @@ static bool8 StartCB_Save2(void)
         ClearDialogWindowAndFrameToTransparent(0, TRUE);
         ClearPlayerHeldMovementAndUnfreezeObjectEvents();
         UnlockPlayerFieldControls();
-        RestoreHelpContext();
         return TRUE;
     case SAVECB_RETURN_CANCEL:
         ClearDialogWindowAndFrameToTransparent(0, FALSE);
         DrawStartMenuInOneGo();
-        RestoreHelpContext();
         sStartMenuCallback = StartCB_HandleInput;
         break;
     case SAVECB_RETURN_ERROR:
         ClearDialogWindowAndFrameToTransparent(0, TRUE);
         ClearPlayerHeldMovementAndUnfreezeObjectEvents();
         UnlockPlayerFieldControls();
-        RestoreHelpContext();
         return TRUE;
     }
     return FALSE;
@@ -618,8 +588,6 @@ static u8 RunSaveDialogCB(void)
 
 void Field_AskSaveTheGame(void)
 {
-    BackupHelpContext();
-    SetHelpContext(HELPCONTEXT_SAVE);
     StartMenu_PrepareForSave();
     CreateTask(task50_save_game, 80);
 }
@@ -649,7 +617,6 @@ static void task50_save_game(u8 taskId)
     }
     DestroyTask(taskId);
     ScriptContext_Enable();
-    RestoreHelpContext();
 }
 
 static void CloseSaveMessageWindow(void)

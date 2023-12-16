@@ -199,7 +199,7 @@ BattleScript_UsePokeFlute::
 BattleScript_PokeFluteWakeUp::
 	printstring STRINGID_POKEFLUTE
 	waitmessage B_WAIT_TIME_LONG
-	fanfare MUS_POKE_FLUTE
+	fanfare MUS_RG_POKE_FLUTE
 	waitfanfare BS_ATTACKER
 	printstring STRINGID_MONHEARINGFLUTEAWOKE
 	waitmessage B_WAIT_TIME_LONG

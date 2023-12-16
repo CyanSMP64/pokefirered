@@ -53,7 +53,7 @@ CeruleanCity_Text_GruntIntro::
     .string "…Huh?\n"
     .string "Me?\p"
     .string "I'm an innocent bystander!\n"
-    .string "Don't you believe me?{PLAY_BGM}{MUS_ENCOUNTER_ROCKET}$"
+    .string "Don't you believe me?{PLAY_BGM}{MUS_RG_ENCOUNTER_ROCKET}$"
 
 CeruleanCity_Text_GruntDefeat::
     .string "GRUNT: Stop! I give up!\n"

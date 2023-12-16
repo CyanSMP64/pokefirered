@@ -19,7 +19,7 @@ SilphCo_11F_EventScript_President::
 	call_if_eq VAR_RESULT, FEMALE, SilphCo_11F_EventScript_PresidentThanksFemale
 	checkitemspace ITEM_MASTER_BALL
 	goto_if_eq VAR_RESULT, FALSE, SilphCo_11F_EventScript_NoRoomForMasterBall
-	giveitem_msg SilphCo_11F_Text_ObtainedMasterBallFromPresident, ITEM_MASTER_BALL, 1, MUS_OBTAIN_KEY_ITEM
+	giveitem_msg SilphCo_11F_Text_ObtainedMasterBallFromPresident, ITEM_MASTER_BALL, 1, MUS_RG_OBTAIN_KEY_ITEM
 	msgbox SilphCo_11F_Text_ThatsOurSecretPrototype
 	setflag FLAG_GOT_MASTER_BALL_FROM_SILPH
 	release

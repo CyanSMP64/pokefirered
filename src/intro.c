@@ -1162,7 +1162,7 @@ static void IntroCB_GF_Star(struct IntroSequenceData * this)
     switch (this->state)
     {
     case 0:
-        PlaySE(MUS_GAME_FREAK);
+        PlaySE(MUS_RG_GAME_FREAK);
         GFScene_LoadGfxCreateStar();
         this->timer = 0;
         this->state++;
@@ -1329,7 +1329,7 @@ static void IntroCB_Scene1(struct IntroSequenceData * this)
     case 3:
         if (!gPaletteFade.active)
         {
-            m4aSongNumStart(MUS_INTRO_FIGHT);
+            m4aSongNumStart(MUS_RG_INTRO_FIGHT);
             this->timer = 0;
             this->state++;
         }

@@ -19,7 +19,6 @@
 #include "fieldmap.h"
 #include "fldeff.h"
 #include "heal_location.h"
-#include "help_system.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "load_save.h"
@@ -1022,7 +1021,7 @@ void Overworld_PlaySpecialMapMusic(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_LEAGUE_CHAMPIONS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_LEAGUE_CHAMPIONS_ROOM))
     {
         PlayerGetDestCoords(&x, &y);
-        if (y - 7 < 11 && gMPlayInfo_BGM.songHeader == &mus_victory_gym_leader)
+        if (y - 7 < 11 && gMPlayInfo_BGM.songHeader == &mus_rg_victory_gym_leader)
         {
             FadeInBGM(4);
             return;
@@ -1033,8 +1032,8 @@ void Overworld_PlaySpecialMapMusic(void)
 
     if (gSaveBlock1Ptr->savedMusic)
         music = gSaveBlock1Ptr->savedMusic;
-    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic(MUS_SURF))
-        music = MUS_SURF;
+    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic(MUS_RG_SURF))
+        music = MUS_RG_SURF;
 
     if (music != GetCurrentMapMusic())
         PlayNewMapMusic(music);
@@ -1067,10 +1066,10 @@ static void Overworld_TryMapConnectionMusicTransition(void)
     {
         newMusic = GetWarpDestinationMusic();
         currentMusic = GetCurrentMapMusic();
-        if (currentMusic == MUS_SURF)
+        if (currentMusic == MUS_RG_SURF)
             return;
-        if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic(MUS_SURF))
-            newMusic = MUS_SURF;
+        if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic(MUS_RG_SURF))
+            newMusic = MUS_RG_SURF;
         if (newMusic != currentMusic)
         {
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
@@ -1187,7 +1186,7 @@ static void ChooseAmbientCrySpecies(void)
 
 bool32 Overworld_MusicCanOverrideMapMusic(u16 music)
 {
-    if (music == MUS_CYCLING || music == MUS_SURF)
+    if (music == MUS_RG_CYCLING || music == MUS_RG_SURF)
     {
         if (gMapHeader.regionMapSectionId == MAPSEC_KANTO_VICTORY_ROAD || gMapHeader.regionMapSectionId == MAPSEC_ROUTE_23 || gMapHeader.regionMapSectionId == MAPSEC_INDIGO_PLATEAU)
             return FALSE;
@@ -1779,7 +1778,6 @@ static bool32 LoadMapInStepsLink(u8 *state)
         InitObjectEventsLink();
         SpawnLinkPlayers();
         SetCameraToTrackGuestPlayer();
-        SetHelpContextForMap();
         (*state)++;
         break;
     case 4:
@@ -1864,7 +1862,6 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 inLink)
             QuestLog_CheckDepartingIndoorsMap();
             QuestLog_TryRecordDepartedLocation();
         }
-        SetHelpContextForMap();
         (*state)++;
         break;
     case 5:
@@ -1938,7 +1935,6 @@ static bool32 ReturnToFieldLocal(u8 *state)
         break;
     case 2:
         InitViewGraphics();
-        SetHelpContextForMap();
         (*state)++;
         break;
     case 3:
@@ -1969,7 +1965,6 @@ static bool32 ReturnToFieldLink(u8 *state)
         CreateLinkPlayerSprites();
         ReloadObjectsAndRunReturnToFieldMapScript();
         SetCameraToTrackGuestPlayer_2();
-        SetHelpContextForMap();
         (*state)++;
         break;
     case 3:

@@ -8,7 +8,7 @@
 #include "event_scripts.h"
 #include "event_data.h"
 #include "item.h"
-#include "battle_tower.h"
+//#include "battle_tower.h"
 #include "trainer_tower.h"
 #include "battle_setup.h"
 #include "field_specials.h"
@@ -472,8 +472,8 @@ static const u8 sText_ItAppearedCaught[] = _("Aww!\nIt appeared to be caught!");
 static const u8 sText_AarghAlmostHadIt[] = _("Aargh!\nAlmost had it!");
 static const u8 sText_ShootSoClose[] = _("Shoot!\nIt was so close, too!");
 static const u8 sText_ItDodgedBall2[] = _("よけられた!\nこいつは つかまりそうにないぞ!"); // Unused version of the Marowak ghost dodging text
-static const u8 sText_GotchaPkmnCaught[] = _("Gotcha!\n{B_OPPONENT_MON1_NAME} was caught!{WAIT_SE}{PLAY_BGM MUS_CAUGHT}\p");
-static const u8 sText_GotchaPkmnCaught2[] = _("Gotcha!\n{B_OPPONENT_MON1_NAME} was caught!{WAIT_SE}{PLAY_BGM MUS_CAUGHT}{PAUSE 127}");
+static const u8 sText_GotchaPkmnCaught[] = _("Gotcha!\n{B_OPPONENT_MON1_NAME} was caught!{WAIT_SE}{PLAY_BGM MUS_RG_CAUGHT}\p");
+static const u8 sText_GotchaPkmnCaught2[] = _("Gotcha!\n{B_OPPONENT_MON1_NAME} was caught!{WAIT_SE}{PLAY_BGM MUS_RG_CAUGHT}{PAUSE 127}");
 static const u8 sText_GiveNicknameCaptured[] = _("Give a nickname to the\ncaptured {B_OPPONENT_MON1_NAME}?");
 static const u8 sText_PkmnSentToPC[] = _("{B_OPPONENT_MON1_NAME} was sent to\n{B_PC_CREATOR_NAME} PC.");
 static const u8 sText_Someones[] = _("someone's");
@@ -1349,6 +1349,7 @@ const u8 gText_APsychicMove[] = _("a PSYCHIC move");
 const u8 gText_AnIceMove[] = _("an ICE move");
 const u8 gText_ADragonMove[] = _("a DRAGON move");
 const u8 gText_ADarkMove[] = _("a DARK move");
+const u8 gText_AFairyMove[] = _("a FAIRY move");
 const u8 gText_TimeBoard[] = _("TIME BOARD");
 const u8 gText_ClearTime[] = _("CLEAR TIME"); // Unused
 const u8 gText_XMinYZSec[] = _("{STR_VAR_1}MIN. {STR_VAR_2}.{STR_VAR_3}SEC.");
@@ -1392,7 +1393,8 @@ static const u8 *const sATypeMove_Table[NUMBER_OF_MON_TYPES] =
     [TYPE_PSYCHIC]  = gText_APsychicMove,
     [TYPE_ICE]      = gText_AnIceMove,
     [TYPE_DRAGON]   = gText_ADragonMove,
-    [TYPE_DARK]     = gText_ADarkMove
+    [TYPE_DARK]     = gText_ADarkMove,
+    [TYPE_FAIRY]    = gText_AFairyMove
 };
 
 static const u16 sGrammarMoveUsedTable[] =
@@ -2044,12 +2046,8 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                     toCpy = gTrainerClassNames[GetSecretBaseTrainerNameIndex()];
                 else if (gTrainerBattleOpponent_A == TRAINER_UNION_ROOM)
                     toCpy = gTrainerClassNames[GetUnionRoomTrainerClass()];
-                else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
-                    toCpy = gTrainerClassNames[GetBattleTowerTrainerClassNameId()];
                 else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
                     toCpy = gTrainerClassNames[GetTrainerTowerOpponentClass()];
-                else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-                    toCpy = gTrainerClassNames[GetEreaderTrainerClassId()];
                 else
                     toCpy = gTrainerClassNames[gTrainers[gTrainerBattleOpponent_A].trainerClass];
                 break;
@@ -2065,18 +2063,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 {
                     toCpy = gLinkPlayers[multiplayerId ^ BIT_SIDE].name;
                 }
-                else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
-                {
-                    GetBattleTowerTrainerName(text);
-                }
                 else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
                 {
                     GetTrainerTowerOpponentName(text);
-                    toCpy = text;
-                }
-                else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-                {
-                    CopyEReaderTrainerName5(text);
                     toCpy = text;
                 }
                 else

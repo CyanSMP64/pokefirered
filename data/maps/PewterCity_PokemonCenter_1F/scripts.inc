@@ -22,11 +22,11 @@ PewterCity_PokemonCenter_1F_EventScript_Jigglypuff::
 	lock
 	faceplayer
 	fadeoutbgm 0
-	playbgm MUS_JIGGLYPUFF, 0
+	playbgm MUS_RG_JIGGLYPUFF, 0
 	message PewterCity_PokemonCenter_1F_Text_Jigglypuff
 	waitmessage
 	delay 455
-	playbgm MUS_POKE_CENTER, 1
+	playbgm MUS_RG_POKE_CENTER, 1
 	release
 	end
 

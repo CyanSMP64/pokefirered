@@ -38,7 +38,7 @@ PalletTown_ProfessorOaksLab_EventScript_SetNationalDexSceneFinished::
 PalletTown_ProfessorOaksLab_EventScript_ReadyOakForStarterScene::
 	setobjectxyperm LOCALID_PROF_OAK, 6, 11
 	setobjectmovementtype LOCALID_PROF_OAK, MOVEMENT_TYPE_FACE_UP
-	savebgm MUS_OAK
+	savebgm MUS_RG_OAK
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_ReadyOakForNationalDexScene::
@@ -107,7 +107,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexScene::
 	call_if_eq VAR_FACING, DIR_EAST, PalletTown_ProfessorOaksLab_EventScript_OakBringDexesOverEast
 	call_if_eq VAR_FACING, DIR_WEST, PalletTown_ProfessorOaksLab_EventScript_OakBringDexesOverWest
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message PalletTown_ProfessorOaksLab_Text_PlayersPokedexWasUpgraded
 	waitmessage
 	waitfanfare
@@ -116,7 +116,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexScene::
 	msgbox PalletTown_ProfessorOaksLab_Text_OakMustReallyWorkToFillPokedex
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex
 	closemessage
-	playbgm MUS_RIVAL_EXIT, 0
+	playbgm MUS_RG_RIVAL_EXIT, 0
 	call_if_eq VAR_FACING, DIR_NORTH, PalletTown_ProfessorOaksLab_EventScript_RivalExitNorth
 	call_if_eq VAR_FACING, DIR_SOUTH, PalletTown_ProfessorOaksLab_EventScript_RivalExit
 	call_if_eq VAR_FACING, DIR_EAST, PalletTown_ProfessorOaksLab_EventScript_RivalExit
@@ -130,7 +130,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexScene::
 PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterNorth::
 	setobjectxyperm LOCALID_RIVAL, 5, 10
 	addobject LOCALID_RIVAL
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_ProfessorOaksLab_Movement_WatchRivalEnterNorth
 	applymovement LOCALID_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalEnter
 	waitmovement 0
@@ -139,7 +139,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterNorth::
 PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterEastWest::
 	setobjectxyperm LOCALID_RIVAL, 6, 10
 	addobject LOCALID_RIVAL
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement LOCALID_PROF_OAK, Common_Movement_WalkInPlaceFasterDown
 	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_ProfessorOaksLab_Movement_WatchRivalEnterEastWest
 	applymovement LOCALID_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalEnter
@@ -149,7 +149,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterEastWest::
 PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterSouth::
 	setobjectxyperm LOCALID_RIVAL, 6, 10
 	addobject LOCALID_RIVAL
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement LOCALID_PROF_OAK, Common_Movement_WalkInPlaceFasterDown
 	applymovement LOCALID_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalEnter
 	waitmovement 0
@@ -295,7 +295,7 @@ PalletTown_ProfessorOaksLab_EventScript_RivalBattleTriggerRight::
 
 PalletTown_ProfessorOaksLab_EventScript_RivalBattle::
 	textcolor NPC_TEXT_COLOR_MALE
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
@@ -476,7 +476,7 @@ PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle::
 	special HealPlayerParty
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalGoToughenMyMon
 	closemessage
-	playbgm MUS_RIVAL_EXIT, 0
+	playbgm MUS_RG_RIVAL_EXIT, 0
 	call_if_eq VAR_TEMP_2, 1, PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleLeft
 	call_if_eq VAR_TEMP_2, 2, PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleMid
 	call_if_eq VAR_TEMP_2, 3, PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleRight
@@ -613,7 +613,7 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	call EventScript_RestorePrevTextColor
 	removeitem ITEM_OAKS_PARCEL
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCustomBallIOrdered
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalGramps
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, PalletTown_ProfessorOaksLab_EventScript_DexSceneRivalEnterNorth
@@ -656,7 +656,7 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	call_if_eq VAR_FACING, DIR_WEST, PalletTown_ProfessorOaksLab_EventScript_OakBringDexesOverWest
 	delay 10
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message PalletTown_ProfessorOaksLab_Text_ReceivedPokedexFromOak
 	waitmessage
 	waitfanfare
@@ -676,7 +676,7 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	call_if_eq VAR_FACING, DIR_WEST, PalletTown_ProfessorOaksLab_EventScript_DexSceneRivalFacePlayerEastWest
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalTellSisNotToGiveYouMap
 	closemessage
-	playbgm MUS_RIVAL_EXIT, 0
+	playbgm MUS_RG_RIVAL_EXIT, 0
 	call_if_eq VAR_FACING, DIR_NORTH, PalletTown_ProfessorOaksLab_EventScript_RivalExitNorth
 	call_if_eq VAR_FACING, DIR_SOUTH, PalletTown_ProfessorOaksLab_EventScript_RivalExit
 	call_if_eq VAR_FACING, DIR_EAST, PalletTown_ProfessorOaksLab_EventScript_RivalExit
@@ -685,7 +685,7 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	fadedefaultbgm
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 6
 	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 2
-	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 1
+	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
 	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1
 	setvar VAR_MAP_SCENE_ROUTE22, 1
 	release
@@ -1132,7 +1132,7 @@ PalletTown_ProfessorOaksLab_EventScript_ChoseStarter::
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
 	message PalletTown_ProfessorOaksLab_Text_ReceivedMonFromOak
 	waitmessage
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	waitfanfare
 	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_GiveNicknameToStarter
@@ -1178,7 +1178,7 @@ PalletTown_ProfessorOaksLab_EventScript_RivalTakesStarter::
 	bufferspeciesname STR_VAR_1, RIVAL_STARTER_SPECIES
 	message PalletTown_ProfessorOaksLab_Text_RivalReceivedMonFromOak
 	waitmessage
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	waitfanfare
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3
 	call_if_set FLAG_OPENED_START_MENU, PalletTown_ProfessorOaksLab_EventScript_ReadyEndSignLadyScene

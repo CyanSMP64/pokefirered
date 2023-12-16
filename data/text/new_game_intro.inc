@@ -2,94 +2,94 @@ gOtherText_NewName::
     .string "NEW NAME$"
 
 gNameChoice_Green::
-    .string "GREEN$"
+    .string "Chat$"
 
 gNameChoice_Red::
-    .string "RED$"
+    .string "Cyan$"
 
 gNameChoice_Leaf::
     .string "LEAF$"
 
 gNameChoice_Fire::
-    .string "FIRE$"
+    .string "COPIUM$"
 
 gNameChoice_Gary::
-    .string "GARY$"
+    .string "Kaizo$"
 
 gNameChoice_Kaz::
-    .string "KAZ$"
+    .string "Fart$"
 
 gNameChoice_Toru::
-    .string "TORU$"
+    .string "Skissue$"
 
 gNameChoice_Ash::
-    .string "ASH$"
+    .string "Pie$"
 
 gNameChoice_Kene::
-    .string "KENE$"
+    .string "Phil$"
 
 gNameChoice_Geki::
-    .string "GEKI$"
+    .string "Cali$"
 
 gNameChoice_Jak::
-    .string "JAK$"
+    .string "Salty$"
 
 gNameChoice_Janne::
-    .string "JANNE$"
+    .string "Reimi$"
 
 gNameChoice_Jonn::
-    .string "JONN$"
+    .string "Blue$"
 
 gNameChoice_Kamon::
-    .string "KAMON$"
+    .string "Tom$"
 
 gNameChoice_Karl::
-    .string "KARL$"
+    .string "Dubss$"
 
 gNameChoice_Taylor::
-    .string "TAYLOR$"
+    .string "Eiph$"
 
 gNameChoice_Oscar::
-    .string "OSCAR$"
+    .string "Light$"
 
 gNameChoice_Hiro::
-    .string "HIRO$"
+    .string "Smant$"
 
 gNameChoice_Max::
-    .string "MAX$"
+    .string "Crow$"
 
 gNameChoice_Jon::
-    .string "JON$"
+    .string "Croz$"
 
 gNameChoice_Ralph::
-    .string "RALPH$"
+    .string "Luce$"
 
 gNameChoice_Kay::
-    .string "KAY$"
+    .string "Joe$"
 
 gNameChoice_Tosh::
-    .string "TOSH$"
+    .string "Maple$"
 
 gNameChoice_Roak::
-    .string "ROAK$"
+    .string "PEPW$"
 
 gNameChoice_Omi::
-    .string "OMI$"
+    .string "Ame$"
 
 gNameChoice_Jodi::
-    .string "JODI$"
+    .string "Zac$"
 
 gNameChoice_Amanda::
-    .string "AMANDA$"
+    .string "Shrave$"
 
 gNameChoice_Hillary::
-    .string "HILLARY$"
+    .string "Shorts$"
 
 gNameChoice_Makey::
-    .string "MAKEY$"
+    .string "Aaaaaaa$"
 
 gNameChoice_Michi::
-    .string "MICHI$"
+    .string "?????$"
 
 gNameChoice_Paula::
     .string "PAULA$"
@@ -188,11 +188,7 @@ gPikachuIntro_Text_Page3::
 
 gOakSpeech_Text_WelcomeToTheWorld::
     .string "Hello, there!\n"
-    .string "Glad to meet you!\p"
-    .string "Welcome to the world of POKéMON!\p"
-    .string "My name is OAK.\p"
-    .string "People affectionately refer to me\n"
-    .string "as the POKéMON PROFESSOR.\p$"
+    .string "Welcome to the world of IronMON!\p$"
 
 gOakSpeech_Text_ThisWorld::
     .string "This world…$"
@@ -208,8 +204,9 @@ gOakSpeech_Text_IStudyPokemon::
     .string "I study POKéMON as a profession.\p$"
 
 gOakSpeech_Text_TellMeALittleAboutYourself::
-    .string "But first, tell me a little about\n"
-    .string "yourself.\p$"
+    .string "Hello, there!\n"
+    .string "Welcome to the world of IronMON!\p"
+    .string "Let's get this over with.\p$"
 
 gOakSpeech_Text_YourNameWhatIsIt::
     .string "Let's begin with your name.\n"

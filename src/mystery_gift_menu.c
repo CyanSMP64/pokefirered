@@ -16,7 +16,6 @@
 #include "mystery_gift_server.h"
 #include "mystery_gift_client.h"
 #include "wonder_news.h"
-#include "help_system.h"
 #include "strings.h"
 #include "decompress.h"
 #include "constants/cable_club.h"
@@ -423,7 +422,7 @@ bool32 HandleMysteryGiftOrEReaderSetup(s32 isEReader)
     case 3:
         ShowBg(0);
         ShowBg(3);
-        PlayBGM(MUS_MYSTERY_GIFT);
+        PlayBGM(MUS_RG_MYSTERY_GIFT);
         SetVBlankCallback(VBlankCB_MysteryGiftEReader);
         EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_VCOUNT | INTR_FLAG_TIMER3 | INTR_FLAG_SERIAL);
         return TRUE;
@@ -1595,7 +1594,6 @@ static void Task_MysteryGift(u8 taskId)
         break;
     case MG_STATE_EXIT:
         CloseLink();
-        HelpSystem_Enable();
         Free(data->clientMsg);
         DestroyTask(taskId);
         SetMainCallback2(MainCB_FreeAllBuffersAndReturnToInitTitleScreen);

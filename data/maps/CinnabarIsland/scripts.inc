@@ -15,7 +15,7 @@ CinnabarIsland_OnTransition::
 	end
 
 CinnabarIsland_EventScript_ReadyObjectsSailToOneIslandFromPokeCenter::
-	savebgm MUS_FOLLOW_ME
+	savebgm MUS_RG_FOLLOW_ME
 	setflag FLAG_TEMP_2
 	setobjectxyperm LOCALID_BILL, 15, 12
 	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_LEFT

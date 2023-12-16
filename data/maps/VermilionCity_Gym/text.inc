@@ -7,7 +7,7 @@ VermilionCity_Gym_Text_LtSurgeIntro::
     .string "saved me during the war!\p"
     .string "They zapped my enemies into\n"
     .string "paralysis!\p"
-    .string "The same as I'll do to you!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+    .string "The same as I'll do to you!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
 
 VermilionCity_Gym_Text_LtSurgePostBattle::
     .string "A little word of advice, kid!\p"

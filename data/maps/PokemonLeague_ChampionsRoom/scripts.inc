@@ -58,7 +58,7 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom::
 	goto_if_questlog PokemonLeague_ChampionsRoom_EventScript_QuestLogEnd
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5
-	savebgm MUS_VICTORY_GYM_LEADER
+	savebgm MUS_RG_VICTORY_GYM_LEADER
 	call_if_unset FLAG_SYS_CAN_LINK_WITH_RS, PokemonLeague_ChampionsRoom_EventScript_Battle
 	call_if_set FLAG_SYS_CAN_LINK_WITH_RS, PokemonLeague_ChampionsRoom_EventScript_Rematch
 	setflag FLAG_TEMP_4
@@ -66,7 +66,7 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom::
 	setflag FLAG_DEFEATED_CHAMP
 	setflag FLAG_TEMP_4
 	msgbox PokemonLeague_ChampionsRoom_Text_PostBattle
-	playbgm MUS_SLOW_PALLET, 0
+	playbgm MUS_RG_SLOW_PALLET, 0
 	addobject LOCALID_PROF_OAK
 	msgbox PokemonLeague_ChampionsRoom_Text_OakPlayer
 	closemessage

@@ -2916,7 +2916,7 @@ BattleScript_LocalTrainerBattleWon::
 	getmoneyreward BattleScript_LocalTrainerBattleWonGotMoney
 BattleScript_LocalTrainerBattleWonGotMoney::
 	printstring STRINGID_PLAYERGOTMONEY
-	waitmessage B_WAIT_TIME_LONG
+	waitmessage 0
 BattleScript_PayDayMoneyAndPickUpItems::
 	givepaydaymoney
 	pickup
@@ -3003,17 +3003,17 @@ BattleScript_BattleTowerEtcTrainerBattleWonSkipText::
 BattleScript_SmokeBallEscape::
 	playanimation BS_ATTACKER, B_ANIM_SMOKEBALL_ESCAPE
 	printstring STRINGID_PKMNFLEDUSINGITS
-	waitmessage B_WAIT_TIME_LONG
+	waitmessage 0
 	end2
 
 BattleScript_RanAwayUsingMonAbility::
 	printstring STRINGID_PKMNFLEDUSING
-	waitmessage B_WAIT_TIME_LONG
+	waitmessage 0
 	end2
 
 BattleScript_GotAwaySafely::
 	printstring STRINGID_GOTAWAYSAFELY
-	waitmessage B_WAIT_TIME_LONG
+	waitmessage 0
 	end2
 
 BattleScript_WildMonFled::

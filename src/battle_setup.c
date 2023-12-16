@@ -1,6 +1,5 @@
 #include "global.h"
 #include "task.h"
-#include "help_system.h"
 #include "overworld.h"
 #include "item.h"
 #include "sound.h"
@@ -190,7 +189,6 @@ static void Task_BattleStart(u8 taskId)
     case 0:
         if (!FldEffPoison_IsActive())
         {
-            HelpSystem_Disable();
             BattleTransition_StartOnField(tTransition);
             ++tState;
         }
@@ -198,7 +196,6 @@ static void Task_BattleStart(u8 taskId)
     case 1:
         if (IsBattleTransitionDone() == TRUE)
         {
-            HelpSystem_Enable();
             CleanupOverworldWindowsAndTilemaps();
             SetMainCallback2(CB2_InitBattle);
             RestartWildEncounterImmunitySteps();
@@ -262,7 +259,7 @@ void StartRoamerBattle(void)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_ROAMER;
-    CreateBattleStartTask(GetWildBattleTransition(), MUS_VS_LEGEND);
+    CreateBattleStartTask(GetWildBattleTransition(), MUS_RG_VS_LEGEND);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
@@ -356,20 +353,20 @@ void StartLegendaryBattle(void)
     switch (species)
     {
     case SPECIES_MEWTWO:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_MEWTWO);
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_MEWTWO);
         break;
     case SPECIES_DEOXYS:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_DEOXYS);
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
         break;
     case SPECIES_MOLTRES:
     case SPECIES_ARTICUNO:
     case SPECIES_ZAPDOS:
     case SPECIES_HO_OH:
     case SPECIES_LUGIA:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
     default:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_TRAINER);
         break;
     }
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
@@ -382,9 +379,9 @@ void StartGroudonKyogreBattle(void)
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_KYOGRE_GROUDON;
     if (gGameVersion == VERSION_FIRE_RED)
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RS_VS_TRAINER);
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_VS_TRAINER);
     else // pointless, exactly the same
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RS_VS_TRAINER);
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_VS_TRAINER);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
@@ -394,7 +391,7 @@ void StartRegiBattle(void)
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_REGI;
-    CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
+    CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_TRAINER);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
@@ -895,8 +892,8 @@ void ClearTrainerFlag(u16 trainerId)
 void StartTrainerBattle(void)
 {
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
-    if (GetTrainerBattleMode() == TRAINER_BATTLE_EARLY_RIVAL && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
-        gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
+//    if (GetTrainerBattleMode() == TRAINER_BATTLE_EARLY_RIVAL && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
+//        gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
     gMain.savedCallback = CB2_EndTrainerBattle;
     DoTrainerBattle();
     ScriptContext_Stop();
@@ -1016,7 +1013,7 @@ void PlayTrainerEncounterMusic(void)
         case TRAINER_ENCOUNTER_MUSIC_FEMALE:
         case TRAINER_ENCOUNTER_MUSIC_GIRL:
         case TRAINER_ENCOUNTER_MUSIC_TWINS:
-            music = MUS_ENCOUNTER_GIRL;
+            music = MUS_RG_ENCOUNTER_GIRL;
             break;
         case TRAINER_ENCOUNTER_MUSIC_MALE:
         case TRAINER_ENCOUNTER_MUSIC_INTENSE:
@@ -1026,10 +1023,10 @@ void PlayTrainerEncounterMusic(void)
         case TRAINER_ENCOUNTER_MUSIC_HIKER:
         case TRAINER_ENCOUNTER_MUSIC_INTERVIEWER:
         case TRAINER_ENCOUNTER_MUSIC_RICH:
-            music = MUS_ENCOUNTER_BOY;
+            music = MUS_RG_ENCOUNTER_BOY;
             break;
         default:
-            music = MUS_ENCOUNTER_ROCKET;
+            music = MUS_RG_ENCOUNTER_ROCKET;
             break;
         }
         PlayNewMapMusic(music);

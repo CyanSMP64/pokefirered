@@ -5,7 +5,7 @@ CeruleanCity_Gym_Text_MistyIntro::
     .string "What is your approach when you\n"
     .string "catch and train POKéMON?\p"
     .string "My policy is an all-out offensive\n"
-    .string "with WATER-type POKéMON!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+    .string "with WATER-type POKéMON!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
 
 CeruleanCity_Gym_Text_ExplainTM03::
     .string "TM03 teaches WATER PULSE.\p"

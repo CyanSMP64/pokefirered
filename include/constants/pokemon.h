@@ -112,7 +112,8 @@
 #define TYPE_ICE            15
 #define TYPE_DRAGON         16
 #define TYPE_DARK           17
-#define NUMBER_OF_MON_TYPES 18
+#define TYPE_FAIRY          18
+#define NUMBER_OF_MON_TYPES 19
 
 // Pokemon egg groups
 #define EGG_GROUP_NONE         0
@@ -206,7 +207,7 @@
 #define LEVEL_UP_MOVE_LV   0xFE00
 #define LEVEL_UP_END       0xFFFF
 
-#define MAX_LEVEL_UP_MOVES       20
+#define MAX_LEVEL_UP_MOVES       35
 
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE
@@ -222,6 +223,9 @@
 #define FRIENDSHIP_EVENT_FAINT_SMALL          7
 #define FRIENDSHIP_EVENT_FAINT_OUTSIDE_BATTLE 8
 #define FRIENDSHIP_EVENT_FAINT_LARGE          9
+
+// Friendship value that the majority of species use. This was changed in Generation 8 to 50.
+#define STANDARD_FRIENDSHIP 50
 
 #define MAX_FRIENDSHIP  255
 #define MAX_SHEEN       255
@@ -278,8 +282,12 @@
 #define EVO_LEVEL_NINJASK    13 // Pokémon reaches the specified level (special value for Ninjask)
 #define EVO_LEVEL_SHEDINJA   14 // Pokémon reaches the specified level (special value for Shedinja)
 #define EVO_BEAUTY           15 // Pokémon levels up with beauty ≥ specified value
+#define EVO_LEVEL_FEMALE     16 // Pokémon reaches the specified level, is female
+#define EVO_LEVEL_MALE       17 // Pokémon reaches the specified level, is male
+#define EVO_ITEM_MALE        18 // specified item is used on a male Pokémon
+#define EVO_ITEM_FEMALE      19 // specified item is used on a female Pokémon
 
-#define EVOS_PER_MON 5
+#define EVOS_PER_MON 8
 
 #define EVO_MODE_NORMAL     0
 #define EVO_MODE_TRADE      1

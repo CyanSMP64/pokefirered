@@ -1197,7 +1197,7 @@ static void SpriteCB_ThrowBall_DoClick(struct Sprite *sprite)
         gDoingBattleAnim = FALSE;
         UpdateOamPriorityInAllHealthboxes(1);
         m4aMPlayAllStop();
-        PlaySE(MUS_CAUGHT_INTRO);
+        PlaySE(MUS_RG_CAUGHT_INTRO);
     }
     else if (sprite->data[4] == 315)
     {

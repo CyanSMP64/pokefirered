@@ -5,7 +5,8 @@ extern const u8 gCgb3Vol[];
 
 #define BSS_CODE __attribute__((section(".bss.code")))
 
-BSS_CODE ALIGNED(4) char SoundMainRAM_Buffer[0x800] = {0};
+BSS_CODE ALIGNED(4) char SoundMainRAM_Buffer[0xB40] = {0};
+BSS_CODE ALIGNED(4) u32 hq_buffer_ptr[0x1C0] = {0};
 
 struct SoundInfo gSoundInfo;
 struct PokemonCrySong gPokemonCrySongs[MAX_POKEMON_CRIES];
@@ -38,7 +39,10 @@ u32 MidiKeyToFreq(struct WaveData *wav, u8 key, u8 fineAdjust)
     val2 = gScaleTable[key + 1];
     val2 = gFreqTable[val2 & 0xF] >> (val2 >> 4);
 
-    return umul3232H32(wav->freq, val1 + umul3232H32(val2 - val1, fineAdjustShifted));
+    if (umul3232H32(wav->freq, val1 + umul3232H32(val2 - val1, fineAdjustShifted)) <= 0xFFFFF)
+        return umul3232H32(wav->freq, val1 + umul3232H32(val2 - val1, fineAdjustShifted));
+    else
+        return 0xFFFFF;
 }
 
 void UnusedDummyFunc(void)
@@ -76,9 +80,9 @@ void m4aSoundInit(void)
     SoundInit(&gSoundInfo);
     MPlayExtender(gCgbChans);
     m4aSoundMode(SOUND_MODE_DA_BIT_8
-               | SOUND_MODE_FREQ_13379
+               | SOUND_MODE_FREQ_26758
                | (12 << SOUND_MODE_MASVOL_SHIFT)
-               | (5 << SOUND_MODE_MAXCHN_SHIFT));
+               | (15 << SOUND_MODE_MAXCHN_SHIFT));
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {

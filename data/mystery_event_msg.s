@@ -110,55 +110,6 @@ sText_FullParty:
 	.string "Please come see me after storing\n"
 	.string "a POKéMON on a PC.$"
 
-MysteryEventScript_VisitingTrainer::
-	setvaddress MysteryEventScript_VisitingTrainer
-	special ValidateEReaderTrainer
-	vgoto_if_eq VAR_RESULT, 0, MysteryEventScript_VisitingTrainerArrived
-	lock
-	faceplayer
-	vmessage sText_MysteryGiftVisitingTrainer
-	waitmessage
-	waitbuttonpress
-	release
-	end
-
-MysteryEventScript_VisitingTrainerArrived:
-	lock
-	faceplayer
-	vmessage sText_MysteryGiftVisitingTrainer_2
-	waitmessage
-	waitbuttonpress
-	release
-	end
-
-sText_MysteryGiftVisitingTrainer:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
-	.string "By holding this WONDER CARD, you\n"
-	.string "may take part in a survey at a\l"
-	.string "POKéMON MART.\p"
-	.string "Use these surveys to invite\n"
-	.string "TRAINERS to the SEVII ISLANDS.\p"
-	.string "…Let me give you a secret\n"
-	.string "password for a survey:\p"
-	.string "“GIVE ME\n"
-	.string "AWESOME TRAINER”\p"
-	.string "Write that in on a survey and send\n"
-	.string "it to the WIRELESS\l"
-	.string "COMMUNICATION SYSTEM.$"
-
-sText_MysteryGiftVisitingTrainer_2:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
-	.string "A TRAINER has arrived in the SEVII\n"
-	.string "ISLANDS looking for you.\p"
-	.string "We hope you will enjoy\n"
-	.string "battling the visiting TRAINER.\p"
-	.string "You may invite other TRAINERS by\n"
-	.string "entering other passwords.\p"
-	.string "Try looking for other passwords\n"
-	.string "that may work.$"
-
 MysteryEventScript_BattleCard::
 	setvaddress MysteryEventScript_BattleCard
 	vgoto_if_set FLAG_MYSTERY_GIFT_DONE, MysteryEventScript_BattleCardInfo

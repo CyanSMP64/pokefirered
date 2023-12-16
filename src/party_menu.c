@@ -5,7 +5,7 @@
 #include "battle_controllers.h"
 #include "battle_gfx_sfx_util.h"
 #include "battle_interface.h"
-#include "battle_tower.h"
+//#include "battle_tower.h"
 #include "berry_pouch.h"
 #include "data.h"
 #include "decompress.h"
@@ -20,7 +20,6 @@
 #include "fldeff.h"
 #include "graphics.h"
 #include "help_message.h"
-#include "help_system.h"
 #include "item.h"
 #include "item_menu.h"
 #include "item_use.h"
@@ -581,7 +580,6 @@ static bool8 ShowPartyMenu(void)
         ++gMain.state;
         break;
     case 19:
-        SetHelpContext(HELPCONTEXT_PARTY_MENU);
         ++gMain.state;
         break;
     case 20:
@@ -5687,15 +5685,6 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
     case CHOOSE_MONS_FOR_CABLE_CLUB_BATTLE:
         if (GetMonData(mon, MON_DATA_HP) == 0)
             return FALSE;
-        break;
-    case CHOOSE_MONS_FOR_BATTLE_TOWER:
-        if (gSaveBlock2Ptr->battleTower.battleTowerLevelType == 0 // level 50
-         && GetMonData(mon, MON_DATA_LEVEL) > 50)
-            return FALSE;
-        species = GetMonData(mon, MON_DATA_SPECIES);
-        for (; gBattleTowerBannedSpecies[i] != 0xFFFF; ++i)
-            if (gBattleTowerBannedSpecies[i] == species)
-                return FALSE;
         break;
     }
     return TRUE;

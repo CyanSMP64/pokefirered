@@ -42,6 +42,7 @@ void DisplayItemMessageOnField(u8 taskId, u8 fontId, const u8 *src, TaskFunc cal
 void DisplayYesNoMenuDefaultYes(void);
 void DisplayYesNoMenuDefaultNo(void);
 u8 GetTextSpeedSetting(void);
+u32 GetPlayerTextSpeed(void);
 u8 CreateStartMenuWindow(u8 height);
 u8 GetStartMenuWindowId(void);
 void RemoveStartMenuWindow(void);

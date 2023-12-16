@@ -4,7 +4,6 @@
 #include "battle_message.h"
 #include "data.h"
 #include "decompress.h"
-#include "help_system.h"
 #include "evolution_scene.h"
 #include "evolution_graphics.h"
 #include "link.h"
@@ -306,7 +305,6 @@ void EvolutionScene(struct Pokemon* mon, u16 postEvoSpecies, bool8 canStopEvo, u
     SetHBlankCallback(EvoDummyFunc);
     SetVBlankCallback(VBlankCB_EvolutionScene);
     m4aMPlayAllStop();
-    HelpSystem_Disable();
     SetMainCallback2(CB2_EvolutionSceneUpdate);
 }
 
@@ -787,8 +785,7 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_TRY_LEARN_MOVE:
         if (!IsTextPrinterActive(0))
         {
-            HelpSystem_Enable();
-            var = MonTryLearningNewMove(mon, gTasks[taskId].tLearnsFirstMove);
+            var = MonTryLearningNewMoveEvolution(mon, gTasks[taskId].tLearnsFirstMove);
             if (var != MOVE_NONE && !gTasks[taskId].tEvoWasStopped)
             {
                 u8 text[20];
@@ -1221,7 +1218,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_TRY_LEARN_MOVE:
         if (!IsTextPrinterActive(0) && IsFanfareTaskInactive() == TRUE)
         {
-            var = MonTryLearningNewMove(mon, gTasks[taskId].tLearnsFirstMove);
+            var = MonTryLearningNewMoveEvolution(mon, gTasks[taskId].tLearnsFirstMove);
             if (var != MOVE_NONE && !gTasks[taskId].tEvoWasStopped)
             {
                 u8 text[20];

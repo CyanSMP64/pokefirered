@@ -4,6 +4,7 @@
 #include "quest_log.h"
 #include "graphics.h"
 #include "dynamic_placeholder_text_util.h"
+#include "new_menu_helpers.h"
 #include "constants/songs.h"
 
 #define TAG_CURSOR 0x8000
@@ -35,9 +36,9 @@ static const u8 sDoubleArrowTiles2[]       = INCBIN_U8("graphics/fonts/down_arro
 
 static const u8 sDownArrowYCoords[]           = { 0, 16, 32, 16 };
 static const u8 sWindowVerticalScrollSpeeds[] = {
-    [OPTIONS_TEXT_SPEED_SLOW] = 1,
-    [OPTIONS_TEXT_SPEED_MID] = 2,
-    [OPTIONS_TEXT_SPEED_FAST] = 4,
+    [OPTIONS_TEXT_SPEED_SLOW] = 4,
+    [OPTIONS_TEXT_SPEED_MID] = 8,
+    [OPTIONS_TEXT_SPEED_FAST] = 255,
 };
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] = {
@@ -187,24 +188,42 @@ static const u16 sFontTallJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/japanese
 static const u16 sFontNormalLatinGlyphs[] = INCBIN_U16("graphics/fonts/latin_normal.latfont");
 static const u8 sFontNormalLatinGlyphWidths[] =
 {
-     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  8,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  6,  8,  6,  6,  6,  6,
-     6,  6,  9,  8,  8,  6,  6,  6,  6,  6, 10,  8,  5,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  8,
-     8,  8,  8,  8,  8,  4,  6,  8,  5,  5,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  6, 12, 12, 12, 12,  6,
-     6,  6,  6,  6,  6,  6,  8,  8,  8,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  8,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  5,  6,  5,  6,  6,  6,  3,  3,  6,
-     6,  8,  5,  9,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
-     6,  6,  6,  6,  6,  6,  6,  6,  5,  6,  6,  4,  6,  5,
-     5,  6,  5,  6,  6,  6,  5,  5,  5,  6,  6,  6,  6,  6,
-     6,  8,  5,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
+//  spc  À   Á   Â   Ç   È   É   Ê   Ë   Ì       Î   Ï   Ò
+     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // 00
+//   Ó   Ô   Œ   Ù   Ú   Û   Ñ   ß   à   á       ç   è   é
+     6,  6,  8,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // 0E
+//   ê   ë   ì       î   ï   ò   ó   ô   œ   ù   ú   û   ñ
+     6,  6,  6,  6,  6,  6,  6,  6,  6,  8,  6,  6,  6,  6, // 1C
+//   º   ª   ᵉʳ  &   +                       LV  =   ;   
+     6,  6,  9,  8,  8,  6,  6,  6,  6,  6, 10,  8,  5,  6, // 2A
+//
+     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // 38
+//                                               ¿   ¡   Pk
+     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  8, // 46
+//   Mn  Po  Ké  BL  OC  K   Í   %   (   )
+     8,  8,  8,  8,  8,  4,  6,  8,  5,  5,  6,  6,  6,  6, // 54
+//                           â                           í
+     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // 62
+//                                       ↑   ↓   ←   →
+     6,  6,  6,  6,  6,  6,  6,  6,  6, 12, 12, 12, 12,  6, // 70
+//                           ᵉ   <   >
+     6,  6,  6,  6,  6,  6,  8,  8,  8,  6,  6,  6,  6,  6, // 7E
+//
+     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // 8C
+//                           ʳᵉ  0   1   2   3   4   5   6
+     6,  6,  6,  6,  6,  6,  8,  6,  6,  6,  6,  6,  6,  6, // 9A
+//   7   8   9   !   ?   .   -   •   …   “   ”   ‘   ’   ♂
+     6,  6,  6,  6,  6,  5,  6,  5,  6,  6,  6,  3,  3,  6, // A8
+//   ♀   ¥   ,   ×   /   A   B   C   D   E   F   G   H   I
+     6,  8,  5,  9,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // B6
+//   J   K   L   M   N   O   P   Q   R   S   T   U   V   W
+     6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // C4
+//   X   Y   Z   a   b   c   d   e   f   g   h   i   j   k
+     6,  6,  6,  6,  6,  6,  6,  6,  5,  6,  6,  4,  6,  5, // D2
+//   l   m   n   o   p   q   r   s   t   u   v   w   x   y
+     5,  6,  5,  6,  6,  6,  5,  5,  5,  6,  6,  6,  6,  6, // E0
+//   z   ▶  :   Ä   Ö   Ü   ä   ö   ü
+     6,  8,  5,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6, // EE
      6,  6,  6,  6, 12, 12, 12, 12,  8, 10, 10, 10, 10, 10,
     10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
      6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
@@ -633,6 +652,7 @@ u16 RenderText(struct TextPrinter *textPrinter)
     u16 currChar;
     s32 width;
     s32 widthHelper;
+    u8 repeats;
 
     switch (textPrinter->state)
     {
@@ -655,6 +675,21 @@ u16 RenderText(struct TextPrinter *textPrinter)
             textPrinter->delayCounter = 1;
         else
             textPrinter->delayCounter = textPrinter->textSpeed;
+
+		switch (GetPlayerTextSpeed())
+		{
+			case OPTIONS_TEXT_SPEED_SLOW:
+				repeats = 1;
+				break;
+			case OPTIONS_TEXT_SPEED_MID:
+				repeats = 3;
+				break;
+			case OPTIONS_TEXT_SPEED_FAST:
+				repeats = 255;
+				break;
+		}
+		
+		do {
 
         currChar = *textPrinter->printerTemplate.currentChar;
         textPrinter->printerTemplate.currentChar++;
@@ -856,6 +891,10 @@ u16 RenderText(struct TextPrinter *textPrinter)
             else
                 textPrinter->printerTemplate.currentX += gGlyphInfo.width;
         }
+
+		repeats--;
+		
+	} while (repeats > 0);
         return RENDER_PRINT;
     case RENDER_STATE_WAIT:
         if (TextPrinterWait(textPrinter))

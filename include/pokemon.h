@@ -215,7 +215,7 @@ struct SpeciesInfo
  /* 0x05 */ u8 baseSpDefense;
  /* 0x06 */ u8 types[2];
  /* 0x08 */ u8 catchRate;
- /* 0x09 */ u8 expYield;
+            u8 filler09;
  /* 0x0A */ u16 evYield_HP:2;
  /* 0x0A */ u16 evYield_Attack:2;
  /* 0x0A */ u16 evYield_Defense:2;
@@ -233,6 +233,7 @@ struct SpeciesInfo
  /* 0x18 */ u8 safariZoneFleeRate;
  /* 0x19 */ u8 bodyColor : 7;
             u8 noFlip : 1;
+ /* 0x1A */ u16 expYield;
 };
 
 struct BattleMove
@@ -424,5 +425,6 @@ bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 bank);
 struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 battlePosition, u8 mode);
 void DestroyMonSpritesGfxManager(void);
 u8 *MonSpritesGfxManager_GetSpritePtr(u8 bufferId);
+u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 
 #endif // GUARD_POKEMON_H

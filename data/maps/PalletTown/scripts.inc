@@ -61,7 +61,7 @@ PalletTown_EventScript_OakRatingScene::
 	goto_if_lt VAR_0x8009, 60, PalletTown_EventScript_NotEnoughMonsForNationalDex
 	msgbox PalletTown_Text_CaughtXImpressiveFollowMe
 	closemessage
-	playbgm MUS_FOLLOW_ME, 0
+	playbgm MUS_RG_FOLLOW_ME, 0
 	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_Movement_PlayerWalkToLabFromHouse
 	applymovement LOCALID_PROF_OAK, PalletTown_Movement_OakWalkToLabFromHouse
 	waitmovement 0
@@ -185,7 +185,7 @@ PalletTown_EventScript_OakTrigger::
 	famechecker FAMECHECKER_OAK, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	textcolor NPC_TEXT_COLOR_MALE
 	delay 30
-	playbgm MUS_OAK, 0
+	playbgm MUS_RG_OAK, 0
 	message PalletTown_Text_OakDontGoOut
 	waitmessage
 	delay 85

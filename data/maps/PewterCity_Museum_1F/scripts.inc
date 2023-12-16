@@ -151,7 +151,7 @@ PewterCity_Museum_1F_EventScript_OldAmberScientist::
 	goto_if_eq VAR_RESULT, FALSE, PewterCity_Museum_1F_EventScript_NoRoomForOldAmber
 	setflag FLAG_GOT_OLD_AMBER
 	removeobject LOCALID_OLD_AMBER
-	giveitem_msg PewterCity_Museum_1F_Text_ReceivedOldAmberFromMan, ITEM_OLD_AMBER, 1, MUS_OBTAIN_KEY_ITEM
+	giveitem_msg PewterCity_Museum_1F_Text_ReceivedOldAmberFromMan, ITEM_OLD_AMBER, 1, MUS_RG_OBTAIN_KEY_ITEM
 	release
 	end
 

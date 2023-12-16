@@ -1,7 +1,7 @@
 #include "global.h"
 #include "gflib.h"
 #include "berry.h"
-#include "battle_tower.h"
+//#include "battle_tower.h"
 #include "easy_chat.h"
 #include "event_data.h"
 #include "mail_data.h"
@@ -281,8 +281,6 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
 bool8 MEScrCmd_addtrainer(struct ScriptContext *ctx)
 {
     u32 data = ScriptReadWord(ctx) - ctx->data[1] + ctx->data[0];
-    memcpy(&gSaveBlock2Ptr->battleTower.ereaderTrainer, (void *)data, sizeof(struct BattleTowerEReaderTrainer));
-    ValidateEReaderTrainer();
     StringExpandPlaceholders(gStringVar4, gText_MysteryGiftNewTrainer);
     ctx->data[2] = 2;
     return FALSE;

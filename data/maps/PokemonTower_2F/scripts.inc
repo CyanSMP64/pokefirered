@@ -21,7 +21,7 @@ PokemonTower_2F_EventScript_RivalTriggerDown::
 
 PokemonTower_2F_EventScript_Rival::
 	textcolor NPC_TEXT_COLOR_MALE
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	call_if_eq VAR_TEMP_1, 0, PokemonTower_2F_EventScript_RivalFacePlayerRight
 	call_if_eq VAR_TEMP_1, 1, PokemonTower_2F_EventScript_RivalFacePlayerDown
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
@@ -35,7 +35,7 @@ PokemonTower_2F_EventScript_Rival::
 	call_if_eq VAR_STARTER_MON, 0, PokemonTower_2F_EventScript_RivalCharmander
 	msgbox PokemonTower_2F_Text_RivalPostBattle
 	closemessage
-	playbgm MUS_RIVAL_EXIT, 0
+	playbgm MUS_RG_RIVAL_EXIT, 0
 	call_if_eq VAR_TEMP_1, 0, PokemonTower_2F_EventScript_RivalExitRight
 	call_if_eq VAR_TEMP_1, 1, PokemonTower_2F_EventScript_RivalExitDown
 	playse SE_EXIT

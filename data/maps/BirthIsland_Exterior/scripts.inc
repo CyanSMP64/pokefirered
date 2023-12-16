@@ -74,7 +74,7 @@ BirthIsland_Exterior_EventScript_Deoxys::
 	setfieldeffectargument 1, MAP_NUM(BIRTH_ISLAND_EXTERIOR)
 	setfieldeffectargument 2, MAP_GROUP(BIRTH_ISLAND_EXTERIOR)
 	dofieldeffect FLDEFF_DESTROY_DEOXYS_ROCK
-	playbgm MUS_ENCOUNTER_DEOXYS, 0
+	playbgm MUS_RG_ENCOUNTER_DEOXYS, 0
 	waitfieldeffect FLDEFF_DESTROY_DEOXYS_ROCK
 	applymovement LOCALID_DEOXYS, Movement_DeoxysApproach
 	waitmovement 0

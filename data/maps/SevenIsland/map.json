@@ -2,7 +2,7 @@
   "id": "MAP_SEVEN_ISLAND",
   "name": "SevenIsland",
   "layout": "LAYOUT_SEVEN_ISLAND",
-  "music": "MUS_SEVII_67",
+  "music": "MUS_RG_SEVII_67",
   "region_map_section": "MAPSEC_SEVEN_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -71,13 +71,6 @@
   ],
   "warp_events": [
     {
-      "x": 11,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_SEVEN_ISLAND_HOUSE_ROOM1",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 5,
       "y": 9,
       "elevation": 0,
@@ -99,7 +92,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

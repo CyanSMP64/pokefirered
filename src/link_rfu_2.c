@@ -71,12 +71,12 @@ struct RfuDebug
 static EWRAM_DATA INIT_PARAM sRfuReqConfig = {};
 static EWRAM_DATA struct RfuDebug sRfuDebug = {};
 
-static u32 sRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4];
+static EWRAM_DATA u32 sRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4] = {};
 static u8 sResendBlock8[CMD_LENGTH * 2];
 static u16 sResendBlock16[CMD_LENGTH];
 
 struct RfuGameData gHostRfuGameData;
-struct RfuManager gRfu;
+EWRAM_DATA struct RfuManager gRfu = {};
 u8 gHostRfuUsername[PLAYER_NAME_LENGTH + 1];
 
 static void InitChildRecvBuffers(void);

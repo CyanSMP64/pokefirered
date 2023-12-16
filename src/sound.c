@@ -59,9 +59,9 @@ static const struct Fanfare sFanfares[] = {
     [FANFARE_SLOTS_JACKPOT] = { MUS_SLOTS_JACKPOT,   250 },
     [FANFARE_SLOTS_WIN]     = { MUS_SLOTS_WIN,       150 },
     [FANFARE_TOO_BAD]       = { MUS_TOO_BAD,         160 },
-    [FANFARE_POKE_FLUTE]    = { MUS_POKE_FLUTE,      450 },
-    [FANFARE_KEY_ITEM]      = { MUS_OBTAIN_KEY_ITEM, 170 },
-    [FANFARE_DEX_EVAL]      = { MUS_DEX_RATING,      196 }
+    [FANFARE_POKE_FLUTE]    = { MUS_RG_POKE_FLUTE,      450 },
+    [FANFARE_KEY_ITEM]      = { MUS_RG_OBTAIN_KEY_ITEM, 170 },
+    [FANFARE_DEX_EVAL]      = { MUS_RG_DEX_RATING,      196 }
 };
 
 void InitMapMusic(void)
@@ -385,7 +385,7 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     
     // Set default values
     // May be overridden depending on mode.
-    length = 140;
+    length = 220;
     reverse = FALSE;
     release = 0;
     pitch = 15360;
@@ -493,6 +493,21 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
         break;
     case 3:
         gMPlay_PokemonCry = SetPokemonCryTone(GET_CRY(index, 3, reverse));
+        break;
+    case 4:
+        gMPlay_PokemonCry = SetPokemonCryTone(GET_CRY(index, 4, reverse));
+        break;
+    case 5:
+        gMPlay_PokemonCry = SetPokemonCryTone(GET_CRY(index, 5, reverse));
+        break;
+    case 6:
+        gMPlay_PokemonCry = SetPokemonCryTone(GET_CRY(index, 6, reverse));
+        break;
+    case 7:
+        gMPlay_PokemonCry = SetPokemonCryTone(GET_CRY(index, 7, reverse));
+        break;
+    case 8:
+        gMPlay_PokemonCry = SetPokemonCryTone(GET_CRY(index, 8, reverse));
         break;
     }
 
@@ -638,12 +653,10 @@ bool8 IsSpecialSEPlaying(void)
 
 void SetBGMVolume_SuppressHelpSystemReduction(u16 volume)
 {
-    gDisableHelpSystemVolumeReduce = TRUE;
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, volume);
 }
 
 void BGMVolumeMax_EnableHelpSystemReduction(void)
 {
-    gDisableHelpSystemVolumeReduce = FALSE;
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
 }

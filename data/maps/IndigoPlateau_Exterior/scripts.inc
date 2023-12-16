@@ -12,7 +12,7 @@ IndigoPlateau_Exterior_OnTransition::
 	end
 
 IndigoPlateau_Exterior_EventScript_PlayCreditsMusic::
-	playbgm MUS_CREDITS, 0
+	playbgm MUS_RG_CREDITS, 0
 	return
 
 IndigoPlateau_Exterior_OnFrame::

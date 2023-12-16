@@ -35,8 +35,8 @@ CinnabarIsland_PokemonCenter_1F_EventScript_Bill::
 	goto_if_eq VAR_RESULT, NO, CinnabarIsland_PokemonCenter_1F_EventScript_NotReadyToSail
 	msgbox CinnabarIsland_PokemonCenter_1F_Text_LetsGo
 	closemessage
-	playbgm MUS_FOLLOW_ME, 1
-	savebgm MUS_FOLLOW_ME
+	playbgm MUS_RG_FOLLOW_ME, 1
+	savebgm MUS_RG_FOLLOW_ME
 	setflag FLAG_DONT_TRANSITION_MUSIC
 	setflag FLAG_HIDE_CINNABAR_POKECENTER_BILL
 	delay 20

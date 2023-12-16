@@ -31,7 +31,7 @@ FourIsland_EventScript_RivalScene::
 	textcolor NPC_TEXT_COLOR_MALE
 	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48

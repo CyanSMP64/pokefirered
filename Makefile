@@ -217,7 +217,7 @@ clean: mostlyclean clean-tools
 
 tidy:
 	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map,.ini,.sym})
-#	$(RM) -r build
+	$(RM) -r build
 
 include graphics_file_rules.mk
 include tileset_rules.mk
@@ -263,7 +263,7 @@ $(C_BUILDDIR)/berry_crush_2.o: CFLAGS += -Wno-address-of-packed-member
 $(C_BUILDDIR)/berry_crush_3.o: CFLAGS += -Wno-address-of-packed-member
 $(C_BUILDDIR)/braille_text.o: CFLAGS += -Wno-address-of-packed-member
 $(C_BUILDDIR)/text.o: CFLAGS += -Wno-address-of-packed-member
-$(C_BUILDDIR)/battle_tower.o: CFLAGS += -Wno-div-by-zero
+//$(C_BUILDDIR)/battle_tower.o: CFLAGS += -Wno-div-by-zero
 $(C_BUILDDIR)/librfu_intr.o: override CFLAGS += -marm -mthumb-interwork -O2 -mtune=arm7tdmi -march=armv4t -mabi=apcs-gnu -fno-toplevel-reorder -fno-aggressive-loop-optimizations -Wno-pointer-to-int-cast
 endif
 
@@ -345,7 +345,7 @@ $(ELF): $(LD_SCRIPT) $(LD_SCRIPT_DEPS) $(OBJS)
 	$(FIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION) --silent
 
 $(ROM): $(ELF)
-	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0x9000000 $< $@
+	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0xA000000 $< $@
 
 # "friendly" target names for convenience sake
 firered:                ; @$(MAKE) GAME_VERSION=FIRERED

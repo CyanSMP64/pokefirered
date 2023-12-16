@@ -121,10 +121,10 @@ void RunTextPrinters(void)
         if (sTextPrinters[i].active)
         {
             u16 renderCmd = RenderFont(&sTextPrinters[i]);
+            CopyWindowToVram(sTextPrinters[i].printerTemplate.windowId, COPYWIN_GFX);
             switch (renderCmd)
             {
             case RENDER_PRINT:
-                CopyWindowToVram(sTextPrinters[i].printerTemplate.windowId, COPYWIN_GFX);
             case RENDER_UPDATE:
                 if (sTextPrinters[i].callback != NULL)
                     sTextPrinters[i].callback(&sTextPrinters[i].printerTemplate, renderCmd);
@@ -140,6 +140,10 @@ void RunTextPrinters(void)
 bool16 IsTextPrinterActive(u8 id)
 {
     return sTextPrinters[id].active;
+}
+
+void ClearTextSpan(struct TextPrinter *textPrinter, u32 width)
+{
 }
 
 u32 RenderFont(struct TextPrinter *textPrinter)
@@ -319,8 +323,4 @@ static void CopyGlyphToWindow_Parameterized(void *tileData, u16 currentX, u16 cu
             GLYPH_COPY(8, 8, glyphWidth - 8, glyphHeight - 8, tileData, currentX, currentY, sizeX);
             return;
     }
-}
-
-void ClearTextSpan(struct TextPrinter *textPrinter, u32 width)
-{
 }

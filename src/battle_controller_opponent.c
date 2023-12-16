@@ -11,7 +11,7 @@
 #include "battle_controllers.h"
 #include "battle_message.h"
 #include "battle_interface.h"
-#include "battle_tower.h"
+//#include "battle_tower.h"
 #include "battle_gfx_sfx_util.h"
 #include "battle_ai_script_commands.h"
 #include "battle_ai_switch_items.h"
@@ -1124,12 +1124,8 @@ static void OpponentHandleDrawTrainerPic(void)
 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
         trainerPicId = GetSecretBaseTrainerPicIndex();
-    else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
-        trainerPicId = GetBattleTowerTrainerFrontSpriteId();
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
         trainerPicId = GetTrainerTowerTrainerFrontSpriteId();
-    else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-        trainerPicId = GetEreaderTrainerFrontSpriteId();
     else
         trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
     DecompressTrainerFrontPic(trainerPicId, gActiveBattler);
@@ -1154,12 +1150,8 @@ static void OpponentHandleTrainerSlide(void)
 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
         trainerPicId = GetSecretBaseTrainerPicIndex();
-    else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
-        trainerPicId = GetBattleTowerTrainerFrontSpriteId();
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
         trainerPicId = GetTrainerTowerTrainerFrontSpriteId();
-    else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-        trainerPicId = GetEreaderTrainerFrontSpriteId();
     else
         trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
     DecompressTrainerFrontPic(trainerPicId, gActiveBattler);

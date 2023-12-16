@@ -12,7 +12,6 @@
 #include "field_player_avatar.h"
 #include "field_weather.h"
 #include "fieldmap.h"
-#include "help_system.h"
 #include "metatile_behavior.h"
 #include "new_menu_helpers.h"
 #include "overworld.h"
@@ -1284,7 +1283,6 @@ static bool8 FallWarpEffect_7(struct Task *task)
     {
         VarSet(VAR_TEMP_1, 1);
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_SURFING);
-        SetHelpContext(HELPCONTEXT_SURFING);
     }
     DestroyTask(FindTaskIdByFunc(Task_FallWarpFieldEffect));
     return FALSE;
@@ -2984,8 +2982,8 @@ u8 FldEff_UseSurf(void)
     u8 taskId = CreateTask(Task_FldEffUseSurf, 0xff);
     gTasks[taskId].data[15] = gFieldEffectArguments[0];
     Overworld_ClearSavedMusic();
-    if (Overworld_MusicCanOverrideMapMusic(MUS_SURF))
-        Overworld_ChangeMusicTo(MUS_SURF);
+    if (Overworld_MusicCanOverrideMapMusic(MUS_RG_SURF))
+        Overworld_ChangeMusicTo(MUS_RG_SURF);
     return FALSE;
 }
 
@@ -3060,7 +3058,6 @@ static void UseSurfEffect_5(struct Task *task)
         UnlockPlayerFieldControls();
         FieldEffectActiveListRemove(FLDEFF_USE_SURF);
         DestroyTask(FindTaskIdByFunc(Task_FldEffUseSurf));
-        SetHelpContext(HELPCONTEXT_SURFING);
     }
 }
 

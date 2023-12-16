@@ -32,7 +32,7 @@ CeruleanCave_B1F_EventScript_Mewtwo::
 	waitmessage
 	waitmoncry
 	delay 20
-	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	playbgm MUS_RG_ENCOUNTER_GYM_LEADER, 0
 	waitbuttonpress
 	setwildbattle SPECIES_MEWTWO, 70
 	setflag FLAG_SYS_SPECIAL_WILD_BATTLE

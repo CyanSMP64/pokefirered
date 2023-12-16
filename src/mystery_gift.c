@@ -8,11 +8,10 @@
 #include "util.h"
 #include "script.h"
 #include "event_data.h"
-#include "battle_tower.h"
+//#include "battle_tower.h"
 #include "new_game.h"
 #include "wonder_news.h"
 #include "mystery_gift_menu.h"
-#include "help_system.h"
 #include "mystery_gift.h"
 #include "strings.h"
 
@@ -160,7 +159,6 @@ void ClearSavedWonderCardAndRelated(void)
     ClearRamScript();
     ClearMysteryGiftFlags();
     ClearMysteryGiftVars();
-    ClearEReaderTrainer(&gSaveBlock2Ptr->battleTower.ereaderTrainer);
 }
 
 bool32 SaveWonderCard(const struct WonderCard * card)

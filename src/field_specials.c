@@ -14,14 +14,13 @@
 #include "field_specials.h"
 #include "region_map.h"
 #include "task.h"
-#include "battle_tower.h"
+//#include "battle_tower.h"
 #include "field_camera.h"
 #include "field_effect.h"
 #include "event_object_movement.h"
 #include "menu_indicators.h"
 #include "random.h"
 #include "mail_data.h"
-#include "help_system.h"
 #include "pokemon_storage_system.h"
 #include "script_menu.h"
 #include "data.h"
@@ -98,8 +97,8 @@ void ForcePlayerOntoBike(void)
 {
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
-    Overworld_SetSavedMusic(MUS_CYCLING);
-    Overworld_ChangeMusicTo(MUS_CYCLING);
+    Overworld_SetSavedMusic(MUS_RG_CYCLING);
+    Overworld_ChangeMusicTo(MUS_RG_CYCLING);
 }
 
 void ResetCyclingRoadChallengeData(void)
@@ -326,11 +325,6 @@ void RemoveCameraObject(void)
 {
     CameraObjectSetFollowedObjectId(GetPlayerAvatarObjectId());
     RemoveObjectEventByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
-}
-
-void BufferEReaderTrainerName(void)
-{
-    CopyEReaderTrainerName5(gStringVar1);
 }
 
 // Unused
@@ -1512,7 +1506,6 @@ static void Task_ListMenuRemoveScrollIndicatorArrowPair(u8 taskId)
 
 void ForcePlayerToStartSurfing(void)
 {
-    SetHelpContext(HELPCONTEXT_SURFING);
     SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_SURFING);
 }
 

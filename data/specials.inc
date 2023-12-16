@@ -239,22 +239,22 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special GetLeadMonFriendship
-	def_special BattleTowerMapScript2
-	def_special ChooseNextBattleTowerTrainer
-	def_special CheckPartyBattleTowerBanlist
-	def_special PrintBattleTowerTrainerGreeting
-	def_special BufferEReaderTrainerGreeting
-	def_special StartSpecialBattle
-	def_special SetBattleTowerProperty
-	def_special BattleTowerUtil
-	def_special SetBattleTowerParty
-	def_special SaveBattleTowerProgress
-	def_special BattleTower_SoftReset
-	def_special DetermineBattleTowerPrize
-	def_special GiveBattleTowerPrize
-	def_special AwardBattleTowerRibbons
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
 	def_special ChooseBattleTowerPlayerParty
-	def_special ValidateEReaderTrainer
+	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special ReducePlayerPartyToThree
 	def_special BedroomPC
@@ -293,7 +293,7 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
-	def_special BufferEReaderTrainerName
+	def_special NullFieldSpecial
 	def_special GetRandomSlotMachineId
 	def_special GetPlayerFacingDirection
 	def_special NullFieldSpecial  @ Abandoned Ship room key specials
@@ -330,7 +330,7 @@ gSpecials::
 	def_special DoFallWarp
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
-	def_special SetEReaderTrainerGfxId
+	def_special NullFieldSpecial
 	def_special StartSouthernIslandBattle
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
@@ -346,7 +346,7 @@ gSpecials::
 	def_special HasAllKantoMons
 	def_special IsMonOTNameNotPlayers
 	def_special NullFieldSpecial
-	def_special Dummy_TryEnableBravoTrainerBattleTower
+	def_special NullFieldSpecial
 	def_special DoesPartyHaveEnigmaBerry
 	def_special NullFieldSpecial
 	def_special SetPostgameFlags
@@ -389,9 +389,9 @@ gSpecials::
 	def_special TakePokemonFromRoute5Daycare
 	def_special DoSeagallopFerryScene
 	def_special DoesPlayerPartyContainSpecies
-	def_special Script_SetHelpContext
-	def_special BackupHelpContext
-	def_special RestoreHelpContext
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
 	def_special ValidateSavedWonderCard
 	def_special SetUnlockedPokedexFlags
 	def_special InitUnionRoom
@@ -408,7 +408,7 @@ gSpecials::
 	def_special ChooseMonForMoveTutor
 	def_special ChooseMonForWirelessMinigame
 	def_special SetBattledTrainerFlag
-	def_special SetHelpContextForMap
+	def_special NullFieldSpecial
 	def_special DoSSAnneDepartureCutscene
 	def_special IsPokemonJumpSpeciesInParty
 	def_special IsNationalPokedexEnabled
@@ -416,8 +416,8 @@ gSpecials::
 	def_special ShowPokemonJumpRecords
 	def_special BufferTMHMMoveName
 	def_special DaisyMassageServices
-	def_special HelpSystem_Disable
-	def_special HelpSystem_Enable
+	def_special NullFieldSpecial
+	def_special NullFieldSpecial
 	def_special SetPostgameFlags
 	def_special HasAtLeastOneBerry
 	def_special DisplayBerryPowderVendorMenu

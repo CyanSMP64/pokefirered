@@ -36,7 +36,7 @@ MtMoon_B2F_EventScript_BattleMiguel::
 	textcolor NPC_TEXT_COLOR_MALE
 	message MtMoon_B2F_Text_MiguelIntro
 	waitmessage
-	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	playbgm MUS_RG_ENCOUNTER_GYM_LEADER, 0
 	waitbuttonpress
 	setvar VAR_LAST_TALKED, LOCALID_MIGUEL
 	trainerbattle_no_intro TRAINER_SUPER_NERD_MIGUEL, MtMoon_B2F_Text_MiguelDefeat
@@ -60,7 +60,7 @@ MtMoon_B2F_EventScript_DomeFossil::
 	msgbox MtMoon_B2F_Text_YouWantDomeFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MtMoon_B2F_EventScript_DontTakeFossil
 	removeobject LOCALID_DOME_FOSSIL
-	giveitem_msg MtMoon_B2F_Text_ObtainedDomeFossil, ITEM_DOME_FOSSIL, 1, MUS_OBTAIN_KEY_ITEM
+	giveitem_msg MtMoon_B2F_Text_ObtainedDomeFossil, ITEM_DOME_FOSSIL, 1, MUS_RG_OBTAIN_KEY_ITEM
 	closemessage
 	special QuestLog_CutRecording
 	delay 10
@@ -68,7 +68,7 @@ MtMoon_B2F_EventScript_DomeFossil::
 	waitmovement 0
 	copyobjectxytoperm LOCALID_MIGUEL
 	textcolor NPC_TEXT_COLOR_MALE
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message MtMoon_B2F_Text_ThenThisFossilIsMine
 	waitmessage
 	waitfanfare
@@ -91,7 +91,7 @@ MtMoon_B2F_EventScript_HelixFossil::
 	msgbox MtMoon_B2F_Text_YouWantHelixFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MtMoon_B2F_EventScript_DontTakeFossil
 	removeobject LOCALID_HELIX_FOSSIL
-	giveitem_msg MtMoon_B2F_Text_ObtainedHelixFossil, ITEM_HELIX_FOSSIL, 1, MUS_OBTAIN_KEY_ITEM
+	giveitem_msg MtMoon_B2F_Text_ObtainedHelixFossil, ITEM_HELIX_FOSSIL, 1, MUS_RG_OBTAIN_KEY_ITEM
 	closemessage
 	special QuestLog_CutRecording
 	delay 10
@@ -99,7 +99,7 @@ MtMoon_B2F_EventScript_HelixFossil::
 	waitmovement 0
 	copyobjectxytoperm LOCALID_MIGUEL
 	textcolor NPC_TEXT_COLOR_MALE
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message MtMoon_B2F_Text_ThenThisFossilIsMine
 	waitmessage
 	waitfanfare

@@ -20,7 +20,6 @@
 #include "battle_controllers.h"
 #include "global.fieldmap.h"
 #include "teachy_tv.h"
-#include "help_system.h"
 #include "overworld.h"
 #include "graphics.h"
 #include "fieldmap.h"
@@ -487,14 +486,13 @@ static void TeachyTvMainCallback(void)
             gTasks[taskId].data[0] = TeachyTvSetupWindow();
             gTasks[taskId].data[1] = TeachyTvSetupObjEventAndOam();
             TeachyTvSetupScrollIndicatorArrowPair();
-            PlayNewMapMusic(MUS_TEACHY_TV_MENU);
+            PlayNewMapMusic(MUS_RG_TEACHY_TV_MENU);
             TeachyTvSetWindowRegs();
         }
         ScheduleBgCopyTilemapToVram(0);
         ScheduleBgCopyTilemapToVram(1);
         ScheduleBgCopyTilemapToVram(2);
         ScheduleBgCopyTilemapToVram(3);
-        SetHelpContextDontCheckBattle(HELPCONTEXT_BAG);
         BlendPalettes(PALETTES_ALL, 0x10, 0);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, 0);
         SetVBlankCallback(TeachyTvVblankHandler);
@@ -763,7 +761,7 @@ static void TTVcmd_TransitionRenderBg2TeachyTvGraphicInitNpcPos(u8 taskId)
         ScheduleBgCopyTilemapToVram(2);
         data[2] = 0;
         ++data[3];
-        PlayNewMapMusic(MUS_FOLLOW_ME);
+        PlayNewMapMusic(MUS_RG_FOLLOW_ME);
     }
 }
 
@@ -1044,7 +1042,7 @@ static void TTVcmd_End(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     if (data[2] == 0)
-        PlayNewMapMusic(MUS_TEACHY_TV_MENU);
+        PlayNewMapMusic(MUS_RG_TEACHY_TV_MENU);
     TeachyTvBg2AnimController();
     if (++data[2] > 63)
     {
@@ -1211,7 +1209,7 @@ static void TeachyTvRestorePlayerPartyCallback(void)
     if (gBattleOutcome == B_OUTCOME_DREW)
         SetTeachyTvControllerModeToResume();
     else
-        PlayNewMapMusic(MUS_FOLLOW_ME);
+        PlayNewMapMusic(MUS_RG_FOLLOW_ME);
     CB2_ReturnToTeachyTV();
 }
 

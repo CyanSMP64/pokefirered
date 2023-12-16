@@ -3216,7 +3216,7 @@ static void Cmd_getexp(void)
                 if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_POKEDUDE)) && gBattleMons[0].hp != 0 && !gBattleStruct->wildVictorySong)
                 {
                     BattleStopLowHpSound();
-                    PlayBGM(MUS_VICTORY_WILD);
+                    PlayBGM(MUS_RG_VICTORY_WILD);
                     gBattleStruct->wildVictorySong++;
                 }
 

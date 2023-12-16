@@ -24,6 +24,6 @@ extern struct MusicPlayerInfo gMPlayInfo_SE2;
 extern struct MusicPlayerInfo gMPlayInfo_SE3;
 extern struct SoundInfo gSoundInfo;
 
-extern const struct SongHeader mus_victory_gym_leader;
+extern const struct SongHeader mus_rg_victory_gym_leader;
 
 #endif //GUARD_M4A_H

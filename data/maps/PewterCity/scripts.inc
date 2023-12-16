@@ -18,7 +18,7 @@ PewterCity_EventScript_GymGuide::
 	faceplayer
 	msgbox PewterCity_Text_BrocksLookingForChallengersFollowMe
 	closemessage
-	playbgm MUS_FOLLOW_ME, 0
+	playbgm MUS_RG_FOLLOW_ME, 0
 	call_if_eq VAR_FACING, DIR_EAST, PewterCity_EventScript_WalkToGymEast
 	msgbox PewterCity_Text_GoTakeOnBrock
 	closemessage
@@ -286,7 +286,7 @@ PewterCity_EventScript_GymGuideTrigger::
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox PewterCity_Text_BrocksLookingForChallengersFollowMe
 	closemessage
-	playbgm MUS_FOLLOW_ME, 0
+	playbgm MUS_RG_FOLLOW_ME, 0
 	call_if_eq VAR_TEMP_1, 0, PewterCity_EventScript_WalkToGymTop
 	call_if_eq VAR_TEMP_1, 1, PewterCity_EventScript_WalkToGymMid
 	call_if_eq VAR_TEMP_1, 2, PewterCity_EventScript_WalkToGymBottom
@@ -440,7 +440,7 @@ PewterCity_EventScript_MuseumGuide::
 	msgbox PewterCity_Text_ReallyYouHaveToGo
 	closemessage
 	delay 10
-	playbgm MUS_FOLLOW_ME, 0
+	playbgm MUS_RG_FOLLOW_ME, 0
 	call_if_eq VAR_FACING, DIR_NORTH, PewterCity_EventScript_LeadToMuseumNorth
 	call_if_eq VAR_FACING, DIR_SOUTH, PewterCity_EventScript_LeadToMuseumSouth
 	call_if_eq VAR_FACING, DIR_WEST, PewterCity_EventScript_LeadToMuseumWest
@@ -702,7 +702,7 @@ PewterCity_EventScript_AideGiveRunningShoes::
 	call_if_eq VAR_TEMP_1, 3, PewterCity_EventScript_AideApproachPlayer3
 	msgbox PewterCity_Text_AskedToDeliverThis
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message PewterCity_Text_ReceivedRunningShoesFromAide
 	waitmessage
 	waitfanfare

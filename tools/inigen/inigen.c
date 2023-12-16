@@ -84,7 +84,8 @@ static const char * gTypeNames[] = {
     "Psychic",
     "Ice",
     "Dragon",
-    "Dark"
+    "Dark",
+    "Psychic" // "Fairy"
 };
 
 static const char * gPokeMarts[] = {
@@ -220,7 +221,7 @@ static int IsIntroNidoranF(const struct cs_insn * insn)
     && ops[0].type == ARM_OP_REG
     && ops[0].reg == ARM_REG_R0
     && ops[1].type == ARM_OP_IMM
-    && ops[1].imm == SPECIES_KIRLIA)
+    && ops[1].imm == SPECIES_NIDORAN_F)
     {
         return insn->address;
     }
@@ -236,7 +237,7 @@ static int IsIntroNidoranF2(const struct cs_insn * insn)
     && ops[0].type == ARM_OP_REG
     && ops[0].reg == ARM_REG_R2
     && ops[1].type == ARM_OP_IMM
-    && ops[1].imm == SPECIES_KIRLIA)
+    && ops[1].imm == SPECIES_NIDORAN_F)
     {
         return insn->address;
     }
@@ -483,8 +484,8 @@ int main(int argc, char ** argv)
     }
     print("]\n");
 
-//    print("IntroCryOffset=0x%X\n", (sym_get("Task_OakSpeech_IsInhabitedFarAndWide") + 0xbf) & 0x1FFFFFF);
-    config_set("IntroCryOffset", get_instr_addr(elfFile, "Task_OakSpeech_IsInhabitedFarAndWide", IsIntroNidoranF) & 0x1FFFFFF);
+    print("IntroCryOffset=0x%X\n", (sym_get("Task_OakSpeech_IsInhabitedFarAndWide") + 0xbf) & 0x1FFFFFF);
+//    config_set("IntroCryOffset", get_instr_addr(elfFile, "Task_OakSpeech_IsInhabitedFarAndWide", IsIntroNidoranF) & 0x1FFFFFF);
     config_set("IntroSpriteOffset", get_instr_addr(elfFile, "CreateNidoranFSprite", IsIntroNidoranF3) & 0x1FFFFFF);
     config_set("IntroOtherOffset", get_instr_addr(elfFile, "CreateNidoranFSprite", IsIntroNidoranF) & 0x1FFFFFF);
     print("ItemBallPic=%d\n", OBJ_EVENT_GFX_ITEM_BALL);
@@ -502,7 +503,6 @@ int main(int argc, char ** argv)
     print("PickupItemCount=%d\n", (Fr_gPickupItems->st_size / 4)); // hardcoded for now
     config_sym("TypeEffectivenessOffset", "gTypeEffectiveness");
     print("DeoxysStatPrefix=7F002301FFFF\n"); // hardcoded
-
     // These may need some fixing to support dynamic offsets.
     print("StaticPokemonSupport=1\n");
     for (int i = 0; i < len(gStaticPokemon); i++) {
@@ -643,3 +643,27 @@ int main(int argc, char ** argv)
  * 0x08a80200 - 0x08a80227 (random statics - roamers)   only 0xFF bytes
  * 
 ******************************************************************************/
+
+/***********************************************************************************
+ * 
+ * Task_OakSpeech_IsInhabitedFarAndWide        - 0x0812faf0
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+************************************************************************************/

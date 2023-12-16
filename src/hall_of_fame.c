@@ -6,7 +6,6 @@
 #include "save.h"
 #include "data.h"
 #include "m4a.h"
-#include "help_system.h"
 #include "hall_of_fame.h"
 #include "quest_log.h"
 #include "pc_screen_effect.h"
@@ -33,8 +32,8 @@ struct HallofFameMon
 {
     u32 tid;
     u32 personality;
-    u16 species:9;
-    u16 lvl:7;
+    u16 species;
+    u8 lvl;
     u8 nick[POKEMON_NAME_LENGTH];
 };
 
@@ -319,7 +318,6 @@ static bool8 InitHallOfFameScreen(void)
     switch (gMain.state)
     {
     case 0:
-        gHelpSystemEnabled = FALSE;
         SetVBlankCallback(NULL);
         ClearVramOamPltt_LoadHofPal();
         sHofGfxPtr = AllocZeroed(sizeof(struct HofGfx));
@@ -350,7 +348,7 @@ static bool8 InitHallOfFameScreen(void)
         if (!gPaletteFade.active)
         {
             SetMainCallback2(CB2_HofIdle);
-            PlayBGM(MUS_HALL_OF_FAME);
+            PlayBGM(MUS_RG_HALL_OF_FAME);
             return FALSE;
         }
         break;

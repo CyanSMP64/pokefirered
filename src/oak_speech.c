@@ -5,7 +5,6 @@
 #include "blend_palette.h"
 #include "text_window.h"
 #include "menu.h"
-#include "help_system.h"
 #include "new_menu_helpers.h"
 #include "event_scripts.h"
 #include "scanline_effect.h"
@@ -17,7 +16,7 @@
 #include "data.h"
 #include "constants/songs.h"
 
-#define INTRO_SPECIES SPECIES_KIRLIA
+#define INTRO_SPECIES SPECIES_NIDORAN_F
 
 enum
 {
@@ -587,19 +586,11 @@ static const u8 *const sControlsGuide_Pages2And3_Strings[CONTROLS_GUIDE_STRINGS_
 
 static const u8 *const sMaleNameChoices[] =
 {
-#if defined(FIRERED)
     gNameChoice_Red,
     gNameChoice_Fire,
     gNameChoice_Ash,
     gNameChoice_Kene,
     gNameChoice_Geki,
-#elif defined(LEAFGREEN)
-    gNameChoice_Green,
-    gNameChoice_Leaf,
-    gNameChoice_Gary,
-    gNameChoice_Kaz,
-    gNameChoice_Toru,
-#endif
     gNameChoice_Jak,
     gNameChoice_Janne,
     gNameChoice_Jonn,
@@ -613,50 +604,21 @@ static const u8 *const sMaleNameChoices[] =
     gNameChoice_Ralph,
     gNameChoice_Kay,
     gNameChoice_Tosh,
-    gNameChoice_Roak
-};
-
-static const u8 *const sFemaleNameChoices[] =
-{
-#if defined(FIRERED)
-    gNameChoice_Red,
-    gNameChoice_Fire,
-#elif defined(LEAFGREEN)
-    gNameChoice_Green,
-    gNameChoice_Leaf,
-#endif
+    gNameChoice_Roak,
     gNameChoice_Omi,
     gNameChoice_Jodi,
     gNameChoice_Amanda,
     gNameChoice_Hillary,
     gNameChoice_Makey,
     gNameChoice_Michi,
-    gNameChoice_Paula,
-    gNameChoice_June,
-    gNameChoice_Cassie,
-    gNameChoice_Rey,
-    gNameChoice_Seda,
-    gNameChoice_Kiko,
-    gNameChoice_Mina,
-    gNameChoice_Norie,
-    gNameChoice_Sai,
-    gNameChoice_Momo,
-    gNameChoice_Suzi
 };
 
 static const u8 *const sRivalNameChoices[] =
 {
-#if defined(FIRERED)
     gNameChoice_Green,
     gNameChoice_Gary,
     gNameChoice_Kaz,
     gNameChoice_Toru
-#elif defined(LEAFGREEN)
-    gNameChoice_Red,
-    gNameChoice_Ash,
-    gNameChoice_Kene,
-    gNameChoice_Geki
-#endif
 };
 
 enum
@@ -720,7 +682,6 @@ static void Task_NewGameScene(u8 taskId)
         ResetSpriteData();
         FreeAllSpritePalettes();
         ResetTempTileDataBuffers();
-        SetHelpContext(HELPCONTEXT_NEW_GAME);
         break;
     case 1:
         sOakSpeechResources = AllocZeroed(sizeof(*sOakSpeechResources));
@@ -770,13 +731,13 @@ static void Task_NewGameScene(u8 taskId)
         CopyBgTilemapBufferToVram(1);
         break;
     case 7:
-        CreateTopBarWindowLoadPalette(0, 30, 0, 13, 0x1C4);
-        FillBgTilemapBufferRect_Palette0(1, 0xD00F, 0,  0, 30, 2);
-        FillBgTilemapBufferRect_Palette0(1, 0xD002, 0,  2, 30, 1);
-        FillBgTilemapBufferRect_Palette0(1, 0xD00E, 0, 19, 30, 1);
-        ControlsGuide_LoadPage1();
+//        CreateTopBarWindowLoadPalette(0, 30, 0, 13, 0x1C4);
+//        FillBgTilemapBufferRect_Palette0(1, 0xD00F, 0,  0, 30, 2);
+//        FillBgTilemapBufferRect_Palette0(1, 0xD002, 0,  2, 30, 1);
+//        FillBgTilemapBufferRect_Palette0(1, 0xD00E, 0, 19, 30, 1);
+//        ControlsGuide_LoadPage1();
         gPaletteFade.bufferTransferDisabled = FALSE;
-        gTasks[taskId].tTextCursorSpriteId = CreateTextCursorSprite(0, 230, 149, 0, 0);
+//        gTasks[taskId].tTextCursorSpriteId = CreateTextCursorSprite(0, 230, 149, 0, 0);
         BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
         break;
     case 10:
@@ -785,8 +746,8 @@ static void Task_NewGameScene(u8 taskId)
         ShowBg(0);
         ShowBg(1);
         SetVBlankCallback(VBlankCB_NewGameScene);
-        PlayBGM(MUS_NEW_GAME_INSTRUCT);
-        gTasks[taskId].func = Task_ControlsGuide_HandleInput;
+//        PlayBGM(MUS_RG_NEW_GAME_INSTRUCT);
+        gTasks[taskId].func = Task_OakSpeech_Init;
         gMain.state = 0;
         return;
     }
@@ -949,7 +910,7 @@ static void Task_PikachuIntro_LoadPage1(u8 taskId)
     }
     else
     {
-        PlayBGM(MUS_NEW_GAME_INTRO);
+        PlayBGM(MUS_RG_NEW_GAME_INTRO);
         ClearTopBarWindow();
         TopBarWindowPrintString(gText_ABUTTONNext, 0, 1);
         sOakSpeechResources->pikachuIntroTilemap = MallocAndDecompress(sPikachuIntro_Background_Tilemap, &size);
@@ -1050,7 +1011,7 @@ static void Task_PikachuIntro_HandleInput(u8 taskId)
         break;
     case PIKACHU_INTRO_EXIT:
         DestroyTextCursorSprite(gTasks[taskId].tTextCursorSpriteId);
-        PlayBGM(MUS_NEW_GAME_EXIT);
+        PlayBGM(MUS_RG_NEW_GAME_EXIT);
         tBlendTarget = 24;
         gMain.state++;
         break;
@@ -1113,9 +1074,9 @@ static void Task_OakSpeech_Init(u8 taskId)
         CreateNidoranFSprite(taskId);
         LoadTrainerPic(OAK_PIC, 0);
         CreatePikachuOrPlatformSprites(taskId, SPRITE_TYPE_PLATFORM);
-        PlayBGM(MUS_ROUTE24);
-        BeginNormalPaletteFade(PALETTES_ALL, 5, 16, 0, RGB_BLACK);
-        tTimer = 80;
+        PlayBGM(MUS_RG_ROUTE24);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        tTimer = 0;
         ShowBg(2);
         gTasks[taskId].func = Task_OakSpeech_WelcomeToTheWorld;
     }
@@ -1146,8 +1107,8 @@ static void Task_OakSpeech_WelcomeToTheWorld(u8 taskId)
         }
         else
         {
-            OakSpeechPrintMessage(gOakSpeech_Text_WelcomeToTheWorld, sOakSpeechResources->textSpeed);
-            gTasks[taskId].func = Task_OakSpeech_ThisWorld;
+            OakSpeechPrintMessage(gOakSpeech_Text_TellMeALittleAboutYourself, sOakSpeechResources->textSpeed);
+            gTasks[taskId].func = Task_OakSpeech_FadeOutOak;
         }
     }
 }
@@ -1258,8 +1219,8 @@ static void Task_OakSpeech_FadeOutOak(u8 taskId)
     if (!IsTextPrinterActive(WIN_INTRO_TEXTBOX))
     {
         ClearDialogWindowAndFrame(WIN_INTRO_TEXTBOX, 1);
-        CreateFadeInTask(taskId, 2);
-        tTimer = 48;
+        CreateFadeInTask(taskId, 0);
+        tTimer = 0;
         gTasks[taskId].func = Task_OakSpeech_AskPlayerGender;
     }
 }
@@ -1300,7 +1261,7 @@ static void Task_OakSpeech_ShowGenderOptions(u8 taskId)
         sOakSpeechResources->textColor[1] = 2;
         sOakSpeechResources->textColor[2] = 3;
         AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 17, sOakSpeechResources->textColor, 0, gText_Girl);
-        Menu_InitCursor(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 0, 1, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) + 2, 2, 0);
+        Menu_InitCursor(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 0, 1, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) + 2, 2, 1);
         CopyWindowToVram(gTasks[taskId].tMenuWindowId, COPYWIN_FULL);
         gTasks[taskId].func = Task_OakSpeech_HandleGenderInput;
     }
@@ -1343,8 +1304,8 @@ static void Task_OakSpeech_LoadPlayerPic(u8 taskId)
         LoadTrainerPic(MALE_PLAYER_PIC, 0);
     else
         LoadTrainerPic(FEMALE_PLAYER_PIC, 0);
-    CreateFadeOutTask(taskId, 2);
-    gTasks[taskId].tTimer = 32;
+    CreateFadeOutTask(taskId, 0);
+    gTasks[taskId].tTimer = 0;
     gTasks[taskId].func = Task_OakSpeech_YourNameWhatIsIt;
 }
 
@@ -1470,7 +1431,7 @@ static void Task_OakSpeech_ConfirmName(u8 taskId)
                 StringExpandPlaceholders(gStringVar4, gOakSpeech_Text_ConfirmRivalName);
             OakSpeechPrintMessage(gStringVar4, sOakSpeechResources->textSpeed);
             tNameNotConfirmed = FALSE;
-            tTimer = 25;
+            tTimer = 0;
         }
         else if (!IsTextPrinterActive(WIN_INTRO_TEXTBOX))
         {
@@ -1494,11 +1455,11 @@ static void Task_OakSpeech_HandleConfirmNameInput(u8 taskId)
     {
     case 0: // YES
         PlaySE(SE_SELECT);
-        gTasks[taskId].tTimer = 40;
+        gTasks[taskId].tTimer = 0;
         if (sOakSpeechResources->hasPlayerBeenNamed == FALSE)
         {
             ClearDialogWindowAndFrame(WIN_INTRO_TEXTBOX, TRUE);
-            CreateFadeInTask(taskId, 2);
+            CreateFadeInTask(taskId, 0);
             gTasks[taskId].func = Task_OakSpeech_FadeOutPlayerPic;
         }
         else
@@ -1538,7 +1499,7 @@ static void Task_OakSpeech_FadeOutRivalPic(u8 taskId)
     if (!IsTextPrinterActive(WIN_INTRO_TEXTBOX))
     {
         ClearDialogWindowAndFrame(WIN_INTRO_TEXTBOX, TRUE);
-        CreateFadeInTask(taskId, 2);
+        CreateFadeInTask(taskId, 0);
         gTasks[taskId].func = Task_OakSpeech_ReshowPlayersPic;
     }
 }
@@ -1549,7 +1510,7 @@ static void Task_OakSpeech_FadeInRivalPic(u8 taskId)
     gTasks[taskId].tTrainerPicPosX = 0;
     gSpriteCoordOffsetX = 0;
     LoadTrainerPic(RIVAL_PIC, 0);
-    CreateFadeOutTask(taskId, 2);
+    CreateFadeOutTask(taskId, 0);
     gTasks[taskId].func = Task_OakSpeech_AskRivalsName;
 }
 
@@ -1585,7 +1546,7 @@ static void Task_OakSpeech_ReshowPlayersPic(u8 taskId)
             gTasks[taskId].tTrainerPicPosX = 0;
             gSpriteCoordOffsetX = 0;
             ChangeBgX(2, 0, BG_COORD_SET);
-            CreateFadeOutTask(taskId, 2);
+            CreateFadeOutTask(taskId, 0);
             gTasks[taskId].func = Task_OakSpeech_LetsGo;
         }
     }
@@ -1597,7 +1558,7 @@ static void Task_OakSpeech_LetsGo(u8 taskId)
     {
         StringExpandPlaceholders(gStringVar4, gOakSpeech_Text_LetsGo);
         OakSpeechPrintMessage(gStringVar4, sOakSpeechResources->textSpeed);
-        gTasks[taskId].tTimer = 30;
+        gTasks[taskId].tTimer = 0;
         gTasks[taskId].func = Task_OakSpeech_FadeOutBGM;
     }
 }
@@ -2126,7 +2087,7 @@ static void PrintNameChoiceOptions(u8 taskId, u8 hasPlayerBeenNamed)
     FillWindowPixelBuffer(gTasks[taskId].tMenuWindowId, PIXEL_FILL(1));
     AddTextPrinterParameterized(tMenuWindowId, FONT_NORMAL, gOtherText_NewName, 8, 1, 0, NULL);
     if (hasPlayerBeenNamed == FALSE)
-        textPtrs = gSaveBlock2Ptr->playerGender == MALE ? sMaleNameChoices : sFemaleNameChoices;
+        textPtrs = sMaleNameChoices;
     else
         textPtrs = sRivalNameChoices;
     for (i = 0; i < ARRAY_COUNT(sRivalNameChoices); i++)
@@ -2142,10 +2103,7 @@ static void GetDefaultName(u8 hasPlayerBeenNamed, u8 rivalNameChoice)
     u8 i;
     if (hasPlayerBeenNamed == FALSE)
     {
-        if (gSaveBlock2Ptr->playerGender == MALE)
-            src = sMaleNameChoices[Random() % ARRAY_COUNT(sMaleNameChoices)];
-        else
-            src = sFemaleNameChoices[Random() % ARRAY_COUNT(sFemaleNameChoices)];
+        src = sMaleNameChoices[Random() % ARRAY_COUNT(sMaleNameChoices)];
         dest = gSaveBlock2Ptr->playerName;
     }
     else

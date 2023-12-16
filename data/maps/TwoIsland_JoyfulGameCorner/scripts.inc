@@ -73,7 +73,7 @@ TwoIsland_JoyfulGameCorner_EventScript_HelpFindLostelleScene::
 	waitse
 	applymovement OBJ_EVENT_ID_PLAYER, TwoIsland_JoyfulGameCorner_Movement_PlayerFaceDaddy
 	waitmovement 0
-	playbgm MUS_ENCOUNTER_BOY, 0
+	playbgm MUS_RG_ENCOUNTER_BOY, 0
 	addobject LOCALID_BIKER
 	applymovement LOCALID_BIKER, TwoIsland_JoyfulGameCorner_Movement_BikerLookAround
 	waitmovement 0

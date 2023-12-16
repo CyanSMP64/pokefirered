@@ -252,8 +252,6 @@ bool8 RS_IsRunningDisallowed(u8 r0)
 
 bool32 IsRunningDisallowed(u8 metatileBehavior)
 {
-    if (!gMapHeader.allowRunning)
-        return TRUE;
     if (MetatileBehaviorForbidsBiking(metatileBehavior) != TRUE)
         return FALSE;
     else
@@ -323,10 +321,10 @@ void GetOnOffBike(u8 flags)
     else
     {
         SetPlayerAvatarTransitionFlags(flags);
-        if (Overworld_MusicCanOverrideMapMusic(MUS_CYCLING))
+        if (Overworld_MusicCanOverrideMapMusic(MUS_RG_CYCLING))
         {
-            Overworld_SetSavedMusic(MUS_CYCLING);
-            Overworld_ChangeMusicTo(MUS_CYCLING);
+            Overworld_SetSavedMusic(MUS_RG_CYCLING);
+            Overworld_ChangeMusicTo(MUS_RG_CYCLING);
         }
     }
 }

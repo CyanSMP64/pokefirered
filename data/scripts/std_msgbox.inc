@@ -30,7 +30,7 @@ Std_MsgboxYesNo::
 Std_ReceivedItem::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	call_if_eq VAR_0x8002, MUS_LEVEL_UP, EventScript_ReceivedItemFanfare1
-	call_if_eq VAR_0x8002, MUS_OBTAIN_KEY_ITEM, EventScript_ReceivedItemFanfare2
+	call_if_eq VAR_0x8002, MUS_RG_OBTAIN_KEY_ITEM, EventScript_ReceivedItemFanfare2
 	message 0x0
 	waitmessage
 	waitfanfare
@@ -44,7 +44,7 @@ EventScript_ReceivedItemFanfare1::
 	return
 
 EventScript_ReceivedItemFanfare2::
-	playfanfare MUS_OBTAIN_KEY_ITEM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	return
 
 EventScript_ReceivedItemWaitFanfare::
