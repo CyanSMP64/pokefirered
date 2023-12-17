@@ -996,7 +996,7 @@ static void BuyMenuSubtractMoney(u8 taskId)
 {
     IncrementGameStat(GAME_STAT_SHOPPED);
     RemoveMoney(&gSaveBlock1Ptr->money, gShopData.itemPrice);
-    PlaySE(SE_SHOP);
+    PlaySE(SE_RG_SHOP);
     PrintMoneyAmountInMoneyBox(0, GetMoney(&gSaveBlock1Ptr->money), 0);
     gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
 }

@@ -1184,7 +1184,7 @@ static void SpriteCB_ThrowBall_DoClick(struct Sprite *sprite)
     sprite->data[4]++;
     if (sprite->data[4] == 40)
     {
-        PlaySE(SE_BALL_CLICK);
+        PlaySE(SE_RG_BALL_CLICK);
         BlendPalettes(0x10000 << sprite->oam.paletteNum, 6, RGB_BLACK);
         CreateStarsWhenBallClicks(sprite);
     }

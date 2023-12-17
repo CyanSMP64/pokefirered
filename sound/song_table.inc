@@ -7,7 +7,7 @@ gSongTable::
 	song se_select, 2, 2
 	song se_win_open, 1, 1
 	song se_wall_hit, 2, 2
-	song se_rs_door, 1, 1
+	song se_door, 1, 1
 	song se_exit, 1, 1
 	song se_ledge, 1, 1
 	song se_bike_bell, 1, 1
@@ -87,7 +87,7 @@ gSongTable::
 	song se_roulette_ball, 2, 2
 	song se_roulette_ball2, 2, 2
 	song se_taillow_wing_flap, 1, 1
-	song se_rs_shop, 1, 1
+	song se_shop, 1, 1
 	song se_contest_heart, 1, 1
 	song se_contest_curtain_rise, 1, 1
 	song se_contest_curtain_fall, 1, 1
@@ -240,21 +240,21 @@ gSongTable::
 	song se_m_stat_decrease, 1, 1
 	song se_m_haze, 1, 1
 	song se_m_hyper_beam2, 1, 1
-	song se_door, 1, 1
-	song se_card_flip, 1, 1
-	song se_card_flipping, 1, 1
-	song se_card_open, 1, 1
-	song se_bag_cursor, 1, 1
-	song se_bag_pocket, 1, 1
-	song se_ball_click, 1, 1
-	song se_shop, 1, 1
-	song se_ss_anne_horn, 1, 1
-	song se_help_open, 1, 1
-	song se_help_close, 1, 1
-	song se_help_error, 1, 1
-	song se_deoxys_move, 1, 1
-	song se_poke_jump_success, 1, 1
-	song se_poke_jump_failure, 1, 1
+	song se_rg_door, 1, 1
+	song se_rg_card_flip, 1, 1
+	song se_rg_card_flipping, 1, 1
+	song se_rg_card_open, 1, 1
+	song se_rg_bag_cursor, 1, 1
+	song se_rg_bag_pocket, 1, 1
+	song se_rg_ball_click, 1, 1
+	song se_rg_shop, 1, 1
+	song se_rg_ss_anne_horn, 1, 1
+	song se_rg_help_open, 1, 1
+	song se_rg_help_close, 1, 1
+	song se_rg_help_error, 1, 1
+	song se_rg_deoxys_move, 1, 1
+	song se_rg_poke_jump_success, 1, 1
+	song se_rg_poke_jump_failure, 1, 1
 	song mus_heal, 2, 2
 	song mus_level_up, 2, 2
 	song mus_obtain_item, 2, 2

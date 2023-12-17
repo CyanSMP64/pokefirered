@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_shop
+	.global se_rg_shop
 	.align 2
 	.equ se_shop_grp, voicegroup129
 	.equ se_shop_pri, 5
@@ -25,7 +25,7 @@ se_shop_1: @ 86BC830
 
 @ ***************************************
 	.align 2
-se_shop: @ 86BC848
+se_rg_shop: @ 86BC848
 	.byte 1
 	.byte 0
 	.byte se_shop_pri

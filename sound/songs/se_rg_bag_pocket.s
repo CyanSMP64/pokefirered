@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_bag_pocket
+	.global se_rg_bag_pocket
 	.align 2
 	.equ se_bag_pocket_grp, voicegroup129
 	.equ se_bag_pocket_pri, 5
@@ -48,7 +48,7 @@ se_bag_pocket_2: @ 86BC7C4
 
 @ ***************************************
 	.align 2
-se_bag_pocket: @ 86BC7E0
+se_rg_bag_pocket: @ 86BC7E0
 	.byte 2
 	.byte 0
 	.byte se_bag_pocket_pri

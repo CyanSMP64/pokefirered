@@ -959,7 +959,7 @@ static void MainTask_SlotsGameLoop(u8 taskId)
         {
             sSlotMachineState->bet++;
             RemoveCoins(1);
-            PlaySE(SE_RS_SHOP);
+            PlaySE(SE_SHOP);
             SetSlotMachineSetupTask(SLOTTASK_SHOW_AMOUNTS, 0);
             SetSlotMachineSetupTask(SLOTTASK_UPDATE_LINE_LIGHTS, 1);
             data[0] = 1;
@@ -977,7 +977,7 @@ static void MainTask_SlotsGameLoop(u8 taskId)
                 sSlotMachineState->bet += GetCoins();
                 SetCoins(0);
             }
-            PlaySE(SE_RS_SHOP);
+            PlaySE(SE_SHOP);
             SetSlotMachineSetupTask(SLOTTASK_SHOW_AMOUNTS, 0);
             SetSlotMachineSetupTask(SLOTTASK_UPDATE_LINE_LIGHTS, 1);
             data[0] = 1;

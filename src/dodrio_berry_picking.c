@@ -3874,7 +3874,7 @@ static const u8 sUnusedSounds[] = {
     SE_NOTE_A,
     SE_NOTE_B,
     SE_NOTE_C_HIGH,
-    SE_CARD_OPEN
+    SE_RG_CARD_OPEN
 };
 
 static void LoadBerryGfx(void)

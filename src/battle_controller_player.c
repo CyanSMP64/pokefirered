@@ -1219,7 +1219,7 @@ static void Task_CreateLevelUpVerticalStripes(u8 taskId)
         ++data[15];
         break;
     case 2:
-        PlaySE(SE_RS_SHOP);
+        PlaySE(SE_SHOP);
         if (IsMonGettingExpSentOut())
             CreateLevelUpVerticalSpritesTask(sprite->x + sprite->x2,
                         sprite->y + sprite->y2,

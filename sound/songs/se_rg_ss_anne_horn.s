@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_ss_anne_horn
+	.global se_rg_ss_anne_horn
 	.align 2
 	.equ se_ss_anne_horn_grp, voicegroup129
 	.equ se_ss_anne_horn_pri, 5
@@ -147,7 +147,7 @@ se_ss_anne_horn_2: @ 86BC8CB
 
 @ ***************************************
 	.align 2
-se_ss_anne_horn: @ 86BC900
+se_rg_ss_anne_horn: @ 86BC900
 	.byte 2
 	.byte 0
 	.byte se_ss_anne_horn_pri

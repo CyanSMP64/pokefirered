@@ -83,7 +83,7 @@ void DoSSAnneDepartureCutscene(void)
 {
     u8 taskId;
 
-    PlaySE(SE_SS_ANNE_HORN);
+    PlaySE(SE_RG_SS_ANNE_HORN);
     taskId = CreateTask(Task_SSAnneInit, 8);
     gTasks[taskId].data[0] = 50;
 }
@@ -118,7 +118,7 @@ static void Task_SSAnneRun(u8 taskId)
     boatObject = &gObjectEvents[objectEventId];
     if (gSprites[boatObject->spriteId].x + gSprites[boatObject->spriteId].x2 < -120)
     {
-        PlaySE(SE_SS_ANNE_HORN);
+        PlaySE(SE_RG_SS_ANNE_HORN);
         gTasks[taskId].func = Task_SSAnneFinish;
     }
     else

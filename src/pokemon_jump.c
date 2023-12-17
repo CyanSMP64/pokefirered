@@ -2210,7 +2210,7 @@ static void SetMonStateNormal(void)
     sPokemonJump->player->monState = MONSTATE_NORMAL;
 }
 
-static const u16 sSoundEffects[MAX_RFU_PLAYERS - 1] = {SE_RS_SHOP, SE_SHINY, SE_M_MORNING_SUN, SE_POKE_JUMP_SUCCESS};
+static const u16 sSoundEffects[MAX_RFU_PLAYERS - 1] = {SE_SHOP, SE_SHINY, SE_M_MORNING_SUN, SE_RG_POKE_JUMP_SUCCESS};
 
 static void UpdateGame(void)
 {
@@ -2291,7 +2291,7 @@ static void HandleMonState(void)
     }
 
     if (soundFlags & F_SE_FAIL)
-        PlaySE(SE_POKE_JUMP_FAILURE);
+        PlaySE(SE_RG_POKE_JUMP_FAILURE);
     else if (soundFlags & F_SE_JUMP)
         PlaySE(SE_LEDGE);
 }

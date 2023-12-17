@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_card_open
+	.global se_rg_card_open
 	.align 2
 	.equ se_card_open_grp, voicegroup129
 	.equ se_card_open_pri, 5
@@ -105,7 +105,7 @@ se_card_open_2: @ 86BC74D
 
 @ ***************************************
 	.align 2
-se_card_open: @ 86BC764
+se_rg_card_open: @ 86BC764
 	.byte 2
 	.byte 0
 	.byte se_card_open_pri

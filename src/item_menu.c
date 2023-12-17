@@ -673,7 +673,7 @@ static void BagListMenuMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMe
 {
     if (onInit != TRUE)
     {
-        PlaySE(SE_BAG_CURSOR);
+        PlaySE(SE_RG_BAG_CURSOR);
         ShakeBagSprite();
     }
     if (sBagMenuDisplay->itemOriginalLocation == 0xFF)
@@ -1126,14 +1126,14 @@ static u8 ProcessPocketSwitchInput(u8 taskId, u8 pocketId)
     {
         if (pocketId == POCKET_ITEMS - 1)
             return 0;
-        PlaySE(SE_BAG_POCKET);
+        PlaySE(SE_RG_BAG_POCKET);
         return 1;
     }
     if (JOY_NEW(DPAD_RIGHT) || lrState == MENU_R_PRESSED)
     {
         if (pocketId >= POCKET_POKE_BALLS - 1)
             return 0;
-        PlaySE(SE_BAG_POCKET);
+        PlaySE(SE_RG_BAG_POCKET);
         return 2;
     }
     return 0;
@@ -1923,7 +1923,7 @@ static void Task_SellItem_Yes(u8 taskId)
 static void Task_FinalizeSaleToShop(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    PlaySE(SE_SHOP);
+    PlaySE(SE_RG_SHOP);
     RemoveBagItem(gSpecialVar_ItemId, data[8]);
     AddMoney(&gSaveBlock1Ptr->money, ItemId_GetPrice(gSpecialVar_ItemId) / 2 * data[8]);
     RecordItemTransaction(gSpecialVar_ItemId, data[8], QL_EVENT_SOLD_ITEM - QL_EVENT_USED_POKEMART);
@@ -2107,7 +2107,7 @@ static void Task_Bag_OldManTutorial(u8 taskId)
         {
         case 102:
         case 204:
-            PlaySE(SE_BAG_POCKET);
+            PlaySE(SE_RG_BAG_POCKET);
             SwitchPockets(taskId, 1, FALSE);
             break;
         case 306:
@@ -2208,7 +2208,7 @@ static void Task_Bag_TeachyTvRegister(u8 taskId)
         switch (data[8])
         {
         case 102:
-            PlaySE(SE_BAG_POCKET);
+            PlaySE(SE_RG_BAG_POCKET);
             SwitchPockets(taskId, 1, FALSE);
             break;
         case 204:
@@ -2269,7 +2269,7 @@ static void Task_Bag_TeachyTvCatching(u8 taskId)
         {
         case 102:
         case 204:
-            PlaySE(SE_BAG_POCKET);
+            PlaySE(SE_RG_BAG_POCKET);
             SwitchPockets(taskId, 1, FALSE);
             break;
         case 306:
@@ -2359,7 +2359,7 @@ static void Task_Bag_TeachyTvTMs(u8 taskId)
         switch (data[8])
         {
         case 102:
-            PlaySE(SE_BAG_POCKET);
+            PlaySE(SE_RG_BAG_POCKET);
             SwitchPockets(taskId, 1, 0);
             break;
         case 204:

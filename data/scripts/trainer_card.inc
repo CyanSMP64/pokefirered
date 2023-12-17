@@ -7,7 +7,7 @@ CeladonCity_GameCorner_EventScript_PhotoPrinter::
 	goto_if_eq VAR_RESULT, NO, CeladonCity_GameCorner_EventScript_DeclinePhoto
 	checkmoney 50
 	goto_if_eq VAR_RESULT, FALSE, CeladonCity_GameCorner_EventScript_NotEnoughMoneyForPhoto
-	playse SE_SHOP
+	playse SE_RG_SHOP
 	removemoney 50
 	updatemoneybox
 	waitse

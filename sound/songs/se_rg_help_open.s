@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_help_open
+	.global se_rg_help_open
 	.align 2
 	.equ se_help_open_grp, voicegroup129
 	.equ se_help_open_pri, 5
@@ -87,7 +87,7 @@ se_help_open_1: @ 86BC910
 
 @ ***************************************
 	.align 2
-se_help_open: @ 86BC974
+se_rg_help_open: @ 86BC974
 	.byte 1
 	.byte 0
 	.byte se_help_open_pri

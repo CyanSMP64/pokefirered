@@ -1793,13 +1793,13 @@ static bool8 HandleSwitchMapInput(void)
     data.bottom = sSwitchMapMenu->highlight.bottom = sSwitchMapMenu->highlight.top + 32;
     if (JOY_NEW(DPAD_UP) && sSwitchMapMenu->currentSelection != 0)
     {
-        PlaySE(SE_BAG_CURSOR);
+        PlaySE(SE_RG_BAG_CURSOR);
         sSwitchMapMenu->currentSelection--;
         changedSelection = TRUE;
     }
     if (JOY_NEW(DPAD_DOWN) && sSwitchMapMenu->currentSelection < sSwitchMapMenu->maxSelection)
     {
-        PlaySE(SE_BAG_CURSOR);
+        PlaySE(SE_RG_BAG_CURSOR);
         sSwitchMapMenu->currentSelection++;
         changedSelection = TRUE;
     }
@@ -2386,7 +2386,7 @@ static void Task_MapOpenAnim(u8 taskId)
         if (!gPaletteFade.active)
         {
             sMapOpenCloseAnim->openState++;
-            PlaySE(SE_CARD_OPEN);
+            PlaySE(SE_RG_CARD_OPEN);
         }
         break;
     case 6:
@@ -2430,7 +2430,7 @@ static void Task_MapOpenAnim(u8 taskId)
         FillBgTilemapBufferRect(1, 0x03F, 29, 1, 1, 1, 2);
         FillBgTilemapBufferRect(1, 0x03D, 2, 1, 26, 1, 2);
         CopyBgTilemapBufferToVram(1);
-        m4aSongNumStop(SE_CARD_OPEN);
+        m4aSongNumStop(SE_RG_CARD_OPEN);
         PlaySE(SE_ROTATING_GATE);
         sMapOpenCloseAnim->openState++;
         break;
@@ -2601,7 +2601,7 @@ static void Task_MapCloseAnim(u8 taskId)
     case 6:
         InitScreenForMapCloseAnim();
         SetGpuWindowDimsToMapEdges();
-        PlaySE(SE_CARD_FLIPPING);
+        PlaySE(SE_RG_CARD_FLIPPING);
         sMapOpenCloseAnim->closeState++;
         break;
     case 7:

@@ -2404,7 +2404,7 @@ static void MoveDeoxysObject(u8 num)
     if (num == 0)
         PlaySE(SE_M_CONFUSE_RAY);
     else
-        PlaySE(SE_DEOXYS_MOVE);
+        PlaySE(SE_RG_DEOXYS_MOVE);
     CreateTask(Task_WaitDeoxysFieldEffect, 8);
     gFieldEffectArguments[0] = 1;
     gFieldEffectArguments[1] = 56;

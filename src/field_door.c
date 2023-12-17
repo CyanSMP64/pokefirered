@@ -510,7 +510,7 @@ bool8 FieldIsDoorAnimationRunning(void)
 u16 GetDoorSoundEffect(int x, int y)
 {
     if (GetDoorSoundType(sDoorGraphics, x, y) == DOOR_SOUND_NORMAL)
-        return SE_DOOR;
+        return SE_RG_DOOR;
     else // DOOR_SOUND_SLIDING
         return SE_SLIDING_DOOR;
 }

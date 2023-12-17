@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_bag_cursor
+	.global se_rg_bag_cursor
 	.align 2
 	.equ se_bag_cursor_grp, voicegroup129
 	.equ se_bag_cursor_pri, 5
@@ -41,7 +41,7 @@ se_bag_cursor_2: @ 86BC78A
 
 @ ***************************************
 	.align 2
-se_bag_cursor: @ 86BC79C
+se_rg_bag_cursor: @ 86BC79C
 	.byte 2
 	.byte 0
 	.byte se_bag_cursor_pri

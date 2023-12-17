@@ -69,7 +69,7 @@ TwoIsland_JoyfulGameCorner_EventScript_HelpFindLostelleScene::
 	waitmovement 0
 	msgbox TwoIsland_JoyfulGameCorner_Text_PleaseHelpFindLostelle
 	closemessage
-	playse SE_RS_DOOR
+	playse SE_DOOR
 	waitse
 	applymovement OBJ_EVENT_ID_PLAYER, TwoIsland_JoyfulGameCorner_Movement_PlayerFaceDaddy
 	waitmovement 0

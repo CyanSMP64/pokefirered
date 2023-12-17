@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_deoxys_move
+	.global se_rg_deoxys_move
 	.align 2
 	.equ se_deoxys_move_grp, voicegroup129
 	.equ se_deoxys_move_pri, 5
@@ -195,7 +195,7 @@ se_deoxys_move_3: @ 86BCAA7
 
 @ ***************************************
 	.align 2
-se_deoxys_move: @ 86BCB08
+se_rg_deoxys_move: @ 86BCB08
 	.byte 3
 	.byte 0
 	.byte se_deoxys_move_pri

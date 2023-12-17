@@ -270,7 +270,7 @@ $(MID_SUBDIR)/mus_rg_vs_trainer.s: %.s: %.mid
 $(MID_SUBDIR)/mus_rg_vs_wild.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G157 -V090
 
-$(MID_SUBDIR)/se_door.s: %.s: %.mid
+$(MID_SUBDIR)/se_rg_door.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G129 -V100 -P5
 
 $(MID_SUBDIR)/mus_rg_victory_gym_leader.s: %.s: %.mid
@@ -489,7 +489,7 @@ $(MID_SUBDIR)/se_applause.s: %.s: %.mid
 $(MID_SUBDIR)/se_field_poison.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G127 -V110 -P5
 
-$(MID_SUBDIR)/se_rs_door.s: %.s: %.mid
+$(MID_SUBDIR)/se_door.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G127 -V080 -P5
 
 $(MID_SUBDIR)/se_elevator.s: %.s: %.mid
@@ -627,7 +627,7 @@ $(MID_SUBDIR)/se_faint.s: %.s: %.mid
 $(MID_SUBDIR)/se_shiny.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G128 -V095 -P5
 
-$(MID_SUBDIR)/se_rs_shop.s: %.s: %.mid
+$(MID_SUBDIR)/se_shop.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G127 -V090 -P5
 
 $(MID_SUBDIR)/se_ice_crack.s: %.s: %.mid

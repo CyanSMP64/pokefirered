@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_poke_jump_success
+	.global se_rg_poke_jump_success
 	.align 2
 	.equ se_poke_jump_success_grp, voicegroup128
 	.equ se_poke_jump_success_pri, 5
@@ -166,7 +166,7 @@ se_poke_jump_success_2: @ 86BCB7B
 
 @ ***************************************
 	.align 2
-se_poke_jump_success: @ 86BCBC8
+se_rg_poke_jump_success: @ 86BCBC8
 	.byte 2
 	.byte 0
 	.byte se_poke_jump_success_pri

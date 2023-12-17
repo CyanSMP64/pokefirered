@@ -62,3 +62,4 @@ prefabs.json
 *.js
 *.sym
 *.ini
+*.toml

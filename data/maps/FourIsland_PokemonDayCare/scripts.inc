@@ -117,7 +117,7 @@ FourIsland_PokemonDayCare_RetrieveMon::
 	waitmovement 0
 	specialvar VAR_RESULT, TakePokemonFromDaycare
 	special SubtractMoneyFromVar0x8005
-	playse SE_RS_SHOP
+	playse SE_SHOP
 	msgbox DayCare_Text_HeresYourMon
 	waitse
 	playmoncry VAR_RESULT, CRY_MODE_NORMAL

@@ -78,7 +78,7 @@ PewterCity_Museum_1F_EventScript_TryPayForTicket::
 	call_if_eq VAR_TEMP_1, 0, PewterCity_Museum_1F_EventScript_PlayerApproachCounterLeft
 	call_if_eq VAR_TEMP_1, 1, PewterCity_Museum_1F_EventScript_PlayerApproachCounterMid
 	call_if_eq VAR_TEMP_1, 2, PewterCity_Museum_1F_EventScript_PlayerApproachCounterRight
-	playse SE_SHOP
+	playse SE_RG_SHOP
 	removemoney 50
 	updatemoneybox
 	waitse

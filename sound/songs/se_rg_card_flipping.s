@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_card_flipping
+	.global se_rg_card_flipping
 	.align 2
 	.equ se_card_flipping_grp, voicegroup129
 	.equ se_card_flipping_pri, 5
@@ -43,7 +43,7 @@ se_card_flipping_1: @ 86BC6AC
 
 @ ***************************************
 	.align 2
-se_card_flipping: @ 86BC6D8
+se_rg_card_flipping: @ 86BC6D8
 	.byte 1
 	.byte 0
 	.byte se_card_flipping_pri

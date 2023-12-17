@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 	.section .rodata
-	.global se_ball_click
+	.global se_rg_ball_click
 	.align 2
 	.equ se_ball_click_grp, voicegroup129
 	.equ se_ball_click_pri, 5
@@ -50,7 +50,7 @@ se_ball_click_2: @ 86BC80D
 
 @ ***************************************
 	.align 2
-se_ball_click: @ 86BC820
+se_rg_ball_click: @ 86BC820
 	.byte 2
 	.byte 0
 	.byte se_ball_click_pri

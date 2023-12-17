@@ -66,7 +66,7 @@ CeladonCity_GameCorner_EventScript_Buy50Coins::
 CeladonCity_GameCorner_EventScript_BoughtCoins::
 	updatemoneybox
 	updatecoinsbox 0, 5
-	playse SE_SHOP
+	playse SE_RG_SHOP
 	msgbox CeladonCity_GameCorner_Text_HereAreYourCoins
 	goto CeladonCity_GameCorner_EventScript_ClerkEnd
 	end
@@ -129,7 +129,7 @@ CeladonCity_GameCorner_EventScript_Fisher::
 	addcoins 10
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CeladonCity_GameCorner_Text_Received10CoinsFromMan
-	playse SE_SHOP
+	playse SE_RG_SHOP
 	waitse
 	setflag FLAG_GOT_10_COINS_FROM_GAMBLER
 	goto CeladonCity_GameCorner_EventScript_FaceSlotMachine
@@ -189,7 +189,7 @@ CeladonCity_GameCorner_EventScript_Scientist::
 	addcoins 20
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CeladonCity_GameCorner_Text_Received20CoinsFromNiceGuy
-	playse SE_SHOP
+	playse SE_RG_SHOP
 	waitse
 	setflag FLAG_GOT_20_COINS_FROM_GAMBLER
 	goto CeladonCity_GameCorner_EventScript_FaceSlotMachine
@@ -216,7 +216,7 @@ CeladonCity_GameCorner_EventScript_Gentleman::
 	addcoins 20
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CeladonCity_GameCorner_Text_Received20CoinsFromMan
-	playse SE_SHOP
+	playse SE_RG_SHOP
 	waitse
 	setflag FLAG_GOT_20_COINS_FROM_GAMBLER_2
 	goto CeladonCity_GameCorner_EventScript_FaceSlotMachine
