@@ -2,7 +2,7 @@
 
 	.equ	se_m_solar_beam_grp, voicegroup128
 	.equ	se_m_solar_beam_pri, 4
-	.equ	se_m_solar_beam_rev, reverb_set+50
+	.equ	se_m_solar_beam_rev, 0
 	.equ	se_m_solar_beam_mvl, 127
 	.equ	se_m_solar_beam_key, 0
 	.equ	se_m_solar_beam_tbs, 1
@@ -145,7 +145,7 @@ se_m_solar_beam_1:
 	.byte	W02
 	.byte		VOL   , 5*se_m_solar_beam_mvl/mxv
 	.byte	W04
-	.byte		EOT   
+	.byte		EOT
 	.byte	FINE
 
 @******************************************************@

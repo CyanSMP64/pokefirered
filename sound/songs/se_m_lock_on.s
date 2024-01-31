@@ -2,7 +2,7 @@
 
 	.equ	se_m_lock_on_grp, voicegroup128
 	.equ	se_m_lock_on_pri, 4
-	.equ	se_m_lock_on_rev, reverb_set+50
+	.equ	se_m_lock_on_rev, 0
 	.equ	se_m_lock_on_mvl, 127
 	.equ	se_m_lock_on_key, 0
 	.equ	se_m_lock_on_tbs, 1
@@ -37,7 +37,7 @@ se_m_lock_on_1:
 	.byte	W02
 	.byte		PAN   , c_v+6
 	.byte		BEND  , c_v+6
-	.byte		N01   , Cn4 
+	.byte		N01   , Cn4
 	.byte	W01
 	.byte		        Gn3 , v064
 	.byte	W02

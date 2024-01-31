@@ -56,7 +56,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST",
       "x": 67,
       "y": 5,
       "elevation": 3,
@@ -142,7 +142,188 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_GreatBall"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_GreatBall"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_GreatBall"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_GreatBall"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_GreatBall"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_RazzBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_PersimBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_PersimBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_PersimBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_PersimBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_PersimBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route4_EventScript_Sparkle_PersimBerry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_INDOOR_1",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -283,6 +283,69 @@
       "var": "VAR_TEMP_1",
       "var_value": "1",
       "script": "PokemonTower_5F_EventScript_ExitPurifiedZone"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonTower_5F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonTower_5F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonTower_5F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonTower_5F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonTower_5F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonTower_5F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonTower_5F_EventScript_Sparkle_BigMushroom"
     }
   ],
   "bg_events": [

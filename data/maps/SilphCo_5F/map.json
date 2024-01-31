@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 5,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -101,7 +101,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST",
       "x": 1,
       "y": 18,
       "elevation": 3,
@@ -193,7 +193,170 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir2"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir2"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_Elixir2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp2"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "SilphCo_5F_EventScript_Sparkle_PPUp2"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

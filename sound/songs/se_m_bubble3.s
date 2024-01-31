@@ -2,7 +2,7 @@
 
 	.equ	se_m_bubble3_grp, voicegroup128
 	.equ	se_m_bubble3_pri, 4
-	.equ	se_m_bubble3_rev, reverb_set+50
+	.equ	se_m_bubble3_rev, 0
 	.equ	se_m_bubble3_mvl, 127
 	.equ	se_m_bubble3_key, 0
 	.equ	se_m_bubble3_tbs, 1
@@ -38,7 +38,7 @@ se_m_bubble3_1:
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v-1
 	.byte	W03
-	.byte		N06   
+	.byte		N06
 	.byte	W03
 	.byte		BEND  , c_v+6
 	.byte	W01

@@ -2,7 +2,7 @@
 
 	.equ	se_m_icy_wind_grp, voicegroup128
 	.equ	se_m_icy_wind_pri, 4
-	.equ	se_m_icy_wind_rev, reverb_set+50
+	.equ	se_m_icy_wind_rev, 0
 	.equ	se_m_icy_wind_mvl, 127
 	.equ	se_m_icy_wind_key, 0
 	.equ	se_m_icy_wind_tbs, 1
@@ -30,7 +30,7 @@ se_m_icy_wind_1:
 	.byte		N01   , Ds4 , v112
 	.byte	W01
 	.byte		PAN   , c_v+0
-	.byte		N01   , Bn4 
+	.byte		N01   , Bn4
 	.byte	W03
 	.byte	FINE
 
@@ -43,13 +43,13 @@ se_m_icy_wind_2:
 	.byte		PAN   , c_v+0
 	.byte		N01   , Dn4 , v040
 	.byte	W04
-	.byte		        Bn3 
+	.byte		        Bn3
 	.byte	W02
 	.byte		PAN   , c_v-7
 	.byte	W02
 	.byte		        c_v+9
 	.byte	W01
-	.byte		N01   , Dn4 
+	.byte		N01   , Dn4
 	.byte	W01
 	.byte		PAN   , c_v-7
 	.byte	W02

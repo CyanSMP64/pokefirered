@@ -178,7 +178,7 @@ CinnabarIsland_Gym_Text_QuizQuestion5::
     .string "are not identical?$"
 
 CinnabarIsland_Gym_Text_QuizQuestion6::
-    .string "TM28 contains TOMBSTONY?$"
+    .string "TM28 contains TOMBSTONER?$"
 
 CinnabarIsland_Gym_Text_CorrectGoOnThrough::
     .string "You're absolutely correct!\p"

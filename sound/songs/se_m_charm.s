@@ -2,7 +2,7 @@
 
 	.equ	se_m_charm_grp, voicegroup128
 	.equ	se_m_charm_pri, 4
-	.equ	se_m_charm_rev, reverb_set+50
+	.equ	se_m_charm_rev, 0
 	.equ	se_m_charm_mvl, 127
 	.equ	se_m_charm_key, 0
 	.equ	se_m_charm_tbs, 1
@@ -32,7 +32,7 @@ se_m_charm_1:
 	.byte		VOL   , 62*se_m_charm_mvl/mxv
 	.byte		PAN   , c_v-4
 	.byte		BEND  , c_v+0
-	.byte		N15   
+	.byte		N15
 	.byte	W01
 	.byte		VOL   , 77*se_m_charm_mvl/mxv
 	.byte		PAN   , c_v+0

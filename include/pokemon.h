@@ -274,10 +274,7 @@ struct Evolution
 #define NUM_UNOWN_FORMS 28
 
 #define GET_UNOWN_LETTER(personality) ((   \
-      (((personality) & 0x03000000) >> 18) \
-    | (((personality) & 0x00030000) >> 12) \
-    | (((personality) & 0x00000300) >> 6)  \
-    | (((personality) & 0x00000003) >> 0)  \
+      (((personality) & 0x0000FF00) >> 8)  \
 ) % NUM_UNOWN_FORMS)
 
 #define GET_SHINY_VALUE(otId, personality) (HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality))
@@ -426,5 +423,6 @@ struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 battlePosition, u8 mo
 void DestroyMonSpritesGfxManager(void);
 u8 *MonSpritesGfxManager_GetSpritePtr(u8 bufferId);
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
+u8 CheckPartyPoison(struct Pokemon *party, u8 selection);
 
 #endif // GUARD_POKEMON_H

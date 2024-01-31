@@ -1059,6 +1059,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_FAME_CHECKER_KOGA_JOURNAL
 	setflag FLAG_HIDE_FAME_CHECKER_LT_SURGE_JOURNAL
 	setflag FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS
+	setflag FLAG_0x152
+	setflag FLAG_SYS_B_DASH
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 500
 	end
 
@@ -1322,6 +1324,9 @@ EventScript_NoMoreRoomForPokemon::
 	release
 	end
 
+EventScript_End::
+	end
+
 	.include "data/text/braille.inc"
 	.include "data/scripts/trainers.inc"
 
@@ -1359,3 +1364,7 @@ Text_TestMsg::
 	.include "data/text/save.inc"
 	.include "data/text/new_game_intro.inc"
 	.include "data/text/pokedude.inc"
+	.include "data/scripts/hidden_item_sparkles.inc"
+
+	.include "data/maps/CeladonCity_House2/scripts.inc"
+	.include "data/maps/CeladonCity_House2/text.inc"

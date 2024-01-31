@@ -2,7 +2,7 @@
 
 	.equ	se_m_flamethrower_grp, voicegroup128
 	.equ	se_m_flamethrower_pri, 4
-	.equ	se_m_flamethrower_rev, reverb_set+50
+	.equ	se_m_flamethrower_rev, 0
 	.equ	se_m_flamethrower_mvl, 127
 	.equ	se_m_flamethrower_key, 0
 	.equ	se_m_flamethrower_tbs, 1
@@ -129,7 +129,7 @@ se_m_flamethrower_1_000:
 	.byte	W03
 	.byte		        c_v+0
 	.byte	W03
-	.byte		EOT   , Cn3 
+	.byte		EOT   , Cn3
 	.byte	FINE
 
 @********************** Track  2 **********************@

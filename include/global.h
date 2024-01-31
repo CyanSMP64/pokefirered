@@ -189,7 +189,7 @@ struct Pokedex
     /*0x08*/ u32 spindaPersonality; // set when you first see Spinda
     /*0x0C*/ u32 unknown3;
     /*0x10*/ u8 owned[DEX_FLAGS_NO];
-    /*0x44*/ u8 seen[DEX_FLAGS_NO];
+    /*0xA7*/ u8 seen[DEX_FLAGS_NO];
 };
 
 struct PokemonJumpRecords
@@ -299,23 +299,24 @@ struct SaveBlock2
     /*0x013*/ u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[LR/L_EQUALS_A]
     /*0x014*/ u16 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
               u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
-    /*0x15*/  u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
+    /*0x015*/ u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
               u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
               u16 optionsBattleSceneOff:1; // whether battle animations are disabled
               u16 regionMapZoom:1; // whether the map is zoomed in
+              u16 optionsBGM:1; // BGM toggle
     /*0x018*/ struct Pokedex pokedex;
-    /*0x090*/ struct Time localTimeOffset;
-    /*0x098*/ struct Time lastBerryTreeUpdate;
-    /*0x0A0*/ u32 gcnLinkFlags; // Read by Pokemon Colosseum/XD
-    /*0x0A4*/ bool8 unkFlag1; // Set TRUE, never read
-    /*0x0A5*/ bool8 unkFlag2; // Set FALSE, never read
-    /*0x0A8*/ u16 mapView[0x100];
-    /*0x2A8*/ struct LinkBattleRecords linkBattleRecords;
-    /*0x300*/ struct BerryCrush berryCrush;
-    /*0x310*/ struct PokemonJumpRecords pokeJump;
-    /*0x320*/ struct BerryPickingResults berryPick;
-    /*0x330*/ u32 encryptionKey;
-}; // size: 0x334
+    /*0x158*/ struct Time localTimeOffset;
+    /*0x160*/ struct Time lastBerryTreeUpdate;
+    /*0x168*/ u32 gcnLinkFlags; // Read by Pokemon Colosseum/XD
+    /*0x16C*/ bool8 unkFlag1; // Set TRUE, never read
+    /*0x16D*/ bool8 unkFlag2; // Set FALSE, never read
+    /*0x170*/ u16 mapView[0x100];
+    /*0x370*/ struct LinkBattleRecords linkBattleRecords;
+    /*0x3C8*/ struct BerryCrush berryCrush;
+    /*0x3D8*/ struct PokemonJumpRecords pokeJump;
+    /*0x3E8*/ struct BerryPickingResults berryPick;
+    /*0x3F8*/ u32 encryptionKey;
+}; // size: 0x3FC
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
 
@@ -735,19 +736,19 @@ struct SaveBlock1
     /*0x0296*/ u16 registeredItem; // registered for use with SELECT button
     /*0x0298*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x0310*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
-    /*0x03b8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
-    /*0x0430*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
-    /*0x0464*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
-    /*0x054c*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
-    /*0x05F8*/ u8 seen1[DEX_FLAGS_NO];
-    /*0x0638*/ u16 trainerRematchStepCounter;
-    /*0x063A*/ u8 ALIGNED(2) trainerRematches[MAX_REMATCH_ENTRIES];
-    /*0x06A0*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];
-    /*0x08E0*/ struct ObjectEventTemplate objectEventTemplates[OBJECT_EVENT_TEMPLATES_COUNT];
-    /*0x0EE0*/ u8 flags[NUM_FLAG_BYTES];
-    /*0x1000*/ u16 vars[VARS_COUNT];
-    /*0x1200*/ u32 gameStats[NUM_GAME_STATS];
-    /*0x1300*/ struct QuestLogScene questLog[QUEST_LOG_SCENE_COUNT];
+    /*0x0400*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
+    /*0x0478*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
+    /*0x04ac*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
+    /*0x0594*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
+    /*0x0640*/ u8 seen1[DEX_FLAGS_NO];
+    /*0x06D8*/ u16 trainerRematchStepCounter;
+    /*0x06DA*/ u8 ALIGNED(2) trainerRematches[MAX_REMATCH_ENTRIES];
+    /*0x0740*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];
+    /*0x0980*/ struct ObjectEventTemplate objectEventTemplates[OBJECT_EVENT_TEMPLATES_COUNT];
+    /*0x0f80*/ u8 flags[NUM_FLAG_BYTES];
+    /*0x10A0*/ u16 vars[VARS_COUNT];
+    /*0x12A0*/ u32 gameStats[NUM_GAME_STATS];
+    /*0x13A0*/ struct QuestLogScene questLog[QUEST_LOG_SCENE_COUNT];
     /*0x2CA0*/ u16 easyChatProfile[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x2CAC*/ u16 easyChatBattleStart[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x2CB8*/ u16 easyChatBattleWon[EASY_CHAT_BATTLE_WORDS_COUNT];

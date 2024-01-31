@@ -13,11 +13,11 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_INDOOR_2",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST",
       "x": 6,
       "y": 21,
       "elevation": 3,
@@ -59,7 +59,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST",
       "x": 23,
       "y": 4,
       "elevation": 3,
@@ -109,7 +109,44 @@
       "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

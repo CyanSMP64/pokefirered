@@ -2,7 +2,7 @@
 
 	.equ	se_m_grasswhistle_grp, voicegroup128
 	.equ	se_m_grasswhistle_pri, 4
-	.equ	se_m_grasswhistle_rev, reverb_set+50
+	.equ	se_m_grasswhistle_rev, 0
 	.equ	se_m_grasswhistle_mvl, 127
 	.equ	se_m_grasswhistle_key, 0
 	.equ	se_m_grasswhistle_tbs, 1
@@ -35,12 +35,12 @@ se_m_grasswhistle_1:
 	.byte	W09
 	.byte		        0
 	.byte	W03
-	.byte		N09   , An5 
+	.byte		N09   , An5
 	.byte	W12
-	.byte		        En5 
+	.byte		        En5
 	.byte	W12
 	.byte		BEND  , c_v-14
-	.byte		N66   , Gn5 
+	.byte		N66   , Gn5
 	.byte	W06
 	.byte		BEND  , c_v-8
 	.byte	W06
@@ -85,14 +85,14 @@ se_m_grasswhistle_2:
 	.byte		        0
 	.byte	W03
 	.byte		PAN   , c_v-12
-	.byte		N09   , An5 
+	.byte		N09   , An5
 	.byte	W12
 	.byte		PAN   , c_v+14
-	.byte		N09   , En5 
+	.byte		N09   , En5
 	.byte	W12
 	.byte		PAN   , c_v-15
 	.byte		BEND  , c_v-14
-	.byte		N66   , Gn5 
+	.byte		N66   , Gn5
 	.byte	W06
 	.byte		BEND  , c_v-8
 	.byte	W06

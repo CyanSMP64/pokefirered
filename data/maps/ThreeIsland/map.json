@@ -364,6 +364,96 @@
       "var": "VAR_MAP_SCENE_THREE_ISLAND",
       "var_value": "3",
       "script": "ThreeIsland_EventScript_BattleBikersTriggerRight"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ThreeIsland_EventScript_Sparkle_PPUp"
     }
   ],
   "bg_events": [

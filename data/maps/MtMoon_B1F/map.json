@@ -13,8 +13,10 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
-  "object_events": [],
+  "connections": 0,
+  "object_events": [
+
+  ],
   "warp_events": [
     {
       "x": 3,
@@ -73,7 +75,359 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom2"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom2"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom2"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom2"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom2"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom2"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom2"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_TinyMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom3"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MtMoon_B1F_EventScript_Sparkle_BigMushroom_2"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

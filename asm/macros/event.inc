@@ -1856,3 +1856,11 @@
 	setvar VAR_0x8006, \item
 	special CreateEnemyEventMon
 	.endm
+
+	@ Does a sparkle field effect (e.g. when the Trick Master is hiding) at the given coordinates.
+	.macro dofieldeffectsparkle x:req, y:req, priority:req
+	setfieldeffectargument 0, \x
+	setfieldeffectargument 1, \y
+	setfieldeffectargument 2, \priority
+	dofieldeffect FLDEFF_SPARKLE
+	.endm

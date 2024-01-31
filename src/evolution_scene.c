@@ -259,9 +259,10 @@ void EvolutionScene(struct Pokemon* mon, u16 postEvoSpecies, bool8 canStopEvo, u
     currSpecies = GetMonData(mon, MON_DATA_SPECIES);
     trainerId = GetMonData(mon, MON_DATA_OT_ID);
     personality = GetMonData(mon, MON_DATA_PERSONALITY);
-    DecompressPicFromTable(&gMonFrontPicTable[currSpecies],
+    HandleLoadSpecialPokePic(&gMonFrontPicTable[currSpecies],
                              gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_LEFT],
-                             currSpecies);
+                             currSpecies,
+                             personality);
     pokePal = GetMonSpritePalStructFromOtIdPersonality(currSpecies, trainerId, personality);
     LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
 
@@ -274,9 +275,10 @@ void EvolutionScene(struct Pokemon* mon, u16 postEvoSpecies, bool8 canStopEvo, u
     gSprites[id].invisible = TRUE;
 
     // postEvo sprite
-    DecompressPicFromTable(&gMonFrontPicTable[postEvoSpecies],
+    HandleLoadSpecialPokePic(&gMonFrontPicTable[postEvoSpecies],
                              gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_RIGHT],
-                             postEvoSpecies);
+                             postEvoSpecies,
+                             personality);
     pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
     LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
@@ -351,9 +353,10 @@ static void CB2_EvolutionSceneLoadGraphics(void)
     FreeAllSpritePalettes();
     gReservedSpritePaletteCount = 4;
 
-    DecompressPicFromTable(&gMonFrontPicTable[postEvoSpecies],
+    HandleLoadSpecialPokePic(&gMonFrontPicTable[postEvoSpecies],
                              gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_RIGHT],
-                             postEvoSpecies);
+                             postEvoSpecies,
+                             personality);
     pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
 
     LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
@@ -423,9 +426,10 @@ static void CB2_TradeEvolutionSceneLoadGraphics(void)
             const struct CompressedSpritePalette* pokePal;
             u32 trainerId = GetMonData(mon, MON_DATA_OT_ID);
             u32 personality = GetMonData(mon, MON_DATA_PERSONALITY);
-            DecompressPicFromTable(&gMonFrontPicTable[postEvoSpecies],
+            HandleLoadSpecialPokePic(&gMonFrontPicTable[postEvoSpecies],
                                      gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_RIGHT],
-                                     postEvoSpecies);
+                                     postEvoSpecies,
+                                     personality);
             pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
             LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
             gMain.state++;
@@ -487,9 +491,10 @@ void TradeEvolutionScene(struct Pokemon* mon, u16 postEvoSpecies, u8 preEvoSprit
     sEvoStructPtr = AllocZeroed(sizeof(struct EvoInfo));
     sEvoStructPtr->preEvoSpriteId = preEvoSpriteId;
 
-    DecompressPicFromTable(&gMonFrontPicTable[postEvoSpecies],
+    HandleLoadSpecialPokePic(&gMonFrontPicTable[postEvoSpecies],
                             gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_LEFT],
-                            postEvoSpecies);
+                            postEvoSpecies,
+                            personality);
 
     pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
     LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
@@ -634,18 +639,18 @@ static void Task_EvolutionScene(u8 taskId)
     u32 var;
     struct Pokemon* mon = &gPlayerParty[gTasks[taskId].tPartyId];
 
-    // Automatically cancel if the Pokemon would evolve into a species you have not
-    // yet unlocked, such as Crobat.
-    if (!IsNationalPokedexEnabled()
-        && gTasks[taskId].tState == EVOSTATE_WAIT_CYCLE_MON_SPRITE
-        && gTasks[taskId].tPostEvoSpecies > SPECIES_MEW)
-    {
-        gTasks[taskId].tState = EVOSTATE_CANCEL;
-        gTasks[taskId].tEvoWasStopped = TRUE;
-        gTasks[sEvoGraphicsTaskId].tEvoStopped = TRUE;
-        StopBgAnimation();
-        return;
-    }
+//    // Automatically cancel if the Pokemon would evolve into a species you have not
+//    // yet unlocked, such as Crobat.
+//    if (!IsNationalPokedexEnabled()
+//        && gTasks[taskId].tState == EVOSTATE_WAIT_CYCLE_MON_SPRITE
+//        && gTasks[taskId].tPostEvoSpecies > SPECIES_MEW)
+//    {
+//        gTasks[taskId].tState = EVOSTATE_CANCEL;
+//        gTasks[taskId].tEvoWasStopped = TRUE;
+//        gTasks[sEvoGraphicsTaskId].tEvoStopped = TRUE;
+//        StopBgAnimation();
+//        return;
+//    }
 
     // check if B Button was held, so the evolution gets stopped
     if (gMain.heldKeys == B_BUTTON
@@ -688,7 +693,8 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_SOUND:
         if (IsCryFinished()) // wait for animation, play tu du SE
         {
-            PlaySE(MUS_EVOLUTION_INTRO);
+            if (gSaveBlock2Ptr->optionsBGM == TRUE)
+                PlaySE(MUS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
         }
         break;
@@ -1091,20 +1097,20 @@ static void Task_TradeEvolutionScene(u8 taskId)
     u32 var = 0;
     struct Pokemon* mon = &gPlayerParty[gTasks[taskId].tPartyId];
 
-    // Automatically cancel if the Pokemon would evolve into a species you have not
-    // yet unlocked, such as Crobat.
-    if (!IsNationalPokedexEnabled()
-        && gTasks[taskId].tState == T_EVOSTATE_WAIT_CYCLE_MON_SPRITE
-        && gTasks[taskId].tPostEvoSpecies > SPECIES_MEW)
-    {
-        gTasks[taskId].tState = EVOSTATE_TRY_LEARN_MOVE;
-        gTasks[taskId].tEvoWasStopped = TRUE;
-        if (gTasks[sEvoGraphicsTaskId].isActive)
-        {
-            gTasks[sEvoGraphicsTaskId].tEvoStopped = TRUE;
-            StopBgAnimation();
-        }
-    }
+//    // Automatically cancel if the Pokemon would evolve into a species you have not
+//    // yet unlocked, such as Crobat.
+//    if (!IsNationalPokedexEnabled()
+//        && gTasks[taskId].tState == T_EVOSTATE_WAIT_CYCLE_MON_SPRITE
+//        && gTasks[taskId].tPostEvoSpecies > SPECIES_MEW)
+//    {
+//        gTasks[taskId].tState = EVOSTATE_TRY_LEARN_MOVE;
+//        gTasks[taskId].tEvoWasStopped = TRUE;
+//        if (gTasks[sEvoGraphicsTaskId].isActive)
+//        {
+//            gTasks[sEvoGraphicsTaskId].tEvoStopped = TRUE;
+//            StopBgAnimation();
+//        }
+//    }
 
     switch (gTasks[taskId].tState)
     {

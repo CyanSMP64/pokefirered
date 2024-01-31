@@ -18,6 +18,7 @@ void FieldUseFunc_PpUp(u8 taskId);
 void FieldUseFunc_RareCandy(u8 taskId);
 void FieldUseFunc_EvoItem(u8 taskId);
 void FieldUseFunc_SacredAsh(u8 taskId);
+void ItemUseOutOfBattle_ReduceEV(u8 taskId);
 void FieldUseFunc_TmCase(u8 taskId);
 void FieldUseFunc_BerryPouch(u8 taskId);
 void BattleUseFunc_BerryPouch(u8 taskId);

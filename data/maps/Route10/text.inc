@@ -84,3 +84,17 @@ Route10_Text_RockTunnel::
 Route10_Text_PowerPlant::
     .string "POWER PLANT$"
 
+Route10_Text_Hiker::
+	.string "Hey, you.\n"
+	.string "It gets awfully dark in\l"
+	.string "ROCK TUNNEL.\p"
+	.string "Here you go, I'll pass this on\n"
+    .string "to you.$"
+
+Route10_Text_HikerExplainFlash::
+	.string "Teach that hidden move FLASH to\n"
+	.string "a POKéMON and use it.\p"
+	.string "It lights up even the inky darkness\n"
+	.string "of caves.\p"
+	.string "But, to use it, you need the GYM BADGE\n"
+	.string "from PEWTER's POKéMON GYM.$"

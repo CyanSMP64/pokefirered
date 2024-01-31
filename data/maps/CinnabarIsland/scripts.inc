@@ -26,13 +26,13 @@ CinnabarIsland_EventScript_ReadyObjectsSailToOneIsland::
 	getplayerxy VAR_0x8004, VAR_0x8005
 	goto_if_ge VAR_0x8004, 18, CinnabarIsland_EventScript_MoveSeagallopDown
 	setflag FLAG_TEMP_2
-	setobjectxyperm LOCALID_BILL, 18, 12
-	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_UP
-	setobjectxyperm LOCALID_SEAGALLOP, 30, 12
+@	setobjectxyperm LOCALID_BILL, 18, 12
+@	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_UP
+@	setobjectxyperm LOCALID_SEAGALLOP, 30, 12
 	return
 
 CinnabarIsland_EventScript_MoveSeagallopDown::
-	setobjectxyperm LOCALID_SEAGALLOP, 30, 8
+@	setobjectxyperm LOCALID_SEAGALLOP, 30, 8
 	return
 
 CinnabarIsland_EventScript_ReadyObjectsReturnFromSeviiIslands::
@@ -90,105 +90,106 @@ CinnabarIsland_Movement_BillExit::
 
 CinnabarIsland_EventScript_BillScene::
 	lockall
-	textcolor NPC_TEXT_COLOR_MALE
-	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillFacePlayer1
-	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillFacePlayer2
-	playse SE_PIN
-	applymovement LOCALID_BILL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_BILL, Common_Movement_Delay48
-	waitmovement 0
-	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillApproachPlayer1
-	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillApproachPlayer2
-	msgbox CinnabarIsland_Text_HeyIfItIsntPlayer
-	msgbox CinnabarIsland_Text_ComeWithMeToOneIsland, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CinnabarIsland_EventScript_AgreeSailToOneIsland
-	goto_if_eq VAR_RESULT, NO, CinnabarIsland_EventScript_DeclineSailToOneIsland
+@	textcolor NPC_TEXT_COLOR_MALE
+@	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillFacePlayer1
+@	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillFacePlayer2
+@	playse SE_PIN
+@	applymovement LOCALID_BILL, Common_Movement_ExclamationMark
+@	waitmovement 0
+@	applymovement LOCALID_BILL, Common_Movement_Delay48
+@	waitmovement 0
+@	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillApproachPlayer1
+@	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillApproachPlayer2
+@	msgbox CinnabarIsland_Text_HeyIfItIsntPlayer
+@	msgbox CinnabarIsland_Text_ComeWithMeToOneIsland, MSGBOX_YESNO
+@	goto_if_eq VAR_RESULT, YES, CinnabarIsland_EventScript_AgreeSailToOneIsland
+@	goto_if_eq VAR_RESULT, NO, CinnabarIsland_EventScript_DeclineSailToOneIsland
+	goto CinnabarIsland_EventScript_DeclineSailToOneIsland			@ copy of above line
 	end
 
-CinnabarIsland_EventScript_BillFacePlayer1::
-	applymovement LOCALID_BILL, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	return
+@CinnabarIsland_EventScript_BillFacePlayer1::
+@	applymovement LOCALID_BILL, Common_Movement_WalkInPlaceFasterUp
+@	waitmovement 0
+@	return
 
-CinnabarIsland_EventScript_BillFacePlayer2::
-	applymovement LOCALID_BILL, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	return
+@CinnabarIsland_EventScript_BillFacePlayer2::
+@	applymovement LOCALID_BILL, Common_Movement_WalkInPlaceFasterLeft
+@	waitmovement 0
+@	return
 
-CinnabarIsland_EventScript_BillApproachPlayer1::
-	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachPlayer1
-	waitmovement 0
-	return
+@CinnabarIsland_EventScript_BillApproachPlayer1::
+@	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachPlayer1
+@	waitmovement 0
+@	return
 
-CinnabarIsland_EventScript_BillApproachPlayer2::
-	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachPlayer2
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	return
+@CinnabarIsland_EventScript_BillApproachPlayer2::
+@	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachPlayer2
+@	waitmovement 0
+@	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+@	waitmovement 0
+@	return
 
-CinnabarIsland_EventScript_AgreeSailToOneIsland::
-	msgbox CinnabarIsland_Text_AllRightLetsGo
-	closemessage
-	call CinnabarIsland_EventScript_SailToOneIsland
-	releaseall
-	end
+@CinnabarIsland_EventScript_AgreeSailToOneIsland::
+@	msgbox CinnabarIsland_Text_AllRightLetsGo
+@	closemessage
+@	call CinnabarIsland_EventScript_SailToOneIsland
+@	releaseall
+@	end
 
 CinnabarIsland_EventScript_DeclineSailToOneIsland::
-	msgbox CinnabarIsland_Text_IllBeWaitingInPokeCenter
-	closemessage
-	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillExitToPokeCenter
-	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillReturnToPokeCenter
-	removeobject LOCALID_BILL
+@	msgbox CinnabarIsland_Text_IllBeWaitingInPokeCenter
+@	closemessage
+@	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillExitToPokeCenter
+@	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillReturnToPokeCenter
+@	removeobject LOCALID_BILL
 	setvar VAR_MAP_SCENE_CINNABAR_ISLAND, 2
 	clearflag FLAG_HIDE_CINNABAR_POKECENTER_BILL
 	releaseall
 	end
 
-CinnabarIsland_EventScript_BillExitToPokeCenter::
-	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillExitToPokeCenter
-	waitmovement 0
-	return
+@CinnabarIsland_EventScript_BillExitToPokeCenter::
+@	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillExitToPokeCenter
+@	waitmovement 0
+@	return
 
-CinnabarIsland_Movement_BillExitToPokeCenter::
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
+@CinnabarIsland_Movement_BillExitToPokeCenter::
+@	walk_right
+@	walk_down
+@	walk_down
+@	walk_down
+@	walk_down
+@	walk_down
+@	walk_down
+@	step_end
 
-CinnabarIsland_EventScript_BillReturnToPokeCenter::
-	applymovement OBJ_EVENT_ID_PLAYER, CinnabarIsland_Movement_PlayerWatchBillExit
-	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachDoor
-	waitmovement 0
-	opendoor 14, 11
-	waitdooranim
-	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillReEnterPokeCenter
-	waitmovement 0
-	closedoor 14, 11
-	waitdooranim
-	return
+@CinnabarIsland_EventScript_BillReturnToPokeCenter::
+@	applymovement OBJ_EVENT_ID_PLAYER, CinnabarIsland_Movement_PlayerWatchBillExit
+@	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachDoor
+@	waitmovement 0
+@	opendoor 14, 11
+@	waitdooranim
+@	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillReEnterPokeCenter
+@	waitmovement 0
+@	closedoor 14, 11
+@	waitdooranim
+@	return
 
-CinnabarIsland_Movement_PlayerWatchBillExit::
-	walk_left
-	walk_in_place_faster_right
-	step_end
+@CinnabarIsland_Movement_PlayerWatchBillExit::
+@	walk_left
+@	walk_in_place_faster_right
+@	step_end
 
-CinnabarIsland_Movement_BillApproachDoor::
-	delay_16
-	walk_left
-	walk_in_place_faster_up
-	step_end
+@CinnabarIsland_Movement_BillApproachDoor::
+@	delay_16
+@	walk_left
+@	walk_in_place_faster_up
+@	step_end
 
-CinnabarIsland_Movement_BillReEnterPokeCenter::
-	walk_up
-	delay_4
-	set_invisible
-	step_end
+@CinnabarIsland_Movement_BillReEnterPokeCenter::
+@	walk_up
+@	delay_4
+@	set_invisible
+@	step_end
 
 @ Can be triggered outside, or after talking to Bill in the poke center
 CinnabarIsland_EventScript_SailToOneIsland::

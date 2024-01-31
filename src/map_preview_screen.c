@@ -340,24 +340,24 @@ static u8 GetMapPreviewScreenIdx(u8 mapsec)
 
 bool8 MapHasPreviewScreen(u8 mapsec, u8 type)
 {
-    u8 idx;
+    //u8 idx;
 
-    idx = GetMapPreviewScreenIdx(mapsec);
-    if (idx != MPS_COUNT)
-    {
-        if (type == MPS_TYPE_ANY)
-        {
-            return TRUE;
-        }
-        else
-        {
-            return sMapPreviewScreenData[idx].type == type ? TRUE : FALSE;
-        }
-    }
-    else
-    {
+    //idx = GetMapPreviewScreenIdx(mapsec);
+    //if (idx != MPS_COUNT)
+    //{
+    //    if (type == MPS_TYPE_ANY)
+    //    {
+    //        return TRUE;
+    //    }
+    //    else
+    //    {
+    //        return sMapPreviewScreenData[idx].type == type ? TRUE : FALSE;
+    //    }
+    //}
+    //else
+    //{
         return FALSE;
-    }
+    //}
 }
 
 bool32 MapHasPreviewScreen_HandleQLState2(u8 mapsec, u8 type)

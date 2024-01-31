@@ -353,20 +353,20 @@ void StartLegendaryBattle(void)
     switch (species)
     {
     case SPECIES_MEWTWO:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_MEWTWO);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     case SPECIES_DEOXYS:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     case SPECIES_MOLTRES:
     case SPECIES_ARTICUNO:
     case SPECIES_ZAPDOS:
     case SPECIES_HO_OH:
     case SPECIES_LUGIA:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     default:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_TRAINER);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     }
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
@@ -611,10 +611,86 @@ static u8 GetWildBattleTransition(void)
     u8 enemyLevel = GetMonData(&gEnemyParty[0], MON_DATA_LEVEL);
     u8 playerLevel = GetSumOfPlayerPartyLevel(1);
 
-    if (enemyLevel < playerLevel)
-        return sBattleTransitionTable_Wild[transitionType][0];
-    else
-        return sBattleTransitionTable_Wild[transitionType][1];
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+    {    
+    case SPECIES_ARTICUNO:
+    case SPECIES_ZAPDOS:
+    case SPECIES_MOLTRES:
+    case SPECIES_ARTICUNO_GALARIAN:
+    case SPECIES_ZAPDOS_GALARIAN:
+    case SPECIES_MOLTRES_GALARIAN:
+    case SPECIES_RAIKOU:
+    case SPECIES_ENTEI:
+    case SPECIES_SUICUNE:
+    case SPECIES_UXIE:
+    case SPECIES_MESPRIT:
+    case SPECIES_AZELF:
+    case SPECIES_HEATRAN:
+    case SPECIES_DARKRAI:
+    case SPECIES_CRESSELIA:
+    case SPECIES_COBALION:
+    case SPECIES_TERRAKION:
+    case SPECIES_VIRIZION:
+    case SPECIES_TORNADUS:
+    case SPECIES_THUNDURUS:
+    case SPECIES_LANDORUS:
+    case SPECIES_ENAMORUS:
+    case SPECIES_TORNADUS_THERIAN:
+    case SPECIES_THUNDURUS_THERIAN:
+    case SPECIES_LANDORUS_THERIAN:
+    case SPECIES_ENAMORUS_THERIAN:
+    case SPECIES_DEOXYS:
+    case SPECIES_DEOXYS_ATTACK:
+    case SPECIES_DEOXYS_DEFENSE:
+    case SPECIES_DEOXYS_SPEED:
+    case SPECIES_LUGIA:
+    case SPECIES_HO_OH:
+    case SPECIES_MEWTWO:
+    case SPECIES_MEWTWO_MEGA_X:
+    case SPECIES_MEWTWO_MEGA_Y:
+    case SPECIES_GIRATINA:
+    case SPECIES_GIRATINA_ORIGIN:
+    case SPECIES_DIALGA:
+    case SPECIES_PALKIA:
+    case SPECIES_DIALGA_ORIGIN:
+    case SPECIES_PALKIA_ORIGIN:
+    case SPECIES_RESHIRAM:
+    case SPECIES_ZEKROM:
+    case SPECIES_KYUREM:
+    case SPECIES_KYUREM_WHITE:
+    case SPECIES_KYUREM_BLACK:
+    case SPECIES_MEW:
+    case SPECIES_MANAPHY:
+    case SPECIES_PHIONE:
+    case SPECIES_SHAYMIN:
+    case SPECIES_SHAYMIN_SKY:
+    case SPECIES_ARCEUS:
+    case SPECIES_VICTINI:
+    case SPECIES_KELDEO:
+    case SPECIES_MELOETTA:
+    case SPECIES_MELOETTA_PIROUETTE:
+    case SPECIES_GENESECT:
+    case SPECIES_REGIROCK:
+    case SPECIES_REGICE:
+    case SPECIES_REGISTEEL:
+    case SPECIES_REGIGIGAS:
+    case SPECIES_REGIDRAGO:
+    case SPECIES_REGIELEKI:
+    case SPECIES_GROUDON:
+    case SPECIES_GROUDON_PRIMAL:
+    case SPECIES_KYOGRE:
+    case SPECIES_KYOGRE_PRIMAL:
+    case SPECIES_RAYQUAZA:
+    case SPECIES_RAYQUAZA_MEGA:
+        return B_TRANSITION_BLUR;
+    default:
+        {
+            if (enemyLevel < playerLevel)
+                return sBattleTransitionTable_Wild[transitionType][0];
+            else
+                return sBattleTransitionTable_Wild[transitionType][1];
+        }
+    }
 }
 
 static u8 GetTrainerBattleTransition(void)
@@ -892,8 +968,8 @@ void ClearTrainerFlag(u16 trainerId)
 void StartTrainerBattle(void)
 {
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
-//    if (GetTrainerBattleMode() == TRAINER_BATTLE_EARLY_RIVAL && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
-//        gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
+    if (GetTrainerBattleMode() == TRAINER_BATTLE_EARLY_RIVAL && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
+        gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
     gMain.savedCallback = CB2_EndTrainerBattle;
     DoTrainerBattle();
     ScriptContext_Stop();

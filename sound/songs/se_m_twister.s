@@ -2,7 +2,7 @@
 
 	.equ	se_m_twister_grp, voicegroup128
 	.equ	se_m_twister_pri, 4
-	.equ	se_m_twister_rev, reverb_set+50
+	.equ	se_m_twister_rev, 0
 	.equ	se_m_twister_mvl, 127
 	.equ	se_m_twister_key, 0
 	.equ	se_m_twister_tbs, 1
@@ -147,7 +147,7 @@ se_m_twister_1:
 	.byte	W02
 	.byte		PAN   , c_v-11
 	.byte	W03
-	.byte		EOT   
+	.byte		EOT
 	.byte	FINE
 
 @********************** Track  2 **********************@
@@ -190,7 +190,7 @@ se_m_twister_2:
 	.byte	W05
 	.byte		        18*se_m_twister_mvl/mxv
 	.byte	W05
-	.byte		EOT   
+	.byte		EOT
 	.byte	FINE
 
 @******************************************************@

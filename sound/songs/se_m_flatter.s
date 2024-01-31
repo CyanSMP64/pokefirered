@@ -2,7 +2,7 @@
 
 	.equ	se_m_flatter_grp, voicegroup128
 	.equ	se_m_flatter_pri, 4
-	.equ	se_m_flatter_rev, reverb_set+50
+	.equ	se_m_flatter_rev, 0
 	.equ	se_m_flatter_mvl, 127
 	.equ	se_m_flatter_key, 0
 	.equ	se_m_flatter_tbs, 1
@@ -25,9 +25,9 @@ se_m_flatter_1:
 	.byte		BEND  , c_v+0
 	.byte		N01   , Dn5 , v127
 	.byte	W01
-	.byte		        Gn4 
+	.byte		        Gn4
 	.byte	W01
-	.byte		N09   , En5 
+	.byte		N09   , En5
 	.byte	W02
 	.byte		PAN   , c_v+6
 	.byte	W02

@@ -13,8 +13,10 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
-  "object_events": [],
+  "connections": 0,
+  "object_events": [
+
+  ],
   "warp_events": [
     {
       "x": 19,
@@ -59,7 +61,44 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SSAnne_B1F_Corridor_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SSAnne_B1F_Corridor_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SSAnne_B1F_Corridor_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SSAnne_B1F_Corridor_EventScript_Sparkle_HyperPotion"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

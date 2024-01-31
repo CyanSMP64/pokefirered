@@ -344,6 +344,51 @@
       "var": "VAR_MAP_SCENE_CERULEAN_CITY_ROCKET",
       "var_value": "0",
       "script": "CeruleanCity_EventScript_GruntTriggerBottom"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CeruleanCity_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CeruleanCity_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CeruleanCity_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CeruleanCity_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CeruleanCity_EventScript_Sparkle_RareCandy"
     }
   ],
   "bg_events": [

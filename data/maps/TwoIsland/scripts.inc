@@ -215,3 +215,7 @@ TwoIsland_EventScript_JoyfulGameCornerSign::
 TwoIsland_EventScript_FastCurrentSign::
 	msgbox TwoIsland_Text_DangerFastCurrent, MSGBOX_SIGN
 	end
+
+TwoIsland_EventScript_DoorLocked::
+	msgbox CinnabarIsland_Text_DoorIsLocked, MSGBOX_SIGN
+	end

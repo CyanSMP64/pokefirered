@@ -2,7 +2,7 @@
 
 	.equ	se_m_dig_grp, voicegroup128
 	.equ	se_m_dig_pri, 4
-	.equ	se_m_dig_rev, reverb_set+50
+	.equ	se_m_dig_rev, 0
 	.equ	se_m_dig_mvl, 127
 	.equ	se_m_dig_key, 0
 	.equ	se_m_dig_tbs, 1
@@ -32,7 +32,7 @@ se_m_dig_1:
 	.byte		BEND  , c_v+4
 	.byte	W01
 	.byte		        c_v+16
-	.byte		N03   
+	.byte		N03
 	.byte	W01
 	.byte		PAN   , c_v-8
 	.byte		BEND  , c_v+28

@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_INDOOR_2",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -115,7 +115,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST",
       "x": 17,
       "y": 3,
       "elevation": 0,
@@ -192,6 +192,132 @@
       "var": "VAR_MAP_SCENE_ROCKET_WAREHOUSE",
       "var_value": "0",
       "script": "FiveIsland_RocketWarehouse_EventScript_Admin2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NestBall"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NestBall"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_RocketWarehouse_EventScript_Sparkle_NetBall"
     }
   ],
   "bg_events": [

@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -137,7 +137,89 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_PechaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_PechaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_PechaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_CheriBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_CheriBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_CheriBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_ChestoBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_ChestoBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SSAnne_Kitchen_EventScript_Sparkle_ChestoBerry"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

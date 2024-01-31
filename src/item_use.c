@@ -442,6 +442,12 @@ void FieldUseFunc_SacredAsh(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_ReduceEV(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_ReduceEV;
+    SetUpItemUseCallback(taskId);
+}
+
 void FieldUseFunc_TmCase(u8 taskId)
 {
     if (gTasks[taskId].data[3] == 0)
@@ -565,6 +571,7 @@ static void Task_UseRepel(u8 taskId)
     {
         ItemUse_SetQuestLogEvent(QL_EVENT_USED_ITEM, NULL, gSpecialVar_ItemId, 0xFFFF);
         VarSet(VAR_REPEL_STEP_COUNT, ItemId_GetHoldEffectParam(gSpecialVar_ItemId));
+        VarSet(VAR_REPEL_LAST_USED, gSpecialVar_ItemId);
         RemoveUsedItem();
         DisplayItemMessageInBag(taskId, FONT_NORMAL, gStringVar4, Task_ReturnToBagFromContextMenu);
     }

@@ -253,7 +253,386 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_RawstBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route8_EventScript_Sparkle_LeppaBerry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

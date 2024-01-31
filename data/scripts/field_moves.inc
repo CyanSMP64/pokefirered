@@ -5,12 +5,6 @@ EventScript_CutTree::
 	checkpartymove MOVE_CUT
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantCutTree
 	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	buffermovename STR_VAR_2, MOVE_CUT
-	msgbox Text_CutTreeDown, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_DontCutTree
-	msgbox Text_MonUsedMove
-	closemessage
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
 	goto EventScript_CutTreeDown
@@ -39,11 +33,6 @@ EventScript_CantCutTree::
 	releaseall
 	end
 
-EventScript_DontCutTree::
-	closemessage
-	releaseall
-	end
-
 Text_CutTreeDown::
 	.string "This tree looks like it can be CUT\n"
 	.string "down!\p"
@@ -63,12 +52,6 @@ EventScript_RockSmash::
 	checkpartymove MOVE_ROCK_SMASH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
-	msgbox Text_UseRockSmash, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_DontSmashRock
-	msgbox Text_MonUsedMove
-	closemessage
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
 	goto EventScript_UseRockSmash
@@ -124,9 +107,6 @@ EventScript_StrengthBoulder::
 	checkpartymove MOVE_STRENGTH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantMoveBoulder
 	setfieldeffectargument 0, VAR_RESULT
-	msgbox Text_UseStrength, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_DontUseStrength
-	closemessage
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
 	goto EventScript_UseStrength
@@ -141,7 +121,6 @@ EventScript_FldEffStrength::
 
 EventScript_UseStrength::
 	setflag FLAG_SYS_USE_STRENGTH
-	msgbox Text_MonUsedStrengthCanMoveBoulders, MSGBOX_SIGN
 	end
 
 EventScript_CantMoveBoulder::
@@ -182,9 +161,6 @@ EventScript_Waterfall::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_WaterCrashingDown
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
-	msgbox Text_UseWaterfall, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
-	msgbox Text_MonUsedWaterfall
 	dofieldeffect FLDEFF_USE_WATERFALL
 	goto EventScript_EndWaterfall
 

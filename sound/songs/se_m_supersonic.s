@@ -2,7 +2,7 @@
 
 	.equ	se_m_supersonic_grp, voicegroup128
 	.equ	se_m_supersonic_pri, 4
-	.equ	se_m_supersonic_rev, reverb_set+50
+	.equ	se_m_supersonic_rev, 0
 	.equ	se_m_supersonic_mvl, 127
 	.equ	se_m_supersonic_key, 0
 	.equ	se_m_supersonic_tbs, 1
@@ -44,7 +44,7 @@ se_m_supersonic_1:
 	.byte		VOL   , 0*se_m_supersonic_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v-4
-	.byte		N32   
+	.byte		N32
 	.byte	W01
 	.byte		PAN   , c_v+6
 	.byte		BEND  , c_v-1

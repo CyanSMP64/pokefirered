@@ -6,9 +6,44 @@ ViridianForest_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_VIRIDIAN_FOREST
 	end
 
-ViridianForest_EventScript_Youngster::
-	msgbox ViridianForest_Text_FriendsItchingToBattle, MSGBOX_NPC
+ViridianForest_EventScript_Nurse::
+	lock
+	faceplayer
+	specialvar VAR_RESULT, IsPoisonInParty
+	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_NurseCantHealPoison
+	msgbox Route102_Text_HealPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route102_EventScript_NurseHeal
+	msgbox Route102_Text_PokemonNotHealed, MSGBOX_DEFAULT
+	release
 	end
+
+Route102_EventScript_NurseHeal::
+	closemessage
+	special HealPlayerParty
+	playse SE_USE_ITEM
+	waitse
+	msgbox Route102_Text_PokemonHealed, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_NurseCantHealPoison::
+	msgbox Route102_Text_CantHealPoison, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_Text_HealPokemon:
+	.string "Want me to heal your Pokémon?$"
+
+Route102_Text_PokemonHealed:
+	.string "Your Pokémon is healthy.\n"
+Route102_Text_PokemonNotHealed:
+	.string "Come again!$"
+
+Route102_Text_CantHealPoison:
+	.string "Sorry, but I can't heal if\n"
+	.string "you have a poisoned Pokémon.\p"
+	.string "Please visit a Pokémon Center\n"
+	.string "to cure poisoning.$"
 
 ViridianForest_EventScript_Boy::
 	msgbox ViridianForest_Text_RanOutOfPokeBalls, MSGBOX_NPC

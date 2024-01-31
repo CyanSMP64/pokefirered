@@ -33,7 +33,7 @@
 // capacities of various saveblock objects
 #define DAYCARE_MON_COUNT   2
 #define PC_ITEMS_COUNT      30
-#define BAG_ITEMS_COUNT     42
+#define BAG_ITEMS_COUNT     60
 #define BAG_KEYITEMS_COUNT  30
 #define BAG_POKEBALLS_COUNT 13
 #define BAG_TMHM_COUNT      58
@@ -63,7 +63,7 @@
 #define PLAYER_NAME_LENGTH   7
 #define MAIL_WORDS_COUNT 9
 #define EASY_CHAT_BATTLE_WORDS_COUNT 6
-#define MOVE_NAME_LENGTH 12
+#define MOVE_NAME_LENGTH 16
 #define NUM_QUESTIONNAIRE_WORDS 4
 #define WONDER_CARD_TEXT_LENGTH 40
 #define WONDER_NEWS_TEXT_LENGTH 40

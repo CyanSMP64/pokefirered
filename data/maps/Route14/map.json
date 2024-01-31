@@ -237,8 +237,119 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_Zinc"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_Zinc"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_Zinc"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_Zinc"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_Zinc"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route14_EventScript_Sparkle_PinapBerry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

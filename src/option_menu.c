@@ -8,6 +8,7 @@
 #include "text_window.h"
 #include "strings.h"
 #include "field_fadetransition.h"
+#include "sound.h"
 #include "gba/m4a_internal.h"
 
 // can't include the one in menu_helpers.h since Task_OptionMenu needs bool32 for matching
@@ -207,7 +208,7 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option[MENUITEM_TEXTSPEED] = gSaveBlock2Ptr->optionsTextSpeed;
     sOptionMenuPtr->option[MENUITEM_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
     sOptionMenuPtr->option[MENUITEM_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
-    sOptionMenuPtr->option[MENUITEM_SOUND] = gSaveBlock2Ptr->optionsSound;
+    sOptionMenuPtr->option[MENUITEM_SOUND] = gSaveBlock2Ptr->optionsBGM;
     sOptionMenuPtr->option[MENUITEM_BUTTONMODE] = gSaveBlock2Ptr->optionsButtonMode;
     sOptionMenuPtr->option[MENUITEM_FRAMETYPE] = gSaveBlock2Ptr->optionsWindowFrameType;
     
@@ -510,10 +511,14 @@ static void CloseAndSaveOptionMenu(u8 taskId)
     gSaveBlock2Ptr->optionsTextSpeed = sOptionMenuPtr->option[MENUITEM_TEXTSPEED];
     gSaveBlock2Ptr->optionsBattleSceneOff = sOptionMenuPtr->option[MENUITEM_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle = sOptionMenuPtr->option[MENUITEM_BATTLESTYLE];
-    gSaveBlock2Ptr->optionsSound = sOptionMenuPtr->option[MENUITEM_SOUND];
+    gSaveBlock2Ptr->optionsBGM = sOptionMenuPtr->option[MENUITEM_SOUND];
     gSaveBlock2Ptr->optionsButtonMode = sOptionMenuPtr->option[MENUITEM_BUTTONMODE];
     gSaveBlock2Ptr->optionsWindowFrameType = sOptionMenuPtr->option[MENUITEM_FRAMETYPE];
-    SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
+    if (gSaveBlock2Ptr->optionsBGM == FALSE)
+        PlayBGM(0);
+    else if (IsBGMPlaying() != TRUE)
+        StopMapMusic();
+        Overworld_PlaySpecialMapMusic();
     FREE_AND_SET_NULL(sOptionMenuPtr);
     DestroyTask(taskId);
 }

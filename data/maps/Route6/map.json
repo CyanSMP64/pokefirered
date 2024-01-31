@@ -134,7 +134,80 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_SitrusBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_SitrusBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_SitrusBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_SitrusBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route6_EventScript_Sparkle_RareCandy"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

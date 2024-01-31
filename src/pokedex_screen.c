@@ -2201,7 +2201,7 @@ static u32 DexScreen_GetDefaultPersonality(int species)
     case SPECIES_UNOWN:
         return gSaveBlock2Ptr->pokedex.unownPersonality;
     default:
-        return 0;
+        return 0x80;
     }
 }
 

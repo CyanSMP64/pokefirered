@@ -85,7 +85,7 @@
 // Used by Quest Log.
 #define VAR_QUEST_LOG_MON_COUNTS           0x4027
 #define VAR_WONDER_NEWS_STEP_COUNTER       0x4028
-#define VAR_0x4029                         0x4029
+#define VAR_REPEL_LAST_USED                0x4029
 #define VAR_0x402A                         0x402A
 #define VAR_0x402B                         0x402B
 #define VAR_0x402C                         0x402C

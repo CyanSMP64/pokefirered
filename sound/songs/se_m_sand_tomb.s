@@ -2,7 +2,7 @@
 
 	.equ	se_m_sand_tomb_grp, voicegroup128
 	.equ	se_m_sand_tomb_pri, 4
-	.equ	se_m_sand_tomb_rev, reverb_set+50
+	.equ	se_m_sand_tomb_rev, 0
 	.equ	se_m_sand_tomb_mvl, 127
 	.equ	se_m_sand_tomb_key, 0
 	.equ	se_m_sand_tomb_tbs, 1
@@ -126,45 +126,45 @@ se_m_sand_tomb_2:
 	.byte	W03
 	.byte		        En3 , v080
 	.byte	W04
-	.byte		        Dn3 
+	.byte		        Dn3
 	.byte	W03
 	.byte		        Cn3 , v100
 	.byte	W04
 	.byte		        En3 , v080
 	.byte	W04
-	.byte		        Dn3 
+	.byte		        Dn3
 	.byte	W03
 	.byte		        Cn3 , v100
 	.byte	W03
 	.byte	W01
 	.byte		        En3 , v080
 	.byte	W03
-	.byte		        Dn3 
+	.byte		        Dn3
 	.byte	W04
 	.byte		        Cn3 , v100
 	.byte	W04
 	.byte		        En3 , v080
 	.byte	W03
-	.byte		        Dn3 
+	.byte		        Dn3
 	.byte	W04
 	.byte		        Cn3 , v100
 	.byte	W03
 	.byte		        En3 , v080
 	.byte	W02
 	.byte	W02
-	.byte		        Dn3 
+	.byte		        Dn3
 	.byte	W04
 	.byte		        Cn3 , v100
 	.byte	W03
 	.byte		        En3 , v080
 	.byte	W04
-	.byte		        Dn3 
+	.byte		        Dn3
 	.byte	W03
 	.byte		        Cn3 , v100
 	.byte	W04
 	.byte		        En3 , v080
 	.byte	W04
-	.byte		        Dn3 
+	.byte		        Dn3
 	.byte	W03
 	.byte		        Cn3 , v092
 	.byte	W04

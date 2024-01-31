@@ -4,6 +4,8 @@
 #include "global.h"
 #include "constants/battle_string_ids.h"
 
+#define TEXT_BUFF_ARRAY_COUNT   18
+
 // for 0xFD
 
 #define B_TXT_BUFF1 0x0
@@ -205,7 +207,7 @@ struct BattleMsgData
     u8 itemEffectBattler;
     u8 moveType;
     u8 abilities[4];
-    u8 textBuffs[3][0x10];
+    u8 textBuffs[3][TEXT_BUFF_ARRAY_COUNT];
 };
 
 void BufferStringBattle(u16 stringID);
@@ -219,7 +221,6 @@ bool8 BattleStringShouldBeColored(u16);
 
 extern struct BattleMsgData *gBattleMsgDataPtr;
 
-#define TEXT_BUFF_ARRAY_COUNT   16
 
 extern u8 gDisplayedStringBattle[300];
 extern u8 gBattleTextBuff1[TEXT_BUFF_ARRAY_COUNT];

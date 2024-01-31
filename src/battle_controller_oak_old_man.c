@@ -17,6 +17,7 @@
 #include "reshow_battle_screen.h"
 #include "constants/songs.h"
 #include "constants/items.h"
+#include "constants/sound.h"
 
 static void OakOldManHandleGetMonData(void);
 static void OakOldManHandleGetRawMonData(void);
@@ -391,7 +392,7 @@ static void CompleteWhenChoseItem(void)
          && gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
         {
             BtlCtrl_OakOldMan_SetState2Flag(FIRST_BATTLE_MSG_FLAG_HP_RESTORE);
-            gBattlerControllerFuncs[gActiveBattler] = PrintOakText_KeepAnEyeOnHP;
+            //gBattlerControllerFuncs[gActiveBattler] = PrintOakText_KeepAnEyeOnHP;
         }
         else
         {
@@ -633,43 +634,43 @@ static void PrintOakText_ForPetesSake(void)
         if (!gPaletteFade.active)
         {
             DoLoadHealthboxPalsForLevelUp(&gBattleStruct->simulatedInputState[1], &gBattleStruct->simulatedInputState[3], GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
-            BeginNormalPaletteFade(0xFFFFFF7E,
-                                   4,
-                                   0,
-                                   8,
-                                   RGB_BLACK);
+            //BeginNormalPaletteFade(0xFFFFFF7E,
+            //                       4,
+            //                       0,
+            //                       8,
+            //                       RGB_BLACK);
             ++gBattleStruct->simulatedInputState[0];
         }
         break;
     case 1:
         if (!gPaletteFade.active)
         {
-            BtlCtrl_DrawVoiceoverMessageFrame();
+            //BtlCtrl_DrawVoiceoverMessageFrame();
             ++gBattleStruct->simulatedInputState[0];
         }
         break;
     case 2:
-        BattleStringExpandPlaceholdersToDisplayedString(gText_ForPetesSake);
-        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_OAK_OLD_MAN);
+        //BattleStringExpandPlaceholdersToDisplayedString(gText_ForPetesSake);
+        //BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_OAK_OLD_MAN);
         ++gBattleStruct->simulatedInputState[0];
         break;
     case 3:
         if (!IsTextPrinterActive(24))
         {
             mask = (gBitTable[gBattleStruct->simulatedInputState[1]] | gBitTable[gBattleStruct->simulatedInputState[3]]) << 16;
-            BeginNormalPaletteFade(mask,
-                                   4,
-                                   8,
-                                   0,
-                                   RGB_BLACK);
+            //BeginNormalPaletteFade(mask,
+            //                       4,
+            //                       8,
+            //                       0,
+            //                       RGB_BLACK);
             ++gBattleStruct->simulatedInputState[0];
         }
         break;
     case 4:
         if (!gPaletteFade.active)
         {
-            BattleStringExpandPlaceholdersToDisplayedString(gText_TheTrainerThat);
-            BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_OAK_OLD_MAN);
+            //BattleStringExpandPlaceholdersToDisplayedString(gText_TheTrainerThat);
+            //BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_OAK_OLD_MAN);
             ++gBattleStruct->simulatedInputState[0];
         }
         break;
@@ -677,30 +678,30 @@ static void PrintOakText_ForPetesSake(void)
         if (!IsTextPrinterActive(24))
         {
             mask = (gBitTable[gBattleStruct->simulatedInputState[1]] | gBitTable[gBattleStruct->simulatedInputState[3]]) << 16;
-            BeginNormalPaletteFade(mask,
-                                   4,
-                                   0,
-                                   8,
-                                   RGB_BLACK);
+            //BeginNormalPaletteFade(mask,
+            //                       4,
+            //                       0,
+            //                       8,
+            //                       RGB_BLACK);
             ++gBattleStruct->simulatedInputState[0];
         }
         break;
     case 6:
         if (!gPaletteFade.active)
         {
-            BattleStringExpandPlaceholdersToDisplayedString(gText_TryBattling);
-            BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_OAK_OLD_MAN);
+            //BattleStringExpandPlaceholdersToDisplayedString(gText_TryBattling);
+            //BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_OAK_OLD_MAN);
             ++gBattleStruct->simulatedInputState[0];
         }
         break;
     case 7:
         if (!IsTextPrinterActive(24))
         {
-            BeginNormalPaletteFade(0xFFFFFF7E,
-                                   4,
-                                   8,
-                                   0,
-                                   RGB_BLACK);
+            //BeginNormalPaletteFade(0xFFFFFF7E,
+            //                       4,
+            //                       8,
+            //                       0,
+            //                       RGB_BLACK);
             ++gBattleStruct->simulatedInputState[0];
         }
         break;
@@ -708,7 +709,7 @@ static void PrintOakText_ForPetesSake(void)
         if (!gPaletteFade.active)
         {
             DoFreeHealthboxPalsForLevelUp(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
-            BtlCtrl_RemoveVoiceoverMessageFrame();
+            //BtlCtrl_RemoveVoiceoverMessageFrame();
             gBattleStruct->simulatedInputState[0] = 0;
             OakOldManBufferExecCompleted();
         }
@@ -733,7 +734,7 @@ void PrintOakText_OakNoRunningFromATrainer(void)
 
 static void PrintOakText_WinEarnsPrizeMoney(void)
 {
-    PrintOakTextWithMainBgDarkened(gText_WinEarnsPrizeMoney, 64);
+    PrintOakTextWithMainBgDarkened(gText_WinEarnsPrizeMoney, 1);
 }
 
 void PrintOakText_HowDisappointing(void)
@@ -1769,7 +1770,7 @@ static void OakOldManHandlePrintString(void)
                 if (!BtlCtrl_OakOldMan_TestState2Flag(FIRST_BATTLE_MSG_FLAG_STAT_CHG))
                 {
                     BtlCtrl_OakOldMan_SetState2Flag(FIRST_BATTLE_MSG_FLAG_STAT_CHG);
-                    gBattlerControllerFuncs[gActiveBattler] = PrintOakText_LoweringStats;
+                    //gBattlerControllerFuncs[gActiveBattler] = PrintOakText_LoweringStats;
                     return;
                 }
                 break;
@@ -2059,7 +2060,7 @@ static void OakOldManHandleFaintingCry(void)
 {
     u16 species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPECIES);
 
-    PlayCry_Normal(species, 25);
+    PlayCry_ByMode(species, -25, CRY_MODE_FAINT);
     OakOldManBufferExecCompleted();
 }
 

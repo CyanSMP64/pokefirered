@@ -355,6 +355,12 @@ const u8 gMoveDescription_ShockWave[] = _("A rapid jolt of\nelectricity strikes\
 const u8 gMoveDescription_WaterPulse[] = _("An attack with a\npulsing blast of\nwater. It may also\nconfuse the foe.");
 const u8 gMoveDescription_DoomDesire[] = _("A move that attacks\nthe foe with a\nblast of light two\nturns after use.");
 const u8 gMoveDescription_PsychoBoost[] = _("An intense attack\nthat also sharply\nreduces the user's\nSP. ATK stat.");
+const u8 sDisarmingVoiceDescription[] = _("The user lets out\na charming cry\nthat cannot be\nevaded.");
+const u8 sDrainingKissDescription[] = _("A sweet kiss that\nabsorbs over half\nthe damage inflicted\nto restore HP.");
+const u8 sPlayRoughDescription[] = _("The foe is roughed\nup by the user.\nThis may lower the\nfoe's Attack.");
+const u8 sFairyWindDescription[] = _("The user stirs up\na fairy wind and\nstrikes the foe\nwith it.");
+const u8 sMoonblastDescription[] = _("The foe is attacked\nwith the power of\nthe moon. This may\nlower its Sp. Atk.");
+const u8 sDazzlingGleamDescription[] = _("The user damages\nopposing Pokémon\nby emitting a\npowerful flash.");
 
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_POUND         - 1] = gMoveDescription_Pound,
@@ -711,4 +717,10 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_WATER_PULSE   - 1] = gMoveDescription_WaterPulse,
     [MOVE_DOOM_DESIRE   - 1] = gMoveDescription_DoomDesire,
     [MOVE_PSYCHO_BOOST  - 1] = gMoveDescription_PsychoBoost,
+    [MOVE_DISARMING_VOICE - 1] = sDisarmingVoiceDescription,
+    [MOVE_DRAINING_KISS - 1] = sDrainingKissDescription,
+    [MOVE_PLAY_ROUGH - 1] = sPlayRoughDescription,
+    [MOVE_FAIRY_WIND - 1] = sFairyWindDescription,
+    [MOVE_MOONBLAST - 1] = sMoonblastDescription,
+    [MOVE_DAZZLING_GLEAM - 1] = sDazzlingGleamDescription,
 };

@@ -14,8 +14,8 @@ gSpecials::
 	def_special ReturnFromLinkRoom
 	def_special CleanupLinkRoomState
 	def_special ExitLinkRoom
-	def_special NullFieldSpecial  @ Secret Base specials
-	def_special NullFieldSpecial
+	def_special IsPoisonInParty
+	def_special FlagsVars_PokedexFlags_All @ debug
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial

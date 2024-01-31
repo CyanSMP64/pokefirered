@@ -14,16 +14,16 @@
 #define FLAG_TEMP_4      (TEMP_FLAGS_START + 0x04)
 #define FLAG_TEMP_5      (TEMP_FLAGS_START + 0x05)
 #define FLAG_TEMP_6      (TEMP_FLAGS_START + 0x06)
-#define FLAG_TEMP_7      (TEMP_FLAGS_START + 0x07)
-#define FLAG_TEMP_8      (TEMP_FLAGS_START + 0x08)
-#define FLAG_TEMP_9      (TEMP_FLAGS_START + 0x09)
-#define FLAG_TEMP_A      (TEMP_FLAGS_START + 0x0A)
-#define FLAG_TEMP_B      (TEMP_FLAGS_START + 0x0B)
-#define FLAG_TEMP_C      (TEMP_FLAGS_START + 0x0C)
-#define FLAG_TEMP_D      (TEMP_FLAGS_START + 0x0D)
-#define FLAG_TEMP_E      (TEMP_FLAGS_START + 0x0E)
-#define FLAG_TEMP_F      (TEMP_FLAGS_START + 0x0F)
-#define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10)
+#define FLAG_TEMP_7      (TEMP_FLAGS_START + 0x07)  // unused
+#define FLAG_TEMP_8      (TEMP_FLAGS_START + 0x08)  // unused
+#define FLAG_TEMP_9      (TEMP_FLAGS_START + 0x09)  // unused
+#define FLAG_TEMP_A      (TEMP_FLAGS_START + 0x0A)  // unused
+#define FLAG_TEMP_B      (TEMP_FLAGS_START + 0x0B)  // unused
+#define FLAG_TEMP_C      (TEMP_FLAGS_START + 0x0C)  // unused
+#define FLAG_TEMP_D      (TEMP_FLAGS_START + 0x0D)  // unused
+#define FLAG_TEMP_E      (TEMP_FLAGS_START + 0x0E)  // unused
+#define FLAG_TEMP_F      (TEMP_FLAGS_START + 0x0F)  // unused
+#define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10)  // unused
 
 // Used for obstacles (e.g. cut trees and rock smash rocks)
 #define FLAG_TEMP_11     (TEMP_FLAGS_START + 0x11)
@@ -132,8 +132,8 @@
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_BIKER             0x074
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_LOSTELLE          0x075
 #define FLAG_HIDE_LOSTELLE_IN_HER_HOME                     0x076
-#define FLAG_0x077                                         0x077
-#define FLAG_0x078                                         0x078
+#define FLAG_USED_FRIENDSHIP                               0x077
+#define FLAG_ENTERED_HALL_OF_FAME                          0x078
 #define FLAG_HIDE_THREE_ISLAND_BIKERS                      0x079
 #define FLAG_HIDE_LOSTELLE_IN_BERRY_FOREST                 0x07A
 #define FLAG_HIDE_TWO_ISLAND_WOMAN                         0x07B
@@ -1160,8 +1160,8 @@
 #define FLAG_HIDDEN_ITEM_ROUTE8_LUM_BERRY                                  (FLAG_HIDDEN_ITEMS_START + 128)
 #define FLAG_HIDDEN_ITEM_ROUTE8_LEPPA_BERRY                                (FLAG_HIDDEN_ITEMS_START + 129)
 #define FLAG_HIDDEN_ITEM_ROUTE12_RARE_CANDY                                (FLAG_HIDDEN_ITEMS_START + 130)
-#define FLAG_HIDDEN_ITEM_ROUTE12_LEFTOVERS                                 (FLAG_HIDDEN_ITEMS_START + 131)
-#define FLAG_HIDDEN_ITEM_ROUTE16_LEFTOVERS                                 (FLAG_HIDDEN_ITEMS_START + 132)
+#define FLAG_HIDDEN_ITEM_ROUTE12_LEFTOVERS                                 (FLAG_HIDDEN_ITEMS_START + 131) // requires itemfinder
+#define FLAG_HIDDEN_ITEM_ROUTE16_LEFTOVERS                                 (FLAG_HIDDEN_ITEMS_START + 132) // requires itemfinder
 #define FLAG_HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE                           (FLAG_HIDDEN_ITEMS_START + 133)
 #define FLAG_HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL                       (FLAG_HIDDEN_ITEMS_START + 134)
 #define FLAG_HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL                            (FLAG_HIDDEN_ITEMS_START + 135)
@@ -1188,9 +1188,9 @@
 #define FLAG_HIDDEN_ITEM_ROUTE4_RAZZ_BERRY                                 (FLAG_HIDDEN_ITEMS_START + 156)
 #define FLAG_HIDDEN_ITEM_ROUTE14_PINAP_BERRY                               (FLAG_HIDDEN_ITEMS_START + 157)
 #define FLAG_HIDDEN_ITEM_MT_EMBER_EXTERIOR_FIRE_STONE                      (FLAG_HIDDEN_ITEMS_START + 158)
-#define FLAG_HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL                      (FLAG_HIDDEN_ITEMS_START + 159)
-#define FLAG_HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH                      (FLAG_HIDDEN_ITEMS_START + 160)
-#define FLAG_HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_PP_MAX                      (FLAG_HIDDEN_ITEMS_START + 161)
+#define FLAG_HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL                      (FLAG_HIDDEN_ITEMS_START + 159) // requires itemfinder
+#define FLAG_HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH                      (FLAG_HIDDEN_ITEMS_START + 160) // requires itemfinder
+#define FLAG_HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_PP_MAX                      (FLAG_HIDDEN_ITEMS_START + 161) // requires itemfinder
 #define FLAG_HIDDEN_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL                      (FLAG_HIDDEN_ITEMS_START + 162)
 #define FLAG_HIDDEN_ITEM_THREE_ISLAND_DUNSPARCE_TUNNEL_NUGGET              (FLAG_HIDDEN_ITEMS_START + 163)
 #define FLAG_HIDDEN_ITEM_THREE_ISLAND_PP_UP                                (FLAG_HIDDEN_ITEMS_START + 164)
@@ -1218,7 +1218,7 @@
 #define FLAG_HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL                  (FLAG_HIDDEN_ITEMS_START + 186)
 #define FLAG_HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY            (FLAG_HIDDEN_ITEMS_START + 187)
 #define FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY  (FLAG_HIDDEN_ITEMS_START + 188)
-#define FLAG_HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE                     (FLAG_HIDDEN_ITEMS_START + 189)
+#define FLAG_HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE                     (FLAG_HIDDEN_ITEMS_START + 189) // requires itemfinder
 #define FLAG_HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE                       (FLAG_HIDDEN_ITEMS_START + 190)
 
 // Unused hidden item flags

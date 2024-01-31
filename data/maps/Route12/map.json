@@ -159,7 +159,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST",
       "x": 18,
       "y": 36,
       "elevation": 3,
@@ -258,7 +258,152 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 113,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 113,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 113,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 114,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_RareCandy"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

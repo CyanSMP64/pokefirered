@@ -450,3 +450,106 @@ PalletTown_EventScript_SignLadyStartShowSign::
 	call PalletTown_EventScript_SignLadyShowSign
 	release
 	end
+
+PalletTown_EventScript_ProfOakBallTrigger1::
+	lockall
+	setvar VAR_TEMP_1, 0
+	goto PalletTown_EventScript_ProfOakBall
+
+PalletTown_EventScript_ProfOakBallTrigger2::
+	lockall
+	setvar VAR_TEMP_1, 1
+	goto PalletTown_EventScript_ProfOakBall
+
+PalletTown_EventScript_ProfOakBall::
+	call_if_eq VAR_TEMP_1, 0, PalletTown_EventScript_ProfOakApproachPlayerBall1
+	call_if_eq VAR_TEMP_1, 1, PalletTown_EventScript_ProfOakApproachPlayerBall2
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox PalletTown_Text_OakDontGoOut
+	closemessage
+	textcolor NPC_TEXT_COLOR_DEFAULT
+	removeitem ITEM_OAKS_PARCEL, 1
+	setflag FLAG_SYS_POKEDEX_GET
+	special EnableNationalPokedex
+	special SetUnlockedPokedexFlags
+	giveitem_msg PalletTown_Text_OakGrassUnsafeNeedMon, ITEM_POKE_BALL, 5, MUS_RG_OBTAIN_KEY_ITEM
+	setvar VAR_MAP_SCENE_POKEMON_CENTER_TEALA, 1
+	closemessage
+	call_if_eq VAR_TEMP_1, 0, PalletTown_EventScript_ProfOakLeaveBall1
+	call_if_eq VAR_TEMP_1, 1, PalletTown_EventScript_ProfOakLeaveBall2
+	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 6
+	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 2
+	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
+	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1
+	setvar VAR_MAP_SCENE_ROUTE22, 1
+	setflag FLAG_0x152
+	releaseall
+	end
+
+PalletTown_EventScript_ProfOakApproachPlayerBall1::
+	applymovement 4, PalletTown_Movement_ProfOakApproachPlayerBall1
+	waitmovement 4
+	return
+
+PalletTown_EventScript_ProfOakApproachPlayerBall2::
+	applymovement 4, PalletTown_Movement_ProfOakApproachPlayerBall2
+	waitmovement 4
+	return
+
+PalletTown_EventScript_ProfOakLeaveBall1::
+	applymovement 4, PalletTown_Movement_ProfOakLeaveBall1
+	waitmovement 4
+	removeobject 4
+	return
+
+PalletTown_EventScript_ProfOakLeaveBall2::
+	applymovement 4, PalletTown_Movement_ProfOakLeaveBall2
+	waitmovement 4
+	removeobject 4
+	return
+
+PalletTown_Movement_ProfOakApproachPlayerBall1:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PalletTown_Movement_ProfOakApproachPlayerBall2:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PalletTown_Movement_ProfOakLeaveBall1:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+PalletTown_Movement_ProfOakLeaveBall2:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end

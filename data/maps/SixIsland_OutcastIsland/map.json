@@ -129,7 +129,89 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_StarPiece"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_StarPiece"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_StarPiece"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_NetBall"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_OutcastIsland_EventScript_Sparkle_NetBall"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

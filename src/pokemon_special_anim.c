@@ -84,7 +84,6 @@ static struct PokemonSpecialAnim * AllocPSA(u8 slotId, u16 itemId, MainCallback 
     ptr->itemId = itemId;
     ptr->animType = GetAnimTypeByItemId(itemId);
     ptr->pokemon = *pokemon;
-    ptr->field_00a4 = 0;
     GetMonData(pokemon, MON_DATA_NICKNAME, ptr->nickname);
     if (ptr->animType == 4)
     {
@@ -586,7 +585,7 @@ static void Task_CleanUp(u8 taskId)
         ptr->state++;
         break;
     case 1:
-        if (!gPaletteFade.active && (ptr->field_00a4 != 1 || IsCryFinished()))
+        if (!gPaletteFade.active && IsCryFinished())
         {
             sCancelDisabled = ptr->cancelDisabled;
             SetMainCallback2(ptr->savedCallback);

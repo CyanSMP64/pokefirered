@@ -2,7 +2,7 @@
 
 	.equ	se_m_sweet_scent_grp, voicegroup128
 	.equ	se_m_sweet_scent_pri, 4
-	.equ	se_m_sweet_scent_rev, reverb_set+50
+	.equ	se_m_sweet_scent_rev, 0
 	.equ	se_m_sweet_scent_mvl, 127
 	.equ	se_m_sweet_scent_key, 0
 	.equ	se_m_sweet_scent_tbs, 1
@@ -33,7 +33,7 @@ se_m_sweet_scent_1:
 	.byte	W12
 	.byte		PAN   , c_v-4
 	.byte		BEND  , c_v+5
-	.byte		N36   , Fn3 
+	.byte		N36   , Fn3
 	.byte	W12
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+6
@@ -172,7 +172,7 @@ se_m_sweet_scent_2:
 	.byte	W02
 	.byte		VOL   , 12*se_m_sweet_scent_mvl/mxv
 	.byte	W03
-	.byte		EOT   
+	.byte		EOT
 	.byte	FINE
 
 @******************************************************@

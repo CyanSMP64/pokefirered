@@ -776,15 +776,7 @@ static const struct SpriteFrameImage sPicTable_Nurse[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_UnusedMaleReceptionist[] = {
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 0),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 1),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 2),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 0),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 0),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 1),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 1),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 2),
-    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 4, 2),
+    overworld_frame(gObjectEventPic_UnusedMaleReceptionist, 2, 2, 0),
 };
 
 static const struct SpriteFrameImage sPicTable_ItemBall[] = {

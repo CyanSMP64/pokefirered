@@ -56,7 +56,7 @@ void SetUpBattleVars(void)
     gBattleControllerExecFlags = 0;
     ClearBattleAnimationVars();
     ClearBattleMonForms();
-    BattleAI_HandleItemUseBeforeAISetup();
+    BattleAI_HandleItemUseBeforeAISetup(0xF);
 
     // Below are never read
     gUnusedFirstBattleVar1 = 0;

@@ -7,11 +7,11 @@ PokemonTower_5F_EventScript_Channeler::
 
 PokemonTower_5F_EventScript_PurifiedZone::
 	lockall
-	fadescreen FADE_TO_WHITE
-	special HealPlayerParty
-	fadescreen FADE_FROM_WHITE
-	msgbox PokemonTower_5F_Text_PurifiedZoneMonsFullyHealed
-	setvar VAR_TEMP_1, 1
+	fadescreen FADE_TO_BLACK
+	playbgm MUS_DUMMY, 0
+	playse SE_AMERICANO
+	waitse
+	warpsilent MAP_POKEMON_TOWER_5F, 4, 10
 	releaseall
 	end
 

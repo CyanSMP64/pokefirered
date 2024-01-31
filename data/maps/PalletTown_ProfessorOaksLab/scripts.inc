@@ -215,43 +215,38 @@ PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
 	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_ProfessorOaksLab_Movement_PlayerEnter
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	msgbox PalletTown_ProfessorOaksLab_Text_RivalFedUpWithWaiting
-	closemessage
-	delay 60
 	msgbox PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne
 	closemessage
-	delay 30
-	applymovement LOCALID_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalReact
-	waitmovement 0
-	msgbox PalletTown_ProfessorOaksLab_Text_RivalNoFairWhatAboutMe
-	msgbox PalletTown_ProfessorOaksLab_Text_OakBePatientRival
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2
 	releaseall
 	end
 
 PalletTown_ProfessorOaksLab_Movement_OakEnter::
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_PlayerEnter::
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_up
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalReact::
@@ -343,27 +338,27 @@ PalletTown_ProfessorOaksLab_EventScript_RivalBattleSquirtle::
 	end
 
 PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleSquirtleLeft::
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleSquirtleMid::
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleSquirtleRight::
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleCharmander::
@@ -396,30 +391,30 @@ PalletTown_ProfessorOaksLab_EventScript_RivalBattleCharmander::
 	end
 
 PalletTown_ProfessorOaksLab_Movement_ApproachForBattleCharmanderLeft::
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_ApproachForBattleCharmanderMid::
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_ApproachForBattleCharmanderRight::
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleBulbasaur::
@@ -452,30 +447,28 @@ PalletTown_ProfessorOaksLab_EventScript_RivalBattleBulbasaur::
 	end
 
 PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleBulbasaurLeft::
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleBulbasaurMid::
-	walk_left
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleBulbasaurRight::
-	walk_left
-	walk_down
-	walk_down
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle::
 	special HealPlayerParty
-	msgbox PalletTown_ProfessorOaksLab_Text_RivalGoToughenMyMon
-	closemessage
 	playbgm MUS_RG_RIVAL_EXIT, 0
 	call_if_eq VAR_TEMP_2, 1, PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleLeft
 	call_if_eq VAR_TEMP_2, 2, PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleMid
@@ -507,34 +500,31 @@ PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleRight::
 	return
 
 PalletTown_ProfessorOaksLab_Movement_RivalExitAfterBattleLeft::
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	delay_8
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalExitAfterBattleRight::
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	delay_8
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalExitAfterBattleMid::
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_down
-	walk_down
-	delay_8
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_PlayerWatchRivalExitAfterBattle::
@@ -1126,7 +1116,6 @@ PalletTown_ProfessorOaksLab_EventScript_ChoseStarter::
 	msgbox PalletTown_ProfessorOaksLab_Text_OakThisMonIsEnergetic
 	call EventScript_RestorePrevTextColor
 	setflag FLAG_SYS_POKEMON_GET
-	setflag FLAG_PALLET_LADY_NOT_BLOCKING_SIGN
 	givemon PLAYER_STARTER_SPECIES, 5
 	copyvar VAR_STARTER_MON, PLAYER_STARTER_NUM
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
@@ -1181,7 +1170,6 @@ PalletTown_ProfessorOaksLab_EventScript_RivalTakesStarter::
 	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	waitfanfare
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3
-	call_if_set FLAG_OPENED_START_MENU, PalletTown_ProfessorOaksLab_EventScript_ReadyEndSignLadyScene
 	release
 	end
 
@@ -1190,30 +1178,30 @@ PalletTown_ProfessorOaksLab_EventScript_ReadyEndSignLadyScene::
 	return
 
 PalletTown_ProfessorOaksLab_Movement_RivalWalksToCharmander::
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalWalksToSquirtle::
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
 	walk_in_place_faster_up
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalWalksToBulbasaur::
-	walk_down
-	walk_right
-	walk_right
-	walk_right
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
 	walk_in_place_faster_up
 	step_end
 

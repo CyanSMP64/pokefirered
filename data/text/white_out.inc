@@ -45,9 +45,9 @@ Text_WhitedOutLostMoney::
 	.string "POKéMON!\p"
 	.string "{PLAYER} panicked and lost ¥{STR_VAR_1}…\p"
 	.string "… … … …\p"
-	.string "{PLAYER} whited out!$"
+	.string "Back to the lab!$"
 
 Text_WhitedOut::
 	.string "{PLAYER} is out of usable\n"
 	.string "POKéMON!\p"
-	.string "{PLAYER} whited out!$"
+	.string "Back to the lab!$"

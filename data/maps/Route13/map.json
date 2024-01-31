@@ -181,8 +181,47 @@
       "flag": "FLAG_TEMP_12"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route13_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route13_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route13_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route13_EventScript_Sparkle_PPUp2"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

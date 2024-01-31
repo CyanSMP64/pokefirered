@@ -897,7 +897,8 @@ static void SpriteCB_BallThrow_CaptureMon(struct Sprite *sprite)
     {
         gDoingBattleAnim = FALSE;
         m4aMPlayAllStop();
-        PlaySE(MUS_RG_CAUGHT_INTRO);
+        if (gSaveBlock2Ptr->optionsBGM == TRUE)
+            PlaySE(MUS_RG_CAUGHT_INTRO);
     }
     else if (sprite->data[4] == 315)
     {

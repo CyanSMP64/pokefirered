@@ -14,6 +14,7 @@
 #include "decompress.h"
 #include "util.h"
 #include "trig.h"
+#include "graphics.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
 
@@ -246,10 +247,6 @@ static void SpriteCB_NidorinoAttack(struct Sprite *sprite);
 extern const u32 gMultiBootProgram_PokemonColosseum_Start[];
 extern const u32 gMultiBootProgram_PokemonColosseum_End[];
 
-static const u16 sCopyright_Pal[] = INCBIN_U16("graphics/intro/copyright.gbapal");
-static const u8 sCopyright_Gfx[]  = INCBIN_U8( "graphics/intro/copyright.4bpp.lz");
-static const u8 sCopyright_Map[]  = INCBIN_U8( "graphics/intro/copyright.bin.lz");
-
 // Game Freak
 static const u16 sGameFreakBg_Pal[]   = INCBIN_U16("graphics/intro/game_freak/bg.gbapal");
 static const u8 sGameFreakBg_Gfx[]    = INCBIN_U8( "graphics/intro/game_freak/bg.4bpp.lz");
@@ -301,6 +298,10 @@ static const u16 sScene3_Swipe_Pal[]         = INCBIN_U16("graphics/intro/scene_
 static const u16 sScene3_RecoilDust_Pal[]    = INCBIN_U16("graphics/intro/scene_3/recoil_dust.gbapal");
 static const u32 sScene3_Swipe_Gfx[]         = INCBIN_U32("graphics/intro/scene_3/swipe.4bpp.lz");
 static const u32 sScene3_RecoilDust_Gfx[]    = INCBIN_U32("graphics/intro/scene_3/recoil_dust.4bpp.lz");
+
+//extern const u16 gCopyright_Pal[] = INCBIN_U16("graphics/intro/copyright.gbapal");
+//extern const u8 gCopyright_Gfx[]  = INCBIN_U8( "graphics/intro/copyright.4bpp.lz");
+//extern const u8 gCopyright_Map[]  = INCBIN_U8( "graphics/intro/copyright.bin.lz");
 
 static const struct BgTemplate sBgTemplates_GameFreakScene[] = {
     {
@@ -903,9 +904,9 @@ static void CB2_WaitFadeBeforeSetUpIntro(void)
 
 static void LoadCopyrightGraphics(u16 charBase, u16 screenBase, u16 palOffset)
 {
-    LZ77UnCompVram(sCopyright_Gfx, (void *)BG_VRAM + charBase);
-    LZ77UnCompVram(sCopyright_Map, (void *)BG_VRAM + screenBase);
-    LoadPalette(sCopyright_Pal, palOffset, sizeof(sCopyright_Pal));
+    LZ77UnCompVram(gCopyright_Gfx, (void *)BG_VRAM + charBase);
+    LZ77UnCompVram(gCopyright_Map, (void *)BG_VRAM + screenBase);
+    LoadPalette(gCopyright_Pal, palOffset, PLTT_SIZE_4BPP);
 }
 
 static void SerialCB_CopyrightScreen(void)
@@ -948,7 +949,7 @@ static bool8 SetUpCopyrightScreen(void)
         gMain.state++;
         GameCubeMultiBoot_Main(&sGcmb);
         break;
-    case 140:
+    case 40:
         GameCubeMultiBoot_Main(&sGcmb);
         if (sGcmb.gcmb_field_2 != 1)
         {
@@ -956,7 +957,7 @@ static bool8 SetUpCopyrightScreen(void)
             gMain.state++;
         }
         break;
-    case 141:
+    case 41:
         if (!UpdatePaletteFade())
         {
             gMain.state++;
@@ -980,7 +981,7 @@ static bool8 SetUpCopyrightScreen(void)
             return FALSE;
         }
         break;
-    case 142:
+    case 42:
         ResetSerial();
         SetMainCallback2(CB2_WaitFadeBeforeSetUpIntro);
         break;

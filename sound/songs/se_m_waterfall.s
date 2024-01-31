@@ -2,7 +2,7 @@
 
 	.equ	se_m_waterfall_grp, voicegroup128
 	.equ	se_m_waterfall_pri, 4
-	.equ	se_m_waterfall_rev, reverb_set+50
+	.equ	se_m_waterfall_rev, 0
 	.equ	se_m_waterfall_mvl, 127
 	.equ	se_m_waterfall_key, 0
 	.equ	se_m_waterfall_tbs, 1
@@ -100,23 +100,23 @@ se_m_waterfall_2:
 	.byte		VOL   , 115*se_m_waterfall_mvl/mxv
 	.byte		N06   , Cn3 , v040
 	.byte	W06
-	.byte		        Gn2 
+	.byte		        Gn2
 	.byte	W06
 se_m_waterfall_2_000:
 	.byte		N06   , Cn3 , v040
 	.byte	W06
-	.byte		        Gn2 
+	.byte		        Gn2
 	.byte	W06
 	.byte	PEND
 	.byte	PATT
 	 .word	se_m_waterfall_2_000
 	.byte		N06   , Cn3 , v032
 	.byte	W06
-	.byte		        Gn2 
+	.byte		        Gn2
 	.byte	W06
 	.byte		        Cn3 , v012
 	.byte	W06
-	.byte		        Gn2 
+	.byte		        Gn2
 	.byte	W06
 	.byte	FINE
 

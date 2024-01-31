@@ -40,7 +40,6 @@ static void AnimRazorLeafParticle_Step2(struct Sprite *);
 static void AnimIngrainRoot(struct Sprite *);
 static void AnimFrenzyPlantRoot(struct Sprite *);
 static void AnimIngrainOrb(struct Sprite *);
-static void AnimTranslateLinearSingleSineWave(struct Sprite *);
 static void AnimTranslateLinearSingleSineWave_Step(struct Sprite *);
 static void AnimMoveTwisterParticle_Step(struct Sprite *);
 static void AnimConstrictBinding(struct Sprite *);
@@ -552,15 +551,15 @@ const struct SpriteTemplate gRazorLeafCutterSpriteTemplate =
     .callback = AnimTranslateLinearSingleSineWave,
 };
 
-static const union AffineAnimCmd sSwiftStarAffineAnimCmds[] = 
+const union AffineAnimCmd gSwiftStarAffineAnimCmds[] = 
 {
     AFFINEANIMCMD_FRAME(0, 0, 0, 1),
     AFFINEANIMCMD_JUMP(0),
 };
 
-static const union AffineAnimCmd *const sSwiftStarAffineAnimTable[] = 
+const union AffineAnimCmd *const gSwiftStarAffineAnimTable[] = 
 {
-    sSwiftStarAffineAnimCmds,
+    gSwiftStarAffineAnimCmds,
 };
 
 const struct SpriteTemplate gSwiftStarSpriteTemplate =
@@ -570,7 +569,7 @@ const struct SpriteTemplate gSwiftStarSpriteTemplate =
     .oam = &gOamData_AffineNormal_ObjNormal_32x32,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
-    .affineAnims = sSwiftStarAffineAnimTable,
+    .affineAnims = gSwiftStarAffineAnimTable,
     .callback = AnimTranslateLinearSingleSineWave,
 };
 
@@ -2666,7 +2665,7 @@ static void AnimRazorLeafParticle_Step2(struct Sprite* sprite)
 // arg 4: translation duration
 // arg 5: wave amplitude
 // arg 6: target between double battle opponents (boolean)
-static void AnimTranslateLinearSingleSineWave(struct Sprite* sprite)
+void AnimTranslateLinearSingleSineWave(struct Sprite* sprite)
 {
     InitSpritePosToAnimAttacker(sprite, TRUE);
     if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)

@@ -9365,7 +9365,7 @@ extern const u32 gPartyMenuBg_Pal[];
 extern const u32 gCreditsMonPokeball_Tiles[];
 extern const u32 gCreditsMonPokeball_Tilemap[];
 extern const u16 gCreditsMonPokeball_Pals[][16];
-extern const u16 gCreditsCopyright_Pal[];
+extern const u16 gCreditgCopyright_Pal[];
 extern const u8 gCreditsCopyright_Tiles[];
 extern const u8 gCreditsCopyright_Tilemap[];
 
@@ -9954,5 +9954,9 @@ extern const u16 gPokeStorageInterface_NoDisplayMon_Pal[];
 // pokedex_screen
 extern const u16 gDexScreen_TopMenuIconPals_AtoZ[];
 extern const u32 gDexScreen_TopMenuIconTiles_AtoZ[];
+
+extern const u16 gCopyright_Pal[16];
+extern const u32 gCopyright_Gfx[];
+extern const u32 gCopyright_Map[];
 
 #endif //GUARD_GRAPHICS_H

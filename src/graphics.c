@@ -1365,7 +1365,7 @@ const u16 gTitleScreen_Slash_Pal[] = INCBIN_U16("graphics/title_screen/leafgreen
 
 const u32 gTitleScreen_BlankSprite_Tiles[] = INCBIN_U32("graphics/title_screen/blank_sprite.4bpp.lz");
 
-const u16 gCreditsCopyright_Pal[] = INCBIN_U16("graphics/credits/copyright.gbapal");
+const u16 gCreditgCopyright_Pal[] = INCBIN_U16("graphics/credits/copyright.gbapal");
 const u8 gCreditsCopyright_Tiles[] = INCBIN_U8("graphics/credits/copyright.4bpp.lz");
 const u8 gCreditsCopyright_Tilemap[] = INCBIN_U8("graphics/credits/copyright.bin.lz");
 
@@ -1378,3 +1378,7 @@ const u16 sEmptyPal[16] = {0};
 const u16 gBerryCrush_Crusher_Pal[] = INCBIN_U16("graphics/berry_crush/crusher.gbapal");
 const u32 gBerryCrush_Crusher_Gfx[] = INCBIN_U32("graphics/berry_crush/crusher.4bpp.lz");
 const u32 gBerryCrush_TextWindows_Tilemap[] = INCBIN_U32("graphics/berry_crush/text_windows.bin.lz");
+
+const u16 gCopyright_Pal[] = INCBIN_U16("graphics/intro/copyright.gbapal");
+const u32 gCopyright_Gfx[]  = INCBIN_U32( "graphics/intro/copyright.4bpp.lz");
+const u32 gCopyright_Map[]  = INCBIN_U32( "graphics/intro/copyright.bin.lz");

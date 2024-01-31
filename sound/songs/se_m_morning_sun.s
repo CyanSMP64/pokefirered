@@ -2,7 +2,7 @@
 
 	.equ	se_m_morning_sun_grp, voicegroup128
 	.equ	se_m_morning_sun_pri, 5
-	.equ	se_m_morning_sun_rev, reverb_set+50
+	.equ	se_m_morning_sun_rev, 0
 	.equ	se_m_morning_sun_mvl, 127
 	.equ	se_m_morning_sun_key, 0
 	.equ	se_m_morning_sun_tbs, 1
@@ -82,7 +82,7 @@ se_m_morning_sun_2:
 	.byte		N06   , Gs6 , v108
 	.byte	W03
 	.byte	W03
-	.byte		        Bn5 
+	.byte		        Bn5
 	.byte	W03
 	.byte	W03
 	.byte		        Gs6 , v100

@@ -313,6 +313,8 @@ static void Task_SetSacredAshCB(u8 taskId);
 static void CB2_ReturnToBagMenu(void);
 static u8 GetPartyIdFromBattleSlot(u8 slot);
 static void Task_DisplayHPRestoredMessage(u8 taskId);
+static u16 ItemEffectToMonEv(struct Pokemon *, u8);
+static void ItemEffectToStatString(u8, u8 *);
 static void SetSelectedMoveForPPItem(u8 taskId);
 static void ReturnToUseOnWhichMon(u8 taskId);
 static void TryUsePPItemInBattle(u8 taskId);
@@ -1939,79 +1941,79 @@ static void Task_FirstBattleEnterParty_WaitFadeIn(u8 taskId)
 
 static void Task_FirstBattleEnterParty_DarkenScreen(u8 taskId)
 {
-    BeginNormalPaletteFade(0xFFFF1FFF, 4, 0, 6, RGB_BLACK);
+    //BeginNormalPaletteFade(0xFFFF1FFF, 4, 0, 6, RGB_BLACK);
     gTasks[taskId].func = Task_FirstBattleEnterParty_WaitDarken;
 }
 
 static void Task_FirstBattleEnterParty_WaitDarken(u8 taskId)
 {
-    if (!gPaletteFade.active)
+    //if (!gPaletteFade.active)
         gTasks[taskId].func = Task_FirstBattleEnterParty_CreatePrinter;
 }
 
 static void Task_FirstBattleEnterParty_CreatePrinter(u8 taskId)
 {
-    gTasks[taskId].data[0] = FirstBattleEnterParty_CreateWindowAndMsg1Printer();
+    //gTasks[taskId].data[0] = FirstBattleEnterParty_CreateWindowAndMsg1Printer();
     gTasks[taskId].func = Task_FirstBattleEnterParty_RunPrinterMsg1;
 }
 
 static void Task_FirstBattleEnterParty_RunPrinterMsg1(u8 taskId)
 {
-    s16 *data = gTasks[taskId].data;
+    //s16 *data = gTasks[taskId].data;
 
-    if (RunTextPrinters_CheckActive((u8)data[0]) != TRUE)
+    //if (RunTextPrinters_CheckActive((u8)data[0]) != TRUE)
         gTasks[taskId].func = Task_FirstBattleEnterParty_LightenFirstMonIcon;
 }
 
 static void Task_FirstBattleEnterParty_LightenFirstMonIcon(u8 taskId)
 {
-    BeginNormalPaletteFade(0xFFFF0008, 4, 6, 0, RGB_BLACK);
+    //BeginNormalPaletteFade(0xFFFF0008, 4, 6, 0, RGB_BLACK);
     gTasks[taskId].func = Task_FirstBattleEnterParty_WaitLightenFirstMonIcon;
 }
 
 static void Task_FirstBattleEnterParty_WaitLightenFirstMonIcon(u8 taskId)
 {
-    if (!gPaletteFade.active)
+    //if (!gPaletteFade.active)
         gTasks[taskId].func = Task_FirstBattleEnterParty_StartPrintMsg2;
 }
 
 static void Task_FirstBattleEnterParty_StartPrintMsg2(u8 taskId)
 {
-    s16 *data = gTasks[taskId].data;
+    //s16 *data = gTasks[taskId].data;
 
-    PartyMenu_Oak_PrintText(data[0], gText_OakThisIsListOfPokemon);
+    //PartyMenu_Oak_PrintText(data[0], gText_OakThisIsListOfPokemon);
     gTasks[taskId].func = Task_FirstBattleEnterParty_RunPrinterMsg2;
 }
 
 static void Task_FirstBattleEnterParty_RunPrinterMsg2(u8 taskId)
 {
-    s16 *data = gTasks[taskId].data;
+    //s16 *data = gTasks[taskId].data;
 
-    if (RunTextPrinters_CheckActive((u8)data[0]) != TRUE)
-    {
-        FirstBattleEnterParty_DestroyVoiceoverWindow((u8)data[0]);
+    //if (RunTextPrinters_CheckActive((u8)data[0]) != TRUE)
+    //{
+    //    FirstBattleEnterParty_DestroyVoiceoverWindow((u8)data[0]);
         gTasks[taskId].func = Task_FirstBattleEnterParty_FadeNormal;
-    }
+    //}
 }
 
 static void Task_FirstBattleEnterParty_FadeNormal(u8 taskId)
 {
-    BeginNormalPaletteFade(0x0000FFF7, 4, 6, 0, RGB_BLACK);
+    //BeginNormalPaletteFade(0x0000FFF7, 4, 6, 0, RGB_BLACK);
     gTasks[taskId].func = Task_FirstBattleEnterParty_WaitFadeNormal;
 }
 
 static void Task_FirstBattleEnterParty_WaitFadeNormal(u8 taskId)
 {
-    if (!gPaletteFade.active)
-    {
-        LoadUserWindowGfx(0, 0x4F, BG_PLTT_ID(13));
-        LoadStdWindowGfx(0, 0x58, BG_PLTT_ID(15));
-        if (gPartyMenu.action == PARTY_ACTION_USE_ITEM)
-            DisplayPartyMenuStdMessage(PARTY_MSG_USE_ON_WHICH_MON);
-        else
-            DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON);
+    //if (!gPaletteFade.active)
+    //{
+    //    LoadUserWindowGfx(0, 0x4F, BG_PLTT_ID(13));
+    //    LoadStdWindowGfx(0, 0x58, BG_PLTT_ID(15));
+    //    if (gPartyMenu.action == PARTY_ACTION_USE_ITEM)
+    //        DisplayPartyMenuStdMessage(PARTY_MSG_USE_ON_WHICH_MON);
+    //    else
+    //        DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON);
         gTasks[taskId].func = Task_HandleChooseMonInput;
-    }
+    //}
 }
 
 // Pokedude switches Pokemon
@@ -4540,6 +4542,96 @@ static void Task_ClosePartyMenuAfterText(u8 taskId)
         if (gPartyMenuUseExitCallback == FALSE)
             sPartyMenuInternal->exitCallback = NULL;
         Task_ClosePartyMenu(taskId);
+    }
+}
+
+void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 item = gSpecialVar_ItemId;
+    u8 effectType = GetItemEffectType(item);
+    u16 friendship = GetMonData(mon, MON_DATA_FRIENDSHIP);
+    u16 ev = ItemEffectToMonEv(mon, effectType);
+    bool8 cannotUseEffect = ExecuteTableBasedItemEffect_(gPartyMenu.slotId, item, 0);
+    u16 newFriendship = GetMonData(mon, MON_DATA_FRIENDSHIP);
+    u16 newEv = ItemEffectToMonEv(mon, effectType);
+
+    if (cannotUseEffect || (friendship == newFriendship && ev == newEv))
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
+    else
+    {
+        gPartyMenuUseExitCallback = TRUE;
+        PlaySE(SE_USE_ITEM);
+        RemoveBagItem(item, 1);
+        GetMonNickname(mon, gStringVar1);
+        ItemEffectToStatString(effectType, gStringVar2);
+        if (friendship != newFriendship)
+        {
+            if (ev != newEv)
+                StringExpandPlaceholders(gStringVar4, gText_PkmnFriendlyBaseVar2Fell);
+            else
+                StringExpandPlaceholders(gStringVar4, gText_PkmnFriendlyBaseVar2CantFall);
+        }
+        else
+        {
+            StringExpandPlaceholders(gStringVar4, gText_PkmnAdoresBaseVar2Fell);
+        }
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
+}
+
+static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType)
+{
+    switch (effectType)
+    {
+    case ITEM_EFFECT_HP_EV:
+        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_SHEDINJA)
+            return GetMonData(mon, MON_DATA_HP_EV);
+        break;
+    case ITEM_EFFECT_ATK_EV:
+        return GetMonData(mon, MON_DATA_ATK_EV);
+    case ITEM_EFFECT_DEF_EV:
+        return GetMonData(mon, MON_DATA_DEF_EV);
+    case ITEM_EFFECT_SPEED_EV:
+        return GetMonData(mon, MON_DATA_SPEED_EV);
+    case ITEM_EFFECT_SPATK_EV:
+        return GetMonData(mon, MON_DATA_SPATK_EV);
+    case ITEM_EFFECT_SPDEF_EV:
+        return GetMonData(mon, MON_DATA_SPDEF_EV);
+    }
+    return 0;
+}
+
+static void ItemEffectToStatString(u8 effectType, u8 *dest)
+{
+    switch (effectType)
+    {
+    case ITEM_EFFECT_HP_EV:
+        StringCopy(dest, gText_ItemEffect_HP);
+        break;
+    case ITEM_EFFECT_ATK_EV:
+        StringCopy(dest, gText_ItemEffect_Attack);
+        break;
+    case ITEM_EFFECT_DEF_EV:
+        StringCopy(dest, gText_ItemEffect_Defense);
+        break;
+    case ITEM_EFFECT_SPEED_EV:
+        StringCopy(dest, gText_ItemEffect_Speed);
+        break;
+    case ITEM_EFFECT_SPATK_EV:
+        StringCopy(dest, gText_ItemEffect_SpAtk);
+        break;
+    case ITEM_EFFECT_SPDEF_EV:
+        StringCopy(dest, gText_ItemEffect_SpDef);
+        break;
     }
 }
 

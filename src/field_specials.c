@@ -2546,3 +2546,21 @@ static void Task_WingFlapSound(u8 taskId)
     if (data[0] == gSpecialVar_0x8004 - 1)
         DestroyTask(taskId);
 }
+
+bool8 IsPoisonInParty(void)
+{
+    if (!CheckPartyPoison(gPlayerParty, (1 << PARTY_SIZE) - 1))
+        return FALSE;
+
+    return TRUE;
+}
+
+void FlagsVars_PokedexFlags_All(void)
+{
+    u16 i;
+    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    {
+        GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
+        GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
+    }
+}

@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -129,6 +129,78 @@
       "var": "VAR_MAP_SCENE_SEAFOAM_ISLANDS_B4F",
       "var_value": "0",
       "script": "SeafoamIslands_B4F_EventScript_UpwardCurrent"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SeafoamIslands_B4F_EventScript_Sparkle_WaterStone"
     }
   ],
   "bg_events": [

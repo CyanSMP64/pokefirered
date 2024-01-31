@@ -174,7 +174,269 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 74,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 74,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_OranBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_OranBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_OranBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_OranBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_OranBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_OranBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_OranBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 62,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 62,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 66,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 66,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 66,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

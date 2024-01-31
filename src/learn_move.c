@@ -124,26 +124,17 @@ struct MoveTutorMoveInfoHeaders
 struct LearnMoveGfxResources
 {
     u8 state;
-    u8 unk_01;
-    u8 unk_02;
     u8 spriteIds[2];
-    u8 filler_05[0x13];
-    u8 unk_18;
     u8 scrollPositionMaybe;
+    struct ListMenuItem listMenuItems[MAX_LEVEL_UP_MOVES];
     u8 numLearnableMoves;
-    u8 unk_1B;
-    u8 unk_1C;
-    u8 unk_1D;
-    u8 unk_1E;
-    struct ListMenuItem listMenuItems[25];
-    u16 learnableMoves[25];
-    u8 listMenuStrbufs[25][13];
     bool8 scheduleMoveInfoUpdate;
+    u8 listMenuStrbufs[MAX_LEVEL_UP_MOVES][17];
+    u16 learnableMoves[MAX_LEVEL_UP_MOVES];
+    u8 bg1TilemapBuffer[BG_SCREEN_SIZE]; // 264
     u8 selectedPartyMember;
     u8 selectedMoveSlot;
-    u8 unk_262;
     u8 listMenuTaskId;
-    u8 bg1TilemapBuffer[BG_SCREEN_SIZE]; // 264
     u8 textColor[3]; // A64
     u8 selectedIndex;
     u16 listMenuScrollPos;
@@ -256,64 +247,64 @@ static const struct WindowTemplate sWindowTemplates[9] = {
         .bg = 0,
         .tilemapLeft = 0,
         .tilemapTop = 0,
-        .width = 6,
-        .height = 7,
+        .width = 5,
+        .height = 6,
         .paletteNum = 13,
         .baseBlock = 0x014
     },
     {
         .bg = 0,
-        .tilemapLeft = 10,
+        .tilemapLeft = 9,
         .tilemapTop = 0,
         .width = 5,
-        .height = 5,
+        .height = 4,
         .paletteNum = 13,
-        .baseBlock = 0x03e
+        .baseBlock = 0x032
     },
     {
         .bg = 0,
-        .tilemapLeft = 5,
+        .tilemapLeft = 4,
         .tilemapTop = 0,
         .width = 5,
         .height = 2,
         .paletteNum = 13,
-        .baseBlock = 0x057
+        .baseBlock = 0x046
     },
     {
         .bg = 0,
-        .tilemapLeft = 15,
+        .tilemapLeft = 14,
         .tilemapTop = 0,
         .width = 3,
         .height = 5,
         .paletteNum = 15,
-        .baseBlock = 0x061
+        .baseBlock = 0x050
     },
     {
         .bg = 0,
-        .tilemapLeft = 5,
+        .tilemapLeft = 4,
         .tilemapTop = 2,
         .width = 3,
-        .height = 3,
+        .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x070
+        .baseBlock = 0x05f
     },
     {
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 6,
-        .width = 15,
+        .width = 14,
         .height = 8,
         .paletteNum = 15,
-        .baseBlock = 0x079
+        .baseBlock = 0x065
     },
     {
         .bg = 0,
-        .tilemapLeft = 19,
+        .tilemapLeft = 18,
         .tilemapTop = 1,
-        .width = 10,
+        .width = 11,
         .height = 12,
         .paletteNum = 15,
-        .baseBlock = 0x0f1
+        .baseBlock = 0x0d5
     },
     {
         .bg = 0,
@@ -322,7 +313,7 @@ static const struct WindowTemplate sWindowTemplates[9] = {
         .width = 26,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x169
+        .baseBlock = 0x159
     }, DUMMY_WIN_TEMPLATE
 };
 
@@ -333,7 +324,7 @@ static const struct WindowTemplate sMoveRelearnerYesNoMenuTemplate = {
     .width = 6,
     .height = 4,
     .paletteNum = 15,
-    .baseBlock = 0x1d1
+    .baseBlock = 0x1c1
 };
 
 static const struct ListMenuTemplate sMoveRelearnerListMenuTemplate = {
@@ -353,7 +344,7 @@ static const struct ListMenuTemplate sMoveRelearnerListMenuTemplate = {
     .lettersSpacing = 1,
     .itemVerticalPadding = 0,
     .scrollMultiple = 0,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SMALL,
     .cursorKind = 0,
 };
 
@@ -698,14 +689,8 @@ static void InitMoveRelearnerStateVariables(void)
 {
     int i;
     sMoveRelearner->state = 0;
-    sMoveRelearner->unk_02 = 0;
     sMoveRelearner->scrollPositionMaybe = 0;
-    sMoveRelearner->unk_18 = 0;
-    sMoveRelearner->unk_1C = 0;
     sMoveRelearner->numLearnableMoves = 0;
-    sMoveRelearner->unk_1B = 0;
-    sMoveRelearner->unk_1D = 0;
-    sMoveRelearner->unk_1E = 0;
     sMoveRelearner->scheduleMoveInfoUpdate = FALSE;
     for (i = 0; i < 20; i++)
         sMoveRelearner->learnableMoves[i] = MOVE_NONE;

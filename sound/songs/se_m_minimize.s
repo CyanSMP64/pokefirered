@@ -2,7 +2,7 @@
 
 	.equ	se_m_minimize_grp, voicegroup128
 	.equ	se_m_minimize_pri, 4
-	.equ	se_m_minimize_rev, reverb_set+50
+	.equ	se_m_minimize_rev, 0
 	.equ	se_m_minimize_mvl, 127
 	.equ	se_m_minimize_key, 0
 	.equ	se_m_minimize_tbs, 1
@@ -68,7 +68,7 @@ se_m_minimize_1:
 	.byte	W02
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+28
-	.byte		N06   , An3 
+	.byte		N06   , An3
 	.byte	W01
 	.byte		BEND  , c_v+20
 	.byte	W01

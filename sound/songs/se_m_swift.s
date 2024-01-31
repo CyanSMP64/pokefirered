@@ -2,7 +2,7 @@
 
 	.equ	se_m_swift_grp, voicegroup128
 	.equ	se_m_swift_pri, 4
-	.equ	se_m_swift_rev, reverb_set+50
+	.equ	se_m_swift_rev, 0
 	.equ	se_m_swift_mvl, 127
 	.equ	se_m_swift_key, 0
 	.equ	se_m_swift_tbs, 1
@@ -41,7 +41,7 @@ se_m_swift_1:
 	.byte	W02
 	.byte		VOL   , 100*se_m_swift_mvl/mxv
 	.byte		BEND  , c_v+0
-	.byte		N06   
+	.byte		N06
 	.byte	W01
 	.byte		PAN   , c_v+5
 	.byte		BEND  , c_v-11

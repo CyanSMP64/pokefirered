@@ -304,7 +304,7 @@ static void CompleteOnHealthbarDone(void)
         if (!BtlCtrl_OakOldMan_TestState2Flag(1) && (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE))
         {
             BtlCtrl_OakOldMan_SetState2Flag(1);
-            gBattlerControllerFuncs[gActiveBattler] = PrintOakText_InflictingDamageIsKey;
+            //gBattlerControllerFuncs[gActiveBattler] = PrintOakText_InflictingDamageIsKey;
         }
         else
         {
@@ -1347,7 +1347,7 @@ static void OpponentHandleChooseMove(void)
     if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_SAFARI | BATTLE_TYPE_ROAMER))
     {
 
-        BattleAI_SetupAIData();
+        BattleAI_SetupAIData(0xf);
         chosenMoveId = BattleAI_ChooseMoveOrAction();
 
         switch (chosenMoveId)

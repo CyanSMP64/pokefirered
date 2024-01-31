@@ -167,8 +167,407 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 80,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 80,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 80,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 81,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 82,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 84,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 85,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 86,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 86,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 86,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_FullRestore"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_FullRestore"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_FullRestore"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_FullRestore"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_FullRestore"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_FullRestore"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 71,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 71,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 71,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 70,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 66,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_PPUp"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 122,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 122,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 122,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 123,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 124,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 125,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 126,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 127,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 128,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 128,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 128,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 127,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 123,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 158,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxElixir"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 156,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxElixir"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 155,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxElixir"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 154,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxElixir"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 154,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxElixir"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 154,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxElixir"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 155,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "0",
+      "script": "Route17_EventScript_Sparkle_MaxElixir"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

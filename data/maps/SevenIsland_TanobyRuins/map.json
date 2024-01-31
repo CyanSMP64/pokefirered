@@ -129,7 +129,323 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 89,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 89,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 85,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 83,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 83,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 83,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 85,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale2"
+    },
+    {
+      "type": "trigger",
+      "x": 122,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale3"
+    },
+    {
+      "type": "trigger",
+      "x": 126,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale3"
+    },
+    {
+      "type": "trigger",
+      "x": 127,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale3"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale4"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale4"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale4"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "SevenIsland_Tanoby_Ruins_EventScript_Sparkle_HeartScale4"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",
