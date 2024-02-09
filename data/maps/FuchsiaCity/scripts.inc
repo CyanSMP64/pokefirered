@@ -100,9 +100,9 @@ FuchsiaCity_EventScript_KangaskhanSign::
 
 FuchsiaCity_EventScript_SlowpokeSign::
 	lockall
-	setvar VAR_0x8004, SPECIES_SLOWPOKE
+	setvar VAR_0x8004, SPECIES_DEOXYS_ATTACK
 	special SetSeenMon
-	showmonpic SPECIES_SLOWPOKE, 10, 3
+	showmonpic SPECIES_DEOXYS_ATTACK, 10, 3
 	msgbox FuchsiaCity_Text_SlowpokeSign
 	hidemonpic
 	releaseall
