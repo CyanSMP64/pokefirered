@@ -128,8 +128,9 @@ EWRAM_DATA u8 gBattleTextBuff3[TEXT_BUFF_ARRAY_COUNT] = {0};
 // for gDisplayedStringBattle and overflows into this array. If it
 // is removed (and none of the buffers above are increased in size)
 // it will instead overflow into useful data.
-static EWRAM_DATA u32 sFlickerArray[25] = {0};
+static EWRAM_DATA u32 sFlickerArray[23] = {0};
 EWRAM_DATA u32 gBattleTypeFlags = 0;
+EWRAM_DATA u8 gBattlerAbility = 0;
 EWRAM_DATA u8 gBattleTerrain = 0;
 EWRAM_DATA u32 gUnusedFirstBattleVar1 = 0;
 EWRAM_DATA struct MultiBattlePokemonTx gMultiPartnerParty[3] = {0};
@@ -2386,6 +2387,7 @@ static void BattleStartClearSetData(void)
 
     gBattlerAttacker = 0;
     gBattlerTarget = 0;
+    gBattlerAbility = 0;
     gBattleWeather = 0;
 
     dataPtr = (u8 *)&gWishFutureKnock;

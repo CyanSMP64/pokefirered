@@ -133,17 +133,17 @@ SECTIONS {
         src/sound.o(.text);
         src/battle_anim.o(.text);
         src/battle_anim_mons.o(.text);
-        src/task.o(.text);
         src/reshow_battle_screen.o(.text);
         src/battle_anim_status_effects.o(.text);
         src/title_screen.o(.text);
-        src/reset_save_heap.o(.text);
     } =0
 
     .text_5 0x0807f63c:
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/reset_save_heap.o(.text);
+        src/task.o(.text);
         src/field_weather.o(.text);
         src/field_weather_util.o(.text);
         src/field_weather_effects.o(.text);
@@ -214,12 +214,9 @@ SECTIONS {
         src/region_map.o(.text);
         src/image_processing_effects.o(.text);
         src/battle_ai_script_commands.o(.text);
-        src/fldeff_rocksmash.o(.text);
         src/fldeff_dig.o(.text);
         src/fldeff_flash.o(.text);
         src/post_battle_event_funcs.o(.text);
-        src/prof_pc.o(.text);
-        src/hof_pc.o(.text);
         src/field_specials.o(.text);
         src/battle_records.o(.text);
     } =0
@@ -228,6 +225,9 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/fldeff_rocksmash.o(.text);
+        src/prof_pc.o(.text);
+        src/hof_pc.o(.text);
         src/party_menu_specials.o(.text);
         src/coins.o(.text);
         src/fldeff_strength.o(.text);
@@ -519,7 +519,6 @@ SECTIONS {
         src/pokemon_size_record.o(.rodata);
         src/item_use.o(.rodata);
         src/battle_anim_effects_1.o(.rodata);
-        src/battle_anim_effects_2.o(.rodata);
         src/battle_anim_water.o(.rodata);
         src/battle_anim_fire.o(.rodata);
         src/battle_anim_electric.o(.rodata);
@@ -544,6 +543,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/new_menu_helpers.o(.rodata);
+        src/battle_anim_effects_2.o(.rodata);
         src/script_menu.o(.rodata);
         src/easy_chat.o(.rodata);
         src/mon_markings.o(.rodata);

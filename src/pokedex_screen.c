@@ -3422,7 +3422,7 @@ static void Task_DexScreen_RegisterMonToPokedex(u8 taskId)
         }
         break;
     case 11:
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
+        if (JOY_NEW(A_BUTTON | B_BUTTON) && !IsCryPlaying())
             sPokedexScreenData->state = 2;
         break;
     }

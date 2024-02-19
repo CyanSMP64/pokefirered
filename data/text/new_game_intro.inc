@@ -11,7 +11,7 @@ gNameChoice_Leaf::
     .string "LEAF$"
 
 gNameChoice_Fire::
-    .string "COPIUM$"
+    .string "Dumper$"
 
 gNameChoice_Gary::
     .string "Kaizo$"
@@ -71,7 +71,7 @@ gNameChoice_Tosh::
     .string "Maple$"
 
 gNameChoice_Roak::
-    .string "PEPW$"
+    .string ":)$"
 
 gNameChoice_Omi::
     .string "Ame$"

@@ -4118,7 +4118,7 @@ static void PokeSum_CreateMonIconSprite(void)
     species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG);
     personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
 
-    SafeLoadMonIconPalette(species);
+    SafeLoadMonIconPalette(species, personality);
 
     if (sMonSummaryScreen->savedCallback == CB2_ReturnToTradeMenuFromSummary)
     {

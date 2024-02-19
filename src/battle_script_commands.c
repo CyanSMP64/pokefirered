@@ -1107,7 +1107,7 @@ static void Cmd_accuracycheck(void)
 
 static void Cmd_attackstring(void)
 {
-    if (gBattleControllerExecFlags)
+        if (gBattleControllerExecFlags)
         return;
 
     if (!(gHitMarker & (HITMARKER_NO_ATTACKSTRING | HITMARKER_ATTACKSTRING_PRINTED)))
@@ -1121,7 +1121,7 @@ static void Cmd_attackstring(void)
 
 static void Cmd_ppreduce(void)
 {
-    s32 ppToDeduct = 1;
+        s32 ppToDeduct = 1;
 
     if (gBattleControllerExecFlags)
         return;
@@ -1169,7 +1169,7 @@ static void Cmd_ppreduce(void)
 
 static void Cmd_critcalc(void)
 {
-    u8 holdEffect;
+        u8 holdEffect;
     u16 item, critChance;
 
     item = gBattleMons[gBattlerAttacker].item;
@@ -1208,7 +1208,7 @@ static void Cmd_critcalc(void)
 
 static void Cmd_damagecalc(void)
 {
-    u16 sideStatus = gSideStatuses[GET_BATTLER_SIDE(gBattlerTarget)];
+        u16 sideStatus = gSideStatuses[GET_BATTLER_SIDE(gBattlerTarget)];
     gBattleMoveDamage = CalculateBaseDamage(&gBattleMons[gBattlerAttacker], &gBattleMons[gBattlerTarget], gCurrentMove,
                                             sideStatus, gDynamicBasePower,
                                             gBattleStruct->dynamicMoveType, gBattlerAttacker, gBattlerTarget);
@@ -1273,7 +1273,7 @@ static void ModulateDmgByType(u8 multiplier)
 
 static void Cmd_typecalc(void)
 {
-    s32 i = 0;
+        s32 i = 0;
     u8 moveType;
 
     if (gCurrentMove == MOVE_STRUGGLE)
@@ -1576,7 +1576,7 @@ static void Unused_ApplyRandomDmgMultiplier(void)
 
 static void Cmd_adjustnormaldamage(void)
 {
-    u8 holdEffect, param;
+        u8 holdEffect, param;
 
     ApplyRandomDmgMultiplier();
 
@@ -1619,7 +1619,7 @@ static void Cmd_adjustnormaldamage(void)
 // The same as adjustnormaldamage except it doesn't check for false swipe move effect.
 static void Cmd_adjustnormaldamage2(void)
 {
-    u8 holdEffect, param;
+        u8 holdEffect, param;
 
     ApplyRandomDmgMultiplier();
 
@@ -1661,7 +1661,7 @@ static void Cmd_adjustnormaldamage2(void)
 
 static void Cmd_attackanimation(void)
 {
-    if (gBattleControllerExecFlags)
+        if (gBattleControllerExecFlags)
         return;
 
     if ((gHitMarker & HITMARKER_NO_ANIMATIONS) && (gCurrentMove != MOVE_TRANSFORM && gCurrentMove != MOVE_SUBSTITUTE))
@@ -1701,13 +1701,13 @@ static void Cmd_attackanimation(void)
 
 static void Cmd_waitanimation(void)
 {
-    if (gBattleControllerExecFlags == 0)
+        if (gBattleControllerExecFlags == 0)
         gBattlescriptCurrInstr++;
 }
 
 static void Cmd_healthbarupdate(void)
 {
-    if (gBattleControllerExecFlags)
+        if (gBattleControllerExecFlags)
         return;
 
     if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
@@ -1743,7 +1743,7 @@ static void Cmd_healthbarupdate(void)
 
 static void Cmd_datahpupdate(void)
 {
-    u32 moveType;
+        u32 moveType;
 
     if (gBattleControllerExecFlags)
         return;
@@ -1869,7 +1869,7 @@ static void Cmd_datahpupdate(void)
 
 static void Cmd_critmessage(void)
 {
-    if (gBattleControllerExecFlags == 0)
+        if (gBattleControllerExecFlags == 0)
     {
         if (gCritMultiplier == 2 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
         {
@@ -1882,7 +1882,7 @@ static void Cmd_critmessage(void)
 
 static void Cmd_effectivenesssound(void)
 {
-    if (gBattleControllerExecFlags)
+        if (gBattleControllerExecFlags)
         return;
 
     gActiveBattler = gBattlerTarget;
@@ -1929,7 +1929,7 @@ static void Cmd_effectivenesssound(void)
 
 static void Cmd_resultmessage(void)
 {
-    u32 stringId = 0;
+        u32 stringId = 0;
 
     if (gBattleControllerExecFlags)
         return;
@@ -2018,18 +2018,18 @@ static void Cmd_resultmessage(void)
 
 static void Cmd_printstring(void)
 {
-    if (gBattleControllerExecFlags == 0)
+        if (gBattleControllerExecFlags == 0)
     {
         u16 var = T2_READ_16(gBattlescriptCurrInstr + 1);
         PrepareStringBattle(var, gBattlerAttacker);
-        gBattlescriptCurrInstr += 3;
+gBattlescriptCurrInstr += 3;
         gBattleCommunication[MSG_DISPLAY] = 1;
     }
 }
 
 static void Cmd_printselectionstring(void)
 {
-    gActiveBattler = gBattlerAttacker;
+        gActiveBattler = gBattlerAttacker;
 
     BtlController_EmitPrintSelectionString(BUFFER_A, T2_READ_16(gBattlescriptCurrInstr + 1));
     MarkBattlerForControllerExec(gActiveBattler);
@@ -2040,7 +2040,7 @@ static void Cmd_printselectionstring(void)
 
 static void Cmd_waitmessage(void)
 {
-    if (gBattleControllerExecFlags == 0)
+        if (gBattleControllerExecFlags == 0)
     {
         if (!gBattleCommunication[MSG_DISPLAY])
         {
@@ -2061,12 +2061,12 @@ static void Cmd_waitmessage(void)
 
 static void Cmd_printfromtable(void)
 {
-    if (gBattleControllerExecFlags == 0)
+        if (gBattleControllerExecFlags == 0)
     {
         const u16 *ptr = (const u16 *) T1_READ_PTR(gBattlescriptCurrInstr + 1);
         ptr += gBattleCommunication[MULTISTRING_CHOOSER];
 
-        PrepareStringBattle(*ptr, gBattlerAttacker);
+                PrepareStringBattle(*ptr, gBattlerAttacker);
 
         gBattlescriptCurrInstr += 5;
         gBattleCommunication[MSG_DISPLAY] = 1;
@@ -2075,7 +2075,7 @@ static void Cmd_printfromtable(void)
 
 static void Cmd_printselectionstringfromtable(void)
 {
-    if (gBattleControllerExecFlags == 0)
+        if (gBattleControllerExecFlags == 0)
     {
         const u16 *ptr = (const u16 *) T1_READ_PTR(gBattlescriptCurrInstr + 1);
         ptr += gBattleCommunication[MULTISTRING_CHOOSER];
@@ -2422,6 +2422,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
                     if (primary == TRUE || certain == MOVE_EFFECT_CERTAIN)
                     {
                         gLastUsedAbility = ABILITY_INNER_FOCUS;
+                        gBattlerAbility = gEffectBattler;
                         RecordAbilityBattle(gEffectBattler, ABILITY_INNER_FOCUS);
                         gBattlescriptCurrInstr = BattleScript_FlinchPrevention;
                     }
@@ -2773,7 +2774,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
 
 static void Cmd_seteffectwithchance(void)
 {
-    u32 percentChance;
+        u32 percentChance;
 
     if (gBattleMons[gBattlerAttacker].ability == ABILITY_SERENE_GRACE)
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 2;
@@ -2806,12 +2807,12 @@ static void Cmd_seteffectwithchance(void)
 
 static void Cmd_seteffectprimary(void)
 {
-    SetMoveEffect(TRUE, 0);
+        SetMoveEffect(TRUE, 0);
 }
 
 static void Cmd_seteffectsecondary(void)
 {
-    SetMoveEffect(FALSE, 0);
+        SetMoveEffect(FALSE, 0);
 }
 
 static void Cmd_clearstatusfromeffect(void)
@@ -2918,7 +2919,7 @@ static void Cmd_tryfaintmon(void)
 
 static void Cmd_dofaintanimation(void)
 {
-    if (gBattleControllerExecFlags == 0)
+        if (gBattleControllerExecFlags == 0)
     {
         gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
         BtlController_EmitFaintAnimation(BUFFER_A);
@@ -2981,6 +2982,7 @@ static void Cmd_jumpifability(void)
             gBattlescriptCurrInstr = jumpPtr;
             RecordAbilityBattle(battlerId - 1, gLastUsedAbility);
             gBattleScripting.battlerWithAbility = battlerId - 1;
+            gBattlerAbility = battlerId - 1;
         }
         else
             gBattlescriptCurrInstr += 7;
@@ -2994,6 +2996,7 @@ static void Cmd_jumpifability(void)
             gBattlescriptCurrInstr = jumpPtr;
             RecordAbilityBattle(battlerId - 1, gLastUsedAbility);
             gBattleScripting.battlerWithAbility = battlerId - 1;
+            gBattlerAbility = battlerId - 1;
         }
         else
             gBattlescriptCurrInstr += 7;
@@ -3007,6 +3010,7 @@ static void Cmd_jumpifability(void)
             gBattlescriptCurrInstr = jumpPtr;
             RecordAbilityBattle(battlerId, gLastUsedAbility);
             gBattleScripting.battlerWithAbility = battlerId;
+            gBattlerAbility = battlerId;
         }
         else
             gBattlescriptCurrInstr += 7;
@@ -5965,15 +5969,9 @@ static void Cmd_makevisible(void)
 
 static void Cmd_recordlastability(void)
 {
-    gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
-    RecordAbilityBattle(gActiveBattler, gLastUsedAbility);
-
-#ifdef BUGFIX
-    // This command occupies two bytes (one for the command id, and one for the battler id parameter).
+    u8 battler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
+    RecordAbilityBattle(battler, gBattleMons[battler].ability);
     gBattlescriptCurrInstr += 2;
-#else
-    gBattlescriptCurrInstr += 1;
-#endif
 }
 
 void BufferMoveToLearnIntoBattleTextBuff2(void)
@@ -6053,6 +6051,12 @@ static void Cmd_useitemonopponent(void)
     gBattlerInMenuId = gBattlerAttacker;
     PokemonUseItemEffects(&gEnemyParty[gBattlerPartyIndexes[gBattlerAttacker]], gLastUsedItem, gBattlerPartyIndexes[gBattlerAttacker], 0, TRUE);
     gBattlescriptCurrInstr++;
+}
+
+bool32 CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
+{
+    return /*GetBattlerAbility(battlerAttacker) == ABILITY_CORROSION
+        || */(!IS_BATTLER_OF_TYPE(battlerTarget, TYPE_STEEL) && !IS_BATTLER_OF_TYPE(battlerTarget, TYPE_POISON));
 }
 
 static void Cmd_various(void)
@@ -6210,6 +6214,18 @@ static void Cmd_various(void)
     case VARIOUS_WAIT_FANFARE:
         if (!IsFanfareTaskInactive())
             return;
+        break;
+    case VARIOUS_ABILITY_POPUP:
+        CreateAbilityPopUp(gBattlerAbility, gBattleMons[gBattlerAbility].ability, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0);
+        break;
+    case VARIOUS_UPDATE_ABILITY_POPUP:
+        UpdateAbilityPopup(gBattlerAbility);
+        break;
+    case VARIOUS_DESTROY_ABILITY_POPUP:
+        DestroyAbilityPopUp(gBattlerAbility);
+        break;
+    case VARIOUS_TRACE_ABILITY:
+        gBattleMons[gBattlerAbility].ability = gLastUsedAbility;
         break;
     }
 

@@ -86,6 +86,7 @@ u8 AtkCanceller_UnableToUseMove(void);
 bool8 HasNoMonsToSwitch(u8 battler, u8 partyIdBattlerOn1, u8 partyIdBattlerOn2);
 u8 CastformDataTypeChange(u8 battler);
 u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveArg);
+u32 GetBattlerAbility(u32 battler);
 void BattleScriptExecute(const u8 *BS_ptr);
 void BattleScriptPushCursorAndCallback(const u8 *BS_ptr);
 u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn);
@@ -93,5 +94,12 @@ void ClearFuryCutterDestinyBondGrudge(u8 battlerId);
 void HandleAction_RunBattleScript(void);
 u8 GetMoveTarget(u16 move, u8 setTarget);
 u8 IsMonDisobedient(void);
+
+bool32 CanSleep(u32 battler);
+bool32 CanBePoisoned(u32 battlerAttacker, u32 battlerTarget);
+bool32 CanBeBurned(u32 battler);
+bool32 CanBeParalyzed(u32 battler);
+bool32 CanBeFrozen(u32 battler);
+bool32 CanBeConfused(u32 battler);
 
 #endif // GUARD_BATTLE_UTIL_H

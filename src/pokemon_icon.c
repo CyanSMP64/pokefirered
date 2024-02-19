@@ -3163,12 +3163,14 @@ void LoadMonIconPalettes(void)
         LoadSpritePalette(&gMonIconPaletteTable[i]);
 }
 
-void SafeLoadMonIconPalette(u16 species)
+void SafeLoadMonIconPalette(u16 species, u32 personality)
 {
     u8 palIndex;
+    u16 newSpecies;
     if (species > NUM_SPECIES)
         species = SPECIES_NONE;
-    palIndex = gMonIconPaletteIndices[species];
+    newSpecies = GetIconSpecies(species, personality);
+    palIndex = gMonIconPaletteIndices[newSpecies];
     if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
         LoadSpritePalette(&gMonIconPaletteTable[palIndex]);
 }
