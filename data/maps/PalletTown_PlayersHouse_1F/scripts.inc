@@ -56,7 +56,7 @@ PalletTown_PlayersHouse_1F_EventScript_TVScreen::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, PalletTown_PlayersHouse_1F_EventScript_TVScreenMale
 	call_if_eq VAR_RESULT, FEMALE, PalletTown_PlayersHouse_1F_EventScript_TVScreenFemale
-	@special FlagsVars_PokedexFlags_All	@ debug
+	special FlagsVars_PokedexFlags_All	@ debug
 	releaseall
 	end
 

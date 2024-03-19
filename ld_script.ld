@@ -118,7 +118,6 @@ SECTIONS {
         src/field_door.o(.text);
         src/field_player_avatar.o(.text);
         src/event_object_movement.o(.text);
-        src/field_message_box.o(.text);
         src/event_object_lock.o(.text);
         src/text_window_graphics.o(.text);
         src/script.o(.text);
@@ -225,6 +224,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/field_message_box.o(.text);
         src/fldeff_rocksmash.o(.text);
         src/prof_pc.o(.text);
         src/hof_pc.o(.text);
@@ -445,23 +445,28 @@ SECTIONS {
         src/sprite.o(.rodata);
         src/bg_regs.o(.rodata);
         src/string_util.o(.rodata);
-        src/link.o(.rodata);
         src/main_menu.o(.rodata);
+    } =0
+
+    .rodata_1 0x08239edc:
+    SUBALIGN(4)
+    {
         src/data.o(.rodata);
+        src/link.o(.rodata);
         src/battle_bg.o(.rodata);
-        src/battle_main.o(.rodata);
         src/battle_util.o(.rodata);
         src/battle_script_commands.o(.rodata);
-        src/battle_controller_player.o(.rodata);
         src/battle_anim_smokescreen.o(.rodata);
         src/battle_controller_opponent.o(.rodata);
         src/battle_controller_link_opponent.o(.rodata);
     } =0
 
-    .rodata_1 0x082635cc:
+    .rodata_2 0x082635cc:
     SUBALIGN(4)
     {
         src/pokemon.o(.rodata);
+        src/battle_main.o(.rodata);
+        src/battle_controller_player.o(.rodata);
         src/trig.o(.rodata);
         src/util.o(.rodata);
         src/daycare.o(.rodata);
@@ -518,7 +523,6 @@ SECTIONS {
         src/naming_screen.o(.rodata);
         src/pokemon_size_record.o(.rodata);
         src/item_use.o(.rodata);
-        src/battle_anim_effects_1.o(.rodata);
         src/battle_anim_water.o(.rodata);
         src/battle_anim_fire.o(.rodata);
         src/battle_anim_electric.o(.rodata);
@@ -539,10 +543,11 @@ SECTIONS {
         src/bike.o(.rodata);
     } =0
 
-    .rodata_2 0x0841efb8:
+    .rodata_3 0x0841efb8:
     SUBALIGN(4)
     {
         src/new_menu_helpers.o(.rodata);
+        src/battle_anim_effects_1.o(.rodata);
         src/battle_anim_effects_2.o(.rodata);
         src/script_menu.o(.rodata);
         src/easy_chat.o(.rodata);
@@ -601,7 +606,7 @@ SECTIONS {
         src/pokemon_special_anim_scene.o(.rodata);
     } =0
 
-    .rodata_3 0x0849cb58:
+    .rodata_4 0x0849cb58:
     SUBALIGN(4)
     {
         src/party_menu.o(.rodata);
@@ -1319,9 +1324,12 @@ SECTIONS {
         sound/songs/midi/se_utvanish.o(.rodata);
         sound/songs/midi/mus_smwend.o(.rodata);
         sound/songs/midi/se_americano.o(.rodata);
+        sound/songs/midi/mus_rbychamp.o(.rodata);
+        sound/songs/midi/mus_b2_vs_champion_kanto.o(.rodata);
+        sound/songs/midi/mus_bw_vs_world_championships.o(.rodata);
     }
 
-    .rodata_2 :
+    .rodata_extras :
     ALIGN(4)
     {
         data/sound_data.o(.rodata);

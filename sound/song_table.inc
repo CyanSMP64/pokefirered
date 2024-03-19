@@ -505,6 +505,9 @@ gSongTable::
 	song se_utvanish, 1, 1
 	song mus_smwend, 0, 0
 	song se_americano, 1, 1
+	song mus_rbychamp, 0, 0
+	song mus_b2_vs_champion_kanto, 0, 0
+	song mus_bw_vs_world_championships, 0, 0
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

@@ -7570,6 +7570,14 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (GetMonGender(mon) == MON_MALE && gEvolutionTable[species][i].param == evolutionItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            case EVO_ITEM_SILCOON:
+                if (gEvolutionTable[species][i].param == evolutionItem && (upperPersonality % 10) <= 4)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_ITEM_CASCOON:
+                if (gEvolutionTable[species][i].param == evolutionItem && (upperPersonality % 10) > 4)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
             }
         }
         break;
@@ -8288,7 +8296,18 @@ static u16 GetBattleBGM(void)
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
         {
         case TRAINER_CLASS_CHAMPION:
-            return MUS_RG_VS_CHAMPION;
+        {
+            u32 i;
+            i = Random() % 100;
+            if (i == 99)
+                return MUS_RBYCHAMP;
+            else if (i >= 90)
+                return MUS_BW_VS_WORLD_CHAMPIONSHIPS;
+            else if (i >= 80)
+                return MUS_B2_VS_CHAMPION_KANTO;
+            else
+                return MUS_RG_VS_CHAMPION;
+        }
         case TRAINER_CLASS_LEADER:
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_RG_VS_GYM_LEADER;

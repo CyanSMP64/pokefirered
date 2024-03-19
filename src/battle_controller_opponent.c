@@ -1693,14 +1693,14 @@ static void OpponentHandleDrawPartyStatusSummary(void)
                                                                                       gBattleBufferA[gActiveBattler][2]);
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 0;
         if (gBattleBufferA[gActiveBattler][2])
-            gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 0x5D;
+            gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 0x21;
         gBattlerControllerFuncs[gActiveBattler] = EndDrawPartyStatusSummary;
     }
 }
 
 static void EndDrawPartyStatusSummary(void)
 {
-    if (gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer++ > 0x5C)
+    if (gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer++ > 0x20)
     {
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 0;
         OpponentBufferExecCompleted();

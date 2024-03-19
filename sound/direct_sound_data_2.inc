@@ -3,6 +3,14 @@ DirectSoundWaveData_puresquare_50::
 	.incbin "sound/direct_sound_samples/puresquare_50.bin"
 	
 	.align 2
+DirectSoundWaveData_puresquare_25::
+	.incbin "sound/direct_sound_samples/puresquare_25.bin"
+	
+	.align 2
+DirectSoundWaveData_gbwave01::
+	.incbin "sound/direct_sound_samples/gbwave01.bin"
+	
+	.align 2
 DirectSoundWaveData_dp_sd90_mg303_bass::
 	.incbin "sound/direct_sound_samples/dp_sd90_mg303_bass.bin"
 	

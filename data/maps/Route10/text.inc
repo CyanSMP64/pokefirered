@@ -96,5 +96,5 @@ Route10_Text_HikerExplainFlash::
 	.string "a POKéMON and use it.\p"
 	.string "It lights up even the inky darkness\n"
 	.string "of caves.\p"
-	.string "But, to use it, you need the GYM BADGE\n"
-	.string "from PEWTER's POKéMON GYM.$"
+	.string "But, to use it, you need the\n"
+	.string "GYM BADGE from PEWTER's POKéMON GYM.$"

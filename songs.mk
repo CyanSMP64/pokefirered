@@ -1328,3 +1328,12 @@ $(MID_SUBDIR)/se_vineboom.s: %.s: %.mid
 
 $(MID_SUBDIR)/se_americano.s: %.s: %.mid
 	$(MID) $< $@ -E -G128 -V127 -P5
+
+$(MID_SUBDIR)/mus_rbychamp.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G275 -V060
+
+$(MID_SUBDIR)/mus_b2_vs_champion_kanto.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G337 -V111
+
+$(MID_SUBDIR)/mus_bw_vs_world_championships.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G340 -V092

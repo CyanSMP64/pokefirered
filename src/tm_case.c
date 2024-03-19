@@ -116,7 +116,7 @@ static EWRAM_DATA struct {
 
 static EWRAM_DATA void *sTilemapBuffer = NULL;
 static EWRAM_DATA struct ListMenuItem * sListMenuItemsBuffer = NULL;
-static EWRAM_DATA u8 (* sListMenuStringsBuffer)[29] = NULL;
+static EWRAM_DATA u8 (* sListMenuStringsBuffer)[31] = NULL;
 static EWRAM_DATA u16 * sTMSpritePaletteBuffer = NULL;
 
 static void CB2_SetUpTMCaseUI_Blocking(void);
@@ -639,7 +639,7 @@ static void CreateTMCaseListMenuBuffers(void)
 {
     struct BagPocket * pocket = &gBagPockets[POCKET_TM_CASE - 1];
     sListMenuItemsBuffer = Alloc((pocket->capacity + 1) * sizeof(struct ListMenuItem));
-    sListMenuStringsBuffer = Alloc(sTMCaseDynamicResources->numTMs * 29);
+    sListMenuStringsBuffer = Alloc(sTMCaseDynamicResources->numTMs * 31);
 }
 
 static void InitTMCaseListMenuItems(void)

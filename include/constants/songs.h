@@ -496,6 +496,9 @@
 #define SE_UTVANISH                     503
 #define MUS_SMWEND                      504
 #define SE_AMERICANO                    505
+#define MUS_RBYCHAMP                    506
+#define MUS_B2_VS_CHAMPION_KANTO        507
+#define MUS_BW_VS_WORLD_CHAMPIONSHIPS   508
 
 #define MUS_NONE                    0xFFFF
 

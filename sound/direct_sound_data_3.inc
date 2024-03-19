@@ -39,6 +39,10 @@ DirectSoundWaveData_bw_zg_of_tutti_hit_major::
 	.incbin "sound/direct_sound_samples/bw_zg_of_tutti_hit_major.bin"
 
 	.align 2
+DirectSoundWaveData_bw_zg_of_tutti_hit_minor_60::
+	.incbin "sound/direct_sound_samples/bw_zg_of_tutti_hit_minor_60.bin"
+
+	.align 2
 DirectSoundWaveData_bw_kfl_french_horn_ensemble_48::
 	.incbin "sound/direct_sound_samples/bw_kfl_french_horn_ensemble_48.bin"
 
@@ -263,6 +267,54 @@ DirectSoundWaveData_bw_kfl_trombone_ensemble_52::
 	.incbin "sound/direct_sound_samples/bw_kfl_trombone_ensemble_52.bin"
 
 	.align 2
+DirectSoundWaveData_bw_ewsc_full_chorus_ah_43::
+	.incbin "sound/direct_sound_samples/bw_ewsc_full_chorus_ah_43.bin"
+
+	.align 2
+DirectSoundWaveData_bw_ewsc_full_chorus_ah_52::
+	.incbin "sound/direct_sound_samples/bw_ewsc_full_chorus_ah_52.bin"
+
+	.align 2
+DirectSoundWaveData_bw_ewsc_full_chorus_ah_60::
+	.incbin "sound/direct_sound_samples/bw_ewsc_full_chorus_ah_60.bin"
+
+	.align 2
+DirectSoundWaveData_bw_zg_cb_guitar_squeal::
+	.incbin "sound/direct_sound_samples/bw_zg_cb_guitar_squeal.bin"
+
+	.align 2
+DirectSoundWaveData_bw_sd90_power2_snare::
+	.incbin "sound/direct_sound_samples/bw_sd90_power2_snare.bin"
+
+	.align 2
+DirectSoundWaveData_bw_unknown_suspended_cymbal_40::
+	.incbin "sound/direct_sound_samples/bw_unknown_suspended_cymbal_40.bin"
+
+	.align 2
+DirectSoundWaveData_bw_zg_total_drum_bass_160_leonora::
+	.incbin "sound/direct_sound_samples/bw_zg_total_drum_bass_160_leonora.bin"
+
+	.align 2
+DirectSoundWaveData_bw_zg_dpt_orch_snare_16_18_02::
+	.incbin "sound/direct_sound_samples/bw_zg_dpt_orch_snare_16_18_02.bin"
+
+	.align 2
+DirectSoundWaveData_bw_unknown_synth_kick_wcs::
+	.incbin "sound/direct_sound_samples/bw_unknown_synth_kick_wcs.bin"
+
+	.align 2
+DirectSoundWaveData_bw_plugsound_pro_analog_snare_e2::
+	.incbin "sound/direct_sound_samples/bw_plugsound_pro_analog_snare_e2.bin"
+
+	.align 2
+DirectSoundWaveData_bw_plugsound_pro_analog_hihat_closed::
+	.incbin "sound/direct_sound_samples/bw_plugsound_pro_analog_hihat_closed.bin"
+
+	.align 2
+DirectSoundWaveData_bw_plugsound_pro_analog_hihat_open::
+	.incbin "sound/direct_sound_samples/bw_plugsound_pro_analog_hihat_open.bin"
+
+	.align 2
 DirectSoundWaveData_b2_halion_t9_analog_kick::
 	.incbin "sound/direct_sound_samples/b2_halion_t9_analog_kick.bin"
 
@@ -337,6 +389,14 @@ DirectSoundWaveData_b2_ew_ra_chinese_gong_vs::
 	.align 2
 DirectSoundWaveData_b2_ewso_3_snares::
 	.incbin "sound/direct_sound_samples/b2_ewso_3_snares.bin"
+
+	.align 2
+DirectSoundWaveData_b2_halionone_t9_analog_hihat_closed::
+	.incbin "sound/direct_sound_samples/b2_halionone_t9_analog_hihat_closed.bin"
+
+	.align 2
+DirectSoundWaveData_b2_halionone_t9_analog_hihat_open::
+	.incbin "sound/direct_sound_samples/b2_halionone_t9_analog_hihat_open.bin"
 
 	.align 2
 DirectSoundWaveData_undertale_vanish::

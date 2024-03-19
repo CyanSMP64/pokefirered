@@ -1572,7 +1572,7 @@ static void LinkPartnerHandleDrawPartyStatusSummary(void)
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 0;
 
         if (gBattleBufferA[gActiveBattler][2] != 0) // Skip delay on battle start
-            gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 93;
+            gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 33;
 
         gBattlerControllerFuncs[gActiveBattler] = EndDrawPartyStatusSummary;
     }
@@ -1580,7 +1580,7 @@ static void LinkPartnerHandleDrawPartyStatusSummary(void)
 
 static void EndDrawPartyStatusSummary(void)
 {
-    if (gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer++ > 92)
+    if (gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer++ > 32)
     {
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 0;
         LinkPartnerBufferExecCompleted();

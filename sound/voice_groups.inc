@@ -263,6 +263,7 @@
 .include "sound/voicegroups/voicegroup271.inc"
 .include "sound/voicegroups/voicegroup273.inc"
 .include "sound/voicegroups/voicegroup274.inc"
+.include "sound/voicegroups/voicegroup275.inc" @ RBY champion battle
 .include "sound/voicegroups/voicegroup276.inc" @ bw - reshiram
 .include "sound/voicegroups/voicegroup277.inc"
 .include "sound/voicegroups/voicegroup278.inc"
@@ -276,6 +277,10 @@
 .include "sound/voicegroups/voicegroup286.inc"
 .include "sound/voicegroups/voicegroup315.inc"
 .include "sound/voicegroups/voicegroup335.inc"
+.include "sound/voicegroups/voicegroup337.inc" @ bw2 - kanto champion
+.include "sound/voicegroups/voicegroup338.inc"
+.include "sound/voicegroups/voicegroup339.inc"
+.include "sound/voicegroups/voicegroup340.inc" @ bw - world championships
 .include "sound/voicegroups/voicegroup349.inc" @ bw2 - hoenn champion
 .include "sound/voicegroups/voicegroup350.inc"
 .include "sound/voicegroups/voicegroup351.inc" @ bw2 - pwt victory
