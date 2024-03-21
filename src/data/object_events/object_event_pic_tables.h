@@ -1497,11 +1497,11 @@ static const struct SpriteFrameImage sPicTable_DeoxysD[] = {
     overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 0),
+    overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 1),
+    overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 1),
+    overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 1),
     overworld_frame(gObjectEventPic_DeoxysD, 4, 4, 1),
 };
 
@@ -1509,11 +1509,11 @@ static const struct SpriteFrameImage sPicTable_DeoxysA[] = {
     overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 0),
+    overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 1),
+    overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 1),
+    overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 1),
     overworld_frame(gObjectEventPic_DeoxysA, 4, 4, 1),
 };
 
@@ -1521,11 +1521,11 @@ static const struct SpriteFrameImage sPicTable_DeoxysN[] = {
     overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 0),
     overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 0),
+    overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 1),
+    overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 1),
+    overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 1),
     overworld_frame(gObjectEventPic_DeoxysN, 4, 4, 1),
 };
 

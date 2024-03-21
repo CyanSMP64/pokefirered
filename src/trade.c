@@ -1517,7 +1517,7 @@ static bool8 BufferTradeParties(void)
         }
         break;
     case 13:
-        Trade_Memcpy(gBlockSendBuffer, gSaveBlock1Ptr->mail, PARTY_SIZE * sizeof(struct Mail) + 4); // why the extra 4 bytes?
+        Trade_Memcpy(gBlockSendBuffer, gSaveBlock2Ptr->mail, PARTY_SIZE * sizeof(struct Mail) + 4); // why the extra 4 bytes?
         sTradeMenu->bufferPartyState++;
         break;
     case 15:

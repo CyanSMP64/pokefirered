@@ -33,7 +33,7 @@
 // capacities of various saveblock objects
 #define DAYCARE_MON_COUNT   2
 #define PC_ITEMS_COUNT      30
-#define BAG_ITEMS_COUNT     60
+#define BAG_ITEMS_COUNT     120
 #define BAG_KEYITEMS_COUNT  30
 #define BAG_POKEBALLS_COUNT 13
 #define BAG_TMHM_COUNT      58

@@ -1062,7 +1062,7 @@ static void TradeMons(u8 playerPartyIdx, u8 partnerPartyIdx)
 
     // The mail attached to the sent Pokemon no longer exists in your file.
     if (playerMail != MAIL_NONE)
-        ClearMailStruct(&gSaveBlock1Ptr->mail[playerMail]);
+        ClearMailStruct(&gSaveBlock2Ptr->mail[playerMail]);
 
     SWAP(*playerMon, *partnerMon, sTradeAnim->tempMon);
 

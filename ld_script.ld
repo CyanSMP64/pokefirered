@@ -536,17 +536,17 @@ SECTIONS {
         src/battle_anim_ghost.o(.rodata);
         src/battle_anim_dragon.o(.rodata);
         src/battle_anim_dark.o(.rodata);
-        src/battle_anim_ground.o(.rodata);
         src/battle_anim_normal.o(.rodata);
         src/battle_anim_utility_funcs.o(.rodata);
-        src/battle_intro.o(.rodata);
-        src/bike.o(.rodata);
     } =0
 
     .rodata_3 0x0841efb8:
     SUBALIGN(4)
     {
         src/new_menu_helpers.o(.rodata);
+        src/battle_anim_ground.o(.rodata);
+        src/battle_intro.o(.rodata);
+        src/bike.o(.rodata);
         src/battle_anim_effects_1.o(.rodata);
         src/battle_anim_effects_2.o(.rodata);
         src/script_menu.o(.rodata);
