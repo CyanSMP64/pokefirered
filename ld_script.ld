@@ -109,7 +109,6 @@ SECTIONS {
         src/load_save.o(.text);
         src/trade.o(.text);
         src/trade_scene.o(.text);
-        src/play_time.o(.text);
         src/new_game.o(.text);
         src/overworld.o(.text);
         src/fieldmap.o(.text);
@@ -141,6 +140,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/play_time.o(.text);
         src/reset_save_heap.o(.text);
         src/task.o(.text);
         src/field_weather.o(.text);
@@ -213,7 +213,6 @@ SECTIONS {
         src/region_map.o(.text);
         src/image_processing_effects.o(.text);
         src/battle_ai_script_commands.o(.text);
-        src/fldeff_dig.o(.text);
         src/fldeff_flash.o(.text);
         src/post_battle_event_funcs.o(.text);
         src/field_specials.o(.text);
@@ -224,6 +223,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/fldeff_dig.o(.text);
         src/field_message_box.o(.text);
         src/fldeff_rocksmash.o(.text);
         src/prof_pc.o(.text);
@@ -452,7 +452,6 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/data.o(.rodata);
-        src/link.o(.rodata);
         src/battle_bg.o(.rodata);
         src/battle_util.o(.rodata);
         src/battle_script_commands.o(.rodata);
@@ -465,6 +464,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/pokemon.o(.rodata);
+        src/link.o(.rodata);
         src/battle_main.o(.rodata);
         src/battle_controller_player.o(.rodata);
         src/trig.o(.rodata);
@@ -508,7 +508,6 @@ SECTIONS {
         src/trainer_card.o(.rodata);
         src/pokemon_storage_system_menu.o(.rodata);
         src/pokemon_storage_system_tasks.o(.rodata);
-        src/pokemon_storage_system_graphics.o(.rodata);
         src/pokemon_storage_system_data.o(.rodata);
         src/pokemon_storage_system_misc.o(.rodata);
         src/pokemon_icon.o(.rodata);
@@ -544,6 +543,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/new_menu_helpers.o(.rodata);
+        src/pokemon_storage_system_graphics.o(.rodata);
         src/battle_anim_ground.o(.rodata);
         src/battle_intro.o(.rodata);
         src/bike.o(.rodata);
