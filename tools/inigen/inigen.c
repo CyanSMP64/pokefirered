@@ -610,14 +610,14 @@ int main(int argc, char ** argv)
  * addresses unchanged from vanilla FireRed:
  * 
  * src/text_printer.o(ewram_data)
- *         sTextPrinters                       - 0x02020034 (instant text)
+ *         sTextPrinters                       - 0x02020034 (instant text)  // intentional crash, moved
  * 
  * src/text_printer.o(.text)
- *         RunTextPrinters                     - 0x08002dfc (instant text)
- *         RenderFont                          - 0x08002e90 (instant text)
+ *         RunTextPrinters                     - 0x08002dfc (instant text)  // intentional crash, moved
+ *         RenderFont                          - 0x08002e90 (instant text)  // intentional crash, moved
  * 
  * src/window.o(.text)
- *         CopyWindowToVram                    - 0x08003f34 (instant text)
+ *         CopyWindowToVram                    - 0x08003f34 (instant text)  // intentional crash, moved
  * 
  * src/pokemon.o(.text)
  *         CreateMonWithGenderNatureLetter     - 0x0803de14 (random statics - marowak)
@@ -630,10 +630,10 @@ int main(int argc, char ** argv)
  *         CreateInitialRoamerMon              - 0x08141d0c (random statics - roamers)
  * 
  * *libgcc.a:_call_via_rX.o(.text)
- *         _call_via_r2                        - 0x081e3c20 (instant text)
+ *         _call_via_r2                        - 0x081e3c20 (instant text)  // intentional crash, moved
  * 
  * src/new_menu_helpers.o(.rodata)
- *         sTextSpeedFrameDelays               - 0x0841f498 (instant text)
+ *         sTextSpeedFrameDelays               - 0x0841f498 (instant text)  // intentional crash, moved
  * 
  * Also please make sure no data is written to the following addresses:
  * 

@@ -55,17 +55,7 @@ SECTIONS {
         src/dma3_manager.o(.text);
         src/bg.o(.text);
         src/malloc.o(.text);
-    } =0
-
-    .text_1 0x08002c30:
-    ALIGN(4)
-    {
         src/text_printer.o(.text);
-    } =0
-
-    .text_2 0x08003b34:
-    ALIGN(4)
-    {
         src/window.o(.text);
         src/blit.o(.text);
         src/window_8bpp.o(.text);
@@ -76,7 +66,6 @@ SECTIONS {
         src/multiboot.o(.text);
         src/main_menu.o(.text);
         src/battle_controllers.o(.text);
-        src/decompress.o(.text);
         src/battle_bg.o(.text);
     } =0
 
@@ -84,6 +73,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_main.o(.text);
+        src/decompress.o(.text);
         src/battle_util.o(.text);
         src/battle_script_commands.o(.text);
         src/battle_util2.o(.text);
@@ -537,11 +527,6 @@ SECTIONS {
         src/battle_anim_dark.o(.rodata);
         src/battle_anim_normal.o(.rodata);
         src/battle_anim_utility_funcs.o(.rodata);
-    } =0
-
-    .rodata_3 0x0841efb8:
-    SUBALIGN(4)
-    {
         src/new_menu_helpers.o(.rodata);
         src/pokemon_storage_system_graphics.o(.rodata);
         src/battle_anim_ground.o(.rodata);

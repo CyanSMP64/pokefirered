@@ -61,7 +61,8 @@ static const struct Fanfare sFanfares[] = {
     [FANFARE_TOO_BAD]       = { MUS_TOO_BAD,         160 },
     [FANFARE_POKE_FLUTE]    = { MUS_RG_POKE_FLUTE,      450 },
     [FANFARE_KEY_ITEM]      = { MUS_RG_OBTAIN_KEY_ITEM, 170 },
-    [FANFARE_DEX_EVAL]      = { MUS_RG_DEX_RATING,      196 }
+    [FANFARE_DEX_EVAL]      = { MUS_RG_DEX_RATING,      196 },
+    [FANFARE_UTVANISH]      = { SE_UTVANISH,         100 }
 };
 
 void InitMapMusic(void)

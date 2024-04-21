@@ -12,10 +12,9 @@ Route10_EventScript_Hiker::
 	setflag FLAG_GOT_HM05
 	msgbox Route10_Text_HikerExplainFlash, MSGBOX_DEFAULT
 	closemessage
-	playse SE_M_TELEPORT
-	applymovement 11, Route1_Movement_ClerkLeave
-	waitmovement 11
+	playfanfare SE_UTVANISH
 	removeobject 11
+	waitfanfare
 	release
 	end
 

@@ -87,7 +87,36 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
         || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES
         || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_ALCREMIE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY 
         || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_KELDEO || species == SPECIES_FURFROU
-        || species == SPECIES_MAGEARNA || species == SPECIES_CRAMORANT || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP)
+        || species == SPECIES_MAGEARNA || species == SPECIES_CRAMORANT || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP
+        
+        || species == SPECIES_VENUSAUR || species == SPECIES_BUTTERFREE || species == SPECIES_RATTATA || species == SPECIES_RATICATE
+        || species == SPECIES_PIKACHU || species == SPECIES_PIKACHU_PARTNER || species == SPECIES_RAICHU || species == SPECIES_ZUBAT
+        || species == SPECIES_GOLBAT || species == SPECIES_GLOOM || species == SPECIES_VILEPLUME || species == SPECIES_KADABRA
+        || species == SPECIES_ALAKAZAM || species == SPECIES_DODUO || species == SPECIES_DODRIO || species == SPECIES_HYPNO
+        || species == SPECIES_RHYHORN || species == SPECIES_RHYDON || species == SPECIES_GOLDEEN || species == SPECIES_SEAKING
+        || species == SPECIES_SCYTHER || species == SPECIES_MAGIKARP || species == SPECIES_GYARADOS || species == SPECIES_EEVEE
+        || species == SPECIES_EEVEE_PARTNER
+        
+        || species == SPECIES_MEGANIUM || species == SPECIES_LEDYBA || species == SPECIES_LEDIAN || species == SPECIES_XATU
+        || species == SPECIES_SUDOWOODO || species == SPECIES_POLITOED || species == SPECIES_AIPOM || species == SPECIES_WOOPER
+        || species == SPECIES_QUAGSIRE || species == SPECIES_MURKROW || species == SPECIES_WOBBUFFET || species == SPECIES_GIRAFARIG
+        || species == SPECIES_GLIGAR || species == SPECIES_STEELIX || species == SPECIES_SCIZOR || species == SPECIES_HERACROSS
+        || species == SPECIES_SNEASEL || species == SPECIES_SNEASEL_HISUIAN || species == SPECIES_URSARING || species == SPECIES_PILOSWINE
+        || species == SPECIES_OCTILLERY || species == SPECIES_HOUNDOOM || species == SPECIES_DONPHAN
+        
+        || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_BEAUTIFLY
+        || species == SPECIES_DUSTOX || species == SPECIES_LUDICOLO || species == SPECIES_NUZLEAF || species == SPECIES_SHIFTRY
+        || species == SPECIES_MEDITITE || species == SPECIES_MEDICHAM || species == SPECIES_ROSELIA || species == SPECIES_GULPIN
+        || species == SPECIES_SWALOT || species == SPECIES_NUMEL || species == SPECIES_CAMERUPT || species == SPECIES_CACTURNE
+        || species == SPECIES_MILOTIC || species == SPECIES_RELICANTH
+        
+        || species == SPECIES_STARLY || species == SPECIES_STARAVIA || species == SPECIES_STARAPTOR || species == SPECIES_BIDOOF
+        || species == SPECIES_BIBAREL || species == SPECIES_KRICKETOT || species == SPECIES_KRICKETUNE || species == SPECIES_SHINX
+        || species == SPECIES_LUXIO || species == SPECIES_LUXRAY || species == SPECIES_ROSERADE || species == SPECIES_BUIZEL
+        || species == SPECIES_FLOATZEL || species == SPECIES_AMBIPOM || species == SPECIES_GIBLE || species == SPECIES_GABITE
+        || species == SPECIES_GARCHOMP || species == SPECIES_CROAGUNK || species == SPECIES_TOXICROAK || species == SPECIES_FINNEON
+        || species == SPECIES_LUMINEON || species == SPECIES_SNOVER || species == SPECIES_ABOMASNOW || species == SPECIES_WEAVILE
+        || species == SPECIES_RHYPERIOR || species == SPECIES_TANGROWTH || species == SPECIES_MAMOSWINE)
     {
         u16 i;
 
@@ -210,6 +239,7 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
             else
                 i += SPECIES_TATSUGIRI_DROOPY - 1;
         }
+        // 12.5% male
         else if (species == SPECIES_PYROAR)
         {
             if ((personality % 0x100) >= 0xDF)
@@ -217,6 +247,42 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
             else
                 i = SPECIES_PYROAR_FEMALE;
         }
+        // 87.5% male
+        else if (species == SPECIES_VENUSAUR || species == SPECIES_EEVEE || species == SPECIES_EEVEE_PARTNER || species == SPECIES_MEGANIUM
+              || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_RELICANTH)
+        {
+            if ((personality % 0x100) >= 0x1F)
+                i = species;
+            else
+                if (species == SPECIES_VENUSAUR)
+                    i = SPECIES_VENUSAUR_FEMALE;
+                else if (species == SPECIES_EEVEE)
+                    i = SPECIES_EEVEE_FEMALE;
+                else if (species == SPECIES_EEVEE_PARTNER)
+                    i = SPECIES_EEVEE_PARTNER_FEMALE;
+                else if (species == SPECIES_MEGANIUM)
+                    i = SPECIES_MEGANIUM_FEMALE;
+                else if (species == SPECIES_TORCHIC)
+                    i = SPECIES_TORCHIC_FEMALE;
+                else if (species == SPECIES_COMBUSKEN)
+                    i = SPECIES_COMBUSKEN_FEMALE;
+                else if (species == SPECIES_BLAZIKEN)
+                    i = SPECIES_BLAZIKEN_FEMALE;
+                else if (species == SPECIES_RELICANTH)
+                    i = SPECIES_RELICANTH_FEMALE;
+        }
+        // 75% male
+        else if (species == SPECIES_KADABRA || species == SPECIES_ALAKAZAM)
+        {
+            if ((personality % 0x100) >= 0x3F)
+                i = species;
+            else
+                if (species == SPECIES_KADABRA)
+                    i = SPECIES_KADABRA_FEMALE;
+                else if (species == SPECIES_ALAKAZAM)
+                    i = SPECIES_ALAKAZAM_FEMALE;
+        }
+        // 50% male
         else
         {
             if ((personality % 0x100) >= 0x7F) {
@@ -264,8 +330,175 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
                 }
                 else if (species == SPECIES_FRILLISH)
                     i = SPECIES_FRILLISH_FEMALE;
-                else
+                else if (species == SPECIES_JELLICENT)
                     i = SPECIES_JELLICENT_FEMALE;
+
+                else if (species == SPECIES_BUTTERFREE)
+                    i = SPECIES_BUTTERFREE_FEMALE;
+                else if (species == SPECIES_RATTATA)
+                    i = SPECIES_RATTATA_FEMALE;
+                else if (species == SPECIES_RATICATE)
+                    i = SPECIES_RATICATE_FEMALE;
+                else if (species == SPECIES_PIKACHU)
+                    i = SPECIES_PIKACHU_FEMALE;
+                else if (species == SPECIES_PIKACHU_PARTNER)
+                    i = SPECIES_PIKACHU_PARTNER_FEMALE;
+                else if (species == SPECIES_RAICHU)
+                    i = SPECIES_RAICHU_FEMALE;
+                else if (species == SPECIES_ZUBAT)
+                    i = SPECIES_ZUBAT_FEMALE;
+                else if (species == SPECIES_GOLBAT)
+                    i = SPECIES_GOLBAT_FEMALE;
+                else if (species == SPECIES_GLOOM)
+                    i = SPECIES_GLOOM_FEMALE;
+                else if (species == SPECIES_VILEPLUME)
+                    i = SPECIES_VILEPLUME_FEMALE;
+                else if (species == SPECIES_DODUO)
+                    i = SPECIES_DODUO_FEMALE;
+                else if (species == SPECIES_DODRIO)
+                    i = SPECIES_DODRIO_FEMALE;
+                else if (species == SPECIES_HYPNO)
+                    i = SPECIES_HYPNO_FEMALE;
+                else if (species == SPECIES_RHYHORN)
+                    i = SPECIES_RHYHORN_FEMALE;
+                else if (species == SPECIES_RHYDON)
+                    i = SPECIES_RHYDON_FEMALE;
+                else if (species == SPECIES_GOLDEEN)
+                    i = SPECIES_GOLDEEN_FEMALE;
+                else if (species == SPECIES_SEAKING)
+                    i = SPECIES_SEAKING_FEMALE;
+                else if (species == SPECIES_SCYTHER)
+                    i = SPECIES_SCYTHER_FEMALE;
+                else if (species == SPECIES_MAGIKARP)
+                    i = SPECIES_MAGIKARP_FEMALE;
+                else if (species == SPECIES_GYARADOS)
+                    i = SPECIES_GYARADOS_FEMALE;
+                else if (species == SPECIES_LEDYBA)
+                    i = SPECIES_LEDYBA_FEMALE;
+                else if (species == SPECIES_LEDIAN)
+                    i = SPECIES_LEDIAN_FEMALE;
+                else if (species == SPECIES_XATU)
+                    i = SPECIES_XATU_FEMALE;
+                else if (species == SPECIES_SUDOWOODO)
+                    i = SPECIES_SUDOWOODO_FEMALE;
+                else if (species == SPECIES_POLITOED)
+                    i = SPECIES_POLITOED_FEMALE;
+                else if (species == SPECIES_AIPOM)
+                    i = SPECIES_AIPOM_FEMALE;
+                else if (species == SPECIES_WOOPER)
+                    i = SPECIES_WOOPER_FEMALE;
+                else if (species == SPECIES_QUAGSIRE)
+                    i = SPECIES_QUAGSIRE_FEMALE;
+                else if (species == SPECIES_MURKROW)
+                    i = SPECIES_MURKROW_FEMALE;
+                else if (species == SPECIES_WOBBUFFET)
+                    i = SPECIES_WOBBUFFET_FEMALE;
+                else if (species == SPECIES_GIRAFARIG)
+                    i = SPECIES_GIRAFARIG_FEMALE;
+                else if (species == SPECIES_GLIGAR)
+                    i = SPECIES_GLIGAR_FEMALE;
+                else if (species == SPECIES_STEELIX)
+                    i = SPECIES_STEELIX_FEMALE;
+                else if (species == SPECIES_SCIZOR)
+                    i = SPECIES_SCIZOR_FEMALE;
+                else if (species == SPECIES_HERACROSS)
+                    i = SPECIES_HERACROSS_FEMALE;
+                else if (species == SPECIES_SNEASEL)
+                    i = SPECIES_SNEASEL_FEMALE;
+                else if (species == SPECIES_SNEASEL_HISUIAN)
+                    i = SPECIES_SNEASEL_HISUIAN_FEMALE;
+                else if (species == SPECIES_URSARING)
+                    i = SPECIES_URSARING_FEMALE;
+                else if (species == SPECIES_PILOSWINE)
+                    i = SPECIES_PILOSWINE_FEMALE;
+                else if (species == SPECIES_OCTILLERY)
+                    i = SPECIES_OCTILLERY_FEMALE;
+                else if (species == SPECIES_HOUNDOOM)
+                    i = SPECIES_HOUNDOOM_FEMALE;
+                else if (species == SPECIES_DONPHAN)
+                    i = SPECIES_DONPHAN_FEMALE;
+                else if (species == SPECIES_BEAUTIFLY)
+                    i = SPECIES_BEAUTIFLY_FEMALE;
+                else if (species == SPECIES_DUSTOX)
+                    i = SPECIES_DUSTOX_FEMALE;
+                else if (species == SPECIES_LUDICOLO)
+                    i = SPECIES_LUDICOLO_FEMALE;
+                else if (species == SPECIES_NUZLEAF)
+                    i = SPECIES_NUZLEAF_FEMALE;
+                else if (species == SPECIES_SHIFTRY)
+                    i = SPECIES_SHIFTRY_FEMALE;
+                else if (species == SPECIES_MEDITITE)
+                    i = SPECIES_MEDITITE_FEMALE;
+                else if (species == SPECIES_MEDICHAM)
+                    i = SPECIES_MEDICHAM_FEMALE;
+                else if (species == SPECIES_ROSELIA)
+                    i = SPECIES_ROSELIA_FEMALE;
+                else if (species == SPECIES_GULPIN)
+                    i = SPECIES_GULPIN_FEMALE;
+                else if (species == SPECIES_SWALOT)
+                    i = SPECIES_SWALOT_FEMALE;
+                else if (species == SPECIES_NUMEL)
+                    i = SPECIES_NUMEL_FEMALE;
+                else if (species == SPECIES_CAMERUPT)
+                    i = SPECIES_CAMERUPT_FEMALE;
+                else if (species == SPECIES_CACTURNE)
+                    i = SPECIES_CACTURNE_FEMALE;
+                else if (species == SPECIES_MILOTIC)
+                    i = SPECIES_MILOTIC_FEMALE;
+                else if (species == SPECIES_STARLY)
+                    i = SPECIES_STARLY_FEMALE;
+                else if (species == SPECIES_STARAVIA)
+                    i = SPECIES_STARAVIA_FEMALE;
+                else if (species == SPECIES_STARAPTOR)
+                    i = SPECIES_STARAPTOR_FEMALE;
+                else if (species == SPECIES_BIDOOF)
+                    i = SPECIES_BIDOOF_FEMALE;
+                else if (species == SPECIES_BIBAREL)
+                    i = SPECIES_BIBAREL_FEMALE;
+                else if (species == SPECIES_KRICKETOT)
+                    i = SPECIES_KRICKETOT_FEMALE;
+                else if (species == SPECIES_KRICKETUNE)
+                    i = SPECIES_KRICKETUNE_FEMALE;
+                else if (species == SPECIES_SHINX)
+                    i = SPECIES_SHINX_FEMALE;
+                else if (species == SPECIES_LUXIO)
+                    i = SPECIES_LUXIO_FEMALE;
+                else if (species == SPECIES_LUXRAY)
+                    i = SPECIES_LUXRAY_FEMALE;
+                else if (species == SPECIES_ROSERADE)
+                    i = SPECIES_ROSERADE_FEMALE;
+                else if (species == SPECIES_BUIZEL)
+                    i = SPECIES_BUIZEL_FEMALE;
+                else if (species == SPECIES_FLOATZEL)
+                    i = SPECIES_FLOATZEL_FEMALE;
+                else if (species == SPECIES_AMBIPOM)
+                    i = SPECIES_AMBIPOM_FEMALE;
+                else if (species == SPECIES_GIBLE)
+                    i = SPECIES_GIBLE_FEMALE;
+                else if (species == SPECIES_GABITE)
+                    i = SPECIES_GABITE_FEMALE;
+                else if (species == SPECIES_GARCHOMP)
+                    i = SPECIES_GARCHOMP_FEMALE;
+                else if (species == SPECIES_CROAGUNK)
+                    i = SPECIES_CROAGUNK_FEMALE;
+                else if (species == SPECIES_TOXICROAK)
+                    i = SPECIES_TOXICROAK_FEMALE;
+                else if (species == SPECIES_FINNEON)
+                    i = SPECIES_FINNEON_FEMALE;
+                else if (species == SPECIES_LUMINEON)
+                    i = SPECIES_LUMINEON_FEMALE;
+                else if (species == SPECIES_SNOVER)
+                    i = SPECIES_SNOVER_FEMALE;
+                else if (species == SPECIES_ABOMASNOW)
+                    i = SPECIES_ABOMASNOW_FEMALE;
+                else if (species == SPECIES_WEAVILE)
+                    i = SPECIES_WEAVILE_FEMALE;
+                else if (species == SPECIES_RHYPERIOR)
+                    i = SPECIES_RHYPERIOR_FEMALE;
+                else if (species == SPECIES_TANGROWTH)
+                    i = SPECIES_TANGROWTH_FEMALE;
+                else if (species == SPECIES_MAMOSWINE)
+                    i = SPECIES_MAMOSWINE_FEMALE;
         }
 
         if (!isFrontPic)
@@ -508,7 +741,36 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
         || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES
         || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_ALCREMIE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY 
         || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_KELDEO || species == SPECIES_FURFROU
-        || species == SPECIES_MAGEARNA || species == SPECIES_CRAMORANT || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP)
+        || species == SPECIES_MAGEARNA || species == SPECIES_CRAMORANT || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP
+        
+        || species == SPECIES_VENUSAUR || species == SPECIES_BUTTERFREE || species == SPECIES_RATTATA || species == SPECIES_RATICATE
+        || species == SPECIES_PIKACHU || species == SPECIES_PIKACHU_PARTNER || species == SPECIES_RAICHU || species == SPECIES_ZUBAT
+        || species == SPECIES_GOLBAT || species == SPECIES_GLOOM || species == SPECIES_VILEPLUME || species == SPECIES_KADABRA
+        || species == SPECIES_ALAKAZAM || species == SPECIES_DODUO || species == SPECIES_DODRIO || species == SPECIES_HYPNO
+        || species == SPECIES_RHYHORN || species == SPECIES_RHYDON || species == SPECIES_GOLDEEN || species == SPECIES_SEAKING
+        || species == SPECIES_SCYTHER || species == SPECIES_MAGIKARP || species == SPECIES_GYARADOS || species == SPECIES_EEVEE
+        || species == SPECIES_EEVEE_PARTNER
+        
+        || species == SPECIES_MEGANIUM || species == SPECIES_LEDYBA || species == SPECIES_LEDIAN || species == SPECIES_XATU
+        || species == SPECIES_SUDOWOODO || species == SPECIES_POLITOED || species == SPECIES_AIPOM || species == SPECIES_WOOPER
+        || species == SPECIES_QUAGSIRE || species == SPECIES_MURKROW || species == SPECIES_WOBBUFFET || species == SPECIES_GIRAFARIG
+        || species == SPECIES_GLIGAR || species == SPECIES_STEELIX || species == SPECIES_SCIZOR || species == SPECIES_HERACROSS
+        || species == SPECIES_SNEASEL || species == SPECIES_SNEASEL_HISUIAN || species == SPECIES_URSARING || species == SPECIES_PILOSWINE
+        || species == SPECIES_OCTILLERY || species == SPECIES_HOUNDOOM || species == SPECIES_DONPHAN
+        
+        || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_BEAUTIFLY
+        || species == SPECIES_DUSTOX || species == SPECIES_LUDICOLO || species == SPECIES_NUZLEAF || species == SPECIES_SHIFTRY
+        || species == SPECIES_MEDITITE || species == SPECIES_MEDICHAM || species == SPECIES_ROSELIA || species == SPECIES_GULPIN
+        || species == SPECIES_SWALOT || species == SPECIES_NUMEL || species == SPECIES_CAMERUPT || species == SPECIES_CACTURNE
+        || species == SPECIES_MILOTIC || species == SPECIES_RELICANTH
+        
+        || species == SPECIES_STARLY || species == SPECIES_STARAVIA || species == SPECIES_STARAPTOR || species == SPECIES_BIDOOF
+        || species == SPECIES_BIBAREL || species == SPECIES_KRICKETOT || species == SPECIES_KRICKETUNE || species == SPECIES_SHINX
+        || species == SPECIES_LUXIO || species == SPECIES_LUXRAY || species == SPECIES_ROSERADE || species == SPECIES_BUIZEL
+        || species == SPECIES_FLOATZEL || species == SPECIES_AMBIPOM || species == SPECIES_GIBLE || species == SPECIES_GABITE
+        || species == SPECIES_GARCHOMP || species == SPECIES_CROAGUNK || species == SPECIES_TOXICROAK || species == SPECIES_FINNEON
+        || species == SPECIES_LUMINEON || species == SPECIES_SNOVER || species == SPECIES_ABOMASNOW || species == SPECIES_WEAVILE
+        || species == SPECIES_RHYPERIOR || species == SPECIES_TANGROWTH || species == SPECIES_MAMOSWINE)
     {
         u16 i;
 
@@ -631,6 +893,7 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
             else
                 i += SPECIES_TATSUGIRI_DROOPY - 1;
         }
+        // 12.5% male
         else if (species == SPECIES_PYROAR)
         {
             if ((personality % 0x100) >= 0xDF)
@@ -638,6 +901,42 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
             else
                 i = SPECIES_PYROAR_FEMALE;
         }
+        // 87.5% male
+        else if (species == SPECIES_VENUSAUR || species == SPECIES_EEVEE || species == SPECIES_EEVEE_PARTNER || species == SPECIES_MEGANIUM
+              || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_RELICANTH)
+        {
+            if ((personality % 0x100) >= 0x1F)
+                i = species;
+            else
+                if (species == SPECIES_VENUSAUR)
+                    i = SPECIES_VENUSAUR_FEMALE;
+                else if (species == SPECIES_EEVEE)
+                    i = SPECIES_EEVEE_FEMALE;
+                else if (species == SPECIES_EEVEE_PARTNER)
+                    i = SPECIES_EEVEE_PARTNER_FEMALE;
+                else if (species == SPECIES_MEGANIUM)
+                    i = SPECIES_MEGANIUM_FEMALE;
+                else if (species == SPECIES_TORCHIC)
+                    i = SPECIES_TORCHIC_FEMALE;
+                else if (species == SPECIES_COMBUSKEN)
+                    i = SPECIES_COMBUSKEN_FEMALE;
+                else if (species == SPECIES_BLAZIKEN)
+                    i = SPECIES_BLAZIKEN_FEMALE;
+                else if (species == SPECIES_RELICANTH)
+                    i = SPECIES_RELICANTH_FEMALE;
+        }
+        // 75% male
+        else if (species == SPECIES_KADABRA || species == SPECIES_ALAKAZAM)
+        {
+            if ((personality % 0x100) >= 0x3F)
+                i = species;
+            else
+                if (species == SPECIES_KADABRA)
+                    i = SPECIES_KADABRA_FEMALE;
+                else if (species == SPECIES_ALAKAZAM)
+                    i = SPECIES_ALAKAZAM_FEMALE;
+        }
+        // 50% male
         else
         {
             if ((personality % 0x100) >= 0x7F) {
@@ -685,8 +984,175 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
                 }
                 else if (species == SPECIES_FRILLISH)
                     i = SPECIES_FRILLISH_FEMALE;
-                else
+                else if (species == SPECIES_JELLICENT)
                     i = SPECIES_JELLICENT_FEMALE;
+
+                else if (species == SPECIES_BUTTERFREE)
+                    i = SPECIES_BUTTERFREE_FEMALE;
+                else if (species == SPECIES_RATTATA)
+                    i = SPECIES_RATTATA_FEMALE;
+                else if (species == SPECIES_RATICATE)
+                    i = SPECIES_RATICATE_FEMALE;
+                else if (species == SPECIES_PIKACHU)
+                    i = SPECIES_PIKACHU_FEMALE;
+                else if (species == SPECIES_PIKACHU_PARTNER)
+                    i = SPECIES_PIKACHU_PARTNER_FEMALE;
+                else if (species == SPECIES_RAICHU)
+                    i = SPECIES_RAICHU_FEMALE;
+                else if (species == SPECIES_ZUBAT)
+                    i = SPECIES_ZUBAT_FEMALE;
+                else if (species == SPECIES_GOLBAT)
+                    i = SPECIES_GOLBAT_FEMALE;
+                else if (species == SPECIES_GLOOM)
+                    i = SPECIES_GLOOM_FEMALE;
+                else if (species == SPECIES_VILEPLUME)
+                    i = SPECIES_VILEPLUME_FEMALE;
+                else if (species == SPECIES_DODUO)
+                    i = SPECIES_DODUO_FEMALE;
+                else if (species == SPECIES_DODRIO)
+                    i = SPECIES_DODRIO_FEMALE;
+                else if (species == SPECIES_HYPNO)
+                    i = SPECIES_HYPNO_FEMALE;
+                else if (species == SPECIES_RHYHORN)
+                    i = SPECIES_RHYHORN_FEMALE;
+                else if (species == SPECIES_RHYDON)
+                    i = SPECIES_RHYDON_FEMALE;
+                else if (species == SPECIES_GOLDEEN)
+                    i = SPECIES_GOLDEEN_FEMALE;
+                else if (species == SPECIES_SEAKING)
+                    i = SPECIES_SEAKING_FEMALE;
+                else if (species == SPECIES_SCYTHER)
+                    i = SPECIES_SCYTHER_FEMALE;
+                else if (species == SPECIES_MAGIKARP)
+                    i = SPECIES_MAGIKARP_FEMALE;
+                else if (species == SPECIES_GYARADOS)
+                    i = SPECIES_GYARADOS_FEMALE;
+                else if (species == SPECIES_LEDYBA)
+                    i = SPECIES_LEDYBA_FEMALE;
+                else if (species == SPECIES_LEDIAN)
+                    i = SPECIES_LEDIAN_FEMALE;
+                else if (species == SPECIES_XATU)
+                    i = SPECIES_XATU_FEMALE;
+                else if (species == SPECIES_SUDOWOODO)
+                    i = SPECIES_SUDOWOODO_FEMALE;
+                else if (species == SPECIES_POLITOED)
+                    i = SPECIES_POLITOED_FEMALE;
+                else if (species == SPECIES_AIPOM)
+                    i = SPECIES_AIPOM_FEMALE;
+                else if (species == SPECIES_WOOPER)
+                    i = SPECIES_WOOPER_FEMALE;
+                else if (species == SPECIES_QUAGSIRE)
+                    i = SPECIES_QUAGSIRE_FEMALE;
+                else if (species == SPECIES_MURKROW)
+                    i = SPECIES_MURKROW_FEMALE;
+                else if (species == SPECIES_WOBBUFFET)
+                    i = SPECIES_WOBBUFFET_FEMALE;
+                else if (species == SPECIES_GIRAFARIG)
+                    i = SPECIES_GIRAFARIG_FEMALE;
+                else if (species == SPECIES_GLIGAR)
+                    i = SPECIES_GLIGAR_FEMALE;
+                else if (species == SPECIES_STEELIX)
+                    i = SPECIES_STEELIX_FEMALE;
+                else if (species == SPECIES_SCIZOR)
+                    i = SPECIES_SCIZOR_FEMALE;
+                else if (species == SPECIES_HERACROSS)
+                    i = SPECIES_HERACROSS_FEMALE;
+                else if (species == SPECIES_SNEASEL)
+                    i = SPECIES_SNEASEL_FEMALE;
+                else if (species == SPECIES_SNEASEL_HISUIAN)
+                    i = SPECIES_SNEASEL_HISUIAN_FEMALE;
+                else if (species == SPECIES_URSARING)
+                    i = SPECIES_URSARING_FEMALE;
+                else if (species == SPECIES_PILOSWINE)
+                    i = SPECIES_PILOSWINE_FEMALE;
+                else if (species == SPECIES_OCTILLERY)
+                    i = SPECIES_OCTILLERY_FEMALE;
+                else if (species == SPECIES_HOUNDOOM)
+                    i = SPECIES_HOUNDOOM_FEMALE;
+                else if (species == SPECIES_DONPHAN)
+                    i = SPECIES_DONPHAN_FEMALE;
+                else if (species == SPECIES_BEAUTIFLY)
+                    i = SPECIES_BEAUTIFLY_FEMALE;
+                else if (species == SPECIES_DUSTOX)
+                    i = SPECIES_DUSTOX_FEMALE;
+                else if (species == SPECIES_LUDICOLO)
+                    i = SPECIES_LUDICOLO_FEMALE;
+                else if (species == SPECIES_NUZLEAF)
+                    i = SPECIES_NUZLEAF_FEMALE;
+                else if (species == SPECIES_SHIFTRY)
+                    i = SPECIES_SHIFTRY_FEMALE;
+                else if (species == SPECIES_MEDITITE)
+                    i = SPECIES_MEDITITE_FEMALE;
+                else if (species == SPECIES_MEDICHAM)
+                    i = SPECIES_MEDICHAM_FEMALE;
+                else if (species == SPECIES_ROSELIA)
+                    i = SPECIES_ROSELIA_FEMALE;
+                else if (species == SPECIES_GULPIN)
+                    i = SPECIES_GULPIN_FEMALE;
+                else if (species == SPECIES_SWALOT)
+                    i = SPECIES_SWALOT_FEMALE;
+                else if (species == SPECIES_NUMEL)
+                    i = SPECIES_NUMEL_FEMALE;
+                else if (species == SPECIES_CAMERUPT)
+                    i = SPECIES_CAMERUPT_FEMALE;
+                else if (species == SPECIES_CACTURNE)
+                    i = SPECIES_CACTURNE_FEMALE;
+                else if (species == SPECIES_MILOTIC)
+                    i = SPECIES_MILOTIC_FEMALE;
+                else if (species == SPECIES_STARLY)
+                    i = SPECIES_STARLY_FEMALE;
+                else if (species == SPECIES_STARAVIA)
+                    i = SPECIES_STARAVIA_FEMALE;
+                else if (species == SPECIES_STARAPTOR)
+                    i = SPECIES_STARAPTOR_FEMALE;
+                else if (species == SPECIES_BIDOOF)
+                    i = SPECIES_BIDOOF_FEMALE;
+                else if (species == SPECIES_BIBAREL)
+                    i = SPECIES_BIBAREL_FEMALE;
+                else if (species == SPECIES_KRICKETOT)
+                    i = SPECIES_KRICKETOT_FEMALE;
+                else if (species == SPECIES_KRICKETUNE)
+                    i = SPECIES_KRICKETUNE_FEMALE;
+                else if (species == SPECIES_SHINX)
+                    i = SPECIES_SHINX_FEMALE;
+                else if (species == SPECIES_LUXIO)
+                    i = SPECIES_LUXIO_FEMALE;
+                else if (species == SPECIES_LUXRAY)
+                    i = SPECIES_LUXRAY_FEMALE;
+                else if (species == SPECIES_ROSERADE)
+                    i = SPECIES_ROSERADE_FEMALE;
+                else if (species == SPECIES_BUIZEL)
+                    i = SPECIES_BUIZEL_FEMALE;
+                else if (species == SPECIES_FLOATZEL)
+                    i = SPECIES_FLOATZEL_FEMALE;
+                else if (species == SPECIES_AMBIPOM)
+                    i = SPECIES_AMBIPOM_FEMALE;
+                else if (species == SPECIES_GIBLE)
+                    i = SPECIES_GIBLE_FEMALE;
+                else if (species == SPECIES_GABITE)
+                    i = SPECIES_GABITE_FEMALE;
+                else if (species == SPECIES_GARCHOMP)
+                    i = SPECIES_GARCHOMP_FEMALE;
+                else if (species == SPECIES_CROAGUNK)
+                    i = SPECIES_CROAGUNK_FEMALE;
+                else if (species == SPECIES_TOXICROAK)
+                    i = SPECIES_TOXICROAK_FEMALE;
+                else if (species == SPECIES_FINNEON)
+                    i = SPECIES_FINNEON_FEMALE;
+                else if (species == SPECIES_LUMINEON)
+                    i = SPECIES_LUMINEON_FEMALE;
+                else if (species == SPECIES_SNOVER)
+                    i = SPECIES_SNOVER_FEMALE;
+                else if (species == SPECIES_ABOMASNOW)
+                    i = SPECIES_ABOMASNOW_FEMALE;
+                else if (species == SPECIES_WEAVILE)
+                    i = SPECIES_WEAVILE_FEMALE;
+                else if (species == SPECIES_RHYPERIOR)
+                    i = SPECIES_RHYPERIOR_FEMALE;
+                else if (species == SPECIES_TANGROWTH)
+                    i = SPECIES_TANGROWTH_FEMALE;
+                else if (species == SPECIES_MAMOSWINE)
+                    i = SPECIES_MAMOSWINE_FEMALE;
         }
 
         if (!isFrontPic)

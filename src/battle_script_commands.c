@@ -2180,10 +2180,11 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 && (primary == TRUE || certain == MOVE_EFFECT_CERTAIN))
             {
                 gLastUsedAbility = ABILITY_IMMUNITY;
+                gBattlerAbility = gEffectBattler;
                 RecordAbilityBattle(gEffectBattler, ABILITY_IMMUNITY);
 
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = BattleScript_PSNPrevention;
+                gBattlescriptCurrInstr = BattleScript_PSNPreventionPopUp;
 
                 if (gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
                 {
@@ -2222,10 +2223,11 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 && (primary == TRUE || certain == MOVE_EFFECT_CERTAIN))
             {
                 gLastUsedAbility = ABILITY_WATER_VEIL;
+                gBattlerAbility = gEffectBattler;
                 RecordAbilityBattle(gEffectBattler, ABILITY_WATER_VEIL);
 
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = BattleScript_BRNPrevention;
+                gBattlescriptCurrInstr = BattleScript_BRNPreventionPopUp;
                 if (gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
                 {
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ABILITY_PREVENTS_ABILITY_STATUS;
@@ -2277,10 +2279,11 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 if (primary == TRUE || certain == MOVE_EFFECT_CERTAIN)
                 {
                     gLastUsedAbility = ABILITY_LIMBER;
+                    gBattlerAbility = gEffectBattler;
                     RecordAbilityBattle(gEffectBattler, ABILITY_LIMBER);
 
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    gBattlescriptCurrInstr = BattleScript_PRLZPrevention;
+                    gBattlescriptCurrInstr = BattleScript_PRLZPreventionPopUp;
 
                     if (gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
                     {
@@ -2789,7 +2792,7 @@ static void Cmd_seteffectwithchance(void)
         gBattleCommunication[MOVE_EFFECT_BYTE] &= ~MOVE_EFFECT_CERTAIN;
         SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
     }
-    else if (Random() % 100 <= percentChance
+    else if (Random() % 100 < percentChance         // bugfix
              && gBattleCommunication[MOVE_EFFECT_BYTE]
              && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
     {
