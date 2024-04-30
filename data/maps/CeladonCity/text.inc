@@ -112,3 +112,12 @@ CeladonCity_Text_SomeoneStoleSilphScope::
     .string "But I lost sight of him!\n"
     .string "Where'd he go?$"
 
+CeladonCity_Text_PatheticWeakling::
+    .string "Who do you think you are,\n"
+    .string "pathetic weakling?\p"
+    .string "I'm guarding the GAME CORNER so\n"
+    .string "wimps like you can't get in.\p"
+    .string "Perhaps the nearby GYM can\n"
+    .string "test your strength.\p"
+    .string "Maybe if you defeat its LEADER\n"
+    .string "I'll move out of the way.$"

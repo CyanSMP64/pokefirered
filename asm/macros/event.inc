@@ -63,6 +63,7 @@
 	STD_OBTAIN_DECORATION = 7
 	STD_PUT_ITEM_AWAY = 8
 	STD_RECEIVED_ITEM = 9
+	MSGBOX_NOYES = 10
 
 	@ Calls the script in gStdScripts at index function.
 	.macro callstd function:req
@@ -924,9 +925,11 @@
 	.byte \ignoreBPress
 	.endm
 
-	@ In FRLG, this command is a nop.
-	.macro drawbox
+	@ Repurposed for nat dex. same as yesnobox but default option is NO
+	.macro noyesbox x:req, y:req
 	.byte 0x72
+	.byte \x
+	.byte \y
 	.endm
 
 	@ In FRLG, this command is a nop. Still consumes parameters.

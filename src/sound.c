@@ -4,6 +4,7 @@
 #include "battle.h"
 #include "quest_log.h"
 #include "m4a.h"
+#include "event_data.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
 #include "task.h"
@@ -82,6 +83,11 @@ void MapMusicMain(void)
         PlayBGM(sCurrentMapMusic);
         break;
     case 2:
+        if (sCurrentMapMusic == MUS_RG_SS_ANNE && FlagGet(FLAG_SUPER_KAIZO)) {
+            m4aMPlayTempoControl(&gMPlayInfo_BGM, 224);
+            m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, -592);
+        }
+        break;
     case 3:
     case 4:
         break;

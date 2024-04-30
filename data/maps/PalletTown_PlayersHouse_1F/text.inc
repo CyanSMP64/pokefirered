@@ -2,7 +2,8 @@ PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou::
     .string "MOM: Come here! Quick!$"
 
 PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou::
-    .string "MOM: Want to see a magic trick?$"
+    .string "MOM: Are you playing the\n"
+    .string "SUPER KAIZO ruleset?$"
 
 PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest::
     .string "MOM: {PLAYER}!\n"
@@ -27,4 +28,7 @@ PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad::
 
 PalletTown_PlayersHouse_1F_Text_OopsWrongSide::
     .string "Oops, wrong side…$"
+
+PalletTown_PlayersHouse_1F_Text_OkayGoodLuck:
+	.string "Okay, good luck!$"
 

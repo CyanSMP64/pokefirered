@@ -418,27 +418,28 @@ int main(int argc, char ** argv)
     config_sym("EggMoves", "gEggMoves");
     config_sym("PokemonTMHMCompat", "sTMHMLearnsets");
     config_sym("PokemonEvolutions", "gEvolutionTable");
-    Elf32_Sym * Fr_gWildMonHeaders = GetSymbolByName("gWildMonHeaders");
+//    Elf32_Sym * Fr_gWildMonHeaders = GetSymbolByName("gWildMonHeaders");
     print("BattleTrappersBanned=[");
-    bool foundTrapBannedMap = false;
-    int encno = 0;
-    u8 * wild_headers_raw = elfContents + Fr_gWildMonHeaders->st_value - sh_rodata->sh_addr + sh_rodata->sh_offset;
-    uint8_t mapGroup;
-    uint8_t mapNum;
-    for (int i = 0; i < Fr_gWildMonHeaders->st_size / 20; i++) {
-        mapGroup = wild_headers_raw[20 * i + 0];
-        mapNum   = wild_headers_raw[20 * i + 1];
-        for (int j = 0; j < 4; j++) {
-            if (read_dword(wild_headers_raw + 20 * i + 4 + 4 * j) != 0) {
-                if (mapGroup == MAP_GROUP(POKEMON_TOWER_3F) && mapNum >= MAP_NUM(POKEMON_TOWER_3F) && mapNum <= MAP_NUM(POKEMON_TOWER_7F)) {
-                    if (foundTrapBannedMap) print(",");
-                    print("%d", encno);
-                    foundTrapBannedMap = true;
-                }
-                encno++;
-            }
-        }
-    }
+//    bool foundTrapBannedMap = false;
+//    int encno = 0;
+//    u8 * wild_headers_raw = elfContents + Fr_gWildMonHeaders->st_value - sh_rodata->sh_addr + sh_rodata->sh_offset;
+//    uint8_t mapGroup;
+//    uint8_t mapNum;
+//    for (int i = 0; i < Fr_gWildMonHeaders->st_size / 20; i++) {
+//        mapGroup = wild_headers_raw[20 * i + 0];
+//        mapNum   = wild_headers_raw[20 * i + 1];
+//        for (int j = 0; j < 4; j++) {
+//            if (read_dword(wild_headers_raw + 20 * i + 4 + 4 * j) != 0) {
+//                if (mapGroup == MAP_GROUP(POKEMON_TOWER_3F) && mapNum >= MAP_NUM(POKEMON_TOWER_3F) && mapNum <= MAP_NUM(POKEMON_TOWER_7F)) {
+//                    if (foundTrapBannedMap) print(",");
+//                    print("%d", encno);
+//                    foundTrapBannedMap = true;
+//                }
+//                encno++;
+//            }
+//        }
+//    }
+    print("55,56,57,58,59"); // dude come on
     print("]\n");
     print("StarterPokemon=0x%X\n", (sym_get("PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall") + 10) & 0x1FFFFFF);
     Elf32_Sym * Fr_gTrainers = GetSymbolByName("gTrainers");

@@ -7,11 +7,13 @@
 
 CeruleanCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CeruleanCity_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CeruleanCity_OnFrame
 	.byte 0
 
 CeruleanCity_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_CERULEAN_CITY
 	call_if_unset FLAG_GOT_SS_TICKET, CeruleanCity_EventScript_BlockExits
+	call_if_eq VAR_MAP_SCENE_ROUTE24, 2, CeruleanCity_EventScript_PolicemanExitOnWarp
 	end
 
 CeruleanCity_EventScript_BlockExits::
@@ -19,6 +21,25 @@ CeruleanCity_EventScript_BlockExits::
 	setobjectxyperm LOCALID_SLOWBRO, 26, 31
 	setobjectxyperm LOCALID_LASS, 27, 31
 	return
+
+CeruleanCity_EventScript_PolicemanExitOnWarp::
+	setobjectxyperm LOCALID_POLICEMAN, 23, 4
+	return
+
+CeruleanCity_OnFrame::
+	map_script_2 VAR_MAP_SCENE_ROUTE24, 2, CeruleanCity_EventScript_PolicemanExitOnWarp2
+	.2byte 0
+
+CeruleanCity_EventScript_PolicemanExitOnWarp2::
+	lockall
+	applymovement LOCALID_POLICEMAN, CeruleanCity_Movement_PolicemanWalkUp
+	waitmovement 0
+	setobjectxy LOCALID_POLICEMAN, 30, 12
+	turnobject LOCALID_POLICEMAN, DIR_SOUTH
+	delay 30
+	setvar VAR_MAP_SCENE_ROUTE24, 1
+	releaseall
+	end
 
 CeruleanCity_EventScript_RivalTriggerLeft::
 	lockall
@@ -132,6 +153,7 @@ CeruleanCity_Movement_RivalStartExit::
 	delay_16
 	delay_16
 	walk_left
+CeruleanCity_Movement_PolicemanWalkUp::
 	walk_up
 	walk_up
 	walk_up

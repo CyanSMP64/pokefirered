@@ -137,6 +137,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route24_EventScript_ItemTM45",
       "flag": "FLAG_HIDE_ROUTE24_TM45"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route24_EventScript_CascadeBadgeCheck",
+      "flag": "FLAG_HIDE_SS_ANNE_SUPER_KAIZO_TRAINERS"
     }
   ],
   "warp_events": [
@@ -241,6 +255,87 @@
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route24_EventScript_Sparkle_PechaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE24",
+      "var_value": "1",
+      "script": "Route24_EventScript_PoliceTrigger10"
     }
   ],
   "bg_events": [

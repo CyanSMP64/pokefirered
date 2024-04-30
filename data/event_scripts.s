@@ -84,6 +84,7 @@ gStdScripts::
 	.4byte Std_ObtainDecoration     @ STD_OBTAIN_DECORATION
 	.4byte Std_PutItemAway          @ STD_PUT_ITEM_AWAY
 	.4byte Std_ReceivedItem         @ STD_RECEIVED_ITEM
+	.4byte Std_MsgboxYesNoAlt       @ MSGBOX_NOYES
 gStdScriptsEnd::
 
 	.include "data/maps/BattleColosseum_2P/scripts.inc"
@@ -1059,6 +1060,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_FAME_CHECKER_KOGA_JOURNAL
 	setflag FLAG_HIDE_FAME_CHECKER_LT_SURGE_JOURNAL
 	setflag FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS
+	setflag FLAG_HIDE_SS_ANNE_SUPER_KAIZO_TRAINERS
+	setflag FLAG_HIDE_CELADON_ROCKET_GRUNT_3
 	setflag FLAG_0x152
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 500

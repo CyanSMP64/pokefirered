@@ -12,3 +12,6 @@ SSAnne_1F_Corridor_Text_PassengersAreRestless::
     .string "You might be challenged by the\n"
     .string "more bored ones!$"
 
+
+SSAnne_1F_Corridor_Text_RoomOffLimits::
+    .string "I can't let you through.$"

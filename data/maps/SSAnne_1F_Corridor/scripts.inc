@@ -8,3 +8,7 @@ SSAnne_1F_Corridor_EventScript_WorkerM::
 SSAnne_1F_Corridor_EventScript_Sailor::
 	msgbox SSAnne_1F_Corridor_Text_PassengersAreRestless, MSGBOX_NPC
 	end
+
+SSAnne_1F_Corridor_EventScript_SuperKaizoTrainers::
+	msgbox SSAnne_1F_Corridor_Text_RoomOffLimits, MSGBOX_NPC
+	end

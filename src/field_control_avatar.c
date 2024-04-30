@@ -495,15 +495,35 @@ static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position
     case 5:
     case 6:
     case BG_EVENT_HIDDEN_ITEM:
-        if (GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_UNDERFOOT) == TRUE)
+        if (!FlagGet(FLAG_SUPER_KAIZO)
+        || ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(VIRIDIAN_FOREST)
+          && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(VIRIDIAN_FOREST)
+           || gSaveBlock1Ptr->location.mapNum == MAP_NUM(MT_MOON_B2F)
+           || (gSaveBlock1Ptr->location.mapNum >= MAP_NUM(SSANNE_1F_CORRIDOR)
+            && gSaveBlock1Ptr->location.mapNum <= MAP_NUM(SSANNE_1F_ROOM6))
+           || (gSaveBlock1Ptr->location.mapNum >= MAP_NUM(VICTORY_ROAD_1F)
+            && gSaveBlock1Ptr->location.mapNum <= MAP_NUM(POKEMON_MANSION_B1F))
+           || (gSaveBlock1Ptr->location.mapNum >= MAP_NUM(CERULEAN_CAVE_1F)
+            && gSaveBlock1Ptr->location.mapNum <= MAP_NUM(POWER_PLANT))
+           || gSaveBlock1Ptr->location.mapNum == MAP_NUM(FIVE_ISLAND_ROCKET_WAREHOUSE)))
+         || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(PEWTER_CITY)
+          && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(PEWTER_CITY)
+           || gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)
+           || (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE4)
+            && gSaveBlock1Ptr->pos.x <= 25)))))
+        {
+            if (GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_UNDERFOOT) == TRUE)
+                return NULL;
+            gSpecialVar_0x8005 = GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_ITEM);
+            gSpecialVar_0x8004 = GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_FLAG);
+            gSpecialVar_0x8006 = GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_QUANTITY);
+            if (FlagGet(gSpecialVar_0x8004) == TRUE)
+                return NULL;
+            gSpecialVar_Facing = direction;
+            return EventScript_HiddenItemScript;
+        }
+        else
             return NULL;
-        gSpecialVar_0x8005 = GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_ITEM);
-        gSpecialVar_0x8004 = GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_FLAG);
-        gSpecialVar_0x8006 = GetHiddenItemAttr(bgEvent->bgUnion.hiddenItem, HIDDEN_ITEM_QUANTITY);
-        if (FlagGet(gSpecialVar_0x8004) == TRUE)
-            return NULL;
-        gSpecialVar_Facing = direction;
-        return EventScript_HiddenItemScript;
     }
 
     if (signpostType != SIGNPOST_NA)

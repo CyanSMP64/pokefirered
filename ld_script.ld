@@ -122,7 +122,6 @@ SECTIONS {
         src/battle_anim.o(.text);
         src/battle_anim_mons.o(.text);
         src/reshow_battle_screen.o(.text);
-        src/battle_anim_status_effects.o(.text);
         src/title_screen.o(.text);
     } =0
 
@@ -130,6 +129,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/battle_anim_status_effects.o(.text);
         src/play_time.o(.text);
         src/reset_save_heap.o(.text);
         src/task.o(.text);
@@ -206,13 +206,13 @@ SECTIONS {
         src/fldeff_flash.o(.text);
         src/post_battle_event_funcs.o(.text);
         src/field_specials.o(.text);
-        src/battle_records.o(.text);
     } =0
 
     .text_6 0x080d40bc:
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/battle_records.o(.text);
         src/fldeff_dig.o(.text);
         src/field_message_box.o(.text);
         src/fldeff_rocksmash.o(.text);
@@ -436,11 +436,6 @@ SECTIONS {
         src/bg_regs.o(.rodata);
         src/string_util.o(.rodata);
         src/main_menu.o(.rodata);
-    } =0
-
-    .rodata_1 0x08239edc:
-    SUBALIGN(4)
-    {
         src/data.o(.rodata);
         src/battle_bg.o(.rodata);
         src/battle_util.o(.rodata);

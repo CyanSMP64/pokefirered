@@ -33,7 +33,15 @@ PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale::
 	end
 
 PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale::
-	msgbox PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou
+	msgbox PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou, MSGBOX_NOYES
+	call_if_eq VAR_RESULT, YES, PalletTown_PlayersHouse_1F_EventScript_SetSuperKaizoFlag
+	msgbox PalletTown_PlayersHouse_1F_Text_OkayGoodLuck, MSGBOX_DEFAULT
+	return
+
+PalletTown_PlayersHouse_1F_EventScript_SetSuperKaizoFlag::
+	setflag FLAG_SUPER_KAIZO
+	clearflag FLAG_HIDE_SS_ANNE_SUPER_KAIZO_TRAINERS
+	clearflag FLAG_HIDE_CELADON_ROCKET_GRUNT_3
 	return
 
 PalletTown_PlayersHouse_1F_EventScript_MomHeal::

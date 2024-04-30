@@ -104,3 +104,7 @@ CeladonCity_EventScript_PrizeExchangeSign::
 CeladonCity_EventScript_GameCornerSign::
 	msgbox CeladonCity_Text_GameCornerSign, MSGBOX_SIGN
 	end
+
+CeladonCity_EventScript_RocketGrunt3::
+	msgbox CeladonCity_Text_PatheticWeakling, MSGBOX_NPC
+	end
