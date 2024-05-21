@@ -420,7 +420,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 104,
+      "y": 103,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -429,7 +429,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 104,
+      "y": 103,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -446,7 +446,7 @@
     },
     {
       "type": "trigger",
-      "x": 14,
+      "x": 13,
       "y": 102,
       "elevation": 0,
       "var": "VAR_TEMP_D",
@@ -455,7 +455,7 @@
     },
     {
       "type": "trigger",
-      "x": 14,
+      "x": 13,
       "y": 101,
       "elevation": 0,
       "var": "VAR_TEMP_D",
@@ -464,7 +464,7 @@
     },
     {
       "type": "trigger",
-      "x": 14,
+      "x": 13,
       "y": 100,
       "elevation": 0,
       "var": "VAR_TEMP_D",
@@ -483,7 +483,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 98,
+      "y": 99,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -492,7 +492,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 98,
+      "y": 99,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -501,7 +501,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 98,
+      "y": 99,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -555,7 +555,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 104,
+      "y": 103,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",

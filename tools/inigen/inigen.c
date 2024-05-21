@@ -153,7 +153,7 @@ const struct TMText gTMTexts[] = {
     { 4, 14,  3,  7,  0x2A, "TM04 is [move]."},
     { 6, 11,  3,  7,  0x91, "Sealed within that TM06 lies [move]!\\pIt is a secret technique dating back some four hundred years."},
     {16, 10,  5,  2, 0x316, "TM16 contains [move]."},
-    {19, 10, 16,  7,  0x9E, "TM19 contains [move].\\pWouldn’t you agree that it’s a wonderful move?"},
+    {19, 10, 16,  7,  0xA1, "TM19 contains [move].\\pWouldn’t you agree that it’s a wonderful move?"},
     {20, 10,  5,  2, 0x322, "TM20 contains [move]."},
     {26,  5,  1,  8,  0x9E, "TM26 contains [move].\\pIt is a powerful technique.\\pI made it when I ran the GYM here, far too long ago…"},
     {27, 23,  1,  1,  0x50, "TM27 is a move called [move]…\\pIf you treat your POKéMON good, it will return your love by working its hardest in battle."},
