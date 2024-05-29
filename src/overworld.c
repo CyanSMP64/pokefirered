@@ -46,6 +46,7 @@
 #include "trainer_pokemon_sprites.h"
 #include "vs_seeker.h"
 #include "wild_encounter.h"
+#include "constants/abilities.h"
 #include "constants/cable_club.h"
 #include "constants/event_objects.h"
 #include "constants/maps.h"
@@ -1153,28 +1154,43 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
     switch (*state)
     {
     case 0:
+        // This state will be revisited whenever ResetFieldTasksArgs is called (which happens on map transition)
         if (sAmbientCrySpecies == SPECIES_NONE)
             *state = 4;
         else
             *state = 1;
         break;
     case 1:
+        // It takes between 1200-3599 frames (~20-60 seconds) to play the first ambient cry after entering a map
         *delayCounter = (Random() % 2400) + 1200;
         *state = 3;
         break;
     case 2:
-        *delayCounter = (Random() % 1200) + 1200;
+        divBy = 1;
+        monsCount = CalculatePlayerPartyCount();
+        for (i = 0; i < monsCount; i++)
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG)
+                && GetMonAbility(&gPlayerParty[0]) == ABILITY_SWARM)
+            {
+                divBy = 2;
+                break;
+            }
+        }
+        // Ambient cries after the first one take between 1200-2399 frames (~20-40 seconds)
+        // If the player has a pokemon with the ability Swarm in their party, the time is halved to 600-1199 frames (~10-20 seconds)
+        *delayCounter = ((Random() % 1200) + 1200) / divBy;
         *state = 3;
         break;
     case 3:
-        (*delayCounter)--;
-        if (*delayCounter == 0)
+        if (--(*delayCounter) == 0)
         {
             PlayAmbientCry();
             *state = 2;
         }
         break;
     case 4:
+        // No land/water pokemon on this map
         break;
     }
 }

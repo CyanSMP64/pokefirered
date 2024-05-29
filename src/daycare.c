@@ -26,6 +26,7 @@
 #include "naming_screen.h"
 #include "field_fadetransition.h"
 #include "trade.h"
+#include "daycare.h"
 #include "constants/daycare.h"
 #include "constants/region_map_sections.h"
 
@@ -1156,6 +1157,7 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
     if (++daycare->stepCounter == 255)
     {
         u32 steps;
+        u8 toSub = GetEggCyclesToSubtract();
 
         for (i = 0; i < gPlayerPartyCount; i++)
         {
@@ -1167,7 +1169,11 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
             steps = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
             if (steps != 0)
             {
-                steps -= 1;
+                if (steps >= toSub)
+                    steps -= toSub;
+                else
+                    steps -= 1;
+
                 SetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP, &steps);
             }
             else // hatch the egg
@@ -2148,4 +2154,19 @@ static void EggHatchPrintMessage(u8 windowId, u8 *string, u8 x, u8 y, u8 speed)
     sEggHatchData->textColor[1] = 5;
     sEggHatchData->textColor[2] = 6;
     AddTextPrinterParameterized4(windowId, FONT_NORMAL_COPY_2, x, y, 1, 1, sEggHatchData->textColor, speed, string);
+}
+
+u8 GetEggCyclesToSubtract(void)
+{
+    u8 count, i;
+    for (count = CalculatePlayerPartyCount(), i = 0; i < count; i++)
+    {
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG))
+        {
+            u8 ability = GetMonAbility(&gPlayerParty[i]);
+            if (ability == ABILITY_MAGMA_ARMOR || ability == ABILITY_FLAME_BODY)
+                return 2;
+        }
+    }
+    return 1;
 }

@@ -14,19 +14,61 @@
 #include "party_menu.h"
 #include "script.h"
 #include "trig.h"
+#include "constants/abilities.h"
 #include "constants/event_objects.h"
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
 
-#define CUT_GRASS_SPRITE_COUNT 8
+// cut 'square' defines
 #define CUT_SIDE 3
+#define CUT_NORMAL_AREA CUT_SIDE * CUT_SIDE
+
+#define CUT_HYPER_SIDE 5
+#define CUT_HYPER_AREA CUT_HYPER_SIDE * CUT_HYPER_SIDE
+
+#define CUT_GRASS_SPRITE_COUNT 8
+
+struct HyperCutterUnk
+{
+    s8 x;
+    s8 y;
+    u8 unk2[2];
+};
+
+// IWRAM variables
+static u8 sCutSquareSide;
+static u8 sTileCountFromPlayer_X;
+static u8 sTileCountFromPlayer_Y;
+static bool8 sHyperCutTiles[CUT_HYPER_AREA];
 
 static EWRAM_DATA u8 *sCutGrassSpriteArrayPtr = NULL;
 static EWRAM_DATA bool8 sScheduleOpenDottedHole = FALSE;
 
+// const rom data
+static const struct HyperCutterUnk sHyperCutStruct[] =
+{
+    {-2, -2, {1}},
+    {-1, -2, {1}},
+    {0, -2, {2}},
+    {1, -2, {3}},
+    {2, -2, {3}},
+    {-2, -1, {1}},
+    {2, -1, {3}},
+    {-2, 0, {4}},
+    {2, 0, {6}},
+    {-2, 1, {7}},
+    {2, 1, {9}},
+    {-2, 2, {7}},
+    {-1, 2, {7}},
+    {0, 2, {8}},
+    {1, 2, {9}},
+    {2, 2, {9}},
+};
+
 static void FieldCallback_CutGrass(void);
 static void FieldCallback_CutTree(void);
 static void FieldMoveCallback_CutGrass(void);
+static void SetCutGrassMetatile(s16, s16);
 static void SetCutGrassMetatileAt(s16 x, s16 y);
 static void SpriteCallback_CutGrass_Init(struct Sprite *sprite);
 static void SpriteCallback_CutGrass_Run(struct Sprite *sprite);
@@ -119,6 +161,11 @@ bool8 SetUpFieldMove_Cut(void)
 {
     s16 x, y;
     u8 i, j;
+    u8 tileBehavior;
+    u8 userAbility;
+    bool8 cutTiles[CUT_NORMAL_AREA];
+    bool8 ret;
+
     sScheduleOpenDottedHole = FALSE;
     if (CutMoveRuinValleyCheck() == TRUE)
     {
@@ -138,25 +185,121 @@ bool8 SetUpFieldMove_Cut(void)
     else
     {
         PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
-    
+        userAbility = GetMonAbility(&gPlayerParty[GetCursorSelectionMonId()]);
+
+        if (userAbility == ABILITY_HYPER_CUTTER)
+        {
+            sCutSquareSide = CUT_HYPER_SIDE;
+            sTileCountFromPlayer_X = 2;
+            sTileCountFromPlayer_Y = 2;
+        }
+        else
+        {
+            sCutSquareSide = CUT_SIDE;
+            sTileCountFromPlayer_X = 1;
+            sTileCountFromPlayer_Y = 1;
+        }
+
+        for (i = 0; i < CUT_NORMAL_AREA; i++)
+            cutTiles[i] = FALSE;
+        for (i = 0; i < CUT_HYPER_AREA; i++)
+            sHyperCutTiles[i] = FALSE;
+
+        ret = FALSE;
+
         for (i = 0; i < CUT_SIDE; i++)
         {
-            y = gPlayerFacingPosition.y - 1 + i;
+            y = i - 1 + gPlayerFacingPosition.y;
             for (j = 0; j < CUT_SIDE; j++)
             {
-                x = gPlayerFacingPosition.x - 1 + j;
+                x = j - 1 + gPlayerFacingPosition.x;
                 if (MapGridGetElevationAt(x, y) == gPlayerFacingPosition.elevation)
                 {
-                    if (MetatileAtCoordsIsGrassTile(x, y) == TRUE)
+                    tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+                    if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
+                    || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE)
                     {
-                        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-                        gPostMenuFieldCallback = FieldCallback_CutGrass;
-                        return TRUE;
+                        // Standing in front of grass.
+                        sHyperCutTiles[6 + (i * 5) + j] = TRUE;
+                        ret = TRUE;
                     }
+                    // Collision has a range 0-3, any value != 0 is impassable
+                    if (MapGridGetCollisionAt(x, y))
+                    {
+                        cutTiles[i * 3 + j] = FALSE;
+                    }
+                    else
+                    {
+                        cutTiles[i * 3 + j] = TRUE;
+                        if (MetatileBehavior_IsTallGrass(tileBehavior) == TRUE)
+                            sHyperCutTiles[6 + (i * 5) + j] = TRUE;
+                    }
+                }
+                else
+                {
+                    cutTiles[i * 3 + j] = FALSE;
                 }
             }
         }
-        return FALSE;
+
+        if (userAbility != ABILITY_HYPER_CUTTER)
+        {
+            if (ret == TRUE)
+            {
+                gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+                gPostMenuFieldCallback = FieldCallback_CutGrass;
+            }
+        }
+        else
+        {
+            bool8 tileCuttable;
+            for (i = 0; i < 16; i++)
+            {
+                x = gPlayerFacingPosition.x + sHyperCutStruct[i].x;
+                y = gPlayerFacingPosition.y + sHyperCutStruct[i].y;
+                tileCuttable = TRUE;
+
+                for (j = 0; j < 2; ++j)
+                {
+                    if (sHyperCutStruct[i].unk2[j] == 0) break; // one line required to match -g
+                    if (cutTiles[(u8)(sHyperCutStruct[i].unk2[j] - 1)] == FALSE)
+                    {
+                        tileCuttable = FALSE;
+                        break;
+                    }
+                }
+
+                if (tileCuttable == TRUE)
+                {
+                    if (MapGridGetElevationAt(x, y) == gPlayerFacingPosition.elevation)
+                    {
+                        u8 tileArrayId = ((sHyperCutStruct[i].y * 5) + 12) + (sHyperCutStruct[i].x);
+                        tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+                        if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
+                        || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE)
+                        {
+                            gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+                            gPostMenuFieldCallback = FieldCallback_CutGrass;
+                            sHyperCutTiles[tileArrayId] = TRUE;
+                            ret = TRUE;
+                        }
+                        else
+                        {
+                            if (MetatileBehavior_IsTallGrass(tileBehavior) == TRUE)
+                                sHyperCutTiles[tileArrayId] = TRUE;
+                        }
+                    }
+                }
+            }
+
+            if (ret == TRUE)
+            {
+                gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+                gPostMenuFieldCallback = FieldCallback_CutGrass;
+            }
+        }
+
+        return ret;
     }
 }
 
@@ -199,38 +342,38 @@ static void FieldMoveCallback_CutGrass(void)
 
 bool8 FldEff_CutGrass(void)
 {
-    u8 i, j;
     s16 x, y;
-    u8 pos;
+    u8 i = 0;
 
-    i = 0;
     PlaySE(SE_M_CUT);
-    pos = gFieldEffectArguments[1] - 1;
     PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
-
-    for (i = 0; i < CUT_SIDE; i++)
+    for (i = 0; i < CUT_HYPER_AREA; i++)
     {
-        y = gPlayerFacingPosition.y - 1 + i;
-        for (j = 0; j < CUT_SIDE; j++)
+        if (sHyperCutTiles[i] == TRUE)
         {
-            x = gPlayerFacingPosition.x - 1 + j;
-            if (MapGridGetElevationAt(x, y) == gPlayerFacingPosition.elevation)
-            {
-                if (MetatileAtCoordsIsGrassTile(x, y) == TRUE)
-                {
-                    SetCutGrassMetatileAt(x, y);
-                    EnableObjectGroundEffectsByXY(x, y);
-                }
-            }
+            s8 xAdd = (i % 5) - 2;
+            s8 yAdd = (i / 5) - 2;
+
+            x = xAdd + gPlayerFacingPosition.x;
+            y = yAdd + gPlayerFacingPosition.y;
+
+            SetCutGrassMetatileAt(x, y);
+            EnableObjectGroundEffectsByXY(x, y);
         }
     }
+
+//    SetCutGrassMetatiles(gPlayerFacingPosition.x - sTileCountFromPlayer_X, gPlayerFacingPosition.y - (1 + sTileCountFromPlayer_Y));
     DrawWholeMapView();
-    sCutGrassSpriteArrayPtr = Alloc(CUT_GRASS_SPRITE_COUNT);
-    for (i = 0; i < 8; i++)
+    sCutGrassSpriteArrayPtr = AllocZeroed(CUT_GRASS_SPRITE_COUNT);
+
+    // populate sprite ID array
+    for (i = 0; i < CUT_GRASS_SPRITE_COUNT; i++)
     {
-        sCutGrassSpriteArrayPtr[i] = CreateSprite(&sSpriteTemplate_FldEff_CutGrass, gSprites[gPlayerAvatar.spriteId].oam.x + 8, gSprites[gPlayerAvatar.spriteId].oam.y + 20, 0);
-        gSprites[sCutGrassSpriteArrayPtr[i]].data[2] = i * (0x100 / CUT_GRASS_SPRITE_COUNT);
+        sCutGrassSpriteArrayPtr[i] = CreateSprite(&sSpriteTemplate_FldEff_CutGrass,
+        gSprites[gPlayerAvatar.spriteId].oam.x + 8, gSprites[gPlayerAvatar.spriteId].oam.y + 20, 0);
+        gSprites[sCutGrassSpriteArrayPtr[i]].data[2] = 32 * i;
     }
+
     return FALSE;
 }
 

@@ -198,7 +198,6 @@ SECTIONS {
         src/easy_chat.o(.text);
         src/mon_markings.o(.text);
         src/mail.o(.text);
-        src/menu_helpers.o(.text);
         src/heal_location.o(.text);
         src/region_map.o(.text);
         src/image_processing_effects.o(.text);
@@ -212,6 +211,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/menu_helpers.o(.text);
         src/battle_records.o(.text);
         src/fldeff_dig.o(.text);
         src/field_message_box.o(.text);
