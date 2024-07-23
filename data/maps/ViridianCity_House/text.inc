@@ -5,7 +5,7 @@ ViridianCity_House_Text_NicknamingIsFun::
     .string "names are easier to remember.$"
 
 ViridianCity_House_Text_MyDaddyLovesMonsToo::
-    .string "My daddy loves POKéMON, too.$"
+    .string "My daddy loves Pokémon, too.$"
 
 ViridianCity_House_Text_Speary::
     .string "SPEARY: Tetweet!$"

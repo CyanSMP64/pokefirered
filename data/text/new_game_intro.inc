@@ -195,13 +195,13 @@ gOakSpeech_Text_ThisWorld::
 
 gOakSpeech_Text_IsInhabitedFarAndWide::
     .string "…is inhabited far and wide by\n"
-    .string "creatures called POKéMON.\p$"
+    .string "creatures called Pokémon.\p$"
 
 gOakSpeech_Text_IStudyPokemon::
-    .string "For some people, POKéMON are pets.\n"
+    .string "For some people, Pokémon are pets.\n"
     .string "Others use them for battling.\p"
     .string "As for myself…\p"
-    .string "I study POKéMON as a profession.\p$"
+    .string "I study Pokémon as a profession.\p$"
 
 gOakSpeech_Text_TellMeALittleAboutYourself::
     .string "Hello, there!\n"

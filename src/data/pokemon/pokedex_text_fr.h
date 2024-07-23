@@ -5825,7 +5825,7 @@ const u8 gPumpkabooSmallPokedexText[] = _(
 const u8 gPumpkabooLargePokedexText[] = _(
     "Large Pumpkaboo are said to be the\n"
     "product of areas where many lost souls\n"
-    "HelloWorld");
+    "lingered.");
 
 const u8 gPumpkabooSuperPokedexText[] = _(
     "Massive Pumpkaboo are said to be the\n"

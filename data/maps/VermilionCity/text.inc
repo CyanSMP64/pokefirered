@@ -15,7 +15,7 @@ VermilionCity_Text_SSAnneHasDepartedForYear::
 VermilionCity_Text_BuildingOnThisLand::
     .string "I'm putting up a building on this\n"
     .string "plot of land. I own it all.\p"
-    .string "My POKéMON is tamping the land\n"
+    .string "My Pokémon is tamping the land\n"
     .string "to lay the foundation.$"
 
 VermilionCity_Text_Machop::
@@ -36,17 +36,17 @@ VermilionCity_Text_CitySign::
 VermilionCity_Text_SnorlaxBlockingRoute12::
     .string "NOTICE!\p"
     .string "ROUTE 12 may be blocked off by a\n"
-    .string "sleeping POKéMON.\p"
+    .string "sleeping Pokémon.\p"
     .string "Detour through ROCK TUNNEL to\n"
     .string "LAVENDER TOWN.\p"
     .string "VERMILION POLICE$"
 
 VermilionCity_Text_PokemonFanClubSign::
-    .string "POKéMON FAN CLUB\n"
-    .string "All POKéMON fans welcome!$"
+    .string "Pokémon FAN CLUB\n"
+    .string "All Pokémon fans welcome!$"
 
 VermilionCity_Text_GymSign::
-    .string "VERMILION CITY POKéMON GYM\n"
+    .string "VERMILION CITY Pokémon GYM\n"
     .string "LEADER: LT. SURGE\l"
     .string "The Lightning American!$"
 
@@ -120,9 +120,9 @@ VermilionCity_Text_Seagallop12Departing::
 VermilionCity_Text_Route2AideHasPackageForYou::
     .string "Oh, hello, {PLAYER}!\n"
     .string "How are you doing?\p"
-    .string "It's me, one of PROF. OAK's AIDES.\p"
+    .string "It's me, one of Prof. Oak's Aides.\p"
     .string "Did you meet the other AIDE?\p"
-    .string "He had a package from PROF. OAK\n"
+    .string "He had a package from Prof. Oak\n"
     .string "for you, {PLAYER}.\p"
     .string "He said he'd look for you around\n"
     .string "ROUTE 2, {PLAYER}.\p"

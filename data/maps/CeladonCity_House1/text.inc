@@ -6,7 +6,7 @@ CeladonCity_House1_Text_SlotsReelInTheDough::
 CeladonCity_House1_Text_ShippedMonsAsSlotPrizes::
     .string "CHIEF!\p"
     .string "We just shipped two thousand\n"
-    .string "more POKéMON as slot prizes\l"
+    .string "more Pokémon as slot prizes\l"
     .string "again today!$"
 
 CeladonCity_House1_Text_DontTouchGameCornerPoster::

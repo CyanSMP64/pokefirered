@@ -11,7 +11,7 @@ FuchsiaCity_House1_Text_BillIsMyGrandson::
     .string "even as a child!$"
 
 FuchsiaCity_House1_Text_BillFilesHisOwnMonData::
-    .string "BILL files his own POKéMON data on\n"
+    .string "BILL files his own Pokémon data on\n"
     .string "his PC.\p"
     .string "Did he show you?$"
 

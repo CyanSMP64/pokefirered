@@ -25,14 +25,14 @@ VermilionCity_PokemonFanClub_Text_Seel::
     .string "SEEL: Kyuoo!$"
 
 VermilionCity_PokemonFanClub_Text_DidYouComeToHearAboutMyMons::
-    .string "I chair the POKéMON Fan Club!\p"
+    .string "I chair the Pokémon Fan Club!\p"
     .string "I raise more than a hundred\n"
-    .string "POKéMON!\p"
+    .string "Pokémon!\p"
     .string "I'm very fussy when it comes to\n"
-    .string "POKéMON! I surely am!\p"
+    .string "Pokémon! I surely am!\p"
     .string "So…\p"
     .string "Did you come visit to hear about\n"
-    .string "my POKéMON?$"
+    .string "my Pokémon?$"
 
 VermilionCity_PokemonFanClub_Text_ChairmansStory::
     .string "Good!\n"
@@ -71,7 +71,7 @@ VermilionCity_PokemonFanClub_Text_ComeBackToHearStory::
 VermilionCity_PokemonFanClub_Text_DidntComeToSeeAboutMonsAgain::
     .string "Hello, {PLAYER}!\p"
     .string "Did you come see me about my\n"
-    .string "POKéMON again?\p"
+    .string "Pokémon again?\p"
     .string "No?\n"
     .string "Too bad!$"
 
@@ -80,7 +80,7 @@ VermilionCity_PokemonFanClub_Text_MakeRoomForThis::
 
 VermilionCity_PokemonFanClub_Text_ChairmanVeryVocalAboutPokemon::
     .string "Our CHAIRMAN is very vocal about\n"
-    .string "POKéMON.$"
+    .string "Pokémon.$"
 
 VermilionCity_PokemonFanClub_Text_ListenPolitelyToOtherTrainers::
     .string "Let's all listen politely to other\n"
@@ -91,6 +91,6 @@ VermilionCity_PokemonFanClub_Text_SomeoneBragsBragBack::
 
 VermilionCity_PokemonFanClub_Text_ChairmanReallyAdoresHisMons::
     .string "Our CHAIRMAN really does adore his\n"
-    .string "POKéMON.\p"
+    .string "Pokémon.\p"
     .string "But the person who is most liked by\n"
-    .string "POKéMON is DAISY, I think.$"
+    .string "Pokémon is DAISY, I think.$"

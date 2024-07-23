@@ -1,7 +1,7 @@
 RocketHideout_B4F_Text_GiovanniIntro::
     .string "So! I must say, I am impressed you\n"
     .string "got here.\p"
-    .string "TEAM ROCKET captures POKéMON from\n"
+    .string "TEAM ROCKET captures Pokémon from\n"
     .string "around the world.\p"
     .string "They're important tools for keeping\n"
     .string "our criminal enterprise going.\p"
@@ -14,7 +14,7 @@ RocketHideout_B4F_Text_GiovanniDefeat::
     .string "This can't be!$"
 
 RocketHideout_B4F_Text_GiovanniPostBattle::
-    .string "I see that you raise POKéMON with\n"
+    .string "I see that you raise Pokémon with\n"
     .string "utmost care.\p"
     .string "A child like you would never\n"
     .string "understand what I hope to achieve.\p"

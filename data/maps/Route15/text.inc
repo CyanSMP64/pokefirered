@@ -1,5 +1,5 @@
 Route15_Text_KindraIntro::
-    .string "I just got some POKéMON in trades.\n"
+    .string "I just got some Pokémon in trades.\n"
     .string "Can I try them out on you?$"
 
 Route15_Text_KindraDefeat::
@@ -7,7 +7,7 @@ Route15_Text_KindraDefeat::
 
 Route15_Text_KindraPostBattle::
     .string "You can't change the nickname of\n"
-    .string "any POKéMON you get in a trade.\p"
+    .string "any Pokémon you get in a trade.\p"
     .string "Only the Original TRAINER can get\n"
     .string "the nickname changed.$"
 
@@ -25,7 +25,7 @@ Route15_Text_BeckyPostBattle::
 
 Route15_Text_EdwinIntro::
     .string "When I whistle, I can summon bird\n"
-    .string "POKéMON.$"
+    .string "Pokémon.$"
 
 Route15_Text_EdwinDefeat::
     .string "Ow!\n"
@@ -46,11 +46,11 @@ Route15_Text_ChesterPostBattle::
     .string "This is so obvious, you should know\n"
     .string "this, but…\p"
     .string "Moves like EARTHQUAKE and FISSURE\n"
-    .string "have no effect on bird POKéMON.$"
+    .string "have no effect on bird Pokémon.$"
 
 Route15_Text_GraceIntro::
     .string "Oh, you're a little cutie!\n"
-    .string "So like a darling POKéMON!$"
+    .string "So like a darling Pokémon!$"
 
 Route15_Text_GraceDefeat::
     .string "You looked so cute, too!$"
@@ -61,15 +61,15 @@ Route15_Text_GracePostBattle::
     .string "I'm a big girl now.$"
 
 Route15_Text_OliviaIntro::
-    .string "I raise POKéMON for protection\n"
+    .string "I raise Pokémon for protection\n"
     .string "because I live alone.$"
 
 Route15_Text_OliviaDefeat::
-    .string "POKéMON isn't about winning or\n"
+    .string "Pokémon isn't about winning or\n"
     .string "losing for me.$"
 
 Route15_Text_OliviaPostBattle::
-    .string "I love having my POKéMON greet me\n"
+    .string "I love having my Pokémon greet me\n"
     .string "when I get home.\p"
     .string "It's so reassuring.$"
 
@@ -98,17 +98,17 @@ Route15_Text_AlexPostBattle::
 
 Route15_Text_CeliaIntro::
     .string "What's cool and happening?\n"
-    .string "Trading POKéMON!$"
+    .string "Trading Pokémon!$"
 
 Route15_Text_CeliaDefeat::
     .string "I said trade!$"
 
 Route15_Text_CeliaPostBattle::
-    .string "I trade POKéMON with my friends\n"
+    .string "I trade Pokémon with my friends\n"
     .string "all the time.$"
 
 Route15_Text_YazminIntro::
-    .string "Want to play with my POKéMON?$"
+    .string "Want to play with my Pokémon?$"
 
 Route15_Text_YazminDefeat::
     .string "I was too impatient!$"
@@ -134,7 +134,7 @@ Route15_Text_MyaPostBattle::
 
 Route15_Text_MyaNotEnoughMons::
     .string "MYA: Do you want to challenge us?\n"
-    .string "You'll need two POKéMON, though.$"
+    .string "You'll need two Pokémon, though.$"
 
 Route15_Text_RonIntro::
     .string "RON: My sister gets scary when we\n"
@@ -151,4 +151,4 @@ Route15_Text_RonPostBattle::
 Route15_Text_RonNotEnoughMons::
     .string "RON: Did you want to battle with\n"
     .string "my sister and me?\p"
-    .string "You need two POKéMON, then.$"
+    .string "You need two Pokémon, then.$"

@@ -18,7 +18,7 @@ Text_OnlyPassWithBadgeDontHaveYet::
 	.string "You don't have the {STR_VAR_1}\n"
 	.string "yet.\p"
 	.string "You have to have it to get to\n"
-	.string "the POKéMON LEAGUE.$"
+	.string "the Pokémon LEAGUE.$"
 
 Text_OnlyPassWithBadgeOhGoAhead::
 	.string "You can pass here only if you have\n"

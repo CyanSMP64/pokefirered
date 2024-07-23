@@ -2,21 +2,21 @@ PalletTown_Text_OakDontGoOut::
     .string "Thanks, take this and leave.$"
 
 PalletTown_Text_OakGrassUnsafeNeedMon::
-    .string "{PLAYER} received five POKé BALLs\n"
-    .string "and the POKéDEX!$"
+    .string "{PLAYER} received five Poké Balls\n"
+    .string "and the Pokédex!$"
 
 PalletTown_Text_RaisingMonsToo::
-    .string "I'm raising POKéMON, too.\p"
+    .string "I'm raising Pokémon, too.\p"
     .string "When they get strong, they can\n"
     .string "protect me.$"
 
 PalletTown_Text_CanStoreItemsAndMonsInPC::
     .string "Technology is incredible!\p"
     .string "You can now store and recall items\n"
-    .string "and POKéMON as data via PC.$"
+    .string "and Pokémon as data via PC.$"
 
 PalletTown_Text_OakPokemonResearchLab::
-    .string "OAK POKéMON RESEARCH LAB$"
+    .string "OAK Pokémon RESEARCH LAB$"
 
 PalletTown_Text_PlayersHouse::
     .string "{PLAYER}'s house$"
@@ -32,7 +32,7 @@ PalletTown_Text_OakLetMeSeePokedex::
     .string "OAK: Ah, {PLAYER}!\n"
     .string "You're back, are you?\p"
     .string "How much have you filled in your\n"
-    .string "POKéDEX?\p"
+    .string "Pokédex?\p"
     .string "May I see it?\p"
     .string "Let's see…$"
 

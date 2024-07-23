@@ -1,5 +1,5 @@
 Route13_Text_SebastianIntro::
-    .string "My bird POKéMON want to battle\n"
+    .string "My bird Pokémon want to battle\n"
     .string "with you!$"
 
 Route13_Text_SebastianDefeat::
@@ -7,7 +7,7 @@ Route13_Text_SebastianDefeat::
     .string "lost?$"
 
 Route13_Text_SebastianPostBattle::
-    .string "My POKéMON look happy even though\n"
+    .string "My Pokémon look happy even though\n"
     .string "they lost.$"
 
 Route13_Text_SusieIntro::
@@ -33,7 +33,7 @@ Route13_Text_ValeriePostBattle::
     .string "LEADERS. I know!$"
 
 Route13_Text_GwenIntro::
-    .string "My cute POKéMON wish to make your\n"
+    .string "My cute Pokémon wish to make your\n"
     .string "acquaintance.$"
 
 Route13_Text_GwenDefeat::
@@ -41,7 +41,7 @@ Route13_Text_GwenDefeat::
     .string "You totally won!$"
 
 Route13_Text_GwenPostBattle::
-    .string "You have to make POKéMON battle\n"
+    .string "You have to make Pokémon battle\n"
     .string "to toughen them up.$"
 
 Route13_Text_AlmaIntro::
@@ -54,7 +54,7 @@ Route13_Text_AlmaDefeat::
 
 Route13_Text_AlmaPostBattle::
     .string "CARBOS boosted the SPEED of my\n"
-    .string "POKéMON.$"
+    .string "Pokémon.$"
 
 Route13_Text_PerryIntro::
     .string "I'm not going to lose.\n"
@@ -76,18 +76,18 @@ Route13_Text_LolaDefeat::
 
 Route13_Text_LolaPostBattle::
     .string "I wonder which is stronger, male or\n"
-    .string "female POKéMON?$"
+    .string "female Pokémon?$"
 
 Route13_Text_SheilaIntro::
     .string "Do you want to battle some\n"
-    .string "POKéMON with me?$"
+    .string "Pokémon with me?$"
 
 Route13_Text_SheilaDefeat::
     .string "It's over already?$"
 
 Route13_Text_SheilaPostBattle::
     .string "I don't know anything about\n"
-    .string "POKéMON actually.\p"
+    .string "Pokémon actually.\p"
     .string "The ones I use… I picked them\n"
     .string "for their looks!$"
 
@@ -102,7 +102,7 @@ Route13_Text_JaredPostBattle::
     .string "Get lost!$"
 
 Route13_Text_RobertIntro::
-    .string "I always go with bird POKéMON.\n"
+    .string "I always go with bird Pokémon.\n"
     .string "I've dedicated myself to them.$"
 
 Route13_Text_RobertDefeat::

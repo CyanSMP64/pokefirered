@@ -22,11 +22,11 @@ SaffronCity_Gym_Text_SabrinaPostBattle::
     .string "People just don't realize it.$"
 
 SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis::
-    .string "The MARSHBADGE makes POKéMON up\n"
+    .string "The MARSHBADGE makes Pokémon up\n"
     .string "to Lv. 70 obey you.\p"
-    .string "Stronger POKéMON will become wild,\n"
+    .string "Stronger Pokémon will become wild,\n"
     .string "ignoring your orders in battle.\p"
-    .string "Just don't raise your POKéMON too\n"
+    .string "Just don't raise your Pokémon too\n"
     .string "much to avoid that problem.\p"
     .string "Wait, please take this TM with you.$"
 
@@ -36,8 +36,8 @@ SaffronCity_Gym_Text_ReceivedTM04FromSabrina::
 
 SaffronCity_Gym_Text_ExplainTM04::
     .string "TM04 is CALM MIND.\p"
-    .string "It makes the POKéMON concentrate\n"
-    .string "to raise both SP. ATK and SP. DEF.$"
+    .string "It makes the Pokémon concentrate\n"
+    .string "to raise both Sp. Atk and Sp. Def.$"
 
 SaffronCity_Gym_Text_BagFullOfOtherItems::
     .string "Your BAG is full of other items.$"
@@ -62,13 +62,13 @@ SaffronCity_Gym_Text_JohanDefeat::
     .string "I never foresaw this!$"
 
 SaffronCity_Gym_Text_JohanPostBattle::
-    .string "PSYCHIC POKéMON fear only ghosts\n"
+    .string "PSYCHIC Pokémon fear only ghosts\n"
     .string "and bugs!$"
 
 SaffronCity_Gym_Text_StacyIntro::
-    .string "POKéMON take on the appearance of\n"
+    .string "Pokémon take on the appearance of\n"
     .string "their TRAINERS.\p"
-    .string "Your POKéMON must be tough, then!$"
+    .string "Your Pokémon must be tough, then!$"
 
 SaffronCity_Gym_Text_StacyDefeat::
     .string "I knew it!$"
@@ -76,12 +76,12 @@ SaffronCity_Gym_Text_StacyDefeat::
 SaffronCity_Gym_Text_StacyPostBattle::
     .string "I have much to learn still…\p"
     .string "I must master PSYCHIC and teach it\n"
-    .string "to my POKéMON…$"
+    .string "to my Pokémon…$"
 
 SaffronCity_Gym_Text_TyronIntro::
     .string "You understand, don't you?\p"
     .string "That power alone isn't enough to\n"
-    .string "win in the world of POKéMON?$"
+    .string "win in the world of Pokémon?$"
 
 SaffronCity_Gym_Text_TyronDefeat::
     .string "I don't believe this!$"
@@ -91,7 +91,7 @@ SaffronCity_Gym_Text_TyronPostBattle::
     .string "MASTER next door.$"
 
 SaffronCity_Gym_Text_TashaIntro::
-    .string "You and I, our POKéMON shall\n"
+    .string "You and I, our Pokémon shall\n"
     .string "battle!$"
 
 SaffronCity_Gym_Text_TashaDefeat::
@@ -111,7 +111,7 @@ SaffronCity_Gym_Text_CameronDefeat::
     .string "Down and out!$"
 
 SaffronCity_Gym_Text_CameronPostBattle::
-    .string "There used to be two POKéMON GYMS\n"
+    .string "There used to be two Pokémon GYMS\n"
     .string "in SAFFRON.\p"
     .string "The FIGHTING DOJO next door lost\n"
     .string "its GYM status, though.\p"
@@ -119,7 +119,7 @@ SaffronCity_Gym_Text_CameronPostBattle::
     .string "decided to have just one GYM.$"
 
 SaffronCity_Gym_Text_PrestonIntro::
-    .string "SAFFRON POKéMON GYM is famous for\n"
+    .string "SAFFRON Pokémon GYM is famous for\n"
     .string "training psychics.\p"
     .string "You want to see SABRINA, don't\n"
     .string "you? I can tell!$"
@@ -134,10 +134,10 @@ SaffronCity_Gym_Text_PrestonPostBattle::
 SaffronCity_Gym_Text_GymGuyAdvice::
     .string "Yo!\n"
     .string "Champ in the making!\p"
-    .string "SABRINA's POKéMON use psychic\n"
+    .string "SABRINA's Pokémon use psychic\n"
     .string "power instead of force.\p"
-    .string "FIGHTING POKéMON are especially\n"
-    .string "weak against PSYCHIC POKéMON.\p"
+    .string "FIGHTING Pokémon are especially\n"
+    .string "weak against PSYCHIC Pokémon.\p"
     .string "They'll get destroyed before they\n"
     .string "can even aim a punch!$"
 
@@ -147,13 +147,13 @@ SaffronCity_Gym_Text_GymGuyPostVictory::
     .string "at the slots!$"
 
 SaffronCity_Gym_Text_GymStatue::
-    .string "SAFFRON POKéMON GYM\n"
+    .string "SAFFRON Pokémon GYM\n"
     .string "LEADER: SABRINA\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}$"
 
 SaffronCity_Gym_Text_GymStatuePlayerWon::
-    .string "SAFFRON POKéMON GYM\n"
+    .string "SAFFRON Pokémon GYM\n"
     .string "LEADER: SABRINA\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"

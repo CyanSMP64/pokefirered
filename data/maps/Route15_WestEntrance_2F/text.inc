@@ -1,18 +1,18 @@
 Route15_WestEntrance_2F_Text_GiveItemIfCaughtEnough::
     .string "Hi! Remember me?\n"
-    .string "I'm one of PROF. OAK's AIDES.\p"
-    .string "If your POKéDEX has complete data\n"
+    .string "I'm one of Prof. Oak's Aides.\p"
+    .string "If your Pokédex has complete data\n"
     .string "on {STR_VAR_1} species, I'm supposed to\l"
     .string "give you a reward.\p"
-    .string "PROF. OAK entrusted me with the\n"
+    .string "Prof. Oak entrusted me with the\n"
     .string "{STR_VAR_2} for you.\p"
     .string "So, {PLAYER}, let me ask you.\p"
     .string "Have you gathered data on at least\n"
-    .string "{STR_VAR_1} kinds of POKéMON?$"
+    .string "{STR_VAR_1} kinds of Pokémon?$"
 
 Route15_WestEntrance_2F_Text_GreatHereYouGo::
     .string "Great! You have caught or owned\n"
-    .string "{STR_VAR_3} kinds of POKéMON!\p"
+    .string "{STR_VAR_3} kinds of Pokémon!\p"
     .string "Congratulations!\n"
     .string "Here you go!$"
 
@@ -22,8 +22,8 @@ Route15_WestEntrance_2F_Text_ReceivedItemFromAide::
 
 Route15_WestEntrance_2F_Text_ExplainExpShare::
     .string "EXP. SHARE is an item to be held\n"
-    .string "by a POKéMON.\p"
-    .string "The POKéMON will receive a share\n"
+    .string "by a Pokémon.\p"
+    .string "The Pokémon will receive a share\n"
     .string "of the EXP. Points without having\l"
     .string "to battle.$"
 

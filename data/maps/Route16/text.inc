@@ -48,7 +48,7 @@ Route16_Text_CamronDefeat::
     .string "Bad, bad, bad!$"
 
 Route16_Text_CamronPostBattle::
-    .string "If I'm going to have POKéMON, they\n"
+    .string "If I'm going to have Pokémon, they\n"
     .string "may as well be ferocious.\p"
     .string "I'd use them to leave my enemies\n"
     .string "in tatters.$"
@@ -62,12 +62,12 @@ Route16_Text_RubenDefeat::
 
 Route16_Text_RubenPostBattle::
     .string "I get my kicks by harassing people\n"
-    .string "with my stinking POKéMON.\p"
+    .string "with my stinking Pokémon.\p"
     .string "They're great for startling people.\n"
     .string "And, they bite, too.$"
 
 Route16_Text_MonSprawledOutInSlumber::
-    .string "A POKéMON is sprawled out in\n"
+    .string "A Pokémon is sprawled out in\n"
     .string "a deep and comfortable slumber.$"
 
 Route16_Text_CyclingRoadSign::
@@ -91,7 +91,7 @@ Route16_Text_JedPostBattle::
     .string "You need to focus less on me.$"
 
 Route16_Text_JedNotEnoughMons::
-    .string "JED: You have just one POKéMON?\n"
+    .string "JED: You have just one Pokémon?\n"
     .string "Is there no love in your heart?$"
 
 Route16_Text_LeaIntro::
@@ -108,6 +108,6 @@ Route16_Text_LeaPostBattle::
 
 Route16_Text_LeaNotEnoughMons::
     .string "LEA: Oh, you don't have two\n"
-    .string "POKéMON with you?\p"
+    .string "Pokémon with you?\p"
     .string "Doesn't it feel lonely for you or\n"
-    .string "your POKéMON?$"
+    .string "your Pokémon?$"
