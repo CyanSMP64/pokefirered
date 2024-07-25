@@ -9,7 +9,7 @@ Route16_NorthEntrance_2F_Text_RidingTogetherOnNewBikes::
 Route16_NorthEntrance_2F_Text_ItsCeladonDeptStore::
     .string "Let's see what the binoculars have\n"
     .string "to show…\p"
-    .string "It's the CELADON DEPT. STORE!$"
+    .string "It's the Celadon Dept. Store!$"
 
 Route16_NorthEntrance_2F_Text_LongPathOverWater::
     .string "Let's see what the binoculars have\n"

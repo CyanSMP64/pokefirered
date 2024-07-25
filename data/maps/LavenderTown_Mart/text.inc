@@ -3,16 +3,16 @@ LavenderTown_Mart_Text_SearchingForStatRaiseItems::
     .string "the stats of Pokémon.\p"
     .string "They're effective over the course\n"
     .string "of a single battle.\p"
-    .string "X ATTACK, X DEFEND, X SPEED, \n"
-    .string "and X SPECIAL are what I'm after.\p"
+    .string "X Attack, X Defense, X Speed, \n"
+    .string "and X Sp. Atk are what I'm after.\p"
     .string "Do you know where I can get them?$"
 
 LavenderTown_Mart_Text_DidYouBuyRevives::
-    .string "Did you buy some REVIVES?\n"
+    .string "Did you buy some Revives?\n"
     .string "They revive any fainted Pokémon!$"
 
 LavenderTown_Mart_Text_TrainerDuosCanChallengeYou::
-    .string "Sometimes, a TRAINER duo will\n"
+    .string "Sometimes, a Trainer duo will\n"
     .string "challenge you with two Pokémon\l"
     .string "at the same time.\p"
     .string "If that happens, you have to send\n"

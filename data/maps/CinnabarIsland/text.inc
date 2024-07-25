@@ -2,7 +2,7 @@ CinnabarIsland_Text_DoorIsLocked::
     .string "The door is locked…$"
 
 CinnabarIsland_Text_BlaineLivedHereSinceBeforeLab::
-    .string "CINNABAR GYM's BLAINE is quite the\n"
+    .string "Cinnabar Gym's Blaine is quite the\n"
     .string "odd fellow.\p"
     .string "He's lived on the island since way\n"
     .string "before the LAB was built.$"
@@ -11,17 +11,17 @@ CinnabarIsland_Text_ScientistsExperimentInMansion::
     .string "Scientists conduct experiments \n"
     .string "in the burned-out building.\p"
     .string "You know, the one they call the\n"
-    .string "Pokémon MANSION.$"
+    .string "Pokémon Mansion.$"
 
 CinnabarIsland_Text_IslandSign::
-    .string "CINNABAR ISLAND\n"
+    .string "Cinnabar Island\n"
     .string "The Fiery Town of Burning Desire$"
 
 CinnabarIsland_Text_PokemonLab::
-    .string "Pokémon LAB$"
+    .string "Pokémon Lab$"
 
 CinnabarIsland_Text_GymSign::
-    .string "CINNABAR ISLAND Pokémon GYM\n"
+    .string "Cinnabar Island Pokémon Gym\n"
     .string "LEADER: BLAINE\l"
     .string "The Hotheaded Quiz Master!$"
 
@@ -37,7 +37,7 @@ CinnabarIsland_Text_GymSign::
 @    .string "Well, listen, since we met up here,\n"
 @    .string "how about spending time with me?\p"
 @    .string "There's this little island in the far\n"
-@    .string "south called ONE ISLAND.\p"
+@    .string "south called One Island.\p"
 @    .string "A friend invited me, so I'm on my\n"
 @    .string "way out there.\p"
 @    .string "How about it?\n"
@@ -60,7 +60,7 @@ CinnabarIsland_Text_MyPalsBoatArrived::
     .string "Looks like my pal's boat arrived,\n"
     .string "too.\p"
     .string "He sent it specially here to\n"
-    .string "CINNABAR to pick me up.$"
+    .string "Cinnabar to pick me up.$"
 
 CinnabarIsland_Text_IfYouHaveTriPassYouCanGoAgain::
     .string "Hey, wasn't that a long cruise?\p"
@@ -70,6 +70,6 @@ CinnabarIsland_Text_IfYouHaveTriPassYouCanGoAgain::
     .string "were to visit him again.\p"
     .string "If you have a TRI-PASS, you can\n"
     .string "always take a ferry there from\l"
-    .string "VERMILION PORT.\p"
+    .string "Vermilion Port.\p"
     .string "All right, thanks for your company!$"
 

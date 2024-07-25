@@ -1,7 +1,7 @@
 RocketHideout_B4F_Text_GiovanniIntro::
     .string "So! I must say, I am impressed you\n"
     .string "got here.\p"
-    .string "TEAM ROCKET captures Pokémon from\n"
+    .string "Team Rocket captures Pokémon from\n"
     .string "around the world.\p"
     .string "They're important tools for keeping\n"
     .string "our criminal enterprise going.\p"
@@ -23,7 +23,7 @@ RocketHideout_B4F_Text_GiovanniPostBattle::
 
 RocketHideout_B4F_Text_Grunt2Intro::
     .string "I know you!\n"
-    .string "You ruined our plans at MT. MOON!$"
+    .string "You ruined our plans at Mt. Moon!$"
 
 RocketHideout_B4F_Text_Grunt2Defeat::
     .string "Burned again!$"

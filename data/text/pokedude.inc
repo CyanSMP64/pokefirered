@@ -14,9 +14,9 @@ Pokedude_Text_MyRattataWonGetsEXP::
 	.string "My RATTATA reduced the foe's HP\n"
 	.string "to zero, so it wins!\p"
 	.string "The Pokémon that took part in the\n"
-	.string "battle get EXP. Points.\p"
+	.string "battle get Exp. Points.\p"
 	.string "When a Pokémon collects enough\n"
-	.string "EXP. Points, it levels up.\p"
+	.string "Exp. Points, it levels up.\p"
 	.string "Leveling up makes your Pokémon\n"
 	.string "stronger than before.$"
 

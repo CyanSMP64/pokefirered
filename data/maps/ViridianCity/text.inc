@@ -9,7 +9,7 @@ ViridianCity_Text_GymClosedWonderWhoLeaderIs::
     .string "I wonder who the LEADER is?$"
 
 ViridianCity_Text_ViridiansGymLeaderReturned::
-    .string "VIRIDIAN GYM's LEADER returned!$"
+    .string "Viridian Gym's LEADER returned!$"
 
 ViridianCity_Text_WantToKnowAboutCaterpillarMons::
     .string "You want to know about the two\n"
@@ -31,10 +31,10 @@ ViridianCity_Text_GrandpaHasntHadCoffeeYet::
     .string "He hasn't had his coffee yet.$"
 
 ViridianCity_Text_GoShoppingInPewterOccasionally::
-    .string "I go shopping in PEWTER CITY\n"
+    .string "I go shopping in Pewter City\n"
     .string "occasionally.\p"
     .string "I have to take the winding trail in\n"
-    .string "VIRIDIAN FOREST when I go.$"
+    .string "Viridian Forest when I go.$"
 
 ViridianCity_Text_ThisIsPrivateProperty::
     .string "I absolutely forbid you from\n"
@@ -100,7 +100,7 @@ ViridianCity_Text_TooBusyForTeachyTV::
     .string "be ill spent…$"
 
 ViridianCity_Text_CitySign::
-    .string "VIRIDIAN CITY \n"
+    .string "Viridian City \n"
     .string "The Eternally Green Paradise$"
 
 ViridianCity_Text_CatchMonsForEasierBattles::
@@ -118,8 +118,8 @@ ViridianCity_Text_MovesLimitedByPP::
     .string "Pokémon at a Pokémon Center.$"
 
 ViridianCity_Text_GymSign::
-    .string "VIRIDIAN CITY Pokémon GYM$"
+    .string "Viridian City Pokémon GYM$"
 
 ViridianCity_Text_GymDoorsAreLocked::
-    .string "VIRIDIAN GYM's doors are locked…$"
+    .string "Viridian Gym's doors are locked…$"
 

@@ -22,11 +22,11 @@ SilphCo_6F_Text_NeedsMeToLookAfterHim::
     .string "someone like me to look after him.$"
 
 SilphCo_6F_Text_RocketsTryingToConquerWorld::
-    .string "TEAM ROCKET is trying to conquer\n"
+    .string "Team Rocket is trying to conquer\n"
     .string "the world with Pokémon.$"
 
 SilphCo_6F_Text_RocketsRanAwayBecauseOfYou::
-    .string "TEAM ROCKET ran away, and it's all\n"
+    .string "Team Rocket ran away, and it's all\n"
     .string "because of you!$"
 
 SilphCo_6F_Text_TargetedSilphForOurMonProducts::
@@ -52,7 +52,7 @@ SilphCo_6F_Text_TaylorIntro::
     .string "That rotten PRESIDENT!\p"
     .string "Serves him right for shipping me\n"
     .string "off to the TIKSI BRANCH!\p"
-    .string "That's why TEAM ROCKET came after\n"
+    .string "That's why Team Rocket came after\n"
     .string "us, I'm sure of it!$"
 
 SilphCo_6F_Text_TaylorDefeat::
@@ -63,7 +63,7 @@ SilphCo_6F_Text_TaylorPostBattle::
     .string "It's in Russian no-man's-land!$"
 
 SilphCo_6F_Text_Grunt2Intro::
-    .string "You dare betray TEAM ROCKET?$"
+    .string "You dare betray Team Rocket?$"
 
 SilphCo_6F_Text_Grunt2Defeat::
     .string "You traitor!$"
@@ -73,6 +73,6 @@ SilphCo_6F_Text_Grunt2PostBattle::
     .string "betray us bad guys!$"
 
 SilphCo_6F_Text_FloorSign::
-    .string "SILPH CO. HEAD OFFICE\n"
+    .string "Silph Co. Head Office\n"
     .string "6F$"
 

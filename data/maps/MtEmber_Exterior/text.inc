@@ -59,7 +59,7 @@ MtEmber_Exterior_Text_WhatsPasswordAgain::
     .string "Any treasure we find, we haul back\n"
     .string "to the WAREHOUSE, understood?\p"
     .string "…Oh, and what're the passwords?\n"
-    .string "At the ROCKET WAREHOUSE, I mean.$"
+    .string "At the Rocket Warehouse, I mean.$"
 
 MtEmber_Exterior_Text_FirstPasswordGoldeen::
     .string "What, you forgot the password?\n"

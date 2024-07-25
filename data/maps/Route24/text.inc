@@ -12,7 +12,7 @@ Route24_Text_YouDontHaveAnyRoom::
 
 Route24_Text_JoinTeamRocket::
     .string "By the way, how would you like to\n"
-    .string "join TEAM ROCKET?\p"
+    .string "join Team Rocket?\p"
     .string "We're a group of professional\n"
     .string "criminals specializing in Pokémon!\p"
     .string "Want to join?\p"
@@ -29,7 +29,7 @@ Route24_Text_RocketDefeat::
 
 Route24_Text_YoudBecomeTopRocketLeader::
     .string "With your ability, you'd become\n"
-    .string "a top leader in TEAM ROCKET.\p"
+    .string "a top leader in Team Rocket.\p"
     .string "Come on, think of the opportunity!\n"
     .string "Don't let this chance go to waste.$"
 
@@ -101,14 +101,14 @@ Route24_Text_CalePostBattle::
 
 Route24_Text_ShowMeYourCascadeBadge::
     .string "Hey, you!\n"
-    .string "Show me your CASCADEBADGE.$"
+    .string "Show me your Cascade Badge.$"
 
 Route24_Text_NoCascadeBadge::
-    .string "You don't have the CASCADEBADGE.\p"
+    .string "You don't have the Cascade Badge.\p"
     .string "You have to have it to pass\n"
     .string "through here.$"
 
 Route24_Text_ThatsTheCascadeBadge::
-    .string "Hey! That's the CASCADEBADGE!\p"
+    .string "Hey! That's the Cascade Badge!\p"
     .string "Okay, then.\n"
     .string "Please, go right ahead.$"

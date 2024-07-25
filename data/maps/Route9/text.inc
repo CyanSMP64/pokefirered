@@ -22,14 +22,14 @@ Route9_Text_ChrisPostBattle::
     .string "Keep walking!$"
 
 Route9_Text_DrewIntro::
-    .string "I'm taking the ROCK TUNNEL to\n"
+    .string "I'm taking the Rock Tunnel to\n"
     .string "go to LAVENDER…$"
 
 Route9_Text_DrewDefeat::
     .string "Can't measure up…$"
 
 Route9_Text_DrewPostBattle::
-    .string "Are you off to ROCK TUNNEL, too?$"
+    .string "Are you off to Rock Tunnel, too?$"
 
 Route9_Text_CaitlinIntro::
     .string "Don't you dare patronize me!$"
@@ -101,6 +101,6 @@ Route9_Text_ConnerPostBattle::
     .string "you bug me!$"
 
 Route9_Text_RouteSign::
-    .string "ROUTE 9\n"
-    .string "CERULEAN CITY - ROCK TUNNEL$"
+    .string "Route 9\n"
+    .string "Cerulean City - Rock Tunnel$"
 

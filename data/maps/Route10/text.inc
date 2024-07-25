@@ -75,11 +75,11 @@ Route10_Text_CarolPostBattle::
     .string "with a floral pattern!$"
 
 Route10_Text_RockTunnelDetourToLavender::
-    .string "ROCK TUNNEL\n"
-    .string "Detour to LAVENDER TOWN$"
+    .string "Rock Tunnel\n"
+    .string "Detour to Lavender Town$"
 
 Route10_Text_RockTunnel::
-    .string "ROCK TUNNEL$"
+    .string "Rock Tunnel$"
 
 Route10_Text_PowerPlant::
     .string "POWER PLANT$"
@@ -87,7 +87,7 @@ Route10_Text_PowerPlant::
 Route10_Text_Hiker::
 	.string "Hey, you.\n"
 	.string "It gets awfully dark in\l"
-	.string "ROCK TUNNEL.\p"
+	.string "Rock Tunnel.\p"
 	.string "Here you go, I'll pass this on\n"
     .string "to you.$"
 

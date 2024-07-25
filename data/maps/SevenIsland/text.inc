@@ -18,7 +18,7 @@ Text_SwordsDanceTaught::
     .string "stronger and stronger, eh?$"
 
 SevenIsland_Text_IslandSign::
-    .string "SEVEN ISLAND\n"
+    .string "Seven Island\n"
     .string "Quest Island of Infinity$"
 
 SevenIsland_Text_IslandsMadeInSevenDays::

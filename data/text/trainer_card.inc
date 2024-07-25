@@ -64,7 +64,7 @@ FourIsland_House2_Text_WowHoFHigh::
 	.string "Whoa! You've made it into the\n"
 	.string "HALL OF FAME that often?\l"
 	.string "That's seriously incredible, yup!\p"
-	.string "You own the Pokémon LEAGUE!\n"
+	.string "You own the Pokémon League!\n"
 	.string "I'll give you one of these.$"
 
 FourIsland_House2_Text_WowHoFHighest::

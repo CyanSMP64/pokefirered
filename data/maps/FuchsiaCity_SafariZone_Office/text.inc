@@ -19,7 +19,7 @@ FuchsiaCity_SafariZone_Office_Text_PrizeInSafariZone::
     .string "WARDEN SLOWPOKE is running a\n"
     .string "promotion campaign right now.\p"
     .string "Try to get to the farthest corner\n"
-    .string "of the SAFARI ZONE.\p"
+    .string "of the Safari Zone.\p"
     .string "If you can make it, you'll win a\n"
     .string "very convenient prize.$"
 

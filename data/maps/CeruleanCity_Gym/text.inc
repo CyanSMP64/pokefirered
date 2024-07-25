@@ -12,7 +12,7 @@ CeruleanCity_Gym_Text_ExplainTM03::
     .string "Use it on an aquatic Pokémon!$"
 
 CeruleanCity_Gym_Text_ExplainCascadeBadge::
-    .string "The CASCADEBADGE makes all\n"
+    .string "The Cascade Badge makes all\n"
     .string "Pokémon up to Lv. 30 obey.\p"
     .string "That includes even outsiders you\n"
     .string "got in trades.\p"
@@ -33,7 +33,7 @@ CeruleanCity_Gym_Text_MistyDefeat::
     .string "Wow!\n"
     .string "You're too much!\p"
     .string "All right!\p"
-    .string "You can have the CASCADEBADGE to\n"
+    .string "You can have the Cascade Badge to\n"
     .string "show you beat me.$"
 
 CeruleanCity_Gym_Text_DianaIntro::
@@ -79,13 +79,13 @@ CeruleanCity_Gym_Text_WeMakePrettyGoodTeam::
     .string "darn-good team!$"
 
 CeruleanCity_Gym_Text_GymStatue::
-    .string "CERULEAN Pokémon GYM\n"
+    .string "Cerulean Pokémon Gym\n"
     .string "LEADER: MISTY\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}$"
 
 CeruleanCity_Gym_Text_GymStatuePlayerWon::
-    .string "CERULEAN Pokémon GYM\n"
+    .string "Cerulean Pokémon Gym\n"
     .string "LEADER: MISTY\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"

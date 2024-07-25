@@ -13,7 +13,7 @@ SaffronCity_Gym_Text_SabrinaDefeat::
     .string "I admit, I didn't work hard enough\n"
     .string "to win.\p"
     .string "Your victory has earned you the\n"
-    .string "MARSHBADGE.$"
+    .string "Marsh Badge.$"
 
 SaffronCity_Gym_Text_SabrinaPostBattle::
     .string "Psychic power isn't something that\n"
@@ -22,7 +22,7 @@ SaffronCity_Gym_Text_SabrinaPostBattle::
     .string "People just don't realize it.$"
 
 SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis::
-    .string "The MARSHBADGE makes Pokémon up\n"
+    .string "The Marsh Badge makes Pokémon up\n"
     .string "to Lv. 70 obey you.\p"
     .string "Stronger Pokémon will become wild,\n"
     .string "ignoring your orders in battle.\p"
@@ -113,13 +113,13 @@ SaffronCity_Gym_Text_CameronDefeat::
 SaffronCity_Gym_Text_CameronPostBattle::
     .string "There used to be two Pokémon GYMS\n"
     .string "in SAFFRON.\p"
-    .string "The FIGHTING DOJO next door lost\n"
+    .string "The Fighting Dojo next door lost\n"
     .string "its GYM status, though.\p"
     .string "We simply creamed them when we\n"
     .string "decided to have just one GYM.$"
 
 SaffronCity_Gym_Text_PrestonIntro::
-    .string "SAFFRON Pokémon GYM is famous for\n"
+    .string "Saffron Pokémon Gym is famous for\n"
     .string "training psychics.\p"
     .string "You want to see SABRINA, don't\n"
     .string "you? I can tell!$"
@@ -147,13 +147,13 @@ SaffronCity_Gym_Text_GymGuyPostVictory::
     .string "at the slots!$"
 
 SaffronCity_Gym_Text_GymStatue::
-    .string "SAFFRON Pokémon GYM\n"
+    .string "Saffron Pokémon Gym\n"
     .string "LEADER: SABRINA\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}$"
 
 SaffronCity_Gym_Text_GymStatuePlayerWon::
-    .string "SAFFRON Pokémon GYM\n"
+    .string "Saffron Pokémon Gym\n"
     .string "LEADER: SABRINA\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"

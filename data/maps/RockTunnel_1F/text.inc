@@ -21,7 +21,7 @@ RockTunnel_1F_Text_OliverDefeat::
     .string "Which way is out?$"
 
 RockTunnel_1F_Text_OliverPostBattle::
-    .string "That sleeping Pokémon on ROUTE 12\n"
+    .string "That sleeping Pokémon on Route 12\n"
     .string "forced me to take this detour.$"
 
 RockTunnel_1F_Text_LucasIntro::
@@ -78,6 +78,6 @@ RockTunnel_1F_Text_ArianaPostBattle::
     .string "I'm all sweaty now.$"
 
 RockTunnel_1F_Text_RouteSign::
-    .string "ROCK TUNNEL\n"
-    .string "CERULEAN CITY - LAVENDER TOWN$"
+    .string "Rock Tunnel\n"
+    .string "Cerulean City - Lavender Town$"
 

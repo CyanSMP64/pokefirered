@@ -1,7 +1,7 @@
 CinnabarIsland_Gym_Text_BlaineIntro::
     .string "Hah!\p"
     .string "I am BLAINE, the red-hot LEADER\n"
-    .string "of CINNABAR GYM!\p"
+    .string "of Cinnabar Gym!\p"
     .string "My fiery Pokémon are all rough\n"
     .string "and ready with intense heat!\p"
     .string "They incinerate all challengers!\p"
@@ -11,7 +11,7 @@ CinnabarIsland_Gym_Text_BlaineIntro::
 CinnabarIsland_Gym_Text_BlaineDefeat::
     .string "I have burned down to nothing!\n"
     .string "Not even ashes remain!\p"
-    .string "You have earned the VOLCANOBADGE.$"
+    .string "You have earned the Volcano Badge.$"
 
 CinnabarIsland_Gym_Text_FireBlastIsUltimateFireMove::
     .string "FIRE BLAST is the ultimate fire\n"
@@ -20,7 +20,7 @@ CinnabarIsland_Gym_Text_FireBlastIsUltimateFireMove::
 
 CinnabarIsland_Gym_Text_ExplainVolcanoBadge::
     .string "Hah!\p"
-    .string "The VOLCANOBADGE heightens the\n"
+    .string "The Volcano Badge heightens the\n"
     .string "SPECIAL stats of your Pokémon.\p"
     .string "Here, you can have this, too!$"
 
@@ -138,13 +138,13 @@ CinnabarIsland_Gym_Text_GymGuyPostVictory::
     .string "You beat that firebrand!$"
 
 CinnabarIsland_Gym_Text_GymStatue::
-    .string "CINNABAR Pokémon GYM\n"
+    .string "Cinnabar Pokémon Gym\n"
     .string "LEADER: BLAINE\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}$"
 
 CinnabarIsland_Gym_Text_GymStatuePlayerWon::
-    .string "CINNABAR Pokémon GYM\n"
+    .string "Cinnabar Pokémon Gym\n"
     .string "LEADER: BLAINE\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"

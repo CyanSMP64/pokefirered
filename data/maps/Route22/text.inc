@@ -1,6 +1,6 @@
 Route22_Text_EarlyRivalIntro::
 	.string "{RIVAL}: Hey! {PLAYER}!\p"
-	.string "You're off to the Pokémon LEAGUE?\n"
+	.string "You're off to the Pokémon League?\n"
 	.string "Forget about it!\p"
 	.string "You probably don't have any\n"
 	.string "BADGES, do you?\p"
@@ -14,7 +14,7 @@ Route22_Text_EarlyRivalDefeat::
 	.string "You just lucked out!$"
 
 Route22_Text_EarlyRivalPostBattle::
-	.string "I heard the Pokémon LEAGUE is\n"
+	.string "I heard the Pokémon League is\n"
 	.string "crawling with tough TRAINERS.\p"
 	.string "I have to figure out how to get\n"
 	.string "past them.\p"
@@ -37,7 +37,7 @@ Route22_Text_LateRivalIntro::
 	.string "You collected all the BADGES, too?\n"
 	.string "That's cool!\p"
 	.string "Then I'll whip you, {PLAYER}, as a\n"
-	.string "warm-up for the Pokémon LEAGUE!\p"
+	.string "warm-up for the Pokémon League!\p"
 	.string "Come on!$"
 
 Route22_Text_LateRivalDefeat::
@@ -46,7 +46,7 @@ Route22_Text_LateRivalDefeat::
 
 Route22_Text_LateRivalPostBattle::
 	.string "That loosened me up.\n"
-	.string "I'm ready for the Pokémon LEAGUE!\p"
+	.string "I'm ready for the Pokémon League!\p"
 	.string "{PLAYER}, you need more practice.\p"
 	.string "But hey, you know that!\n"
 	.string "I'm out of here. Smell ya!$"
@@ -61,6 +61,6 @@ Route22_Text_LateRivalVictory::
 	.string "あははーッ！$"
 
 Route22_Text_LeagueGateSign::
-	.string "Pokémon LEAGUE\n"
+	.string "Pokémon League\n"
 	.string "Front Gate$"
 

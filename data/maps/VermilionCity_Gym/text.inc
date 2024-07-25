@@ -16,7 +16,7 @@ VermilionCity_Gym_Text_LtSurgePostBattle::
     .string "type Pokémon!$"
 
 VermilionCity_Gym_Text_ExplainThunderBadgeTakeThis::
-    .string "The THUNDERBADGE cranks up your\n"
+    .string "The Thunder Badge cranks up your\n"
     .string "Pokémon's SPEED!\p"
     .string "It also lets your Pokémon FLY\n"
     .string "lightning-quick anytime, kid!\p"
@@ -37,7 +37,7 @@ VermilionCity_Gym_Text_MakeRoomInYourBag::
 VermilionCity_Gym_Text_LtSurgeDefeat::
     .string "Now that's a shocker!\p"
     .string "You're the real deal, kid!\p"
-    .string "Fine, then, take the THUNDERBADGE!$"
+    .string "Fine, then, take the Thunder Badge!$"
 
 VermilionCity_Gym_Text_TuckerIntro::
     .string "When I was in the Army, LT. SURGE\n"
@@ -102,13 +102,13 @@ VermilionCity_Gym_Text_GymGuyPostVictory::
     .string "That match was electric!$"
 
 VermilionCity_Gym_Text_GymStatue::
-    .string "VERMILION Pokémon GYM\n"
+    .string "Vermilion Pokémon Gym\n"
     .string "LEADER: LT. SURGE\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}$"
 
 VermilionCity_Gym_Text_GymStatuePlayerWon::
-    .string "VERMILION Pokémon GYM\n"
+    .string "Vermilion Pokémon Gym\n"
     .string "LEADER: LT. SURGE\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"

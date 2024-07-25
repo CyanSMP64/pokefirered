@@ -37,8 +37,8 @@ Route16_Text_HideoDefeat::
 Route16_Text_HideoPostBattle::
     .string "We'll always be hanging around here\n"
     .string "even if you don't like it.\p"
-    .string "You can detour to VERMILION from\n"
-    .string "FUCHSIA going along the coast.$"
+    .string "You can detour to Vermilion from\n"
+    .string "Fuchsia going along the coast.$"
 
 Route16_Text_CamronIntro::
     .string "I'm feeling hungry and mean!\n"
@@ -72,11 +72,11 @@ Route16_Text_MonSprawledOutInSlumber::
 
 Route16_Text_CyclingRoadSign::
     .string "Enjoy the slope!\n"
-    .string "CYCLING ROAD$"
+    .string "Cycling Road$"
 
 Route16_Text_RouteSign::
-    .string "ROUTE 16\n"
-    .string "CELADON CITY - FUCHSIA CITY$"
+    .string "Route 16\n"
+    .string "Celadon City - Fuchsia City$"
 
 Route16_Text_JedIntro::
     .string "JED: Our love knows no bounds.\n"

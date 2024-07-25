@@ -75,7 +75,7 @@ Route8_Text_MeganDefeat::
     .string "Pokémon!$"
 
 Route8_Text_MeganPostBattle::
-    .string "SAFFRON's gatekeeper won't let us\n"
+    .string "Saffron's gatekeeper won't let us\n"
     .string "go through.\p"
     .string "I know he's doing his job, but I\n"
     .string "think he's mean.$"
@@ -105,8 +105,8 @@ Route8_Text_JuliaPostBattle::
     .string "I wonder if it's true?$"
 
 Route8_Text_UndergroundPathSign::
-    .string "UNDERGROUND PATH\n"
-    .string "CELADON CITY - LAVENDER TOWN$"
+    .string "Underground Path\n"
+    .string "Celadon City - Lavender Town$"
 
 Route8_Text_EliIntro::
     .string "ELI: Twin power is fantastic.\n"

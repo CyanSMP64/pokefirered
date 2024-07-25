@@ -299,7 +299,7 @@ Help_Text_AnswerWhatsABattle::
 	.string "HP. If a Pokémon's HP falls to zero,\l"
 	.string "it faints, and the other Pokémon\l"
 	.string "wins. By winning a battle, Pokémon\l"
-	.string "earn EXP. Points, which help them\l"
+	.string "earn Exp. Points, which help them\l"
 	.string "level up (grow stronger).$"
 
 Help_Text_AnswerHowDoIPrepareForBattle::
@@ -521,7 +521,7 @@ Help_Text_AnswerWantToEndSafari::
 
 Help_Text_AnswerWhatIsAGym::
 	.string "Pokémon GYMS are operated by the\n"
-	.string "Pokémon LEAGUE and are training\l"
+	.string "Pokémon League and are training\l"
 	.string "facilities for TRAINERS. They are all\l"
 	.string "across the land in cities and towns.\l"
 	.string "Each one is headed by a LEADER, who\l"
@@ -1036,13 +1036,13 @@ Help_Text_HowToRegisterKeyItem::
 
 Help_Text_HowToUseBall::
 	.string "{CIRCLE_1} Select to throw the special POKé\n"
-	.string "   BALL used only in the SAFARI ZONE.\n"
+	.string "   BALL used only in the Safari Zone.\n"
 	.string "When wild Pokémon appear, throw lots\n"
 	.string "of SAFARI BALLS to catch them!$"
 
 Help_Text_HowToUseBait::
 	.string "{CIRCLE_1} Select to throw the special food\n"
-	.string "   used only in the SAFARI ZONE.\n"
+	.string "   used only in the Safari Zone.\n"
 	.string "It is Pokémon food rolled up into\n"
 	.string "a ball for easy eating. When BAIT is\n"
 	.string "thrown, the wild Pokémon may get\n"
@@ -1050,7 +1050,7 @@ Help_Text_HowToUseBait::
 
 Help_Text_HowToUseRock::
 	.string "{CIRCLE_1} Select to throw a rock lying on\n"
-	.string "   the ground in the SAFARI ZONE.\n"
+	.string "   the ground in the Safari Zone.\n"
 	.string "Throwing a rock at a Pokémon may \n"
 	.string "make it run away, but it becomes easier\n"
 	.string "to catch!$"
@@ -1064,7 +1064,7 @@ Help_Text_HP::
 	.string "HP$"
 
 Help_Text_EXP::
-	.string "EXP. {LEFT_PAREN}EXP. Points{RIGHT_PAREN}$"
+	.string "EXP. {LEFT_PAREN}Exp. Points{RIGHT_PAREN}$"
 
 Help_Text_Moves::
 	.string "MOVES$"
@@ -1199,12 +1199,12 @@ Help_Text_DefineHP::
 	.string "HP at a Pokémon Center or use items.$"
 
 Help_Text_DefineEXP::
-	.string "EXP. Points stands for “Experience\n"
-	.string "Points.” Pokémon gain EXP. Points by\l"
+	.string "Exp. Points stands for “Experience\n"
+	.string "Points.” Pokémon gain Exp. Points by\l"
 	.string "participating in winning battles.\l"
 	.string "When a Pokémon accumulates sufficient\l"
-	.string "EXP. Points, it levels up. The EXP. Bar\l"
-	.string "indicates accumulated EXP. Points.\l"
+	.string "Exp. Points, it levels up. The EXP. Bar\l"
+	.string "indicates accumulated Exp. Points.\l"
 	.string "It returns to zero upon leveling up.$"
 
 Help_Text_DefineMoves::
@@ -1388,9 +1388,9 @@ Help_Text_DefinePlayTime::
 	.string "you have played this game.$"
 
 Help_Text_DefineBadges::
-	.string "The Pokémon LEAGUE BADGES that you\n"
+	.string "The Pokémon League Badges that you\n"
 	.string "have won are registered and shown.\l"
-	.string "Earn BADGES by defeating GYM LEADERS\l"
+	.string "Earn BADGES by defeating Gym Leaders\l"
 	.string "in various cities and towns.$"
 
 Help_Text_DefineTextSpeed::
@@ -1502,7 +1502,7 @@ Help_Text_DefineMoney2::
 Help_Text_DefineBadges2::
 	.string "This indicates the number of Pokémon\n"
 	.string "LEAGUE BADGES that you have won.\l"
-	.string "Earn BADGES by defeating GYM LEADERS\l"
+	.string "Earn BADGES by defeating Gym Leaders\l"
 	.string "in various cities and towns.$"
 
 Help_Text_TheHelpSystem::

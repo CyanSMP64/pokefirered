@@ -31,10 +31,10 @@ Route18_Text_JacobPostBattle::
     .string "Pokémon.$"
 
 Route18_Text_RouteSign::
-    .string "ROUTE 18\n"
-    .string "CELADON CITY - FUCHSIA CITY$"
+    .string "Route 18\n"
+    .string "Celadon City - Fuchsia City$"
 
 Route18_Text_CyclingRoadSign::
-    .string "CYCLING ROAD\n"
+    .string "Cycling Road\n"
     .string "No pedestrians permitted!$"
 

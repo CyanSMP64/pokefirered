@@ -7,8 +7,8 @@ ThreeIsland_House2_Text_CantMakeThisSpoonBend::
     .string "psychic powers.$"
 
 ThreeIsland_House2_Text_IAdmireSabrina::
-    .string "You know about a girl GYM LEADER\n"
-    .string "in SAFFRON CITY?\p"
+    .string "You know about a girl Gym Leader\n"
+    .string "in Saffron City?\p"
     .string "She uses PSYCHIC-type Pokémon,\n"
     .string "right?\p"
     .string "I admire her, I really do.\p"

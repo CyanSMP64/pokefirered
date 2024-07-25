@@ -1,7 +1,7 @@
 IndigoPlateau_PokemonCenter_1F_Text_GymGuyAdvice::
     .string "Yo!\n"
     .string "Champ in the making!\p"
-    .string "At the Pokémon LEAGUE, you will\n"
+    .string "At the Pokémon League, you will\n"
     .string "face the ELITE FOUR all in a row.\p"
     .string "If you lose, you have to start all\n"
     .string "over again!\p"
@@ -19,7 +19,7 @@ IndigoPlateau_PokemonCenter_1F_Text_LoreleiIsAbsentClosedForTimeBeing::
     .string "your time coming here.\p"
     .string "LORELEI of the ELITE FOUR is\n"
     .string "absent, you see.\p"
-    .string "As a result, the Pokémon LEAGUE is\n"
+    .string "As a result, the Pokémon League is\n"
     .string "closed for the time being.$"
 
 IndigoPlateau_PokemonCenter_1F_Text_AgathaWhuppedUs::
@@ -38,6 +38,6 @@ IndigoPlateau_PokemonCenter_1F_Text_LancesCousinGymLeaderFarAway::
     .string "Maybe becoming an ELITE FOUR\n"
     .string "member is in the blood.\p"
     .string "From what I've heard, LANCE has\n"
-    .string "a cousin who's a GYM LEADER\l"
+    .string "a cousin who's a Gym Leader\l"
     .string "somewhere far away.$"
 

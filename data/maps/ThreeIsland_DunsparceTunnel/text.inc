@@ -4,7 +4,7 @@ ThreeIsland_DunsparceTunnel_Text_ProspectingForGold::
     .string "What am I doing here, you ask?\n"
     .string "Why, I'm prospecting for gold!\p"
     .string "When I strike it rich, I'm buying\n"
-    .string "a house in KANTO.$"
+    .string "a house in Kanto.$"
 
 ThreeIsland_DunsparceTunnel_Text_StruckGoldThisIsForYou::
     .string "Hey, there! How's it going?\n"

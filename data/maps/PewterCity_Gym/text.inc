@@ -1,6 +1,6 @@
 PewterCity_Gym_Text_BrockIntro::
     .string "So, you're here. I'm BROCK.\n"
-    .string "I'm PEWTER's GYM LEADER.\p"
+    .string "I'm PEWTER's Gym Leader.\p"
     .string "My rock-hard willpower is evident\n"
     .string "even in my Pokémon.\p"
     .string "My Pokémon are all rock hard, and\n"
@@ -59,7 +59,7 @@ PewterCity_Gym_Text_BrockPostBattle::
     .string "You appear to be very gifted as a\n"
     .string "Pokémon TRAINER.\p"
     .string "So let me make a suggestion.\p"
-    .string "Go to the GYM in CERULEAN and test\n"
+    .string "Go to the GYM in Cerulean and test\n"
     .string "your abilities.$"
 
 PewterCity_Gym_Text_DontHaveRoomForThis::
@@ -109,13 +109,13 @@ PewterCity_Gym_Text_YoureChampMaterial::
     .string "You're Pokémon champ material!$"
 
 PewterCity_Gym_Text_GymStatue::
-    .string "PEWTER Pokémon GYM\n"
+    .string "Pewter Pokémon Gym\n"
     .string "LEADER: BROCK\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}$"
 
 PewterCity_Gym_Text_GymStatuePlayerWon::
-    .string "PEWTER Pokémon GYM\n"
+    .string "Pewter Pokémon Gym\n"
     .string "LEADER: BROCK\p"
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"

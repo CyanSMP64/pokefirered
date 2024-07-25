@@ -38,7 +38,7 @@ PokemonLeague_LancesRoom_Text_Defeat::
 PokemonLeague_LancesRoom_Text_PostBattle::
     .string "I still can't believe my dragons\n"
     .string "lost to you, {PLAYER}.\p"
-    .string "You are now the Pokémon LEAGUE\n"
+    .string "You are now the Pokémon League\n"
     .string "CHAMPION!\p"
     .string "…Or, you would have been, but\n"
     .string "you have one more challenge left.\p"
@@ -47,6 +47,6 @@ PokemonLeague_LancesRoom_Text_PostBattle::
     .string "{RIVAL}!\p"
     .string "He beat the ELITE FOUR before\n"
     .string "you.\p"
-    .string "He is the real Pokémon LEAGUE\n"
+    .string "He is the real Pokémon League\n"
     .string "CHAMPION.$"
 

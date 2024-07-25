@@ -103,7 +103,7 @@ Route12_Text_AndrewPostBattle::
     .string "But, boy are they wimpy.$"
 
 Route12_Text_RouteSign::
-    .string "ROUTE 12 \n"
+    .string "Route 12 \n"
     .string "North to LAVENDER$"
 
 Route12_Text_SportfishingArea::

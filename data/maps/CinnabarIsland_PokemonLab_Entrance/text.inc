@@ -15,14 +15,14 @@ CinnabarIsland_PokemonLab_Entrance_Text_PhotoOfLabFounderDrFuji::
     .string "DR. FUJI?!$"
 
 CinnabarIsland_PokemonLab_Entrance_Text_MeetingRoomSign::
-    .string "Pokémon LAB\n"
+    .string "Pokémon Lab\n"
     .string "Meeting Room$"
 
 CinnabarIsland_PokemonLab_Entrance_Text_RAndDRoomSign::
-    .string "Pokémon LAB\n"
+    .string "Pokémon Lab\n"
     .string "R & D Room$"
 
 CinnabarIsland_PokemonLab_Entrance_Text_TestingRoomSign::
-    .string "Pokémon LAB\n"
+    .string "Pokémon Lab\n"
     .string "Testing Room$"
 

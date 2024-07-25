@@ -1,6 +1,6 @@
 gFameCheckerFlavorText_ProfOak0:: @ 0x81AD106
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}OAK Pokémon RESEARCH LAB$"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Oak Pokémon Research Lab$"
 
 gFameCheckerFlavorText_ProfOak1:: @ 0x81AD145
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What is this person like?\p"
@@ -62,20 +62,20 @@ gFameCheckerFlavorText_Daisy3:: @ 0x81AD5A7
 
 gFameCheckerFlavorText_Daisy4:: @ 0x81AD608
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What is this person like?\p"
-	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}A girl from PALLET TOWN, DAISY,\n"
+	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}A girl from Pallet Town, DAISY,\n"
 	.string "she enjoys TEA every day.\p"
-	.string "She visits the CELADON DEPT. STORE\n"
+	.string "She visits the Celadon Dept. Store\n"
 	.string "to buy some TEA.$"
 
 gFameCheckerFlavorText_Daisy5:: @ 0x81AD69F
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}There's a rumor…\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The Spring Pokémon CONTEST's\n"
 	.string "Grand Champion is DAISY OAK of\l"
-	.string "PALLET TOWN!$"
+	.string "Pallet Town!$"
 
 gFameCheckerFlavorText_Brock0:: @ 0x81AD705
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}PEWTER CITY Pokémon GYM\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Pewter City Pokémon Gym\n"
 	.string "LEADER: BROCK\l"
 	.string "The Rock-Solid Pokémon TRAINER!$"
 
@@ -94,21 +94,21 @@ gFameCheckerFlavorText_Brock2:: @ 0x81AD840
 	.string "TRAINERS here.\p"
 	.string "They're all like BUG CATCHERS,\n"
 	.string "you know, just hobbyists.\p"
-	.string "But PEWTER GYM's BROCK isn't like\n"
+	.string "But Pewter Gym's Brock isn't like\n"
 	.string "that, not one bit.$"
 
 gFameCheckerFlavorText_Brock3:: @ 0x81AD908
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What is this person like?\p"
 	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}BROCK is cool. He's not just tough.\n"
 	.string "People like and respect him.\p"
-	.string "I want to become a GYM LEADER\n"
+	.string "I want to become a Gym Leader\n"
 	.string "like him.$"
 
 gFameCheckerFlavorText_Brock4:: @ 0x81AD99A
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
 	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Hi, I'm excavating for fossils here\n"
-	.string "under MT. MOON.\p"
-	.string "Sometimes, BROCK of PEWTER GYM\n"
+	.string "under Mt. Moon.\p"
+	.string "Sometimes, Brock of Pewter Gym\n"
 	.string "lends me a hand.$"
 
 gFameCheckerFlavorText_Brock5:: @ 0x81ADA27
@@ -118,7 +118,7 @@ gFameCheckerFlavorText_Brock5:: @ 0x81ADA27
 
 gFameCheckerFlavorText_Misty0:: @ 0x81ADA91
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}CERULEAN CITY Pokémon GYM\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Cerulean City Pokémon Gym\n"
 	.string "LEADER: MISTY\l"
 	.string "The Tomboyish Mermaid!$"
 
@@ -138,12 +138,12 @@ gFameCheckerFlavorText_Misty3:: @ 0x81ADBD9
 	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Strong TRAINERS and WATER Pokémon\n"
 	.string "are common sights in these parts.\p"
 	.string "They say that MISTY of the\n"
-	.string "CERULEAN GYM trains here.$"
+	.string "Cerulean Gym trains here.$"
 
 gFameCheckerFlavorText_Misty4:: @ 0x81ADC72
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}There's a rumor…\p"
 	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This cape is a famous date spot.\p"
-	.string "MISTY, the GYM LEADER, has high\n"
+	.string "MISTY, the Gym Leader, has high\n"
 	.string "hopes about this place.$"
 
 gFameCheckerFlavorText_Misty5:: @ 0x81ADCEB
@@ -153,7 +153,7 @@ gFameCheckerFlavorText_Misty5:: @ 0x81ADCEB
 
 gFameCheckerFlavorText_LtSurge0:: @ 0x81ADD3C
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}VERMILION CITY Pokémon GYM\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Vermilion City Pokémon Gym\n"
 	.string "LEADER: LT. SURGE\l"
 	.string "The Lightning American!$"
 
@@ -188,7 +188,7 @@ gFameCheckerFlavorText_LtSurge5:: @ 0x81ADF6A
 
 gFameCheckerFlavorText_Erika0:: @ 0x81AE009
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}CELADON CITY Pokémon GYM\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Celadon City Pokémon Gym\n"
 	.string "LEADER: ERIKA\l"
 	.string "The Nature-Loving Princess!$"
 
@@ -219,12 +219,12 @@ gFameCheckerFlavorText_Erika4:: @ 0x81AE1E5
 gFameCheckerFlavorText_Erika5:: @ 0x81AE247
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}There's a rumor…\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Rumor has it that if you peek into\n"
-	.string "CELADON GYM, you can often\l"
+	.string "Celadon Gym, you can often\l"
 	.string "see ERIKA snoozing.$"
 
 gFameCheckerFlavorText_Koga0:: @ 0x81AE2B6
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}FUCHSIA CITY Pokémon GYM\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Fuchsia City Pokémon Gym\n"
 	.string "LEADER: KOGA\l"
 	.string "The Poisonous Ninja Master$"
 
@@ -241,7 +241,7 @@ gFameCheckerFlavorText_Koga2:: @ 0x81AE37D
 
 gFameCheckerFlavorText_Koga3:: @ 0x81AE407
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Family and friends?\p"
-	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}My father is the GYM LEADER of\n"
+	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}My father is the Gym Leader of\n"
 	.string "this town.\p"
 	.string "I'm training to use POISON Pokémon\n"
 	.string "as well as my father.$"
@@ -255,23 +255,23 @@ gFameCheckerFlavorText_Koga4:: @ 0x81AE48D
 
 gFameCheckerFlavorText_Koga5:: @ 0x81AE51B
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The SAFARI ZONE's huge, wouldn't\n"
+	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The Safari Zone's huge, wouldn't\n"
 	.string "you say?\p"
-	.string "FUCHSIA's GYM LEADER, KOGA, \n"
+	.string "FUCHSIA's Gym Leader, KOGA, \n"
 	.string "patrols the grounds every so often.\p"
 	.string "Thanks to him, we can play here\n"
 	.string "knowing that we're safe.$"
 
 gFameCheckerFlavorText_Sabrina0:: @ 0x81AE5E8
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}SAFFRON CITY Pokémon GYM\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Saffron City Pokémon Gym\n"
 	.string "LEADER: SABRINA\l"
 	.string "The Master of PSYCHIC Pokémon!$"
 
 gFameCheckerFlavorText_Sabrina1:: @ 0x81AE656
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Favorite kind of Pokémon?\p"
-	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}You know about a girl GYM LEADER\n"
-	.string "in SAFFRON CITY?\p"
+	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}You know about a girl Gym Leader\n"
+	.string "in Saffron City?\p"
 	.string "She uses PSYCHIC-type Pokémon,\n"
 	.string "right?$"
 
@@ -300,7 +300,7 @@ gFameCheckerFlavorText_Sabrina5:: @ 0x81AE841
 
 gFameCheckerFlavorText_Blaine0:: @ 0x81AE89E
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}CINNABAR ISLAND Pokémon GYM\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Cinnabar Island Pokémon Gym\n"
 	.string "LEADER: BLAINE\l"
 	.string "The Hotheaded Quiz Master!$"
 
@@ -321,7 +321,7 @@ gFameCheckerFlavorText_Blaine2:: @ 0x81AE990
 
 gFameCheckerFlavorText_Blaine3:: @ 0x81AEA59
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What is this person like?\p"
-	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}CINNABAR GYM's BLAINE is quite the\n"
+	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Cinnabar Gym's Blaine is quite the\n"
 	.string "odd fellow.\p"
 	.string "He's lived on the island since way\n"
 	.string "before the LAB was built.$"
@@ -366,7 +366,7 @@ gFameCheckerFlavorText_Lorelei4:: @ 0x81AEDAA
 	.string "{FONT_FEMALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Did you know that LORELEI has lots\n"
 	.string "and lots of stuffed dolls?\p"
 	.string "Every time she comes back to\n"
-	.string "FOUR ISLAND, her collection grows!$"
+	.string "Four Island, her collection grows!$"
 
 gFameCheckerFlavorText_Lorelei5:: @ 0x81AEE51
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Favorite kind of Pokémon?\p"
@@ -488,7 +488,7 @@ gFameCheckerFlavorText_Lance4:: @ 0x81AF758
 gFameCheckerFlavorText_Lance5:: @ 0x81AF7CB
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Family and friends?\p"
 	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}From what I've heard, LANCE has\n"
-	.string "a cousin who's a GYM LEADER\l"
+	.string "a cousin who's a Gym Leader\l"
 	.string "somewhere far away.$"
 
 gFameCheckerFlavorText_Bill0:: @ 0x81AF83E
@@ -539,7 +539,7 @@ gFameCheckerFlavorText_MrFuji1:: @ 0x81AFB76
 	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This old guy marched right up to\n"
 	.string "our HIDEOUT.\p"
 	.string "Then, he starts ranting about how\n"
-	.string "TEAM ROCKET's abusing Pokémon.\p"
+	.string "Team Rocket's abusing Pokémon.\p"
 	.string "So, we're just talking it over as\n"
 	.string "adults.$"
 
@@ -568,11 +568,11 @@ gFameCheckerFlavorText_MrFuji5:: @ 0x81AFDC4
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Editor: The shy MR. FUJI turned\n"
 	.string "down our interview requests.\p"
 	.string "He is a kindly man who is adored\n"
-	.string "and respected in LAVENDER TOWN.$"
+	.string "and respected in Lavender Town.$"
 
 gFameCheckerFlavorText_Giovanni0:: @ 0x81AFE68
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
-	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}TEAM ROCKET captures Pokémon from\n"
+	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Team Rocket captures Pokémon from\n"
 	.string "around the world.\p"
 	.string "They're important tools for keeping\n"
 	.string "our criminal enterprise going.\p"
@@ -587,7 +587,7 @@ gFameCheckerFlavorText_Giovanni1:: @ 0x81AFF23
 
 gFameCheckerFlavorText_Giovanni2:: @ 0x81AFFA8
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What is this person like?\p"
-	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}TEAM ROCKET's BOSS is terribly\n"
+	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Team Rocket's BOSS is terribly\n"
 	.string "cruel!\p"
 	.string "To him, Pokémon are just tools to\n"
 	.string "be used.$"
@@ -596,12 +596,12 @@ gFameCheckerFlavorText_Giovanni3:: @ 0x81B0022
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
 	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Welcome to my hideout!\p"
 	.string "It shall be so until I can restore\n"
-	.string "TEAM ROCKET to its former glory.$"
+	.string "Team Rocket to its former glory.$"
 
 gFameCheckerFlavorText_Giovanni4:: @ 0x81B00A6
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
 	.string "{FONT_MALE}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Blow me away! GIOVANNI was the\n"
-	.string "GYM LEADER of VIRIDIAN?$"
+	.string "Gym Leader of VIRIDIAN?$"
 
 gFameCheckerFlavorText_Giovanni5:: @ 0x81B0106
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Family and friends?\p"
@@ -798,7 +798,7 @@ gFameCheckerPersonQuote_Giovanni:: @ 0x81B0BB5
 	.string "bettering myself, and none other.$"
 
 gFameCheckerFlavorTextOriginLocation_ProfOak0:: @ 0x81B0C45
-	.string "PALLET TOWN$"
+	.string "Pallet Town$"
 
 gFameCheckerFlavorTextOriginLocation_ProfOak1::
 	.string "RESEARCH LAB$"
@@ -807,10 +807,10 @@ gFameCheckerFlavorTextOriginLocation_ProfOak2::
 	.string "RESEARCH LAB$"
 
 gFameCheckerFlavorTextOriginLocation_ProfOak3::
-	.string "VIRIDIAN CITY$"
+	.string "Viridian City$"
 
 gFameCheckerFlavorTextOriginLocation_ProfOak4::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_ProfOak5::
 	.string "RESEARCH LAB$"
@@ -819,271 +819,271 @@ gFameCheckerFlavorTextOriginLocation_Daisy0::
 	.string "RESEARCH LAB$"
 
 gFameCheckerFlavorTextOriginLocation_Daisy1::
-	.string "VERMILION CITY$"
+	.string "Vermilion City$"
 
 gFameCheckerFlavorTextOriginLocation_Daisy2::
 	.string "WATER LABYRINTH$"
 
 gFameCheckerFlavorTextOriginLocation_Daisy3::
-	.string "VIRIDIAN CITY$"
+	.string "Viridian City$"
 
 gFameCheckerFlavorTextOriginLocation_Daisy4::
-	.string "CELADON MANSION$"
+	.string "Celadon Mansion$"
 
 gFameCheckerFlavorTextOriginLocation_Daisy5::
-	.string "FOUR ISLAND$"
+	.string "Four Island$"
 
 gFameCheckerFlavorTextOriginLocation_Brock0::
-	.string "PEWTER CITY$"
+	.string "Pewter City$"
 
 gFameCheckerFlavorTextOriginLocation_Brock1::
-	.string "PEWTER GYM$"
+	.string "Pewter Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Brock2::
-	.string "PEWTER CITY$"
+	.string "Pewter City$"
 
 gFameCheckerFlavorTextOriginLocation_Brock3::
-	.string "ROUTE 4$"
+	.string "Route 4$"
 
 gFameCheckerFlavorTextOriginLocation_Brock4::
-	.string "MT. MOON$"
+	.string "Mt. Moon$"
 
 gFameCheckerFlavorTextOriginLocation_Brock5::
-	.string "PEWTER MUSEUM$"
+	.string "Pewter Museum$"
 
 gFameCheckerFlavorTextOriginLocation_Misty0::
-	.string "CERULEAN CITY$"
+	.string "Cerulean City$"
 
 gFameCheckerFlavorTextOriginLocation_Misty1::
-	.string "CERULEAN GYM$"
+	.string "Cerulean Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Misty2::
-	.string "CERULEAN GYM$"
+	.string "Cerulean Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Misty3::
-	.string "SEAFOAM ISLANDS$"
+	.string "Seafoam Islands$"
 
 gFameCheckerFlavorTextOriginLocation_Misty4::
-	.string "CERULEAN CAPE$"
+	.string "Cerulean Cape$"
 
 gFameCheckerFlavorTextOriginLocation_Misty5::
-	.string "CERULEAN CITY$"
+	.string "Cerulean City$"
 
 gFameCheckerFlavorTextOriginLocation_LtSurge0::
-	.string "VERMILION CITY$"
+	.string "Vermilion City$"
 
 gFameCheckerFlavorTextOriginLocation_LtSurge1::
-	.string "VERMILION GYM$"
+	.string "Vermilion Gym$"
 
 gFameCheckerFlavorTextOriginLocation_LtSurge2::
-	.string "VERMILION GYM$"
+	.string "Vermilion Gym$"
 
 gFameCheckerFlavorTextOriginLocation_LtSurge3::
-	.string "VERMILION GYM$"
+	.string "Vermilion Gym$"
 
 gFameCheckerFlavorTextOriginLocation_LtSurge4::
-	.string "VERMILION GYM$"
+	.string "Vermilion Gym$"
 
 gFameCheckerFlavorTextOriginLocation_LtSurge5::
-	.string "VERMILION CITY$"
+	.string "Vermilion City$"
 
 gFameCheckerFlavorTextOriginLocation_Erika0::
-	.string "CELADON CITY$"
+	.string "Celadon City$"
 
 gFameCheckerFlavorTextOriginLocation_Erika1::
-	.string "CELADON GYM$"
+	.string "Celadon Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Erika2::
-	.string "CELADON GYM$"
+	.string "Celadon Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Erika3::
-	.string "CELADON GYM$"
+	.string "Celadon Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Erika4::
-	.string "CELADON GYM$"
+	.string "Celadon Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Erika5::
-	.string "CELADON MANSION$"
+	.string "Celadon Mansion$"
 
 gFameCheckerFlavorTextOriginLocation_Koga0::
-	.string "FUCHSIA CITY$"
+	.string "Fuchsia City$"
 
 gFameCheckerFlavorTextOriginLocation_Koga1::
-	.string "FUCHSIA GYM$"
+	.string "Fuchsia Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Koga2::
-	.string "FUCHSIA GYM$"
+	.string "Fuchsia Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Koga3::
-	.string "FUCHSIA CITY$"
+	.string "Fuchsia City$"
 
 gFameCheckerFlavorTextOriginLocation_Koga4::
-	.string "FUCHSIA CITY$"
+	.string "Fuchsia City$"
 
 gFameCheckerFlavorTextOriginLocation_Koga5::
-	.string "SAFARI ZONE$"
+	.string "Safari Zone$"
 
 gFameCheckerFlavorTextOriginLocation_Sabrina0::
-	.string "SAFFRON CITY$"
+	.string "Saffron City$"
 
 gFameCheckerFlavorTextOriginLocation_Sabrina1::
-	.string "THREE ISLAND$"
+	.string "Three Island$"
 
 gFameCheckerFlavorTextOriginLocation_Sabrina2::
-	.string "SAFFRON GYM$"
+	.string "Saffron Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Sabrina3::
-	.string "SAFFRON GYM$"
+	.string "Saffron Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Sabrina4::
-	.string "SAFFRON CITY$"
+	.string "Saffron City$"
 
 gFameCheckerFlavorTextOriginLocation_Sabrina5::
-	.string "SAFFRON GYM$"
+	.string "Saffron Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Blaine0::
-	.string "CINNABAR ISLAND$"
+	.string "Cinnabar Island$"
 
 gFameCheckerFlavorTextOriginLocation_Blaine1::
-	.string "CINNABAR GYM$"
+	.string "Cinnabar Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Blaine2::
-	.string "CINNABAR GYM$"
+	.string "Cinnabar Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Blaine3::
-	.string "CINNABAR ISLAND$"
+	.string "Cinnabar Island$"
 
 gFameCheckerFlavorTextOriginLocation_Blaine4::
-	.string "CINNABAR GYM$"
+	.string "Cinnabar Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Blaine5::
 	.string "RESORT GORGEOUS$"
 
 gFameCheckerFlavorTextOriginLocation_Lorelei0::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Lorelei1::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Lorelei2::
-	.string "FOUR ISLAND$"
+	.string "Four Island$"
 
 gFameCheckerFlavorTextOriginLocation_Lorelei3::
-	.string "FIVE ISLAND$"
+	.string "Five Island$"
 
 gFameCheckerFlavorTextOriginLocation_Lorelei4::
-	.string "FOUR ISLAND$"
+	.string "Four Island$"
 
 gFameCheckerFlavorTextOriginLocation_Lorelei5::
-	.string "FOUR ISLAND$"
+	.string "Four Island$"
 
 gFameCheckerFlavorTextOriginLocation_Bruno0::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Bruno1::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Bruno2::
-	.string "SAFFRON CITY$"
+	.string "Saffron City$"
 
 gFameCheckerFlavorTextOriginLocation_Bruno3::
 	.string "EMBER SPA$"
 
 gFameCheckerFlavorTextOriginLocation_Bruno4::
-	.string "TWO ISLAND$"
+	.string "Two Island$"
 
 gFameCheckerFlavorTextOriginLocation_Bruno5::
 	.string "SEVAULT CANYON$"
 
 gFameCheckerFlavorTextOriginLocation_Agatha0::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Agatha1::
-	.string "INDIGO PLATEAU$"
+	.string "Indigo Plateau$"
 
 gFameCheckerFlavorTextOriginLocation_Agatha2::
-	.string "INDIGO PLATEAU$"
+	.string "Indigo Plateau$"
 
 gFameCheckerFlavorTextOriginLocation_Agatha3::
-	.string "SEVEN ISLAND$"
+	.string "Seven Island$"
 
 gFameCheckerFlavorTextOriginLocation_Agatha4::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Agatha5::
-	.string "SIX ISLAND$"
+	.string "Six Island$"
 
 gFameCheckerFlavorTextOriginLocation_Lance0::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Lance1::
-	.string "Pokémon LEAGUE$"
+	.string "Pokémon League$"
 
 gFameCheckerFlavorTextOriginLocation_Lance2::
-	.string "SAFFRON CITY$"
+	.string "Saffron City$"
 
 gFameCheckerFlavorTextOriginLocation_Lance3::
-	.string "CELADON DEPT.$"
+	.string "Celadon Dept.$"
 
 gFameCheckerFlavorTextOriginLocation_Lance4::
-	.string "INDIGO PLATEAU$"
+	.string "Indigo Plateau$"
 
 gFameCheckerFlavorTextOriginLocation_Lance5::
-	.string "INDIGO PLATEAU$"
+	.string "Indigo Plateau$"
 
 gFameCheckerFlavorTextOriginLocation_Bill0::
-	.string "CERULEAN CITY$"
+	.string "Cerulean City$"
 
 gFameCheckerFlavorTextOriginLocation_Bill1::
-	.string "CERULEAN CITY$"
+	.string "Cerulean City$"
 
 gFameCheckerFlavorTextOriginLocation_Bill2::
-	.string "FUCHSIA CITY$"
+	.string "Fuchsia City$"
 
 gFameCheckerFlavorTextOriginLocation_Bill3::
-	.string "ONE ISLAND$"
+	.string "One Island$"
 
 gFameCheckerFlavorTextOriginLocation_Bill4::
-	.string "ONE ISLAND$"
+	.string "One Island$"
 
 gFameCheckerFlavorTextOriginLocation_Bill5::
-	.string "ONE ISLAND$"
+	.string "One Island$"
 
 gFameCheckerFlavorTextOriginLocation_MrFuji0::
-	.string "LAVENDER TOWN$"
+	.string "Lavender Town$"
 
 gFameCheckerFlavorTextOriginLocation_MrFuji1::
-	.string "Pokémon TOWER$"
+	.string "Pokémon Tower$"
 
 gFameCheckerFlavorTextOriginLocation_MrFuji2::
-	.string "LAVENDER TOWN$"
+	.string "Lavender Town$"
 
 gFameCheckerFlavorTextOriginLocation_MrFuji3::
-	.string "LAVENDER TOWN$"
+	.string "Lavender Town$"
 
 gFameCheckerFlavorTextOriginLocation_MrFuji4::
-	.string "CINNABAR GYM$"
+	.string "Cinnabar Gym$"
 
 gFameCheckerFlavorTextOriginLocation_MrFuji5::
-	.string "CINNABAR ISLAND$"
+	.string "Cinnabar Island$"
 
 gFameCheckerFlavorTextOriginLocation_Giovanni0::
-	.string "ROCKET HIDEOUT$"
+	.string "Rocket Hideout$"
 
 gFameCheckerFlavorTextOriginLocation_Giovanni1::
-	.string "SILPH CO.$"
+	.string "Silph Co.$"
 
 gFameCheckerFlavorTextOriginLocation_Giovanni2::
-	.string "SILPH CO.$"
+	.string "Silph Co.$"
 
 gFameCheckerFlavorTextOriginLocation_Giovanni3::
-	.string "VIRIDIAN GYM$"
+	.string "Viridian Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Giovanni4::
-	.string "VIRIDIAN GYM$"
+	.string "Viridian Gym$"
 
 gFameCheckerFlavorTextOriginLocation_Giovanni5::
-	.string "ROCKET WAREHOUSE$"
+	.string "Rocket Warehouse$"
 
 gFameCheckerFlavorTextOriginObjectName_ProfOak0::
 	.string "SIGN$"
@@ -1341,7 +1341,7 @@ gFameCheckerFlavorTextOriginObjectName_MrFuji0::
 	.string "LITTLE GIRL$"
 
 gFameCheckerFlavorTextOriginObjectName_MrFuji1::
-	.string "TEAM ROCKET$"
+	.string "Team Rocket$"
 
 gFameCheckerFlavorTextOriginObjectName_MrFuji2::
 	.string "MAGAZINE$"
@@ -1375,21 +1375,21 @@ gFameCheckerFlavorTextOriginObjectName_Giovanni5::
 
 PokemonJournal_Text_SpecialFeatureBrock::
 	.string "Pokémon JOURNAL\p"
-	.string "Special Feature: PEWTER GYM\n"
+	.string "Special Feature: Pewter Gym\n"
 	.string "LEADER BROCK!\p"
 	.string "BROCK rarely laughs, but is said to\n"
 	.string "be unable to stop if he starts.$"
 
 PokemonJournal_Text_SpecialFeatureMisty::
 	.string "Pokémon JOURNAL\p"
-	.string "Special Feature: CERULEAN GYM\n"
+	.string "Special Feature: Cerulean Gym\n"
 	.string "LEADER MISTY!\p"
 	.string "MISTY is said to worship LORELEI\n"
 	.string "of the ELITE FOUR.$"
 
 PokemonJournal_Text_SpecialFeatureLtSurge::
 	.string "Pokémon JOURNAL\p"
-	.string "Special Feature: VERMILION GYM\n"
+	.string "Special Feature: Vermilion Gym\n"
 	.string "LEADER LT. SURGE!\p"
 	.string "LT. SURGE is rumored to have been\n"
 	.string "a pilot while home in America.\p"
@@ -1398,15 +1398,15 @@ PokemonJournal_Text_SpecialFeatureLtSurge::
 
 PokemonJournal_Text_SpecialFeatureErika::
 	.string "Pokémon JOURNAL\p"
-	.string "Special Feature: CELADON GYM\n"
+	.string "Special Feature: Celadon Gym\n"
 	.string "LEADER ERIKA!\p"
 	.string "Rumor has it that if you peek into\n"
-	.string "CELADON GYM, you can often\l"
+	.string "Celadon Gym, you can often\l"
 	.string "see ERIKA snoozing.$"
 
 PokemonJournal_Text_SpecialFeatureKoga::
 	.string "Pokémon JOURNAL\p"
-	.string "Special Feature: FUCHSIA GYM\n"
+	.string "Special Feature: Fuchsia Gym\n"
 	.string "LEADER KOGA!\p"
 	.string "KOGA is said to have a thorough\n"
 	.string "knowledge of medicine.\p"
@@ -1415,7 +1415,7 @@ PokemonJournal_Text_SpecialFeatureKoga::
 
 PokemonJournal_Text_SpecialFeatureSabrina::
 	.string "Pokémon JOURNAL\p"
-	.string "Special Feature: SAFFRON GYM\n"
+	.string "Special Feature: Saffron Gym\n"
 	.string "LEADER SABRINA!\p"
 	.string "People say that SABRINA can\n"
 	.string "communicate with her Pokémon\l"
@@ -1423,7 +1423,7 @@ PokemonJournal_Text_SpecialFeatureSabrina::
 
 PokemonJournal_Text_SpecialFeatureBlaine::
 	.string "Pokémon JOURNAL\p"
-	.string "Special Feature: CINNABAR GYM\n"
+	.string "Special Feature: Cinnabar Gym\n"
 	.string "LEADER BLAINE!\p"
 	.string "BLAINE is said to remove his dark\n"
 	.string "shades only when he is thinking up\l"
@@ -1475,7 +1475,7 @@ PokemonJournal_Text_SpecialFeatureDaisyOak::
 	.string "CONTEST Special!\p"
 	.string "The Spring Pokémon CONTEST's\n"
 	.string "Grand Champion is DAISY OAK of\l"
-	.string "PALLET TOWN!$"
+	.string "Pallet Town!$"
 
 PokemonJournal_Text_SpecialFeatureMrFuji::
 	.string "Pokémon JOURNAL\p"
@@ -1484,4 +1484,4 @@ PokemonJournal_Text_SpecialFeatureMrFuji::
 	.string "Editor: The shy MR. FUJI turned\n"
 	.string "down our interview requests.\p"
 	.string "He is a kindly man who is adored\n"
-	.string "and respected in LAVENDER TOWN.$"
+	.string "and respected in Lavender Town.$"

@@ -48,7 +48,7 @@ FuchsiaCity_WardensHouse_Text_ExplainStrength::
     .string "It lets Pokémon move boulders when\n"
     .string "you're outside of battle.\p"
     .string "Oh yes, did you find the SECRET\n"
-    .string "HOUSE in the SAFARI ZONE?$"
+    .string "HOUSE in the Safari Zone?$"
 
 @ Unused
 FuchsiaCity_WardensHouse_Text_YouHaveTooMuchStuff::

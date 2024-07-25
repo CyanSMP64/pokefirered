@@ -1,5 +1,5 @@
 TwoIsland_Text_IslandSign::
-    .string "TWO ISLAND\n"
+    .string "Two Island\n"
     .string "Boon Island for Two$"
 
 TwoIsland_Text_JoyfulGameCornerSign::
@@ -21,10 +21,10 @@ TwoIsland_Text_AddedMerchandiseForLostelle::
     .string "I can't tell you how grateful I am\n"
     .string "for your rescue of LOSTELLE.\p"
     .string "Thanks to your feat, the people of\n"
-    .string "THREE ISLAND have changed their\l"
+    .string "Three Island have changed their\l"
     .string "attitudes about KANTO people.\p"
-    .string "And, I'm from KANTO, you see.\p"
-    .string "The people of THREE ISLAND\n"
+    .string "And, I'm from Kanto, you see.\p"
+    .string "The people of Three Island\n"
     .string "helped me add to my merchandise.$"
 
 TwoIsland_Text_HopeYouGiveItYourBest::
@@ -41,7 +41,7 @@ TwoIsland_Text_BringingItemsFromDistantLands::
 
 TwoIsland_Text_FellowMovedFromCeladonCity::
     .string "That fellow there, he moved here\n"
-    .string "from CELADON CITY.\p"
+    .string "from Celadon City.\p"
     .string "He started up a shop with his\n"
     .string "younger brother.\p"
     .string "You have to wonder if he knew what\n"

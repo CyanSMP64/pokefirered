@@ -4,14 +4,14 @@ SaffronCity_Text_WhatDoYouWantGetLost::
 
 SaffronCity_Text_BossTakeTownForTeamRocket::
     .string "BOSS said he'll take this town\n"
-    .string "in the name of TEAM ROCKET!$"
+    .string "in the name of Team Rocket!$"
 
 SaffronCity_Text_DontGetDefiantOrIllHurtYou::
     .string "Don't get defiant!\n"
     .string "Or I'll have to hurt you!$"
 
 SaffronCity_Text_SaffronBelongsToTeamRocket::
-    .string "SAFFRON belongs to TEAM ROCKET!$"
+    .string "Saffron belongs to Team Rocket!$"
 
 SaffronCity_Text_CriminalLifeMakesMeFeelAlive::
     .string "My life as a criminal makes me feel\n"
@@ -27,18 +27,18 @@ SaffronCity_Text_WeCanExploitMonsAroundWorld::
     .string "We'll get stinking rich, yeahah!$"
 
 SaffronCity_Text_YouBeatTeamRocket::
-    .string "You beat TEAM ROCKET all alone?\n"
+    .string "You beat Team Rocket all alone?\n"
     .string "That's amazing!$"
 
 SaffronCity_Text_SafeToGoOutAgain::
-    .string "Yeah! TEAM ROCKET is gone!\n"
+    .string "Yeah! Team Rocket is gone!\n"
     .string "It's safe to go out again!$"
 
 SaffronCity_Text_PeopleComingBackToSaffron::
     .string "People fled from here in droves\n"
     .string "when those ROCKETS came.\p"
     .string "They should be flocking back to\n"
-    .string "SAFFRON now.$"
+    .string "Saffron now.$"
 
 SaffronCity_Text_FlewHereOnPidgeot::
     .string "I flew here on my PIDGEOT when\n"
@@ -63,14 +63,14 @@ SaffronCity_Text_HesTakingASnooze::
     .string "Hah! He's taking a snooze!$"
 
 SaffronCity_Text_CitySign::
-    .string "SAFFRON CITY\n"
+    .string "Saffron City\n"
     .string "Shining, Golden Land of Commerce$"
 
 SaffronCity_Text_FightingDojo::
-    .string "FIGHTING DOJO$"
+    .string "Fighting Dojo$"
 
 SaffronCity_Text_GymSign::
-    .string "SAFFRON CITY Pokémon GYM\n"
+    .string "Saffron City Pokémon Gym\n"
     .string "LEADER: SABRINA\l"
     .string "The Master of PSYCHIC Pokémon!$"
 
@@ -90,7 +90,7 @@ SaffronCity_Text_GreatBallImprovedCatchRate::
     .string "Pokémon.$"
 
 SaffronCity_Text_SilphCoSign::
-    .string "SILPH CO. OFFICE BUILDING$"
+    .string "Silph Co. Office Building$"
 
 SaffronCity_Text_MrPsychicsHouse::
     .string "MR. PSYCHIC'S HOUSE$"

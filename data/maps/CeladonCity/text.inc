@@ -8,7 +8,7 @@ CeladonCity_Text_GymIsGreatFullOfWomen::
     .string "It's full of women!$"
 
 CeladonCity_Text_GameCornerIsBadForCitysImage::
-    .string "CELADON takes pride in its efforts\n"
+    .string "Celadon takes pride in its efforts\n"
     .string "to keep the city beautiful.\p"
     .string "That's why the new GAME CORNER is\n"
     .string "bad for our city's image.$"
@@ -32,7 +32,7 @@ CeladonCity_Text_GetLostOrIllPunchYou::
     .string "Get lost, or I'll punch you.$"
 
 CeladonCity_Text_KeepOutOfTeamRocketsWay::
-    .string "Keep out of TEAM ROCKET's way!$"
+    .string "Keep out of Team Rocket's way!$"
 
 CeladonCity_Text_ExplainXAccuracyDireHit::
     .string "TRAINER TIPS\p"
@@ -41,23 +41,23 @@ CeladonCity_Text_ExplainXAccuracyDireHit::
     .string "DIRE HIT jacks up the likelihood\n"
     .string "of critical hits.\p"
     .string "Get your items at the CELADON\n"
-    .string "DEPT. STORE!$"
+    .string "Dept. Store!$"
 
 CeladonCity_Text_CitySign::
-    .string "CELADON CITY\n"
+    .string "Celadon City\n"
     .string "The City of Rainbow Dreams$"
 
 CeladonCity_Text_GymSign::
-    .string "CELADON CITY Pokémon GYM\n"
+    .string "Celadon City Pokémon Gym\n"
     .string "LEADER: ERIKA\l"
     .string "The Nature-Loving Princess!$"
 
 CeladonCity_Text_MansionSign::
-    .string "CELADON MANSION$"
+    .string "Celadon Mansion$"
 
 CeladonCity_Text_DeptStoreSign::
     .string "Find what you need at the\n"
-    .string "CELADON DEPT. STORE!$"
+    .string "Celadon Dept. Store!$"
 
 CeladonCity_Text_GuardSpecProtectsFromStatus::
     .string "TRAINER TIPS\p"
@@ -65,7 +65,7 @@ CeladonCity_Text_GuardSpecProtectsFromStatus::
     .string "from status-reduction moves during\l"
     .string "battle.\p"
     .string "Get your items at the\n"
-    .string "CELADON DEPT. STORE!$"
+    .string "Celadon Dept. Store!$"
 
 CeladonCity_Text_PrizeExchangeSign::
     .string "COINS exchanged for prizes!\n"

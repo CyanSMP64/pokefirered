@@ -12,7 +12,7 @@ CinnabarIsland_PokemonLab_ResearchRoom_Text_LegendaryBirdEmail::
     .string "Their whereabouts are unknown.\p"
     .string "We plan to explore the cavern\n"
     .string "close to CERULEAN.\p"
-    .string "From: Pokémon RESEARCH TEAM…$"
+    .string "From: Pokémon Research Team…$"
 
 CinnabarIsland_PokemonLab_ResearchRoom_Text_AnAmberPipe::
     .string "An amber pipe!$"

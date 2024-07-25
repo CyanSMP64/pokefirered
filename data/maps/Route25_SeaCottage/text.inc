@@ -78,8 +78,8 @@ Route25_SeaCottage_Text_YouveGotTooMuchStuff::
     .string "You've got too much stuff!$"
 
 Route25_SeaCottage_Text_SSAnnePartyYouGoInstead::
-    .string "That cruise ship S.S. ANNE is in\n"
-    .string "VERMILION CITY.\p"
+    .string "That cruise ship S.S. Anne is in\n"
+    .string "Vermilion City.\p"
     .string "I hear there are lots of TRAINERS\n"
     .string "on board, too.\p"
     .string "They invited me to their party, but\n"

@@ -57,9 +57,9 @@ SilphCo_11F_Text_GiovanniDefeat::
 SilphCo_11F_Text_GiovanniPostBattle::
     .string "Blast it all!\n"
     .string "You ruined our plans for SILPH!\p"
-    .string "But, TEAM ROCKET will never fall!\p"
+    .string "But, Team Rocket will never fall!\p"
     .string "{PLAYER}! Never forget that all\n"
-    .string "Pokémon exist for TEAM ROCKET!\p"
+    .string "Pokémon exist for Team Rocket!\p"
     .string "I must go, but I shall return!$"
 
 SilphCo_11F_Text_Grunt2Intro::
@@ -89,6 +89,6 @@ SilphCo_11F_Text_MonitorHasMonsOnIt::
     .string "The monitor has Pokémon on it!$"
 
 SilphCo_11F_Text_FloorSign::
-    .string "SILPH CO. HEAD OFFICE\n"
+    .string "Silph Co. Head Office\n"
     .string "11F$"
 

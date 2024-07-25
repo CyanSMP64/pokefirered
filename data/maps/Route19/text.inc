@@ -74,7 +74,7 @@ Route19_Text_AnyaDefeat::
 
 Route19_Text_AnyaPostBattle::
     .string "It's still a long way to go to\n"
-    .string "SEAFOAM ISLANDS…\p"
+    .string "Seafoam Islands…\p"
     .string "I want to go back to FUCHSIA…$"
 
 Route19_Text_AliceIntro::
@@ -86,7 +86,7 @@ Route19_Text_AliceDefeat::
 
 Route19_Text_AlicePostBattle::
     .string "My boyfriend wanted to swim to\n"
-    .string "SEAFOAM ISLANDS.$"
+    .string "Seafoam Islands.$"
 
 Route19_Text_AxleIntro::
     .string "Ahoy, there!\n"
@@ -114,8 +114,8 @@ Route19_Text_ConniePostBattle::
     .string "would keep me dry on water.$"
 
 Route19_Text_RouteSign::
-    .string "SEA ROUTE 19\n"
-    .string "FUCHSIA CITY - SEAFOAM ISLANDS$"
+    .string "SEA Route 19\n"
+    .string "Fuchsia City - Seafoam Islands$"
 
 Route19_Text_LiaIntro::
     .string "LIA: I'm looking after my brother.\n"

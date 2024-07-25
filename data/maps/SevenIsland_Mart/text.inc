@@ -9,9 +9,9 @@ SevenIsland_Mart_Text_PreparationsCompleteForRuins::
     .string "for me to explore the RUINS.$"
 
 SevenIsland_Mart_Text_NeedToFishOnSevenIsland::
-    .string "I need to fish on SEVEN ISLAND.\p"
+    .string "I need to fish on Seven Island.\p"
     .string "That will complete my fishing tour\n"
-    .string "of the SEVII ISLANDS.\p"
+    .string "of the Sevii Islands.\p"
     .string "I'd better stock up on some\n"
     .string "Poké Balls first, though.$"
 

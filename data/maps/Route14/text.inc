@@ -22,7 +22,7 @@ Route14_Text_MitchPostBattle::
 
 Route14_Text_BeckIntro::
     .string "They have TMs on sale at the\n"
-    .string "CELADON DEPT. STORE.\p"
+    .string "Celadon Dept. Store.\p"
     .string "TMs aren't really rare, but not\n"
     .string "many people have HMs.$"
 
@@ -121,8 +121,8 @@ Route14_Text_MalikPostBattle::
     .string "one-on-one!$"
 
 Route14_Text_RouteSign::
-    .string "ROUTE 14\n"
-    .string "West to FUCHSIA CITY$"
+    .string "Route 14\n"
+    .string "West to Fuchsia City$"
 
 Route14_Text_KiriIntro::
     .string "KIRI: JAN, let's try really,\n"

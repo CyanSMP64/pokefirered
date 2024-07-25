@@ -16,7 +16,7 @@ PalletTown_Text_CanStoreItemsAndMonsInPC::
     .string "and Pokémon as data via PC.$"
 
 PalletTown_Text_OakPokemonResearchLab::
-    .string "OAK Pokémon RESEARCH LAB$"
+    .string "Oak Pokémon Research Lab$"
 
 PalletTown_Text_PlayersHouse::
     .string "{PLAYER}'s house$"
@@ -25,7 +25,7 @@ PalletTown_Text_RivalsHouse::
     .string "{RIVAL}'s house$"
 
 PalletTown_Text_TownSign::
-    .string "PALLET TOWN\n"
+    .string "Pallet Town\n"
     .string "Shades of your journey await!$"
 
 PalletTown_Text_OakLetMeSeePokedex::

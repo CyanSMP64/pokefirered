@@ -18,13 +18,13 @@ Route11_EastEntrance_2F_Text_GreatHereYouGo::
 
 Route11_EastEntrance_2F_Text_ReceivedItemfinderFromAide::
     .string "{PLAYER} received the {STR_VAR_2}\n"
-    .string "from the AIDE.$"
+    .string "from the Aide.$"
 
 Route11_EastEntrance_2F_Text_ExplainItemfinder::
     .string "There are items on the ground that\n"
     .string "may be hidden from view.\p"
-    .string "Use the ITEMFINDER to detect any\n"
-    .string "hidden items close to you.\p"
+    .string "Use the Dowsing Machine to detect\n"
+    .string "any hidden items close to you.\p"
     .string "The machine is a bit limited.\n"
     .string "It can't pinpoint item locations.\p"
     .string "What it does is show the direction\n"
@@ -45,8 +45,8 @@ Route11_EastEntrance_2F_Text_WhatABreathtakingView::
 Route11_EastEntrance_2F_Text_RockTunnelGoodRouteToLavender::
     .string "Let's see what the binoculars have\n"
     .string "to show…\p"
-    .string "To get to LAVENDER TOWN from\n"
-    .string "CERULEAN CITY…\p"
-    .string "ROCK TUNNEL appears to be a good\n"
+    .string "To get to Lavender Town from\n"
+    .string "Cerulean City…\p"
+    .string "Rock Tunnel appears to be a good\n"
     .string "route to take.$"
 

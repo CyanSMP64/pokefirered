@@ -1,12 +1,12 @@
 Route3_Text_TunnelFromCeruleanTiring::
     .string "Whew… I better take a rest…\n"
     .string "Groan…\p"
-    .string "That tunnel from CERULEAN takes a\n"
+    .string "That tunnel from Cerulean takes a\n"
     .string "lot out of you!$"
 
 Route3_Text_ColtonIntro::
     .string "Hey!\n"
-    .string "I saw you in VIRIDIAN FOREST!$"
+    .string "I saw you in Viridian Forest!$"
 
 Route3_Text_ColtonDefeat::
     .string "You beat me again!$"
@@ -95,10 +95,10 @@ Route3_Text_RobinDefeat::
     .string "That's it?$"
 
 Route3_Text_RobinPostBattle::
-    .string "ROUTE 4 is at the foot of\n"
-    .string "MT. MOON.$"
+    .string "Route 4 is at the foot of\n"
+    .string "Mt. Moon.$"
 
 Route3_Text_RouteSign::
-    .string "ROUTE 3\n"
-    .string "MT. MOON AHEAD$"
+    .string "Route 3\n"
+    .string "Mt. Moon Ahead$"
 

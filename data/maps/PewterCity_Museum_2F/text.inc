@@ -49,6 +49,6 @@ PewterCity_Museum_1F_Text_SpaceShuttle::
     .string "Space Shuttle$"
 
 PewterCity_Museum_1F_Text_MeteoriteThatFellOnMtMoon::
-    .string "A meteorite that fell on MT. MOON.\n"
+    .string "A meteorite that fell on Mt. Moon.\n"
     .string "It is thought to be a MOON STONE.$"
 

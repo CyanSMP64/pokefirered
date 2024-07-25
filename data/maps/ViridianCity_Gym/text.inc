@@ -2,7 +2,7 @@ ViridianCity_Gym_Text_GiovanniIntro::
     .string "Fwahahaha!\n"
     .string "Welcome to my hideout!\p"
     .string "It shall be so until I can restore\n"
-    .string "TEAM ROCKET to its former glory.\p"
+    .string "Team Rocket to its former glory.\p"
     .string "But, you have found me again.\n"
     .string "So be it.\l"
     .string "This time, I'm not holding back!\p"
@@ -13,14 +13,14 @@ ViridianCity_Gym_Text_GiovanniDefeat::
     .string "Ha!\n"
     .string "That was a truly intense fight.\l"
     .string "You have won!\p"
-    .string "As proof, here is the EARTHBADGE!\n"
+    .string "As proof, here is the Earth Badge!\n"
     .string "{PAUSE_MUSIC}{PLAY_BGM}{MUS_OBTAIN_BADGE}{PAUSE 0xFE}{PAUSE 0x56}{RESUME_MUSIC}$"
 
 ViridianCity_Gym_Text_GiovanniPostBattle::
     .string "Having lost in this fashion, \n"
     .string "I can't face my followers.\l"
     .string "I have betrayed their trust.\p"
-    .string "As of today, TEAM ROCKET is\n"
+    .string "As of today, Team Rocket is\n"
     .string "finished forever!\p"
     .string "As for myself, I shall dedicate\n"
     .string "my life to training again.\p"
@@ -28,12 +28,12 @@ ViridianCity_Gym_Text_GiovanniPostBattle::
     .string "Farewell!$"
 
 ViridianCity_Gym_Text_ExplainEarthBadgeTakeThis::
-    .string "The EARTHBADGE makes Pokémon of\n"
+    .string "The Earth Badge makes Pokémon of\n"
     .string "any level obey without question.\p"
     .string "It is evidence of your mastery as\n"
     .string "a Pokémon TRAINER.\p"
     .string "With it, you can challenge the\n"
-    .string "Pokémon LEAGUE.\p"
+    .string "Pokémon League.\p"
     .string "Also, take this TM.\p"
     .string "Consider it a gift for your Pokémon\n"
     .string "LEAGUE challenge.$"
@@ -62,7 +62,7 @@ ViridianCity_Gym_Text_YujiDefeat::
 
 ViridianCity_Gym_Text_YujiPostBattle::
     .string "You'll need power to keep up with\n"
-    .string "our GYM LEADER.$"
+    .string "our Gym Leader.$"
 
 ViridianCity_Gym_Text_AtsushiIntro::
     .string "Rrrroar!\n"
@@ -83,7 +83,7 @@ ViridianCity_Gym_Text_JasonDefeat::
 
 ViridianCity_Gym_Text_JasonPostBattle::
     .string "Do you know the identity of our\n"
-    .string "GYM LEADER?$"
+    .string "Gym Leader?$"
 
 ViridianCity_Gym_Text_KiyoIntro::
     .string "Karate is the ultimate form of\n"
@@ -114,7 +114,7 @@ ViridianCity_Gym_Text_TakashiDefeat::
     .string "Ayah!$"
 
 ViridianCity_Gym_Text_TakashiPostBattle::
-    .string "The Pokémon LEAGUE?\n"
+    .string "The Pokémon League?\n"
     .string "You? Don't get cocky!$"
 
 ViridianCity_Gym_Text_ColeIntro::
@@ -130,7 +130,7 @@ ViridianCity_Gym_Text_ColePostBattle::
     .string "I was just careless!$"
 
 ViridianCity_Gym_Text_SamuelIntro::
-    .string "VIRIDIAN GYM was closed for a\n"
+    .string "Viridian Gym was closed for a\n"
     .string "long time.\p"
     .string "But now, our LEADER is back!$"
 
@@ -149,13 +149,13 @@ ViridianCity_Gym_Text_GymGuyAdvice::
     .string "LEADER's identity.\p"
     .string "But one thing's certain.\n"
     .string "This will be the toughest of all\l"
-    .string "the GYM LEADERS.\p"
+    .string "the Gym Leaders.\p"
     .string "Also, I heard that the TRAINERS\n"
     .string "here like GROUND-type Pokémon.$"
 
 ViridianCity_Gym_Text_GymGuyPostVictory::
     .string "Blow me away! GIOVANNI was the\n"
-    .string "GYM LEADER of VIRIDIAN?$"
+    .string "Gym Leader of VIRIDIAN?$"
 
 ViridianCity_Gym_Text_GymStatue::
     .string "VIRIDIAN Pokémon GYM\n"

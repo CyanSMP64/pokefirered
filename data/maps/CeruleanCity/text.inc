@@ -65,7 +65,7 @@ CeruleanCity_Text_OkayIllReturnStolenTM::
 
 CeruleanCity_Text_RecoveredTM28FromGrunt::
     .string "{PLAYER} recovered TM28 from\n"
-    .string "the TEAM ROCKET GRUNT.$"
+    .string "the Team Rocket GRUNT.$"
 
 CeruleanCity_Text_BetterGetMovingBye::
     .string "I better get moving!\n"
@@ -102,7 +102,7 @@ CeruleanCity_Text_PokemonEncyclopediaAmusing::
 
 CeruleanCity_Text_PeopleHereWereRobbed::
     .string "The people here were robbed.\p"
-    .string "It's obvious that TEAM ROCKET is\n"
+    .string "It's obvious that Team Rocket is\n"
     .string "behind this most heinous crime!\p"
     .string "Even our POLICE FORCE has\n"
     .string "trouble with the ROCKETS!$"
@@ -148,19 +148,19 @@ CeruleanCity_Text_WantBrightRedBicycle::
     .string "get dirty.$"
 
 CeruleanCity_Text_ThisIsCeruleanCave::
-    .string "This is CERULEAN CAVE.\p"
+    .string "This is Cerulean Cave.\p"
     .string "Horribly strong Pokémon live inside\n"
     .string "there.\p"
     .string "It takes a very special TRAINER to\n"
     .string "be allowed inside there.\p"
     .string "You'd have to be strong enough to\n"
-    .string "become the Pokémon LEAGUE\l"
+    .string "become the Pokémon League\l"
     .string "CHAMPION for starters.\p"
     .string "And, you would have to have\n"
     .string "made a great achievement.$"
 
 CeruleanCity_Text_CitySign::
-    .string "CERULEAN CITY\n"
+    .string "Cerulean City\n"
     .string "A Mysterious, Blue Aura Surrounds\l"
     .string "It$"
 
@@ -173,10 +173,10 @@ CeruleanCity_Text_TrainerTipsHeldItems::
 
 CeruleanCity_Text_BikeShopSign::
     .string "Grass and caves handled easily!\n"
-    .string "BIKE SHOP$"
+    .string "Bike Shop$"
 
 CeruleanCity_Text_GymSign::
-    .string "CERULEAN CITY Pokémon GYM\n"
+    .string "Cerulean City Pokémon Gym\n"
     .string "LEADER: MISTY\l"
     .string "The Tomboyish Mermaid!$"
 

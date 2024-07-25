@@ -4,11 +4,11 @@ SilphCo_4F_Text_CantYouSeeImHiding::
 
 SilphCo_4F_Text_TeamRocketIsGone::
     .string "Huh?\n"
-    .string "TEAM ROCKET is gone?$"
+    .string "Team Rocket is gone?$"
 
 SilphCo_4F_Text_Grunt1Intro::
-    .string "TEAM ROCKET has taken control\n"
-    .string "of SILPH CO.!$"
+    .string "Team Rocket has taken control\n"
+    .string "of Silph Co.!$"
 
 SilphCo_4F_Text_Grunt1Defeat::
     .string "Arrgh!$"
@@ -40,6 +40,6 @@ SilphCo_4F_Text_Grunt2PostBattle::
     .string "I better tell the BOSS on 11F!$"
 
 SilphCo_4F_Text_FloorSign::
-    .string "SILPH CO. HEAD OFFICE\n"
+    .string "Silph Co. Head Office\n"
     .string "4F$"
 

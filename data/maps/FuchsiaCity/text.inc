@@ -4,7 +4,7 @@ FuchsiaCity_Text_DidYouTrySafariGame::
     .string "can only be caught there.$"
 
 FuchsiaCity_Text_SafariZoneZooInFront::
-    .string "The SAFARI ZONE has a zoo in front\n"
+    .string "The Safari Zone has a zoo in front\n"
     .string "of the entrance.\p"
     .string "Out back is the SAFARI GAME for\n"
     .string "catching Pokémon.$"
@@ -20,28 +20,28 @@ FuchsiaCity_Text_ItemBallInThere::
     .string "…Huh? That's a Pokémon?$"
 
 FuchsiaCity_Text_CitySign::
-    .string "FUCHSIA CITY\n"
+    .string "Fuchsia City\n"
     .string "Behold! It's Passion Pink!$"
 
 FuchsiaCity_Text_SafariZoneSign::
     .string "Pokémon PARADISE\n"
-    .string "SAFARI ZONE$"
+    .string "Safari Zone$"
 
 FuchsiaCity_Text_SafariGameSign::
     .string "SAFARI GAME\n"
     .string "Pokémon-U-CATCH!$"
 
 FuchsiaCity_Text_WardensHomeSign::
-    .string "SAFARI ZONE\n"
+    .string "Safari Zone\n"
     .string "WARDEN'S HOME$"
 
 FuchsiaCity_Text_SafariZoneOfficeSign::
     .string "Pokémon PARADISE!\n"
-    .string "Welcome to the SAFARI ZONE!\l"
-    .string "SAFARI ZONE OFFICE$"
+    .string "Welcome to the Safari Zone!\l"
+    .string "Safari Zone Office$"
 
 FuchsiaCity_Text_GymSign::
-    .string "FUCHSIA CITY Pokémon GYM\n"
+    .string "Fuchsia City Pokémon Gym\n"
     .string "LEADER: KOGA\l"
     .string "The Poisonous Ninja Master$"
 
@@ -105,7 +105,7 @@ Text_SubstituteTaught::
     .string "a KANGASKHAN belly pouch…$"
 
 FuchsiaCity_Text_MyFatherIsGymLeader::
-    .string "My father is the GYM LEADER of\n"
+    .string "My father is the Gym Leader of\n"
     .string "this town.\p"
     .string "I'm training to use POISON Pokémon\n"
     .string "as well as my father.$"

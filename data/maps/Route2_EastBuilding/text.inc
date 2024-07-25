@@ -28,5 +28,5 @@ Route2_EastBuilding_Text_ExplainHM05::
 
 Route2_EastBuilding_Text_CanGetThroughRockTunnel::
     .string "Once a Pokémon learns FLASH, you\n"
-    .string "can get through ROCK TUNNEL.$"
+    .string "can get through Rock Tunnel.$"
 

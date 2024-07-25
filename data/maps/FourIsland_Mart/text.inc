@@ -7,7 +7,7 @@ FourIsland_Mart_Text_LoreleiGrewUpOnThisIsland::
     .string "I taught her about Pokémon.$"
 
 FourIsland_Mart_Text_IcefallCaveIsFrigid::
-    .string "The SEVII ISLANDS are in a warm\n"
+    .string "The Sevii Islands are in a warm\n"
     .string "region overall.\p"
     .string "But there is one exception you\n"
     .string "need to know about.\p"

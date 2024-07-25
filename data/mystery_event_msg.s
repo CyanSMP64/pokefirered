@@ -200,7 +200,7 @@ sText_AuroraTicket1:
 
 sText_AuroraTicket2:
 	.string "It appears to be for use at the\n"
-	.string "VERMILION CITY port.\p"
+	.string "Vermilion City port.\p"
 	.string "Why not give it a try and see what\n"
 	.string "it is about?$"
 
@@ -259,7 +259,7 @@ sText_MysticTicket2:
 
 sText_MysticTicket1:
 	.string "It appears to be for use at the\n"
-	.string "VERMILION CITY port.\p"
+	.string "Vermilion City port.\p"
 	.string "Why not give it a try and see what\n"
 	.string "it is about?$"
 

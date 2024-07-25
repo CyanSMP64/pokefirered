@@ -1,5 +1,5 @@
 SixIsland_Text_IslandSign::
-    .string "SIX ISLAND\n"
+    .string "Six Island\n"
     .string "Fortune Island of Aged Wisdom$"
 
 SixIsland_Text_ThatWayToWaterPathRuinValley::

@@ -30,7 +30,7 @@ Route6_Text_KeigoDefeat::
 
 Route6_Text_KeigoPostBattle::
     .string "I like bugs, so I'm going back to\n"
-    .string "VIRIDIAN FOREST.$"
+    .string "Viridian Forest.$"
 
 Route6_Text_JeffIntro::
     .string "Huh?\n"
@@ -68,6 +68,6 @@ Route6_Text_ElijahPostBattle::
     .string "Which do you think?$"
 
 Route6_Text_UndergroundPathSign::
-    .string "UNDERGROUND PATH\n"
-    .string "CERULEAN CITY - VERMILION CITY$"
+    .string "Underground Path\n"
+    .string "Cerulean City - Vermilion City$"
 

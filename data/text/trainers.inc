@@ -15,7 +15,7 @@ VSSeeker_Text_TrainersNotReady::
 
 Route3_Text_ColtonRematchIntro::
 	.string "Hey!\n"
-	.string "I saw you in VIRIDIAN FOREST!$"
+	.string "I saw you in Viridian Forest!$"
 
 Route3_Text_BenRematchIntro::
 	.string "Hi! I like shorts!\n"
@@ -48,7 +48,7 @@ Route3_Text_RobinRematchIntro::
 
 Route4_Text_CrissyRematchIntro::
 	.string "I always catch mushroom Pokémon\n"
-	.string "on MT. MOON.$"
+	.string "on Mt. Moon.$"
 
 Route6_Text_RickyRematchIntro::
 	.string "Oh! You're that nosy kid who\n"
@@ -137,7 +137,7 @@ Route9_Text_ChrisRematchIntro::
 	.string "those good-looking Pokémon.$"
 
 Route9_Text_DrewRematchIntro::
-	.string "I'm taking ROCK TUNNEL to go to\n"
+	.string "I'm taking Rock Tunnel to go to\n"
 	.string "LAVENDER…\p"
 	.string "But I keep getting stopped by\n"
 	.string "everyone along the way…$"
@@ -591,7 +591,7 @@ Route20_Text_NoraRematchIntro::
 	.string "And, they've grown bigger!$"
 
 Route20_Text_MissyRematchIntro::
-	.string "I swam here from CINNABAR ISLAND.\n"
+	.string "I swam here from Cinnabar Island.\n"
 	.string "It wasn't easy, like I said.$"
 
 Route20_Text_MelissaRematchIntro::
@@ -647,7 +647,7 @@ Route25_Text_JoeyRematchIntro::
 
 Route25_Text_DanRematchIntro::
 	.string "Dad took me to a great party on\n"
-	.string "the S.S. ANNE at VERMILION CITY.$"
+	.string "the S.S. Anne at Vermilion City.$"
 
 Route25_Text_FlintRematchIntro::
 	.string "I'm a cool guy.\n"
@@ -669,7 +669,7 @@ Route25_Text_HaleyRematchIntro::
 	.string "I'm so jealous!$"
 
 Route25_Text_FranklinRematchIntro::
-	.string "I just trained up on MT. MOON,\n"
+	.string "I just trained up on Mt. Moon,\n"
 	.string "but I've still got gas in the tank!$"
 
 Route25_Text_NobRematchIntro::
@@ -851,7 +851,7 @@ SixIsland_OutcastIsland_Text_TylorRematchIntro::
 
 SixIsland_OutcastIsland_Text_MymoRematchIntro::
 	.string "Gasp… Gasp…\p"
-	.string "I swam here from SIX ISLAND's port\n"
+	.string "I swam here from Six Island's port\n"
 	.string "in one go again.$"
 
 SixIsland_OutcastIsland_Text_NicoleRematchIntro::

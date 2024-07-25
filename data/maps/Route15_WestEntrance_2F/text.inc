@@ -21,10 +21,10 @@ Route15_WestEntrance_2F_Text_ReceivedItemFromAide::
     .string "from the AIDE.$"
 
 Route15_WestEntrance_2F_Text_ExplainExpShare::
-    .string "EXP. SHARE is an item to be held\n"
+    .string "Exp. Share is an item to be held\n"
     .string "by a Pokémon.\p"
     .string "The Pokémon will receive a share\n"
-    .string "of the EXP. Points without having\l"
+    .string "of the Exp. Points without having\l"
     .string "to battle.$"
 
 Route15_WestEntrance_2F_Text_LargeShiningBird::

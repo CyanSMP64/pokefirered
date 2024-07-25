@@ -34,7 +34,7 @@ PalletTown_RivalsHouse_Text_PleaseGiveMonsRest::
     .string "them a rest.$"
 
 PalletTown_RivalsHouse_Text_ItsBigMapOfKanto::
-    .string "It's a big map of the KANTO region.\n"
+    .string "It's a big map of the Kanto region.\n"
     .string "Now this would be useful!$"
 
 PalletTown_RivalsHouse_Text_ShelvesCrammedFullOfBooks::

@@ -19,5 +19,5 @@ SSAnne_B1F_Room4_Text_DuncanDefeat::
 
 SSAnne_B1F_Room4_Text_DuncanPostBattle::
     .string "Did you see the FISHING GURU in\n"
-    .string "VERMILION CITY?$"
+    .string "Vermilion City?$"
 

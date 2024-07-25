@@ -8,7 +8,7 @@ FiveIsland_MemorialPillar_Text_MiloDefeat::
     .string "Oh, so sharp!$"
 
 FiveIsland_MemorialPillar_Text_MiloPostBattle::
-    .string "You can fly to FOUR ISLAND from\n"
+    .string "You can fly to Four Island from\n"
     .string "here.$"
 
 FiveIsland_MemorialPillar_Text_ChazIntro::

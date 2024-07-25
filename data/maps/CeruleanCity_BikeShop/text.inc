@@ -1,6 +1,6 @@
 CeruleanCity_BikeShop_Text_WelcomeToBikeShop::
     .string "Hi!\n"
-    .string "Welcome to our BIKE SHOP.\p"
+    .string "Welcome to our Bike Shop.\p"
     .string "Have we got just the BIKE for\n"
     .string "you!$"
 

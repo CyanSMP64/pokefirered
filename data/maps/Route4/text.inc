@@ -3,7 +3,7 @@ Route4_Text_TrippedOverGeodude::
     .string "Pokémon, GEODUDE!$"
 
 Route4_Text_CrissyIntro::
-    .string "I came to MT. MOON in search of\n"
+    .string "I came to Mt. Moon in search of\n"
     .string "mushroom Pokémon.$"
 
 Route4_Text_CrissyDefeat::
@@ -15,12 +15,12 @@ Route4_Text_CrissyPostBattle::
     .string "I think I got them all.$"
 
 Route4_Text_MtMoonEntrance::
-    .string "MT. MOON\n"
+    .string "Mt. Moon\n"
     .string "Tunnel Entrance$"
 
 Route4_Text_RouteSign::
-    .string "ROUTE 4\n"
-    .string "MT. MOON - CERULEAN CITY$"
+    .string "Route 4\n"
+    .string "Mt. Moon - Cerulean City$"
 
 Text_MegaPunchTeach::
     .string "A punch of roaring ferocity!\p"
@@ -71,9 +71,9 @@ Text_MegaKickTaught::
     .string "only simple punching over there.$"
 
 Route4_Text_PeopleLikeAndRespectBrock::
-    .string "Oh, wow, that's the BOULDERBADGE!\n"
+    .string "Oh, wow, that's the Boulder Badge!\n"
     .string "You got it from BROCK, didn't you?\p"
     .string "BROCK is cool. He's not just tough.\n"
     .string "People like and respect him.\p"
-    .string "I want to become a GYM LEADER\n"
+    .string "I want to become a Gym Leader\n"
     .string "like him.$"

@@ -6,7 +6,7 @@ CeladonCity_Hotel_Text_ThisHotelIsForPeople::
 CeladonCity_Hotel_Text_OnVacationWithBrotherAndBoyfriend::
     .string "I'm on vacation with my brother and\n"
     .string "boyfriend.\p"
-    .string "CELADON is such a pretty city!$"
+    .string "Celadon is such a pretty city!$"
 
 CeladonCity_Hotel_Text_WhyDidSheBringBrother::
     .string "Why?\n"

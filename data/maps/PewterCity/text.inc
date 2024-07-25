@@ -24,21 +24,21 @@ PewterCity_Text_ClefairyCameFromMoon::
     .string "CLEFAIRY came from the moon.\n"
     .string "That's what the rumor is.\p"
     .string "They appeared after MOON STONES\n"
-    .string "fell on MT. MOON.$"
+    .string "fell on Mt. Moon.$"
 
 PewterCity_Text_BrockOnlySeriousTrainerHere::
     .string "There aren't many serious Pokémon\n"
     .string "TRAINERS here.\p"
     .string "They're all like BUG CATCHERS,\n"
     .string "you know, just hobbyists.\p"
-    .string "But PEWTER GYM's BROCK isn't like\n"
+    .string "But Pewter Gym's Brock isn't like\n"
     .string "that, not one bit.$"
 
 PewterCity_Text_DidYouCheckOutMuseum::
     .string "Did you check out the MUSEUM?$"
 
 PewterCity_Text_WerentThoseFossilsAmazing::
-    .string "Weren't those fossils from MT. MOON\n"
+    .string "Weren't those fossils from Mt. Moon\n"
     .string "amazing?$"
 
 PewterCity_Text_ReallyYouHaveToGo::
@@ -80,20 +80,20 @@ PewterCity_Text_TrainerTipsEarningEXP::
 PewterCity_Text_CallPoliceIfInfoOnThieves::
     .string "NOTICE!\p"
     .string "Thieves have been stealing Pokémon\n"
-    .string "fossils from MT. MOON.\p"
-    .string "Please call the PEWTER POLICE if\n"
+    .string "fossils from Mt. Moon.\p"
+    .string "Please call the Pewter Police if\n"
     .string "you have any information.$"
 
 PewterCity_Text_MuseumOfScience::
-    .string "PEWTER MUSEUM OF SCIENCE$"
+    .string "Pewter Museum of Science$"
 
 PewterCity_Text_GymSign::
-    .string "PEWTER CITY Pokémon GYM\n"
+    .string "Pewter City Pokémon Gym\n"
     .string "LEADER: BROCK\l"
     .string "The Rock-Solid Pokémon TRAINER!$"
 
 PewterCity_Text_CitySign::
-    .string "PEWTER CITY\n"
+    .string "Pewter City\n"
     .string "A Stone Gray City$"
 
 @ The below 3 JP texts are unused. Possibly a cut NPC meant to give the player the Berry Pouch

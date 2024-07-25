@@ -1,5 +1,5 @@
 ThreeIsland_Text_IslandSign::
-    .string "THREE ISLAND\n"
+    .string "Three Island\n"
     .string "Kin Island of Family Bonding$"
 
 ThreeIsland_Text_IslandBelongsToUs::
@@ -80,7 +80,7 @@ ThreeIsland_Text_Biker1PostBattle::
     .string "Don't you dare laugh!$"
 
 ThreeIsland_Text_Biker2Intro::
-    .string "Aren't you from KANTO?\n"
+    .string "Aren't you from Kanto?\n"
     .string "You should be on our side!$"
 
 ThreeIsland_Text_Biker2Defeat::
@@ -150,7 +150,7 @@ ThreeIsland_Text_LostelleWentOffTowardsBondBridge::
     .string "BRIDGE a while ago.$"
 
 ThreeIsland_Text_WouldntWantToSeeBikersHereAgain::
-    .string "THREE ISLAND is actually the most\n"
+    .string "Three Island is actually the most\n"
     .string "populous of the islands here.\p"
     .string "Still, it could be less sleepy.\p"
     .string "But I wouldn't want to see goons\n"
@@ -158,9 +158,9 @@ ThreeIsland_Text_WouldntWantToSeeBikersHereAgain::
 
 ThreeIsland_Text_WhenDodouEvolvesGoingToPlayGame::
     .string "I'm going to train my DODUO in the\n"
-    .string "BERRY FOREST.\p"
+    .string "Berry Forest.\p"
     .string "When it evolves, I'm going to play\n"
-    .string "a game on TWO ISLAND.$"
+    .string "a game on Two Island.$"
 
 ThreeIsland_Text_Doduo::
     .string "DODUO: Gigiih!$"

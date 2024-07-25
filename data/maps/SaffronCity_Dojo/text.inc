@@ -62,7 +62,7 @@ SaffronCity_Dojo_Text_AaronPostBattle::
 SaffronCity_Dojo_Text_HitoshiIntro::
     .string "Hwaah!\p"
     .string "You're trespassing in our\n"
-    .string "FIGHTING DOJO!$"
+    .string "Fighting Dojo!$"
 
 SaffronCity_Dojo_Text_HitoshiDefeat::
     .string "Oof!\n"
@@ -98,5 +98,5 @@ SaffronCity_Dojo_Text_GoesAroundComesAround::
     .string "What goes around comes around.$"
 
 SaffronCity_Dojo_Text_FightingDojo::
-    .string "FIGHTING DOJO$"
+    .string "Fighting Dojo$"
 

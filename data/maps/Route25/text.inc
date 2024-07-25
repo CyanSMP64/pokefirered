@@ -13,13 +13,13 @@ Route25_Text_JoeyPostBattle::
 
 Route25_Text_DanIntro::
     .string "Dad took me to a great party on\n"
-    .string "the S.S. ANNE at VERMILION CITY.$"
+    .string "the S.S. Anne at Vermilion City.$"
 
 Route25_Text_DanDefeat::
     .string "I'm not mad!$"
 
 Route25_Text_DanPostBattle::
-    .string "On the S.S. ANNE, I saw TRAINERS\n"
+    .string "On the S.S. Anne, I saw TRAINERS\n"
     .string "from around the world.$"
 
 Route25_Text_FlintIntro::
@@ -64,11 +64,11 @@ Route25_Text_HaleyDefeat::
     .string "I'm not so jealous!$"
 
 Route25_Text_HaleyPostBattle::
-    .string "You came from MT. MOON?\n"
+    .string "You came from Mt. Moon?\n"
     .string "May I have a CLEFAIRY?$"
 
 Route25_Text_FranklinIntro::
-    .string "I just got down from MT. MOON,\n"
+    .string "I just got down from Mt. Moon,\n"
     .string "but I've still got gas in the tank!$"
 
 Route25_Text_FranklinDefeat::
@@ -101,7 +101,7 @@ Route25_Text_WayneDefeat::
 
 Route25_Text_WaynePostBattle::
     .string "The trail below is a shortcut to\n"
-    .string "CERULEAN CITY.$"
+    .string "Cerulean City.$"
 
 Route25_Text_SeaCottageSign::
     .string "SEA COTTAGE\n"
@@ -109,7 +109,7 @@ Route25_Text_SeaCottageSign::
 
 Route25_Text_MistyHighHopesAboutThisPlace::
     .string "This cape is a famous date spot.\p"
-    .string "MISTY, the GYM LEADER, has high\n"
+    .string "MISTY, the Gym Leader, has high\n"
     .string "hopes about this place.$"
 
 Route25_Text_AreYouHereAlone::

@@ -1,5 +1,5 @@
 FourIsland_Text_IslandSign::
-    .string "FOUR ISLAND\n"
+    .string "Four Island\n"
     .string "The Warm, Blue, Floe Island$"
 
 FourIsland_Text_LoreleiHasReturned::
@@ -20,7 +20,7 @@ FourIsland_Text_RivalAlreadyGotEggBeSmellingYa::
     .string "{RIVAL}: Hey!\n"
     .string "{PLAYER}!\p"
     .string "What are you doing here in the\n"
-    .string "SEVII ISLANDS?\p"
+    .string "Sevii Islands?\p"
     .string "You should quit copying me,\n"
     .string "you know?\p"
     .string "Anyways, I already got my Pokémon\n"
@@ -43,7 +43,7 @@ FourIsland_Text_LoreleiHasLotsOfStuffedDolls::
     .string "Did you know that LORELEI has lots\n"
     .string "and lots of stuffed dolls?\p"
     .string "Every time she comes back to\n"
-    .string "FOUR ISLAND, her collection grows!$"
+    .string "Four Island, her collection grows!$"
 
 FourIsland_Text_MadeSlushieUsingIcefallCaveIce::
     .string "Ooh, chilly!\p"

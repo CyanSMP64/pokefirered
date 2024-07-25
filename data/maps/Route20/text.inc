@@ -10,7 +10,7 @@ Route20_Text_BarryPostBattle::
     .string "I bet you're not tired.$"
 
 Route20_Text_ShirleyIntro::
-    .string "SEAFOAM is a quiet getaway.\n"
+    .string "Seafoam is a quiet getaway.\n"
     .string "I'm vacationing here.$"
 
 Route20_Text_ShirleyDefeat::
@@ -37,7 +37,7 @@ Route20_Text_IreneDefeat::
     .string "No mercy at all!$"
 
 Route20_Text_IrenePostBattle::
-    .string "SEAFOAM used to be a single island\n"
+    .string "Seafoam used to be a single island\n"
     .string "in the distant past.$"
 
 Route20_Text_DeanIntro::
@@ -84,7 +84,7 @@ Route20_Text_NoraPostBattle::
     .string "CLOYSTER?$"
 
 Route20_Text_MissyIntro::
-    .string "I swam here from CINNABAR ISLAND.\n"
+    .string "I swam here from Cinnabar Island.\n"
     .string "It wasn't easy, I tell you.$"
 
 Route20_Text_MissyDefeat::
@@ -93,7 +93,7 @@ Route20_Text_MissyDefeat::
 Route20_Text_MissyPostBattle::
     .string "Pokémon have taken over an\n"
     .string "abandoned mansion on CINNABAR.\p"
-    .string "They call it the Pokémon MANSION\n"
+    .string "They call it the Pokémon Mansion\n"
     .string "now.$"
 
 Route20_Text_MelissaIntro::
@@ -106,15 +106,15 @@ Route20_Text_MelissaDefeat::
     .string "You're supposed to wait!$"
 
 Route20_Text_MelissaPostBattle::
-    .string "CINNABAR is a volcanic island.\p"
+    .string "Cinnabar is a volcanic island.\p"
     .string "I heard it rose out of the sea\n"
     .string "when a volcano erupted.$"
 
 Route20_Text_SeafoamIslands::
-    .string "SEAFOAM ISLANDS$"
+    .string "Seafoam Islands$"
 
 Route20_Text_MistyTrainsHere::
     .string "Strong TRAINERS and WATER Pokémon\n"
     .string "are common sights in these parts.\p"
     .string "They say that MISTY of the\n"
-    .string "CERULEAN GYM trains here.$"
+    .string "Cerulean Gym trains here.$"

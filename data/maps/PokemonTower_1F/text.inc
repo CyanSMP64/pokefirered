@@ -1,5 +1,5 @@
 PokemonTower_1F_Text_ErectedInMemoryOfDeadMons::
-    .string "Pokémon TOWER was erected in the\n"
+    .string "Pokémon Tower was erected in the\n"
     .string "memory of Pokémon that died.$"
 
 PokemonTower_1F_Text_ComeToPayRespectsSon::

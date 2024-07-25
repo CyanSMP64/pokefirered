@@ -33,7 +33,7 @@ ThreeIsland_BerryForest_Text_BerryPouchIsFull::
     .string "I guess you don't want this.$"
 
 ThreeIsland_BerryForest_Text_WelcomeToBerryForest::
-    .string "Welcome to the BERRY FOREST\p"
+    .string "Welcome to the Berry Forest\p"
     .string "Be friendly and share BERRIES with\n"
     .string "others and Pokémon.$"
 

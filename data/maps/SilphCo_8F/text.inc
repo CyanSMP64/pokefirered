@@ -37,11 +37,11 @@ SilphCo_8F_Text_Grunt2PostBattle::
     .string "I'll leave you up to my brothers.$"
 
 SilphCo_8F_Text_FloorSign::
-    .string "SILPH CO. HEAD OFFICE\n"
+    .string "Silph Co. Head Office\n"
     .string "8F$"
 
 SilphCo_8F_Text_ToRocketBossMonsAreTools::
-    .string "TEAM ROCKET's BOSS is terribly\n"
+    .string "Team Rocket's BOSS is terribly\n"
     .string "cruel!\p"
     .string "To him, Pokémon are just tools to\n"
     .string "be used.\p"

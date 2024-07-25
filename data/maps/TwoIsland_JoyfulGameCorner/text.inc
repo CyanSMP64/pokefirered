@@ -15,7 +15,7 @@ TwoIsland_JoyfulGameCorner_Text_PleaseHelpFindLostelle::
     .string "What if something's happened to\n"
     .string "my LOSTELLE?!\p"
     .string "Please, help me find her!\n"
-    .string "Please go search THREE ISLAND!$"
+    .string "Please go search Three Island!$"
 
 TwoIsland_JoyfulGameCorner_Text_IsThisOnlyThreeIsland::
     .string "Hah? What is this GAME CORNER?\n"
@@ -29,7 +29,7 @@ TwoIsland_JoyfulGameCorner_Text_IsThisOnlyThreeIsland::
 TwoIsland_JoyfulGameCorner_Text_ThisIsTwoIslandMoveIt::
     .string "Try waking up before you crawl out\n"
     .string "of bed, you punk.\p"
-    .string "This is TWO ISLAND!\p"
+    .string "This is Two Island!\p"
     .string "Move it! Get your filthy motorbike\n"
     .string "out of my place!$"
 
@@ -45,11 +45,11 @@ TwoIsland_JoyfulGameCorner_Text_PunkScuffedUpMyFloor::
 
 TwoIsland_JoyfulGameCorner_Text_PleaseGoToThreeIsland::
     .string "Hey, but listen! I'm begging you,\n"
-    .string "you have to go to THREE ISLAND.\p"
+    .string "you have to go to Three Island.\p"
     .string "If anything were to happen to my\n"
     .string "LOSTELLE…\p"
     .string "My place is the house with the red\n"
-    .string "roof on THREE ISLAND.\p"
+    .string "roof on Three Island.\p"
     .string "She may just show up late here,\n"
     .string "so I can't run off anywhere.\p"
     .string "That's why I have to get you to do\n"

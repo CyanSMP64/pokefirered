@@ -41,13 +41,13 @@ SilphCo_2F_Text_Grunt2Defeat::
     .string "I goofed!$"
 
 SilphCo_2F_Text_Grunt2PostBattle::
-    .string "SILPH CO. will be associated with\n"
-    .string "TEAM ROCKET!$"
+    .string "Silph Co. will be associated with\n"
+    .string "Team Rocket!$"
 
 Text_ThunderWaveTeach::
     .string "Eeek!\n"
     .string "No! Stop! Help!\p"
-    .string "Oh, you're not with TEAM ROCKET.\n"
+    .string "Oh, you're not with Team Rocket.\n"
     .string "I'm sorry, I thought…\p"
     .string "Will you forgive me if I teach\n"
     .string "you the THUNDER WAVE technique?$"
@@ -69,6 +69,6 @@ Text_ThunderWaveTaught::
     .string "won't work on some Pokémon.$"
 
 SilphCo_2F_Text_FloorSign::
-    .string "SILPH CO. HEAD OFFICE\n"
+    .string "Silph Co. Head Office\n"
     .string "2F$"
 

@@ -52,7 +52,7 @@ OneIsland_PokemonCenter_1F_Text_CanYouDeliverThisMeteoritePlayer::
     .string "…Actually, can I get you to do\n"
     .string "me a favor?\p"
     .string "The island next to this one's\n"
-    .string "called TWO ISLAND.\p"
+    .string "called Two Island.\p"
     .string "There's a guy there that runs\n"
     .string "a GAME CORNER.\p"
     .string "He has this thing for rare rocks\n"
@@ -68,7 +68,7 @@ OneIsland_PokemonCenter_1F_Text_AcceptedMeteoriteFromBill::
 
 OneIsland_PokemonCenter_1F_Text_CelioPleaseTakeThis::
     .string "CELIO: {PLAYER}, if you are going\n"
-    .string "to TWO ISLAND, please take this.$"
+    .string "to Two Island, please take this.$"
 
 OneIsland_PokemonCenter_1F_Text_PassLetsYouTravelBetweenIslands::
     .string "It's a PASS for the ferry service\n"
@@ -180,7 +180,7 @@ OneIsland_PokemonCenter_1F_Text_NeedsSpecialGemstone::
     .string "But, there is a slight catch.\p"
     .string "For the link to work, the Machine\n"
     .string "needs a special gemstone.\p"
-    .string "It's supposed to be on ONE ISLAND,\n"
+    .string "It's supposed to be on One Island,\n"
     .string "but I haven't found one yet.\p"
     .string "Who knows where it could be.$"
 
@@ -219,7 +219,7 @@ OneIsland_PokemonCenter_1F_Text_AnotherGemstoneInSeviiIslands::
     .string "There is another gem that forms\n"
     .string "a pair with this RUBY.\p"
     .string "That other gemstone is supposed to\n"
-    .string "be in the SEVII ISLANDS.\p"
+    .string "be in the Sevii Islands.\p"
     .string "{PLAYER}, please, I need you to go\n"
     .string "find the other gem.\p"
     .string "{PLAYER}, may I have your ferry\n"
@@ -236,7 +236,7 @@ OneIsland_PokemonCenter_1F_Text_ObtainedExtraMapPage::
 OneIsland_PokemonCenter_1F_Text_PassLetYouGetToAllIslands::
     .string "This is my own ferry PASS.\p"
     .string "It will let you get to all the\n"
-    .string "SEVII ISLANDS.\p"
+    .string "Sevii Islands.\p"
     .string "{PLAYER}, please, I can't do\n"
     .string "it without your help.$"
 
@@ -296,7 +296,7 @@ OneIsland_PokemonCenter_1F_Text_BillsFirstMonWasAbra::
 
 OneIsland_PokemonCenter_1F_Text_BillsHometownInGoldenrod::
     .string "By the way, {PLAYER}, you're from\n"
-    .string "PALLET TOWN, aren't you?\p"
+    .string "Pallet Town, aren't you?\p"
     .string "I've heard that it's a quiet and\n"
     .string "pleasant place.\p"
     .string "BILL's hometown is GOLDENROD CITY,\n"
@@ -314,7 +314,7 @@ OneIsland_PokemonCenter_1F_Text_BillCantStomachMilk::
 OneIsland_PokemonCenter_1F_Text_CameFromPalletDontKnowIt::
     .string "Oh, you're a stranger here!\n"
     .string "Hi! Where did you come from?\p"
-    .string "…PALLET TOWN?\n"
+    .string "…Pallet Town?\n"
     .string "I don't know it!$"
 
 OneIsland_PokemonCenter_1F_Text_EnormousVolcanoOnIsland::

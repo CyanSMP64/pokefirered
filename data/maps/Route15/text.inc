@@ -83,7 +83,7 @@ Route15_Text_ErnestDefeat::
 Route15_Text_ErnestPostBattle::
     .string "Life's too short.\n"
     .string "It's cool to live as an outlaw.\l"
-    .string "TEAM ROCKET RULES!$"
+    .string "Team Rocket RULES!$"
 
 Route15_Text_AlexIntro::
     .string "Fork over all your cash when you\n"
@@ -117,8 +117,8 @@ Route15_Text_YazminPostBattle::
     .string "I'll go train with weaker people.$"
 
 Route15_Text_RouteSign::
-    .string "ROUTE 15\n"
-    .string "West to FUCHSIA CITY$"
+    .string "Route 15\n"
+    .string "West to Fuchsia City$"
 
 Route15_Text_MyaIntro::
     .string "MYA: You're perfect.\n"
