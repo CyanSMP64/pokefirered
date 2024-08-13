@@ -24,7 +24,7 @@ Route15_WestEntrance_2F_Text_ExplainExpShare::
     .string "Exp. Share is an item to be held\n"
     .string "by a Pokémon.\p"
     .string "The Pokémon will receive a share\n"
-    .string "of the Exp. Points without having\l"
+    .string "of the Exp. points without having\l"
     .string "to battle.$"
 
 Route15_WestEntrance_2F_Text_LargeShiningBird::

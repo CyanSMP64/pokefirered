@@ -6,8 +6,8 @@ Route1_Text_ComeSeeUsIfYouNeedPokeBalls::
     .string "Poké Balls for catching Pokémon.$"
 
 Route1_Text_PutPotionAway::
-    .string "{PLAYER} put the POTION away in\n"
-    .string "the BAG's ITEMS POCKET.$"
+    .string "{PLAYER} put the Potion away in\n"
+    .string "the bag's Items pocket.$"
 
 Route1_Text_CanJumpFromLedges::
     .string "See those ledges along the road?\p"

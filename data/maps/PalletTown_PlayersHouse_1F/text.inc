@@ -1,16 +1,16 @@
 PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou::
-    .string "MOM: Come here! Quick!$"
+    .string "Mom: Come here! Quick!$"
 
 PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou::
-    .string "MOM: Are you playing the\n"
-    .string "SUPER KAIZO ruleset?$"
+    .string "Mom: Are you playing the\n"
+    .string "Super Kaizo ruleset?$"
 
 PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest::
-    .string "MOM: {PLAYER}!\n"
+    .string "Mom: {PLAYER}!\n"
     .string "You should take a quick rest.$"
 
 PalletTown_PlayersHouse_1F_Text_LookingGreatTakeCare::
-    .string "MOM: Oh, good! You and your\n"
+    .string "Mom: Oh, good! You and your\n"
     .string "Pokémon are looking great.\l"
     .string "Take care now!$"
 

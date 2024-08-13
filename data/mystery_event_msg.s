@@ -210,7 +210,7 @@ sText_AuroraTicketGot:
 
 sText_AuroraTicketNoPlace:
 	.string "Oh, I'm sorry, {PLAYER}. Your BAG's\n"
-	.string "KEY ITEMS POCKET is full.\p"
+	.string "Key Items Pocket is full.\p"
 	.string "Please store something on your PC,\n"
 	.string "then come back for this.$"
 
@@ -269,7 +269,7 @@ sText_MysticTicketGot:
 
 sText_MysticTicketNoPlace:
 	.string "Oh, I'm sorry, {PLAYER}. Your BAG's\n"
-	.string "KEY ITEMS POCKET is full.\p"
+	.string "Key Items Pocket is full.\p"
 	.string "Please store something on your PC,\n"
 	.string "then come back for this.$"
 

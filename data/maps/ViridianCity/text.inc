@@ -5,11 +5,11 @@ ViridianCity_Text_CanCarryMonsAnywhere::
     .string "use Pokémon anytime, anywhere.$"
 
 ViridianCity_Text_GymClosedWonderWhoLeaderIs::
-    .string "This Pokémon GYM is always closed.\p"
-    .string "I wonder who the LEADER is?$"
+    .string "This Pokémon Gym is always closed.\p"
+    .string "I wonder who the Leader is?$"
 
 ViridianCity_Text_ViridiansGymLeaderReturned::
-    .string "Viridian Gym's LEADER returned!$"
+    .string "Viridian Gym's Leader returned!$"
 
 ViridianCity_Text_WantToKnowAboutCaterpillarMons::
     .string "You want to know about the two\n"
@@ -19,10 +19,10 @@ ViridianCity_Text_OhOkayThen::
     .string "Oh, okay then!$"
 
 ViridianCity_Text_ExplainCaterpieWeedle::
-    .string "CATERPIE has no poison,\n"
-    .string "but WEEDLE does.\p"
+    .string "Caterpie has no poison,\n"
+    .string "but Weedle does.\p"
     .string "Watch that your Pokémon aren't\n"
-    .string "stabbed by WEEDLE's POISON STING.$"
+    .string "stabbed by Weedle's Poison Sting.$"
 
 ViridianCity_Text_GrandpaHasntHadCoffeeYet::
     .string "Oh, Grandpa!\n"
@@ -67,7 +67,7 @@ ViridianCity_Text_WatchThatToLearnBasics::
     .string "If there's something you don't\n"
     .string "understand, watch that.\p"
     .string "It will teach you about the basics\n"
-    .string "of being a Pokémon TRAINER.$"
+    .string "of being a Pokémon Trainer.$"
 
 ViridianCity_Text_WeakenMonsFirstToCatch::
     .string "Well, now, I've had my coffee, and\n"
@@ -84,7 +84,7 @@ ViridianCity_Text_HowsTeachyTVHelping::
     .string "that's what I need to get going!\p"
     .string "But I made it too strong.\n"
     .string "It gave me a headache…\p"
-    .string "Incidentally, is my old TEACHY TV\n"
+    .string "Incidentally, is my old Teachy TV\n"
     .string "helping you?$"
 
 ViridianCity_Text_MyGrandsonOnTheShow::
@@ -95,30 +95,30 @@ ViridianCity_Text_MyGrandsonOnTheShow::
 
 ViridianCity_Text_TooBusyForTeachyTV::
     .string "Hm… You're too busy to not even\n"
-    .string "have the time for TEACHY TV…\p"
+    .string "have the time for Teachy TV…\p"
     .string "Time is money, and neither should\n"
     .string "be ill spent…$"
 
 ViridianCity_Text_CitySign::
-    .string "Viridian City \n"
+    .string "Viridian City\n"
     .string "The Eternally Green Paradise$"
 
 ViridianCity_Text_CatchMonsForEasierBattles::
-    .string "TRAINER TIPS\p"
+    .string "Trainer Tips\p"
     .string "Catch Pokémon and expand your\n"
     .string "collection.\p"
     .string "The more you have, the easier it\n"
     .string "is to battle.$"
 
 ViridianCity_Text_MovesLimitedByPP::
-    .string "TRAINER TIPS\p"
+    .string "Trainer Tips\p"
     .string "The battle moves of Pokémon are\n"
-    .string "limited by their POWER POINTS, PP.\p"
+    .string "limited by their Power Points, PP.\p"
     .string "To replenish PP, rest your tired\n"
     .string "Pokémon at a Pokémon Center.$"
 
 ViridianCity_Text_GymSign::
-    .string "Viridian City Pokémon GYM$"
+    .string "Viridian City Pokémon Gym$"
 
 ViridianCity_Text_GymDoorsAreLocked::
     .string "Viridian Gym's doors are locked…$"

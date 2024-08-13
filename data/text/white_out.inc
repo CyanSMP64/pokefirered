@@ -8,7 +8,7 @@ Text_MonsHealedShouldBuyPotions::
 	.string "If your Pokémon's energy, HP,\n"
 	.string "is down, please come see us.\p"
 	.string "If you're planning to go far in the\n"
-	.string "field, you should buy some POTIONS\l"
+	.string "field, you should buy some Potions\l"
 	.string "at the Pokémon Mart.\p"
 	.string "We hope you excel!$"
 
@@ -18,7 +18,7 @@ Text_MonsHealed::
 	.string "We hope you excel!$"
 
 Text_HadQuiteAnExperienceTakeRest::
-	.string "MOM: {PLAYER}!\n"
+	.string "Mom: {PLAYER}!\n"
 	.string "Welcome home.\p"
 	.string "It sounds like you had quite\n"
 	.string "an experience.\p"
@@ -26,7 +26,7 @@ Text_HadQuiteAnExperienceTakeRest::
 	.string "rest.$"
 
 Text_MomExplainHPGetPotions::
-	.string "MOM: Oh, good! You and your\n"
+	.string "Mom: Oh, good! You and your\n"
 	.string "Pokémon are looking great.\p"
 	.string "I just heard from Prof. Oak.\p"
 	.string "He said that Pokémon's energy is\n"
@@ -35,8 +35,8 @@ Text_MomExplainHPGetPotions::
 	.string "you can restore them at any\l"
 	.string "Pokémon Center.\p"
 	.string "If you're going to travel far away,\n"
-	.string "the smart TRAINER stocks up on\l"
-	.string "POTIONS at the Pokémon Mart.\p"
+	.string "the smart Trainer stocks up on\l"
+	.string "Potions at the Pokémon Mart.\p"
 	.string "Make me proud, honey!\p"
 	.string "Take care!$"
 

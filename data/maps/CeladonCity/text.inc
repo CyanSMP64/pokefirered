@@ -1,31 +1,31 @@
 CeladonCity_Text_GotMyKoffingInCinnabar::
-    .string "I got my KOFFING in CINNABAR.\p"
+    .string "I got my Koffing in Cinnabar.\p"
     .string "It's usually nice, but it breathes\n"
     .string "poison when it's angry.$"
 
 CeladonCity_Text_GymIsGreatFullOfWomen::
-    .string "Heheh! This GYM is great!\n"
+    .string "Heheh! This Gym is great!\n"
     .string "It's full of women!$"
 
 CeladonCity_Text_GameCornerIsBadForCitysImage::
     .string "Celadon takes pride in its efforts\n"
     .string "to keep the city beautiful.\p"
-    .string "That's why the new GAME CORNER is\n"
+    .string "That's why the new Game Corner is\n"
     .string "bad for our city's image.$"
 
 CeladonCity_Text_BlewItAllAtSlots::
     .string "Moan…\n"
     .string "I blew it all at the slots!\p"
     .string "I knew I should have cashed in my\n"
-    .string "COINS for prizes!$"
+    .string "Coins for prizes!$"
 
 CeladonCity_Text_MyTrustedPalPoliwrath::
-    .string "This is my trusted pal, POLIWRATH.\p"
-    .string "It evolved from a POLIWHIRL when\n"
-    .string "I used a WATER STONE.$"
+    .string "This is my trusted pal, Poliwrath.\p"
+    .string "It evolved from a Poliwhirl when\n"
+    .string "I used a Water Stone.$"
 
 CeladonCity_Text_Poliwrath::
-    .string "POLIWRATH: Ribi ribit!$"
+    .string "Poliwrath: Ribi ribit!$"
 
 CeladonCity_Text_GetLostOrIllPunchYou::
     .string "What are you staring at?\n"
@@ -35,12 +35,12 @@ CeladonCity_Text_KeepOutOfTeamRocketsWay::
     .string "Keep out of Team Rocket's way!$"
 
 CeladonCity_Text_ExplainXAccuracyDireHit::
-    .string "TRAINER TIPS\p"
-    .string "X ACCURACY boosts the accuracy of\n"
+    .string "Trainer Tips\p"
+    .string "X Accuracy boosts the accuracy of\n"
     .string "techniques.\p"
-    .string "DIRE HIT jacks up the likelihood\n"
+    .string "Dire Hit jacks up the likelihood\n"
     .string "of critical hits.\p"
-    .string "Get your items at the CELADON\n"
+    .string "Get your items at the Celadon\n"
     .string "Dept. Store!$"
 
 CeladonCity_Text_CitySign::
@@ -49,7 +49,7 @@ CeladonCity_Text_CitySign::
 
 CeladonCity_Text_GymSign::
     .string "Celadon City Pokémon Gym\n"
-    .string "LEADER: ERIKA\l"
+    .string "Leader: Erika\l"
     .string "The Nature-Loving Princess!$"
 
 CeladonCity_Text_MansionSign::
@@ -60,26 +60,26 @@ CeladonCity_Text_DeptStoreSign::
     .string "Celadon Dept. Store!$"
 
 CeladonCity_Text_GuardSpecProtectsFromStatus::
-    .string "TRAINER TIPS\p"
-    .string "GUARD SPEC. protects Pokémon\n"
+    .string "Trainer Tips\p"
+    .string "Guard Spec. protects Pokémon\n"
     .string "from status-reduction moves during\l"
     .string "battle.\p"
     .string "Get your items at the\n"
     .string "Celadon Dept. Store!$"
 
 CeladonCity_Text_PrizeExchangeSign::
-    .string "COINS exchanged for prizes!\n"
-    .string "PRIZE EXCHANGE$"
+    .string "Coins exchanged for prizes!\n"
+    .string "Prize Exchange$"
 
 CeladonCity_Text_GameCornerSign::
-    .string "ROCKET GAME CORNER\n"
+    .string "Rocket Game Corner\n"
     .string "The playground for grown-ups!$"
 
 CeladonCity_Text_ScaldedTongueOnTea::
     .string "Aaaagh, ow…\n"
     .string "I scalded my tongue!\p"
-    .string "This nice old lady in the MANSION\n"
-    .string "gave me some TEA.\p"
+    .string "This nice old lady in the Mansion\n"
+    .string "gave me some Tea.\p"
     .string "But it was boiling hot!\n"
     .string "Gotta cool it to drink it.$"
 
@@ -90,7 +90,7 @@ Text_SoftboiledTeach::
     .string "It must be good luck that brought\n"
     .string "us together finally.\p"
     .string "I'd like to celebrate by teaching\n"
-    .string "you the move SOFTBOILED.$"
+    .string "you the move Soft-Boiled.$"
 
 Text_SoftboiledDeclined::
     .string "I'll always be keeping an eye out\n"
@@ -99,14 +99,14 @@ Text_SoftboiledDeclined::
 
 Text_SoftboiledWhichMon::
     .string "So, who's the Pokémon that gets\n"
-    .string "the chance to learn SOFTBOILED?$"
+    .string "the chance to learn Soft-Boiled?$"
 
 Text_SoftboiledTaught::
     .string "I wish you the best of luck!$"
 
 CeladonCity_Text_SomeoneStoleSilphScope::
     .string "Oh, what am I to do…\p"
-    .string "Someone stole our SILPH SCOPE.\p"
+    .string "Someone stole our Silph Scope.\p"
     .string "The thief came running this way,\n"
     .string "I'm sure of it.\p"
     .string "But I lost sight of him!\n"
@@ -115,9 +115,9 @@ CeladonCity_Text_SomeoneStoleSilphScope::
 CeladonCity_Text_PatheticWeakling::
     .string "Who do you think you are,\n"
     .string "pathetic weakling?\p"
-    .string "I'm guarding the GAME CORNER so\n"
+    .string "I'm guarding the Game Corner so\n"
     .string "wimps like you can't get in.\p"
-    .string "Perhaps the nearby GYM can\n"
+    .string "Perhaps the nearby Gym can\n"
     .string "test your strength.\p"
-    .string "Maybe if you defeat its LEADER\n"
+    .string "Maybe if you defeat its Leader\n"
     .string "I'll move out of the way.$"

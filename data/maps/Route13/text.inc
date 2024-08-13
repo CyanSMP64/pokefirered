@@ -3,7 +3,7 @@ Route13_Text_SebastianIntro::
     .string "with you!$"
 
 Route13_Text_SebastianDefeat::
-    .string "My PIDGEY and PIDGEOTTO combo\n"
+    .string "My Pidgey and Pidgeotto combo\n"
     .string "lost?$"
 
 Route13_Text_SebastianPostBattle::
@@ -18,19 +18,19 @@ Route13_Text_SusieDefeat::
     .string "I lost!$"
 
 Route13_Text_SusiePostBattle::
-    .string "I want to become a good TRAINER.\n"
+    .string "I want to become a good Trainer.\n"
     .string "I'll train hard, just watch.$"
 
 Route13_Text_ValerieIntro::
     .string "Wow!\n"
-    .string "Your BADGES are too cool!$"
+    .string "Your Badges are too cool!$"
 
 Route13_Text_ValerieDefeat::
     .string "Not enough!$"
 
 Route13_Text_ValeriePostBattle::
-    .string "You got those BADGES from GYM\n"
-    .string "LEADERS. I know!$"
+    .string "You got those Badges from Gym\n"
+    .string "Leaders. I know!$"
 
 Route13_Text_GwenIntro::
     .string "My cute Pokémon wish to make your\n"
@@ -45,7 +45,7 @@ Route13_Text_GwenPostBattle::
     .string "to toughen them up.$"
 
 Route13_Text_AlmaIntro::
-    .string "I found CARBOS in a cave once\n"
+    .string "I found Carbos in a cave once\n"
     .string "while I was spelunking.$"
 
 Route13_Text_AlmaDefeat::
@@ -53,7 +53,7 @@ Route13_Text_AlmaDefeat::
     .string "I just messed up!$"
 
 Route13_Text_AlmaPostBattle::
-    .string "CARBOS boosted the SPEED of my\n"
+    .string "Carbos boosted the Speed of my\n"
     .string "Pokémon.$"
 
 Route13_Text_PerryIntro::
@@ -65,7 +65,7 @@ Route13_Text_PerryDefeat::
 
 Route13_Text_PerryPostBattle::
     .string "I'm beat.\n"
-    .string "I guess I'll FLY home.$"
+    .string "I guess I'll Fly home.$"
 
 Route13_Text_LolaIntro::
     .string "Sure, I'll play with you, sweetie.$"
@@ -109,20 +109,20 @@ Route13_Text_RobertDefeat::
     .string "Out of power!$"
 
 Route13_Text_RobertPostBattle::
-    .string "I wish I could fly like PIDGEY and\n"
-    .string "PIDGEOTTO…$"
+    .string "I wish I could fly like Pidgey and\n"
+    .string "Pidgeotto…$"
 
 Route13_Text_LookToLeftOfThatPost::
-    .string "TRAINER TIPS\p"
+    .string "Trainer Tips\p"
     .string "Look, look!\n"
     .string "Look to the left of that post!$"
 
 Route13_Text_SelectToSwitchItems::
-    .string "TRAINER TIPS\p"
-    .string "Use SELECT to switch items in the\n"
-    .string "ITEMS window.$"
+    .string "Trainer Tips\p"
+    .string "Use Select to switch items in the\n"
+    .string "Items window.$"
 
 Route13_Text_RouteSign::
     .string "Route 13\n"
-    .string "North to SILENCE BRIDGE$"
+    .string "North to Silence Bridge$"
 

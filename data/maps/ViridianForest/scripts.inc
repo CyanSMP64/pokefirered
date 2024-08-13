@@ -35,7 +35,7 @@ Route102_Text_HealPokemon:
 	.string "Want me to heal your Pokémon?$"
 
 Route102_Text_PokemonHealed:
-	.string "Your Pokémon is healthy.\n"
+	.string "Your Pokémon are healthy.\n"
 Route102_Text_PokemonNotHealed:
 	.string "Come again!$"
 

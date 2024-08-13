@@ -14,12 +14,12 @@ CeruleanCity_Text_RivalDefeat::
 
 CeruleanCity_Text_RivalPostBattle::
     .string "{RIVAL}: Hey, guess what?\p"
-    .string "I went to BILL's and got him to\n"
+    .string "I went to Bill's and got him to\n"
     .string "show me his rare Pokémon.\p"
     .string "That added a lot of pages to my\n"
     .string "Pokédex!\p"
-    .string "After all, BILL's world famous as a\n"
-    .string "POKéMANIAC.\p"
+    .string "After all, Bill's world famous as a\n"
+    .string "Poké Maniac.\p"
     .string "He invented the Pokémon Storage\n"
     .string "System on PC, too.\p"
     .string "Since you're using his system,\n"
@@ -56,7 +56,7 @@ CeruleanCity_Text_GruntIntro::
     .string "Don't you believe me?{PLAY_BGM}{MUS_RG_ENCOUNTER_ROCKET}$"
 
 CeruleanCity_Text_GruntDefeat::
-    .string "GRUNT: Stop! I give up!\n"
+    .string "Grunt: Stop! I give up!\n"
     .string "I'll leave quietly!$"
 
 CeruleanCity_Text_OkayIllReturnStolenTM::
@@ -65,7 +65,7 @@ CeruleanCity_Text_OkayIllReturnStolenTM::
 
 CeruleanCity_Text_RecoveredTM28FromGrunt::
     .string "{PLAYER} recovered TM28 from\n"
-    .string "the Team Rocket GRUNT.$"
+    .string "the Team Rocket Grunt.$"
 
 CeruleanCity_Text_BetterGetMovingBye::
     .string "I better get moving!\n"
@@ -76,21 +76,21 @@ CeruleanCity_Text_MakeRoomForThisCantRun::
     .string "I can't run until I give it to you!$"
 
 CeruleanCity_Text_TrainerLifeIsToughIsntIt::
-    .string "You're a TRAINER, too?\p"
+    .string "You're a Trainer, too?\p"
     .string "Collecting, battling…\n"
     .string "It's a tough life, isn't it?$"
 
 CeruleanCity_Text_YouCanCutDownSmallTrees::
-    .string "Did you know that you can CUT down\n"
+    .string "Did you know that you can Cut down\n"
     .string "small trees?\p"
     .string "Even that small tree in front of\n"
-    .string "the shop can be CUT down.\p"
+    .string "the shop can be Cut down.\p"
     .string "I think there's a way around it,\n"
     .string "though.$"
 
 CeruleanCity_Text_IfSlowbroWasntThereCouldCutTree::
-    .string "If that SLOWBRO wasn't there, you\n"
-    .string "could CUT down the small tree.\p"
+    .string "If that Slowbro wasn't there, you\n"
+    .string "could Cut down the small tree.\p"
     .string "That way, you could get to the\n"
     .string "other side.\p"
     .string "I think there's a way around it,\n"
@@ -104,43 +104,43 @@ CeruleanCity_Text_PeopleHereWereRobbed::
     .string "The people here were robbed.\p"
     .string "It's obvious that Team Rocket is\n"
     .string "behind this most heinous crime!\p"
-    .string "Even our POLICE FORCE has\n"
-    .string "trouble with the ROCKETS!$"
+    .string "Even our Police Force has\n"
+    .string "trouble with the Rockets!$"
 
 CeruleanCity_Text_SlowbroUseSonicboom::
-    .string "Okay! SLOWBRO!\n"
-    .string "Use SONICBOOM!$"
+    .string "Okay! Slowbro!\n"
+    .string "Use Sonic Boom!$"
 
 CeruleanCity_Text_SlowbroPayAttention::
-    .string "Come on, SLOWBRO, pay attention!$"
+    .string "Come on, Slowbro, pay attention!$"
 
 CeruleanCity_Text_SlowbroPunch::
-    .string "SLOWBRO, punch!$"
+    .string "Slowbro, punch!$"
 
 CeruleanCity_Text_NoYouBlewItAgain::
     .string "No!\n"
     .string "You blew it again!$"
 
 CeruleanCity_Text_SlowbroWithdraw::
-    .string "SLOWBRO, WITHDRAW!$"
+    .string "Slowbro, Withdraw!$"
 
 CeruleanCity_Text_HardToControlMonsObedience::
     .string "No! That's wrong!\n"
     .string "It's so hard to control Pokémon!\p"
     .string "Your Pokémon's obedience depends\n"
-    .string "on your abilities as a TRAINER.$"
+    .string "on your abilities as a Trainer.$"
 
 CeruleanCity_Text_SlowbroTookSnooze::
-    .string "SLOWBRO took a snooze…$"
+    .string "Slowbro took a snooze…$"
 
 CeruleanCity_Text_SlowbroLoafingAround::
-    .string "SLOWBRO is loafing around…$"
+    .string "Slowbro is loafing around…$"
 
 CeruleanCity_Text_SlowbroTurnedAway::
-    .string "SLOWBRO turned away…$"
+    .string "Slowbro turned away…$"
 
 CeruleanCity_Text_SlowbroIgnoredOrders::
-    .string "SLOWBRO ignored orders…$"
+    .string "Slowbro ignored orders…$"
 
 CeruleanCity_Text_WantBrightRedBicycle::
     .string "I want a bright red bicycle.\p"
@@ -151,11 +151,11 @@ CeruleanCity_Text_ThisIsCeruleanCave::
     .string "This is Cerulean Cave.\p"
     .string "Horribly strong Pokémon live inside\n"
     .string "there.\p"
-    .string "It takes a very special TRAINER to\n"
+    .string "It takes a very special Trainer to\n"
     .string "be allowed inside there.\p"
     .string "You'd have to be strong enough to\n"
     .string "become the Pokémon League\l"
-    .string "CHAMPION for starters.\p"
+    .string "Champion for starters.\p"
     .string "And, you would have to have\n"
     .string "made a great achievement.$"
 
@@ -165,7 +165,7 @@ CeruleanCity_Text_CitySign::
     .string "It$"
 
 CeruleanCity_Text_TrainerTipsHeldItems::
-    .string "TRAINER TIPS\p"
+    .string "Trainer Tips\p"
     .string "A Pokémon can be made to hold\n"
     .string "an item.\p"
     .string "Some items can even be used by\n"
@@ -177,6 +177,6 @@ CeruleanCity_Text_BikeShopSign::
 
 CeruleanCity_Text_GymSign::
     .string "Cerulean City Pokémon Gym\n"
-    .string "LEADER: MISTY\l"
+    .string "Leader: Misty\l"
     .string "The Tomboyish Mermaid!$"
 

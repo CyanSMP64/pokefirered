@@ -299,7 +299,7 @@ Help_Text_AnswerWhatsABattle::
 	.string "HP. If a Pokémon's HP falls to zero,\l"
 	.string "it faints, and the other Pokémon\l"
 	.string "wins. By winning a battle, Pokémon\l"
-	.string "earn Exp. Points, which help them\l"
+	.string "earn Exp. points, which help them\l"
 	.string "level up (grow stronger).$"
 
 Help_Text_AnswerHowDoIPrepareForBattle::
@@ -895,7 +895,7 @@ Help_Text_HowToUseWithdrawItem::
 	.string "{CIRCLE_1} Select “WITHDRAW ITEM.”\n"
 	.string "{CIRCLE_2} Select the item to be withdrawn.\n"
 	.string "{CIRCLE_3} The item can be withdrawn and\n"
-	.string "   placed in the BAG's ITEMS POCKET.\n"
+	.string "   placed in the Bag's Items Pocket.\n"
 	.string "   It may also be directly given to a\n"
 	.string "   Pokémon to hold.$"
 
@@ -1002,7 +1002,7 @@ Help_Text_HowToUseWithdrawItem2::
 	.string "{CIRCLE_1} Select “WITHDRAW ITEM.”\n"
 	.string "{CIRCLE_2} Select the item to be withdrawn.\n"
 	.string "{CIRCLE_3} The item can be withdrawn and\n"
-	.string "   placed in the BAG's ITEMS POCKET.\n"
+	.string "   placed in the Bag's Items Pocket.\n"
 	.string "   It may also be directly given to a\n"
 	.string "   Pokémon to hold.$"
 
@@ -1064,7 +1064,7 @@ Help_Text_HP::
 	.string "HP$"
 
 Help_Text_EXP::
-	.string "EXP. {LEFT_PAREN}Exp. Points{RIGHT_PAREN}$"
+	.string "EXP. {LEFT_PAREN}Exp. points{RIGHT_PAREN}$"
 
 Help_Text_Moves::
 	.string "MOVES$"
@@ -1199,12 +1199,12 @@ Help_Text_DefineHP::
 	.string "HP at a Pokémon Center or use items.$"
 
 Help_Text_DefineEXP::
-	.string "Exp. Points stands for “Experience\n"
-	.string "Points.” Pokémon gain Exp. Points by\l"
+	.string "Exp. points stands for “Experience\n"
+	.string "Points.” Pokémon gain Exp. points by\l"
 	.string "participating in winning battles.\l"
 	.string "When a Pokémon accumulates sufficient\l"
-	.string "Exp. Points, it levels up. The EXP. Bar\l"
-	.string "indicates accumulated Exp. Points.\l"
+	.string "Exp. points, it levels up. The EXP. Bar\l"
+	.string "indicates accumulated Exp. points.\l"
 	.string "It returns to zero upon leveling up.$"
 
 Help_Text_DefineMoves::
@@ -1354,14 +1354,14 @@ Help_Text_DefineFNT::
 
 Help_Text_DefineItems::
 	.string "Ordinary items bought at any Pokémon\n"
-	.string "MART are placed in the ITEMS POCKET.\l"
+	.string "MART are placed in the Items Pocket.\l"
 	.string "Items may be used, given to a Pokémon\l"
 	.string "to hold, or tossed out as garbage.$"
 
 Help_Text_DefineKeyItems::
 	.string "Important items that you find or \n"
 	.string "receive from people are placed in the\l"
-	.string "KEY ITEMS POCKET.\l"
+	.string "Key Items Pocket.\l"
 	.string "Key items may be used, or registered\l"
 	.string "for use instantly with SELECT. Once\l"
 	.string "registered, the item can be used\l"

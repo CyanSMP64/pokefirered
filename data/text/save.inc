@@ -6,8 +6,8 @@ gText_AlreadySaveFile_WouldLikeToOverwrite::
 	.string "Is it okay to overwrite it?$"
 
 gText_SavingDontTurnOffThePower::
-	.string "SAVING…\n"
-	.string "DON'T TURN OFF THE POWER.$"
+	.string "Saving…\n"
+	.string "Don't turn off the power.$"
 
 gText_PlayerSavedTheGame::
 	.string "{PLAYER} saved the game.$"

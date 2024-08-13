@@ -100,7 +100,7 @@ TrainerTower_Lobby_Text_ExplainTrainerTower::
     .string "the Time Board.\p"
     .string "Try competing with friends to see\n"
     .string "who can beat it the fastest.\p"
-    .string "You will not earn any Exp. Points\n"
+    .string "You will not earn any Exp. points\n"
     .string "or money by beating TRAINERS here.$"
 
 TrainerTower_Lobby_Text_ThanksForCompeting::
