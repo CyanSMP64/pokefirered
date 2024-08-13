@@ -24,7 +24,7 @@ const u8 gEnemyMonElevation[NUM_SPECIES] =
     [SPECIES_SEAKING] = 12,
     [SPECIES_MAGIKARP] = 10,
     [SPECIES_GYARADOS] = 1,
-    [SPECIES_KABUTO] = 16,
+    [SPECIES_KABUTO] = 14,
     [SPECIES_AERODACTYL] = 9,
     [SPECIES_ZAPDOS] = 11,
     [SPECIES_MEW] = 16,
@@ -117,7 +117,7 @@ const u8 gEnemyMonElevation[NUM_SPECIES] =
     [SPECIES_AZELF] = 10,
     [SPECIES_PHIONE] = 10,
     [SPECIES_MANAPHY] = 10,
-    [SPECIES_DARKRAI] = 10,
+    [SPECIES_DARKRAI] = 8,
     // Gen 5
     [SPECIES_MUNNA] = 9,
     [SPECIES_MUSHARNA] = 5,
