@@ -201,42 +201,6 @@
     {
       "type": "trigger",
       "x": 22,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route20_EventScript_Sparkle_Stardust"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route20_EventScript_Sparkle_Stardust"
-    },
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route20_EventScript_Sparkle_Stardust"
-    },
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route20_EventScript_Sparkle_Stardust"
-    },
-    {
-      "type": "trigger",
-      "x": 25,
       "y": 7,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -245,8 +209,8 @@
     },
     {
       "type": "trigger",
-      "x": 25,
-      "y": 6,
+      "x": 23,
+      "y": 7,
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
@@ -254,7 +218,7 @@
     },
     {
       "type": "trigger",
-      "x": 25,
+      "x": 23,
       "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -263,16 +227,7 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route20_EventScript_Sparkle_Stardust"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
+      "x": 24,
       "y": 7,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -281,7 +236,25 @@
     },
     {
       "type": "trigger",
-      "x": 21,
+      "x": 24,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route20_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route20_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
       "y": 6,
       "elevation": 0,
       "var": "VAR_TEMP_F",

@@ -111,17 +111,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 16,
-      "y": 40,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route21_North_EventScript_Sparkle_Pearl"
-    },
-    {
-      "type": "trigger",
       "x": 17,
-      "y": 40,
+      "y": 41,
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
@@ -138,16 +129,7 @@
     },
     {
       "type": "trigger",
-      "x": 19,
-      "y": 40,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route21_North_EventScript_Sparkle_Pearl"
-    },
-    {
-      "type": "trigger",
-      "x": 19,
+      "x": 18,
       "y": 41,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -156,7 +138,7 @@
     },
     {
       "type": "trigger",
-      "x": 19,
+      "x": 18,
       "y": 42,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -174,26 +156,8 @@
     },
     {
       "type": "trigger",
-      "x": 19,
-      "y": 44,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route21_North_EventScript_Sparkle_Pearl"
-    },
-    {
-      "type": "trigger",
-      "x": 18,
-      "y": 44,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route21_North_EventScript_Sparkle_Pearl"
-    },
-    {
-      "type": "trigger",
       "x": 17,
-      "y": 44,
+      "y": 43,
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
@@ -210,25 +174,7 @@
     },
     {
       "type": "trigger",
-      "x": 15,
-      "y": 44,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route21_North_EventScript_Sparkle_Pearl"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 43,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route21_North_EventScript_Sparkle_Pearl"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
+      "x": 16,
       "y": 42,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -246,8 +192,62 @@
     },
     {
       "type": "trigger",
-      "x": 15,
+      "x": 16,
       "y": 40,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route21_North_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route21_North_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 43,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route21_North_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 43,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route21_North_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route21_North_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 44,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route21_North_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 43,
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",

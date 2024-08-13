@@ -420,7 +420,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 103,
+      "y": 102,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -437,8 +437,8 @@
     },
     {
       "type": "trigger",
-      "x": 13,
-      "y": 103,
+      "x": 12,
+      "y": 102,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -455,7 +455,7 @@
     },
     {
       "type": "trigger",
-      "x": 13,
+      "x": 12,
       "y": 101,
       "elevation": 0,
       "var": "VAR_TEMP_D",
@@ -473,8 +473,8 @@
     },
     {
       "type": "trigger",
-      "x": 13,
-      "y": 99,
+      "x": 12,
+      "y": 100,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -483,24 +483,6 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 99,
-      "elevation": 0,
-      "var": "VAR_TEMP_D",
-      "var_value": "0",
-      "script": "Route23_EventScript_Sparkle_Max_Ether"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 99,
-      "elevation": 0,
-      "var": "VAR_TEMP_D",
-      "var_value": "0",
-      "script": "Route23_EventScript_Sparkle_Max_Ether"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
       "y": 99,
       "elevation": 0,
       "var": "VAR_TEMP_D",
@@ -518,6 +500,24 @@
     },
     {
       "type": "trigger",
+      "x": 9,
+      "y": 100,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route23_EventScript_Sparkle_Max_Ether"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 101,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route23_EventScript_Sparkle_Max_Ether"
+    },
+    {
+      "type": "trigger",
       "x": 8,
       "y": 100,
       "elevation": 0,
@@ -527,8 +527,8 @@
     },
     {
       "type": "trigger",
-      "x": 8,
-      "y": 101,
+      "x": 9,
+      "y": 102,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -555,7 +555,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 103,
+      "y": 102,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",
@@ -785,6 +785,24 @@
       "var": "VAR_TEMP_8",
       "var_value": "0",
       "script": "Route23_EventScript_Sparkle_MaxElixir"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 100,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route23_EventScript_Sparkle_Max_Ether"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 100,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "Route23_EventScript_Sparkle_Max_Ether"
     }
   ],
   "bg_events": [
