@@ -43,5 +43,5 @@ LavenderTown_House2_Text_TrulyImpeccableName::
 
 LavenderTown_House2_Text_ThatIsMerelyAnEgg::
     .string "Now, now.\n"
-    .string "That is merely an EGG!$"
+    .string "That is merely an Egg!$"
 

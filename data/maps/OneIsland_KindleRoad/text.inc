@@ -39,7 +39,7 @@ OneIsland_KindleRoad_Text_GarrettDefeat::
     .string "You're good, you!$"
 
 OneIsland_KindleRoad_Text_GarrettPostBattle::
-    .string "Instead of using SURF all the time,\n"
+    .string "Instead of using Surf all the time,\n"
     .string "you should swim some.$"
 
 OneIsland_KindleRoad_Text_TommyIntro::
@@ -155,7 +155,7 @@ OneIsland_KindleRoad_Text_MikNotEnoughMons::
     .string "you, then.$"
 
 OneIsland_KindleRoad_Text_RouteSign::
-    .string "This is KINDLE ROAD.\p"
+    .string "This is Kindle Road.\p"
     .string "Go straight for MT. EMBER.$"
 
 OneIsland_KindleRoad_Text_EmberSpaSign::

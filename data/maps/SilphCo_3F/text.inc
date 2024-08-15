@@ -14,7 +14,7 @@ SilphCo_3F_Text_GruntDefeat::
 
 SilphCo_3F_Text_GruntPostBattle::
     .string "A hint? You can open doors with\n"
-    .string "a CARD KEY!$"
+    .string "a Card Key!$"
 
 SilphCo_3F_Text_JoseIntro::
     .string "I support Team Rocket more than\n"

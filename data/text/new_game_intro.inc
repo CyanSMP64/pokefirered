@@ -8,7 +8,7 @@ gNameChoice_Red::
     .string "Cyan$"
 
 gNameChoice_Leaf::
-    .string "LEAF$"
+    .string "Leaf$"
 
 gNameChoice_Fire::
     .string "Dumper$"
@@ -143,7 +143,7 @@ gControlsGuide_Text_BButton::
 
 gControlsGuide_Text_StartButton::
     .string "Press this button to open the\n"
-    .string "MENU.$"
+    .string "Menu.$"
 
 gControlsGuide_Text_SelectButton::
     .string "Used to shift items and to use\n"

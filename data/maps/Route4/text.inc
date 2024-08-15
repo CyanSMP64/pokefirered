@@ -1,6 +1,6 @@
 Route4_Text_TrippedOverGeodude::
     .string "Ouch! I tripped over a rocky\n"
-    .string "Pokémon, GEODUDE!$"
+    .string "Pokémon, Geodude!$"
 
 Route4_Text_CrissyIntro::
     .string "I came to Mt. Moon in search of\n"
@@ -26,14 +26,14 @@ Text_MegaPunchTeach::
     .string "A punch of roaring ferocity!\p"
     .string "Packed with destructive power!\p"
     .string "When the chips are down,\n"
-    .string "MEGA PUNCH is the ultimate attack!\l"
+    .string "Mega Punch is the ultimate attack!\l"
     .string "You agree, yes?\p"
     .string "Now!\n"
     .string "Let me teach it to your Pokémon!$"
 
 Text_MegaPunchDeclined::
     .string "You'll be back when you understand\n"
-    .string "the worth of MEGA PUNCH.$"
+    .string "the worth of Mega Punch.$"
 
 Text_MegaPunchWhichMon::
     .string "Fine!\n"
@@ -50,14 +50,14 @@ Text_MegaKickTeach::
     .string "A kick of brutal ferocity!\p"
     .string "Packed with destructive power!\p"
     .string "When you get right down to it,\n"
-    .string "MEGA KICK is the ultimate attack!\l"
+    .string "Mega Kick is the ultimate attack!\l"
     .string "Don't you agree?\p"
     .string "Okay!\n"
     .string "I'll teach it to your Pokémon!$"
 
 Text_MegaKickDeclined::
     .string "You'll come crawling back when you\n"
-    .string "realize the value of MEGA KICK.$"
+    .string "realize the value of Mega Kick.$"
 
 Text_MegaKickWhichMon::
     .string "All right!\n"
@@ -72,8 +72,8 @@ Text_MegaKickTaught::
 
 Route4_Text_PeopleLikeAndRespectBrock::
     .string "Oh, wow, that's the Boulder Badge!\n"
-    .string "You got it from BROCK, didn't you?\p"
-    .string "BROCK is cool. He's not just tough.\n"
+    .string "You got it from Brock, didn't you?\p"
+    .string "Brock is cool. He's not just tough.\n"
     .string "People like and respect him.\p"
     .string "I want to become a Gym Leader\n"
     .string "like him.$"

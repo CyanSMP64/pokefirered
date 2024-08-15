@@ -80,8 +80,8 @@ SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemaleJP::
 
 SaffronCity_CopycatsHouse_2F_Text_Doduo::
     .string "DODUO: Giiih!\p"
-    .string "PRETTY MIRROR LOOK AT ME,\n"
-    .string "SEE HOW PRETTY I CAN BE?$"
+    .string "Pretty Mirror Look At Me,\n"
+    .string "See How Pretty I Can Be?$"
 
 SaffronCity_CopycatsHouse_2F_Text_RareMonOnlyDoll::
     .string "This is a rare Pokémon!\n"
@@ -96,7 +96,7 @@ SaffronCity_CopycatsHouse_2F_Text_MySecrets::
     .string "My Secrets!\p"
     .string "Skill: Mimicry!\n"
     .string "Hobby: Collecting dolls!\l"
-    .string "Favorite Pokémon: CLEFAIRY!$"
+    .string "Favorite Pokémon: Clefairy!$"
 
 SaffronCity_CopycatsHouse_2F_Text_HuhCantSee::
     .string "？　みえないぞ‥$"

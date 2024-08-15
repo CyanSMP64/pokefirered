@@ -1,9 +1,9 @@
 @ Same as Hoenn's day-care text, used by the Four Island Day-Care. Unused text translated in Emerald
 
 DayCare_Text_ImDaycareManSpeakToMyWife::
-	.string "I'm the DAY-CARE MAN.\p"
+	.string "I'm the Day-Care Man.\p"
 	.string "I help take care of the precious\n"
-	.string "Pokémon of TRAINERS.\p"
+	.string "Pokémon of Trainers.\p"
 	.string "If you'd like me to raise your\n"
 	.string "Pokémon, have a word with my wife.$"
 
@@ -11,7 +11,7 @@ DayCare_Text_DoYouWantEgg::
 	.string "Ah, it's you!\p"
 	.string "We were raising your Pokémon, and\n"
 	.string "my goodness, were we surprised!\p"
-	.string "Your Pokémon had an EGG!\p"
+	.string "Your Pokémon had an Egg!\p"
 	.string "We don't know how it got there,\n"
 	.string "but your Pokémon had it.\p"
 	.string "You do want it, yes?$"
@@ -29,8 +29,8 @@ DayCare_Text_YouHaveNoRoomForIt::
 	.string "Come back when you've made room.$"
 
 DayCare_Text_ReceivedEgg::
-	.string "{PLAYER} received the EGG from\n"
-	.string "the DAY-CARE MAN.$"
+	.string "{PLAYER} received the Egg from\n"
+	.string "the Day-Care Man.$"
 
 DayCare_Text_TakeGoodCareOfIt::
 	.string "Take good care of it.$"
@@ -48,7 +48,7 @@ DayCare_Text_IWillKeepDoYouWantIt::
 	.string "You do want this, yes?$"
 
 DayCare_Text_WouldYouLikeUsToRaiseMon::
-	.string "I'm the DAY-CARE LADY.\p"
+	.string "I'm the Day-Care Lady.\p"
 	.string "We can raise Pokémon for you.\p"
 	.string "Would you like us to raise one?$"
 
@@ -111,7 +111,7 @@ DayCare_Text_HeresYourMon::
 
 DayCare_Text_TookBackMon::
 	.string "{PLAYER} took back {STR_VAR_1} from\n"
-	.string "the DAY-CARE LADY.$"
+	.string "the Day-Care Lady.$"
 
 DayCare_Text_YouHaveJustOneMon::
 	.string "Oh? But you have just one\n"

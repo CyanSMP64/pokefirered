@@ -3,7 +3,7 @@ ThreeIsland_House5_Text_ImNotLostelle::
     .string "I'm not LOSTELLE.\p"
     .string "She's probably gone to the\n"
     .string "Berry Forest, I think.\p"
-    .string "She picks BERRIES there for making\n"
+    .string "She picks Berries there for making\n"
     .string "lunch.$"
 
 ThreeIsland_House5_Text_IllGoPlayWithLostelle::

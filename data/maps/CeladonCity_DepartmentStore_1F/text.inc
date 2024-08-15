@@ -9,7 +9,7 @@ CeladonCity_DepartmentStore_1F_Text_FloorDescriptions::
     .string "2F: Trainer's Market\p"
     .string "3F: TV Game Shop\p"
     .string "4F: Wise Man Gifts\p"
-    .string "5F: Drug Store\p"
+    .string "5F: Drugstore\p"
     .string "Rooftop Square: Vending Machines$"
 
 CeladonCity_DepartmentStore_1F_Text_ServiceCounter::

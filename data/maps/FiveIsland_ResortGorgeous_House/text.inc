@@ -49,7 +49,7 @@ FiveIsland_ResortGorgeous_House_Text_ButlerPleaseAcceptThisAsHerThanks::
     .string "Please accept this as her thanks…$"
 
 FiveIsland_ResortGorgeous_House_Text_ButlerBagAppearsToBeFull::
-    .string "Butler: Your BAG appears to be\n"
+    .string "Butler: Your Bag appears to be\n"
     .string "unfortunately full.$"
 
 FiveIsland_ResortGorgeous_House_Text_OhHowDisappointing::

@@ -15,7 +15,7 @@ SevenIsland_TrainerTower_Text_RodetteIntro::
     .string "Pokémon are sleeping.$"
 
 SevenIsland_TrainerTower_Text_RodetteDefeat::
-    .string "What an amazing TRAINER!$"
+    .string "What an amazing Trainer!$"
 
 SevenIsland_TrainerTower_Text_RodettePostBattle::
     .string "Somewhere on this island, peculiar\n"
@@ -24,11 +24,11 @@ SevenIsland_TrainerTower_Text_RodettePostBattle::
     .string "for you?$"
 
 SevenIsland_TrainerTower_Text_TrainerTowerSign::
-    .string "TRAINER TOWER ENTRANCE\n"
-    .string "Rise to the Challenge, TRAINERS!$"
+    .string "Trainer Tower Entrance\n"
+    .string "Rise to the Challenge, Trainers!$"
 
 SevenIsland_TrainerTower_Text_TrainerTowerAhead::
-    .string "TRAINER TOWER AHEAD$"
+    .string "Trainer Tower Ahead$"
 
 @ Unused text perhaps indicating Trainer Tower was planned to be unlocked by something
 SevenIsland_TrainerTower_Text_LooksLikeTrainerTowerIsClosed::

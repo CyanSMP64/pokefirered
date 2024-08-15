@@ -1,6 +1,6 @@
 SilphCo_11F_Text_ThanksForSavingMeDearBoy::
     .string "PRESIDENT: Oh, dear boy!\n"
-    .string "Thank you for saving SILPH.\p"
+    .string "Thank you for saving Silph.\p"
     .string "I will never forget you saved us in\n"
     .string "our moment of peril.\p"
     .string "I have to thank you in some way.\p"
@@ -10,7 +10,7 @@ SilphCo_11F_Text_ThanksForSavingMeDearBoy::
 
 SilphCo_11F_Text_ThanksForSavingMeDearGirl::
     .string "PRESIDENT: Oh, dear girl!\n"
-    .string "Thank you for saving SILPH.\p"
+    .string "Thank you for saving Silph.\p"
     .string "I will never forget you saved us in\n"
     .string "our moment of peril.\p"
     .string "I have to thank you in some way.\p"
@@ -19,14 +19,14 @@ SilphCo_11F_Text_ThanksForSavingMeDearGirl::
     .string "Here, maybe this will do.$"
 
 SilphCo_11F_Text_ObtainedMasterBallFromPresident::
-    .string "{PLAYER} obtained a MASTER BALL\n"
+    .string "{PLAYER} obtained a Master Ball\n"
     .string "from the PRESIDENT!$"
 
 SilphCo_11F_Text_ThatsOurSecretPrototype::
     .string "PRESIDENT: You can't buy that\n"
     .string "anywhere.\p"
-    .string "It's our secret prototype MASTER\n"
-    .string "BALL.\p"
+    .string "It's our secret prototype Master\n"
+    .string "Ball.\p"
     .string "It will catch any Pokémon without\n"
     .string "fail!\p"
     .string "You should be quiet about using it,\n"
@@ -56,7 +56,7 @@ SilphCo_11F_Text_GiovanniDefeat::
 
 SilphCo_11F_Text_GiovanniPostBattle::
     .string "Blast it all!\n"
-    .string "You ruined our plans for SILPH!\p"
+    .string "You ruined our plans for Silph!\p"
     .string "But, Team Rocket will never fall!\p"
     .string "{PLAYER}! Never forget that all\n"
     .string "Pokémon exist for Team Rocket!\p"
@@ -71,11 +71,11 @@ SilphCo_11F_Text_Grunt2Defeat::
     .string "Please!$"
 
 SilphCo_11F_Text_Grunt2PostBattle::
-    .string "So, you want to see my BOSS?$"
+    .string "So, you want to see my Boss?$"
 
 SilphCo_11F_Text_Grunt1Intro::
     .string "Halt! Do you have an appointment\n"
-    .string "with my BOSS?$"
+    .string "with my Boss?$"
 
 SilphCo_11F_Text_Grunt1Defeat::
     .string "Gaah!\n"
@@ -83,7 +83,7 @@ SilphCo_11F_Text_Grunt1Defeat::
 
 SilphCo_11F_Text_Grunt1PostBattle::
     .string "Watch your step…\n"
-    .string "My BOSS likes his Pokémon tough!$"
+    .string "My Boss likes his Pokémon tough!$"
 
 SilphCo_11F_Text_MonitorHasMonsOnIt::
     .string "The monitor has Pokémon on it!$"

@@ -248,7 +248,7 @@ PalletTown_ProfessorOaksLab_Text_EmailMessage::
 
 PalletTown_ProfessorOaksLab_Text_StudyAsOaksAide::
     .string "I study Pokémon as Prof. Oak's\n"
-    .string "Aide.$"
+    .string "aide.$"
 
 PalletTown_ProfessorOaksLab_Text_DaisyWillGroomMons::
     .string "Hi, {PLAYER}. I bet you've become\n"

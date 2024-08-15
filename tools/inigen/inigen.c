@@ -155,7 +155,7 @@ const struct TMText gTMTexts[] = {
     {16, 10,  5,  2, 0x316, "TM16 contains [move]."},
     {19, 10, 16,  7,  0xA1, "TM19 contains [move].\\pWouldn’t you agree that it’s a wonderful move?"},
     {20, 10,  5,  2, 0x322, "TM20 contains [move]."},
-    {26,  5,  1,  8,  0x9E, "TM26 contains [move].\\pIt is a powerful technique.\\pI made it when I ran the GYM here, far too long ago…"},
+    {26,  5,  1,  8,  0x9E, "TM26 contains [move].\\pIt is a powerful technique.\\pI made it when I ran the Gym here, far too long ago…"},
     {27, 23,  1,  1,  0x50, "TM27 is a move called [move]…\\pIf you treat your Pokémon good, it will return your love by working its hardest in battle."},
     {28,  7,  1,  1,  0x0D, "Those miserable Rockets!\\pLook what they’ve done to my house!\\pThey stole a TM for teaching Pokémon how to [move]!\\pThat cost me a bundle, it did!"},
     {28,  7,  1,  1,  0x17, "I figure what’s lost is lost.\\pI decided to catch a Pokémon that could [move] without a TM."},
@@ -645,26 +645,3 @@ int main(int argc, char ** argv)
  * 
 ******************************************************************************/
 
-/***********************************************************************************
- * 
- * Task_OakSpeech_IsInhabitedFarAndWide        - 0x0812faf0
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
-************************************************************************************/

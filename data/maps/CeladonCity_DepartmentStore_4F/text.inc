@@ -13,6 +13,6 @@ CeladonCity_DepartmentStore_4F_Text_CanRunAwayWithPokeDoll::
 
 CeladonCity_DepartmentStore_4F_Text_FloorSign::
     .string "Express yourself with gifts!\n"
-    .string "4F: WISE MAN GIFTS\p"
+    .string "4F: Wise Man Gifts\p"
     .string "Evolution Special!\n"
-    .string "Element STONES on sale now!$"
+    .string "Element Stones on sale now!$"

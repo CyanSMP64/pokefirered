@@ -1,8 +1,8 @@
 SaffronCity_Mart_Text_MaxRepelMoreEffectiveThanSuper::
-    .string "MAX REPEL keeps weaker Pokémon\n"
+    .string "Max Repel keeps weaker Pokémon\n"
     .string "from appearing.\p"
-    .string "MAX REPEL stays effective longer\n"
-    .string "than SUPER REPEL.$"
+    .string "Max Repel stays effective longer\n"
+    .string "than Super Repel.$"
 
 SaffronCity_Mart_Text_ReviveIsCostly::
     .string "REVIVE is costly, but it revives\n"

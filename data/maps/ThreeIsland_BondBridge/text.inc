@@ -59,43 +59,43 @@ ThreeIsland_BondBridge_Text_TishaPostBattle::
     .string "I can't get out of the water!$"
 
 ThreeIsland_BondBridge_Text_JoyIntro::
-    .string "JOY: We'll teach you what our\n"
+    .string "Joy: We'll teach you what our\n"
     .string "favorite Pokémon is!$"
 
 ThreeIsland_BondBridge_Text_JoyDefeat::
-    .string "JOY: Ohh…\n"
-    .string "MEG!$"
+    .string "Joy: Ohh…\n"
+    .string "Meg!$"
 
 ThreeIsland_BondBridge_Text_JoyPostBattle::
-    .string "JOY: Wasn't that fun?\n"
+    .string "Joy: Wasn't that fun?\n"
     .string "I hope we can battle again!$"
 
 ThreeIsland_BondBridge_Text_JoyNotEnoughMons::
-    .string "JOY: I really want to battle with\n"
-    .string "MEG.\p"
+    .string "Joy: I really want to battle with\n"
+    .string "Meg.\p"
     .string "One Pokémon isn't enough.$"
 
 ThreeIsland_BondBridge_Text_MegIntro::
-    .string "MEG: We'll show you our favorite\n"
+    .string "Meg: We'll show you our favorite\n"
     .string "Pokémon.$"
 
 ThreeIsland_BondBridge_Text_MegDefeat::
-    .string "MEG: Ohh…\n"
-    .string "JOY!$"
+    .string "Meg: Ohh…\n"
+    .string "Joy!$"
 
 ThreeIsland_BondBridge_Text_MegPostBattle::
-    .string "MEG: JOY, wasn't that fun?$"
+    .string "Meg: Joy, wasn't that fun?$"
 
 ThreeIsland_BondBridge_Text_MegNotEnoughMons::
-    .string "MEG: I want to battle together\n"
-    .string "with JOY.\p"
+    .string "Meg: I want to battle together\n"
+    .string "with Joy.\p"
     .string "One Pokémon isn't enough.$"
 
 ThreeIsland_BondBridge_Text_BerryForestAhead::
     .string "Berry Forest Ahead$"
 
 ThreeIsland_BondBridge_Text_BondBridgeSign::
-    .string "BOND BRIDGE\n"
+    .string "Bond Bridge\n"
     .string "Please be quiet when crossing.\p"
     .string "Berry Forest Ahead$"
 

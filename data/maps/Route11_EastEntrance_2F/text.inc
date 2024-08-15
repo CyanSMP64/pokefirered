@@ -1,6 +1,6 @@
 Route11_EastEntrance_2F_Text_GiveItemfinderIfCaught30::
     .string "Hi! Remember me?\n"
-    .string "I'm one of Prof. Oak's Aides.\p"
+    .string "I'm one of Prof. Oak's aides.\p"
     .string "If your Pokédex has complete data\n"
     .string "on {STR_VAR_1} species, I'm supposed to\l"
     .string "give you a reward.\p"
@@ -18,7 +18,7 @@ Route11_EastEntrance_2F_Text_GreatHereYouGo::
 
 Route11_EastEntrance_2F_Text_ReceivedItemfinderFromAide::
     .string "{PLAYER} received the {STR_VAR_2}\n"
-    .string "from the Aide.$"
+    .string "from the aide.$"
 
 Route11_EastEntrance_2F_Text_ExplainItemfinder::
     .string "There are items on the ground that\n"

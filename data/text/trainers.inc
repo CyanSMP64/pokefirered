@@ -4,12 +4,12 @@ VSSeeker_Text_BatteryNotChargedNeedXSteps::
 	.string "charge the battery: {STR_VAR_1}{PAUSE_UNTIL_PRESS}$"
 
 VSSeeker_Text_NoTrainersWithinRange::
-	.string "There are no TRAINERS within range\n"
+	.string "There are no Trainers within range\n"
 	.string "who can battle…\p"
 	.string "The VS SEEKER was turned off.{PAUSE_UNTIL_PRESS}$"
 
 VSSeeker_Text_TrainersNotReady::
-	.string "The other TRAINERS don't appear\n"
+	.string "The other Trainers don't appear\n"
 	.string "to be ready for battle.\p"
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
 
@@ -27,7 +27,7 @@ Route3_Text_JaniceRematchIntro::
 	.string "You keep looking at me, don't you?$"
 
 Route3_Text_GregRematchIntro::
-	.string "You're a TRAINER, aren't you?\n"
+	.string "You're a Trainer, aren't you?\n"
 	.string "Let's get with it right away!$"
 
 Route3_Text_SallyRematchIntro::
@@ -62,7 +62,7 @@ Route6_Text_NancyRematchIntro::
 
 Route6_Text_KeigoRematchIntro::
 	.string "I'm trying to find something good\n"
-	.string "that's not a BUG Pokémon, but…$"
+	.string "that's not a Bug Pokémon, but…$"
 
 Route6_Text_JeffRematchIntro::
 	.string "Huh?\n"
@@ -90,7 +90,7 @@ Route8_Text_GlennRematchIntro::
 	.string "Are you following my advice?$"
 
 Route8_Text_PaigeRematchIntro::
-	.string "I've collected many NIDORAN.\n"
+	.string "I've collected many Nidoran.\n"
 	.string "I don't want them to evolve, but…$"
 
 Route8_Text_LeslieRematchIntro::
@@ -98,7 +98,7 @@ Route8_Text_LeslieRematchIntro::
 	.string "Pokémon are fun, too.$"
 
 Route8_Text_AndreaRematchIntro::
-	.string "MEOWTH and PERSIAN are so cute,\n"
+	.string "Meowth and Persian are so cute,\n"
 	.string "meow, meow, meow!$"
 
 Route8_Text_MeganRematchIntro::
@@ -138,7 +138,7 @@ Route9_Text_ChrisRematchIntro::
 
 Route9_Text_DrewRematchIntro::
 	.string "I'm taking Rock Tunnel to go to\n"
-	.string "LAVENDER…\p"
+	.string "Lavender…\p"
 	.string "But I keep getting stopped by\n"
 	.string "everyone along the way…$"
 
@@ -163,11 +163,11 @@ Route9_Text_AlanRematchIntro::
 	.string "I'll win this time!$"
 
 Route9_Text_ConnerRematchIntro::
-	.string "Go win, my super BUG Pokémon!$"
+	.string "Go win, my super Bug Pokémon!$"
 
 Route10_Text_MarkRematchIntro::
 	.string "Wow, you came here again?\n"
-	.string "Maybe you're a POKéMANIAC, too?\l"
+	.string "Maybe you're a Poké Maniac, too?\l"
 	.string "Want to see my collection?$"
 
 Route10_Text_ClarkRematchIntro::
@@ -179,7 +179,7 @@ Route10_Text_HermanRematchIntro::
 	.string "Did I show you my Pokémon?$"
 
 Route10_Text_HeidiRematchIntro::
-	.string "I went out to a Pokémon GYM again.\p"
+	.string "I went out to a Pokémon Gym again.\p"
 	.string "…But I lost as usual.$"
 
 Route10_Text_TrentRematchIntro::
@@ -209,7 +209,7 @@ Route11_Text_BraxtonRematchIntro::
 	.string "I'm still laying down some cables!$"
 
 Route11_Text_DillonRematchIntro::
-	.string "I became a TRAINER a while ago.\n"
+	.string "I became a Trainer a while ago.\n"
 	.string "But, I think I can win.$"
 
 Route11_Text_DirkRematchIntro::
@@ -245,7 +245,7 @@ Route12_Text_ChipRematchIntro::
 	.string "Fishing is a waiting game.$"
 
 Route12_Text_JustinRematchIntro::
-	.string "Still can't find a MOON STONE…\n"
+	.string "Still can't find a Moon Stone…\n"
 	.string "Have you found one?$"
 
 Route12_Text_LucaRematchIntro::
@@ -255,7 +255,7 @@ Route12_Text_LucaRematchIntro::
 	.string "of the sea, though.$"
 
 Route12_Text_HankRematchIntro::
-	.string "The FISHING FOOL vs. Pokémon KID!\n"
+	.string "The Fishing Fool vs. Pokémon Kid!\n"
 	.string "Another round, fight!$"
 
 Route12_Text_ElliotRematchIntro::
@@ -281,12 +281,12 @@ Route13_Text_SebastianRematchIntro::
 	.string "My bird Pokémon remember you!$"
 
 Route13_Text_SusieRematchIntro::
-	.string "I want to be the best TRAINER \n"
+	.string "I want to be the best Trainer \n"
 	.string "while I'm a kid!$"
 
 Route13_Text_ValerieRematchIntro::
 	.string "Wow!\n"
-	.string "You got more cool BADGES!$"
+	.string "You got more cool Badges!$"
 
 Route13_Text_GwenRematchIntro::
 	.string "My cutely grown Pokémon wish to\n"
@@ -294,7 +294,7 @@ Route13_Text_GwenRematchIntro::
 
 Route13_Text_AlmaRematchIntro::
 	.string "I cleaned out my savings and\n"
-	.string "bought more CARBOS.$"
+	.string "bought more Carbos.$"
 
 Route13_Text_PerryRematchIntro::
 	.string "I'm not going to lose this time.\n"
@@ -330,7 +330,7 @@ Route14_Text_BeckRematchIntro::
 
 Route14_Text_MarlonRematchIntro::
 	.string "Have you taught your bird Pokémon\n"
-	.string "how to FLY?\p"
+	.string "how to Fly?\p"
 	.string "You'll be able to soar with it into\n"
 	.string "the sky! Give it a try.$"
 
@@ -383,7 +383,7 @@ Route15_Text_EdwinRematchIntro::
 
 Route15_Text_ChesterRematchIntro::
 	.string "Hmm? My birds are shivering!\n"
-	.string "Wait, aren't you that TRAINER…$"
+	.string "Wait, aren't you that Trainer…$"
 
 Route15_Text_GraceRematchIntro::
 	.string "Oh, you're a little cutie!\n"
@@ -425,7 +425,7 @@ Route16_Text_LaoRematchIntro::
 	.string "What do you want?$"
 
 Route16_Text_KojiRematchIntro::
-	.string "Nice BIKE!\n"
+	.string "Nice Bike!\n"
 	.string "Hand it over quick!$"
 
 Route16_Text_LukeRematchIntro::
@@ -483,7 +483,7 @@ Route17_Text_CoreyRematchIntro::
 	.string "Be a rebel!$"
 
 Route17_Text_JaxonRematchIntro::
-	.string "Yep, that's a nice BIKE!\n"
+	.string "Yep, that's a nice Bike!\n"
 	.string "How's it handle?$"
 
 Route17_Text_WilliamRematchIntro::
@@ -550,7 +550,7 @@ Route19_Text_ConnieRematchIntro::
 
 Route19_Text_LiaRematchIntro::
 	.string "LIA: You know my brother just\n"
-	.string "became a TRAINER, right?\p"
+	.string "became a Trainer, right?\p"
 	.string "I want to make him better, so I\n"
 	.string "need your help again.$"
 
@@ -673,11 +673,11 @@ Route25_Text_FranklinRematchIntro::
 	.string "but I've still got gas in the tank!$"
 
 Route25_Text_NobRematchIntro::
-	.string "A POKéMANIAC lives on the cape.\n"
+	.string "A Poké Maniac lives on the cape.\n"
 	.string "Have you seen his collection?$"
 
 Route25_Text_WayneRematchIntro::
-	.string "You're going to see BILL again?\n"
+	.string "You're going to see Bill again?\n"
 	.string "First, we battle!$"
 
 Route24_Text_ShaneRematchIntro::
@@ -693,7 +693,7 @@ Route24_Text_ReliRematchIntro::
 
 Route24_Text_TimmyRematchIntro::
 	.string "You really must love coming to\n"
-	.string "NUGGET BRIDGE.$"
+	.string "Nugget Bridge.$"
 
 Route24_Text_AliRematchIntro::
 	.string "The time we battled…\p"
@@ -701,8 +701,8 @@ Route24_Text_AliRematchIntro::
 	.string "line, I was the best, wasn't I?$"
 
 Route24_Text_CaleRematchIntro::
-	.string "People call this the NUGGET\n"
-	.string "BRIDGE!\p"
+	.string "People call this the Nugget\n"
+	.string "Bridge!\p"
 	.string "You've already beaten us, so you're\n"
 	.string "not allowed to take the challenge…\p"
 	.string "…But, you're welcome to battle with\n"
@@ -786,11 +786,11 @@ ThreeIsland_BondBridge_Text_TishaRematchIntro::
 	.string "Please, stay away from me!$"
 
 ThreeIsland_BondBridge_Text_JoyRematchIntro::
-	.string "JOY: We've gotten stronger!\n"
+	.string "Joy: We've gotten stronger!\n"
 	.string "Lots and lots!$"
 
 ThreeIsland_BondBridge_Text_MegRematchIntro::
-	.string "MEG: You can't beat us today!$"
+	.string "Meg: You can't beat us today!$"
 
 FiveIsland_WaterLabyrinth_Text_AlizeRematchIntro::
 	.string "Oh, hello!\p"
@@ -828,19 +828,19 @@ FiveIsland_ResortGorgeous_Text_TobyRematchIntro::
 	.string "Let us enjoy our time together!$"
 
 FiveIsland_MemorialPillar_Text_MiloRematchIntro::
-	.string "I'm the eldest of the BIRD\n"
+	.string "I'm the eldest of the Bird\n"
 	.string "BROTHERS. Remember me?\p"
 	.string "That's right, I'm the one who loves\n"
 	.string "birds for their beaks!$"
 
 FiveIsland_MemorialPillar_Text_ChazRematchIntro::
-	.string "I'm the middle kid of the BIRD\n"
+	.string "I'm the middle kid of the Bird\n"
 	.string "BROTHERS.\p"
 	.string "I'm the one that loves wings.\n"
 	.string "Let's battle again!$"
 
 FiveIsland_MemorialPillar_Text_HaroldRematchIntro::
-	.string "I'm the youngest of the BIRD\n"
+	.string "I'm the youngest of the Bird\n"
 	.string "BROTHERS.\p"
 	.string "I love birds for their down.\n"
 	.string "I didn't think I'd see you again!$"

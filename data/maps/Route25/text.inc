@@ -1,5 +1,5 @@
 Route25_Text_JoeyIntro::
-    .string "Local TRAINERS come here to\n"
+    .string "Local Trainers come here to\n"
     .string "practice.$"
 
 Route25_Text_JoeyDefeat::
@@ -19,7 +19,7 @@ Route25_Text_DanDefeat::
     .string "I'm not mad!$"
 
 Route25_Text_DanPostBattle::
-    .string "On the S.S. Anne, I saw TRAINERS\n"
+    .string "On the S.S. Anne, I saw Trainers\n"
     .string "from around the world.$"
 
 Route25_Text_FlintIntro::
@@ -65,7 +65,7 @@ Route25_Text_HaleyDefeat::
 
 Route25_Text_HaleyPostBattle::
     .string "You came from Mt. Moon?\n"
-    .string "May I have a CLEFAIRY?$"
+    .string "May I have a Clefairy?$"
 
 Route25_Text_FranklinIntro::
     .string "I just got down from Mt. Moon,\n"
@@ -76,10 +76,10 @@ Route25_Text_FranklinDefeat::
 
 Route25_Text_FranklinPostBattle::
     .string "Drat!\n"
-    .string "A ZUBAT bit me back in that cave.$"
+    .string "A Zubat bit me back in that cave.$"
 
 Route25_Text_NobIntro::
-    .string "I'm off to see a POKéMANIAC's\n"
+    .string "I'm off to see a Poké Maniac's\n"
     .string "collection at the cape.$"
 
 Route25_Text_NobDefeat::
@@ -87,13 +87,13 @@ Route25_Text_NobDefeat::
     .string "too!$"
 
 Route25_Text_NobPostBattle::
-    .string "The POKéMANIAC sure lives up to\n"
+    .string "The Poké Maniac sure lives up to\n"
     .string "his name.\p"
     .string "His collection includes many rare\n"
     .string "species of Pokémon.$"
 
 Route25_Text_WayneIntro::
-    .string "You're going to see BILL?\n"
+    .string "You're going to see Bill?\n"
     .string "First, we battle!$"
 
 Route25_Text_WayneDefeat::
@@ -104,16 +104,16 @@ Route25_Text_WaynePostBattle::
     .string "Cerulean City.$"
 
 Route25_Text_SeaCottageSign::
-    .string "SEA COTTAGE\n"
-    .string "BILL lives here!$"
+    .string "Sea Cottage\n"
+    .string "Bill lives here!$"
 
 Route25_Text_MistyHighHopesAboutThisPlace::
     .string "This cape is a famous date spot.\p"
-    .string "MISTY, the Gym Leader, has high\n"
+    .string "Misty, the Gym Leader, has high\n"
     .string "hopes about this place.$"
 
 Route25_Text_AreYouHereAlone::
     .string "Hello, are you here alone?\p"
-    .string "If you're out at CERULEAN's cape…\n"
+    .string "If you're out at Cerulean's cape…\n"
     .string "Well, it should be as a couple.$"
 

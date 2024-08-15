@@ -12,7 +12,7 @@ FuchsiaCity_WardensHouse_Text_HeOhayHeHaHoo::
     .string "He ohay heh ha hoo ee haheh!$"
 
 FuchsiaCity_WardensHouse_Text_GaveGoldTeethToWarden::
-    .string "{PLAYER} gave the GOLD TEETH\n"
+    .string "{PLAYER} gave the Gold Teeth\n"
     .string "to the WARDEN.$"
 
 FuchsiaCity_WardensHouse_Text_WardenPoppedInHisTeeth::
@@ -44,11 +44,11 @@ FuchsiaCity_WardensHouse_Text_ReceivedHM04FromWarden::
 
 FuchsiaCity_WardensHouse_Text_ExplainStrength::
     .string "WARDEN: Inside HM04 you'll find\n"
-    .string "STRENGTH.\p"
+    .string "Strength.\p"
     .string "It lets Pokémon move boulders when\n"
     .string "you're outside of battle.\p"
-    .string "Oh yes, did you find the SECRET\n"
-    .string "HOUSE in the Safari Zone?$"
+    .string "Oh yes, did you find the Secret\n"
+    .string "House in the Safari Zone?$"
 
 @ Unused
 FuchsiaCity_WardensHouse_Text_YouHaveTooMuchStuff::

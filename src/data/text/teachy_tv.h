@@ -4,13 +4,13 @@ const u8 gTeachyTvString_TypeMatchups[] = _("What are type matchups?");
 const u8 gTeachyTvString_CatchPkmn[] = _("I want to catch Pokémon.");
 const u8 gTeachyTvString_AboutTMs[] = _("Teach me about TMs.");
 const u8 gTeachyTvString_RegisterItem[] = _("How do I register an item?");
-const u8 gTeachyTvString_Cancel[] = _("CANCEL");
+const u8 gTeachyTvString_Cancel[] = _("Cancel");
 const u8 gTeachyTvText_PokedudeSaysHello[] = _(
-    "Hey, all you TRAINERS out there!\n"
-    "HELLO, TRAINERS!\p"
+    "Hey, all you Trainers out there!\n"
+    "Hello, Trainers!\p"
     "……… ……… ………\p"
     "Come on, let me hear you!\n"
-    "HELLO, TRAINERS!\l"
+    "Hello, Trainers!\l"
     "It's me, the Poké Dude!\p");
 const u8 gTeachyTvText_BattleScript1[] = _(
     "Today, the Poké Dude's here to\n"
@@ -33,9 +33,9 @@ const u8 gTeachyTvText_BattleScript2[] = _(
     "falls to zero, and it becomes\l"
     "unable to battle, not to worry!\p"
     "Just take it to any Pokémon\n"
-    "CENTER and heal it!\p"
+    "Center and heal it!\p"
     "All righty, be seeing you!\p"
-    "Remember, TRAINERS, a good deed\n"
+    "Remember, Trainers, a good deed\n"
     "a day brings happiness to stay!");
 const u8 gTeachyTvText_StatusScript1[] = _(
     "Today, the Poké Dude's here to\n"
@@ -65,7 +65,7 @@ const u8 gTeachyTvText_StatusScript2[] = _(
     "Pokémon Center for healing.\p"
     "That wasn't hard, was it?\n"
     "All righty, be seeing you!\p"
-    "Remember, TRAINERS, a good deed\n"
+    "Remember, Trainers, a good deed\n"
     "a day brings happiness to stay!");
 const u8 gTeachyTvText_MatchupsScript1[] = _(
     "Does everyone know about type\n"
@@ -73,7 +73,7 @@ const u8 gTeachyTvText_MatchupsScript1[] = _(
     "Pokémon and their moves all\n"
     "belong to certain types.\p"
     "For example, there are such types\n"
-    "as GRASS and WATER.\p"
+    "as Grass and Water.\p"
     "You need to consider the type of\n"
     "the move used to attack…\p"
     "And, the type of the Pokémon that\n"
@@ -99,7 +99,7 @@ const u8 gTeachyTvText_MatchupsScript2[] = _(
     "Watch the type matchups to gain\n"
     "the upper hand!\p"
     "All righty, be seeing you!\p"
-    "Oh, for the COOL-type Poké Dude,\n"
+    "Oh, for the Cool-type Poké Dude,\n"
     "AWESOME-type kids like you match\l"
     "up perfectly!\p"
     "Remember, a good deed a day\n"
@@ -124,7 +124,7 @@ const u8 gTeachyTvText_CatchingScript2[] = _(
     "Keep throwing Poké Balls…\n"
     "It's bound to work sometime!\p"
     "All righty, be seeing you!\p"
-    "Remember, TRAINERS, a good deed\n"
+    "Remember, Trainers, a good deed\n"
     "a day brings happiness to stay!");
 const u8 gTeachyTvText_TMsScript1[] = _(
     "Hey, everyone!\n"
@@ -135,19 +135,19 @@ const u8 gTeachyTvText_TMsScript1[] = _(
     "it may not learn when leveling up!\p"
     "Isn't that just great? What a\n"
     "convenient world we live in!\p"
-    "Open the TM CASE and check out\n"
+    "Open the TM Case and check out\n"
     "the TMs you have.\p"
     "You can check them out in detail,\n"
     "too.");
 const u8 gPokedudeText_TMTypes[] = _(
-    "Poké Dude: NORMAL, WATER, GRASS…\n"
+    "Poké Dude: Normal, Water, Grass…\n"
     "TMs also come in types.\p"
     "Check the type and teach it to\n"
     "a Pokémon that matches up well.\p"
-    "For example, WATER PULSE is\n"
-    "suitable for WATER-type Pokémon.\p"
-    "BULLET SEED is a move that most\n"
-    "GRASS-type Pokémon can learn.\p"
+    "For example, Water Pulse is\n"
+    "suitable for Water-type Pokémon.\p"
+    "Bullet Seed is a move that most\n"
+    "Grass-type Pokémon can learn.\p"
     "There's one other thing!");
 const u8 gPokedudeText_ReadTMDescription[] = _(
     "Don't just look at the type, read\n"
@@ -155,7 +155,7 @@ const u8 gPokedudeText_ReadTMDescription[] = _(
     "It will contain hints about what\n"
     "Pokémon might learn the move.\p"
     "For example, take a move like\n"
-    "FOCUS PUNCH.\p"
+    "Focus Punch.\p"
     "It doesn't sound like anything a\n"
     "bird or fish Pokémon can learn.\p"
     "So, try using it on Pokémon with\n"
@@ -163,36 +163,36 @@ const u8 gPokedudeText_ReadTMDescription[] = _(
 const u8 gTeachyTvText_TMsScript2[] = _(
     "Wow, I talked a lot today!\n"
     "All righty, be seeing you!\p"
-    "Remember, TRAINERS, a good deed\n"
+    "Remember, Trainers, a good deed\n"
     "a day brings happiness to stay!");
 const u8 gTeachyTvText_RegisterScript1[] = _(
-    "A TRAINER's BAG has a bunch of\n"
+    "A Trainer's Bag has a bunch of\n"
     "nifty, convenient features!\p"
-    "Take stuff in the KEY ITEMS\n"
-    "POCKET, for instance.\p"
+    "Take stuff in the Key Items\n"
+    "Pocket, for instance.\p"
     "You can use a key item without\n"
-    "opening the BAG every time.\p"
+    "opening the Bag every time.\p"
     "For example, let's pretend I have\n"
-    "a TEACHY TV in my BAG.\p"
+    "a Teachy TV in my Bag.\p"
     "I can register it for instant use,\n"
     "and I'll show you how!\p"
     "All righty, here goes!\p"
     "Keep your eyes glued to the sorta\n"
     "super Poké Dude Show!");
 const u8 gTeachyTvText_RegisterScript2[] = _(
-    "And now, your TEACHY TV is\n"
+    "And now, your Teachy TV is\n"
     "registered.\p"
     "How do you use it?\n"
     "Well, here's how it works.\p"
-    "Once an item in the KEY ITEMS\n"
-    "POKCET is registered, you can use\l"
-    "it by pressing SELECT.\p"
+    "Once an item in the Key Items\n"
+    "pocket is registered, you can use\l"
+    "it by pressing Select.\p"
     "So, you've given yourself\n"
-    "one-touch access to TEACHY TV.\p"
+    "one-touch access to Teachy TV.\p"
     "All it takes for you to see me is\n"
     "pressing one button!\p"
     "That kind of attention is a little\n"
     "embarrassing!\p"
     "All righty, be seeing you!\p"
-    "Remember, TRAINERS, a good deed\n"
+    "Remember, Trainers, a good deed\n"
     "a day brings happiness to stay!");

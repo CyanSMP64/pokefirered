@@ -15,7 +15,7 @@ SilphCo_4F_Text_Grunt1Defeat::
 
 SilphCo_4F_Text_Grunt1PostBattle::
     .string "Fwahahaha!\n"
-    .string "My BOSS has been after this place!$"
+    .string "My Boss has been after this place!$"
 
 SilphCo_4F_Text_RodneyIntro::
     .string "My Pokémon is my loyal servant.$"
@@ -27,7 +27,7 @@ SilphCo_4F_Text_RodneyDefeat::
 SilphCo_4F_Text_RodneyPostBattle::
     .string "The doors are electronically\n"
     .string "locked.\p"
-    .string "It takes a CARD KEY to open the\n"
+    .string "It takes a Card Key to open the\n"
     .string "doors here.$"
 
 SilphCo_4F_Text_Grunt2Intro::
@@ -37,7 +37,7 @@ SilphCo_4F_Text_Grunt2Defeat::
     .string "Who are you?$"
 
 SilphCo_4F_Text_Grunt2PostBattle::
-    .string "I better tell the BOSS on 11F!$"
+    .string "I better tell the Boss on 11F!$"
 
 SilphCo_4F_Text_FloorSign::
     .string "Silph Co. Head Office\n"

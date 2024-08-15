@@ -27,8 +27,8 @@ SilphCo_5F_Text_BeauDefeat::
     .string "Blast it!$"
 
 SilphCo_5F_Text_BeauPostBattle::
-    .string "We worked on the ultimate POKé\n"
-    .string "BALL which would catch anything.$"
+    .string "We worked on the ultimate Poké\n"
+    .string "Ball which would catch anything.$"
 
 SilphCo_5F_Text_DaltonIntro::
     .string "Whaaat?\p"
@@ -40,7 +40,7 @@ SilphCo_5F_Text_DaltonDefeat::
 
 SilphCo_5F_Text_DaltonPostBattle::
     .string "You're only on 5F.\n"
-    .string "It's a long way to my BOSS!$"
+    .string "It's a long way to my Boss!$"
 
 SilphCo_5F_Text_Grunt2Intro::
     .string "Show Team Rocket a little respect!$"
@@ -55,7 +55,7 @@ SilphCo_5F_Text_Grunt2PostBattle::
 
 SilphCo_5F_Text_PorygonFirstVRMon::
     .string "It's a Pokémon REPORT!\p"
-    .string "Pokémon Lab created PORYGON,\n"
+    .string "Pokémon Lab created Porygon,\n"
     .string "the first virtual-reality Pokémon.$"
 
 SilphCo_5F_Text_Over350TechniquesConfirmed::
@@ -75,7 +75,7 @@ SilphCo_5F_Text_FloorSign::
 SilphCo_5F_Text_RocketBossLookingForStrongMons::
     .string "Those thugs that took over our\n"
     .string "building…\p"
-    .string "Their BOSS said he was looking for\n"
+    .string "Their Boss said he was looking for\n"
     .string "strong Pokémon.\p"
     .string "I hope our PRESIDENT managed to\n"
     .string "avoid trouble…$"

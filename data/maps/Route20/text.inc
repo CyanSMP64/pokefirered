@@ -70,7 +70,7 @@ Route20_Text_RogerDefeat::
 
 Route20_Text_RogerPostBattle::
     .string "My birds are exhausted.\n"
-    .string "They can't FLY me back!$"
+    .string "They can't Fly me back!$"
 
 Route20_Text_NoraIntro::
     .string "My boyfriend gave me big pearls.$"
@@ -114,7 +114,7 @@ Route20_Text_SeafoamIslands::
     .string "Seafoam Islands$"
 
 Route20_Text_MistyTrainsHere::
-    .string "Strong TRAINERS and WATER Pokémon\n"
+    .string "Strong Trainers and Water Pokémon\n"
     .string "are common sights in these parts.\p"
-    .string "They say that MISTY of the\n"
+    .string "They say that Misty of the\n"
     .string "Cerulean Gym trains here.$"

@@ -10,5 +10,5 @@ VermilionCity_Mart_Text_TeamRocketAreWickedPeople::
 
 VermilionCity_Mart_Text_MonsGoodOrBadDependingOnTrainer::
     .string "I think Pokémon can be good or\n"
-    .string "bad. It depends on the TRAINER.$"
+    .string "bad. It depends on the Trainer.$"
 

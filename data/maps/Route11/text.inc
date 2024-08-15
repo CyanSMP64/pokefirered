@@ -42,7 +42,7 @@ Route11_Text_BraxtonPostBattle::
     .string "Spread the word to save energy!$"
 
 Route11_Text_DillonIntro::
-    .string "I just became a TRAINER.\n"
+    .string "I just became a Trainer.\n"
     .string "But, I think I can win.$"
 
 Route11_Text_DillonDefeat::

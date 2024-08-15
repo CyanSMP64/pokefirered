@@ -1,6 +1,6 @@
 Route10_Text_MarkIntro::
     .string "Wow, you came all the way here?\n"
-    .string "Maybe you're a POKéMANIAC, too?\l"
+    .string "Maybe you're a Poké Maniac, too?\l"
     .string "Want to see my collection?$"
 
 Route10_Text_MarkDefeat::
@@ -36,7 +36,7 @@ Route10_Text_HermanPostBattle::
     .string "I don't like anyone better than me!$"
 
 Route10_Text_HeidiIntro::
-    .string "I've been out at a Pokémon GYM\n"
+    .string "I've been out at a Pokémon Gym\n"
     .string "a few times.\p"
     .string "…But I always lose.$"
 
@@ -45,7 +45,7 @@ Route10_Text_HeidiDefeat::
     .string "After all my training!$"
 
 Route10_Text_HeidiPostBattle::
-    .string "I noticed some POKéMANIACS\n"
+    .string "I noticed some Poké Maniacs\n"
     .string "prowling around.\p"
     .string "Can you imagine? Them?\n"
     .string "Up here in the mountains?$"
@@ -82,7 +82,7 @@ Route10_Text_RockTunnel::
     .string "Rock Tunnel$"
 
 Route10_Text_PowerPlant::
-    .string "POWER PLANT$"
+    .string "Power Plant$"
 
 Route10_Text_Hiker::
 	.string "Hey, you.\n"
@@ -92,9 +92,9 @@ Route10_Text_Hiker::
     .string "to you.$"
 
 Route10_Text_HikerExplainFlash::
-	.string "Teach that hidden move FLASH to\n"
+	.string "Teach that hidden move Flash to\n"
 	.string "a Pokémon and use it.\p"
 	.string "It lights up even the inky darkness\n"
 	.string "of caves.\p"
 	.string "But, to use it, you need the\n"
-	.string "GYM BADGE from PEWTER's Pokémon GYM.$"
+	.string "Gym Badge from Pewter's Pokémon Gym.$"

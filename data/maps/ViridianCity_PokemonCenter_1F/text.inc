@@ -11,7 +11,7 @@ ViridianCity_PokemonCenter_1F_Text_PokeCenterInEveryTown::
     .string "be shy about healing Pokémon.$"
 
 ViridianCity_PokemonCenter_1F_Text_PokeCentersHealMons::
-    .string "Pokémon CenterS heal your tired,\n"
+    .string "Pokémon Centers heal your tired,\n"
     .string "hurt, or fainted Pokémon.\p"
     .string "They make all Pokémon completely\n"
     .string "healthy.$"

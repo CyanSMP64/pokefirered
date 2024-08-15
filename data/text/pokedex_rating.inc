@@ -18,7 +18,7 @@ PokedexRating_Text_LessThan10::
 PokedexRating_Text_LessThan20::
 	.string "It looks as if you're getting on\n"
 	.string "the right track!\p"
-	.string "I've given one of my Aides a Flash\n"
+	.string "I've given one of my aides a Flash\n"
 	.string "HM. Make sure you go get it!$"
 
 PokedexRating_Text_LessThan30::
@@ -30,20 +30,20 @@ PokedexRating_Text_LessThan30::
 PokedexRating_Text_LessThan40::
 	.string "Good, it's apparent that you're\n"
 	.string "trying hard!\p"
-	.string "I've given one of my Aides a\n"
+	.string "I've given one of my aides a\n"
 	.string "Dowsing Machine. Be sure to\l"
 	.string "collect it!$"
 
 PokedexRating_Text_LessThan50::
 	.string "Your Pokédex is coming along quite\n"
 	.string "well!\p"
-	.string "I've given one of my Aides an\n"
+	.string "I've given one of my aides an\n"
 	.string "Amulet Coin. Be sure to get it!$"
 
 PokedexRating_Text_LessThan60::
 	.string "Ah, you've finally topped 50\n"
 	.string "species!\p"
-	.string "I've given one of my Aides an Exp.\n"
+	.string "I've given one of my aides an Exp.\n"
 	.string "Share. Be sure to go get it!$"
 
 PokedexRating_Text_LessThan70::

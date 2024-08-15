@@ -1,5 +1,5 @@
 SixIsland_DottedHole_SapphireRoom_Text_FoundSapphire::
-    .string "{PLAYER} found a SAPPHIRE!$"
+    .string "{PLAYER} found a Sapphire!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_IWasRightInTailingYou::
     .string "Fufu… Fufufufu…\n"
@@ -7,7 +7,7 @@ SixIsland_DottedHole_SapphireRoom_Text_IWasRightInTailingYou::
     .string "I was right in tailing you!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword::
-    .string "I knew that there was a SAPPHIRE\n"
+    .string "I knew that there was a Sapphire\n"
     .string "here, so it belongs to me!\p"
     .string "I'll sell it to Team Rocket for\n"
     .string "serious money.\p"

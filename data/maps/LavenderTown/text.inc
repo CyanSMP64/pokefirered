@@ -19,20 +19,20 @@ LavenderTown_Text_TownKnownAsMonGraveSite::
 LavenderTown_Text_GhostsAppearedInTower::
     .string "Ghosts appeared in Pokémon Tower.\p"
     .string "I think they're the spirits of\n"
-    .string "Pokémon that the ROCKETS killed.$"
+    .string "Pokémon that the Rockets killed.$"
 
 LavenderTown_Text_TownSign::
     .string "Lavender Town\n"
     .string "The Noble Purple Town$"
 
 LavenderTown_Text_SilphScopeNotice::
-    .string "New SILPH SCOPE!\n"
+    .string "New Silph Scope!\n"
     .string "Make the Invisible Plain to See!\p"
     .string "Silph Co.$"
 
 LavenderTown_Text_VolunteerPokemonHouse::
     .string "Lavender Volunteer\n"
-    .string "Pokémon HOUSE$"
+    .string "Pokémon House$"
 
 LavenderTown_Text_PokemonTowerSign::
     .string "Pokémon Tower\n"

@@ -7,7 +7,7 @@ SevenIsland_TanobyRuins_Text_BrandonDefeat::
     .string "You didn't have to be so rough.$"
 
 SevenIsland_TanobyRuins_Text_BrandonPostBattle::
-    .string "The TANOBY RUINS date back at\n"
+    .string "The Tanoby Ruins date back at\n"
     .string "least 1,500 years.\p"
     .string "But it's a baffling mystery as to\n"
     .string "why it was built in the first place.$"

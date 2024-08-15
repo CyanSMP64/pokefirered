@@ -18,7 +18,7 @@ FiveIsland_WaterLabyrinth_Text_TreatMonRightHaveThis::
     .string "Please, I'd like you to have this.$"
 
 FiveIsland_WaterLabyrinth_Text_ReceivedEggFromMan::
-    .string "{PLAYER} received an EGG\n"
+    .string "{PLAYER} received an Egg\n"
     .string "from the man!$"
 
 FiveIsland_WaterLabyrinth_Text_DontHaveSpaceInYourParty::
@@ -34,7 +34,7 @@ FiveIsland_WaterLabyrinth_Text_YouveComeBackForTheEgg::
     .string "きて　くれたんだね$"
 
 FiveIsland_WaterLabyrinth_Text_GladIMetSomeoneLikeYou::
-    .string "I received that EGG while I was\n"
+    .string "I received that Egg while I was\n"
     .string "traveling.\p"
     .string "I'm glad I met someone like you.$"
 
@@ -46,7 +46,7 @@ FiveIsland_WaterLabyrinth_Text_CuteMonRemindsMeOfDaisy::
     .string "She was gently grooming Pokémon…\n"
     .string "She was a little angel.\p"
     .string "That little girl's name…\n"
-    .string "I think it was DAISY.$"
+    .string "I think it was Daisy.$"
 
 FiveIsland_WaterLabyrinth_Text_AlizeIntro::
     .string "This is an excellent environment\n"

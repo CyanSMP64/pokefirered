@@ -1,5 +1,5 @@
 SilphCo_8F_Text_WonderIfSilphIsFinished::
-    .string "I wonder if SILPH is finished…$"
+    .string "I wonder if Silph is finished…$"
 
 SilphCo_8F_Text_ThanksForSavingUs::
     .string "Thanks for saving us!$"
@@ -22,11 +22,11 @@ SilphCo_8F_Text_ParkerDefeat::
     .string "I lost?$"
 
 SilphCo_8F_Text_ParkerPostBattle::
-    .string "So, what do you think of SILPH\n"
+    .string "So, what do you think of Silph\n"
     .string "BUILDING's maze?$"
 
 SilphCo_8F_Text_Grunt2Intro::
-    .string "I am one of the four ROCKET\n"
+    .string "I am one of the four Rocket\n"
     .string "BROTHERS!$"
 
 SilphCo_8F_Text_Grunt2Defeat::
@@ -41,7 +41,7 @@ SilphCo_8F_Text_FloorSign::
     .string "8F$"
 
 SilphCo_8F_Text_ToRocketBossMonsAreTools::
-    .string "Team Rocket's BOSS is terribly\n"
+    .string "Team Rocket's Boss is terribly\n"
     .string "cruel!\p"
     .string "To him, Pokémon are just tools to\n"
     .string "be used.\p"

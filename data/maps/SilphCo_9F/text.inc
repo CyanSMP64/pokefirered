@@ -16,7 +16,7 @@ SilphCo_9F_Text_Grunt1Defeat::
     .string "Ghaaah!$"
 
 SilphCo_9F_Text_Grunt1PostBattle::
-    .string "If I had started as a TRAINER at\n"
+    .string "If I had started as a Trainer at\n"
     .string "your age…$"
 
 SilphCo_9F_Text_EdIntro::
@@ -31,7 +31,7 @@ SilphCo_9F_Text_EdPostBattle::
     .string "Think about type advantages.$"
 
 SilphCo_9F_Text_Grunt2Intro::
-    .string "I am one of the four ROCKET\n"
+    .string "I am one of the four Rocket\n"
     .string "BROTHERS!$"
 
 SilphCo_9F_Text_Grunt2Defeat::

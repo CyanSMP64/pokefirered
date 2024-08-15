@@ -33,9 +33,9 @@ SevenIsland_SevaultCanyon_Entrance_Text_NicolasDefeat::
     .string "Uh-huh…$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_NicolasPostBattle::
-    .string "TRAINERS like you from cities,\n"
+    .string "Trainers like you from cities,\n"
     .string "they sure are tough.\p"
-    .string "You'll be headed for the TOWER,\n"
+    .string "You'll be headed for the Tower,\n"
     .string "won't you?$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_MadelineIntro::
@@ -44,7 +44,7 @@ SevenIsland_SevaultCanyon_Entrance_Text_MadelineIntro::
 
 SevenIsland_SevaultCanyon_Entrance_Text_MadelineDefeat::
     .string "You don't seem to be a problem\n"
-    .string "TRAINER.$"
+    .string "Trainer.$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_MadelinePostBattle::
     .string "If you treat your Pokémon with\n"
@@ -87,7 +87,7 @@ SevenIsland_SevaultCanyon_Entrance_Text_JonNotEnoughMons::
     .string "two-on-two battle, if I may.$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_RouteSign::
-    .string "SEVAULT CANYON ENTRANCE\p"
-    .string "TRAINERS are asked to refrain from\n"
-    .string "damaging plants in the CANYON.$"
+    .string "Sevault Canyon Entrance\p"
+    .string "Trainers are asked to refrain from\n"
+    .string "damaging plants in the Canyon.$"
 

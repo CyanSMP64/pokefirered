@@ -1,20 +1,20 @@
 CeladonCity_DepartmentStore_3F_Text_OTStandsForOriginalTrainer::
     .string "Captured Pokémon are registered\n"
     .string "with an ID No. and the OT.\p"
-    .string "OT stands for “Original TRAINER” -\n"
-    .string "the TRAINER that caught it first.$"
+    .string "OT stands for “Original Trainer” -\n"
+    .string "the Trainer that caught it first.$"
 
 CeladonCity_DepartmentStore_3F_Text_BuddyTradingKangaskhanForHaunter::
     .string "All right!\p"
     .string "My buddy's going to trade me his\n"
-    .string "KANGASKHAN for my HAUNTER!$"
+    .string "Kangaskhan for my Haunter!$"
 
 CeladonCity_DepartmentStore_3F_Text_HaunterEvolvedOnTrade::
-    .string "Come on, HAUNTER!\p"
-    .string "I love HAUNTER!\n"
+    .string "Come on, Haunter!\p"
+    .string "I love Haunter!\n"
     .string "I collect them!\p"
     .string "Huh?\p"
-    .string "HAUNTER turned into a different\n"
+    .string "Haunter turned into a different\n"
     .string "Pokémon while being traded!$"
 
 CeladonCity_DepartmentStore_3F_Text_CanIdentifyTradeMonsByID::
@@ -41,7 +41,7 @@ CeladonCity_DepartmentStore_3F_Text_FightingGame::
     .string "Looks tough!$"
 
 CeladonCity_DepartmentStore_3F_Text_TVGameShop::
-    .string "3F: TV GAME SHOP$"
+    .string "3F: TV Game Shop$"
 
 CeladonCity_DepartmentStore_3F_Text_RedGreenBothArePokemon::
     .string "Red and Green!\n"
@@ -53,7 +53,7 @@ Text_CounterTeach::
     .string "Not done yet? How about I teach\n"
     .string "you a good move?\p"
     .string "The move I have in mind is\n"
-    .string "COUNTER.\p"
+    .string "Counter.\p"
     .string "Not like the one I'm leaning on,\n"
     .string "mind you!$"
 
@@ -63,8 +63,8 @@ Text_CounterDeclined::
 
 Text_CounterWhichMon::
     .string "Which Pokémon should I teach\n"
-    .string "COUNTER to?$"
+    .string "Counter to?$"
 
 Text_CounterTaught::
-    .string "Are you using that COUNTER move\n"
+    .string "Are you using that Counter move\n"
     .string "I taught your Pokémon?$"

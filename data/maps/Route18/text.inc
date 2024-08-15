@@ -6,7 +6,7 @@ Route18_Text_WiltonDefeat::
     .string "Tch!$"
 
 Route18_Text_WiltonPostBattle::
-    .string "I wish I had a BIKE!$"
+    .string "I wish I had a Bike!$"
 
 Route18_Text_RamiroIntro::
     .string "Kurukkoo!\n"

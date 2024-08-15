@@ -810,7 +810,7 @@ gStdScriptsEnd::
 @ Unused
 Text_WouldYouLikeToMixRecords::
 	.string "Would you like to mix records with\n"
-	.string "other TRAINERS?$"
+	.string "other Trainers?$"
 
 @ Unused
 Text_WeHopeToSeeYouAgain2::

@@ -1,6 +1,6 @@
 PokemonLeague_LoreleisRoom_Text_Intro::
     .string "Welcome to the Pokémon League.\p"
-    .string "I am LORELEI of the ELITE FOUR.\p"
+    .string "I am Lorelei of the Elite Four.\p"
     .string "No one can best me when it comes\n"
     .string "to icy Pokémon.\p"
     .string "Freezing moves are powerful.\p"
@@ -11,7 +11,7 @@ PokemonLeague_LoreleisRoom_Text_Intro::
 
 PokemonLeague_LoreleisRoom_Text_RematchIntro::
     .string "Welcome to the Pokémon League.\p"
-    .string "I, LORELEI of the ELITE FOUR,\n"
+    .string "I, Lorelei of the Elite Four,\n"
     .string "have returned!\p"
     .string "You know how it goes.\n"
     .string "No one can best me when it comes\l"

@@ -1,6 +1,6 @@
 Route15_WestEntrance_2F_Text_GiveItemIfCaughtEnough::
     .string "Hi! Remember me?\n"
-    .string "I'm one of Prof. Oak's Aides.\p"
+    .string "I'm one of Prof. Oak's aides.\p"
     .string "If your Pokédex has complete data\n"
     .string "on {STR_VAR_1} species, I'm supposed to\l"
     .string "give you a reward.\p"
@@ -18,7 +18,7 @@ Route15_WestEntrance_2F_Text_GreatHereYouGo::
 
 Route15_WestEntrance_2F_Text_ReceivedItemFromAide::
     .string "{PLAYER} received the {STR_VAR_2}\n"
-    .string "from the AIDE.$"
+    .string "from the aide.$"
 
 Route15_WestEntrance_2F_Text_ExplainExpShare::
     .string "Exp. Share is an item to be held\n"

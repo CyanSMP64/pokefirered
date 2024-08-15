@@ -45,7 +45,7 @@ RockTunnel_B1F_Text_SteveDefeat::
 RockTunnel_B1F_Text_StevePostBattle::
     .string "Pokémon cosplay is dressing up as\n"
     .string "Pokémon for fun.\p"
-    .string "CLEFAIRY is a favorite.$"
+    .string "Clefairy is a favorite.$"
 
 RockTunnel_B1F_Text_AllenIntro::
     .string "My Pokémon techniques will leave\n"
@@ -57,7 +57,7 @@ RockTunnel_B1F_Text_AllenDefeat::
 
 RockTunnel_B1F_Text_AllenPostBattle::
     .string "In mountains, you'll often find\n"
-    .string "ROCK-type Pokémon.$"
+    .string "Rock-type Pokémon.$"
 
 RockTunnel_B1F_Text_MarthaIntro::
     .string "I don't often come here, but I will\n"

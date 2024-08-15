@@ -10,7 +10,7 @@ SaffronCity_PokemonCenter_1F_Text_SilphCoVictimOfFame::
 SaffronCity_PokemonCenter_1F_Text_GreatIfEliteFourCameBeatRockets::
     .string "Sigh…\n"
     .string "Wouldn't this be great?\p"
-    .string "If the ELITE FOUR came and\n"
+    .string "If the Elite Four came and\n"
     .string "stomped Team Rocket?$"
 
 SaffronCity_PokemonCenter_1F_Text_TeamRocketTookOff::

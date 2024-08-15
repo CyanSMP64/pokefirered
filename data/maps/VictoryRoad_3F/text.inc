@@ -3,7 +3,7 @@ Text_DoubleEdgeTeach::
     .string "having battled your way through\l"
     .string "Victory Road so courageously.\p"
     .string "In recognition of your feat,\n"
-    .string "I'll teach you DOUBLE-EDGE.\p"
+    .string "I'll teach you Double-Edge.\p"
     .string "Would you like me to teach that\n"
     .string "technique?$"
 
@@ -13,7 +13,7 @@ Text_DoubleEdgeDeclined::
 
 Text_DoubleEdgeWhichMon::
     .string "Which Pokémon should I teach\n"
-    .string "DOUBLE-EDGE?$"
+    .string "Double-Edge?$"
 
 Text_DoubleEdgeTaught::
     .string "Keep that drive going for the\n"
@@ -28,11 +28,11 @@ VictoryRoad_3F_Text_GeorgeDefeat::
     .string "The rumors were true!$"
 
 VictoryRoad_3F_Text_GeorgePostBattle::
-    .string "So, it was you who beat GIOVANNI\n"
+    .string "So, it was you who beat Giovanni\n"
     .string "of Team Rocket?$"
 
 VictoryRoad_3F_Text_AlexaIntro::
-    .string "TRAINERS live to seek stronger\n"
+    .string "Trainers live to seek stronger\n"
     .string "opponents.$"
 
 VictoryRoad_3F_Text_AlexaDefeat::
@@ -61,7 +61,7 @@ VictoryRoad_3F_Text_ColbyDefeat::
     .string "I don't believe it!$"
 
 VictoryRoad_3F_Text_ColbyPostBattle::
-    .string "All TRAINERS here are headed to\n"
+    .string "All Trainers here are headed to\n"
     .string "the Pokémon League.\p"
     .string "Don't let down your guard.$"
 

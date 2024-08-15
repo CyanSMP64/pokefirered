@@ -1,5 +1,5 @@
 Text_OnlySkilledTrainersAllowedThrough::
-	.string "Only truly skilled TRAINERS are\n"
+	.string "Only truly skilled Trainers are\n"
 	.string "allowed through.\p"
 	.string "You don't have the {STR_VAR_1}\n"
 	.string "yet!$"

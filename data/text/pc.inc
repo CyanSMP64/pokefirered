@@ -14,4 +14,4 @@ Text_AccessedPlayersPC::
 	.string "Accessed {PLAYER}'s PC.$"
 
 Text_AccessedBillsPC::
-	.string "Accessed BILL's PC.$"
+	.string "Accessed Bill's PC.$"

@@ -9,7 +9,7 @@ Text_NothingButPokemonBooks::
 	.string "ポケモンの　ほん　ばかりだ$"
 
 Text_ATownMap::
-	.string "A TOWN MAP.$"
+	.string "A Town Map.$"
 
 Text_PokeMartShelf::
 	.string "Wow!\n"
@@ -40,7 +40,7 @@ Text_PokecenterSign::
 
 Text_Indigo_UltimateGoal::
 	.string "Indigo Plateau\p"
-	.string "The ultimate goal of TRAINERS!\n"
+	.string "The ultimate goal of Trainers!\n"
 	.string "Pokémon League HQ$"
 
 Text_Indigo_HighestAuthority::

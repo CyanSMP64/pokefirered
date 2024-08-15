@@ -21,8 +21,8 @@ PokemonTower_2F_Text_RivalVictory::
 
 PokemonTower_2F_Text_RivalPostBattle::
     .string "How's your Pokédex coming?\n"
-    .string "I just caught a CUBONE!\p"
-    .string "I can't find the bigger MAROWAK.\n"
+    .string "I just caught a Cubone!\p"
+    .string "I can't find the bigger Marowak.\n"
     .string "Where could they be?\p"
     .string "I bet there aren't any left!\p"
     .string "Well, I better get going.\n"
@@ -33,6 +33,6 @@ PokemonTower_2F_Text_RivalPostBattle::
 PokemonTower_2F_Text_SilphScopeCouldUnmaskGhosts::
     .string "Even we could not identify the\n"
     .string "wayward ghosts.\p"
-    .string "A SILPH SCOPE might be able to\n"
+    .string "A Silph Scope might be able to\n"
     .string "unmask them.$"
 

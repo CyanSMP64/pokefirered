@@ -1,7 +1,7 @@
 SaffronCity_Dojo_Text_MasterKoichiIntro::
     .string "Grunt!\p"
-    .string "I am the KARATE MASTER!\n"
-    .string "I am the LEADER here!\p"
+    .string "I am the Karate Master!\n"
+    .string "I am the Leader here!\p"
     .string "You wish to challenge us?\n"
     .string "Expect no mercy!\p"
     .string "Fwaaa!$"
@@ -15,7 +15,7 @@ SaffronCity_Dojo_Text_ChoosePrizedFightingMon::
     .string "But, I beseech you, do not take\n"
     .string "our emblem as your trophy!\p"
     .string "In return, I will give you a prized\n"
-    .string "FIGHTING Pokémon!\p"
+    .string "Fighting Pokémon!\p"
     .string "Choose whichever one you like!$"
 
 SaffronCity_Dojo_Text_StayAndTrainWithUs::
@@ -30,7 +30,7 @@ SaffronCity_Dojo_Text_MikeDefeat::
     .string "I give up!$"
 
 SaffronCity_Dojo_Text_MikePostBattle::
-    .string "You wait 'til you see our MASTER!\n"
+    .string "You wait 'til you see our Master!\n"
     .string "I'm a small fry compared to him!$"
 
 SaffronCity_Dojo_Text_HidekiIntro::
@@ -42,7 +42,7 @@ SaffronCity_Dojo_Text_HidekiDefeat::
     .string "One point!$"
 
 SaffronCity_Dojo_Text_HidekiPostBattle::
-    .string "Our MASTER is a pro fighter.\n"
+    .string "Our Master is a pro fighter.\n"
     .string "Be prepared to lose!$"
 
 SaffronCity_Dojo_Text_AaronIntro::
@@ -78,7 +78,7 @@ SaffronCity_Dojo_Text_YouWantHitmonlee::
 
 SaffronCity_Dojo_Text_ReceivedMonFromKarateMaster::
     .string "{PLAYER} received the {STR_VAR_1}\n"
-    .string "from the KARATE MASTER.$"
+    .string "from the Karate Master.$"
 
 SaffronCity_Dojo_Text_YouWantHitmonchan::
     .string "You want the piston-punching\n"

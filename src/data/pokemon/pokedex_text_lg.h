@@ -164,7 +164,7 @@ const u8 gFearowPokedexTextUnused[] = _("");
 
 const u8 gEkansPokedexText[] = _(
     "Moving silently and stealthily, it eats\n"
-    "the eggs of birds, such as PIDGEY\n"
+    "the eggs of birds, such as Pidgey\n"
     "and SPEAROW, whole.");
 
 const u8 gEkansPokedexTextUnused[] = _("");
@@ -570,7 +570,7 @@ const u8 gSlowbroPokedexTextUnused[] = _("");
 
 const u8 gMagnemitePokedexText[] = _(
     "Uses antigravity to stay suspended.\n"
-    "Appears without warning and uses THUNDER\n"
+    "Appears without warning and uses Thunder\n"
     "WAVE and similar moves.");
 
 const u8 gMagnemitePokedexTextUnused[] = _("");
@@ -1110,7 +1110,7 @@ const u8 gTyphlosionPokedexTextUnused[] = _("");
 const u8 gTotodilePokedexText[] = _(
     "Its well-developed jaws are powerful and\n"
     "capable of crushing anything. Even its\n"
-    "TRAINER must be careful.");
+    "Trainer must be careful.");
 
 const u8 gTotodilePokedexTextUnused[] = _("");
 
@@ -1304,7 +1304,7 @@ const u8 gSudowoodoPokedexText[] = _(
 const u8 gSudowoodoPokedexTextUnused[] = _("");
 
 const u8 gPolitoedPokedexText[] = _(
-    "If POLIWAG and POLIWHIRL hear its\n"
+    "If Poliwag and Poliwhirl hear its\n"
     "echoing cry, they respond by gathering\n"
     "from far and wide.");
 
@@ -1837,7 +1837,7 @@ const u8 gPoochyenaPokedexTextUnused[] = _("");
 
 const u8 gMightyenaPokedexText[] = _(
     "It will always obey the commands of a\n"
-    "skilled TRAINER. Its behavior arises from\n"
+    "skilled Trainer. Its behavior arises from\n"
     "its living in packs in ancient times.");
 
 const u8 gMightyenaPokedexTextUnused[] = _("");
@@ -1915,7 +1915,7 @@ const u8 gLudicoloPokedexTextUnused[] = _("");
 const u8 gSeedotPokedexText[] = _(
     "If it remains still, it becomes impossible\n"
     "to distinguish from real nuts. It delights\n"
-    "in surprising foraging PIDGEY.");
+    "in surprising foraging Pidgey.");
 
 const u8 gSeedotPokedexTextUnused[] = _("");
 
@@ -1969,7 +1969,7 @@ const u8 gRaltsPokedexText[] = _(
 const u8 gRaltsPokedexTextUnused[] = _("");
 
 const u8 gKirliaPokedexText[] = _(
-    "The cheerful spirit of its TRAINER gives\n"
+    "The cheerful spirit of its Trainer gives\n"
     "it energy for its psychokinetic power.\n"
     "It spins and dances when happy.");
 
@@ -1978,7 +1978,7 @@ const u8 gKirliaPokedexTextUnused[] = _("");
 const u8 gGardevoirPokedexText[] = _(
     "It has the power to predict the future.\n"
     "Its power peaks when it is protecting its\n"
-    "TRAINER.");
+    "Trainer.");
 
 const u8 gGardevoirPokedexTextUnused[] = _("");
 
@@ -2110,7 +2110,7 @@ const u8 gSkittyPokedexTextUnused[] = _("");
 
 const u8 gDelcattyPokedexText[] = _(
     "The favorite of trend-conscious\n"
-    "female TRAINERS, they are used in\n"
+    "female Trainers, they are used in\n"
     "competition for their style and fur.");
 
 const u8 gDelcattyPokedexTextUnused[] = _("");

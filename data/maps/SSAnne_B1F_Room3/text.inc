@@ -7,5 +7,5 @@ SSAnne_B1F_Room3_Text_DylanDefeat::
 
 SSAnne_B1F_Room3_Text_DylanPostBattle::
     .string "Sea Pokémon live in deep water.\n"
-    .string "You'll need a ROD to fish them up!$"
+    .string "You'll need a Rod to fish them up!$"
 

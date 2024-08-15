@@ -3,11 +3,11 @@ Route12_Text_MonSprawledOutInSlumber::
     .string "a deep and comfortable slumber.$"
 
 Text_SnorlaxWokeUp::
-    .string "SNORLAX woke up!\p"
+    .string "Snorlax woke up!\p"
     .string "It attacked in a grumpy rage!$"
 
 Text_SnorlaxReturnedToMountains::
-    .string "SNORLAX calmed down.\n"
+    .string "Snorlax calmed down.\n"
     .string "It gave a huge yawn…\l"
     .string "And returned to the mountains.$"
 
@@ -37,11 +37,11 @@ Route12_Text_ChipDefeat::
     .string "That one got away!$"
 
 Route12_Text_ChipPostBattle::
-    .string "With a better ROD, I could catch\n"
+    .string "With a better Rod, I could catch\n"
     .string "better Pokémon…$"
 
 Route12_Text_JustinIntro::
-    .string "I'm searching for a MOON STONE.\n"
+    .string "I'm searching for a Moon Stone.\n"
     .string "Have you found one?$"
 
 Route12_Text_JustinDefeat::
@@ -49,7 +49,7 @@ Route12_Text_JustinDefeat::
 
 Route12_Text_JustinPostBattle::
     .string "I could have made my Pokémon\n"
-    .string "evolve with a MOON STONE.\p"
+    .string "evolve with a Moon Stone.\p"
     .string "I would have won then, I bet.$"
 
 Route12_Text_LucaIntro::
@@ -65,8 +65,8 @@ Route12_Text_LucaPostBattle::
     .string "should zap sea Pokémon.$"
 
 Route12_Text_HankIntro::
-    .string "The FISHING FOOL versus Pokémon\n"
-    .string "KID!$"
+    .string "The Fishing Fool versus Pokémon\n"
+    .string "Kid!$"
 
 Route12_Text_HankDefeat::
     .string "Touch too much!$"
@@ -98,13 +98,13 @@ Route12_Text_AndrewDefeat::
     .string "Lost it!$"
 
 Route12_Text_AndrewPostBattle::
-    .string "What, MAGIKARP?\p"
+    .string "What, Magikarp?\p"
     .string "I catch them all the time, sure.\n"
     .string "But, boy are they wimpy.$"
 
 Route12_Text_RouteSign::
     .string "Route 12 \n"
-    .string "North to LAVENDER$"
+    .string "North to Lavender$"
 
 Route12_Text_SportfishingArea::
     .string "SPORTFISHING AREA$"

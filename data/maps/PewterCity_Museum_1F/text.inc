@@ -20,19 +20,19 @@ PewterCity_Museum_1F_Text_DoYouKnowWhatAmberIs::
     .string "You can't sneak in the back way!\n"
     .string "Nice try, kid, but no.\p"
     .string "Oh, whatever!\n"
-    .string "Do you know what AMBER is?$"
+    .string "Do you know what Amber is?$"
 
 PewterCity_Museum_1F_Text_AmberContainsGeneticMatter::
-    .string "AMBER contains the genetic matter\n"
+    .string "Amber contains the genetic matter\n"
     .string "of ancient Pokémon.\p"
     .string "There's a LAB somewhere trying to\n"
-    .string "resurrect Pokémon from AMBER.$"
+    .string "resurrect Pokémon from Amber.$"
 
 PewterCity_Museum_1F_Text_AmberIsFossilizedSap::
-    .string "AMBER is actually sap, that gooey\n"
+    .string "Amber is actually sap, that gooey\n"
     .string "stuff that oozes from trees.\p"
     .string "The ancient sap fossilized over\n"
-    .string "time to become rock-hard AMBER.$"
+    .string "time to become rock-hard Amber.$"
 
 @ Unused
 PewterCity_Museum_1F_Text_PleaseGoAround::
@@ -47,7 +47,7 @@ PewterCity_Museum_1F_Text_ShouldBeGratefulForLongLife::
 PewterCity_Museum_1F_Text_WantYouToGetAmberExamined::
     .string "Ssh! Listen, I need to share a\n"
     .string "secret with someone.\p"
-    .string "I think that this chunk of AMBER\n"
+    .string "I think that this chunk of Amber\n"
     .string "contains Pokémon DNA!\p"
     .string "It would be a shattering scientific\n"
     .string "breakthrough if Pokémon could be\l"
@@ -59,12 +59,12 @@ PewterCity_Museum_1F_Text_WantYouToGetAmberExamined::
     .string "a Pokémon Lab somewhere.$"
 
 PewterCity_Museum_1F_Text_ReceivedOldAmberFromMan::
-    .string "{PLAYER} received the OLD AMBER\n"
+    .string "{PLAYER} received the Old Amber\n"
     .string "from the man.$"
 
 PewterCity_Museum_1F_Text_GetOldAmberChecked::
     .string "Ssh!\n"
-    .string "Get the OLD AMBER checked!$"
+    .string "Get the Old Amber checked!$"
 
 PewterCity_Museum_1F_Text_DontHaveSpaceForThis::
     .string "You don't have space for this.$"
@@ -75,13 +75,13 @@ PewterCity_Museum_1F_Text_WeHaveTwoFossilsOnExhibit::
 
 PewterCity_Museum_1F_Text_BeautifulPieceOfAmber::
     .string "There is a beautiful piece of\n"
-    .string "AMBER in a clear gold color.$"
+    .string "Amber in a clear gold color.$"
 
 PewterCity_Museum_1F_Text_AerodactylFossil::
-    .string "AERODACTYL Fossil\n"
+    .string "Aerodactyl Fossil\n"
     .string "A primitive and rare Pokémon.$"
 
 PewterCity_Museum_1F_Text_KabutopsFossil::
-    .string "KABUTOPS Fossil\n"
+    .string "Kabutops Fossil\n"
     .string "A primitive and rare Pokémon.$"
 

@@ -8,7 +8,7 @@ Route15_Text_KindraDefeat::
 Route15_Text_KindraPostBattle::
     .string "You can't change the nickname of\n"
     .string "any Pokémon you get in a trade.\p"
-    .string "Only the Original TRAINER can get\n"
+    .string "Only the Original Trainer can get\n"
     .string "the nickname changed.$"
 
 Route15_Text_BeckyIntro::
@@ -45,7 +45,7 @@ Route15_Text_ChesterDefeat::
 Route15_Text_ChesterPostBattle::
     .string "This is so obvious, you should know\n"
     .string "this, but…\p"
-    .string "Moves like EARTHQUAKE and FISSURE\n"
+    .string "Moves like Earthquake and Fissure\n"
     .string "have no effect on bird Pokémon.$"
 
 Route15_Text_GraceIntro::

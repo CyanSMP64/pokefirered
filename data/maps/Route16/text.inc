@@ -9,14 +9,14 @@ Route16_Text_LaoPostBattle::
     .string "What's it to you?$"
 
 Route16_Text_KojiIntro::
-    .string "Nice BIKE!\n"
+    .string "Nice Bike!\n"
     .string "Hand it over!$"
 
 Route16_Text_KojiDefeat::
     .string "Knockout!$"
 
 Route16_Text_KojiPostBattle::
-    .string "Forget it, who needs your BIKE!$"
+    .string "Forget it, who needs your Bike!$"
 
 Route16_Text_LukeIntro::
     .string "Come out and play, little mouse!$"

@@ -9,7 +9,7 @@ ThreeIsland_House2_Text_CantMakeThisSpoonBend::
 ThreeIsland_House2_Text_IAdmireSabrina::
     .string "You know about a girl Gym Leader\n"
     .string "in Saffron City?\p"
-    .string "She uses PSYCHIC-type Pokémon,\n"
+    .string "She uses Psychic-type Pokémon,\n"
     .string "right?\p"
     .string "I admire her, I really do.\p"
     .string "I've heard that she's one cool\n"

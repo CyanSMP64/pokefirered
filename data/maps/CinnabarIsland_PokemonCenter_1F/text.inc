@@ -13,11 +13,11 @@ CinnabarIsland_PokemonCenter_1F_Text_VisitUnionRoom::
     .string "Linking up with the usual friends\n"
     .string "is fun, of course.\p"
     .string "But how about visiting the\n"
-    .string "UNION ROOM every so often?\p"
+    .string "Union Room every so often?\p"
     .string "Who knows, you may end up making\n"
     .string "new friends.\p"
     .string "I think it would be worth your time\n"
-    .string "to check the UNION ROOM.$"
+    .string "to check the Union Room.$"
 
 CinnabarIsland_PokemonCenter_1F_Text_EvolutionCanWaitForNewMoves::
     .string "Pokémon can still learn techniques\n"
@@ -26,7 +26,7 @@ CinnabarIsland_PokemonCenter_1F_Text_EvolutionCanWaitForNewMoves::
     .string "have been learned.$"
 
 CinnabarIsland_PokemonCenter_1F_Text_ReadyToSailToOneIsland::
-    .string "BILL: Hey, you kept me waiting!\n"
+    .string "Bill: Hey, you kept me waiting!\n"
     .string "Ready to set sail to One Island?$"
 
 CinnabarIsland_PokemonCenter_1F_Text_OhNotDoneYet::

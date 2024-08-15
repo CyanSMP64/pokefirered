@@ -1,5 +1,5 @@
 Route5_PokemonDayCare_Text_WantMeToRaiseMon::
-	.string "I run the DAY-CARE service.\p"
+	.string "I run the Day-Care service.\p"
 	.string "Would you like me to raise one of\n"
 	.string "your Pokémon?$"
 
@@ -35,7 +35,7 @@ Route5_PokemonDayCare_Text_ThankYouHeresMon::
 
 Route5_PokemonDayCare_Text_PlayerGotMonBack::
 	.string "{PLAYER} got {STR_VAR_1} back\n"
-	.string "from the DAY-CARE MAN.$"
+	.string "from the Day-Care Man.$"
 
 Route5_PokemonDayCare_Text_OnlyHaveOneMonWithYou::
 	.string "Oh? You only have one Pokémon\n"

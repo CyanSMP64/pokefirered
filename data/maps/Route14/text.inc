@@ -37,7 +37,7 @@ Route14_Text_BeckPostBattle::
 
 Route14_Text_MarlonIntro::
     .string "Have you taught your bird Pokémon\n"
-    .string "how to FLY?\p"
+    .string "how to Fly?\p"
     .string "You'll be able to soar with it into\n"
     .string "the sky!$"
 

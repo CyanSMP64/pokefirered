@@ -75,7 +75,7 @@ Route19_Text_AnyaDefeat::
 Route19_Text_AnyaPostBattle::
     .string "It's still a long way to go to\n"
     .string "Seafoam Islands…\p"
-    .string "I want to go back to FUCHSIA…$"
+    .string "I want to go back to Fuchsia…$"
 
 Route19_Text_AliceIntro::
     .string "Swimming's great!\n"
@@ -109,17 +109,17 @@ Route19_Text_ConnieDefeat::
 
 Route19_Text_ConniePostBattle::
     .string "If I were to ride a Pokémon on\n"
-    .string "the sea, I'd like a LAPRAS.\p"
-    .string "LAPRAS is so big, I bet it\n"
+    .string "the sea, I'd like a Lapras.\p"
+    .string "Lapras is so big, I bet it\n"
     .string "would keep me dry on water.$"
 
 Route19_Text_RouteSign::
-    .string "SEA Route 19\n"
+    .string "Sea Route 19\n"
     .string "Fuchsia City - Seafoam Islands$"
 
 Route19_Text_LiaIntro::
     .string "LIA: I'm looking after my brother.\n"
-    .string "He just became a TRAINER.$"
+    .string "He just became a Trainer.$"
 
 Route19_Text_LiaDefeat::
     .string "LIA: That's no way to treat my\n"

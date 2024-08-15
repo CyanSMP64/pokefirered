@@ -1,8 +1,8 @@
 Route25_SeaCottage_Text_ImBillHelpMeOutPal::
     .string "Hiya! I'm a Pokémon…\n"
     .string "…No I'm not!\p"
-    .string "Call me BILL!\n"
-    .string "I'm a true-blue POKéMANIAC!\p"
+    .string "Call me Bill!\n"
+    .string "I'm a true-blue Poké Maniac!\p"
     .string "Hey!\n"
     .string "What's with that skeptical look?\p"
     .string "I'm not joshing you, pal.\p"
@@ -14,8 +14,8 @@ Route25_SeaCottage_Text_ImBillHelpMeOutPal::
 Route25_SeaCottage_Text_ImBillHelpMeOutLady::
     .string "Hiya! I'm a Pokémon…\n"
     .string "…No I'm not!\p"
-    .string "Call me BILL!\n"
-    .string "I'm a true-blue POKéMANIAC!\p"
+    .string "Call me Bill!\n"
+    .string "I'm a true-blue Poké Maniac!\p"
     .string "Hey!\n"
     .string "What's with that skeptical look?\p"
     .string "I'm not joshing you, lady.\p"
@@ -26,7 +26,7 @@ Route25_SeaCottage_Text_ImBillHelpMeOutLady::
 
 Route25_SeaCottage_Text_RunCellSeparationOnPC::
     .string "Wait till I get inside the\n"
-    .string "TELEPORTER.\p"
+    .string "Teleporter.\p"
     .string "When I do, go to my PC and run\n"
     .string "the Cell Separation System.$"
 
@@ -51,7 +51,7 @@ Route25_SeaCottage_Text_NoPleaseBeautiful::
     .string "All right!$"
 
 Route25_SeaCottage_Text_ThanksBudTakeThis::
-    .string "BILL: Yeehah!\n"
+    .string "Bill: Yeehah!\n"
     .string "Thanks, bud! I owe you one!\p"
     .string "So, did you come to see my\n"
     .string "Pokémon collection?\p"
@@ -61,7 +61,7 @@ Route25_SeaCottage_Text_ThanksBudTakeThis::
     .string "Oh, here, maybe this'll do.$"
 
 Route25_SeaCottage_Text_ThanksLadyTakeThis::
-    .string "BILL: Yeehah!\n"
+    .string "Bill: Yeehah!\n"
     .string "Thanks, lady! I owe you one!\p"
     .string "So, did you come to see my\n"
     .string "Pokémon collection?\p"
@@ -71,8 +71,8 @@ Route25_SeaCottage_Text_ThanksLadyTakeThis::
     .string "Oh, here, maybe this'll do.$"
 
 Route25_SeaCottage_Text_ReceivedSSTicketFromBill::
-    .string "{PLAYER} received an S.S. TICKET\n"
-    .string "from BILL.$"
+    .string "{PLAYER} received an S.S. Ticket\n"
+    .string "from Bill.$"
 
 Route25_SeaCottage_Text_YouveGotTooMuchStuff::
     .string "You've got too much stuff!$"
@@ -80,7 +80,7 @@ Route25_SeaCottage_Text_YouveGotTooMuchStuff::
 Route25_SeaCottage_Text_SSAnnePartyYouGoInstead::
     .string "That cruise ship S.S. Anne is in\n"
     .string "Vermilion City.\p"
-    .string "I hear there are lots of TRAINERS\n"
+    .string "I hear there are lots of Trainers\n"
     .string "on board, too.\p"
     .string "They invited me to their party, but\n"
     .string "I can't stand fancy do's.\p"
@@ -88,20 +88,20 @@ Route25_SeaCottage_Text_SSAnnePartyYouGoInstead::
     .string "Go on and have a good time.$"
 
 Route25_SeaCottage_Text_CheckOutRareMonsOnPC::
-    .string "BILL: Feel like checking out some\n"
+    .string "Bill: Feel like checking out some\n"
     .string "of my rare Pokémon on my PC?\p"
     .string "Go on, check out my PC.$"
 
 Route25_SeaCottage_Text_TeleporterIsDisplayed::
-    .string "TELEPORTER is displayed on the PC\n"
+    .string "“Teleporter” is displayed on the PC\n"
     .string "monitor.$"
 
 Route25_SeaCottage_Text_InitiatedTeleportersCellSeparator::
-    .string "{PLAYER} initiated the TELEPORTER's\n"
+    .string "{PLAYER} initiated the Teleporter's\n"
     .string "Cell Separator.$"
 
 Route25_SeaCottage_Text_BillsFavoriteMonList::
-    .string "BILL's favorite Pokémon list!$"
+    .string "Bill's favorite Pokémon list!$"
 
 Route25_SeaCottage_Text_SeeWhichMon::
     .string "Which Pokémon do you want to see?$"

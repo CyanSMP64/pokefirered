@@ -17,7 +17,7 @@ Text_MonSentToBoxSomeonesBoxFull::
     .string "Box “{STR_VAR_1}.”$"
 
 Text_MonSentToBoxBillsBoxFull::
-    .string "BOX “{STR_VAR_3}” on\n"
+    .string "Box “{STR_VAR_3}” on\n"
     .string "Bill's PC was full.\p"
     .string "{STR_VAR_2} was transferred to\n"
     .string "Box “{STR_VAR_1}.”$"

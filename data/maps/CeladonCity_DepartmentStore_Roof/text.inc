@@ -8,7 +8,7 @@ CeladonCity_DepartmentStore_Roof_Text_GiveWhichDrink::
 
 CeladonCity_DepartmentStore_Roof_Text_YayFreshWaterHaveThis::
     .string "Yay!\p"
-    .string "FRESH WATER!\p"
+    .string "Fresh Water!\p"
     .string "Thank you!\n"
     .string "You can have this from me!$"
 
@@ -23,7 +23,7 @@ CeladonCity_DepartmentStore_Roof_Text_ExplainTM16::
 
 CeladonCity_DepartmentStore_Roof_Text_YaySodaPopHaveThis::
     .string "Yay!\p"
-    .string "SODA POP!\p"
+    .string "Soda Pop!\p"
     .string "Thank you!\n"
     .string "You can have this from me!$"
 
@@ -34,7 +34,7 @@ CeladonCity_DepartmentStore_Roof_Text_ExplainTM20::
 
 CeladonCity_DepartmentStore_Roof_Text_YayLemonadeHaveThis::
     .string "Yay!\p"
-    .string "LEMONADE!\p"
+    .string "Lemonade!\p"
     .string "Thank you!\n"
     .string "You can have this from me!$"
 
@@ -51,7 +51,7 @@ CeladonCity_DepartmentStore_Roof_Text_ImNotThirstyAfterAll::
     .string "I'm not thirsty after all!$"
 
 CeladonCity_DepartmentStore_Roof_Text_MySisterIsImmature::
-    .string "My sister is a TRAINER, believe it\n"
+    .string "My sister is a Trainer, believe it\n"
     .string "or not.\p"
     .string "But, she's so immature, she drives\n"
     .string "me nuts!$"
@@ -61,8 +61,8 @@ CeladonCity_DepartmentStore_Roof_Text_ImThirstyIWantDrink::
     .string "I want something to drink!$"
 
 CeladonCity_DepartmentStore_Roof_Text_FloorSign::
-    .string "ROOFTOP SQUARE:\n"
-    .string "VENDING MACHINES$"
+    .string "Rooftop Square:\n"
+    .string "Vending Machines$"
 
 CeladonCity_DepartmentStore_Roof_Text_VendingMachineWhatDoesItHave::
     .string "A vending machine!\n"

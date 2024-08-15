@@ -7,7 +7,7 @@ SevenIsland_SevaultCanyon_Text_CyndyDefeat::
 
 SevenIsland_SevaultCanyon_Text_CyndyPostBattle::
     .string "The way I am now, I may have to\n"
-    .string "hold off on TRAINER TOWER…$"
+    .string "hold off on Trainer Tower…$"
 
 SevenIsland_SevaultCanyon_Text_EvanIntro::
     .string "It doesn't matter if you happen to\n"
@@ -20,9 +20,9 @@ SevenIsland_SevaultCanyon_Text_EvanDefeat::
 
 SevenIsland_SevaultCanyon_Text_EvanPostBattle::
     .string "You see them every so often,\n"
-    .string "TRAINERS with awesome Pokémon\l"
+    .string "Trainers with awesome Pokémon\l"
     .string "who have no idea what to do.\p"
-    .string "Before training Pokémon, TRAINERS\n"
+    .string "Before training Pokémon, Trainers\n"
     .string "themselves need to grow up.$"
 
 SevenIsland_SevaultCanyon_Text_JacksonIntro::
@@ -117,14 +117,14 @@ SevenIsland_SevaultCanyon_Text_NyaNotEnoughMons::
     .string "in two-on-two style?$"
 
 SevenIsland_SevaultCanyon_Text_RouteSign::
-    .string "SEVAULT CANYON\n"
-    .string "TANOBY RUINS AHEAD$"
+    .string "Sevault Canyon\n"
+    .string "Tanoby Ruins Ahead$"
 
 SevenIsland_SevaultCanyon_Text_BrunoTrainedWithBrawly::
     .string "Training by oneself is certainly\n"
     .string "not a bad thing.\p"
     .string "But it's also not bad to aim for\n"
     .string "the top with a partner.\p"
-    .string "Even BRUNO…\n"
+    .string "Even Bruno…\n"
     .string "He trained with a fellow by the\l"
     .string "name of BRAWLY before.$"

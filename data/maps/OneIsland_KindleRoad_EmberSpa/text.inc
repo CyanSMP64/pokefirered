@@ -33,7 +33,7 @@ OneIsland_KindleRoad_EmberSpa_Text_BrunoVisitsSpaOnOccasion::
     .string "After an honest day of training,\n"
     .string "nothing beats a relaxing soak in\l"
     .string "the hot spring pool.\p"
-    .string "BRUNO, who's a senior ahead of me,\n"
+    .string "Bruno, who's a senior ahead of me,\n"
     .string "visits the SPA on occasion.\p"
     .string "He comes to rehab injuries, both\n"
     .string "his own and his Pokémon's.$"

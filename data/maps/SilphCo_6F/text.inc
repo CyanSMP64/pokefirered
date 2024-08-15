@@ -1,5 +1,5 @@
 SilphCo_6F_Text_RocketsTookOverBuilding::
-    .string "The ROCKETS came and took over\n"
+    .string "The Rockets came and took over\n"
     .string "the building!$"
 
 SilphCo_6F_Text_BetterGetBackToWork::
@@ -30,15 +30,15 @@ SilphCo_6F_Text_RocketsRanAwayBecauseOfYou::
     .string "because of you!$"
 
 SilphCo_6F_Text_TargetedSilphForOurMonProducts::
-    .string "They must have targeted SILPH for\n"
+    .string "They must have targeted Silph for\n"
     .string "our Pokémon products.$"
 
 SilphCo_6F_Text_ComeWorkForSilphWhenYoureOlder::
-    .string "Come work for SILPH when you\n"
+    .string "Come work for Silph when you\n"
     .string "get older.$"
 
 SilphCo_6F_Text_Grunt1Intro::
-    .string "I am one of the four ROCKET\n"
+    .string "I am one of the four Rocket\n"
     .string "BROTHERS!$"
 
 SilphCo_6F_Text_Grunt1Defeat::

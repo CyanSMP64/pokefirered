@@ -32,10 +32,10 @@ MysteryEventScript_StampCard::
 	end
 
 sText_MysteryGiftStampCard:
-	.string "Thank you for using the STAMP CARD\n"
+	.string "Thank you for using the Stamp Card\n"
 	.string "System.\p"
 	.string "You have {STR_VAR_1} more to collect to\n"
-	.string "fill your STAMP CARD.$"
+	.string "fill your Stamp Card.$"
 
 MysteryEventScript_SurfPichu::
 	setvaddress MysteryEventScript_SurfPichu
@@ -98,10 +98,10 @@ SurfPichu_Slot5:
 	return
 
 sText_MysteryGiftEgg:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "From the Pokémon Center we\n"
-	.string "have a gift - a Pokémon EGG!\p"
+	.string "have a gift - a Pokémon Egg!\p"
 	.string "Please raise it with love and\n"
 	.string "kindness.$"
 
@@ -136,20 +136,20 @@ MysteryEventScript_BattleCardInfo:
 	end
 
 sText_MysteryGiftBattleCountCard:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
-	.string "Your BATTLE COUNT CARD keeps\n"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
+	.string "Your Battle Count Card keeps\n"
 	.string "track of your battle record against\l"
-	.string "TRAINERS with the same CARD.\p"
-	.string "Look for and battle TRAINERS who\n"
-	.string "have the same CARD as you.\p"
+	.string "Trainers with the same Card.\p"
+	.string "Look for and battle Trainers who\n"
+	.string "have the same Card as you.\p"
 	.string "You may check the overall rankings\n"
-	.string "by reading the NEWS.\p"
+	.string "by reading the News.\p"
 	.string "Please do give it a try!$"
 
 sText_MysteryGiftBattleCountCard_2:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "Congratulations!\p"
 	.string "You have won a prize for winning\n"
 	.string "three battles!\p"
@@ -193,8 +193,8 @@ AuroraTicket_Obtained:
 	end
 
 sText_AuroraTicket1:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "You must be {PLAYER}.\n"
 	.string "There is a ticket here for you.$"
 
@@ -205,11 +205,11 @@ sText_AuroraTicket2:
 	.string "it is about?$"
 
 sText_AuroraTicketGot:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.$"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.$"
 
 sText_AuroraTicketNoPlace:
-	.string "Oh, I'm sorry, {PLAYER}. Your BAG's\n"
+	.string "Oh, I'm sorry, {PLAYER}. Your Bag's\n"
 	.string "Key Items Pocket is full.\p"
 	.string "Please store something on your PC,\n"
 	.string "then come back for this.$"
@@ -252,8 +252,8 @@ MysticTicket_Obtained:
 	end
 
 sText_MysticTicket2:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "You must be {PLAYER}.\n"
 	.string "There is a ticket here for you.$"
 
@@ -264,11 +264,11 @@ sText_MysticTicket1:
 	.string "it is about?$"
 
 sText_MysticTicketGot:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.$"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.$"
 
 sText_MysticTicketNoPlace:
-	.string "Oh, I'm sorry, {PLAYER}. Your BAG's\n"
+	.string "Oh, I'm sorry, {PLAYER}. Your Bag's\n"
 	.string "Key Items Pocket is full.\p"
 	.string "Please store something on your PC,\n"
 	.string "then come back for this.$"
@@ -288,8 +288,8 @@ MysteryEventScript_AlteringCave_:
 	end
 
 sText_MysteryGiftAlteringCave:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "Recently, there have been rumors\n"
 	.string "of rare Pokémon appearances.\p"
 	.string "The rumors are about ALTERING\n"

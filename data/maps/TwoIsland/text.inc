@@ -4,7 +4,7 @@ TwoIsland_Text_IslandSign::
 
 TwoIsland_Text_JoyfulGameCornerSign::
     .string "Skip & Chomp!\n"
-    .string "Joyful GAME CORNER$"
+    .string "Joyful Game Corner$"
 
 TwoIsland_Text_DangerFastCurrent::
     .string "DANGER! FAST CURRENT!\n"
@@ -49,23 +49,23 @@ TwoIsland_Text_FellowMovedFromCeladonCity::
 
 TwoIsland_Text_ShopkeepersBrotherWorksGameCorner::
     .string "The shopkeeper's brother took\n"
-    .string "a job at the GAME CORNER.\p"
+    .string "a job at the Game Corner.\p"
     .string "He's trying to pull together money\n"
     .string "so they can buy more merchandise.$"
 
 TwoIsland_Text_BrunoCameToIslandWhileBack::
     .string "Listen, listen.\n"
     .string "Did you know?\p"
-    .string "A famous TRAINER came to the\n"
+    .string "A famous Trainer came to the\n"
     .string "ISLAND a little while back.\p"
-    .string "He's one of the ELITE FOUR.\n"
-    .string "His name is BRUNO.\p"
+    .string "He's one of the Elite Four.\n"
+    .string "His name is Bruno.\p"
     .string "He went away disappointed when he\n"
     .string "found out that they were all sold\l"
     .string "out of Rage Candybars.$"
 
 TwoIsland_Text_BuyRareItemsHere::
-    .string "The discerning TRAINER knows to\n"
+    .string "The discerning Trainer knows to\n"
     .string "buy rare items here!$"
 
 TwoIsland_Text_OldWomanLivesOutOnCape::

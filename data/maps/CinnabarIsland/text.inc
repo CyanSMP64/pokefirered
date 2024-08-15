@@ -22,7 +22,7 @@ CinnabarIsland_Text_PokemonLab::
 
 CinnabarIsland_Text_GymSign::
     .string "Cinnabar Island Pokémon Gym\n"
-    .string "LEADER: BLAINE\l"
+    .string "Leader: Blaine\l"
     .string "The Hotheaded Quiz Master!$"
 
 @CinnabarIsland_Text_HeyIfItIsntPlayer::
@@ -30,7 +30,7 @@ CinnabarIsland_Text_GymSign::
 @    .string "Hey, if it isn't {PLAYER}!$"
 
 @CinnabarIsland_Text_ComeWithMeToOneIsland::
-@    .string "Look, it's me, BILL.\n"
+@    .string "Look, it's me, Bill.\n"
 @    .string "Long time no see!\p"
 @    .string "I hope you're still using my\n"
 @    .string "PC system.\p"
@@ -52,7 +52,7 @@ CinnabarIsland_Text_GymSign::
 @    .string "Well, all right.\n"
 @    .string "The boat hasn't arrived yet anyway.\p"
 @    .string "I'll be waiting at the Pokémon\n"
-@    .string "CENTER over there.\p"
+@    .string "Center over there.\p"
 @    .string "Come see me when you're done with\n"
 @    .string "your business here.$"
 
@@ -64,11 +64,11 @@ CinnabarIsland_Text_MyPalsBoatArrived::
 
 CinnabarIsland_Text_IfYouHaveTriPassYouCanGoAgain::
     .string "Hey, wasn't that a long cruise?\p"
-    .string "My buddy CELIO seemed to enjoy\n"
+    .string "My buddy Celio seemed to enjoy\n"
     .string "your company.\p"
     .string "I'm sure he'd welcome you if you\n"
     .string "were to visit him again.\p"
-    .string "If you have a TRI-PASS, you can\n"
+    .string "If you have a Tri-Pass, you can\n"
     .string "always take a ferry there from\l"
     .string "Vermilion Port.\p"
     .string "All right, thanks for your company!$"
