@@ -11,7 +11,7 @@ ThreeIsland_Mart_Text_PeopleHealWithBerriesFromForest::
     .string "they never run out.$"
 
 ThreeIsland_Mart_Text_BikersWereAboutToTrashMart::
-    .string "Those BIKERS were about to trash\n"
+    .string "Those Bikers were about to trash\n"
     .string "this Pokémon Mart.\p"
     .string "Am I glad they decided to leave!$"
 

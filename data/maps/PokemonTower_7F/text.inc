@@ -10,7 +10,7 @@ PokemonTower_7F_Text_Grunt1PostBattle::
 
 PokemonTower_7F_Text_Grunt2Intro::
     .string "This old guy marched right up to\n"
-    .string "our HIDEOUT.\p"
+    .string "our Hideout.\p"
     .string "Then, he starts ranting about how\n"
     .string "Team Rocket's abusing Pokémon.\p"
     .string "So, we're just talking it over as\n"

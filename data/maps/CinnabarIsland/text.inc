@@ -5,7 +5,7 @@ CinnabarIsland_Text_BlaineLivedHereSinceBeforeLab::
     .string "Cinnabar Gym's Blaine is quite the\n"
     .string "odd fellow.\p"
     .string "He's lived on the island since way\n"
-    .string "before the LAB was built.$"
+    .string "before the Lab was built.$"
 
 CinnabarIsland_Text_ScientistsExperimentInMansion::
     .string "Scientists conduct experiments \n"

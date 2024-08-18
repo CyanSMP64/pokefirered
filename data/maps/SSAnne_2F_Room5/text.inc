@@ -6,6 +6,6 @@ SSAnne_2F_Room5_Text_HaveYouGoneToSafariZone::
 
 SSAnne_2F_Room5_Text_WeThinkSafariZoneIsAwesome::
     .string "Me and my daddy think the Safari\n"
-    .string "ZONE is awesome!\l"
+    .string "Zone is awesome!\l"
     .string "I wish we could go there again.$"
 

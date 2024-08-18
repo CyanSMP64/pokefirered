@@ -114,7 +114,7 @@ CeladonCity_GameCorner_Text_GruntDefeat::
     .string "Dang!$"
 
 CeladonCity_GameCorner_Text_GruntPostBattle::
-    .string "The Team Rocket HIDEOUT might\n"
+    .string "The Team Rocket Hideout might\n"
     .string "be discovered!\p"
     .string "I better tell Boss!$"
 

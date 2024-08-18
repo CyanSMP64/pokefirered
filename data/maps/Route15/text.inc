@@ -20,7 +20,7 @@ Route15_Text_BeckyDefeat::
     .string "No, wrong!$"
 
 Route15_Text_BeckyPostBattle::
-    .string "I'm afraid of BIKERS. They look so\n"
+    .string "I'm afraid of Bikers. They look so\n"
     .string "ugly and mean!$"
 
 Route15_Text_EdwinIntro::

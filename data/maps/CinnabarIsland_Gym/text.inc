@@ -6,7 +6,7 @@ CinnabarIsland_Gym_Text_BlaineIntro::
     .string "and ready with intense heat!\p"
     .string "They incinerate all challengers!\p"
     .string "Hah!\n"
-    .string "You better have BURN HEAL!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+    .string "You better have Burn Heal!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
 
 CinnabarIsland_Gym_Text_BlaineDefeat::
     .string "I have burned down to nothing!\n"
@@ -21,7 +21,7 @@ CinnabarIsland_Gym_Text_FireBlastIsUltimateFireMove::
 CinnabarIsland_Gym_Text_ExplainVolcanoBadge::
     .string "Hah!\p"
     .string "The Volcano Badge heightens the\n"
-    .string "SPECIAL stats of your Pokémon.\p"
+    .string "Special stats of your Pokémon.\p"
     .string "Here, you can have this, too!$"
 
 CinnabarIsland_Gym_Text_ReceivedTM38FromBlaine::
@@ -31,7 +31,7 @@ CinnabarIsland_Gym_Text_ReceivedTM38FromBlaine::
 CinnabarIsland_Gym_Text_BlainePostBattle::
     .string "TM38 contains Fire Blast.\n"
     .string "Teach it to Fire-type Pokémon.\p"
-    .string "VULPIX or CHARMELEON would be\n"
+    .string "Vulpix or Charmeleon would be\n"
     .string "ideal for that move.$"
 
 CinnabarIsland_Gym_Text_MakeSpaceForThis::
@@ -101,7 +101,7 @@ CinnabarIsland_Gym_Text_DerekPostBattle::
     .string "his way down safely.$"
 
 CinnabarIsland_Gym_Text_DustyIntro::
-    .string "I've been to many GYMS, but this\n"
+    .string "I've been to many Gym, but this\n"
     .string "one best suits my style.$"
 
 CinnabarIsland_Gym_Text_DustyDefeat::
@@ -109,7 +109,7 @@ CinnabarIsland_Gym_Text_DustyDefeat::
     .string "Too hot!$"
 
 CinnabarIsland_Gym_Text_DustyPostBattle::
-    .string "PONYTA, NINETALES…\n"
+    .string "Ponyta, NINETALES…\n"
     .string "Those are popular Fire Pokémon.$"
 
 CinnabarIsland_Gym_Text_ZacIntro::
@@ -131,7 +131,7 @@ CinnabarIsland_Gym_Text_GymGuyAdvice::
     .string "Pokémon pro.\p"
     .string "Douse his spirits with water!\p"
     .string "You'd better take some\n"
-    .string "BURN HEALS, too.$"
+    .string "Burn Heals, too.$"
 
 CinnabarIsland_Gym_Text_GymGuyPostVictory::
     .string "{PLAYER}!\n"
@@ -184,7 +184,27 @@ CinnabarIsland_Gym_Text_CorrectGoOnThrough::
     .string "You're absolutely correct!\p"
     .string "Go on through!$"
 
-CinnabarIsland_Gym_Text_SorryBadCall::
+CinnabarIsland_Gym_Text_SorryBadCall1::
+    .string "Did you forget?\n"
+    .string "All evolutions are randomized!$"
+
+CinnabarIsland_Gym_Text_SorryBadCall2::
+    .string "Sorry!\n"
+    .string "Bad call!$"
+
+CinnabarIsland_Gym_Text_SorryBadCall3::
+    .string "Sorry!\n"
+    .string "Bad call!$"
+
+CinnabarIsland_Gym_Text_SorryBadCall4::
+    .string "Sorry!\n"
+    .string "Bad call!$"
+
+CinnabarIsland_Gym_Text_SorryBadCall5::
+    .string "Sorry!\n"
+    .string "Bad call!$"
+
+CinnabarIsland_Gym_Text_SorryBadCall6::
     .string "Sorry!\n"
     .string "Bad call!$"
 

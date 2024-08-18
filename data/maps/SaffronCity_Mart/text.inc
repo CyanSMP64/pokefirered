@@ -5,6 +5,6 @@ SaffronCity_Mart_Text_MaxRepelMoreEffectiveThanSuper::
     .string "than Super Repel.$"
 
 SaffronCity_Mart_Text_ReviveIsCostly::
-    .string "REVIVE is costly, but it revives\n"
+    .string "Revive is costly, but it revives\n"
     .string "fainted Pokémon!$"
 

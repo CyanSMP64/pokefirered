@@ -1,6 +1,6 @@
 FuchsiaCity_House3_Text_WouldYouLikeToForgetMove::
     .string "Uh…\n"
-    .string "Oh, yes, I'm the MOVE DELETER.\p"
+    .string "Oh, yes, I'm the Move Deleter.\p"
     .string "I can make Pokémon forget their\n"
     .string "moves.\p"
     .string "Would you like me to do that?$"

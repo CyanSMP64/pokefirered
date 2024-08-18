@@ -39,7 +39,7 @@ SilphCo_6F_Text_ComeWorkForSilphWhenYoureOlder::
 
 SilphCo_6F_Text_Grunt1Intro::
     .string "I am one of the four Rocket\n"
-    .string "BROTHERS!$"
+    .string "Brothers!$"
 
 SilphCo_6F_Text_Grunt1Defeat::
     .string "Flame out!$"

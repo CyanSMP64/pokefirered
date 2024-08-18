@@ -1,5 +1,5 @@
 FuchsiaCity_WardensHouse_Text_HifFuffHefifoo::
-    .string "WARDEN: Hif fuff hefifoo!\p"
+    .string "Warden: Hif fuff hefifoo!\p"
     .string "Ha lof ha feef ee hafahi ho.\n"
     .string "Heff hee fwee!$"
 
@@ -13,37 +13,37 @@ FuchsiaCity_WardensHouse_Text_HeOhayHeHaHoo::
 
 FuchsiaCity_WardensHouse_Text_GaveGoldTeethToWarden::
     .string "{PLAYER} gave the Gold Teeth\n"
-    .string "to the WARDEN.$"
+    .string "to the Warden.$"
 
 FuchsiaCity_WardensHouse_Text_WardenPoppedInHisTeeth::
-    .string "The WARDEN popped in his teeth!$"
+    .string "The Warden popped in his teeth!$"
 
 FuchsiaCity_WardensHouse_Text_ThanksSonGiveYouSomething::
-    .string "WARDEN: Thanks, son!\n"
+    .string "Warden: Thanks, son!\n"
     .string "You're a real lifesaver!\p"
     .string "No one could understand a word\n"
     .string "that I said, not a one!\p"
     .string "I was too ashamed to show my face\n"
-    .string "around the OFFICE, even.\p"
+    .string "around the Office, even.\p"
     .string "Let me give you something for your\n"
     .string "trouble.$"
 
 FuchsiaCity_WardensHouse_Text_ThanksLassieGiveYouSomething::
-    .string "WARDEN: Thank you, lassie!\n"
+    .string "Warden: Thank you, lassie!\n"
     .string "You're a real lifesaver!\p"
     .string "No one could understand a word\n"
     .string "that I said, not a one!\p"
     .string "I was too ashamed to show my face\n"
-    .string "around the OFFICE, even.\p"
+    .string "around the Office, even.\p"
     .string "Let me give you something for your\n"
     .string "trouble.$"
 
 FuchsiaCity_WardensHouse_Text_ReceivedHM04FromWarden::
     .string "{PLAYER} received HM04\n"
-    .string "from the WARDEN.$"
+    .string "from the Warden.$"
 
 FuchsiaCity_WardensHouse_Text_ExplainStrength::
-    .string "WARDEN: Inside HM04 you'll find\n"
+    .string "Warden: Inside HM04 you'll find\n"
     .string "Strength.\p"
     .string "It lets Pokémon move boulders when\n"
     .string "you're outside of battle.\p"

@@ -25,7 +25,7 @@ PewterCity_Museum_1F_Text_DoYouKnowWhatAmberIs::
 PewterCity_Museum_1F_Text_AmberContainsGeneticMatter::
     .string "Amber contains the genetic matter\n"
     .string "of ancient Pokémon.\p"
-    .string "There's a LAB somewhere trying to\n"
+    .string "There's a Lab somewhere trying to\n"
     .string "resurrect Pokémon from Amber.$"
 
 PewterCity_Museum_1F_Text_AmberIsFossilizedSap::

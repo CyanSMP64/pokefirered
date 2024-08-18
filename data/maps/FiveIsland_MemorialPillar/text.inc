@@ -1,6 +1,6 @@
 FiveIsland_MemorialPillar_Text_MiloIntro::
     .string "I'm the eldest of the Bird\n"
-    .string "BROTHERS.\p"
+    .string "Brothers.\p"
     .string "The best thing about birds…\n"
     .string "It has to be the beak.$"
 
@@ -13,7 +13,7 @@ FiveIsland_MemorialPillar_Text_MiloPostBattle::
 
 FiveIsland_MemorialPillar_Text_ChazIntro::
     .string "I'm the middle kid of the Bird\n"
-    .string "BROTHERS.\p"
+    .string "Brothers.\p"
     .string "The best thing about birds…\n"
     .string "It has to be the wings.$"
 
@@ -26,7 +26,7 @@ FiveIsland_MemorialPillar_Text_ChazPostBattle::
 
 FiveIsland_MemorialPillar_Text_HaroldIntro::
     .string "I'm the youngest of the Bird\n"
-    .string "BROTHERS.\p"
+    .string "Brothers.\p"
     .string "The best thing about birds…\n"
     .string "It has to be the down.$"
 

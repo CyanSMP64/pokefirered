@@ -107,7 +107,7 @@ Route12_Text_RouteSign::
     .string "North to Lavender$"
 
 Route12_Text_SportfishingArea::
-    .string "SPORTFISHING AREA$"
+    .string "Sportfishing Area$"
 
 Route12_Text_JesIntro::
     .string "JES: If I win, I'm going to\n"

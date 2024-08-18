@@ -54,17 +54,17 @@ SilphCo_5F_Text_Grunt2PostBattle::
     .string "KOFFING evolves into WEEZING!$"
 
 SilphCo_5F_Text_PorygonFirstVRMon::
-    .string "It's a Pokémon REPORT!\p"
+    .string "It's a Pokémon Report!\p"
     .string "Pokémon Lab created Porygon,\n"
     .string "the first virtual-reality Pokémon.$"
 
 SilphCo_5F_Text_Over350TechniquesConfirmed::
-    .string "It's a Pokémon REPORT!\p"
+    .string "It's a Pokémon Report!\p"
     .string "Over 350 Pokémon techniques have\n"
     .string "been confirmed.$"
 
 SilphCo_5F_Text_SomeMonsEvolveWhenTraded::
-    .string "It's a Pokémon REPORT!\p"
+    .string "It's a Pokémon Report!\p"
     .string "Some Pokémon have been confirmed\n"
     .string "to evolve when they are traded.$"
 

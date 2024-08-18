@@ -81,7 +81,7 @@ Route20_Text_NoraDefeat::
 
 Route20_Text_NoraPostBattle::
     .string "Will my pearls grow bigger inside\n"
-    .string "CLOYSTER?$"
+    .string "Cloyster?$"
 
 Route20_Text_MissyIntro::
     .string "I swam here from Cinnabar Island.\n"
@@ -92,12 +92,12 @@ Route20_Text_MissyDefeat::
 
 Route20_Text_MissyPostBattle::
     .string "Pokémon have taken over an\n"
-    .string "abandoned mansion on CINNABAR.\p"
+    .string "abandoned mansion on Cinnabar.\p"
     .string "They call it the Pokémon Mansion\n"
     .string "now.$"
 
 Route20_Text_MelissaIntro::
-    .string "CINNABAR, in the west, has a LAB\n"
+    .string "Cinnabar, in the west, has a Lab\n"
     .string "for Pokémon.\p"
     .string "My daddy works there.$"
 

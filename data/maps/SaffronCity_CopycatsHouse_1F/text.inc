@@ -9,5 +9,5 @@ SaffronCity_CopycatsHouse_1F_Text_DaughterLikesToMimicPeople::
     .string "nickname COPYCAT around here.$"
 
 SaffronCity_CopycatsHouse_1F_Text_Chansey::
-    .string "CHANSEY: Chaan! Sii!$"
+    .string "Chansey: Chaan! Sii!$"
 

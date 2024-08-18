@@ -464,7 +464,7 @@ Route17_Text_VirgilRematchIntro::
 	.string "You out for a stroll?$"
 
 Route17_Text_BillyRematchIntro::
-	.string "We're BIKERS!\n"
+	.string "We're Bikers!\n"
 	.string "We rule the roads, man!$"
 
 Route17_Text_NikolasRematchIntro::
@@ -595,7 +595,7 @@ Route20_Text_MissyRematchIntro::
 	.string "It wasn't easy, like I said.$"
 
 Route20_Text_MelissaRematchIntro::
-	.string "CINNABAR, in the west, has a LAB\n"
+	.string "Cinnabar, in the west, has a Lab\n"
 	.string "for Pokémon.\p"
 	.string "My daddy works there.$"
 
@@ -829,19 +829,19 @@ FiveIsland_ResortGorgeous_Text_TobyRematchIntro::
 
 FiveIsland_MemorialPillar_Text_MiloRematchIntro::
 	.string "I'm the eldest of the Bird\n"
-	.string "BROTHERS. Remember me?\p"
+	.string "Brothers. Remember me?\p"
 	.string "That's right, I'm the one who loves\n"
 	.string "birds for their beaks!$"
 
 FiveIsland_MemorialPillar_Text_ChazRematchIntro::
 	.string "I'm the middle kid of the Bird\n"
-	.string "BROTHERS.\p"
+	.string "Brothers.\p"
 	.string "I'm the one that loves wings.\n"
 	.string "Let's battle again!$"
 
 FiveIsland_MemorialPillar_Text_HaroldRematchIntro::
 	.string "I'm the youngest of the Bird\n"
-	.string "BROTHERS.\p"
+	.string "Brothers.\p"
 	.string "I love birds for their down.\n"
 	.string "I didn't think I'd see you again!$"
 

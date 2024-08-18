@@ -1,5 +1,5 @@
 CinnabarIsland_PokemonLab_ResearchRoom_Text_EeveeCanEvolveIntroThreeMons::
-    .string "EEVEE can evolve into one of three\n"
+    .string "Eevee can evolve into one of three\n"
     .string "kinds of Pokémon.$"
 
 CinnabarIsland_PokemonLab_ResearchRoom_Text_LegendaryBirdEmail::

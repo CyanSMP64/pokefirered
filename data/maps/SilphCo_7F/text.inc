@@ -81,7 +81,7 @@ SilphCo_7F_Text_JoshuaPostBattle::
 
 SilphCo_7F_Text_Grunt1Intro::
     .string "I am one of the four Rocket\n"
-    .string "BROTHERS!$"
+    .string "Brothers!$"
 
 SilphCo_7F_Text_Grunt1Defeat::
     .string "Aack!\n"

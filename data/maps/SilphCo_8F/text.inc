@@ -27,7 +27,7 @@ SilphCo_8F_Text_ParkerPostBattle::
 
 SilphCo_8F_Text_Grunt2Intro::
     .string "I am one of the four Rocket\n"
-    .string "BROTHERS!$"
+    .string "Brothers!$"
 
 SilphCo_8F_Text_Grunt2Defeat::
     .string "Whoo!\n"

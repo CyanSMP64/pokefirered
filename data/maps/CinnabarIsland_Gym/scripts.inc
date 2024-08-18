@@ -216,8 +216,8 @@ CinnabarIsland_Gym_EventScript_Quz1Right::
 CinnabarIsland_Gym_EventScript_Quiz1::
 	msgbox CinnabarIsland_Gym_Text_PokemonQuizRules
 	msgbox CinnabarIsland_Gym_Text_QuizQuestion1, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CinnabarIsland_Gym_EventScript_Quiz1Correct
-	goto_if_eq VAR_RESULT, NO, CinnabarIsland_Gym_EventScript_Quiz1Incorrect
+	goto_if_eq VAR_RESULT, YES, CinnabarIsland_Gym_EventScript_Quiz1Incorrect
+	goto_if_eq VAR_RESULT, NO, CinnabarIsland_Gym_EventScript_Quiz1Correct
 	end
 
 CinnabarIsland_Gym_EventScript_CorrectAnswer::
@@ -226,11 +226,51 @@ CinnabarIsland_Gym_EventScript_CorrectAnswer::
 	msgbox CinnabarIsland_Gym_Text_CorrectGoOnThrough
 	return
 
-CinnabarIsland_Gym_EventScript_IncorrectAnswer::
+CinnabarIsland_Gym_EventScript_IncorrectAnswer1::
 	waitse
 	playse SE_BOO
 	waitse
-	msgbox CinnabarIsland_Gym_Text_SorryBadCall
+	msgbox CinnabarIsland_Gym_Text_SorryBadCall1
+	closemessage
+	return
+
+CinnabarIsland_Gym_EventScript_IncorrectAnswer2::
+	waitse
+	playse SE_BOO
+	waitse
+	msgbox CinnabarIsland_Gym_Text_SorryBadCall2
+	closemessage
+	return
+
+CinnabarIsland_Gym_EventScript_IncorrectAnswer3::
+	waitse
+	playse SE_BOO
+	waitse
+	msgbox CinnabarIsland_Gym_Text_SorryBadCall3
+	closemessage
+	return
+
+CinnabarIsland_Gym_EventScript_IncorrectAnswer4::
+	waitse
+	playse SE_BOO
+	waitse
+	msgbox CinnabarIsland_Gym_Text_SorryBadCall4
+	closemessage
+	return
+
+CinnabarIsland_Gym_EventScript_IncorrectAnswer5::
+	waitse
+	playse SE_BOO
+	waitse
+	msgbox CinnabarIsland_Gym_Text_SorryBadCall5
+	closemessage
+	return
+
+CinnabarIsland_Gym_EventScript_IncorrectAnswer6::
+	waitse
+	playse SE_BOO
+	waitse
+	msgbox CinnabarIsland_Gym_Text_SorryBadCall6
 	closemessage
 	return
 
@@ -254,7 +294,7 @@ CinnabarIsland_Gym_EventScript_DoorAlreadyOpen::
 	end
 
 CinnabarIsland_Gym_EventScript_Quiz1Incorrect::
-	call CinnabarIsland_Gym_EventScript_IncorrectAnswer
+	call CinnabarIsland_Gym_EventScript_IncorrectAnswer1
 	goto_if_not_defeated TRAINER_BURGLAR_QUINN, CinnabarIsland_Gym_EventScript_BattleQuinn
 	releaseall
 	end
@@ -326,7 +366,7 @@ CinnabarIsland_Gym_EventScript_Quiz2Complete::
 	return
 
 CinnabarIsland_Gym_EventScript_Quiz2Incorrect::
-	call CinnabarIsland_Gym_EventScript_IncorrectAnswer
+	call CinnabarIsland_Gym_EventScript_IncorrectAnswer2
 	goto_if_not_defeated TRAINER_SUPER_NERD_AVERY, CinnabarIsland_Gym_EventScript_BattleAvery
 	releaseall
 	end
@@ -407,7 +447,7 @@ CinnabarIsland_Gym_EventScript_Quiz3Complete::
 	return
 
 CinnabarIsland_Gym_EventScript_Quiz3Incorrect::
-	call CinnabarIsland_Gym_EventScript_IncorrectAnswer
+	call CinnabarIsland_Gym_EventScript_IncorrectAnswer3
 	goto_if_not_defeated TRAINER_BURGLAR_RAMON, CinnabarIsland_Gym_EventScript_BattleRamon
 	releaseall
 	end
@@ -479,7 +519,7 @@ CinnabarIsland_Gym_EventScript_Quiz4Complete::
 	return
 
 CinnabarIsland_Gym_EventScript_Quiz4Incorrect::
-	call CinnabarIsland_Gym_EventScript_IncorrectAnswer
+	call CinnabarIsland_Gym_EventScript_IncorrectAnswer4
 	goto_if_not_defeated TRAINER_SUPER_NERD_DEREK, CinnabarIsland_Gym_EventScript_BattleDerek
 	releaseall
 	end
@@ -551,7 +591,7 @@ CinnabarIsland_Gym_EventScript_Quiz5Complete::
 	return
 
 CinnabarIsland_Gym_EventScript_Quiz5Incorrect::
-	call CinnabarIsland_Gym_EventScript_IncorrectAnswer
+	call CinnabarIsland_Gym_EventScript_IncorrectAnswer5
 	goto_if_not_defeated TRAINER_BURGLAR_DUSTY, CinnabarIsland_Gym_EventScript_BattleDusty
 	releaseall
 	end
@@ -623,7 +663,7 @@ CinnabarIsland_Gym_EventScript_Quiz6Complete::
 	return
 
 CinnabarIsland_Gym_EventScript_Quiz6Incorrect::
-	call CinnabarIsland_Gym_EventScript_IncorrectAnswer
+	call CinnabarIsland_Gym_EventScript_IncorrectAnswer6
 	goto_if_not_defeated TRAINER_SUPER_NERD_ZAC, CinnabarIsland_Gym_EventScript_BattleZac
 	releaseall
 	end

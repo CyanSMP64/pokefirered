@@ -111,7 +111,7 @@ SaffronCity_Gym_Text_CameronDefeat::
     .string "Down and out!$"
 
 SaffronCity_Gym_Text_CameronPostBattle::
-    .string "There used to be two Pokémon GYMS\n"
+    .string "There used to be two Pokémon Gym\n"
     .string "in Saffron.\p"
     .string "The Fighting Dojo next door lost\n"
     .string "its Gym status, though.\p"

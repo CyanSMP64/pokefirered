@@ -32,7 +32,7 @@ SilphCo_9F_Text_EdPostBattle::
 
 SilphCo_9F_Text_Grunt2Intro::
     .string "I am one of the four Rocket\n"
-    .string "BROTHERS!$"
+    .string "Brothers!$"
 
 SilphCo_9F_Text_Grunt2Defeat::
     .string "Warg!\n"
