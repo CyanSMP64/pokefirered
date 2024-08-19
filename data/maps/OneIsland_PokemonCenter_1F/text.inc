@@ -13,7 +13,7 @@ OneIsland_PokemonCenter_1F_Text_BillHowsYourResearchComing::
 
 OneIsland_PokemonCenter_1F_Text_ThisIsMyBuddyCelio::
     .string "{PLAYER}, this is my buddy Celio.\n"
-    .string "He's one dedicated PC MANIAC!$"
+    .string "He's one dedicated PC Maniac!$"
 
 OneIsland_PokemonCenter_1F_Text_PlayerIsRisingPokemonChamp::
     .string "Celio, this is {PLAYER}, a rising\n"
@@ -60,10 +60,10 @@ OneIsland_PokemonCenter_1F_Text_CanYouDeliverThisMeteoritePlayer::
     .string "We keep in touch, being fellow\n"
     .string "maniacs.\p"
     .string "So, can I get you to deliver this\n"
-    .string "METEORITE to him?$"
+    .string "Meteorite to him?$"
 
 OneIsland_PokemonCenter_1F_Text_AcceptedMeteoriteFromBill::
-    .string "{PLAYER} accepted the METEORITE\n"
+    .string "{PLAYER} accepted the Meteorite\n"
     .string "from Bill.$"
 
 OneIsland_PokemonCenter_1F_Text_CelioPleaseTakeThis::
@@ -74,7 +74,7 @@ OneIsland_PokemonCenter_1F_Text_PassLetsYouTravelBetweenIslands::
     .string "It's a Pass for the ferry service\n"
     .string "serving the local islands.\p"
     .string "It will let you travel between the\n"
-    .string "ISLANDS ONE, TWO, and THREE.\p"
+    .string "Islands One, Two, and Three.\p"
     .string "Oh, you should have this, too.$"
 
 OneIsland_PokemonCenter_1F_Text_ReceivedExtraPageForTownMap::
@@ -140,7 +140,7 @@ OneIsland_PokemonCenter_1F_Text_CelioOhReallyEhehe::
 OneIsland_PokemonCenter_1F_Text_BillWeShouldHeadBackToKanto::
     .string "Bill: Well, there you have it.\n"
     .string "I'm finished with the job.\l"
-    .string "We should head back to KANTO.\p"
+    .string "We should head back to Kanto.\p"
     .string "Celio, I'll be seeing you again.$"
 
 OneIsland_PokemonCenter_1F_Text_CelioPromiseIllShowYouAroundSometime::
@@ -260,7 +260,7 @@ OneIsland_PokemonCenter_1F_Text_OkayThisIsGood::
 
 OneIsland_PokemonCenter_1F_Text_LinkedUpWithLanette::
     .string "I did it!\n"
-    .string "I linked up with LANETTE!$"
+    .string "I linked up with Lanette!$"
 
 OneIsland_PokemonCenter_1F_Text_ManagedToLinkWithHoennThankYou::
     .string "{PLAYER}…\n"
@@ -292,7 +292,7 @@ OneIsland_PokemonCenter_1F_Text_BillsFirstMonWasAbra::
     .string "Bill is a Poké Maniac, so he loves\n"
     .string "every kind.\p"
     .string "Apparently, the first one he caught\n"
-    .string "was an ABRA.$"
+    .string "was an Abra.$"
 
 OneIsland_PokemonCenter_1F_Text_BillsHometownInGoldenrod::
     .string "By the way, {PLAYER}, you're from\n"
@@ -343,13 +343,13 @@ OneIsland_PokemonCenter_1F_Text_MachineUnderAdjustment::
 OneIsland_PokemonCenter_1F_Text_MachineLinkedWithKanto::
     .string "Network Machine\n"
     .string "Link Level 1\p"
-    .string "Link established with the KANTO\n"
+    .string "Link established with the Kanto\n"
     .string "region.$"
 
 OneIsland_PokemonCenter_1F_Text_MachineLinkedWithKantoAndHoenn::
     .string "Network Machine\n"
     .string "Link Level 2\p"
-    .string "Link established with the KANTO\n"
+    .string "Link established with the Kanto\n"
     .string "and Hoenn regions.$"
 
 OneIsland_PokemonCenter_1F_Text_ObtainedTriPass::

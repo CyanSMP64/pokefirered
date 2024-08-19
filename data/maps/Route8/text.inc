@@ -101,7 +101,7 @@ Route8_Text_JuliaDefeat::
 Route8_Text_JuliaPostBattle::
     .string "I read that Clefairy evolves when\n"
     .string "it's exposed to a Moon Stone.\p"
-    .string "I read that in a Pokémon JOURNAL.\n"
+    .string "I read that in a Pokémon Journal.\n"
     .string "I wonder if it's true?$"
 
 Route8_Text_UndergroundPathSign::
@@ -109,34 +109,34 @@ Route8_Text_UndergroundPathSign::
     .string "Celadon City - Lavender Town$"
 
 Route8_Text_EliIntro::
-    .string "ELI: Twin power is fantastic.\n"
+    .string "Eli: Twin power is fantastic.\n"
     .string "Did you know?$"
 
 Route8_Text_EliDefeat::
-    .string "ELI: But…\n"
+    .string "Eli: But…\n"
     .string "We used our twin power…$"
 
 Route8_Text_EliPostBattle::
-    .string "ELI: I caught my Pokémon with\n"
-    .string "ANNE!$"
+    .string "Eli: I caught my Pokémon with\n"
+    .string "Anne!$"
 
 Route8_Text_EliNotEnoughMons::
-    .string "ELI: We can't battle if you don't\n"
+    .string "Eli: We can't battle if you don't\n"
     .string "have two Pokémon.$"
 
 Route8_Text_AnneIntro::
-    .string "ANNE: We'll shock you with our twin\n"
+    .string "Anne: We'll shock you with our twin\n"
     .string "power!$"
 
 Route8_Text_AnneDefeat::
-    .string "ANNE: Our twin power…$"
+    .string "Anne: Our twin power…$"
 
 Route8_Text_AnnePostBattle::
-    .string "ANNE: I'm raising Pokémon with\n"
-    .string "ELI.$"
+    .string "Anne: I'm raising Pokémon with\n"
+    .string "Eli.$"
 
 Route8_Text_AnneNotEnoughMons::
-    .string "ANNE: Hi, hi! Let's battle!\n"
+    .string "Anne: Hi, hi! Let's battle!\n"
     .string "But bring two Pokémon.$"
 
 Route8_Text_RicardoIntro::

@@ -6,7 +6,7 @@ RockTunnel_1F_Text_LennyDefeat::
     .string "You win!$"
 
 RockTunnel_1F_Text_LennyPostBattle::
-    .string "Watch for ONIX.\n"
+    .string "Watch for Onix.\n"
     .string "They appear only occasionally.\p"
     .string "High-level ones can put the\n"
     .string "squeeze on you!$"

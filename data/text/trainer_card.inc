@@ -1,5 +1,5 @@
 CeladonCity_GameCorner_Text_TryPokemonPrinter::
-	.string "It's a Pokémon PRINTER!\p"
+	.string "It's a Pokémon Printer!\p"
 	.string "It can put a print of your Pokémon\n"
 	.string "on the back of your Trainer Card.\p"
 	.string "It costs only ¥50.\n"
@@ -22,14 +22,14 @@ CeladonCity_GameCorner_Text_PrintIsReadyCheckTrainerCard::
 
 FourIsland_House2_Text_WishICouldShowOffStickers::
 	.string "Giggle…\n"
-	.string "I collected a ton of STICKERS.\l"
+	.string "I collected a ton of Stickers.\l"
 	.string "I wish I could show them off…$"
 
 FourIsland_House2_Text_GiveYouStickerIfYouBrag::
 	.string "Oh, excellent!\n"
 	.string "You've come to the right place!\p"
 	.string "Look, look! See? See?\n"
-	.string "These are my STICKERS!\l"
+	.string "These are my Stickers!\l"
 	.string "Look how many I got!\p"
 	.string "I bet you want some.\n"
 	.string "I bet you do!\p"
@@ -88,26 +88,26 @@ FourIsland_House2_Text_LivingLegendHoF::
 	.string "I have no SITCKERS left to give.$"
 
 FourIsland_House2_Text_WowEggsLowest::
-	.string "Oh, wow, there are Pokémon EGGS?\n"
+	.string "Oh, wow, there are Pokémon Eggs?\n"
 	.string "I didn't know that!\p"
 	.string "That's pretty good, yup!\n"
 	.string "I'll give you one of these.$"
 
 FourIsland_House2_Text_WowEggsLow::
-	.string "You've hatched that many EGGS?\n"
+	.string "You've hatched that many Eggs?\n"
 	.string "You really must like them!\p"
 	.string "That's impressive, yup!\n"
 	.string "I'll give you one of these.$"
 
 FourIsland_House2_Text_WowEggsHigh::
 	.string "Whoa! You've hatched a whole\n"
-	.string "bunch of EGGS!\p"
+	.string "bunch of Eggs!\p"
 	.string "You're an Egg-hatching machine!\n"
 	.string "I'll give you one of these.$"
 
 FourIsland_House2_Text_WowEggsHighest::
-	.string "Wh… You hatched that many EGGS?\p"
-	.string "What's behind your love of EGGS?\n"
+	.string "Wh… You hatched that many Eggs?\p"
+	.string "What's behind your love of Eggs?\n"
 	.string "It's beyond incredible, yup!\p"
 	.string "You're too awesome, I tell you.\n"
 	.string "That's it, I have to give you this.$"

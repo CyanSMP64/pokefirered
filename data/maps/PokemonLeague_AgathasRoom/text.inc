@@ -1,6 +1,6 @@
 PokemonLeague_AgathasRoom_Text_Intro::
     .string "I am Agatha of the Elite Four.\p"
-    .string "I hear OAK's taken a lot of\n"
+    .string "I hear Oak's taken a lot of\n"
     .string "interest in you, child.\p"
     .string "That old duff was once tough and\n"
     .string "handsome.\p"
@@ -15,7 +15,7 @@ PokemonLeague_AgathasRoom_Text_Intro::
 
 PokemonLeague_AgathasRoom_Text_RematchIntro::
     .string "I am Agatha of the Elite Four.\p"
-    .string "You're the child that OAK's taken\n"
+    .string "You're the child that Oak's taken\n"
     .string "under his wing, aren't you?\p"
     .string "That old duff was once tough and\n"
     .string "handsome.\p"

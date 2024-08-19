@@ -22,7 +22,7 @@ SilphCo_7F_Text_ExplainLapras::
 SilphCo_7F_Text_RocketBossWentToBoardroom::
     .string "Team Rocket's Boss went to the\n"
     .string "boardroom!\p"
-    .string "Is our PRESIDENT okay?\n"
+    .string "Is our President okay?\n"
     .string "I'm worried.$"
 
 SilphCo_7F_Text_OhNo::

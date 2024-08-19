@@ -1264,7 +1264,7 @@ TwoIsland_JoyfulGameCorner_EventScript_ShowDodrioBerryPickingRecords::
 	end
 
 CableClub_Text_WelcomeWhichCableClubService::
-	.string "Welcome to the Pokémon CABLE\n"
+	.string "Welcome to the Pokémon Cable\n"
 	.string "Club.\p"
 	.string "Which of our services do you wish\n"
 	.string "to use?$"
@@ -1497,7 +1497,7 @@ Text_DescribeWhichGame::
 Text_PokemonJumpInfo::
 	.string "“Pokémon Jump”\p"
 	.string "Make your Pokémon skip the\n"
-	.string "VINE WHIP rope with the A Button.\p"
+	.string "Vine Whip rope with the A Button.\p"
 	.string "Only mini Pokémon around 28 inches\n"
 	.string "or less may participate.\p"
 	.string "Pokémon that only swim, burrow, or\n"
@@ -1657,7 +1657,7 @@ CableClub_Text_EnjoyUnionRoom::
 
 CableClub_Text_FirstTimeRightThisWay::
 	.string "Hello!\n"
-	.string "My name is TEALA.\p"
+	.string "My name is Teala.\p"
 	.string "This must be your first time\n"
 	.string "up here.\p"
 	.string "I'll show you how the Wireless\n"
@@ -1690,7 +1690,7 @@ CableClub_Text_ExplainWirelessClubFirstTime::
 
 CableClub_Text_AskAboutLinking::
 	.string "Hello, {PLAYER}!\p"
-	.string "It's me, TEALA, the Pokémon\n"
+	.string "It's me, Teala, the Pokémon\n"
 	.string "Center 2F attendant.\p"
 	.string "Is there something you needed to\n"
 	.string "ask me about linking?$"

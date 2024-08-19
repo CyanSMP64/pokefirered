@@ -35,7 +35,7 @@ SaffronCity_Gym_Text_ReceivedTM04FromSabrina::
     .string "Sabrina.$"
 
 SaffronCity_Gym_Text_ExplainTM04::
-    .string "TM04 is CALM MIND.\p"
+    .string "TM04 is Calm Mind.\p"
     .string "It makes the Pokémon concentrate\n"
     .string "to raise both Sp. Atk and Sp. Def.$"
 

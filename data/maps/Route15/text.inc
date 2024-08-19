@@ -83,7 +83,7 @@ Route15_Text_ErnestDefeat::
 Route15_Text_ErnestPostBattle::
     .string "Life's too short.\n"
     .string "It's cool to live as an outlaw.\l"
-    .string "Team Rocket RULES!$"
+    .string "Team Rocket Rules!$"
 
 Route15_Text_AlexIntro::
     .string "Fork over all your cash when you\n"
@@ -121,34 +121,34 @@ Route15_Text_RouteSign::
     .string "West to Fuchsia City$"
 
 Route15_Text_MyaIntro::
-    .string "MYA: You're perfect.\n"
+    .string "Mya: You're perfect.\n"
     .string "Help me train my little brother?$"
 
 Route15_Text_MyaDefeat::
-    .string "MYA: RON, you have to focus!\n"
+    .string "Mya: Ron, you have to focus!\n"
     .string "Concentrate on what you're doing!$"
 
 Route15_Text_MyaPostBattle::
-    .string "MYA: Okay, we'll turn it up.\n"
+    .string "Mya: Okay, we'll turn it up.\n"
     .string "I'll add to our training menu!$"
 
 Route15_Text_MyaNotEnoughMons::
-    .string "MYA: Do you want to challenge us?\n"
+    .string "Mya: Do you want to challenge us?\n"
     .string "You'll need two Pokémon, though.$"
 
 Route15_Text_RonIntro::
-    .string "RON: My sister gets scary when we\n"
+    .string "Ron: My sister gets scary when we\n"
     .string "lose.$"
 
 Route15_Text_RonDefeat::
-    .string "RON: Oh, no, no…\n"
+    .string "Ron: Oh, no, no…\n"
     .string "Sis, I'm sorry!$"
 
 Route15_Text_RonPostBattle::
-    .string "RON: Oh, bleah…\n"
+    .string "Ron: Oh, bleah…\n"
     .string "I wish I had a nice sister…$"
 
 Route15_Text_RonNotEnoughMons::
-    .string "RON: Did you want to battle with\n"
+    .string "Ron: Did you want to battle with\n"
     .string "my sister and me?\p"
     .string "You need two Pokémon, then.$"

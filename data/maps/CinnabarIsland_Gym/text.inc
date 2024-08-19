@@ -160,7 +160,7 @@ CinnabarIsland_Gym_Text_PokemonQuizRules::
     .string "Here we go!$"
 
 CinnabarIsland_Gym_Text_QuizQuestion1::
-    .string "CATERPIE evolves into METAPOD?$"
+    .string "Caterpie evolves into Metapod?$"
 
 CinnabarIsland_Gym_Text_QuizQuestion2::
     .string "There are nine certified Pokémon\n"
@@ -178,7 +178,7 @@ CinnabarIsland_Gym_Text_QuizQuestion5::
     .string "are not identical?$"
 
 CinnabarIsland_Gym_Text_QuizQuestion6::
-    .string "TM28 contains TOMBSTONER?$"
+    .string "TM28 contains Tombstoner?$"
 
 CinnabarIsland_Gym_Text_CorrectGoOnThrough::
     .string "You're absolutely correct!\p"

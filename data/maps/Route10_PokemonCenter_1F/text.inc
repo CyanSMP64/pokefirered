@@ -44,5 +44,5 @@ Route10_PokemonCenter_1F_Text_ExplainEverstone::
     .string "In that case, give the Everstone\n"
     .string "to that Pokémon.\p"
     .string "It will prevent evolution according\n"
-    .string "to the PROFESSOR.$"
+    .string "to the Professor.$"
 

@@ -23,7 +23,7 @@ SilphCo_8F_Text_ParkerDefeat::
 
 SilphCo_8F_Text_ParkerPostBattle::
     .string "So, what do you think of Silph\n"
-    .string "BUILDING's maze?$"
+    .string "Building's maze?$"
 
 SilphCo_8F_Text_Grunt2Intro::
     .string "I am one of the four Rocket\n"

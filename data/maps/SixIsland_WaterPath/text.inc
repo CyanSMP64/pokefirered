@@ -25,7 +25,7 @@ SixIsland_WaterPath_Text_EdwardPostBattle::
 
 SixIsland_WaterPath_Text_SamirIntro::
     .string "What, you're suggesting that you're\n"
-    .string "sick of seeing SWIMMERS like me?\p"
+    .string "sick of seeing Swimmers like me?\p"
     .string "Aww, don't be hatin'!$"
 
 SixIsland_WaterPath_Text_SamirDefeat::
@@ -33,7 +33,7 @@ SixIsland_WaterPath_Text_SamirDefeat::
 
 SixIsland_WaterPath_Text_SamirPostBattle::
     .string "I couldn't lift the stigma of being\n"
-    .string "a SWIMMER…$"
+    .string "a Swimmer…$"
 
 SixIsland_WaterPath_Text_DeniseIntro::
     .string "My boyfriend's always busy, so I\n"
@@ -60,35 +60,35 @@ SixIsland_WaterPath_Text_EarlPostBattle::
     .string "these parts?$"
 
 SixIsland_WaterPath_Text_MiuIntro::
-    .string "MIU: Hello, Pokémon!\n"
+    .string "Miu: Hello, Pokémon!\n"
     .string "It's time to play!$"
 
 SixIsland_WaterPath_Text_MiuDefeat::
-    .string "MIU: Oh, no!\n"
+    .string "Miu: Oh, no!\n"
     .string "Mommy!$"
 
 SixIsland_WaterPath_Text_MiuPostBattle::
-    .string "MIU: It makes me all sad inside\n"
+    .string "Miu: It makes me all sad inside\n"
     .string "when we lose…$"
 
 SixIsland_WaterPath_Text_MiuNotEnoughMons::
-    .string "MIU: MIA and I are TWINS.\n"
+    .string "Miu: Mia and I are Twins.\n"
     .string "We want to battle together.$"
 
 SixIsland_WaterPath_Text_MiaIntro::
-    .string "MIA: Hello, Pokémon!\n"
+    .string "Mia: Hello, Pokémon!\n"
     .string "It's time to battle!$"
 
 SixIsland_WaterPath_Text_MiaDefeat::
-    .string "MIA: You're mean!\n"
+    .string "Mia: You're mean!\n"
     .string "You're bad for winning!$"
 
 SixIsland_WaterPath_Text_MiaPostBattle::
-    .string "MIA: Ohh…\n"
+    .string "Mia: Ohh…\n"
     .string "I'm sorry, my Pokémon…$"
 
 SixIsland_WaterPath_Text_MiaNotEnoughMons::
-    .string "MIA: Oh, you only have one\n"
+    .string "Mia: Oh, you only have one\n"
     .string "Pokémon?\p"
     .string "Don't you feel lonesome?$"
 
@@ -98,5 +98,5 @@ SixIsland_WaterPath_Text_WantedUltimateHorn::
 
 SixIsland_WaterPath_Text_RouteSign::
     .string "Water Path\n"
-    .string "Leads to RUIN VALLEY$"
+    .string "Leads to Ruin Valley$"
 

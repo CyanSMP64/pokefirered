@@ -26,7 +26,7 @@ SevenIsland_TanobyRuins_Text_BenjaminPostBattle::
     .string "of other mystic Pokémon?$"
 
 SevenIsland_TanobyRuins_Text_EdnaIntro::
-    .string "CLIFFORD is teaching me how to\n"
+    .string "Clifford is teaching me how to\n"
     .string "paint.$"
 
 SevenIsland_TanobyRuins_Text_EdnaDefeat::
@@ -36,7 +36,7 @@ SevenIsland_TanobyRuins_Text_EdnaDefeat::
 SevenIsland_TanobyRuins_Text_EdnaPostBattle::
     .string "I said that I wanted to paint an\n"
     .string "old building.\p"
-    .string "So CLIFFORD brought me here.$"
+    .string "So Clifford brought me here.$"
 
 SevenIsland_TanobyRuins_Text_CliffordIntro::
     .string "Today, in addition to our lesson,\n"

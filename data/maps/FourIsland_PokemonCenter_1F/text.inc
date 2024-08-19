@@ -35,11 +35,11 @@ FourIsland_PokemonCenter_1F_Text_DayCarePeopleFoundEggBefore::
     .string "…I have no idea.\p"
     .string "…Oh, wait. The Day-Care people\n"
     .string "in town were saying something.\p"
-    .string "They said that they'd found EGGS\n"
+    .string "They said that they'd found Eggs\n"
     .string "before on their property.$"
 
 FourIsland_PokemonCenter_1F_Text_NewPokemonJournalHasntArrived::
     .string "What's this?\p"
-    .string "The new Pokémon JOURNAL hasn't\n"
+    .string "The new Pokémon Journal hasn't\n"
     .string "arrived on this island?$"
 

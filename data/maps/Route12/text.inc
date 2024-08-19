@@ -110,35 +110,35 @@ Route12_Text_SportfishingArea::
     .string "Sportfishing Area$"
 
 Route12_Text_JesIntro::
-    .string "JES: If I win, I'm going to\n"
-    .string "propose to GIA.$"
+    .string "Jes: If I win, I'm going to\n"
+    .string "propose to Gia.$"
 
 Route12_Text_JesDefeat::
-    .string "JES: Oh, please, why couldn't you\n"
+    .string "Jes: Oh, please, why couldn't you\n"
     .string "let us win?$"
 
 Route12_Text_JesPostBattle::
-    .string "JES: Oh, GIA, forgive me,\n"
+    .string "Jes: Oh, Gia, forgive me,\n"
     .string "my love!$"
 
 Route12_Text_JesNotEnoughMons::
-    .string "JES: GIA and I, we'll be\n"
+    .string "Jes: Gia and I, we'll be\n"
     .string "together forever.\p"
     .string "We won't battle unless you have\n"
     .string "two Pokémon of your own.$"
 
 Route12_Text_GiaIntro::
-    .string "GIA: Hey, JES…\p"
+    .string "Gia: Hey, Jes…\p"
     .string "If we win, I'll marry you!$"
 
 Route12_Text_GiaDefeat::
-    .string "GIA: Oh, but why?$"
+    .string "Gia: Oh, but why?$"
 
 Route12_Text_GiaPostBattle::
-    .string "GIA: JES, you silly!\n"
+    .string "Gia: Jes, you silly!\n"
     .string "You ruined this!$"
 
 Route12_Text_GiaNotEnoughMons::
-    .string "GIA: I can't bear to battle\n"
-    .string "without my JES!\p"
+    .string "Gia: I can't bear to battle\n"
+    .string "without my Jes!\p"
     .string "Don't you have one more Pokémon?$"

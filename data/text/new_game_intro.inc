@@ -92,37 +92,37 @@ gNameChoice_Michi::
     .string "?????$"
 
 gNameChoice_Paula::
-    .string "PAULA$"
+    .string "Paula$"
 
 gNameChoice_June::
-    .string "JUNE$"
+    .string "June$"
 
 gNameChoice_Cassie::
     .string "CASSIE$"
 
 gNameChoice_Rey::
-    .string "REY$"
+    .string "Rey$"
 
 gNameChoice_Seda::
-    .string "SEDA$"
+    .string "Seda$"
 
 gNameChoice_Kiko::
-    .string "KIKO$"
+    .string "Kiko$"
 
 gNameChoice_Mina::
-    .string "MINA$"
+    .string "Mina$"
 
 gNameChoice_Norie::
-    .string "NORIE$"
+    .string "Norie$"
 
 gNameChoice_Sai::
-    .string "SAI$"
+    .string "Sai$"
 
 gNameChoice_Momo::
-    .string "MOMO$"
+    .string "Momo$"
 
 gNameChoice_Suzi::
-    .string "SUZI$"
+    .string "Suzi$"
 
 gControlsGuide_Text_Intro::
     .string "The various buttons will be explained in\n"

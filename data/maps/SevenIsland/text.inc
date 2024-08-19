@@ -4,7 +4,7 @@ Text_SwordsDanceTeach::
     .string "I'll get stronger and stronger.\p"
     .string "Yep, stronger and stronger…\p"
     .string "How would you like to learn a move\n"
-    .string "like that? It's SWORDS DANCE.$"
+    .string "like that? It's Swords Dance.$"
 
 Text_SwordsDanceDeclined::
     .string "Well, that's fine, too.$"
@@ -22,8 +22,8 @@ SevenIsland_Text_IslandSign::
     .string "Quest Island of Infinity$"
 
 SevenIsland_Text_IslandsMadeInSevenDays::
-    .string "These islands are called the SEVII\n"
-    .string "ISLANDS because there are seven.\p"
+    .string "These islands are called the Sevii\n"
+    .string "Islands because there are seven.\p"
     .string "…Or at least that's what the young\n"
     .string "people believe.\p"
     .string "The truth is, these islands are so\n"

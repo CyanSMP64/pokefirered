@@ -5,12 +5,12 @@ CeruleanCity_House2_Text_RocketsStoleTMForDig::
     .string "They stole a TM for teaching\n"
     .string "Pokémon how to Dig holes!\p"
     .string "I was going to use it on a\n"
-    .string "MANKEY or a SANDSHREW…\p"
+    .string "Mankey or a Sandshrew…\p"
     .string "That cost me a bundle, it did!$"
 
 CeruleanCity_House2_Text_TeachDiglettDigWithoutTM::
     .string "I figure what's lost is lost.\p"
-    .string "I decided to teach DIGLETT how to\n"
+    .string "I decided to teach Diglett how to\n"
     .string "Dig without a TM.$"
 
 CeruleanCity_House2_Text_TeamRocketTryingToDigIntoNoGood::

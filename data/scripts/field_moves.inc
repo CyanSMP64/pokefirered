@@ -236,10 +236,10 @@ Text_MonMayGoUnderwater::
 
 Text_SeaIsDeepUseDive::
 	.string "The sea is deep here.\n"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 
 Text_MonUsedDive::
-	.string "{STR_VAR_1} used DIVE.$"
+	.string "{STR_VAR_1} used Dive.$"
 
 Text_MonMaySurface::
 	.string "Light is filtering down from above.\n"
@@ -247,11 +247,11 @@ Text_MonMaySurface::
 
 Text_LightFilteringUseDive::
 	.string "Light is filtering down from above.\n"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 
 Text_DiveCantBeUsedHere::
 	.string "There is an obstacle above.\n"
-	.string "DIVE can't be used here.$"
+	.string "Dive can't be used here.$"
 
 EventScript_FailSweetScent::
 	msgbox Text_LooksLikeNothingHere, MSGBOX_SIGN

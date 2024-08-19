@@ -56,7 +56,7 @@ FourIsland_IcefallCave_Back_Text_OkayRocketWareHouseFiveIsland::
     .string "Wawaah! Okay!\n"
     .string "I'll talk!\p"
     .string "The Pokémon are in the Rocket\n"
-    .string "WAREHOUSE on Five Island.\p"
+    .string "Warehouse on Five Island.\p"
     .string "There! I said it!\n"
     .string "We'll be going now!\p"
     .string "…But I doubt you'll ever make it\n"

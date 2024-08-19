@@ -58,4 +58,4 @@ FiveIsland_WaterLabyrinth_Text_AlizeDefeat::
 
 FiveIsland_WaterLabyrinth_Text_AlizePostBattle::
     .string "You know, I think you have the\n"
-    .string "talent to be a good BREEDER.$"
+    .string "talent to be a good Breeder.$"

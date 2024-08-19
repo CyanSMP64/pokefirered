@@ -1,5 +1,5 @@
 ThreeIsland_Port_Text_WereKantoRiderFederation::
-    .string "We're the KANTO RIDER FEDERATION!\n"
+    .string "We're the Kanto Rider Federation!\n"
     .string "Vroom! Vavavavooom! Vroom!\p"
     .string "My bike's wimpy, so I have to\n"
     .string "make exhaust noises myself!$"
@@ -21,6 +21,6 @@ ThreeIsland_Port_Text_ThankGoodnessBikersGone::
 
 ThreeIsland_Port_Text_EverythingTurnedOutForBest::
     .string "Those Bikers ran off, and\n"
-    .string "LOSTELLE was found safe.\p"
+    .string "Lostelle was found safe.\p"
     .string "Everything turned out for the best!$"
 

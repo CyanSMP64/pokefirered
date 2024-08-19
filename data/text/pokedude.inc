@@ -40,7 +40,7 @@ Pokedude_Text_YayWeManagedToWin::
 	.string "We managed to win!$"
 
 Pokedude_Text_WaterNotVeryEffectiveAgainstGrass::
-	.string "Poké Dude: The move BUBBLE is\n"
+	.string "Poké Dude: The move Bubble is\n"
 	.string "a Water-type attack.\p"
 	.string "The targeted Oddish is a\n"
 	.string "Grass/Poison-type Pokémon.\p"

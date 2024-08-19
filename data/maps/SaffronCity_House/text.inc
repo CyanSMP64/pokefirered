@@ -8,7 +8,7 @@ SaffronCity_House_Text_Pidgey::
     .string "Pidgey: Kurukkoo!$"
 
 SaffronCity_House_Text_GettingCopycatPokeDoll::
-    .string "The COPYCAT is cute!\n"
+    .string "The Copycat is cute!\n"
     .string "I'm getting her a Poké Doll.$"
 
 SaffronCity_House_Text_ExplainPPUp::

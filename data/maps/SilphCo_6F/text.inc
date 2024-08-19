@@ -49,9 +49,9 @@ SilphCo_6F_Text_Grunt1PostBattle::
     .string "My brothers will avenge me!$"
 
 SilphCo_6F_Text_TaylorIntro::
-    .string "That rotten PRESIDENT!\p"
+    .string "That rotten President!\p"
     .string "Serves him right for shipping me\n"
-    .string "off to the TIKSI BRANCH!\p"
+    .string "off to the Tiksi Branch!\p"
     .string "That's why Team Rocket came after\n"
     .string "us, I'm sure of it!$"
 
@@ -59,7 +59,7 @@ SilphCo_6F_Text_TaylorDefeat::
     .string "Shoot!$"
 
 SilphCo_6F_Text_TaylorPostBattle::
-    .string "TIKSI BRANCH?\n"
+    .string "Tiksi Branch?\n"
     .string "It's in Russian no-man's-land!$"
 
 SilphCo_6F_Text_Grunt2Intro::

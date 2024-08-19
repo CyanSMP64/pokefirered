@@ -64,10 +64,10 @@ PokemonLeague_ChampionsRoom_Text_PostBattle::
     .string "Although I don't like to admit it…$"
 
 PokemonLeague_ChampionsRoom_Text_OakPlayer::
-    .string "OAK: {PLAYER}!$"
+    .string "Oak: {PLAYER}!$"
 
 PokemonLeague_ChampionsRoom_Text_OakCongratulations::
-    .string "OAK: So, you've won!\n"
+    .string "Oak: So, you've won!\n"
     .string "Sincerely, congratulations!\p"
     .string "You're the new Pokémon League\n"
     .string "Champion!\p"
@@ -77,7 +77,7 @@ PokemonLeague_ChampionsRoom_Text_OakCongratulations::
     .string "{PLAYER}, you have come of age!$"
 
 PokemonLeague_ChampionsRoom_Text_OakImDisappointedRival::
-    .string "OAK: {RIVAL}…\n"
+    .string "Oak: {RIVAL}…\n"
     .string "I'm disappointed in you.\p"
     .string "I came when I heard you'd beaten\n"
     .string "the Elite Four.\p"
@@ -91,7 +91,7 @@ PokemonLeague_ChampionsRoom_Text_OakImDisappointedRival::
     .string "become a Champ again!$"
 
 PokemonLeague_ChampionsRoom_Text_OakPlayerComeWithMe::
-    .string "OAK: {PLAYER}.\p"
+    .string "Oak: {PLAYER}.\p"
     .string "You understand that your victory\n"
     .string "was not just your own doing.\p"
     .string "The bond you share with your\n"

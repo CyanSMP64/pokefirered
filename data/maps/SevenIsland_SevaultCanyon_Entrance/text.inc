@@ -51,37 +51,37 @@ SevenIsland_SevaultCanyon_Entrance_Text_MadelinePostBattle::
     .string "kindness, they'll understand.$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_EveIntro::
-    .string "EVE: I'll team up with JON and\n"
+    .string "Eve: I'll team up with Jon and\n"
     .string "battle together.$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_EveDefeat::
-    .string "EVE: Me and JON, we lost.\n"
+    .string "Eve: Me and Jon, we lost.\n"
     .string "Ehehe.$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_EvePostBattle::
-    .string "EVE: I'm going to work harder with\n"
-    .string "JON.$"
+    .string "Eve: I'm going to work harder with\n"
+    .string "Jon.$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_EveNotEnoughMons::
-    .string "EVE: I want to team up with JON\n"
+    .string "Eve: I want to team up with Jon\n"
     .string "when I battle you.\p"
     .string "Come back with two Pokémon, okay?$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_JonIntro::
-    .string "JON: When I'm with EVE, it feels\n"
+    .string "Jon: When I'm with Eve, it feels\n"
     .string "like we could never lose.$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_JonDefeat::
-    .string "JON: When I'm with EVE,\n"
+    .string "Jon: When I'm with Eve,\n"
     .string "it doesn't feel like I've lost!$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_JonPostBattle::
-    .string "JON: When I'm with EVE, I feel\n"
+    .string "Jon: When I'm with Eve, I feel\n"
     .string "giddy whether I win or lose.\p"
     .string "It's magical!$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_JonNotEnoughMons::
-    .string "JON: If it's with EVE, I'll be\n"
+    .string "Jon: If it's with Eve, I'll be\n"
     .string "happy to battle with you.\p"
     .string "So, I'd like to make it a\n"
     .string "two-on-two battle, if I may.$"

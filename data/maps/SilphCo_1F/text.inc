@@ -1,6 +1,6 @@
 SilphCo_1F_Text_WelcomePresidentInBoardroom::
     .string "Welcome.\p"
-    .string "The PRESIDENT is in the boardroom\n"
+    .string "The President is in the boardroom\n"
     .string "on 11F.$"
 
 @ Tentative translation. Unknown origin

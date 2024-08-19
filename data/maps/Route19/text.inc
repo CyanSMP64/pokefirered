@@ -18,7 +18,7 @@ Route19_Text_ReeceDefeat::
     .string "That's chilly!$"
 
 Route19_Text_ReecePostBattle::
-    .string "Watch out for TENTACOOL.\n"
+    .string "Watch out for Tentacool.\n"
     .string "They sting so painfully.$"
 
 Route19_Text_MatthewIntro::
@@ -118,37 +118,37 @@ Route19_Text_RouteSign::
     .string "Fuchsia City - Seafoam Islands$"
 
 Route19_Text_LiaIntro::
-    .string "LIA: I'm looking after my brother.\n"
+    .string "Lia: I'm looking after my brother.\n"
     .string "He just became a Trainer.$"
 
 Route19_Text_LiaDefeat::
-    .string "LIA: That's no way to treat my\n"
+    .string "Lia: That's no way to treat my\n"
     .string "little brother!$"
 
 Route19_Text_LiaPostBattle::
-    .string "LIA: Do you have a younger\n"
+    .string "Lia: Do you have a younger\n"
     .string "brother?\p"
     .string "I hope you're teaching him all\n"
     .string "sorts of things.$"
 
 Route19_Text_LiaNotEnoughMons::
-    .string "LIA: I want to battle together\n"
+    .string "Lia: I want to battle together\n"
     .string "with my little brother.\p"
     .string "Don't you have two Pokémon?$"
 
 Route19_Text_LucIntro::
-    .string "LUC: My big sis taught me how\n"
+    .string "Luc: My big sis taught me how\n"
     .string "to swim and train Pokémon.$"
 
 Route19_Text_LucDefeat::
-    .string "LUC: Oh, wow!\n"
+    .string "Luc: Oh, wow!\n"
     .string "Someone tougher than my big sis!$"
 
 Route19_Text_LucPostBattle::
-    .string "LUC: My big sis is strong and nice.\n"
+    .string "Luc: My big sis is strong and nice.\n"
     .string "I think she's awesome!$"
 
 Route19_Text_LucNotEnoughMons::
-    .string "LUC: I don't want to if I can't\n"
+    .string "Luc: I don't want to if I can't\n"
     .string "battle you with my big sis.\p"
     .string "Don't you have two Pokémon?$"

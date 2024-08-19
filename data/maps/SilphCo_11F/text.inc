@@ -1,5 +1,5 @@
 SilphCo_11F_Text_ThanksForSavingMeDearBoy::
-    .string "PRESIDENT: Oh, dear boy!\n"
+    .string "President: Oh, dear boy!\n"
     .string "Thank you for saving Silph.\p"
     .string "I will never forget you saved us in\n"
     .string "our moment of peril.\p"
@@ -9,7 +9,7 @@ SilphCo_11F_Text_ThanksForSavingMeDearBoy::
     .string "Here, maybe this will do.$"
 
 SilphCo_11F_Text_ThanksForSavingMeDearGirl::
-    .string "PRESIDENT: Oh, dear girl!\n"
+    .string "President: Oh, dear girl!\n"
     .string "Thank you for saving Silph.\p"
     .string "I will never forget you saved us in\n"
     .string "our moment of peril.\p"
@@ -20,10 +20,10 @@ SilphCo_11F_Text_ThanksForSavingMeDearGirl::
 
 SilphCo_11F_Text_ObtainedMasterBallFromPresident::
     .string "{PLAYER} obtained a Master Ball\n"
-    .string "from the PRESIDENT!$"
+    .string "from the President!$"
 
 SilphCo_11F_Text_ThatsOurSecretPrototype::
-    .string "PRESIDENT: You can't buy that\n"
+    .string "President: You can't buy that\n"
     .string "anywhere.\p"
     .string "It's our secret prototype Master\n"
     .string "Ball.\p"
@@ -36,15 +36,15 @@ SilphCo_11F_Text_YouHaveNoRoomForThis::
     .string "You have no room for this.$"
 
 SilphCo_11F_Text_ThanksForRescuingUs::
-    .string "SECRETARY: Thank you for rescuing\n"
+    .string "Secretary: Thank you for rescuing\n"
     .string "all of us.\p"
-    .string "We, from the PRESIDENT down,\n"
+    .string "We, from the President down,\n"
     .string "are indebted to you.$"
 
 SilphCo_11F_Text_GiovanniIntro::
     .string "Ah, {PLAYER}!\n"
     .string "So we meet again!\p"
-    .string "The PRESIDENT and I are discussing\n"
+    .string "The President and I are discussing\n"
     .string "a vital business proposition.\p"
     .string "Keep your nose out of grown-up\n"
     .string "matters…\p"

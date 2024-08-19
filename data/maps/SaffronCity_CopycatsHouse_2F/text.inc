@@ -4,7 +4,7 @@ SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyMale::
     .string "{PLAYER}: Uh, no, I just asked you.\p"
     .string "{PLAYER}: Huh?\n"
     .string "You're strange!\p"
-    .string "COPYCAT: Hmm? Quit mimicking?\n"
+    .string "Copycat: Hmm? Quit mimicking?\n"
     .string "But, that's my favorite hobby!$"
 
 SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemale::
@@ -15,7 +15,7 @@ SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemale::
     .string "{PLAYER}: Pardon?\n"
     .string "You're weird!\l"
     .string " \l"
-    .string "COPYCAT: Hmm? Quit mimicking?\l"
+    .string "Copycat: Hmm? Quit mimicking?\l"
     .string "But that's my favorite hobby!$"
 
 Text_MimicTeach::
@@ -24,13 +24,13 @@ Text_MimicTeach::
     .string "For me?\n"
     .string "Thank you!\p"
     .string "You know what?\n"
-    .string "I can teach the move MIMIC.$"
+    .string "I can teach the move Mimic.$"
 
 Text_MimicDeclined::
-    .string "Don't you like MIMIC?$"
+    .string "Don't you like Mimic?$"
 
 Text_MimicWhichMon::
-    .string "I really love MIMIC!\n"
+    .string "I really love Mimic!\n"
     .string "Who's going to learn it?$"
 
 Text_MimicTaughtMale::
@@ -39,7 +39,7 @@ Text_MimicTaughtMale::
     .string "{PLAYER}: Pardon?\p"
     .string "{PLAYER}: Is it that fun to mimic my\n"
     .string "every move?\p"
-    .string "COPYCAT: You bet!\n"
+    .string "Copycat: You bet!\n"
     .string "It's a scream!$"
 
 Text_MimicTaughtFemale::
@@ -48,7 +48,7 @@ Text_MimicTaughtFemale::
     .string "{PLAYER}: Pardon?\p"
     .string "{PLAYER}: Is it really that fun to\n"
     .string "copy what I say and do?\p"
-    .string "COPYCAT: You bet!\n"
+    .string "Copycat: You bet!\n"
     .string "It's a scream!$"
 
 SaffronCity_CopycatsHouse_2F_Text_TooMuchInBag::
@@ -79,7 +79,7 @@ SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemaleJP::
     .string "ものまね　しゅみ　なんだ　もん！$"
 
 SaffronCity_CopycatsHouse_2F_Text_Doduo::
-    .string "DODUO: Giiih!\p"
+    .string "Doduo: Giiih!\p"
     .string "Pretty Mirror Look At Me,\n"
     .string "See How Pretty I Can Be?$"
 
@@ -88,7 +88,7 @@ SaffronCity_CopycatsHouse_2F_Text_RareMonOnlyDoll::
     .string "Huh? It's only a doll!$"
 
 SaffronCity_CopycatsHouse_2F_Text_MarioWearingABucket::
-    .string "A game with MARIO wearing a bucket\n"
+    .string "A game with Mario wearing a bucket\n"
     .string "on his head!$"
 
 SaffronCity_CopycatsHouse_2F_Text_MySecrets::

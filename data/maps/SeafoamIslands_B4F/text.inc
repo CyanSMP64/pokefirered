@@ -24,6 +24,6 @@ SeafoamIslands_B4F_Text_BouldersMightChangeWaterFlow::
     .string "flow of water.$"
 
 SeafoamIslands_B4F_Text_DangerFastCurrent::
-    .string "DANGER\n"
+    .string "Danger\n"
     .string "Fast current!$"
 

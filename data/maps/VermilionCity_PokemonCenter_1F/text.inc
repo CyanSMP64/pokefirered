@@ -34,7 +34,7 @@ VermilionCity_PokemonCenter_1F_Text_UseDeviceForRematches::
     .string "use it, though.$"
 
 VermilionCity_PokemonCenter_1F_Text_ExplainVSSeeker::
-    .string "How do you use the VS SEEKER?\n"
+    .string "How do you use the Vs. Seeker?\n"
     .string "There's nothing to it.\p"
     .string "Use it like beep-beep-beep, and\n"
     .string "Trainers around you will notice.\p"

@@ -51,7 +51,7 @@ SilphCo_5F_Text_Grunt2Defeat::
 
 SilphCo_5F_Text_Grunt2PostBattle::
     .string "Which reminds me.\p"
-    .string "KOFFING evolves into WEEZING!$"
+    .string "Koffing evolves into Weezing!$"
 
 SilphCo_5F_Text_PorygonFirstVRMon::
     .string "It's a Pokémon Report!\p"
@@ -77,5 +77,5 @@ SilphCo_5F_Text_RocketBossLookingForStrongMons::
     .string "building…\p"
     .string "Their Boss said he was looking for\n"
     .string "strong Pokémon.\p"
-    .string "I hope our PRESIDENT managed to\n"
+    .string "I hope our President managed to\n"
     .string "avoid trouble…$"

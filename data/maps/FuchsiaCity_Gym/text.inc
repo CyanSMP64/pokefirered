@@ -18,7 +18,7 @@ FuchsiaCity_Gym_Text_KogaDefeat::
     .string "Take the Soul Badge!$"
 
 FuchsiaCity_Gym_Text_KogaPostBattle::
-    .string "When afflicted by TOXIC, a Pokémon\n"
+    .string "When afflicted by Toxic, a Pokémon\n"
     .string "suffers more and more.\p"
     .string "It suffers worsening damage as the\n"
     .string "battle wears on!\p"
@@ -38,7 +38,7 @@ FuchsiaCity_Gym_Text_ReceivedTM06FromKoga::
 
 FuchsiaCity_Gym_Text_KogaExplainTM06::
     .string "Sealed within that TM06 lies\n"
-    .string "TOXIC!\p"
+    .string "Toxic!\p"
     .string "It is a secret technique dating\n"
     .string "back some four hundred years.$"
 

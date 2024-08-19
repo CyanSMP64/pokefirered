@@ -95,7 +95,7 @@ TrainerTower_Lobby_Text_ExplainTrainerTower::
     .string "event called Time Attack.\p"
     .string "You will be timed on how quickly\n"
     .string "you can get from the reception\l"
-    .string "counter to the OWNER on the roof.\p"
+    .string "counter to the Owner on the roof.\p"
     .string "The best times will be recorded on\n"
     .string "the Time Board.\p"
     .string "Try competing with friends to see\n"
