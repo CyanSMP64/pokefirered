@@ -511,6 +511,7 @@ extern const u8 gText_Continue[];
 extern const u8 gText_MysteryGift[];
 extern const u8 gText_WirelessNotConnected[];
 extern const u8 gText_MysteryGiftCantUse[];
+extern const u8 gText_DebugModeActivated[];
 extern const u8 gText_Player[];
 extern const u8 gText_Time[];
 extern const u8 gText_Colon[];

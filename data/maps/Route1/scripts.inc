@@ -95,8 +95,8 @@ Route1_EventScript_NewMartClerk::
 	waitmovement 3
 	removeobject 3
 	fadedefaultbgm
-	setflag FLAG_0x153
-	clearflag FLAG_0x152
+	setflag FLAG_HIDE_ROUTE1_MART_CLERK_CUTSCENE
+	clearflag FLAG_HIDE_OAK_PALLET_TOWN_BALL_CUTSCENE
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 5
 	releaseall
 	end

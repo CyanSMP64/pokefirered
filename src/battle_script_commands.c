@@ -26,9 +26,11 @@
 #include "reshow_battle_screen.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
+#include "debug.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_script_commands.h"
+#include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/hold_effects.h"
 #include "constants/songs.h"
@@ -1707,7 +1709,13 @@ static void Cmd_waitanimation(void)
 
 static void Cmd_healthbarupdate(void)
 {
-        if (gBattleControllerExecFlags)
+    u8 side = GetBattlerSide(gBattlerTarget);
+    if (FlagGet(FLAG_SYS_NO_BATTLE_DMG) && side == B_SIDE_PLAYER)
+    {
+        gMoveResultFlags |= MOVE_RESULT_NO_EFFECT;
+    }
+
+    if (gBattleControllerExecFlags)
         return;
 
     if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))

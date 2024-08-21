@@ -23,6 +23,7 @@ const u8 gUnusedText_MysteryGift[] = _("Mystery Gift");
 const u8 gText_MysteryGift[] = _("Mystery Gift");
 const u8 gText_WirelessNotConnected[] = _("The Wireless Adapter is not\nconnected.");
 const u8 gText_MysteryGiftCantUse[] = _("Mystery Gift can't be used while\nthe Wireless Adapter is attached.");
+const u8 gText_DebugModeActivated[] = _("Debug mode activated.{PAUSE 45}");
 const u8 gText_UpdatingSaveExternalData[] = _("がいぶデ-タにより レポ-トを こうしんします\nしばらく おまちください");
 const u8 gText_SaveFileUpdated[] = _("レポ-トが こうしんされました!");
 const u8 gText_SaveFileUpdatedSwapBackup[] = _("レポ-トが こうしんされました!\pこれいじょう\nレポ-トが かききれないので\lバックアップカ-トリッジを\lこうかんしてください!\pくわしくは\nにんてんどう サ-ビスセンタ- まで\lおといあわせ ください");

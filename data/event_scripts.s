@@ -807,6 +807,8 @@ gStdScriptsEnd::
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
 
+	.include "data/scripts/debug.inc"
+
 @ Unused
 Text_WouldYouLikeToMixRecords::
 	.string "Would you like to mix records with\n"
@@ -1062,7 +1064,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS
 	setflag FLAG_HIDE_SS_ANNE_SUPER_KAIZO_TRAINERS
 	setflag FLAG_HIDE_CELADON_ROCKET_GRUNT_3
-	setflag FLAG_0x152
+	setflag FLAG_HIDE_OAK_PALLET_TOWN_BALL_CUTSCENE
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 500
 	end

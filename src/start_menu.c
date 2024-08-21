@@ -749,6 +749,36 @@ static u8 SaveDialogCB_AskOverwriteOrReplacePreviousFileHandleInput(void)
 
 static u8 SaveDialogCB_PrintSavingDontTurnOffPower(void)
 {
+    if (FlagGet(FLAG_SYS_DEBUG_MODE) == TRUE)
+    {
+        FlagSet(FLAG_SYS_DEBUG_SAVE);
+        FlagClear(FLAG_SYS_DEBUG_MODE);
+    }
+    if (FlagGet(FLAG_SYS_NO_COLLISION) == TRUE)
+    {
+        FlagSet(FLAG_SYS_SAVE_NO_COLLISION);
+        FlagClear(FLAG_SYS_NO_COLLISION);
+    }
+    if (FlagGet(FLAG_SYS_NO_ENCOUNTER) == TRUE)
+    {
+        FlagSet(FLAG_SYS_SAVE_NO_ENCOUNTER);
+        FlagClear(FLAG_SYS_NO_ENCOUNTER);
+    }
+    if (FlagGet(FLAG_SYS_NO_TRAINER_SEE) == TRUE)
+    {
+        FlagSet(FLAG_SYS_SAVE_NO_TRAINER_SEE);
+        FlagClear(FLAG_SYS_NO_TRAINER_SEE);
+    }
+    if (FlagGet(FLAG_SYS_PC_FROM_DEBUG_MENU) == TRUE)
+    {
+        FlagSet(FLAG_SYS_SAVE_PC_FROM_DEBUG_MENU);
+        FlagClear(FLAG_SYS_PC_FROM_DEBUG_MENU);
+    }
+    if (FlagGet(FLAG_SYS_NO_BATTLE_DMG) == TRUE)
+    {
+        FlagSet(FLAG_SYS_SAVE_NO_BATTLE_DMG);
+        FlagClear(FLAG_SYS_NO_BATTLE_DMG);
+    }
     SaveQuestLogData();
     PrintSaveTextWithFollowupFunc(gText_SavingDontTurnOffThePower, SaveDialogCB_DoSave);
     return SAVECB_RETURN_CONTINUE;
@@ -772,6 +802,36 @@ static u8 SaveDialogCB_DoSave(void)
 
 static u8 SaveDialogCB_PrintSaveResult(void)
 {
+    if (FlagGet(FLAG_SYS_DEBUG_SAVE) == TRUE)
+    {
+        FlagSet(FLAG_SYS_DEBUG_MODE);
+        FlagClear(FLAG_SYS_DEBUG_SAVE);
+    }
+    if (FlagGet(FLAG_SYS_SAVE_NO_COLLISION) == TRUE)
+    {
+        FlagSet(FLAG_SYS_NO_COLLISION);
+        FlagClear(FLAG_SYS_SAVE_NO_COLLISION);
+    }
+    if (FlagGet(FLAG_SYS_SAVE_NO_ENCOUNTER) == TRUE)
+    {
+        FlagSet(FLAG_SYS_NO_ENCOUNTER);
+        FlagClear(FLAG_SYS_SAVE_NO_ENCOUNTER);
+    }
+    if (FlagGet(FLAG_SYS_SAVE_NO_TRAINER_SEE) == TRUE)
+    {
+        FlagSet(FLAG_SYS_NO_TRAINER_SEE);
+        FlagClear(FLAG_SYS_SAVE_NO_TRAINER_SEE);
+    }
+    if (FlagGet(FLAG_SYS_SAVE_PC_FROM_DEBUG_MENU) == TRUE)
+    {
+        FlagSet(FLAG_SYS_PC_FROM_DEBUG_MENU);
+        FlagClear(FLAG_SYS_SAVE_PC_FROM_DEBUG_MENU);
+    }
+    if (FlagGet(FLAG_SYS_SAVE_NO_BATTLE_DMG) == TRUE)
+    {
+        FlagSet(FLAG_SYS_NO_BATTLE_DMG);
+        FlagClear(FLAG_SYS_SAVE_NO_BATTLE_DMG);
+    }
     if (gSaveAttemptStatus == SAVE_STATUS_OK)
         PrintSaveTextWithFollowupFunc(gText_PlayerSavedTheGame, SaveDialogCB_WaitPrintSuccessAndPlaySE);
     else

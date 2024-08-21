@@ -259,6 +259,10 @@
 #define SE_RG_DEOXYS_MOVE           253 // SE_RG_DEOMOV
 #define SE_RG_POKE_JUMP_SUCCESS     254 // SE_RG_EXCELLENT
 #define SE_RG_POKE_JUMP_FAILURE     255 // SE_RG_NAWAMISS
+
+#define END_SE SE_RG_POKE_JUMP_FAILURE
+
+#define START_MUS (END_SE + 1)
 // Music kept from RS
 #define MUS_HEAL                    256 // MUS_ME_ASA
 #define MUS_LEVEL_UP                257 // MUS_FANFA1
@@ -499,6 +503,8 @@
 #define MUS_RBYCHAMP                    506
 #define MUS_B2_VS_CHAMPION_KANTO        507
 #define MUS_BW_VS_WORLD_CHAMPIONSHIPS   508
+
+#define END_MUS MUS_BW_VS_WORLD_CHAMPIONSHIPS
 
 #define MUS_NONE                    0xFFFF
 

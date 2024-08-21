@@ -50,4 +50,6 @@ void SeedWildEncounterRng(u16 randVal);
 void ResetEncounterRateModifiers(void);
 bool8 TryStandardWildEncounter(u32 currMetatileAttrs);
 
+bool8 StandardWildEncounter_Debug(void);
+
 #endif // GUARD_WILD_ENCOUNTER_H

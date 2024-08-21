@@ -11,6 +11,7 @@
 #include "battle_setup.h"
 #include "berry.h"
 #include "data.h"
+#include "debug.h"
 #include "decompress.h"
 #include "event_data.h"
 #include "evolution_scene.h"
@@ -679,7 +680,8 @@ static void CB2_InitBattleInternal(void)
     gBattle_BG3_X = 0;
     gBattle_BG3_Y = 0;
 
-    gBattleTerrain = BattleSetup_GetTerrainId();
+    if (!gIsDebugBattle)
+        gBattleTerrain = BattleSetup_GetTerrainId();
 
     InitBattleBgsVideo();
     LoadBattleTextboxAndBackground();
@@ -695,10 +697,13 @@ static void CB2_InitBattleInternal(void)
         SetMainCallback2(CB2_HandleStartMultiBattle);
     else
         SetMainCallback2(CB2_HandleStartBattle);
-    if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
-    {
-        CreateNPCTrainerParty(&gEnemyParty[0], gTrainerBattleOpponent_A);
-        SetWildMonHeldItem();
+
+    if (!gIsDebugBattle) {
+        if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
+        {
+            CreateNPCTrainerParty(&gEnemyParty[0], gTrainerBattleOpponent_A);
+            SetWildMonHeldItem();
+        }
     }
 
     gMain.inBattle = TRUE;

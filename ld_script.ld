@@ -203,7 +203,6 @@ SECTIONS {
         src/image_processing_effects.o(.text);
         src/battle_ai_script_commands.o(.text);
         src/fldeff_flash.o(.text);
-        src/post_battle_event_funcs.o(.text);
         src/field_specials.o(.text);
     } =0
 
@@ -211,6 +210,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/post_battle_event_funcs.o(.text);
         src/menu_helpers.o(.text);
         src/battle_records.o(.text);
         src/fldeff_dig.o(.text);
@@ -330,6 +330,7 @@ SECTIONS {
         src/minigame_countdown.o(.text);
         src/berry_fix_program.o(.text);
         src/battle_anim_new.o(.text);
+        src/debug.o(.text);
     } =0
 
     script_data :
@@ -645,6 +646,7 @@ SECTIONS {
         src/m4a_tables.o(.rodata);
         src/pokedex_screen.o(.rodata);
         src/battle_anim_new.o(.rodata);
+        src/debug.o(.rodata);
     } =0
 
     lib_rodata :

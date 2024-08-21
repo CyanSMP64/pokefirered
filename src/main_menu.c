@@ -567,7 +567,13 @@ static bool8 HandleMenuInput(u8 taskId)
 {
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        if (JOY_HELD(R_BUTTON) && gTasks[taskId].tCursorPos == 0) {
+            PlaySE(SE_POKENAV_ON);
+            FlagSet(FLAG_SYS_DEBUG_MODE);
+        }
+        else {
+            PlaySE(SE_SELECT);
+        }
         IsWirelessAdapterConnected(); // called for its side effects only
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_ExecuteMainMenuSelection;

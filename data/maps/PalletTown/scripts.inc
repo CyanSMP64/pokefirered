@@ -482,7 +482,7 @@ PalletTown_EventScript_ProfOakBall::
 	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
 	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1
 	setvar VAR_MAP_SCENE_ROUTE22, 1
-	setflag FLAG_0x152
+	setflag FLAG_HIDE_OAK_PALLET_TOWN_BALL_CUTSCENE
 	releaseall
 	end
 
