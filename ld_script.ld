@@ -328,7 +328,6 @@ SECTIONS {
         src/trainer_tower.o(.text);
         src/berry_powder.o(.text);
         src/minigame_countdown.o(.text);
-        src/berry_fix_program.o(.text);
         src/battle_anim_new.o(.text);
         src/debug.o(.text);
     } =0
@@ -637,7 +636,6 @@ SECTIONS {
         src/renewable_hidden_items.o(.rodata);
         src/trainer_tower.o(.rodata);
         src/minigame_countdown.o(.rodata);
-        src/berry_fix_program.o(.rodata);
         src/keyboard_text.o(.rodata);
         src/trainer_tower_sets.o(.rodata);
         src/move_descriptions.o(.rodata);
@@ -706,7 +704,6 @@ SECTIONS {
     ALIGN(4)
     {
         data/multiboot_ereader.o(.rodata);
-        data/multiboot_berry_glitch_fix.o(.rodata);
         data/multiboot_pokemon_colosseum.o(.rodata);
     } =0
 
