@@ -8643,15 +8643,16 @@ Move_BLAZE_KICK:
 
 Move_HYPER_VOICE:
 	loadspritegfx ANIM_TAG_THIN_RING
+	createvisualtask SoundTask_PlayCryWithEcho, 5, FALSE
 	call HyperVoiceEffect
 	waitforvisualfinish
 	delay 8
+	createvisualtask SoundTask_PlayCryWithEcho, 5, TRUE
 	call HyperVoiceEffect
 	waitforvisualfinish
 	end
 
 HyperVoiceEffect:
-	createvisualtask SoundTask_PlayCryWithEcho, 5
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG | F_PAL_BATTLERS, 3, 8, 0, RGB_YELLOW
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -5, -5, 5, ANIM_ATTACKER, 0
 	createsprite gHyperVoiceRingSpriteTemplate, ANIM_ATTACKER, 0, 45, 0, 0, 0, 0, 0, 1

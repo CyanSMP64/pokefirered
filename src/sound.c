@@ -369,6 +369,21 @@ void PlayCry_ReleaseDouble(u16 species, s8 pan, u8 mode)
     }
 }
 
+// Duck the BGM but don't restore it. Not present in R/S
+void PlayCry_DuckNoRestore(u16 species, s8 pan, u8 mode)
+{
+    if (mode == CRY_MODE_DOUBLES)
+    {
+        PlayCryInternal(species, pan, CRY_VOLUME, CRY_PRIORITY_NORMAL, mode);
+    }
+    else
+    {
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
+        PlayCryInternal(species, pan, CRY_VOLUME, CRY_PRIORITY_NORMAL, mode);
+        gPokemonCryBGMDuckingCounter = 2;
+    }
+}
+
 void PlayCry_Script(u16 species, u8 mode)
 {
     if (!QL_IS_PLAYBACK_STATE) // This check is exclusive to FR/LG
