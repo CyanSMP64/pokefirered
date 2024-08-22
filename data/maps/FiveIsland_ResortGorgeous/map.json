@@ -155,7 +155,7 @@
       "type": "trigger",
       "x": 12,
       "y": 5,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_NestBall"
@@ -191,7 +191,7 @@
       "type": "trigger",
       "x": 9,
       "y": 10,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_NestBall"
@@ -200,7 +200,7 @@
       "type": "trigger",
       "x": 8,
       "y": 9,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_NestBall"
@@ -209,7 +209,7 @@
       "type": "trigger",
       "x": 7,
       "y": 8,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "NULL"
@@ -218,7 +218,7 @@
       "type": "trigger",
       "x": 26,
       "y": 14,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
@@ -227,7 +227,7 @@
       "type": "trigger",
       "x": 25,
       "y": 13,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
@@ -236,7 +236,7 @@
       "type": "trigger",
       "x": 24,
       "y": 12,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
@@ -344,7 +344,7 @@
       "type": "trigger",
       "x": 28,
       "y": 14,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
@@ -443,7 +443,7 @@
       "type": "trigger",
       "x": 42,
       "y": 14,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_StarPiece"
@@ -452,7 +452,7 @@
       "type": "trigger",
       "x": 41,
       "y": 15,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_StarPiece"
@@ -461,7 +461,7 @@
       "type": "trigger",
       "x": 39,
       "y": 15,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_StarPiece"
@@ -470,7 +470,7 @@
       "type": "trigger",
       "x": 38,
       "y": 14,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_StarPiece"
@@ -479,7 +479,7 @@
       "type": "trigger",
       "x": 24,
       "y": 5,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_C",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust2"
@@ -564,6 +564,132 @@
       "var": "VAR_TEMP_C",
       "var_value": "0",
       "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust2"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_NestBall"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_NestBall"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_NestBall"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 1,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_NestBall"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 13,
+      "elevation": 1,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 12,
+      "elevation": 1,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust2"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 5,
+      "elevation": 1,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_Stardust2"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_StarPiece"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "FiveIsland_ResortGorgeous_EventScript_Sparkle_StarPiece"
     }
   ],
   "bg_events": [

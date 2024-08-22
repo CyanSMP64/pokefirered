@@ -281,7 +281,7 @@
       "type": "trigger",
       "x": 18,
       "y": 54,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -290,7 +290,7 @@
       "type": "trigger",
       "x": 19,
       "y": 54,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -299,7 +299,7 @@
       "type": "trigger",
       "x": 15,
       "y": 56,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -308,7 +308,7 @@
       "type": "trigger",
       "x": 15,
       "y": 57,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -335,7 +335,7 @@
       "type": "trigger",
       "x": 17,
       "y": 60,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -344,7 +344,7 @@
       "type": "trigger",
       "x": 18,
       "y": 60,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -353,7 +353,7 @@
       "type": "trigger",
       "x": 19,
       "y": 60,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -362,7 +362,7 @@
       "type": "trigger",
       "x": 20,
       "y": 59,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_HyperPotion"
@@ -402,6 +402,42 @@
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "Route12_EventScript_Sparkle_RareCandy"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route12_EventScript_Sparkle_HyperPotion"
     }
   ],
   "bg_events": [

@@ -76,7 +76,7 @@
       "type": "trigger",
       "x": 9,
       "y": 9,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
@@ -85,7 +85,7 @@
       "type": "trigger",
       "x": 9,
       "y": 10,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
@@ -94,7 +94,7 @@
       "type": "trigger",
       "x": 10,
       "y": 11,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
@@ -103,7 +103,7 @@
       "type": "trigger",
       "x": 11,
       "y": 12,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
@@ -112,7 +112,7 @@
       "type": "trigger",
       "x": 12,
       "y": 12,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
@@ -121,7 +121,7 @@
       "type": "trigger",
       "x": 13,
       "y": 12,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
@@ -130,7 +130,7 @@
       "type": "trigger",
       "x": 14,
       "y": 11,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
@@ -193,6 +193,42 @@
       "type": "trigger",
       "x": 11,
       "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SixIsland_GreenPath_EventScript_Sparkle_UltraBall"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",

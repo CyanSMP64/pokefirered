@@ -64,7 +64,7 @@
       "type": "trigger",
       "x": 46,
       "y": 27,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
@@ -73,7 +73,7 @@
       "type": "trigger",
       "x": 46,
       "y": 26,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
@@ -82,7 +82,7 @@
       "type": "trigger",
       "x": 47,
       "y": 25,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
@@ -91,7 +91,7 @@
       "type": "trigger",
       "x": 48,
       "y": 24,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
@@ -100,7 +100,7 @@
       "type": "trigger",
       "x": 49,
       "y": 24,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
@@ -109,7 +109,7 @@
       "type": "trigger",
       "x": 50,
       "y": 24,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
@@ -118,7 +118,7 @@
       "type": "trigger",
       "x": 51,
       "y": 25,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
@@ -244,7 +244,7 @@
       "type": "trigger",
       "x": 46,
       "y": 27,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_Pearl"
@@ -253,7 +253,7 @@
       "type": "trigger",
       "x": 45,
       "y": 28,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_Pearl"
@@ -329,6 +329,42 @@
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "SevenIsland_TrainerTower_EventScript_Sparkle_NanabBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SevenIsland_TrainerTower_EventScript_Sparkle_BigPearl"
     }
   ],
   "bg_events": [

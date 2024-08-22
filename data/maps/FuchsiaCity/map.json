@@ -380,6 +380,24 @@
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "FuchsiaCity_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 25,
+      "elevation": 1,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FuchsiaCity_EventScript_Sparkle_MaxRevive"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 24,
+      "elevation": 1,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "FuchsiaCity_EventScript_Sparkle_MaxRevive"
     }
   ],
   "bg_events": [

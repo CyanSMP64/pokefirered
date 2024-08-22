@@ -575,7 +575,11 @@ SixIsland_RuinValley_EventScript_ItemSunStone::
 	end
 
 SevenIsland_SevaultCanyon_EventScript_ItemKingsRock::
-	finditem ITEM_POTION          @ moved to oak's lab
+	finditem ITEM_KINGS_ROCK
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_Potion::
+	finditem ITEM_POTION
 	end
 
 SevenIsland_SevaultCanyon_EventScript_ItemMaxElixir::

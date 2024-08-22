@@ -80,7 +80,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_0x152"
+      "flag": "FLAG_HIDE_OAK_PALLET_TOWN_BALL_CUTSCENE"
     }
   ],
   "warp_events": [

@@ -483,7 +483,7 @@
       "type": "trigger",
       "x": 9,
       "y": 26,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_C",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_WepearBerry"
@@ -492,7 +492,7 @@
       "type": "trigger",
       "x": 10,
       "y": 27,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_C",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_WepearBerry"
@@ -501,7 +501,7 @@
       "type": "trigger",
       "x": 11,
       "y": 27,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_C",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_WepearBerry"
@@ -510,7 +510,7 @@
       "type": "trigger",
       "x": 12,
       "y": 27,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_C",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_WepearBerry"
@@ -519,7 +519,7 @@
       "type": "trigger",
       "x": 13,
       "y": 26,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_C",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_WepearBerry"
@@ -618,7 +618,7 @@
       "type": "trigger",
       "x": 13,
       "y": 26,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_A",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_CheriBerry"
@@ -627,7 +627,7 @@
       "type": "trigger",
       "x": 14,
       "y": 26,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_A",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_CheriBerry"
@@ -636,7 +636,7 @@
       "type": "trigger",
       "x": 15,
       "y": 26,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_A",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_CheriBerry"
@@ -735,7 +735,7 @@
       "type": "trigger",
       "x": 9,
       "y": 28,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_8",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_PechaBerry"
@@ -771,7 +771,7 @@
       "type": "trigger",
       "x": 9,
       "y": 32,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_8",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_PechaBerry"
@@ -780,7 +780,7 @@
       "type": "trigger",
       "x": 8,
       "y": 33,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_8",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_PechaBerry"
@@ -789,7 +789,7 @@
       "type": "trigger",
       "x": 7,
       "y": 33,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_8",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_PechaBerry"
@@ -798,7 +798,7 @@
       "type": "trigger",
       "x": 6,
       "y": 33,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_8",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_PechaBerry"
@@ -1009,6 +1009,69 @@
       "var": "VAR_TEMP_3",
       "var_value": "0",
       "script": "ThreeIsland_BerryForest_EventScript_Sparkle_LumBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_8",
+      "var_value": "0",
+      "script": "ThreeIsland_BerryForest_EventScript_Sparkle_PechaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_8",
+      "var_value": "0",
+      "script": "ThreeIsland_BerryForest_EventScript_Sparkle_PechaBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "ThreeIsland_BerryForest_EventScript_Sparkle_WepearBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "0",
+      "script": "ThreeIsland_BerryForest_EventScript_Sparkle_CheriBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "0",
+      "script": "ThreeIsland_BerryForest_EventScript_Sparkle_CheriBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "0",
+      "script": "ThreeIsland_BerryForest_EventScript_Sparkle_CheriBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "0",
+      "script": "ThreeIsland_BerryForest_EventScript_Sparkle_CheriBerry"
     }
   ],
   "bg_events": [

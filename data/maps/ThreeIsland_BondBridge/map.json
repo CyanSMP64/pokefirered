@@ -259,7 +259,7 @@
       "type": "trigger",
       "x": 47,
       "y": 13,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
@@ -268,7 +268,7 @@
       "type": "trigger",
       "x": 46,
       "y": 14,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
@@ -295,7 +295,7 @@
       "type": "trigger",
       "x": 41,
       "y": 11,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
@@ -304,7 +304,7 @@
       "type": "trigger",
       "x": 41,
       "y": 12,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
@@ -313,7 +313,7 @@
       "type": "trigger",
       "x": 41,
       "y": 13,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
@@ -322,7 +322,7 @@
       "type": "trigger",
       "x": 42,
       "y": 14,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
@@ -331,7 +331,7 @@
       "type": "trigger",
       "x": 30,
       "y": 6,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
@@ -403,7 +403,7 @@
       "type": "trigger",
       "x": 36,
       "y": 8,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
@@ -412,7 +412,7 @@
       "type": "trigger",
       "x": 36,
       "y": 7,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
@@ -421,7 +421,7 @@
       "type": "trigger",
       "x": 36,
       "y": 6,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
@@ -430,6 +430,60 @@
       "type": "trigger",
       "x": 35,
       "y": 5,
+      "elevation": 1,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 11,
+      "elevation": 1,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Pearl"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 8,
+      "elevation": 1,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 6,
+      "elevation": 1,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "ThreeIsland_BondBridge_EventScript_Sparkle_Stardust"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 7,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",

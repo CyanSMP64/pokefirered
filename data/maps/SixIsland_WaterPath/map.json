@@ -214,8 +214,8 @@
     {
       "type": "trigger",
       "x": 18,
-      "y": 74,
-      "elevation": 0,
+      "y": 73,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
@@ -224,7 +224,7 @@
       "type": "trigger",
       "x": 19,
       "y": 74,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "SixIsland_WaterPath_EventScript_Sparkle_AspearBerry"
@@ -350,7 +350,7 @@
       "type": "trigger",
       "x": 13,
       "y": 60,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
@@ -359,7 +359,7 @@
       "type": "trigger",
       "x": 14,
       "y": 60,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_D",
       "var_value": "0",
       "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
@@ -431,6 +431,42 @@
       "type": "trigger",
       "x": 14,
       "y": 66,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 62,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SixIsland_WaterPath_EventScript_Sparkle_PinapBerry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "0",

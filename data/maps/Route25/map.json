@@ -299,7 +299,7 @@
       "type": "trigger",
       "x": 57,
       "y": 9,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "Route25_EventScript_Sparkle_Ether"
@@ -308,7 +308,7 @@
       "type": "trigger",
       "x": 58,
       "y": 9,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "Route25_EventScript_Sparkle_Ether"
@@ -317,7 +317,7 @@
       "type": "trigger",
       "x": 59,
       "y": 9,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_TEMP_E",
       "var_value": "0",
       "script": "Route25_EventScript_Sparkle_Ether"
@@ -519,6 +519,42 @@
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "Route25_EventScript_Sparkle_Elixir"
+    },
+    {
+      "type": "trigger",
+      "x": 59,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route25_EventScript_Sparkle_Ether"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route25_EventScript_Sparkle_Ether"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route25_EventScript_Sparkle_Ether"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "Route25_EventScript_Sparkle_Ether"
     }
   ],
   "bg_events": [
