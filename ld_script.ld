@@ -330,6 +330,7 @@ SECTIONS {
         src/minigame_countdown.o(.text);
         src/battle_anim_new.o(.text);
         src/debug.o(.text);
+        src/debug_pokemon_creator.o(.text);
     } =0
 
     script_data :
@@ -645,6 +646,7 @@ SECTIONS {
         src/pokedex_screen.o(.rodata);
         src/battle_anim_new.o(.rodata);
         src/debug.o(.rodata);
+        src/debug_pokemon_creator.o(.rodata);
     } =0
 
     lib_rodata :
