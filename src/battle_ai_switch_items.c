@@ -648,6 +648,8 @@ static bool8 ShouldUseItem(void)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x4;
             if (itemEffects[2] & ITEM2_X_SPATK)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x8;
+            if (itemEffects[2] & ITEM2_X_SPDEF)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x10;
             if (itemEffects[2] & ITEM2_X_ACCURACY)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x20;
             if (itemEffects[0] & ITEM0_DIRE_HIT)

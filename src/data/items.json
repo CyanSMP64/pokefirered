@@ -1313,19 +1313,19 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
-      "price": 0,
+      "english": "X Sp. Def",
+      "itemId": "ITEM_X_SP_DEF",
+      "price": 350,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "?????",
+      "description_english": "Raises the Sp. Def stat of\\nPokémon in battle. Wears off if the\\nPokémon is withdrawn.",
       "importance": 0,
       "registrability": 0,
       "pocket": "POCKET_ITEMS",
       "type": "ITEM_TYPE_BAG_MENU",
       "fieldUseFunc": "FieldUseFunc_OakStopsYou",
-      "battleUsage": 0,
-      "battleUseFunc": "NULL",
+      "battleUsage": 2,
+      "battleUseFunc": "BattleUseFunc_StatBooster",
       "secondaryId": 0
     },
     {
