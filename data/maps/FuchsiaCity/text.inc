@@ -59,7 +59,7 @@ FuchsiaCity_Text_KangaskhanSign::
     .string "young in a pouch on its belly.$"
 
 FuchsiaCity_Text_SlowpokeSign::
-    .string "Name: Deoxys\n"
+    .string "Name: Ultra Necrozma\n"
     .string "Came from space to end your run.$"
 
 FuchsiaCity_Text_LaprasSign::
