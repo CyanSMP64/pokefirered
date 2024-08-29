@@ -4785,6 +4785,8 @@ u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove)
     if ((gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_LV) == (level << 9))
     {
         gMoveToLearn = (gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_ID);
+        if (gMoveToLearn == MOVE_NONE || gMoveToLearn >= MOVES_COUNT)
+            return MOVE_NONE;
         sLearningMoveTableID++;
         retVal = GiveMoveToMon(mon, gMoveToLearn);
     }
@@ -9769,6 +9771,8 @@ u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
         while (moveLevel == 0 || moveLevel == (level << 9))
         {
             gMoveToLearn = (gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_ID);
+            if (gMoveToLearn == MOVE_NONE || gMoveToLearn >= MOVES_COUNT)
+                return MOVE_NONE;
             sLearningMoveTableID++;
             return GiveMoveToMon(mon, gMoveToLearn);
         }
