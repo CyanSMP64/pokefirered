@@ -76,7 +76,6 @@ SECTIONS {
         src/decompress.o(.text);
         src/battle_util.o(.text);
         src/battle_script_commands.o(.text);
-        src/battle_util2.o(.text);
         src/battle_controller_player.o(.text);
         src/battle_gfx_sfx_util.o(.text);
         src/battle_controller_opponent.o(.text);
@@ -87,6 +86,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/pokemon.o(.text);
+        src/battle_util2.o(.text);
         src/battle_controller_link_opponent.o(.text);
         src/trig.o(.text);
         src/random.o(.text);
@@ -108,7 +108,6 @@ SECTIONS {
         src/field_player_avatar.o(.text);
         src/event_object_movement.o(.text);
         src/event_object_lock.o(.text);
-        src/text_window_graphics.o(.text);
         src/script.o(.text);
         src/scrcmd.o(.text);
         src/field_control_avatar.o(.text);
@@ -129,6 +128,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/text_window_graphics.o(.text);
         src/battle_anim_status_effects.o(.text);
         src/play_time.o(.text);
         src/reset_save_heap.o(.text);
@@ -354,12 +354,6 @@ SECTIONS {
     {
         src/libgcnmultiboot.o(.text);
         src/m4a_1.o(.text);
-    } =0
-
-    lib_text_1 0x081e3c18:
-    ALIGN(4)
-    {
-        *libgcc.a:_call_via_rX.o(.text);
         src/m4a.o(.text);
         src/agb_flash.o(.text);
         src/agb_flash_1m.o(.text);
@@ -371,6 +365,7 @@ SECTIONS {
         src/librfu_sio32id.o(.text);
         src/isagbprn.o(.text);
         src/libagbsyscall.o(.text);
+        *libgcc.a:_call_via_rX.o(.text);
         *libgcc.a:_divdi3.o(.text);
         *libgcc.a:_divsi3.o(.text);
         *libgcc.a:_dvmd_tls.o(.text);
