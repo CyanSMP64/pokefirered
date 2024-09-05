@@ -693,10 +693,14 @@ void LoadBattleMenuWindowGfx(void)
     LoadUserWindowGfx(2, 0x012, BG_PLTT_ID(1));
     LoadUserWindowGfx(2, 0x022, BG_PLTT_ID(1));
 
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 1]  = RGB(28, 28, 27);
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 2]  = RGB(12, 12, 12);
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 3]  = RGB(22, 22, 21);
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 12] = RGB( 9,  9,  9);
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 13] = RGB( 9,  9,  9);
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 14] = RGB(31, 31, 31);
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 15] = RGB( 26,  26,  25);
+    CpuCopy16(&gPlttBufferUnfaded[BG_PLTT_ID(5) + 1], &gPlttBufferFaded[BG_PLTT_ID(5) + 1], PLTT_SIZEOF(3));
     CpuCopy16(&gPlttBufferUnfaded[BG_PLTT_ID(5) + 12], &gPlttBufferFaded[BG_PLTT_ID(5) + 12], PLTT_SIZEOF(4));
 
     if (gBattleTypeFlags & (BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_POKEDUDE))
