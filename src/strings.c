@@ -231,6 +231,7 @@ const u8 gText_SpaceForVar1Full[] = _("{STR_VAR_1}を\nいれる ばしょが �
 const u8 gText_AnythingElseICanHelp[] = _("Is there anything else I can do?");
 const u8 gText_CanIHelpWithAnythingElse[] = _("その ほかに\nなにか ちからに なれることは?");
 const u8 gText_ThrowInPremierBall[] = _("I'll throw in a Premier Ball, too.{PAUSE_UNTIL_PRESS}");
+const u8 gText_ThrowInPremierBalls[] = _("I'll throw in {STR_VAR_1} Premier Balls, too.{PAUSE_UNTIL_PRESS}");
 const u8 gText_OhNoICantBuyThat[] = _("{STR_VAR_1}? Oh, no.\nI can't buy that.{PAUSE_UNTIL_PRESS}");
 const u8 gText_HowManyWouldYouLikeToSell[] = _("{STR_VAR_1}?\nHow many would you like to sell?");
 const u8 gText_ICanPayThisMuch_WouldThatBeOkay[] = _("I can pay ¥{STR_VAR_3}.\nWould that be okay?");

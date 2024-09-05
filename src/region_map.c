@@ -396,7 +396,6 @@ static const u16 sPlayerIcon_RedPal[] = INCBIN_U16("graphics/region_map/player_i
 static const u16 sPlayerIcon_LeafPal[] = INCBIN_U16("graphics/region_map/player_icon_leaf.gbapal");
 static const u16 sMiscIcon_Pal[] = INCBIN_U16("graphics/region_map/misc_icon.gbapal"); // For dungeon and fly icons
 static const u16 sRegionMap_Pal[] = INCBIN_U16("graphics/region_map/region_map.gbapal");
-static const u16 sUnusedPalette[] = { RGB(0, 0, 31), RGB(0, 12, 31), RGB_WHITE, RGB_WHITE };
 static const u16 sSwitchMapCursor_Pal[] = INCBIN_U16("graphics/region_map/switch_map_cursor.gbapal");
 static const u16 sMapEdge_Pal[] = INCBIN_U16("graphics/region_map/map_edge.gbapal");
 static const u32 sSwitchMapCursorLeft_Gfx[] = INCBIN_U32("graphics/region_map/switch_map_cursor_left.4bpp.lz");
@@ -1301,12 +1300,6 @@ static void Task_RegionMap(u8 taskId)
     }
 }
 
-// Unused
-static void SetMainMapTask(TaskFunc taskFunc)
-{
-    sRegionMap->mainTask = taskFunc;
-}
-
 static TaskFunc GetMainMapTask(void)
 {
     return sRegionMap->mainTask;
@@ -1542,12 +1535,6 @@ static u8 GetRegionMapPlayerIsOn(void)
 static void SetSelectedRegionMap(u8 region)
 {
     sRegionMap->selectedRegion = region;
-}
-
-// Unused
-static void SetRegionMapPlayerIsOn(u8 region)
-{
-    sRegionMap->playersRegion = region;
 }
 
 static void InitSwitchMapMenu(u8 whichMap, u8 taskId, TaskFunc taskFunc)

@@ -2248,12 +2248,6 @@ static void AIStackPushVar(const u8 *var)
     gBattleResources->AI_ScriptsStack->ptr[gBattleResources->AI_ScriptsStack->size++] = var;
 }
 
-// unused
-static void AIStackPushVar_cursor(void)
-{
-    gBattleResources->AI_ScriptsStack->ptr[gBattleResources->AI_ScriptsStack->size++] = sAIScriptPtr;
-}
-
 static bool8 AIStackPop(void)
 {
     if (gBattleResources->AI_ScriptsStack->size != 0)

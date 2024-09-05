@@ -327,32 +327,6 @@ void RemoveCameraObject(void)
     RemoveObjectEventByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
 }
 
-// Unused
-static const u8 sSlotMachineRandomSeeds[] = {
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    12,
-    2,
-    4,
-    5,
-    1,
-    8,
-    7,
-    11,
-    3,
-    10,
-    9,
-    6
-};
-
 static const u8 sSlotMachineIndices[] = {
     0,
     0,
@@ -745,26 +719,6 @@ static const u8 *const sFloorNamePointers[] = {
     gText_10F,
     gText_11F,
     gText_Rooftop
-};
-
-// Unused
-static const u8 sFloorNameWidthPadding[] = {
-    26,
-    26,
-    26,
-    26,
-    30,
-    30,
-    30,
-    30,
-    30,
-    30,
-    30,
-    30,
-    30,
-    26,
-    26,
-    18
 };
 
 static const u16 sElevatorWindowMetatilesGoingUp[][3] = {
