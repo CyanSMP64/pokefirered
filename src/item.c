@@ -191,11 +191,11 @@ u32 GetFreeSpaceForItemInBag(u16 itemId)
         if (gBagPockets[pocket].itemSlots[i].itemId == itemId)
         {
             ownedCount = GetBagItemQuantity(&gBagPockets[pocket].itemSlots[i].quantity);
-            spaceForItem += max(0, 99 - ownedCount);
+            spaceForItem += max(0, 999 - ownedCount);
         }
         else if (gBagPockets[pocket].itemSlots[i].itemId == ITEM_NONE)
         {
-            spaceForItem += 99;
+            spaceForItem += 999;
         }
     }
     return spaceForItem;
