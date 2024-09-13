@@ -9211,6 +9211,10 @@ extern const u32 gBattleAnimSpritePal_Slash2[];
 extern const u32 gBattleAnimSpritePal_WhipHit[];
 extern const u32 gBattleAnimSpritePal_BlueRing2[];
 
+//New battle anim particles
+extern const u32 gBattleAnimSpriteGfx_QuickGuard[];
+extern const u32 gBattleAnimSpritePal_QuickGuard[];
+
 // battle anim task
 extern const u32 gUnusedLevelupAnimationGfx[];
 extern const u32 gUnusedLevelupAnimationTilemap[];

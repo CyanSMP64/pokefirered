@@ -322,5 +322,9 @@ void StartMonScrollingBgMask(u8 taskId, s32 unused, u16 arg2, u8 battler1, u8 ar
 
 extern const union AffineAnimCmd *const gSwiftStarAffineAnimTable[];
 void AnimTranslateLinearSingleSineWave(struct Sprite *);
+extern const union AnimCmd *const gRazorLeafParticleAnimTable[];
+extern const union AffineAnimCmd *const gAffineAnims_PoisonProjectile[];
+
+void AnimNeedleArmSpike(struct Sprite *sprite);
 
 #endif // GUARD_BATTLE_ANIM_H

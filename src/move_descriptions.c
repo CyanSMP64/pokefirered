@@ -361,6 +361,11 @@ const u8 sPlayRoughDescription[] = _("The foe is roughed\nup by the user.\nThis 
 const u8 sFairyWindDescription[] = _("The user stirs up\na fairy wind and\nstrikes the foe\nwith it.");
 const u8 sMoonblastDescription[] = _("The foe is attacked\nwith the power of\nthe moon. This may\nlower its Sp. Atk.");
 const u8 sDazzlingGleamDescription[] = _("The user damages\nopposing Pokémon\nby emitting a\npowerful flash.");
+const u8 sAirSlashDescription[] = _("The foe is sliced\nby a blade of air.\nIt may also make\nthe foe flinch.");
+const u8 sShadowSneakDescription[] = _("The user extends\nits shadow to\nattack. It will\nstrike first.");
+const u8 sLeafStormDescription[] = _("An intense attack\nthat also sharply\nreduces the user's\nSp. Atk stat.");
+const u8 sStruggleBugDescription[] = _("While resisting, the\nuser attacks the\nfoe, lowering its\nSp. Atk stat.");
+const u8 sPlayNiceDescription[] = _("The target loses\nits will to fight.\nThis lowers its\nAttack.");
 
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_POUND         - 1] = gMoveDescription_Pound,
@@ -723,4 +728,9 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_FAIRY_WIND - 1] = sFairyWindDescription,
     [MOVE_MOONBLAST - 1] = sMoonblastDescription,
     [MOVE_DAZZLING_GLEAM - 1] = sDazzlingGleamDescription,
+    [MOVE_AIR_SLASH - 1] = sAirSlashDescription,
+    [MOVE_SHADOW_SNEAK - 1] = sShadowSneakDescription,
+    [MOVE_LEAF_STORM - 1] = sLeafStormDescription,
+    [MOVE_STRUGGLE_BUG - 1] = sStruggleBugDescription,
+    [MOVE_PLAY_NICE - 1] = sPlayNiceDescription,
 };

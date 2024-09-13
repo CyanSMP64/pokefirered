@@ -84,7 +84,7 @@ static const union AffineAnimCmd sAffineAnim_SludgeBombHit[] =
     AFFINEANIMCMD_END,
 };
 
-static const union AffineAnimCmd *const sAffineAnims_PoisonProjectile[] =
+const union AffineAnimCmd *const gAffineAnims_PoisonProjectile[] =
 {
     sAffineAnim_PoisonProjectile,
 };
@@ -101,7 +101,7 @@ const struct SpriteTemplate gSludgeProjectileSpriteTemplate =
     .oam = &gOamData_AffineDouble_ObjNormal_16x16,
     .anims = sAnims_PoisonProjectile,
     .images = NULL,
-    .affineAnims = sAffineAnims_PoisonProjectile,
+    .affineAnims = gAffineAnims_PoisonProjectile,
     .callback = AnimSludgeProjectile,
 };
 
@@ -112,7 +112,7 @@ const struct SpriteTemplate gAcidPoisonBubbleSpriteTemplate =
     .oam = &gOamData_AffineDouble_ObjNormal_16x16,
     .anims = sAnims_PoisonProjectile,
     .images = NULL,
-    .affineAnims = sAffineAnims_PoisonProjectile,
+    .affineAnims = gAffineAnims_PoisonProjectile,
     .callback = AnimAcidPoisonBubble,
 };
 

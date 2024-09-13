@@ -197,7 +197,6 @@ SECTIONS {
         src/bike.o(.text);
         src/easy_chat.o(.text);
         src/mon_markings.o(.text);
-        src/mail.o(.text);
         src/heal_location.o(.text);
         src/region_map.o(.text);
         src/image_processing_effects.o(.text);
@@ -210,6 +209,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/mail.o(.text);
         src/post_battle_event_funcs.o(.text);
         src/menu_helpers.o(.text);
         src/battle_records.o(.text);

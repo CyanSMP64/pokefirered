@@ -63,7 +63,6 @@ static void AnimTask_LeafBlade_Step2(struct Task *, u8);
 static void AnimTask_LeafBlade_Step2_Callback(struct Sprite *);
 static void AnimFlyingParticle(struct Sprite *);
 static void AnimFlyingParticle_Step(struct Sprite *);
-static void AnimNeedleArmSpike(struct Sprite *);
 static void AnimNeedleArmSpike_Step(struct Sprite *);
 static void AnimSlice_Step(struct Sprite *);
 static void AnimCirclingMusicNote(struct Sprite *);
@@ -498,7 +497,7 @@ static const union AnimCmd sRazorLeafParticleAnimCmds2[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd *const sRazorLeafParticleAnimTable[] =
+const union AnimCmd *const gRazorLeafParticleAnimTable[] =
 {
     sRazorLeafParticleAnimCmds1,
     sRazorLeafParticleAnimCmds2,
@@ -509,7 +508,7 @@ const struct SpriteTemplate gRazorLeafParticleSpriteTemplate =
     .tileTag = ANIM_TAG_LEAF,
     .paletteTag = ANIM_TAG_LEAF,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
-    .anims = sRazorLeafParticleAnimTable,
+    .anims = gRazorLeafParticleAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimRazorLeafParticle,
@@ -520,7 +519,7 @@ const struct SpriteTemplate gTwisterLeafSpriteTemplate =
     .tileTag = ANIM_TAG_LEAF,
     .paletteTag = ANIM_TAG_LEAF,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
-    .anims = sRazorLeafParticleAnimTable,
+    .anims = gRazorLeafParticleAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimMoveTwisterParticle,
@@ -3695,7 +3694,7 @@ void AnimTask_CycleMagicalLeafPal(u8 taskId)
         DestroyAnimVisualTask(taskId);
 }
 
-static void AnimNeedleArmSpike(struct Sprite* sprite)
+void AnimNeedleArmSpike(struct Sprite* sprite)
 {
     u8 a;
     u8 b;

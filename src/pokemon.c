@@ -4113,22 +4113,22 @@ static const u16 sHMMoves[] =
 static const u16 sDeoxysBaseStats[] = 
 {
     [STAT_HP]    = 50,
-    [STAT_ATK]   = 180,
-    [STAT_DEF]   = 20,
+    [STAT_ATK]   = 150,
+    [STAT_DEF]   = 50,
     [STAT_SPEED] = 150,
-    [STAT_SPATK] = 180,
-    [STAT_SPDEF] = 20,
+    [STAT_SPATK] = 150,
+    [STAT_SPDEF] = 50,
 };
 #elif defined(LEAFGREEN)
 // Defense forme
 static const u16 sDeoxysBaseStats[] =
 {
     [STAT_HP]    = 50,
-    [STAT_ATK]   = 70,
-    [STAT_DEF]   = 160,
-    [STAT_SPEED] = 90,
-    [STAT_SPATK] = 70,
-    [STAT_SPDEF] = 160,
+    [STAT_ATK]   = 150,
+    [STAT_DEF]   = 50,
+    [STAT_SPEED] = 150,
+    [STAT_SPATK] = 150,
+    [STAT_SPDEF] = 50,
 };
 #endif
 

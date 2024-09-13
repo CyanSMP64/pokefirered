@@ -920,6 +920,9 @@ const u32 gBattleAnimSpritePal_FlatRock[] = INCBIN_U32("graphics/battle_anims/sp
 
 const u16 gPPTextPalette[] = INCBIN_U16("graphics/interface/text_pp.gbapal");
 
+const u32 gBattleAnimSpriteGfx_QuickGuard[] = INCBIN_U32("graphics/battle_anims/sprites/quick_guard.4bpp.lz");
+const u32 gBattleAnimSpritePal_QuickGuard[] = INCBIN_U32("graphics/battle_anims/sprites/quick_guard.gbapal.lz");
+
 #include "data/graphics/pokemon.h"
 #include "data/graphics/trainers.h"
 
