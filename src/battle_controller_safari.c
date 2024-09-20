@@ -222,7 +222,7 @@ static void HandleInputChooseAction(void)
             ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
         }
     }
-    else if (JOY_HELD(R_BUTTON))
+    else if (JOY_NEW(B_BUTTON))
     {
         PlaySE(SE_SELECT);
         BtlController_EmitTwoReturnValues(1, B_ACTION_SAFARI_RUN, 0);

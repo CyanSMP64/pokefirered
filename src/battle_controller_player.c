@@ -307,7 +307,7 @@ static void HandleInputChooseAction(void)
     {
         SwapHpBarsWithHpText();
     }
-    else if (JOY_HELD(R_BUTTON))
+    else if (JOY_HELD(B_BUTTON))
     {
         PlaySE(SE_SELECT);
         BtlController_EmitTwoReturnValues(1, B_ACTION_RUN, 0);
