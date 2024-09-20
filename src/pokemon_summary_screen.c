@@ -2412,6 +2412,17 @@ static void PokeSum_PrintControlsString(const u8 * str)
     PutWindowTilemap(sMonSummaryScreen->windowIds[POKESUM_WIN_CONTROLS]);
 }
 
+static void PSS_PrintTextOnWindowWithFont(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId, u8 fontId)
+{
+    AddTextPrinterParameterized3(windowId, fontId, x, y, sLevelNickTextColors[colorId], TEXT_SKIP_DRAW, string);
+}
+
+static void PSS_PrintTextOnWindowToFitPx(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId, u32 width)
+{
+    u32 fontId = GetFontIdToFit(string, FONT_NORMAL, 0, width);
+    PSS_PrintTextOnWindowWithFont(windowId, string, x, y, lineSpacing, colorId, fontId);
+}
+
 static void PrintMonLevelNickOnWindow2(const u8 * str)
 {
     FillWindowPixelBuffer(sMonSummaryScreen->windowIds[POKESUM_WIN_LVL_NICK], 0);
@@ -2421,7 +2432,7 @@ static void PrintMonLevelNickOnWindow2(const u8 * str)
         if (sMonSummaryScreen->curPageIndex != PSS_PAGE_MOVES_INFO)
             AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_LVL_NICK], 2, 4, 2, sLevelNickTextColors[1], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.levelStrBuf);
 
-        AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_LVL_NICK], FONT_NORMAL, 40, 2, sLevelNickTextColors[1], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.nicknameStrBuf);
+        PSS_PrintTextOnWindowToFitPx(sMonSummaryScreen->windowIds[POKESUM_WIN_LVL_NICK], sMonSummaryScreen->summary.nicknameStrBuf, 40, 2, 0, 1, 65);
 
         if (GetMonGender(&sMonSummaryScreen->currentMon) == MON_FEMALE)
             AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_LVL_NICK], FONT_NORMAL, 105, 2, sLevelNickTextColors[3], 0, sMonSummaryScreen->summary.genderSymbolStrBuf);

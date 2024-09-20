@@ -87,6 +87,7 @@ static s32 CalcNewBarValue(s32 maxValue, s32 currValue, s32 receivedValue, s32 *
 static void DrawHealthbarOntoScreen(struct TestingBar *barInfo, s32 *currValue, u8 bg, u8 x, u8 y);
 static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 windowWidth);
 static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y, u32 *windowId);
+static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32);
 static void RemoveWindowOnHealthbox(u32 windowId);
 static void TextIntoHealthboxObject(void *dest, u8 *windowTileData, s32 windowWidth);
 
@@ -1515,28 +1516,25 @@ void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     if (CheckBattleTypeGhost(mon, gSprites[healthboxSpriteId].sBattlerId))
         gender = 100;
 
-    // AddTextPrinterAndCreateWindowOnHealthbox's arguments are the same in all 3 cases.
-    // It's possible they may have been different in early development phases.
     switch (gender)
     {
     default:
         *ptr++ = TEXT_DYNAMIC_COLOR_2;
         *ptr++ = EOS;
-        windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(gDisplayedStringBattle, 0, 3, &windowId);
         break;
     case MON_MALE:
         *ptr++ = TEXT_DYNAMIC_COLOR_2;
         *ptr++ = CHAR_MALE;
         *ptr++ = EOS;
-        windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(gDisplayedStringBattle, 0, 3, &windowId);
         break;
     case MON_FEMALE:
         *ptr++ = TEXT_DYNAMIC_COLOR_1;
         *ptr++ = CHAR_FEMALE;
         *ptr++ = EOS;
-        windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(gDisplayedStringBattle, 0, 3, &windowId);
         break;
     }
+
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, 0, 3, &windowId, 56);
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
@@ -2203,7 +2201,7 @@ static const struct WindowTemplate sHealthboxWindowTemplate = {
     .baseBlock = 0
 };
 
-static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y, u32 *windowId)
+static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *str, u32 x, u32 y, u32 *windowId, u32 fontId)
 {
     u16 winId;
     u8 color[3];
@@ -2216,10 +2214,21 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y,
     color[1] = 1;
     color[2] = 3;
 
-    AddTextPrinterParameterized4(winId, FONT_SMALL, x, y, 0, 0, color, -1, str);
+    AddTextPrinterParameterized4(winId, fontId, x, y, 0, 0, color, -1, str);
 
     *windowId = winId;
     return (u8 *)(GetWindowAttribute(winId, WINDOW_TILE_DATA));
+}
+
+static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y, u32 *windowId)
+{
+    return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, windowId, FONT_SMALL);
+}
+
+static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 width)
+{
+    u32 fontId = GetFontIdToFit(str, FONT_SMALL, 0, width);
+    return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, windowId, fontId);
 }
 
 static void RemoveWindowOnHealthbox(u32 windowId)

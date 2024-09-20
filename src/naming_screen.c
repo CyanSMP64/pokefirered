@@ -344,7 +344,7 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
         .bg = 3,
         .tilemapLeft = 8,
         .tilemapTop = 6,
-        .width = 14,
+        .width = 15,
         .height = 2,
         .paletteNum = 10,
         .baseBlock = 0x0030
@@ -356,7 +356,7 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
         .width = 16,
         .height = 2,
         .paletteNum = 10,
-        .baseBlock = 0x004c
+        .baseBlock = 0x004e
     },
     [WIN_BANNER] = {
         .bg = 0,
@@ -365,7 +365,7 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
         .width = 30,
         .height = 2,
         .paletteNum = 11,
-        .baseBlock = 0x006c
+        .baseBlock = 0x006e
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -1702,10 +1702,12 @@ static void DrawNormalTextEntryBox(void)
 
 static void DrawMonTextEntryBox(void)
 {
-    u8 buffer[32];
+    u8 buffer[64];
+    u8 speciesName[POKEMON_NAME_LENGTH + 1];
 
-    StringCopy(buffer, gSpeciesNames[sNamingScreen->monSpecies]);
-    StringAppendN(buffer, sNamingScreen->template->title, 15);
+    u8 *end = StringCopy(buffer, GetSpeciesName_exp(sNamingScreen->monSpecies));
+    WrapFontIdToFit(buffer, end, FONT_NORMAL, 128 - 64);
+    StringAppendN(end, sNamingScreen->template->title, 15);
     FillWindowPixelBuffer(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], PIXEL_FILL(1));
     AddTextPrinterParameterized(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL_COPY_1, buffer, 1, 1, 0, NULL);
     PutWindowTilemap(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX]);
@@ -1760,7 +1762,7 @@ static void DrawGenderIcon(void)
             StringCopy(genderSymbol, gText_FemaleSymbol);
             gender = FEMALE;
         }
-        AddTextPrinterParameterized3(sNamingScreen->windows[2], FONT_NORMAL, 0x68, 1, sGenderColors[gender], TEXT_SKIP_DRAW, genderSymbol);
+        AddTextPrinterParameterized3(sNamingScreen->windows[2], FONT_NORMAL, 0x70, 1, sGenderColors[gender], TEXT_SKIP_DRAW, genderSymbol);
     }
 }
 

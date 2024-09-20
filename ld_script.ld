@@ -107,7 +107,6 @@ SECTIONS {
         src/field_door.o(.text);
         src/field_player_avatar.o(.text);
         src/event_object_movement.o(.text);
-        src/event_object_lock.o(.text);
         src/script.o(.text);
         src/scrcmd.o(.text);
         src/field_control_avatar.o(.text);
@@ -128,6 +127,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/event_object_lock.o(.text);
         src/text_window_graphics.o(.text);
         src/battle_anim_status_effects.o(.text);
         src/play_time.o(.text);
@@ -432,7 +432,6 @@ SECTIONS {
         src/bg_regs.o(.rodata);
         src/string_util.o(.rodata);
         src/main_menu.o(.rodata);
-        src/data.o(.rodata);
         src/battle_bg.o(.rodata);
         src/battle_util.o(.rodata);
         src/battle_script_commands.o(.rodata);
@@ -445,6 +444,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/pokemon.o(.rodata);
+        src/data.o(.rodata);
         src/link.o(.rodata);
         src/battle_main.o(.rodata);
         src/battle_controller_player.o(.rodata);
@@ -549,7 +549,6 @@ SECTIONS {
         src/intro.o(.rodata);
         src/battle_anim_special.o(.rodata);
         src/hall_of_fame.o(.rodata);
-        src/credits.o(.rodata);
         src/diploma.o(.rodata);
         src/strings.o(.rodata);
         src/save_failed_screen.o(.rodata);
@@ -586,6 +585,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/party_menu.o(.rodata);
+        src/credits.o(.rodata);
         src/field_specials.o(.rodata);
         src/quest_log.o(.rodata);
         src/union_room_chat.o(.rodata);

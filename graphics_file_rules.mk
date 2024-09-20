@@ -100,6 +100,18 @@ $(FONTGFXDIR)/braille.fwjpnfont: $(FONTGFXDIR)/braille.png
 $(FONTGFXDIR)/japanese_bold.fwjpnfont: $(FONTGFXDIR)/japanese_bold.png
 	$(GFX) $< $@
 
+$(FONTGFXDIR)/latin_narrow.latfont: $(FONTGFXDIR)/latin_narrow.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/latin_small_narrow.latfont: $(FONTGFXDIR)/latin_small_narrow.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/latin_narrower.latfont: $(FONTGFXDIR)/latin_narrower.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/latin_small_narrower.latfont: $(FONTGFXDIR)/latin_small_narrower.png
+	$(GFX) $< $@
+
 graphics/title_screen/pokemon_logo.gbapal: %.gbapal: %.pal
 	$(GFX) $< $@ -num_colors 224
 

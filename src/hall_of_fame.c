@@ -1026,7 +1026,7 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
     i = 0;
     if (currMon->nick[0] != EOS)
     {
-        for (i = 0; i < 10 && currMon->nick[i] != EOS; i++)
+        for (i = 0; i < 12 && currMon->nick[i] != EOS; i++)
         {
             text[i] = currMon->nick[i];
         }

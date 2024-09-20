@@ -4534,7 +4534,7 @@ void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerP
     dest->spDefenseIV  = GetMonData(mon, MON_DATA_SPDEF_IV, NULL);
     dest->abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
     dest->personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-    GetMonData(mon, MON_DATA_NICKNAME, dest->nickname);
+    GetMonData(mon, MON_DATA_NICKNAME10, dest->nickname);
 }
 
 static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
@@ -5475,6 +5475,7 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
         retVal = boxMon->otId;
         break;
     case MON_DATA_NICKNAME:
+    case MON_DATA_NICKNAME10:
     {
         if (boxMon->isBadEgg)
         {
@@ -5505,9 +5506,15 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
         }
         else
         {
-            for (retVal = 0;
-                retVal < POKEMON_NAME_LENGTH;
-                data[retVal] = boxMon->nickname[retVal], retVal++){}
+            if (field != MON_DATA_NICKNAME10) {
+                for (retVal = 0;
+                    retVal < POKEMON_NAME_LENGTH;
+                    data[retVal] = boxMon->nickname[retVal], retVal++){}
+            } else {
+                for (retVal = 0;
+                    retVal < VANILLA_POKEMON_NAME_LENGTH;
+                    data[retVal] = boxMon->nickname[retVal], retVal++){}
+            }
 
             data[retVal] = EOS;
         }
@@ -5905,11 +5912,23 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         SET32(boxMon->otId);
         break;
     case MON_DATA_NICKNAME:
+    case MON_DATA_NICKNAME10:
     {
-        s32 i;
-        for (i = 0; i < POKEMON_NAME_LENGTH; i++)
-            boxMon->nickname[i] = data[i];
-        break;
+        if (field != MON_DATA_NICKNAME10) {
+            s32 i;
+            for (i = 0; i < POKEMON_NAME_LENGTH; i++)
+                boxMon->nickname[i] = data[i];
+            break;
+        }
+        else {
+            s32 i;
+            for (i = 0; i < VANILLA_POKEMON_NAME_LENGTH; i++) {
+                boxMon->nickname[i] = data[i];
+                boxMon->nickname[10] = EOS;
+                boxMon->nickname[11] = EOS;
+            }
+            break;
+        }
     }
     case MON_DATA_LANGUAGE:
         SET8(boxMon->language);
@@ -6358,6 +6377,11 @@ void GetSpeciesName(u8 *name, u16 species)
     }
 
     name[i] = EOS;
+}
+
+const u8 *GetSpeciesName_exp(u16 species)
+{
+    return gSpeciesNames[species];
 }
 
 u8 CalculatePPWithBonus(u16 move, u8 ppBonuses, u8 moveIndex)

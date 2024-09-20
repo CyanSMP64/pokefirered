@@ -2287,16 +2287,17 @@ static void PrintDisplayMonInfo(void)
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     if (gStorage->boxOption != OPTION_MOVE_ITEMS)
     {
-        for (i = 0, y = 0; i < 3; i++, y += 14)
-            AddTextPrinterParameterized(0, FONT_NORMAL, gStorage->displayMonTexts[i], i == 2 ? 10 : 6, y, TEXT_SKIP_DRAW, NULL);
-
-        AddTextPrinterParameterized(0, FONT_SMALL, gStorage->displayMonTexts[3], 6, y + 2, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[0], FONT_NORMAL, 0, WindowWidthPx(0) - 6), gStorage->displayMonTexts[0], 6, 0, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[1], FONT_NORMAL, 0, WindowWidthPx(0) - 12), gStorage->displayMonTexts[1], 6, 15, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, FONT_NORMAL, gStorage->displayMonTexts[2], 10, 29, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[3], FONT_SMALL, 0, WindowWidthPx(0) - 22), gStorage->displayMonTexts[3], 6, 43, TEXT_SKIP_DRAW, NULL);
     }
     else
     {
-        AddTextPrinterParameterized(0, FONT_SMALL, gStorage->displayMonTexts[3], 6, 0, TEXT_SKIP_DRAW, NULL);
-        for (i = 0, y = 15; i < 3; i++, y += 14)
-            AddTextPrinterParameterized(0, FONT_NORMAL, gStorage->displayMonTexts[i], i == 2 ? 10 : 6, y, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[3], FONT_SMALL, 0, WindowWidthPx(0) - 22), gStorage->displayMonTexts[3], 6, 0, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[0], FONT_NORMAL, 0, WindowWidthPx(0) - 6), gStorage->displayMonTexts[0], 6, 13, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[1], FONT_NORMAL, 0, WindowWidthPx(0) - 12), gStorage->displayMonTexts[1], 6, 28, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, FONT_NORMAL, gStorage->displayMonTexts[2], 10, 42, TEXT_SKIP_DRAW, NULL);
     }
 
     CopyWindowToVram(0, COPYWIN_GFX);

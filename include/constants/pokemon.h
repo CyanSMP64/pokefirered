@@ -91,6 +91,7 @@
 #define MON_DATA_SPEED2                   86
 #define MON_DATA_SPATK2                   87
 #define MON_DATA_SPDEF2                   88
+#define MON_DATA_NICKNAME10               89
 
 // Pokemon types
 #define TYPE_NONE           255
@@ -245,6 +246,11 @@
 #define FLAG_SNATCH_AFFECTED        (1 << 3)
 #define FLAG_MIRROR_MOVE_AFFECTED   (1 << 4)
 #define FLAG_KINGS_ROCK_AFFECTED    (1 << 5)
+
+// currently unused
+#define CATEGORY_PHYSICAL   (1 << 6)
+#define CATEGORY_SPECIAL    (2 << 6)
+#define CATEGORY_STATUS     (3 << 6)
 
 // Growth rates
 #define GROWTH_MEDIUM_FAST  0

@@ -138,7 +138,7 @@ struct Pokemon
     u16 speed;
     u16 spAttack;
     u16 spDefense;
-};
+}; // 0x68
 
 struct BattleTowerPokemon
 {
@@ -163,7 +163,7 @@ struct BattleTowerPokemon
              u32 gap:1;
              u32 abilityNum:1;
     /*0x1C*/ u32 personality;
-    /*0x20*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
+    /*0x20*/ u8 nickname[VANILLA_POKEMON_NAME_LENGTH + 1];
     /*0x2B*/ u8 friendship;
 };
 
@@ -196,13 +196,13 @@ struct BattlePokemon
     /*0x2C*/ u16 maxHP;
     /*0x2E*/ u16 item;
     /*0x30*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
-    /*0x3B*/ u8 ppBonuses;
-    /*0x3C*/ u8 otName[PLAYER_NAME_LENGTH + 1];
-    /*0x44*/ u32 experience;
-    /*0x48*/ u32 personality;
-    /*0x4C*/ u32 status1;
-    /*0x50*/ u32 status2;
-    /*0x54*/ u32 otId;
+    /*0x3D*/ u8 ppBonuses;
+    /*0x3E*/ u8 otName[PLAYER_NAME_LENGTH + 1];
+    /*0x48*/ u32 experience;
+    /*0x4C*/ u32 personality;
+    /*0x50*/ u32 status1;
+    /*0x54*/ u32 status2;
+    /*0x58*/ u32 otId;
 };
 
 struct SpeciesInfo
@@ -246,7 +246,8 @@ struct BattleMove
     u8 secondaryEffectChance;
     u8 target;
     s8 priority;
-    u8 flags;
+    u8 flags:6;
+    u8 category:2;
 };
 
 #define SPINDA_SPOT_WIDTH 16
@@ -361,6 +362,7 @@ u8 GetSecretBaseTrainerPicIndex(void);
 u8 GetSecretBaseTrainerNameIndex(void);
 bool8 IsPlayerPartyAndPokemonStorageFull(void);
 void GetSpeciesName(u8 *name, u16 species);
+const u8 *GetSpeciesName_exp(u16 species);
 u8 CalculatePPWithBonus(u16 move, u8 ppBonuses, u8 moveIndex);
 void RemoveMonPPBonus(struct Pokemon *mon, u8 moveIndex);
 void RemoveBattleMonPPBonus(struct BattlePokemon *mon, u8 moveIndex);

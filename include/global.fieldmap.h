@@ -131,7 +131,7 @@ struct ObjectEventTemplate
     } objUnion;
     const u8 *script;
     u16 flagId;
-};  /*size = 0x18*/
+};  /*size = 0x18 (0x16)*/
 
 struct WarpEvent
 {
@@ -264,7 +264,7 @@ struct ObjectEvent
     /*0x20*/        u8 previousMovementDirection;
     /*0x21*/        u8 directionSequenceIndex;
     /*0x22*/        u8 playerCopyableMovement;
-    /*size = 0x24*/
+    /*size = 0x24 (0x23)*/
 };
 
 struct ObjectEventGraphicsInfo

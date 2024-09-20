@@ -21,6 +21,11 @@ enum {
     FONT_FEMALE,
     FONT_BRAILLE,
     FONT_BOLD,
+    FONT_NARROW,
+    FONT_SMALL_NARROW,
+    FONT_NARROWER,
+    FONT_SMALL_NARROWER,
+    FONT_SHORT_NARROW,
 };
 
 // Return values for font functions
@@ -167,6 +172,10 @@ u16 FontFunc_NormalCopy2(struct TextPrinter *textPrinter);
 u16 FontFunc_Male(struct TextPrinter *textPrinter);
 u16 FontFunc_Female(struct TextPrinter *textPrinter);
 u16 FontFunc_Braille(struct TextPrinter *textPrinter);
+u16 FontFunc_Narrow(struct TextPrinter *textPrinter);
+u16 FontFunc_SmallNarrow(struct TextPrinter *textPrinter);
+u16 FontFunc_Narrower(struct TextPrinter *textPrinter);
+u16 FontFunc_SmallNarrower(struct TextPrinter *textPrinter);
 
 void TextPrinterInitDownArrowCounters(struct TextPrinter *textPrinter);
 void TextPrinterDrawDownArrow(struct TextPrinter *textPrinter);
@@ -191,5 +200,9 @@ void DecompressGlyph_Female(u16 glyphId, bool32 isJapanese);
 s32 GetGlyphWidth_Braille(u16 font_type, bool32 isJapanese);
 u8 CreateTextCursorSprite(u8 sheetId, u16 x, u16 y, u8 priority, u8 subpriority);
 void DestroyTextCursorSprite(u8 spriteId);
+
+u32 GetFontIdToFit(const u8 *string, u32 widestFontId, u32 letterSpacing, u32 widthPx);
+u8 *PrependFontIdToFit(u8 *start, u8 *end, u32 fontId, u32 width);
+u8 *WrapFontIdToFit(u8 *start, u8 *end, u32 fontId, u32 width);
 
 #endif // GUARD_TEXT_H

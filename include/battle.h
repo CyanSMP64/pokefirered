@@ -345,18 +345,17 @@ struct BattleResults
     u8 shinyWildMon:1;        // 0x5
     u8 unk5_7:1;              // 0x5
     u16 playerMon1Species;    // 0x6
-    u8 playerMon1Name[11];    // 0x8
-    u8 battleTurnCounter;     // 0x13
-    u8 playerMon2Name[11];    // 0x14
-    u8 pokeblockThrows;       // 0x1F
-    u16 lastOpponentSpecies;  // 0x20
+    u8 playerMon1Name[POKEMON_NAME_LENGTH + 1];    // 0x8
+    u8 playerMon2Name[POKEMON_NAME_LENGTH + 1];    // 0x15
     u16 lastUsedMovePlayer;   // 0x22
     u16 lastUsedMoveOpponent; // 0x24
     u16 playerMon2Species;    // 0x26
     u16 caughtMonSpecies;     // 0x28
-    u8 caughtMonNick[10];     // 0x2A
-    u8 filler34[2];
+    u8 caughtMonNick[POKEMON_NAME_LENGTH];     // 0x2A
     u8 catchAttempts[11];     // 0x36
+    u8 battleTurnCounter;     // 0x41
+    u16 lastOpponentSpecies;  // 0x42
+    u8 pokeblockThrows;       // 0x44
 };
 
 extern struct BattleResults gBattleResults;
@@ -401,7 +400,7 @@ struct BattleStruct
     u8 battlerPartyOrders[MAX_BATTLERS_COUNT][3];
     u8 runTries;
     u8 caughtMonNick[POKEMON_NAME_LENGTH + 1];
-    u8 field_78; // unused
+    u8 field_7A; // unused
     u8 safariRockThrowCounter;
     u8 safariBaitThrowCounter;
     u8 safariEscapeFactor;
@@ -411,8 +410,6 @@ struct BattleStruct
     u8 formToChangeInto;
     u8 chosenMovePositions[MAX_BATTLERS_COUNT];
     u8 stateIdAfterSelScript[MAX_BATTLERS_COUNT];
-    u8 field_88; // unused
-    u8 field_89; // unused
     u8 field_8A; // unused
     u8 playerPartyIdx;
     u8 field_8C; // unused

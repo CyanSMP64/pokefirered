@@ -17,12 +17,20 @@ static void DecompressGlyph_NormalCopy1(u16 glyphId, bool32 isJapanese);
 static void DecompressGlyph_NormalCopy2(u16 glyphId, bool32 isJapanese);
 static void DecompressGlyph_Male(u16 glyphId, bool32 isJapanese);
 static void DecompressGlyph_Bold(u16 glyphId);
+static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese);
+static void DecompressGlyph_SmallNarrow(u16 glyphId, bool32 isJapanese);
+static void DecompressGlyph_Narrower(u16 glyphId, bool32 isJapanese);
+static void DecompressGlyph_SmallNarrower(u16 glyphId, bool32 isJapanese);
 static s32 GetGlyphWidth_Small(u16 glyphId, bool32 isJapanese);
 static s32 GetGlyphWidth_NormalCopy1(u16 glyphId, bool32 isJapanese);
 static s32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese);
 static s32 GetGlyphWidth_NormalCopy2(u16 glyphId, bool32 isJapanese);
 static s32 GetGlyphWidth_Male(u16 glyphId, bool32 isJapanese);
 static s32 GetGlyphWidth_Female(u16 glyphId, bool32 isJapanese);
+static s32 GetGlyphWidth_Narrow(u16 glyphId, bool32 isJapanese);
+static s32 GetGlyphWidth_SmallNarrow(u16 glyphId, bool32 isJapanese);
+static s32 GetGlyphWidth_Narrower(u16 glyphId, bool32 isJapanese);
+static s32 GetGlyphWidth_SmallNarrower(u16 glyphId, bool32 isJapanese);
 static void SpriteCB_TextCursor(struct Sprite *sprite);
 
 TextFlags gTextFlags;
@@ -42,13 +50,17 @@ static const u8 sWindowVerticalScrollSpeeds[] = {
 };
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] = {
-    { FONT_SMALL,         GetGlyphWidth_Small },
-    { FONT_NORMAL_COPY_1, GetGlyphWidth_NormalCopy1 },
-    { FONT_NORMAL,        GetGlyphWidth_Normal },
-    { FONT_NORMAL_COPY_2, GetGlyphWidth_NormalCopy2 },
-    { FONT_MALE,          GetGlyphWidth_Male },
-    { FONT_FEMALE,        GetGlyphWidth_Female },
-    { FONT_BRAILLE,       GetGlyphWidth_Braille }
+    { FONT_SMALL,          GetGlyphWidth_Small },
+    { FONT_NORMAL_COPY_1,  GetGlyphWidth_NormalCopy1 },
+    { FONT_NORMAL,         GetGlyphWidth_Normal },
+    { FONT_NORMAL_COPY_2,  GetGlyphWidth_NormalCopy2 },
+    { FONT_MALE,           GetGlyphWidth_Male },
+    { FONT_FEMALE,         GetGlyphWidth_Female },
+    { FONT_BRAILLE,        GetGlyphWidth_Braille },
+    { FONT_NARROW,         GetGlyphWidth_Narrow },
+    { FONT_SMALL_NARROW,   GetGlyphWidth_SmallNarrow },
+    { FONT_NARROWER,       GetGlyphWidth_Narrower },
+    { FONT_SMALL_NARROWER, GetGlyphWidth_SmallNarrower },
 };
 
 static const struct SpriteSheet sSpriteSheets_TextCursor[] =
@@ -401,6 +413,150 @@ static const u8 sFontFemaleJapaneseGlyphWidths[] =
     10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,  0
 };
 
+static const u16 sFontNarrowLatinGlyphs[] = INCBIN_U16("graphics/fonts/latin_narrow.latfont");
+static const u8 sFontNarrowLatinGlyphWidths[] = {
+    3,  5,  5,  5,  5,  5,  5,  5,  5,  4,  3,  4,  4,  5,  5,  5,
+    8,  5,  5,  5,  5,  6,  5,  5,  3,  5,  5,  5,  5,  5,  4,  3,
+    4,  4,  5,  5,  5,  8,  5,  5,  5,  5,  5,  6,  9,  6,  6,  3,
+    3,  3,  3,  3,  8,  8,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    5,  5,  4,  8,  8,  8,  7,  8,  8,  4,  4,  6,  4,  4,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  5,  3,  3,  3,  3,  3,  3,  4,
+    3,  3,  3,  3,  3,  3,  3,  5,  3,  7,  7,  7,  7,  1,  2,  3,
+    4,  5,  6,  7,  5,  6,  6,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    8,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  3,  5,  3,
+    5,  5,  5,  3,  3,  5,  5,  6,  3,  6,  6,  5,  5,  5,  5,  5,
+    5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,
+    5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,
+    4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  8,
+    3,  5,  5,  5,  5,  5,  5,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    10, 10, 10, 10,  8,  8, 10,  8, 10, 10, 10, 10, 10, 10, 10, 10,
+    10, 10, 10, 10, 10, 10, 10, 10,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  3,
+};
+
+static const u16 sFontSmallNarrowLatinGlyphs[] = INCBIN_U16("graphics/fonts/latin_small_narrow.latfont");
+static const u8 sFontSmallNarrowLatinGlyphWidths[] = {
+    3,  5,  5,  5,  5,  5,  5,  5,  5,  4,  3,  4,  4,  5,  5,  5,
+    5,  5,  5,  5,  5,  5,  5,  5,  3,  4,  5,  5,  5,  5,  4,  3,
+    4,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  8,  5,  6,  3,
+    3,  3,  3,  3,  8,  0,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    5,  5,  3,  8,  8,  8,  8,  8,  8,  8,  4,  5,  4,  4,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  5,  3,  3,  3,  3,  3,  3,  4,
+    3,  3,  3,  3,  3,  3,  3,  5,  3,  8,  8,  8,  8,  1,  2,  3,
+    4,  5,  6,  7,  5,  5,  5,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    7,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  3,  5,  5,
+    5,  5,  5,  3,  3,  5,  5,  5,  3,  5,  5,  5,  5,  5,  5,  5,
+    5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,
+    5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  4,  5,
+    4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  7,
+    5,  5,  5,  5,  5,  5,  5,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  3,
+};
+
+static const u16 sFontNarrowerLatinGlyphs[] = INCBIN_U16("graphics/fonts/latin_narrower.latfont");
+static const u8 sFontNarrowerLatinGlyphWidths[] = {
+    3,  4,  4,  4,  4,  4,  4,  4,  4,  4,  3,  4,  4,  4,  4,  4,
+    8,  4,  4,  4,  5,  5,  4,  4,  3,  4,  4,  4,  4,  4,  4,  3,
+    4,  4,  4,  4,  4,  6,  4,  4,  4,  5,  4,  5,  8,  6,  6,  3,
+    3,  3,  3,  3,  8,  8,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    5,  5,  4,  8,  8,  8,  7,  8,  8,  4,  4,  6,  4,  4,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  4,  3,  3,  3,  3,  3,  3,  4,
+    3,  3,  3,  3,  3,  3,  3,  5,  3,  7,  7,  7,  7,  0,  0,  3,
+    4,  5,  6,  7,  4,  6,  6,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    7,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  5,  3,  5,  3,
+    5,  5,  5,  3,  3,  5,  5,  6,  3,  6,  6,  4,  4,  4,  4,  4,
+    4,  4,  4,  4,  4,  4,  4,  5,  5,  4,  4,  4,  4,  4,  4,  4,
+    4,  5,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  2,  4,  4,
+    2,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  8,
+    4,  4,  4,  4,  4,  4,  4,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    10, 10, 10, 10,  8,  8, 10,  8, 10, 10, 10, 10, 10, 10, 10, 10,
+    10, 10, 10, 10, 10, 10, 10, 10,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  3,
+};
+
+static const u16 sFontSmallNarrowerLatinGlyphs[] = INCBIN_U16("graphics/fonts/latin_small_narrower.latfont");
+static const u8 sFontSmallNarrowerLatinGlyphWidths[] = {
+    3,  4,  4,  4,  4,  4,  4,  4,  4,  4,  3,  4,  4,  4,  4,  4,
+    5,  4,  4,  4,  5,  4,  4,  4,  3,  4,  4,  4,  4,  4,  3,  3,
+    4,  4,  4,  4,  4,  6,  4,  4,  4,  5,  4,  4,  7,  5,  6,  3,
+    3,  3,  3,  3,  8,  0,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    5,  4,  3,  7,  7,  7,  8,  8,  8,  8,  4,  5,  4,  4,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  4,  3,  3,  3,  3,  3,  3,  4,
+    3,  3,  3,  3,  3,  3,  3,  5,  3,  8,  8,  8,  8,  0,  0,  3,
+    4,  5,  6,  7,  4,  5,  5,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    7,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  3,  4,  3,  4,  4,
+    5,  5,  5,  3,  3,  5,  5,  5,  4,  5,  5,  4,  4,  4,  4,  4,
+    4,  4,  4,  4,  4,  4,  4,  4,  5,  4,  4,  4,  4,  4,  4,  4,
+    4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  2,  3,  4,
+    2,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  7,
+    4,  4,  4,  4,  4,  4,  4,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    8,  8,  8,  8,  8,  7,  8,  7,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+    8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  3,
+};
+
 static const u16 sFontBoldJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/japanese_bold.fwjpnfont");
 
 u16 FontFunc_Small(struct TextPrinter *textPrinter)
@@ -471,6 +627,54 @@ u16 FontFunc_Female(struct TextPrinter *textPrinter)
     {
         textPrinter->subUnion.sub.glyphId = FONT_FEMALE;
         subStruct->hasGlyphIdBeenSet = 1;
+    }
+    return RenderText(textPrinter);
+}
+
+u16 FontFunc_Narrow(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = &textPrinter->subUnion.sub;
+
+    if (subStruct->hasGlyphIdBeenSet == FALSE)
+    {
+        textPrinter->subUnion.sub.glyphId = FONT_NARROW;
+        subStruct->hasGlyphIdBeenSet = TRUE;
+    }
+    return RenderText(textPrinter);
+}
+
+u16 FontFunc_SmallNarrow(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = &textPrinter->subUnion.sub;
+
+    if (subStruct->hasGlyphIdBeenSet == FALSE)
+    {
+        textPrinter->subUnion.sub.glyphId = FONT_SMALL_NARROW;
+        subStruct->hasGlyphIdBeenSet = TRUE;
+    }
+    return RenderText(textPrinter);
+}
+
+u16 FontFunc_Narrower(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = &textPrinter->subUnion.sub;
+
+    if (subStruct->hasGlyphIdBeenSet == FALSE)
+    {
+        textPrinter->subUnion.sub.glyphId = FONT_NARROWER;
+        subStruct->hasGlyphIdBeenSet = TRUE;
+    }
+    return RenderText(textPrinter);
+}
+
+u16 FontFunc_SmallNarrower(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = &textPrinter->subUnion.sub;
+
+    if (subStruct->hasGlyphIdBeenSet == FALSE)
+    {
+        textPrinter->subUnion.sub.glyphId = FONT_SMALL_NARROWER;
+        subStruct->hasGlyphIdBeenSet = TRUE;
     }
     return RenderText(textPrinter);
 }
@@ -869,6 +1073,18 @@ u16 RenderText(struct TextPrinter *textPrinter)
             break;
         case FONT_FEMALE:
             DecompressGlyph_Female(currChar, textPrinter->japanese);
+            break;
+        case FONT_NARROW:
+            DecompressGlyph_Narrow(currChar, textPrinter->japanese);
+            break;
+        case FONT_SMALL_NARROW:
+            DecompressGlyph_SmallNarrow(currChar, textPrinter->japanese);
+            break;
+        case FONT_NARROWER:
+            DecompressGlyph_Narrower(currChar, textPrinter->japanese);
+            break;
+        case FONT_SMALL_NARROWER:
+            DecompressGlyph_SmallNarrower(currChar, textPrinter->japanese);
             break;
         }
 
@@ -1725,6 +1941,278 @@ static s32 GetGlyphWidth_Female(u16 glyphId, bool32 isJapanese)
         return sFontFemaleLatinGlyphWidths[glyphId];
 }
 
+static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese)
+{
+    const u16 *glyphs;
+    int i;
+    u8 lastColor;
+
+    if (isJapanese == TRUE) {
+        if (glyphId == 0)
+        {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // Game Freak, please. writing the same values over and over...
+                gGlyphInfo.width = 10;
+                gGlyphInfo.height = 12;
+            }
+        }
+        else
+        {
+            glyphs = sFontNormalJapaneseGlyphs + (0x100 * (glyphId >> 0x3)) + (0x10 * (glyphId & 0x7));
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x80, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x88, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.width = sFontNormalJapaneseGlyphWidths[glyphId];
+            gGlyphInfo.height = 12;
+        }
+    }
+    else {
+        if (glyphId == 0) {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // but why
+                gGlyphInfo.width = sFontNarrowLatinGlyphWidths[0];
+                gGlyphInfo.height = 14;
+            }
+        }
+        else {
+            glyphs = sFontNarrowLatinGlyphs + (0x20 * glyphId);
+            gGlyphInfo.width = sFontNarrowLatinGlyphWidths[glyphId];
+
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x10, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x18, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.height = 15;
+        }
+    }
+}
+
+static s32 GetGlyphWidth_Narrow(u16 glyphId, bool32 isJapanese)
+{
+    if (isJapanese == TRUE)
+    {
+        if (glyphId == 0)
+            return 10;
+        
+        return sFontNormalJapaneseGlyphWidths[glyphId];
+    }
+    else
+        return sFontNarrowLatinGlyphWidths[glyphId];
+}
+
+static void DecompressGlyph_SmallNarrow(u16 glyphId, bool32 isJapanese)
+{
+    const u16 *glyphs;
+    int i;
+    u8 lastColor;
+
+    if (isJapanese == TRUE) {
+        if (glyphId == 0)
+        {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // Game Freak, please. writing the same values over and over...
+                gGlyphInfo.width = 10;
+                gGlyphInfo.height = 12;
+            }
+        }
+        else
+        {
+            glyphs = sFontNormalJapaneseGlyphs + (0x100 * (glyphId >> 0x3)) + (0x10 * (glyphId & 0x7));
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x80, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x88, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.width = sFontNormalJapaneseGlyphWidths[glyphId];
+            gGlyphInfo.height = 12;
+        }
+    }
+    else {
+        if (glyphId == 0) {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // but why
+                gGlyphInfo.width = sFontSmallNarrowLatinGlyphWidths[0];
+                gGlyphInfo.height = 14;
+            }
+        }
+        else {
+            glyphs = sFontSmallNarrowLatinGlyphs + (0x20 * glyphId);
+            gGlyphInfo.width = sFontSmallNarrowLatinGlyphWidths[glyphId];
+
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x10, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x18, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.height = 12;
+        }
+    }
+}
+
+static s32 GetGlyphWidth_SmallNarrow(u16 glyphId, bool32 isJapanese)
+{
+    if (isJapanese == TRUE)
+    {
+        if (glyphId == 0)
+            return 10;
+        
+        return sFontNormalJapaneseGlyphWidths[glyphId];
+    }
+    else
+        return sFontSmallNarrowLatinGlyphWidths[glyphId];
+}
+
+static void DecompressGlyph_Narrower(u16 glyphId, bool32 isJapanese)
+{
+    const u16 *glyphs;
+    int i;
+    u8 lastColor;
+
+    if (isJapanese == TRUE) {
+        if (glyphId == 0)
+        {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // Game Freak, please. writing the same values over and over...
+                gGlyphInfo.width = 10;
+                gGlyphInfo.height = 12;
+            }
+        }
+        else
+        {
+            glyphs = sFontNormalJapaneseGlyphs + (0x100 * (glyphId >> 0x3)) + (0x10 * (glyphId & 0x7));
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x80, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x88, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.width = sFontNormalJapaneseGlyphWidths[glyphId];
+            gGlyphInfo.height = 12;
+        }
+    }
+    else {
+        if (glyphId == 0) {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // but why
+                gGlyphInfo.width = sFontNarrowerLatinGlyphWidths[0];
+                gGlyphInfo.height = 14;
+            }
+        }
+        else {
+            glyphs = sFontNarrowerLatinGlyphs + (0x20 * glyphId);
+            gGlyphInfo.width = sFontNarrowerLatinGlyphWidths[glyphId];
+
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x10, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x18, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.height = 15;
+        }
+    }
+}
+
+static s32 GetGlyphWidth_Narrower(u16 glyphId, bool32 isJapanese)
+{
+    if (isJapanese == TRUE)
+    {
+        if (glyphId == 0)
+            return 10;
+        
+        return sFontNormalJapaneseGlyphWidths[glyphId];
+    }
+    else
+        return sFontNarrowerLatinGlyphWidths[glyphId];
+}
+
+static void DecompressGlyph_SmallNarrower(u16 glyphId, bool32 isJapanese)
+{
+    const u16 *glyphs;
+    int i;
+    u8 lastColor;
+
+    if (isJapanese == TRUE) {
+        if (glyphId == 0)
+        {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // Game Freak, please. writing the same values over and over...
+                gGlyphInfo.width = 10;
+                gGlyphInfo.height = 12;
+            }
+        }
+        else
+        {
+            glyphs = sFontNormalJapaneseGlyphs + (0x100 * (glyphId >> 0x3)) + (0x10 * (glyphId & 0x7));
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x80, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x88, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.width = sFontNormalJapaneseGlyphWidths[glyphId];
+            gGlyphInfo.height = 12;
+        }
+    }
+    else {
+        if (glyphId == 0) {
+            lastColor = GetLastTextColor(2);
+
+            for(i = 0; i < 0x80; i++)
+            {
+                gGlyphInfo.pixels[i] = lastColor | lastColor << 4;
+                // but why
+                gGlyphInfo.width = sFontSmallNarrowerLatinGlyphWidths[0];
+                gGlyphInfo.height = 14;
+            }
+        }
+        else {
+            glyphs = sFontSmallNarrowerLatinGlyphs + (0x20 * glyphId);
+            gGlyphInfo.width = sFontSmallNarrowerLatinGlyphWidths[glyphId];
+
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x10, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x18, (u16 *)(gGlyphInfo.pixels + 0x60));
+            gGlyphInfo.height = 12;
+        }
+    }
+}
+
+static s32 GetGlyphWidth_SmallNarrower(u16 glyphId, bool32 isJapanese)
+{
+    if (isJapanese == TRUE)
+    {
+        if (glyphId == 0)
+            return 10;
+        
+        return sFontNormalJapaneseGlyphWidths[glyphId];
+    }
+    else
+        return sFontSmallNarrowerLatinGlyphWidths[glyphId];
+}
+
 static void DecompressGlyph_Bold(u16 glyphId)
 {
     const u16 *glyphs = sFontBoldJapaneseGlyphs + (0x100 * (glyphId >> 0x4)) + (0x8 * (glyphId & 0xF));
@@ -1732,4 +2220,77 @@ static void DecompressGlyph_Bold(u16 glyphId)
     DecompressGlyphTile(glyphs + 0x80, (u16 *)(gGlyphInfo.pixels + 0x40));
     gGlyphInfo.width = 8;
     gGlyphInfo.height = 12;
+}
+
+static const s8 sNarrowerFontIds[] =
+{
+    [FONT_SMALL] = FONT_SMALL_NARROW,
+    [FONT_NORMAL_COPY_1] = FONT_NARROW,
+    [FONT_NORMAL] = FONT_NARROW,
+    [FONT_NORMAL_COPY_2] = FONT_NARROW,
+    [FONT_MALE] = FONT_NARROW,
+    [FONT_FEMALE] = FONT_NARROW,
+    [FONT_BRAILLE] = -1,
+    [FONT_BOLD] = -1,
+    [FONT_NARROW] = FONT_NARROWER,
+    [FONT_SMALL_NARROW] = FONT_SMALL_NARROWER,
+    [FONT_NARROWER] = -1,
+    [FONT_SMALL_NARROWER] = -1,
+    [FONT_SHORT_NARROW] = -1,
+};
+
+// If the narrowest font ID doesn't fit the text, we still return that
+// ID because clipping is better than crashing.
+u32 GetFontIdToFit(const u8 *string, u32 fontId, u32 letterSpacing, u32 widthPx)
+{
+    for (;;)
+    {
+        s32 narrowerFontId = sNarrowerFontIds[fontId];
+        if (narrowerFontId == -1)
+            return fontId;
+        if (GetStringWidth(fontId, string, letterSpacing) <= widthPx)
+            return fontId;
+        fontId = narrowerFontId;
+    }
+}
+
+u8 *PrependFontIdToFit(u8 *start, u8 *end, u32 fontId, u32 width)
+{
+
+    u32 fitFontId = GetFontIdToFit(start, fontId, 0, width);
+    if (fitFontId != fontId)
+    {
+        memmove(&start[3], &start[0], end - start);
+        start[0] = EXT_CTRL_CODE_BEGIN;
+        start[1] = EXT_CTRL_CODE_FONT;
+        start[2] = fitFontId;
+        end[3] = EOS;
+        return end + 3;
+    }
+    else
+    {
+        return end;
+    }
+}
+
+u8 *WrapFontIdToFit(u8 *start, u8 *end, u32 fontId, u32 width)
+{
+
+    u32 fitFontId = GetFontIdToFit(start, fontId, 0, width);
+    if (fitFontId != fontId)
+    {
+        memmove(&start[3], &start[0], end - start);
+        start[0] = EXT_CTRL_CODE_BEGIN;
+        start[1] = EXT_CTRL_CODE_FONT;
+        start[2] = fitFontId;
+        end[3] = EXT_CTRL_CODE_BEGIN;
+        end[4] = EXT_CTRL_CODE_FONT;
+        end[5] = fontId;
+        end[6] = EOS;
+        return end + 6;
+    }
+    else
+    {
+        return end;
+    }
 }
