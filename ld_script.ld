@@ -119,7 +119,6 @@ SECTIONS {
         src/sound.o(.text);
         src/battle_anim.o(.text);
         src/battle_anim_mons.o(.text);
-        src/reshow_battle_screen.o(.text);
         src/title_screen.o(.text);
     } =0
 
@@ -127,6 +126,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/reshow_battle_screen.o(.text);
         src/event_object_lock.o(.text);
         src/text_window_graphics.o(.text);
         src/battle_anim_status_effects.o(.text);
@@ -201,7 +201,6 @@ SECTIONS {
         src/region_map.o(.text);
         src/image_processing_effects.o(.text);
         src/battle_ai_script_commands.o(.text);
-        src/fldeff_flash.o(.text);
         src/field_specials.o(.text);
     } =0
 
@@ -209,6 +208,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/fldeff_flash.o(.text);
         src/mail.o(.text);
         src/post_battle_event_funcs.o(.text);
         src/menu_helpers.o(.text);
@@ -285,7 +285,6 @@ SECTIONS {
         src/oak_speech.o(.text);
         src/tm_case.o(.text);
         src/menu_indicators.o(.text);
-        src/pokedex_area_markers.o(.text);
         src/pokemon_summary_screen.o(.text);
         src/wild_pokemon_area.o(.text);
         src/dynamic_placeholder_text_util.o(.text);
@@ -295,6 +294,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/roamer.o(.text);
+        src/pokedex_area_markers.o(.text);
         src/berry_pouch.o(.text);
         src/itemfinder.o(.text);
         src/buy_menu_helpers.o(.text);

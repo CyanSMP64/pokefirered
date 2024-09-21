@@ -490,6 +490,7 @@ int main(int argc, char ** argv)
     config_set("IntroSpriteOffset", get_instr_addr(elfFile, "CreateNidoranFSprite", IsIntroNidoranF3) & 0x1FFFFFF);
     config_set("IntroOtherOffset", get_instr_addr(elfFile, "CreateNidoranFSprite", IsIntroNidoranF) & 0x1FFFFFF);
     print("ItemBallPic=%d\n", OBJ_EVENT_GFX_ITEM_BALL);
+    print("TMBallPic=%d\n", OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST);
     Elf32_Sym * Fr_gIngameTrades = GetSymbolByName("sInGameTrades");
     print("TradeTableOffset=0x%X\n", Fr_gIngameTrades->st_value & 0x1FFFFFF);
     print("TradeTableSize=%d\n", Fr_gIngameTrades->st_size / 60); // hardcoded for now
