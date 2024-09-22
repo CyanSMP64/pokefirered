@@ -164,7 +164,7 @@ const struct TMText gTMTexts[] = {
     {34,  9,  6,  1,  0x9E, "TM34 contains [move]!\\pTeach it to your favorite Pokémon!"},
     {38, 12,  0,  8,  0x2A, "TM38 contains [move].\\nTeach it to strong Pokémon.\\pNecrozmaU would be ideal for that move."},
     {38, 12,  0,  8,  0x96, "[move] is the ultimate\\ntechnique.\\pDon’t waste it on weak Pokémon."},
-    {39,  6,  2,  1,  0x99, "A TM, Technical Machine, contains a technique for Pokémon.\\pUsing a TM teaches the move it contains to a Pokémon.\\pA TM is good for only one use.\\pSo, when you use one, pick the Pokémon carefully.\\pAnyways… TM39 contains [move]."},
+    {39,  6,  2,  1,  0x99, "A TM, Technical Machine, contains a technique for Pokémon.\\pUsing a TM teaches the move it contains to a Pokémon.\\pAnyways… TM39 contains [move]."},
 };
 
 const struct TMText gMoveTutorTexts[] = {
