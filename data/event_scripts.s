@@ -1370,6 +1370,7 @@ Text_TestMsg::
 	.include "data/text/new_game_intro.inc"
 	.include "data/text/pokedude.inc"
 	.include "data/scripts/hidden_item_sparkles.inc"
+	.include "data/scripts/hm_menu.inc"
 
 	.include "data/maps/CeladonCity_House2/scripts.inc"
 	.include "data/maps/CeladonCity_House2/text.inc"

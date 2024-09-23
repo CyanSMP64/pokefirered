@@ -47,6 +47,7 @@ enum StartMenuOption
     STARTMENU_EXIT,
     STARTMENU_RETIRE,
     STARTMENU_PLAYER2,
+    STARTMENU_HM,
     MAX_STARTMENU_ITEMS
 };
 
@@ -86,6 +87,7 @@ static bool8 StartMenuOptionCallback(void);
 static bool8 StartMenuExitCallback(void);
 static bool8 StartMenuSafariZoneRetireCallback(void);
 static bool8 StartMenuLinkPlayerCallback(void);
+static bool8 StartMenuHMCallback(void);
 static bool8 StartCB_Save1(void);
 static bool8 StartCB_Save2(void);
 static void StartMenu_PrepareForSave(void);
@@ -111,6 +113,9 @@ static void PrintSaveStats(void);
 static void CloseSaveStatsWindow(void);
 static void CloseStartMenu(void);
 
+static void RunHMMoveScript(void);
+extern const u8 HMMenu_EventScript_ShowHMMenu[];
+
 static const struct MenuAction sStartMenuActionTable[] = {
     { gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback} },
     { gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback} },
@@ -120,7 +125,8 @@ static const struct MenuAction sStartMenuActionTable[] = {
     { gText_MenuOption, {.u8_void = StartMenuOptionCallback} },
     { gText_MenuExit, {.u8_void = StartMenuExitCallback} },
     { gText_MenuRetire, {.u8_void = StartMenuSafariZoneRetireCallback} },
-    { gText_MenuPlayer, {.u8_void = StartMenuLinkPlayerCallback} }
+    { gText_MenuPlayer, {.u8_void = StartMenuLinkPlayerCallback} },
+    { gText_MenuHM, {.u8_void = StartMenuHMCallback} },
 };
 
 static const struct WindowTemplate sSafariZoneStatsWindowTemplate = {
@@ -202,6 +208,14 @@ static void SetUpStartMenu_NormalField(void)
         AppendToStartMenuItems(STARTMENU_POKEDEX);
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AppendToStartMenuItems(STARTMENU_POKEMON);
+    if (FlagGet(FLAG_GOT_HM01)
+     || FlagGet(FLAG_GOT_HM02)
+     || FlagGet(FLAG_GOT_HM03)
+     || FlagGet(FLAG_GOT_HM04)
+     || FlagGet(FLAG_GOT_HM05)
+     || FlagGet(FLAG_GOT_HM06) == TRUE) {
+        AppendToStartMenuItems(STARTMENU_HM);
+    }
     AppendToStartMenuItems(STARTMENU_BAG);
     AppendToStartMenuItems(STARTMENU_PLAYER);
     AppendToStartMenuItems(STARTMENU_SAVE);
@@ -214,6 +228,7 @@ static void SetUpStartMenu_SafariZone(void)
     AppendToStartMenuItems(STARTMENU_RETIRE);
     AppendToStartMenuItems(STARTMENU_POKEDEX);
     AppendToStartMenuItems(STARTMENU_POKEMON);
+    AppendToStartMenuItems(STARTMENU_HM);
     AppendToStartMenuItems(STARTMENU_BAG);
     AppendToStartMenuItems(STARTMENU_PLAYER);
     AppendToStartMenuItems(STARTMENU_OPTION);
@@ -422,7 +437,8 @@ static void StartMenu_FadeScreenIfLeavingOverworld(void)
 {
     if (sStartMenuCallback != StartMenuSaveCallback
      && sStartMenuCallback != StartMenuExitCallback
-     && sStartMenuCallback != StartMenuSafariZoneRetireCallback)
+     && sStartMenuCallback != StartMenuSafariZoneRetireCallback
+     && sStartMenuCallback != StartMenuHMCallback)
     {
         StopPokemonLeagueLightingEffectTask();
         FadeScreen(FADE_TO_BLACK, 0);
@@ -537,6 +553,21 @@ static bool8 StartMenuLinkPlayerCallback(void)
         return TRUE;
     }
     return FALSE;
+}
+
+static void RunHMMoveScript(void)
+{
+    ScriptContext_SetupScript(HMMenu_EventScript_ShowHMMenu);
+}
+
+static bool8 StartMenuHMCallback(void)
+{
+    DestroySafariZoneStatsWindow();
+    DestroyHelpMessageWindow_();
+    CloseStartMenu();
+    RunHMMoveScript();
+
+    return TRUE;
 }
 
 static bool8 StartCB_Save1(void)

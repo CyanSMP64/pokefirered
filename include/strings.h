@@ -634,6 +634,7 @@ extern const u8 gText_MenuSave[];
 extern const u8 gText_MenuOption[];
 extern const u8 gText_MenuExit[];
 extern const u8 gText_MenuRetire[];
+extern const u8 gText_MenuHM[];
 extern const u8 gText_MenuSafariStats[];
 extern const u8 gText_SaveError_PleaseExchangeBackupMemory[];
 extern const u8 gText_SavingDontTurnOffThePower2[];
@@ -1542,5 +1543,14 @@ extern const u8 gText_PokeSum_EggOrigin_Trade[];
 extern const u8 gText_PokeSum_EggOrigin_NicePlace[];
 extern const u8 gText_PokeSum_EggOrigin_Spa[];
 extern const u8 gText_PokeSum_EggOrigin_Trade[];
+
+extern const u8 gText_HM01Cut[];
+extern const u8 gText_HM02Fly[];
+extern const u8 gText_HM03Surf[];
+extern const u8 gText_HM04Strength[];
+extern const u8 gText_HM05Flash[];
+extern const u8 gText_HM06RockSmash[];
+extern const u8 gText_HM07Waterfall[];
+extern const u8 gText_HM08Dive[];
 
 #endif //GUARD_STRINGS_H

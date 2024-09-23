@@ -194,7 +194,6 @@ SECTIONS {
         src/battle_anim_normal.o(.text);
         src/battle_anim_utility_funcs.o(.text);
         src/battle_intro.o(.text);
-        src/bike.o(.text);
         src/easy_chat.o(.text);
         src/mon_markings.o(.text);
         src/heal_location.o(.text);
@@ -208,6 +207,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/evolution_scene.o(.text);
+        src/bike.o(.text);
         src/fldeff_flash.o(.text);
         src/mail.o(.text);
         src/post_battle_event_funcs.o(.text);
@@ -284,7 +284,6 @@ SECTIONS {
         src/menu2.o(.text);
         src/oak_speech.o(.text);
         src/tm_case.o(.text);
-        src/menu_indicators.o(.text);
         src/pokemon_summary_screen.o(.text);
         src/wild_pokemon_area.o(.text);
         src/dynamic_placeholder_text_util.o(.text);
@@ -294,6 +293,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/roamer.o(.text);
+        src/menu_indicators.o(.text);
         src/pokedex_area_markers.o(.text);
         src/berry_pouch.o(.text);
         src/itemfinder.o(.text);

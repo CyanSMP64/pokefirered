@@ -69,6 +69,7 @@
 #define MULTICHOICE_62                                         62
 #define MULTICHOICE_JOIN_OR_LEAD                               63
 #define MULTICHOICE_TRAINER_TOWER_MODE                         64
+#define MULTICHOICE_HM_MOVES                                   65
 
 #define MULTICHOICE_NONE                                      255
 
