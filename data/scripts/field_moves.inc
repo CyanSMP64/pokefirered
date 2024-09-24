@@ -114,9 +114,7 @@ EventScript_StrengthBoulder::
 	lockall
 	goto_if_unset FLAG_BADGE04_GET, EventScript_CantMoveBoulder
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_AlreadyUsedStrength
-	checkpartymove MOVE_STRENGTH
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantMoveBoulder
-	setfieldeffectargument 0, VAR_RESULT
+	setfieldeffectargument 0, 0
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
 	goto EventScript_UseStrength
@@ -131,6 +129,7 @@ EventScript_FldEffStrength::
 
 EventScript_UseStrength::
 	setflag FLAG_SYS_USE_STRENGTH
+	msgbox Text_StrengthMadeMovingBouldersPossible, MSGBOX_SIGN
 	end
 
 EventScript_CantMoveBoulder::
