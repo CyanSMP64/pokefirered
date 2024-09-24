@@ -21,7 +21,6 @@ struct FlashStruct
     void (*func2)(u8 mapSecId);
 };
 
-static void FieldCallback_Flash(void);
 static void FldEff_UseFlash(void);
 static bool8 TryDoMapTransition(void);
 static void FlashTransition_Exit(void);
@@ -175,7 +174,7 @@ bool8 SetUpFieldMove_Flash(void)
     return TRUE;
 }
 
-static void FieldCallback_Flash(void)
+void FieldCallback_Flash(void)
 {
     u8 taskId = CreateFieldEffectShowMon();
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
@@ -477,4 +476,12 @@ static void Task_MapPreviewScreen_0(u8 taskId)
         }
         break;
     }
+}
+
+void SetUpFieldMove_Flash_scr()
+{
+    if (gMapHeader.cave == TRUE && !FlagGet(FLAG_SYS_FLASH_ACTIVE))
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
 }
