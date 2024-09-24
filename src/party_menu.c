@@ -4069,7 +4069,6 @@ static bool8 SetUpFieldMove_Surf(void)
     
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     if (MetatileBehavior_IsFastWater(MapGridGetMetatileBehaviorAt(x, y)) != TRUE
-     && PartyHasMonWithSurf() == TRUE
      && IsPlayerFacingSurfableFishableWater() == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
@@ -6432,6 +6431,18 @@ static void Task_PartyMenuWaitForFade(u8 taskId)
 void SetUpFieldMove_Fly_scr()
 {
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
+void SetUpFieldMove_Surf_scr()
+{
+    s16 x, y;
+    
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    if (MetatileBehavior_IsFastWater(MapGridGetMetatileBehaviorAt(x, y)) != TRUE
+     && IsPlayerFacingSurfableFishableWater() == TRUE)
         gSpecialVar_Result = TRUE;
     else
         gSpecialVar_Result = FALSE;
