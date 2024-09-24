@@ -577,6 +577,9 @@ void IsCuttableGrassNearPlayer_Scr() {
     bool8 cutTiles[CUT_NORMAL_AREA];
     bool8 ret;
 
+    if (CutMoveRuinValleyCheck() == TRUE)
+        ret = TRUE;
+
     PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
     userAbility = GetMonAbility(&gPlayerParty[0]); // lead mon
 
