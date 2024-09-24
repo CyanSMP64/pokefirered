@@ -68,6 +68,9 @@ HMMenu_EventScript_TryUseHM06RockSmash::
 	checkitem ITEM_HM06
     goto_if_eq VAR_RESULT, FALSE, HMMenu_EventScript_YouDontHaveThisHMYet
     goto_if_unset FLAG_BADGE06_GET, HMMenu_EventScript_CantBeUsedUntilBadge
+    callnative SetUpFieldMove_RockSmash_scr
+    goto_if_eq VAR_RESULT, TRUE, EventScript_RockSmash
+    msgbox HMMenu_Text_CantUseThat, MSGBOX_DEFAULT
     releaseall
     end
 

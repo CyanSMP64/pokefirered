@@ -4,8 +4,6 @@ EventScript_CutTree::
 	checkitem ITEM_HM01
     goto_if_eq VAR_RESULT, FALSE, EventScript_CantCutTree
 	goto_if_unset FLAG_BADGE02_GET, EventScript_CantCutTree
-@	checkpartymove MOVE_CUT
-@	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantCutTree
 	setfieldeffectargument 0, 0
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
@@ -58,10 +56,10 @@ Text_TreeCanBeCutDown::
 EventScript_RockSmash::
 	goto_if_questlog EventScript_ReleaseEnd
 	lockall
+	checkitem ITEM_HM06
+    goto_if_eq VAR_RESULT, FALSE, EventScript_CantSmashRock
 	goto_if_unset FLAG_BADGE06_GET, EventScript_CantSmashRock
-	checkpartymove MOVE_ROCK_SMASH
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
-	setfieldeffectargument 0, VAR_RESULT
+	setfieldeffectargument 0, 0
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
 	goto EventScript_UseRockSmash
