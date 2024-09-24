@@ -4000,10 +4000,7 @@ static void FreeFlyMap(u8 taskId)
     FreeRegionMapForFlyMap();
     DestroyTask(taskId);
     FreeAllWindowBuffers();
-    if (sFlyMap->selectedDestination == TRUE)
-        SetMainCallback2(CB2_ReturnToField);
-    else
-        SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
+    SetMainCallback2(CB2_ReturnToField);
     FREE_IF_NOT_NULL(sFlyMap);
 }
 

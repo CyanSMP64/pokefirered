@@ -6428,3 +6428,11 @@ static void Task_PartyMenuWaitForFade(u8 taskId)
         ScriptContext_Enable();
     }
 }
+
+void SetUpFieldMove_Fly_scr()
+{
+    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}

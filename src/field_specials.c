@@ -2518,3 +2518,8 @@ void FlagsVars_PokedexFlags_All(void)
         GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
     }
 }
+
+void FieldUseFly(void)
+{
+    SetMainCallback2(CB2_OpenFlyMap);
+}

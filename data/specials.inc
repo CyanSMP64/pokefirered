@@ -15,7 +15,7 @@ gSpecials::
 	def_special CleanupLinkRoomState
 	def_special ExitLinkRoom
 	def_special IsPoisonInParty
-	def_special FlagsVars_PokedexFlags_All @ debug
+	def_special FieldUseFly
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
