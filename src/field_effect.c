@@ -1629,7 +1629,7 @@ static bool8 waterfall_1_do_anim_probably(struct Task *task, struct ObjectEvent 
     {
         ObjectEventClearHeldMovementIfFinished(playerObj);
         gFieldEffectArguments[0] = task->data[1];
-        FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        //FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
         task->data[0]++;
     }
     return FALSE;
