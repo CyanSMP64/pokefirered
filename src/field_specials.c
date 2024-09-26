@@ -2523,3 +2523,10 @@ void FieldUseFly(void)
 {
     SetMainCallback2(CB2_OpenFlyMap);
 }
+
+void GetHmModeOption(void) {
+    if (gSaveBlock2Ptr->optionsHM == TRUE) // Modern
+        gSpecialVar_Result = 1;
+    else // Classic
+        gSpecialVar_Result = 0;
+}

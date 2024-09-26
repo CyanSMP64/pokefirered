@@ -1,19 +1,22 @@
 #include "global.h"
 #include "field_player_avatar.h"
 #include "field_effect.h"
+#include "item.h"
 #include "party_menu.h"
 #include "event_data.h"
 #include "script.h"
 #include "fldeff.h"
 #include "event_scripts.h"
 #include "constants/event_objects.h"
+#include "constants/items.h"
 
 static void FieldCB_UseStrength(void);
 static void ShowMonCB_UseStrength(void);
 
 bool8 SetUpFieldMove_Strength(void)
 {
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_PUSHABLE_BOULDER) != TRUE)
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_PUSHABLE_BOULDER) != TRUE
+     || !CheckBagHasItem(ITEM_HM04, 1))
     {
         return FALSE;
     }

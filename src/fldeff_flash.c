@@ -4,12 +4,14 @@
 #include "event_scripts.h"
 #include "fldeff.h"
 #include "field_effect.h"
+#include "item.h"
 #include "map_preview_screen.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "script.h"
 #include "constants/songs.h"
 #include "constants/map_types.h"
+#include "constants/items.h"
 
 struct FlashStruct
 {
@@ -163,7 +165,7 @@ static const u32 sCaveTransitionTiles[] = INCBIN_U32("graphics/cave_transition/t
 
 bool8 SetUpFieldMove_Flash(void)
 {
-    if (gMapHeader.cave != TRUE)
+    if (gMapHeader.cave != TRUE || !CheckBagHasItem(ITEM_HM05, 1))
         return FALSE;
 
     if (FlagGet(FLAG_SYS_FLASH_ACTIVE))

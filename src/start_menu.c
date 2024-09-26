@@ -208,12 +208,13 @@ static void SetUpStartMenu_NormalField(void)
         AppendToStartMenuItems(STARTMENU_POKEDEX);
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AppendToStartMenuItems(STARTMENU_POKEMON);
-    if (FlagGet(FLAG_GOT_HM01)
+    if ((FlagGet(FLAG_GOT_HM01)
      || FlagGet(FLAG_GOT_HM02)
      || FlagGet(FLAG_GOT_HM03)
      || FlagGet(FLAG_GOT_HM04)
      || FlagGet(FLAG_GOT_HM05)
-     || FlagGet(FLAG_GOT_HM06) == TRUE) {
+     || FlagGet(FLAG_GOT_HM06) == TRUE)
+     && gSaveBlock2Ptr->optionsHM == TRUE) {
         AppendToStartMenuItems(STARTMENU_HM);
     }
     AppendToStartMenuItems(STARTMENU_BAG);
@@ -228,7 +229,8 @@ static void SetUpStartMenu_SafariZone(void)
     AppendToStartMenuItems(STARTMENU_RETIRE);
     AppendToStartMenuItems(STARTMENU_POKEDEX);
     AppendToStartMenuItems(STARTMENU_POKEMON);
-    AppendToStartMenuItems(STARTMENU_HM);
+    if (gSaveBlock2Ptr->optionsHM == TRUE)
+        AppendToStartMenuItems(STARTMENU_HM);
     AppendToStartMenuItems(STARTMENU_BAG);
     AppendToStartMenuItems(STARTMENU_PLAYER);
     AppendToStartMenuItems(STARTMENU_OPTION);

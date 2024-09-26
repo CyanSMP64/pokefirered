@@ -9,10 +9,12 @@
 #include "event_scripts.h"
 #include "overworld.h"
 #include "event_object_movement.h"
+#include "item.h"
 #include "constants/songs.h"
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
 #include "constants/maps.h"
+#include "constants/items.h"
 
 static void Task_FieldEffectShowMon_Init(u8 taskId);
 static void Task_FieldEffectShowMon_WaitFldeff(u8 taskId);
@@ -105,7 +107,8 @@ static void Task_FieldEffectShowMon_Cleanup(u8 taskId)
 
 bool8 SetUpFieldMove_RockSmash(void)
 {
-    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_ROCK_SMASH_ROCK) == TRUE)
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_ROCK_SMASH_ROCK) == TRUE
+     && CheckBagHasItem(ITEM_HM06, 1))
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_UseRockSmash;

@@ -4,10 +4,16 @@ EventScript_CutTree::
 	checkitem ITEM_HM01
     goto_if_eq VAR_RESULT, FALSE, EventScript_CantCutTree
 	goto_if_unset FLAG_BADGE02_GET, EventScript_CantCutTree
+	special GetHmModeOption
+	call_if_eq VAR_RESULT, 0, EventScript_CutTree_Classic
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
 	goto EventScript_CutTreeDown
-	end
+EventScript_CutTree_Classic::
+	checkpartymove MOVE_CUT
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantCutTree
+	setfieldeffectargument 0, VAR_RESULT
+	return
 
 EventScript_FldEffCut::
 	lockall
@@ -58,10 +64,16 @@ EventScript_RockSmash::
 	checkitem ITEM_HM06
     goto_if_eq VAR_RESULT, FALSE, EventScript_CantSmashRock
 	goto_if_unset FLAG_BADGE06_GET, EventScript_CantSmashRock
+	special GetHmModeOption
+	call_if_eq VAR_RESULT, 0, EventScript_RockSmash_Classic
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
 	goto EventScript_UseRockSmash
-	end
+EventScript_RockSmash_Classic::
+	checkpartymove MOVE_ROCK_SMASH
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
+	setfieldeffectargument 0, VAR_RESULT
+	return
 
 EventScript_FldEffRockSmash::
 	lockall
@@ -108,12 +120,20 @@ Text_MonMaySmashRock::
 EventScript_StrengthBoulder::
 	goto_if_questlog EventScript_ReleaseEnd
 	lockall
+	checkitem ITEM_HM04
+    goto_if_eq VAR_RESULT, FALSE, EventScript_CantMoveBoulder
 	goto_if_unset FLAG_BADGE04_GET, EventScript_CantMoveBoulder
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_AlreadyUsedStrength
+	special GetHmModeOption
+	call_if_eq VAR_RESULT, 0, EventScript_StrengthBoulder_Classic
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
 	goto EventScript_UseStrength
-	end
+EventScript_StrengthBoulder_Classic::
+	checkpartymove MOVE_STRENGTH
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantMoveBoulder
+	setfieldeffectargument 0, VAR_RESULT
+	return
 
 EventScript_FldEffStrength::
 	lockall
@@ -161,8 +181,15 @@ Text_StrengthMadeMovingBouldersPossible::
 EventScript_Waterfall::
 	goto_if_questlog EventScript_ReleaseEnd
 	lockall
+	special GetHmModeOption
+	call_if_eq VAR_RESULT, 0, EventScript_UseWaterfall_Classic
 	dofieldeffect FLDEFF_USE_WATERFALL
 	goto EventScript_EndWaterfall
+EventScript_UseWaterfall_Classic::
+	checkpartymove MOVE_WATERFALL
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_WaterCrashingDown
+	setfieldeffectargument 0, VAR_RESULT
+	return
 
 EventScript_CantUseWaterfall::
 	lockall

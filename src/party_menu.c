@@ -4069,8 +4069,11 @@ static bool8 SetUpFieldMove_Surf(void)
     
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     if (MetatileBehavior_IsFastWater(MapGridGetMetatileBehaviorAt(x, y)) != TRUE
-     && IsPlayerFacingSurfableFishableWater() == TRUE)
+     && IsPlayerFacingSurfableFishableWater() == TRUE
+     && CheckBagHasItem(ITEM_HM03, 1))
     {
+        if (!PartyHasMonWithSurf() && !(gSaveBlock2Ptr->optionsHM))
+            return FALSE;
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Surf;
         return TRUE;
@@ -4102,7 +4105,8 @@ static void DisplayCantUseSurfMessage(void)
 
 static bool8 SetUpFieldMove_Fly(void)
 {
-    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE
+     && CheckBagHasItem(ITEM_HM02, 1))
         return TRUE;
     else
         return FALSE;
@@ -4124,7 +4128,8 @@ static bool8 SetUpFieldMove_Waterfall(void)
     s16 x, y;
 
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-    if (MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y)) == TRUE && IsPlayerSurfingNorth() == TRUE)
+    if (MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y)) == TRUE && IsPlayerSurfingNorth() == TRUE
+     && CheckBagHasItem(ITEM_HM07, 1))
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Waterfall;

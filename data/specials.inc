@@ -16,7 +16,7 @@ gSpecials::
 	def_special ExitLinkRoom
 	def_special IsPoisonInParty
 	def_special FieldUseFly
-	def_special NullFieldSpecial
+	def_special GetHmModeOption
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
