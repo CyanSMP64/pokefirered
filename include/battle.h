@@ -72,6 +72,9 @@ struct TrainerMonNoItemDefaultMoves
 {
     u16 iv;
     u8 lvl;
+    u8 ability:2;
+    u8 isShiny:1;
+    //u8 padding:5;
     u16 species;
 };
 
@@ -79,6 +82,9 @@ struct TrainerMonItemDefaultMoves
 {
     u16 iv;
     u8 lvl;
+    u8 ability:2;
+    u8 isShiny:1;
+    //u8 padding:5;
     u16 species;
     u16 heldItem;
 };
@@ -87,6 +93,9 @@ struct TrainerMonNoItemCustomMoves
 {
     u16 iv;
     u8 lvl;
+    u8 ability:2;
+    u8 isShiny:1;
+    //u8 padding:5;
     u16 species;
     u16 moves[MAX_MON_MOVES];
 };
@@ -95,6 +104,9 @@ struct TrainerMonItemCustomMoves
 {
     u16 iv;
     u8 lvl;
+    u8 ability:2;
+    u8 isShiny:1;
+    //u8 padding:5;
     u16 species;
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
