@@ -159,9 +159,9 @@ struct PokemonSummaryScreenData
 
     struct PokeSummary
     {
-        u8 ALIGNED(4) speciesNameStrBuf[POKEMON_NAME_LENGTH];
+        u8 ALIGNED(4) speciesNameStrBuf[POKEMON_NAME_LENGTH + 1];
         u8 ALIGNED(4) nicknameStrBuf[POKEMON_NAME_LENGTH + 1];
-        u8 ALIGNED(4) otNameStrBuf[12];
+        u8 ALIGNED(4) otNameStrBuf[PLAYER_NAME_LENGTH + 1];
         u8 ALIGNED(4) otNameStrBufs[2][12];
 
         u8 ALIGNED(4) dexNumStrBuf[5];
