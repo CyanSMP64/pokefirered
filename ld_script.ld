@@ -285,14 +285,14 @@ SECTIONS {
         src/oak_speech.o(.text);
         src/tm_case.o(.text);
         src/pokemon_summary_screen.o(.text);
-        src/wild_pokemon_area.o(.text);
-        src/dynamic_placeholder_text_util.o(.text);
     } =0
 
     .text_7 0x08141ccc:
     ALIGN(4)
     {
         src/roamer.o(.text);
+        src/wild_pokemon_area.o(.text);
+        src/dynamic_placeholder_text_util.o(.text);
         src/menu_indicators.o(.text);
         src/pokedex_area_markers.o(.text);
         src/berry_pouch.o(.text);
