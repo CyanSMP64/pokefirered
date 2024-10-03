@@ -803,16 +803,17 @@ BattleScript_TwoTurnMovesSecondTurn::
 
 BattleScriptFirstChargingTurn::
 	attackcanceler
-	printstring STRINGID_EMPTYSTRING3
+	attackstring
+	pause B_WAIT_TIME_LONG
 	ppreduce
+	copybyte cMULTISTRING_CHOOSER, sTWOTURN_STRINGID
+	printfromtable gFirstTurnOfTwoStringIds
+	waitmessage B_WAIT_TIME_LONG
 	attackanimation
 	waitanimation
 	orword gHitMarker, HITMARKER_CHARGING
 	setmoveeffect MOVE_EFFECT_CHARGING | MOVE_EFFECT_AFFECTS_USER
 	seteffectprimary
-	copybyte cMULTISTRING_CHOOSER, sTWOTURN_STRINGID
-	printfromtable gFirstTurnOfTwoStringIds
-	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_EffectSuperFang::
@@ -3261,7 +3262,7 @@ BattleScript_LeechSeedTurnDrain::
 	goto BattleScript_LeechSeedTurnPrintAndUpdateHp
 
 BattleScript_LeechSeedLiquidOoze::
-	call BattleScript_AbilityPopUpTarget
+	call BattleScript_AbilityPopUp
 	setbyte cMULTISTRING_CHOOSER, 4
 BattleScript_LeechSeedTurnPrintAndUpdateHp::
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
@@ -3797,9 +3798,9 @@ BattleScript_PrintPayDayMoneyString::
 	return
 
 BattleScript_WrapTurnDmg::
-	playanimation BS_ATTACKER, B_ANIM_TURN_TRAP, sB_ANIM_ARG1
 	printstring STRINGID_PKMNHURTBY
 	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_TURN_TRAP, sB_ANIM_ARG1
 	goto BattleScript_DoTurnDmg
 
 BattleScript_WrapEnds::
