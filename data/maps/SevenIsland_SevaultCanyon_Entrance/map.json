@@ -130,7 +130,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -139,7 +139,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -148,7 +148,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -157,7 +157,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -166,7 +166,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -175,7 +175,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -184,7 +184,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -193,7 +193,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -202,7 +202,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -211,7 +211,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -220,7 +220,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     },
     {
       "type": "trigger",
@@ -229,7 +229,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_F",
       "var_value": "0",
-      "script": "FLAG_HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "script": "SevenIsland_SevaultCanyon_Entrance_EventScript_Sparkle_RawstBerry"
     }
   ],
   "bg_events": [
