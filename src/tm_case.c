@@ -26,7 +26,7 @@
 #include "constants/quest_log.h"
 
 // Any item in the TM Case with nonzero importance is considered an HM
-#define IS_HM(itemId) (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
+#define IS_HM(itemId) (ItemId_GetImportance(itemId) != 0)
 
 #define TAG_SCROLL_ARROW 110
 
@@ -720,7 +720,13 @@ static void List_ItemPrintFunc(u8 windowId, u32 itemIndex, u8 y)
 {
     if (itemIndex != LIST_CANCEL)
     {
-        if (IS_HM(BagGetItemIdByPocketPosition(POCKET_TM_CASE, itemIndex)))
+        if (!IS_HM(BagGetItemIdByPocketPosition(POCKET_TM_CASE, itemIndex)))
+        {
+            ConvertIntToDecimalStringN(gStringVar1, BagGetQuantityByPocketPosition(POCKET_TM_CASE, itemIndex), STR_CONV_MODE_RIGHT_ALIGN, 3);
+            StringExpandPlaceholders(gStringVar4, gText_TimesStrVar1);
+            TMCase_Print(windowId, FONT_SMALL, gStringVar4, 126, y, 0, 0, TEXT_SKIP_DRAW, COLOR_DARK);
+        }
+        else
         {
             PlaceHMTileInWindow(windowId, 8, y);
         }
@@ -1153,9 +1159,30 @@ static void Task_SelectedTMHM_Sell(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
 
-    CopyItemName(gSpecialVar_ItemId, gStringVar1);
-    StringExpandPlaceholders(gStringVar4, gText_OhNoICantBuyThat);
-    PrintMessageWithFollowupTask(taskId, GetDialogBoxFontId(), gStringVar4, CloseMessageAndReturnToList);
+    if (ItemId_GetPrice(gSpecialVar_ItemId) == 0)
+    {
+        // Can't sell TM/HMs with no price (by default this is just the HMs)
+        CopyItemName(gSpecialVar_ItemId, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, gText_OhNoICantBuyThat);
+        PrintMessageWithFollowupTask(taskId, GetDialogBoxFontId(), gStringVar4, CloseMessageAndReturnToList);
+    }
+    else
+    {
+        tQuantitySelected = 1;
+        if (tQuantityOwned == 1)
+        {
+            PrintPlayersMoney();
+            Task_AskConfirmSaleWithAmount(taskId);
+        }
+        else
+        {
+            if (tQuantityOwned > 99)
+                tQuantityOwned = 99;
+            CopyItemName(gSpecialVar_ItemId, gStringVar1);
+            StringExpandPlaceholders(gStringVar4, gText_HowManyWouldYouLikeToSell);
+            PrintMessageWithFollowupTask(taskId, GetDialogBoxFontId(), gStringVar4, Task_InitQuantitySelectUI);
+        }
+    }
 }
 
 static void Task_AskConfirmSaleWithAmount(u8 taskId)
