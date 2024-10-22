@@ -765,7 +765,7 @@ struct SaveBlock1
     /*0x3064*/ struct MysteryGiftSave mysteryGift;
     /*0x33D0*/ struct RamScript ramScript;
     /*0x37BC*/ u8 seen2[DEX_FLAGS_NO];
-    /*0x3857*/ u8 rivalName[PLAYER_NAME_LENGTH + 1];
+    /*0x3857*/ u8 rivalName[PLAYER_NAME_LENGTH + 1]; // actually is 0x383f
     /*0x3860*/ struct FameCheckerSaveData fameChecker[NUM_FAMECHECKER_PERSONS];
     /*0x38A0*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
     /*0x3974*/ struct TrainerNameRecord trainerNameRecords[20];
