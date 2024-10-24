@@ -231,4 +231,4 @@ gOakSpeech_Text_RememberRivalsName::
     .string "His name is {RIVAL}!\p$"
 
 gOakSpeech_Text_LetsGo::
-    .string "Good luck on your run!$"
+    .string "LET'S GO GAMBLING!!!!$"
