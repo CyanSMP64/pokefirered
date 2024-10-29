@@ -24,6 +24,7 @@ struct MultiBattlePokemonTx
 };
 
 #define TYPE_NAME_LENGTH 6
+#define TYPE2_NAME_LENGTH 8
 #define ABILITY_NAME_LENGTH 16
 
 // defines for the u8 array gTypeEffectiveness
@@ -49,6 +50,7 @@ extern const struct SpriteTemplate gUnknownDebugSprite;
 extern const struct OamData gOamData_BattlerOpponent;
 extern const struct OamData gOamData_BattlerPlayer;
 extern const u8 gTypeNames[][TYPE_NAME_LENGTH + 1];
+extern const u8 gTypeNames2[][TYPE2_NAME_LENGTH + 1];
 extern const u8 gStatusConditionString_PoisonJpn[8];
 extern const u8 gStatusConditionString_SleepJpn[8];
 extern const u8 gStatusConditionString_ParalysisJpn[8];

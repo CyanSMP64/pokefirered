@@ -6511,11 +6511,6 @@ static void Cmd_trysetrest(void)
     }
     else
     {
-        if (gBattleMons[gBattlerTarget].status1 & ((u8)(~STATUS1_SLEEP)))
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_REST_STATUSED;
-        else
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_REST;
-
         gBattleMons[gBattlerTarget].status1 = STATUS1_SLEEP_TURN(3);
         BtlController_EmitSetMonData(BUFFER_A, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gActiveBattler].status1), &gBattleMons[gActiveBattler].status1);
         MarkBattlerForControllerExec(gActiveBattler);
@@ -7123,7 +7118,7 @@ static void Cmd_tryconversiontypechange(void)
         while (moveType == gBattleMons[gBattlerAttacker].type1 || moveType == gBattleMons[gBattlerAttacker].type2);
 
         SET_BATTLER_TYPE(gBattlerAttacker, moveType);
-        PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
+        PREPARE_TYPE2_BUFFER(gBattleTextBuff1, moveType);
 
         gBattlescriptCurrInstr += 5;
     }
@@ -7811,7 +7806,7 @@ static void Cmd_settypetorandomresistance(void)
                  && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_EFFECT_DEF_TYPE(i)))
                 {
                     SET_BATTLER_TYPE(gBattlerAttacker, TYPE_EFFECT_DEF_TYPE(rands));
-                    PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_EFFECT_DEF_TYPE(rands))
+                    PREPARE_TYPE2_BUFFER(gBattleTextBuff1, TYPE_EFFECT_DEF_TYPE(rands))
 
                     gBattlescriptCurrInstr += 5;
                     return;
@@ -9464,7 +9459,7 @@ static void Cmd_settypetoterrain(void)
     if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, sTerrainToType[gBattleTerrain]))
     {
         SET_BATTLER_TYPE(gBattlerAttacker, sTerrainToType[gBattleTerrain]);
-        PREPARE_TYPE_BUFFER(gBattleTextBuff1, sTerrainToType[gBattleTerrain]);
+        PREPARE_TYPE2_BUFFER(gBattleTextBuff1, sTerrainToType[gBattleTerrain]);
 
         gBattlescriptCurrInstr += 5;
     }
