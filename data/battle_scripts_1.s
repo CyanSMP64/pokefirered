@@ -472,7 +472,7 @@ BattleScript_EffectMirrorMove::
 	trymirrormove
 	ppreduce
 	orbyte gMoveResultFlags, MOVE_RESULT_FAILED
-	printstring STRINGID_MIRRORMOVEFAILED
+	printstring STRINGID_BUTITFAILED
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -1374,13 +1374,14 @@ BattleScript_EffectSpite::
 BattleScript_EffectHealBell::
 	attackcanceler
 	attackstring
+	pause B_WAIT_TIME_LONG
 	ppreduce
 	healpartystatus
 	waitstate
-	attackanimation
-	waitanimation
 	printfromtable gPartyStatusHealStringIds
 	waitmessage B_WAIT_TIME_LONG
+	attackanimation
+	waitanimation
 	jumpifnotmove MOVE_HEAL_BELL, BattleScript_PartyHealEnd
 	jumpifbyte CMP_NO_COMMON_BITS, cMULTISTRING_CHOOSER, B_MSG_BELL_SOUNDPROOF_ATTACKER, BattleScript_CheckHealBellMon2Unaffected
 	printstring STRINGID_PKMNSXBLOCKSY
@@ -2120,7 +2121,7 @@ BattleScript_EffectSpitUp::
 	goto BattleScript_HitFromAtkAnimation
 BattleScript_SpitUpFail::
 	pause B_WAIT_TIME_SHORT
-	printstring STRINGID_FAILEDTOSPITUP
+	printstring STRINGID_BUTITFAILED
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -2307,8 +2308,6 @@ BattleScript_EffectNaturePower::
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	callterrainattack
-	printstring STRINGID_NATUREPOWERTURNEDINTO
-	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_EffectCharge::
@@ -3479,7 +3478,7 @@ BattleScript_RapidSpinAway::
 	return
 
 BattleScript_WrapFree::
-	printstring STRINGID_PKMNGOTFREE
+	printstring STRINGID_PKMNFREEDFROM
 	waitmessage B_WAIT_TIME_LONG
 	copybyte gBattlerTarget, sBATTLER
 	return
