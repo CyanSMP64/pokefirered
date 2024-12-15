@@ -13,7 +13,8 @@ struct Item
     u8 holdEffect;
     u8 holdEffectParam;
     const u8 *description;
-    u8 importance;
+    u8 importance:7;
+    u8 grammarAn:1;
     u8 registrability;
     u8 pocket;
     u8 type; // unused for balls
@@ -63,6 +64,7 @@ u8 ItemId_GetHoldEffectParam(u16 itemId);
 const u8 *ItemId_GetDescription(u16 itemId);
 bool32 ItemId_CopyDescription(u8 *a, u32 itemId, u32 c);
 u8 ItemId_GetImportance(u16 itemId);
+u8 ItemId_GetGrammarAn(u16 itemId);
 u8 ItemId_GetUnknownValue(u16 itemId);
 u8 ItemId_GetPocket(u16 itemId);
 u8 ItemId_GetType(u16 itemId);
