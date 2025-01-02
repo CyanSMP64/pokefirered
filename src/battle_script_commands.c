@@ -9510,11 +9510,21 @@ static void Cmd_removelightscreenreflect(void)
 {
     u8 opposingSide = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
 
-    if (gSideTimers[opposingSide].reflectTimer || gSideTimers[opposingSide].lightscreenTimer)
+    if (gSideTimers[opposingSide].reflectTimer)
     {
         gSideStatuses[opposingSide] &= ~SIDE_STATUS_REFLECT;
-        gSideStatuses[opposingSide] &= ~SIDE_STATUS_LIGHTSCREEN;
         gSideTimers[opposingSide].reflectTimer = 0;
+        gBattleScripting.animTurn = 2;
+        gBattleScripting.animTargetsHit = 1;
+        if (gSideTimers[opposingSide].lightscreenTimer) {
+            gSideStatuses[opposingSide] &= ~SIDE_STATUS_LIGHTSCREEN;
+            gSideTimers[opposingSide].lightscreenTimer = 0;
+            gBattleScripting.animTurn++;
+        }
+    }
+    else if (gSideTimers[opposingSide].lightscreenTimer)
+    {
+        gSideStatuses[opposingSide] &= ~SIDE_STATUS_LIGHTSCREEN;
         gSideTimers[opposingSide].lightscreenTimer = 0;
         gBattleScripting.animTurn = 1;
         gBattleScripting.animTargetsHit = 1;
