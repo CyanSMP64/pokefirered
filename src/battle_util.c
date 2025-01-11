@@ -1984,7 +1984,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                  && gBattleMons[battler].hp != 0)
                 {
                     SET_BATTLER_TYPE(battler, moveType);
-                    PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
+                    PREPARE_TYPE2_BUFFER(gBattleTextBuff1, moveType);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_ColorChangeActivates;
                     effect++;
@@ -2031,8 +2031,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     }
                 }
                 break;
-            POISON_POINT:
             case ABILITY_POISON_POINT:
+            POISON_POINT:
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerAttacker].hp != 0
                  && !gBattleMons[gBattlerAttacker].status1
@@ -2049,8 +2049,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     effect++;
                 }
                 break;
-            STATIC:
             case ABILITY_STATIC:
+            STATIC:
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerAttacker].hp != 0
                  && !gBattleMons[gBattlerAttacker].status1

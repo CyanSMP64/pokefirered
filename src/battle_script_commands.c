@@ -6573,7 +6573,8 @@ static void Cmd_jumpifcantmakeasleep(void)
     {
         gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAYED_AWAKE_USING;
-        gBattlescriptCurrInstr = jumpPtr;
+        // BattleScript_CantMakeAsleepInsomnia; BattleScript_RestCantSleepInsomnia
+        gBattlescriptCurrInstr = jumpPtr - 5;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
     else
