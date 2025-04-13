@@ -583,6 +583,10 @@ static void RemoveUsedItem(void)
     Pocket_CalculateNItemsAndMaxShowed(ItemId_GetPocket(gSpecialVar_ItemId));
     PocketCalculateInitialCursorPosAndItemsAbove(ItemId_GetPocket(gSpecialVar_ItemId));
     CopyItemName(gSpecialVar_ItemId, gStringVar2);
+    if (ItemId_GetGrammarAn(gSpecialVar_ItemId) == TRUE)
+        StringCopy(gStringVar3, gText_An);
+    else
+        StringCopy(gStringVar3, gText_A);
     StringExpandPlaceholders(gStringVar4, gText_PlayerUsedVar2);
 }
 

@@ -392,6 +392,7 @@ extern const u8 gText_PkmnAlreadyInBattle[];
 extern const u8 gText_EggCantBattle[];
 extern const u8 gText_PkmnAlreadySelected[];
 extern const u8 gText_PkmnCantSwitchOut[];
+extern const u8 gText_PkmnRecoveredFromFainting[];
 
 // credits
 extern const u8 gString_Dummy[];
@@ -1551,5 +1552,8 @@ extern const u8 gText_HM05Flash[];
 extern const u8 gText_HM06RockSmash[];
 extern const u8 gText_HM07Waterfall[];
 extern const u8 gText_HM08Dive[];
+
+extern const u8 gText_A[];
+extern const u8 gText_An[];
 
 #endif //GUARD_STRINGS_H
