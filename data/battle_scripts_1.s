@@ -2474,7 +2474,7 @@ BattleScript_BrickBreakAnim::
 	waitmessage B_WAIT_TIME_LONG
 	jumpifbyte CMP_EQUAL, sB_ANIM_TURN, 3, BattleScript_BrickBreakDoHit
 BattleScript_BrickBreakPrintLightScreen::
-	printstring STRINGID_PKMNMADEWISH
+	printstring STRINGID_TEAMLIGHTSCREENWOREOFF
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BrickBreakDoHit::
 	seteffectwithchance
@@ -3179,7 +3179,7 @@ BattleScript_AskToLearnMove::
 	goto BattleScript_TryLearnMoveLoop
 BattleScript_ForgotAndLearnedNewMove::
 	printstring STRINGID_123POOF
-	printstring STRINGID_PKMNMADEITRAIN
+	printstring STRINGID_PKMNFORGOTMOVE2
 	buffermovetolearn
 	fanfare MUS_LEVEL_UP
 	printstring STRINGID_MONFORGOTANDLEARNEDINSTEAD
@@ -4081,12 +4081,12 @@ BattleScript_IntimidateEnd::
 BattleScript_IntimidateAbilityFail_HyperCutter::
 	pause 42
 	call BattleScript_AbilityPopUp
-	printstring STRINGID_PKMNSXWHIPPEDUPSANDSTORM
+	printstring STRINGID_PKMNSATTACKWASNOTLOWERED
 	goto BattleScript_IntimidateAbilityFail_End
 BattleScript_IntimidateAbilityFail::
 	pause 42
 	call BattleScript_AbilityPopUp
-	printstring STRINGID_PKMNSXMADEYUSELESS
+	printstring STRINGID_PKMNSSTATSWERENOTLOWERED
 BattleScript_IntimidateAbilityFail_End::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_IntimidateFail

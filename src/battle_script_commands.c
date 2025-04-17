@@ -6825,11 +6825,11 @@ static u8 ChangeStatBuffs(s8 statValue, u8 statId, u8 flags, const u8 *BS_ptr)
                 gBattleTextBuff2[5] = STRINGID_EMPTYSTRING4 & 0xff;
                 gBattleTextBuff2[6] = STRINGID_EMPTYSTRING4 >> 8;
                 gBattleTextBuff2[7] = B_BUFF_STRING;
-                gBattleTextBuff2[8] = STRINGID_PKMNRAISEDSPDEFALITTLE & 0xff;
-                gBattleTextBuff2[9] = STRINGID_PKMNRAISEDSPDEFALITTLE >> 8;
+                gBattleTextBuff2[8] = STRINGID_BOOSTED & 0xff;
+                gBattleTextBuff2[9] = STRINGID_BOOSTED >> 8;
                 gBattleTextBuff2[10] = EOS;
             } else {
-                PREPARE_STRING_BUFFER(gBattleTextBuff2, STRINGID_PKMNRAISEDSPDEFALITTLE);
+                PREPARE_STRING_BUFFER(gBattleTextBuff2, STRINGID_BOOSTED);
             }
         }
         else {
