@@ -2159,10 +2159,6 @@ DirectSoundWaveData_Phoneme_51::
 	.incbin "sound/direct_sound_samples/phonemes/51.bin"
 
 	.align 2
-DirectSoundWaveData_sc88pro_accordion_duplicate::
-	.incbin "sound/direct_sound_samples/sc88pro_accordion_duplicate.bin"
-
-	.align 2
 DirectSoundWaveData_steinway_b_piano::
 	.incbin "sound/direct_sound_samples/steinway_b_piano.bin"
 
