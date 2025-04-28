@@ -546,7 +546,6 @@ SECTIONS {
         src/learn_move.o(.rodata);
         src/battle_controller_oak_old_man.o(.rodata);
         src/player_pc.o(.rodata);
-        src/intro.o(.rodata);
         src/battle_anim_special.o(.rodata);
         src/hall_of_fame.o(.rodata);
         src/diploma.o(.rodata);
@@ -585,6 +584,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/party_menu.o(.rodata);
+        src/intro.o(.rodata);
         src/credits.o(.rodata);
         src/field_specials.o(.rodata);
         src/quest_log.o(.rodata);
