@@ -575,7 +575,6 @@ SECTIONS {
         src/union_room.o(.rodata);
         src/union_room_player_avatar.o(.rodata);
         src/union_room_battle.o(.rodata);
-        src/union_room_message.o(.rodata);
         src/pokemon_special_anim.o(.rodata);
         src/pokemon_special_anim_scene.o(.rodata);
     } =0
@@ -584,6 +583,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/party_menu.o(.rodata);
+        src/union_room_message.o(.rodata);
         src/intro.o(.rodata);
         src/credits.o(.rodata);
         src/field_specials.o(.rodata);

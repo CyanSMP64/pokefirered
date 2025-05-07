@@ -4191,24 +4191,6 @@ void ZeroBoxMonData(struct BoxPokemon *boxMon)
         raw[i] = 0;
 }
 
-void ZeroMonData(struct Pokemon *mon)
-{
-    u32 arg;
-    ZeroBoxMonData(&mon->box);
-    arg = 0;
-    SetMonData(mon, MON_DATA_STATUS, &arg);
-    SetMonData(mon, MON_DATA_LEVEL, &arg);
-    SetMonData(mon, MON_DATA_HP, &arg);
-    SetMonData(mon, MON_DATA_MAX_HP, &arg);
-    SetMonData(mon, MON_DATA_ATK, &arg);
-    SetMonData(mon, MON_DATA_DEF, &arg);
-    SetMonData(mon, MON_DATA_SPEED, &arg);
-    SetMonData(mon, MON_DATA_SPATK, &arg);
-    SetMonData(mon, MON_DATA_SPDEF, &arg);
-    arg = MAIL_NONE;
-    SetMonData(mon, MON_DATA_MAIL, &arg);
-}
-
 void ZeroPlayerPartyMons(void)
 {
     s32 i;
@@ -4345,6 +4327,38 @@ void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV,
     CreateMon(mon, species, level, fixedIV, TRUE, personality, OT_ID_PLAYER_ID, 0);
 }
 
+void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 evSpread)
+{
+    s32 i;
+    s32 statCount = 0;
+    u16 evAmount;
+    u8 evsBits;
+
+    CreateMon(mon, species, level, fixedIV, FALSE, 0, OT_ID_PLAYER_ID, 0);
+
+    evsBits = evSpread;
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        if (evsBits & 1)
+            statCount++;
+        evsBits >>= 1;
+    }
+
+    evAmount = MAX_TOTAL_EVS / statCount;
+
+    evsBits = 1;
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        if (evSpread & evsBits)
+            SetMonData(mon, MON_DATA_HP_EV + i, &evAmount);
+        evsBits <<= 1;
+    }
+
+    CalculateMonStats(mon);
+}
+
 void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter)
 {
     u32 personality;
@@ -4373,6 +4387,24 @@ void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level,
     }
 
     CreateMon(mon, species, level, fixedIV, TRUE, personality, OT_ID_PLAYER_ID, 0);
+}
+
+void ZeroMonData(struct Pokemon *mon)
+{
+    u32 arg;
+    ZeroBoxMonData(&mon->box);
+    arg = 0;
+    SetMonData(mon, MON_DATA_STATUS, &arg);
+    SetMonData(mon, MON_DATA_LEVEL, &arg);
+    SetMonData(mon, MON_DATA_HP, &arg);
+    SetMonData(mon, MON_DATA_MAX_HP, &arg);
+    SetMonData(mon, MON_DATA_ATK, &arg);
+    SetMonData(mon, MON_DATA_DEF, &arg);
+    SetMonData(mon, MON_DATA_SPEED, &arg);
+    SetMonData(mon, MON_DATA_SPATK, &arg);
+    SetMonData(mon, MON_DATA_SPDEF, &arg);
+    arg = MAIL_NONE;
+    SetMonData(mon, MON_DATA_MAIL, &arg);
 }
 
 // Used to create the Old Man's Weedle?
@@ -4406,38 +4438,6 @@ static void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 
     SetMonData(mon, MON_DATA_SPEED_IV, &ivs[STAT_SPEED]);
     SetMonData(mon, MON_DATA_SPATK_IV, &ivs[STAT_SPATK]);
     SetMonData(mon, MON_DATA_SPDEF_IV, &ivs[STAT_SPDEF]);
-    CalculateMonStats(mon);
-}
-
-void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 evSpread)
-{
-    s32 i;
-    s32 statCount = 0;
-    u16 evAmount;
-    u8 evsBits;
-
-    CreateMon(mon, species, level, fixedIV, FALSE, 0, OT_ID_PLAYER_ID, 0);
-
-    evsBits = evSpread;
-
-    for (i = 0; i < NUM_STATS; i++)
-    {
-        if (evsBits & 1)
-            statCount++;
-        evsBits >>= 1;
-    }
-
-    evAmount = MAX_TOTAL_EVS / statCount;
-
-    evsBits = 1;
-
-    for (i = 0; i < NUM_STATS; i++)
-    {
-        if (evSpread & evsBits)
-            SetMonData(mon, MON_DATA_HP_EV + i, &evAmount);
-        evsBits <<= 1;
-    }
-
     CalculateMonStats(mon);
 }
 
@@ -6272,7 +6272,7 @@ u8 GetMonsStateToDoubles(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
-u8 GetAbilityBySpecies(u16 species, bool8 abilityNum)
+u16 GetAbilityBySpecies(u16 species, bool8 abilityNum)
 {
     if (abilityNum)
         gLastUsedAbility = gSpeciesInfo[species].abilities[1];
@@ -6282,7 +6282,7 @@ u8 GetAbilityBySpecies(u16 species, bool8 abilityNum)
     return gLastUsedAbility;
 }
 
-u8 GetMonAbility(struct Pokemon *mon)
+u16 GetMonAbility(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);

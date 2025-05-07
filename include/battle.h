@@ -307,7 +307,7 @@ struct UsedMoves
 struct BattleHistory
 {
     /*0x00*/ u16 usedMoves[2][8]; // 0xFFFF means move not used (confuse self hit, etc)
-    /*0x20*/ u8 abilities[MAX_BATTLERS_COUNT / 2];
+    /*0x20*/ u16 abilities[MAX_BATTLERS_COUNT / 2];
     /*0x22*/ u8 itemEffects[MAX_BATTLERS_COUNT / 2];
     /*0x24*/ u16 trainerItems[MAX_BATTLERS_COUNT];
     /*0x2C*/ u8 itemsNo;
@@ -434,7 +434,7 @@ struct BattleStruct
     u8 simulatedInputState[4];  // used by Oak/Old Man/Pokedude controllers
     u8 lastTakenMove[MAX_BATTLERS_COUNT * 2 * 2]; // ask gamefreak why they declared it that way
     u16 hpOnSwitchout[2];
-    u8 abilityPreventingSwitchout;
+    u16 abilityPreventingSwitchout;
     u8 hpScale;
     u16 savedBattleTypeFlags;
     void (*savedCallback)(void);
@@ -665,7 +665,7 @@ extern u16 gChosenMove;
 extern u16 gCalledMove;
 extern u8 gCritMultiplier;
 extern u16 gBattleWeather;
-extern u8 gLastUsedAbility;
+extern u16 gLastUsedAbility;
 extern u8 gBattlerInMenuId;
 extern u8 gPotentialItemEffectBattler;
 extern u8 gBattlersCount;
@@ -734,6 +734,6 @@ extern u8 gChosenActionByBattler[MAX_BATTLERS_COUNT];
 extern u8 gBattleTerrain;
 extern struct MultiBattlePokemonTx gMultiPartnerParty[3];
 extern u16 gRandomTurnNumber;
-extern u8 gBattlerAbility;
+extern u16 gBattlerAbility;
 
 #endif // GUARD_BATTLE_H
