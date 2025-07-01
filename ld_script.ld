@@ -475,7 +475,6 @@ SECTIONS {
         src/battle_anim_mons.o(.rodata);
         data/map_events.o(.rodata);
         src/battle_anim_status_effects.o(.rodata);
-        src/title_screen.o(.rodata);
         src/field_weather.o(.rodata);
         src/field_weather_util.o(.rodata);
         src/field_weather_effects.o(.rodata);
@@ -583,6 +582,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/party_menu.o(.rodata);
+        src/title_screen.o(.rodata);
         src/union_room_message.o(.rodata);
         src/intro.o(.rodata);
         src/credits.o(.rodata);
