@@ -17,12 +17,12 @@ voicegroup340::
 	voice_directsound 63, 30, DirectSoundWaveData_bw_plugsound_pro_analog_hihat_closed, 255, 239, 0, 208	@ 127/105/  0/116/ 30
 	voice_directsound 60, 30, DirectSoundWaveData_bw_plugsound_pro_analog_hihat_open, 255, 241, 0, 208		@ 127/102/  0/116/ 30
 	voice_directsound 76, 50, DirectSoundWaveData_bw_zg_dpt_orch_snare_16_18_02, 255, 0, 227, 208			@ 127/127/120/116/ 64
-	voice_directsound 60, 40, DirectSoundWaveData_bw_kfl_cymbals_a_due, 255, 250, 0, 216					@ 127/ 70/  0/114/ 40
+	voice_directsound 60, 40, DirectSoundWaveData_hg_kfl_cymbals_a_due, 255, 250, 0, 216					@ 127/ 70/  0/114/ 40
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_plugsound_pro_elastik_36, 255, 64, 227, 178	@ 127/125/120/120/ 64
+	voice_directsound 60, 0, DirectSoundWaveData_hg_plugsound_pro_elastik_36, 255, 64, 227, 178	@ 127/125/120/120/ 64
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -33,12 +33,12 @@ voicegroup340::
 	voice_keysplit voicegroup254, KeySplitTable102	@ sampletank 2.5 xl string orchestra
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_plugsound_pro_cello_sus_43, 188, 242, 255, 208	@ 120/100/127/116/ 64
+	voice_directsound 60, 0, DirectSoundWaveData_hg_plugsound_pro_cello_sus_43, 188, 242, 255, 208	@ 120/100/127/116/ 64
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_plugsound_pro_timpani_55, 255, 252, 0, 208	@ 127/ 50/  1/116/ 64
+	voice_directsound 60, 0, DirectSoundWaveData_hg_plugsound_pro_timpani_55, 255, 252, 0, 208	@ 127/ 50/  1/116/ 64
 	voice_keysplit voicegroup315, KeySplitTable71	@ kfl trumpet ensemble
 	voice_keysplit voicegroup285, KeySplitTable18	@ kfl trombone ensemble
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

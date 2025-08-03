@@ -1,40 +1,4 @@
 	.align 2
-DirectSoundWaveData_bw_sampletank_string_orchestra_60::
-	.incbin "sound/direct_sound_samples/bw_sampletank_string_orchestra_60.bin"
-
-	.align 2
-DirectSoundWaveData_bw_sampletank_string_orchestra_69::
-	.incbin "sound/direct_sound_samples/bw_sampletank_string_orchestra_69.bin"
-
-	.align 2
-DirectSoundWaveData_bw_sampletank_string_orchestra_77::
-	.incbin "sound/direct_sound_samples/bw_sampletank_string_orchestra_77.bin"
-
-	.align 2
-DirectSoundWaveData_bw_sampletank_string_orchestra_84::
-	.incbin "sound/direct_sound_samples/bw_sampletank_string_orchestra_84.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_trumpet_ensemble_60::
-	.incbin "sound/direct_sound_samples/bw_kfl_trumpet_ensemble_60.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_trumpet_ensemble_69::
-	.incbin "sound/direct_sound_samples/bw_kfl_trumpet_ensemble_69.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_trumpet_ensemble_79::
-	.incbin "sound/direct_sound_samples/bw_kfl_trumpet_ensemble_79.bin"
-
-	.align 2
-DirectSoundWaveData_bw_battery3_chinese_cymbal::
-	.incbin "sound/direct_sound_samples/bw_battery3_chinese_cymbal.bin"
-
-	.align 2
-DirectSoundWaveData_bw_battery3_rock_cymbal2::
-	.incbin "sound/direct_sound_samples/bw_battery3_rock_cymbal2.bin"
-
-	.align 2
 DirectSoundWaveData_bw_zg_of_tutti_hit_major::
 	.incbin "sound/direct_sound_samples/bw_zg_of_tutti_hit_major.bin"
 
@@ -47,18 +11,6 @@ DirectSoundWaveData_bw_kfl_french_horn_ensemble_48::
 	.incbin "sound/direct_sound_samples/bw_kfl_french_horn_ensemble_48.bin"
 
 	.align 2
-DirectSoundWaveData_bw_kfl_french_horn_ensemble_53::
-	.incbin "sound/direct_sound_samples/bw_kfl_french_horn_ensemble_53.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_french_horn_ensemble_62::
-	.incbin "sound/direct_sound_samples/bw_kfl_french_horn_ensemble_62.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_french_horn_ensemble_71::
-	.incbin "sound/direct_sound_samples/bw_kfl_french_horn_ensemble_71.bin"
-
-	.align 2
 DirectSoundWaveData_bw_independence_pro_khso_trombones_stc::
 	.incbin "sound/direct_sound_samples/bw_independence_pro_khso_trombones_stc.bin"
 
@@ -67,28 +19,8 @@ DirectSoundWaveData_bw_independence_pro_khso_all_strings_spc_up::
 	.incbin "sound/direct_sound_samples/bw_independence_pro_khso_all_strings_spc_up.bin"
 
 	.align 2
-DirectSoundWaveData_bw_kfl_cymbals_a_due::
-	.incbin "sound/direct_sound_samples/bw_kfl_cymbals_a_due.bin"
-
-	.align 2
-DirectSoundWaveData_bw_plugsound_pro_cello_sus_43::
-	.incbin "sound/direct_sound_samples/bw_plugsound_pro_cello_sus_43.bin"
-
-	.align 2
 DirectSoundWaveData_bw_unknown_snare_roll::
 	.incbin "sound/direct_sound_samples/bw_unknown_snare_roll.bin"
-
-	.align 2
-DirectSoundWaveData_bw_plugsound_pro_flute_sus_69::
-	.incbin "sound/direct_sound_samples/bw_plugsound_pro_flute_sus_69.bin"
-
-	.align 2
-DirectSoundWaveData_bw_plugsound_pro_flute_sus_77::
-	.incbin "sound/direct_sound_samples/bw_plugsound_pro_flute_sus_77.bin"
-
-	.align 2
-DirectSoundWaveData_bw_plugsound_pro_flute_sus_84::
-	.incbin "sound/direct_sound_samples/bw_plugsound_pro_flute_sus_84.bin"
 
 	.align 2
 DirectSoundWaveData_bw_kfl_harp_55::
@@ -115,24 +47,8 @@ DirectSoundWaveData_bw_plugsound_pro_glockenspiel_72::
 	.incbin "sound/direct_sound_samples/bw_plugsound_pro_glockenspiel_72.bin"
 
 	.align 2
-DirectSoundWaveData_bw_plugsound_pro_elastik_36::
-	.incbin "sound/direct_sound_samples/bw_plugsound_pro_elastik_36.bin"
-
-	.align 2
 DirectSoundWaveData_bw_halionone_hard_sync_solo_35::
 	.incbin "sound/direct_sound_samples/bw_halionone_hard_sync_solo_35.bin"
-
-	.align 2
-DirectSoundWaveData_bw_plugsound_pro_timpani_55::
-	.incbin "sound/direct_sound_samples/bw_plugsound_pro_timpani_55.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_oboe_64::
-	.incbin "sound/direct_sound_samples/bw_kfl_oboe_64.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_oboe_72::
-	.incbin "sound/direct_sound_samples/bw_kfl_oboe_72.bin"
 
 	.align 2
 DirectSoundWaveData_bw_ewso_6fh_rips_f::
@@ -251,22 +167,6 @@ DirectSoundWaveData_bw_kfl_mark_i_classic_72::
 	.incbin "sound/direct_sound_samples/bw_kfl_mark_i_classic_72.bin"
 
 	.align 2
-DirectSoundWaveData_bw_ps55_flute_81_32::
-	.incbin "sound/direct_sound_samples/bw_ps55_flute_81_32.bin"
-
-	.align 2
-DirectSoundWaveData_bw_ps55_flute_89_32::
-	.incbin "sound/direct_sound_samples/bw_ps55_flute_89_32.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_trombone_ensemble_43::
-	.incbin "sound/direct_sound_samples/bw_kfl_trombone_ensemble_43.bin"
-
-	.align 2
-DirectSoundWaveData_bw_kfl_trombone_ensemble_52::
-	.incbin "sound/direct_sound_samples/bw_kfl_trombone_ensemble_52.bin"
-
-	.align 2
 DirectSoundWaveData_bw_ewsc_full_chorus_ah_43::
 	.incbin "sound/direct_sound_samples/bw_ewsc_full_chorus_ah_43.bin"
 
@@ -281,10 +181,6 @@ DirectSoundWaveData_bw_ewsc_full_chorus_ah_60::
 	.align 2
 DirectSoundWaveData_bw_zg_cb_guitar_squeal::
 	.incbin "sound/direct_sound_samples/bw_zg_cb_guitar_squeal.bin"
-
-	.align 2
-DirectSoundWaveData_bw_sd90_power2_snare::
-	.incbin "sound/direct_sound_samples/bw_sd90_power2_snare.bin"
 
 	.align 2
 DirectSoundWaveData_bw_unknown_suspended_cymbal_40::
