@@ -3,6 +3,8 @@
 #include "task.h"
 #include "event_object_movement.h"
 #include "script.h"
+#include "random.h"
+#include "event_data.h"
 #include "constants/songs.h"
 
 // Tasks governing the ship's departure after you've gotten HM01 CUT
@@ -66,7 +68,8 @@ static const union AnimCmd *const sSmokeAnimTable[] = {
 
 static const struct OamData sSmokeOamData = {
     .shape = ST_OAM_SQUARE,
-    .size = 1
+    .size = 1,
+    .paletteNum = 10,
 };
 
 static const struct SpriteTemplate sSmokeSpriteTemplate = {
@@ -116,15 +119,29 @@ static void Task_SSAnneRun(u8 taskId)
     }
     TryGetObjectEventIdByLocalIdAndMap(1, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objectEventId);
     boatObject = &gObjectEvents[objectEventId];
-    if (gSprites[boatObject->spriteId].x + gSprites[boatObject->spriteId].x2 < -120)
-    {
-        PlaySE(SE_RG_SS_ANNE_HORN);
-        gTasks[taskId].func = Task_SSAnneFinish;
+    if (VarGet(VAR_FUN) == 1) {
+        if (gSprites[boatObject->spriteId].x + gSprites[boatObject->spriteId].x2 > 280)
+        {
+            PlaySE(SE_RG_SS_ANNE_HORN);
+            gTasks[taskId].func = Task_SSAnneFinish;
+        }
+        else
+        {
+            x = data[2] / 5;
+            gSprites[boatObject->spriteId].x2 = x;
+        }
     }
-    else
-    {
-        x = data[2] / 5;
-        gSprites[boatObject->spriteId].x2 = -x;
+    else {
+        if (gSprites[boatObject->spriteId].x + gSprites[boatObject->spriteId].x2 < -120)
+        {
+            PlaySE(SE_RG_SS_ANNE_HORN);
+            gTasks[taskId].func = Task_SSAnneFinish;
+        }
+        else
+        {
+            x = data[2] / 5;
+            gSprites[boatObject->spriteId].x2 = -x;
+        }
     }
 }
 
@@ -169,25 +186,32 @@ static void WakeSpriteCallback(struct Sprite *sprite)
     if (sprite->data[0] / 6 < 22)
         sprite->data[0]++;
     sprite->x2 = sprite->data[0] / 6;
-    if (sprite->x + sprite->x2 < -18)
-        DestroySprite(sprite);
+    if (VarGet(VAR_FUN) == 1) {
+        if (sprite->x + sprite->x2 > 258)
+            DestroySprite(sprite);
+    }
+    else {
+        if (sprite->x + sprite->x2 < -18)
+            DestroySprite(sprite);
+    }
 }
 
 static void CreateSmokeSprite(void)
 {
     u8 objectEventId;
     struct ObjectEvent * boatObject;
-    u16 x;
-    u8 spriteId;
+    s16 x;
 
     TryGetObjectEventIdByLocalIdAndMap(1, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objectEventId);
     boatObject = &gObjectEvents[objectEventId];
     x = gSprites[boatObject->spriteId].x + gSprites[boatObject->spriteId].x2 + 49;
-    if ((s16)x >= -32)
-    {
-        spriteId = CreateSprite(&sSmokeSpriteTemplate, x, 78, 8);
-        if (spriteId != MAX_SPRITES)
-            gSprites[spriteId].oam.paletteNum = 10;
+    if (VarGet(VAR_FUN) == 1) {
+        if (x <= 240)
+            CreateSprite(&sSmokeSpriteTemplate, x, 78, 8);
+    }
+    else {
+        if (x >= -32)
+            CreateSprite(&sSmokeSpriteTemplate, x, 78, 8);
     }
 }
 
