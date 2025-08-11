@@ -86,7 +86,7 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
         || species == SPECIES_UNFEZANT || species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_FRILLISH || species == SPECIES_JELLICENT || species == SPECIES_VIVILLON
         || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES
         || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_ALCREMIE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY 
-        || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_KELDEO || species == SPECIES_FURFROU
+        || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_KELDEO || species == SPECIES_FURFROU || species == SPECIES_COMBEE
         || species == SPECIES_MAGEARNA || species == SPECIES_CRAMORANT || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP
         
         || species == SPECIES_VENUSAUR || species == SPECIES_BUTTERFREE || species == SPECIES_RATTATA || species == SPECIES_RATICATE
@@ -116,7 +116,7 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
         || species == SPECIES_FLOATZEL || species == SPECIES_AMBIPOM || species == SPECIES_GIBLE || species == SPECIES_GABITE
         || species == SPECIES_GARCHOMP || species == SPECIES_CROAGUNK || species == SPECIES_TOXICROAK || species == SPECIES_FINNEON
         || species == SPECIES_LUMINEON || species == SPECIES_SNOVER || species == SPECIES_ABOMASNOW || species == SPECIES_WEAVILE
-        || species == SPECIES_RHYPERIOR || species == SPECIES_TANGROWTH || species == SPECIES_MAMOSWINE)
+        || species == SPECIES_RHYPERIOR || species == SPECIES_TANGROWTH || species == SPECIES_MAMOSWINE || species == SPECIES_PACHIRISU)
     {
         u16 i;
 
@@ -249,7 +249,8 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
         }
         // 87.5% male
         else if (species == SPECIES_VENUSAUR || species == SPECIES_EEVEE || species == SPECIES_EEVEE_PARTNER || species == SPECIES_MEGANIUM
-              || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_RELICANTH)
+              || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_RELICANTH
+              || species == SPECIES_COMBEE)
         {
             if ((personality % 0x100) >= 0x1F)
                 i = species;
@@ -270,6 +271,8 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
                     i = SPECIES_BLAZIKEN_FEMALE;
                 else if (species == SPECIES_RELICANTH)
                     i = SPECIES_RELICANTH_FEMALE;
+                else if (species == SPECIES_COMBEE)
+                    i = SPECIES_COMBEE_FEMALE;
         }
         // 75% male
         else if (species == SPECIES_KADABRA || species == SPECIES_ALAKAZAM)
@@ -467,6 +470,8 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
                     i = SPECIES_LUXRAY_FEMALE;
                 else if (species == SPECIES_ROSERADE)
                     i = SPECIES_ROSERADE_FEMALE;
+                else if (species == SPECIES_PACHIRISU)
+                    i = SPECIES_PACHIRISU_FEMALE;
                 else if (species == SPECIES_BUIZEL)
                     i = SPECIES_BUIZEL_FEMALE;
                 else if (species == SPECIES_FLOATZEL)
@@ -740,7 +745,7 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
         || species == SPECIES_UNFEZANT || species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_FRILLISH || species == SPECIES_JELLICENT || species == SPECIES_VIVILLON
         || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES
         || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_ALCREMIE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY 
-        || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_KELDEO || species == SPECIES_FURFROU
+        || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_KELDEO || species == SPECIES_FURFROU || species == SPECIES_COMBEE
         || species == SPECIES_MAGEARNA || species == SPECIES_CRAMORANT || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP
         
         || species == SPECIES_VENUSAUR || species == SPECIES_BUTTERFREE || species == SPECIES_RATTATA || species == SPECIES_RATICATE
@@ -770,7 +775,7 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
         || species == SPECIES_FLOATZEL || species == SPECIES_AMBIPOM || species == SPECIES_GIBLE || species == SPECIES_GABITE
         || species == SPECIES_GARCHOMP || species == SPECIES_CROAGUNK || species == SPECIES_TOXICROAK || species == SPECIES_FINNEON
         || species == SPECIES_LUMINEON || species == SPECIES_SNOVER || species == SPECIES_ABOMASNOW || species == SPECIES_WEAVILE
-        || species == SPECIES_RHYPERIOR || species == SPECIES_TANGROWTH || species == SPECIES_MAMOSWINE)
+        || species == SPECIES_RHYPERIOR || species == SPECIES_TANGROWTH || species == SPECIES_MAMOSWINE || species == SPECIES_PACHIRISU)
     {
         u16 i;
 
@@ -903,7 +908,8 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
         }
         // 87.5% male
         else if (species == SPECIES_VENUSAUR || species == SPECIES_EEVEE || species == SPECIES_EEVEE_PARTNER || species == SPECIES_MEGANIUM
-              || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_RELICANTH)
+              || species == SPECIES_TORCHIC || species == SPECIES_COMBUSKEN || species == SPECIES_BLAZIKEN || species == SPECIES_RELICANTH
+              || species == SPECIES_COMBEE)
         {
             if ((personality % 0x100) >= 0x1F)
                 i = species;
@@ -924,6 +930,8 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
                     i = SPECIES_BLAZIKEN_FEMALE;
                 else if (species == SPECIES_RELICANTH)
                     i = SPECIES_RELICANTH_FEMALE;
+                else if (species == SPECIES_COMBEE)
+                    i = SPECIES_COMBEE_FEMALE;
         }
         // 75% male
         else if (species == SPECIES_KADABRA || species == SPECIES_ALAKAZAM)
@@ -1121,6 +1129,8 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
                     i = SPECIES_LUXRAY_FEMALE;
                 else if (species == SPECIES_ROSERADE)
                     i = SPECIES_ROSERADE_FEMALE;
+                else if (species == SPECIES_PACHIRISU)
+                    i = SPECIES_PACHIRISU_FEMALE;
                 else if (species == SPECIES_BUIZEL)
                     i = SPECIES_BUIZEL_FEMALE;
                 else if (species == SPECIES_FLOATZEL)
