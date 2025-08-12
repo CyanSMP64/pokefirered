@@ -11,8 +11,6 @@ PalletTown_PlayersHouse_1F_EventScript_Mom::
 	closemessage
 	waitdooranim
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1
-	random 100		@ set fun value
-	copyvar VAR_FUN, VAR_RESULT
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
 	setvar VAR_MAP_SCENE_PALLET_TOWN_OAK, 1
 	setflag FLAG_HIDE_OAK_IN_PALLET_TOWN
