@@ -766,31 +766,46 @@ static const u16 sWeightToDamageTable[] =
     0xFFFF, 0xFFFF
 };
 
-struct PickupItem
+static const u16 sPickupItems[] =
 {
-    u16 itemId;
-    u8 chance;
+    ITEM_ORAN_BERRY,
+    ITEM_ASPEAR_BERRY,
+    ITEM_CHERI_BERRY,
+    ITEM_CHESTO_BERRY,
+    ITEM_REPEL,
+    ITEM_ESCAPE_ROPE,
+    ITEM_PECHA_BERRY,
+    ITEM_RAWST_BERRY,
+    ITEM_ULTRA_BALL,
+    ITEM_PERSIM_BERRY,
+    ITEM_RARE_CANDY,
+    ITEM_HYPER_POTION,
+    ITEM_SITRUS_BERRY,
+    ITEM_LEPPA_BERRY,
+    ITEM_LUM_BERRY,
+    ITEM_FULL_RESTORE,
+    ITEM_MAX_REVIVE,
+    ITEM_PP_UP,
 };
 
-static const struct PickupItem sPickupItems[] =
+static const u16 sRarePickupItems[] =
 {
-    { ITEM_ORAN_BERRY, 15 },
-    { ITEM_CHERI_BERRY, 25 },
-    { ITEM_CHESTO_BERRY, 35 },
-    { ITEM_PECHA_BERRY, 45 },
-    { ITEM_RAWST_BERRY, 55 },
-    { ITEM_ASPEAR_BERRY, 65 },
-    { ITEM_PERSIM_BERRY, 75 },
-    { ITEM_TM10, 80 },
-    { ITEM_PP_UP, 85 },
-    { ITEM_RARE_CANDY, 90 },
-    { ITEM_NUGGET, 95 },
-    { ITEM_SPELON_BERRY, 96 },
-    { ITEM_PAMTRE_BERRY, 97 },
-    { ITEM_WATMEL_BERRY, 98 },
-    { ITEM_DURIN_BERRY, 99 },
-    { ITEM_BELUE_BERRY, 1 },
+    ITEM_BELUE_BERRY,
+    ITEM_NUGGET,
+    ITEM_DURIN_BERRY,
+    ITEM_PAMTRE_BERRY,
+    ITEM_SPELON_BERRY,
+    ITEM_WHITE_HERB,
+    ITEM_WATMEL_BERRY,
+    ITEM_TM10,
+    ITEM_ELIXIR,
+    ITEM_LEFTOVERS,
+    ITEM_MAX_ELIXIR,
+};
 
+static const u8 sPickupProbabilities[] =
+{
+    30, 40, 50, 60, 70, 80, 90, 94, 98
 };
 
 static const u8 sTerrainToType[] =
@@ -3260,7 +3275,7 @@ static void Cmd_getexp(void)
                     }
                     else
                     {
-                        i = STRINGID_DUMMY288;
+                        i = STRINGID_EMPTYSTRING4;
                     }
 
                     // get exp getter battlerId
@@ -9357,13 +9372,27 @@ static void Cmd_pickup(void)
             ability = gSpeciesInfo[species].abilities[0];
         if (ability == ABILITY_PICKUP && species != SPECIES_NONE && species != SPECIES_EGG && heldItem == ITEM_NONE && !(Random() % 10))
         {
+            s32 j;
             s32 random = Random() % 100;
+            u8 lvlDivBy10 = (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) - 1) / 10;
 
             PlaySE(SE_DINKDONK);
-            for (j = 0; j < 15; ++j)
-                if (sPickupItems[j].chance > random)
+            if (lvlDivBy10 > 9)
+                lvlDivBy10 = 9;
+
+            for (j = 0; j < (int)ARRAY_COUNT(sPickupProbabilities); j++)
+            {
+                if (sPickupProbabilities[j] > random)
+                {
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sPickupItems[lvlDivBy10 + j]);
                     break;
-            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sPickupItems[j]);
+                }
+                else if (random == 99 || random == 98)
+                {
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sRarePickupItems[lvlDivBy10 + (99 - random)]);
+                    break;
+                }
+            }
         }
     }
     gBattlescriptCurrInstr++;
