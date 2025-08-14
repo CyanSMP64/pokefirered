@@ -96,5 +96,10 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves);
 void RunBattleScriptCommands_PopCallbacksStack(void);
 void RunBattleScriptCommands(void);
 bool8 TryRunFromBattle(u8 battler);
+void BattleIntroDrawPartySummaryScreens(void);
+void BattleIntroRecordMonsToDex(void);
+void HandleTurnActionSelectionState(void);
+void ReturnFromBattleToOverworld(void);
+
 
 #endif // GUARD_BATTLE_MAIN_H

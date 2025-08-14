@@ -35,7 +35,7 @@ struct BattleWindowText
     u8 shadowColor;
 };
 
-static EWRAM_DATA u16 sBattlerAbilities[MAX_BATTLERS_COUNT] = {};
+EWRAM_DATA u16 sBattlerAbilities[MAX_BATTLERS_COUNT] = {};
 static EWRAM_DATA struct BattleMsgData *sBattleMsgDataPtr = NULL;
 
 static void ChooseMoveUsedParticle(u8 *textPtr);

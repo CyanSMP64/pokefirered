@@ -10,4 +10,6 @@ void ShowStartMenu(void);
 void Field_AskSaveTheGame(void);
 void CB2_SetUpSaveAfterLinkBattle(void);
 
+extern u8 sSaveDialogDelay;
+
 #endif // GUARD_START_MENU_H

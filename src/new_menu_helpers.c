@@ -17,7 +17,7 @@
 static EWRAM_DATA bool8 sScheduledBgCopiesToVram[4] = {FALSE};
 static EWRAM_DATA u16 sTempTileDataBufferCursor = {0};
 static EWRAM_DATA void *sTempTileDataBuffers[0x20] = {NULL};
-static EWRAM_DATA u8 sStartMenuWindowId = {0};
+EWRAM_DATA u8 sStartMenuWindowId = {0};
 
 static const u16 sUnusedWindow_Gfx[] = INCBIN_U16("graphics/text_window/unused.4bpp");
 const u16 gMenuMessageWindow_Gfx[] = INCBIN_U16("graphics/text_window/menu_message.4bpp");

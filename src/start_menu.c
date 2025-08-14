@@ -68,7 +68,7 @@ static EWRAM_DATA u8 sSafariZoneStatsWindowId = 0;
 static ALIGNED(4) EWRAM_DATA u8 sSaveStatsWindowId = 0;
 
 static u8 (*sSaveDialogCB)(void);
-static u8 sSaveDialogDelay;
+EWRAM_DATA u8 sSaveDialogDelay = 0;
 static bool8 sSaveDialogIsPrinting;
 
 static void SetUpStartMenu_Link(void);

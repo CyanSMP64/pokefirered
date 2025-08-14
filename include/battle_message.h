@@ -248,6 +248,7 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId_flags);
 bool8 BattleStringShouldBeColored(u16);
 
 extern struct BattleMsgData *gBattleMsgDataPtr;
+extern u16 sBattlerAbilities[MAX_BATTLERS_COUNT];
 
 
 extern u8 gDisplayedStringBattle[300];

@@ -199,6 +199,7 @@ enum
 };
 
 extern struct UnusedControllerStruct gUnusedControllerStruct;
+extern u8 sBattleBuffersTransferData[0x100];
 
 // general functions
 void HandleLinkBattleSetup(void);

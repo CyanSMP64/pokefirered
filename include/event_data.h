@@ -3,6 +3,14 @@
 
 #include "global.h"
 
+#define NUM_SPECIAL_FLAGS  (SPECIAL_FLAGS_END - SPECIAL_FLAGS_START + 1)
+#define NUM_TEMP_FLAGS     (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
+#define NUM_TEMP_VARS      (TEMP_VARS_END - TEMP_VARS_START + 1)
+
+#define SPECIAL_FLAGS_SIZE (NUM_SPECIAL_FLAGS / 8)  // 8 flags per byte
+#define TEMP_FLAGS_SIZE    (NUM_TEMP_FLAGS / 8)
+#define TEMP_VARS_SIZE     (NUM_TEMP_VARS * 2)      // 1/2 var per byte
+
 extern u16 gSpecialVar_0x8000;
 extern u16 gSpecialVar_0x8001;
 extern u16 gSpecialVar_0x8002;
@@ -22,6 +30,7 @@ extern u16 gSpecialVar_MonBoxId;
 extern u16 gSpecialVar_MonBoxPos;
 extern u16 gSpecialVar_TextColor;
 extern u16 gSpecialVar_PrevTextColor;
+extern u8 sSpecialFlags[SPECIAL_FLAGS_SIZE];
 
 void InitEventData(void);
 void ClearTempFieldEventData(void);

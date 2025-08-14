@@ -9,5 +9,9 @@ void BeginEvolutionScene(struct Pokemon* mon, u16 speciesToEvolve, u8, u8 partyI
 void EvolutionScene(struct Pokemon* mon, u16 speciesToEvolve, u8, u8 partyId);
 void TradeEvolutionScene(struct Pokemon* mon, u16 speciesToEvolve, u8 preEvoSpriteId, u8 partyId);
 void IsMovingBackgroundTaskRunning(void);
+void Task_EvolutionScene(u8 taskId);
+
+
+extern struct EvoInfo *sEvoStructPtr;
 
 #endif // GUARD_EVOLUTION_SCENE_H
