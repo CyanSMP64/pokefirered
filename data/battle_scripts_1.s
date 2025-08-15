@@ -4058,11 +4058,11 @@ BattleScript_IntimidateActivatesEnd3::
 BattleScript_DoIntimidateActivationAnim::
 BattleScript_IntimidateActivates::
 	setbyte gBattlerTarget, 0
-	call BattleScript_AbilityPopUp
 	setstatchanger STAT_ATK, 1, TRUE
 BattleScript_IntimidateActivationAnimLoop::
 	trygetintimidatetarget BattleScript_IntimidateEnd
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_IntimidateFail
+	call BattleScript_AbilityPopUp
 	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_IntimidateAbilityFail
 	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_IntimidateAbilityFail_HyperCutter
 	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_IntimidateAbilityFail
