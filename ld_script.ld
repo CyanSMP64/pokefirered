@@ -67,11 +67,6 @@ SECTIONS {
         src/main_menu.o(.text);
         src/battle_controllers.o(.text);
         src/battle_bg.o(.text);
-    } =0
-
-    .text_3 0x080105dc:
-    ALIGN(4)
-    {
         src/battle_main.o(.text);
         src/decompress.o(.text);
         src/battle_util.o(.text);
@@ -201,11 +196,6 @@ SECTIONS {
         src/image_processing_effects.o(.text);
         src/battle_ai_script_commands.o(.text);
         src/field_specials.o(.text);
-    } =0
-
-    .text_6 0x080d40bc:
-    ALIGN(4)
-    {
         src/evolution_scene.o(.text);
         src/bike.o(.text);
         src/fldeff_flash.o(.text);
@@ -337,11 +327,6 @@ SECTIONS {
     ALIGN(4)
     {
         data/battle_anim_scripts.o(script_data);
-    } =0
-
-    script_data_1 0x081db86c:
-    ALIGN(4)
-    {
         data/battle_scripts_1.o(script_data);
         data/field_effect_scripts.o(script_data);
         data/battle_scripts_2.o(script_data);
@@ -438,11 +423,6 @@ SECTIONS {
         src/battle_anim_smokescreen.o(.rodata);
         src/battle_controller_opponent.o(.rodata);
         src/battle_controller_link_opponent.o(.rodata);
-    } =0
-
-    .rodata_2 0x082635cc:
-    SUBALIGN(4)
-    {
         src/pokemon.o(.rodata);
         src/data.o(.rodata);
         src/link.o(.rodata);
@@ -576,11 +556,6 @@ SECTIONS {
         src/union_room_battle.o(.rodata);
         src/pokemon_special_anim.o(.rodata);
         src/pokemon_special_anim_scene.o(.rodata);
-    } =0
-
-    .rodata_4 0x0849cb58:
-    SUBALIGN(4)
-    {
         src/party_menu.o(.rodata);
         src/title_screen.o(.rodata);
         src/union_room_message.o(.rodata);
@@ -710,41 +685,12 @@ SECTIONS {
         src/graphics.o(.rodata);
     } =0
 
-    . = 0x08A00000;
-    empty_data_1 :
-    ALIGN(4)
-    {
-        data/emptydata_insttext.o(.rodata);
-    } =0
-
     script_data_2 :
     ALIGN(4)
     {
         data/event_scripts.o(script_data);
     } =0
 
-    . = 0x08A80000;
-    empty_data_2 :
-    ALIGN(4)
-    {
-        data/emptydata_marowak.o(.rodata);
-    } =0
-
-    . = 0x08A80100;
-    empty_data_3 :
-    ALIGN(4)
-    {
-        data/emptydata_musicfix.o(.rodata);
-    } =0
-
-    . = 0x08A80200;
-    empty_data_4 :
-    ALIGN(4)
-    {
-        data/emptydata_roamers.o(.rodata);
-    } =0
-
-    . = 0x08AA8000;
     song_data :
     ALIGN(4)
     {
@@ -1304,6 +1250,20 @@ SECTIONS {
         sound/songs/midi/mus_b2_vs_champion_kanto.o(.rodata);
         sound/songs/midi/mus_bw_vs_world_championships.o(.rodata);
     }
+
+    . = 0x08A80000;
+    empty_data_2 :
+    ALIGN(4)
+    {
+        data/emptydata_marowak.o(.rodata);
+    } =0
+
+    . = 0x08A80200;
+    empty_data_4 :
+    ALIGN(4)
+    {
+        data/emptydata_roamers.o(.rodata);
+    } =0
 
     .rodata_extras :
     ALIGN(4)

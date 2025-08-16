@@ -409,7 +409,19 @@ int main(int argc, char ** argv)
     print("Type=FRLG\n");
     print("TableFile=gba_english\n");
 
-    print("FreeSpace=0xA80228\n"); // dont write here
+    // Find the first block after the ROM
+    int shnum = GetSectionHeaderCount();
+    uint32_t entry = GetEntryPoint();
+    uint32_t end = entry;
+    for (int i = 0; i < shnum; i++) {
+        Elf32_Shdr * sec = GetSectionHeader(i);
+        end = max(end, sec->sh_addr + sec->sh_size);
+    }
+    end -= entry;
+    if (end & 0xFFFF) {
+        end += 0x10000 - (end & 0xFFFF);
+    }
+    print("FreeSpace=0x%X\n", end);
 
     // Pokemon data
     print("PokemonCount=%d\n", NUM_SPECIES - 1);
@@ -580,7 +592,7 @@ int main(int argc, char ** argv)
 
     print("SpecialMusicStatics=[%d,%d,%d,%d,%d,%d,%d]\n", 144, 145, 146, 150, 249, 250, 386); // hardcoded for now
     print("NewIndexToMusicTweak=musicfix/fr_musicfix_11\n"); // hardcoded
-    print("NewIndexToMusicPoolOffset=0x%X\n", (sym_get("gEmptyDataMusicFix_Start") + 0x40) & 0x1FFFFFF);
+    print("NewIndexToMusicPoolOffset=0x0xA80140\n");
 
     print("ShopItemOffsets=[");
     char buffer2[64];
@@ -626,7 +638,7 @@ int main(int argc, char ** argv)
  * 
  * src/battle_setup.o(.text)
  *         StartMarowakBattle                  - 0x0807f918 (random statics - marowak)
- *         StartLegendaryBattle                - 0x0807f9ec (fix music)
+ *         StartLegendaryBattle                - 0x0807f9ec (fix music) // option removed from randomizer
  * 
  * src/roamer.o(.text)
  *         CreateInitialRoamerMon              - 0x08141d0c (random statics - roamers)
@@ -639,9 +651,9 @@ int main(int argc, char ** argv)
  * 
  * Also please make sure no data is written to the following addresses:
  * 
- * 0x08a00000 - 0x08a000cf (instant text)               only 0xFF bytes
+ * 0x08a00000 - 0x08a000cf (instant text)               only 0xFF bytes // option removed from randomizer
  * 0x08a80000 - 0x08a8002b (random statics - marowak)   only 0xFF bytes
- * 0x08a80100 - 0x08a80167 (fix music)                  only 0xFF bytes
+ * 0x08a80100 - 0x08a80167 (fix music)                  only 0xFF bytes // option removed from randomizer
  * 0x08a80200 - 0x08a80227 (random statics - roamers)   only 0xFF bytes
  * 
 ******************************************************************************/
