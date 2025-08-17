@@ -885,12 +885,12 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
-      "price": 0,
+      "english": "Regional Mineral",
+      "itemId": "ITEM_REGIONAL_ROCK",
+      "price": 4000,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "?????",
+      "description_english": "A mysterious mineral. When held by\\ncertain Pokémon, they can undergo\\nevolutions from distant regions.",
       "importance": 0,
       "grammarAn": 0,
       "registrability": 0,

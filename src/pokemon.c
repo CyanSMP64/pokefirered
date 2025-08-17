@@ -7665,7 +7665,6 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (gEvolutionTable[species][i].param <= level && GetMonGender(mon) == MON_MALE)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            }
             case EVO_LEVEL_LOW_KEY:
                 if (gEvolutionTable[species][i].param <= level)
                 {
@@ -7689,6 +7688,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                     }
                 }
                 break;
+            case EVO_LEVEL_REG_ROCK:
+                if (gEvolutionTable[species][i].param <= level && GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_REGIONAL_ROCK)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            }
         }
         break;
     case EVO_MODE_TRADE:
@@ -7736,6 +7740,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 break;
             case EVO_ITEM_CASCOON:
                 if (gEvolutionTable[species][i].param == evolutionItem && (upperPersonality % 10) > 4)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_ITEM_REG_ROCK:
+                if (gEvolutionTable[species][i].param == evolutionItem && GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_REGIONAL_ROCK)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }

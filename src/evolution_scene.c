@@ -627,6 +627,7 @@ void Task_EvolutionScene(u8 taskId)
 {
     u32 var;
     struct Pokemon* mon = &gPlayerParty[gTasks[taskId].tPartyId];
+    u16 preEvoSpecies = GetMonData(mon, MON_DATA_SPECIES);
 
 //    // Automatically cancel if the Pokemon would evolve into a species you have not
 //    // yet unlocked, such as Crobat.
@@ -775,6 +776,13 @@ void Task_EvolutionScene(u8 taskId)
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
             IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
+            {
+                u16 item = ITEM_NONE;
+                if (GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_REGIONAL_ROCK
+                && (gEvolutionTable[preEvoSpecies][1].method == EVO_LEVEL_REG_ROCK
+                || gEvolutionTable[preEvoSpecies][1].method == EVO_ITEM_REG_ROCK))
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &item);
+            }
         }
         break;
     case EVOSTATE_TRY_LEARN_MOVE:
