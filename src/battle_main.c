@@ -1595,12 +1595,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += ((personalityValue & 0x0000f800) >> 8);
 
+                if (partyData[i].ability == 2) {
+                    personalityValue += 1;
+                }
                 if (partyData[i].isShiny) {
                     otIdType = OT_ID_PRESET;
                     fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
-                }
-                if (partyData[i].ability == 2) {
-                    personalityValue += 1;
                 }
 
                 CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, otIdType, fixedOtId);
@@ -1618,12 +1618,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += ((personalityValue & 0x0000f800) >> 8);
 
+                if (partyData[i].ability == 2) {
+                    personalityValue += 1;
+                }
                 if (partyData[i].isShiny) {
                     otIdType = OT_ID_PRESET;
                     fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
-                }
-                if (partyData[i].ability == 2) {
-                    personalityValue += 1;
                 }
 
                 CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, otIdType, fixedOtId);
@@ -1647,12 +1647,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += ((personalityValue & 0x0000f800) >> 8);
 
+                if (partyData[i].ability == 2) {
+                    personalityValue += 1;
+                }
                 if (partyData[i].isShiny) {
                     otIdType = OT_ID_PRESET;
                     fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
-                }
-                if (partyData[i].ability == 2) {
-                    personalityValue += 1;
                 }
 
                 CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, otIdType, fixedOtId);
@@ -1672,12 +1672,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += ((personalityValue & 0x0000f800) >> 8);
 
+                if (partyData[i].ability == 2) {
+                    personalityValue += 1;
+                }
                 if (partyData[i].isShiny) {
                     otIdType = OT_ID_PRESET;
                     fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
-                }
-                if (partyData[i].ability == 2) {
-                    personalityValue += 1;
                 }
 
                 CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, otIdType, fixedOtId);
