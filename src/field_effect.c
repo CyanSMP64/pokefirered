@@ -1629,7 +1629,8 @@ static bool8 waterfall_1_do_anim_probably(struct Task *task, struct ObjectEvent 
     {
         ObjectEventClearHeldMovementIfFinished(playerObj);
         gFieldEffectArguments[0] = task->data[1];
-        //FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        if (!gSaveBlock2Ptr->optionsHM)
+            FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
         task->data[0]++;
     }
     return FALSE;
@@ -3022,7 +3023,8 @@ static void UseSurfEffect_3(struct Task *task)
     if (ObjectEventCheckHeldMovementStatus(objectEvent))
     {
         gFieldEffectArguments[0] = task->data[15] | 0x80000000;
-        //FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        if (!gSaveBlock2Ptr->optionsHM)
+            FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
         task->data[0]++;
     }
 }
@@ -3242,7 +3244,8 @@ static void FlyOutFieldEffect_ShowMon(struct Task *task)
     {
         task->tState++;
         gFieldEffectArguments[0] = task->tMonPartyId;
-        //FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        if (!gSaveBlock2Ptr->optionsHM)
+            FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
     }
 }
 

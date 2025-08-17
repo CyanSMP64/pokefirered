@@ -73,7 +73,8 @@ static void Task_FieldEffectShowMon_WaitPlayerAnim(u8 taskId)
 {
     if (ObjectEventCheckHeldMovementStatus(&gObjectEvents[gPlayerAvatar.objectEventId]) == TRUE)
     {
-        //FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        if (!gSaveBlock2Ptr->optionsHM)
+            FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
         gTasks[taskId].func = Task_FieldEffectShowMon_WaitFldeff;
     }
 }
@@ -93,7 +94,8 @@ static void Task_FieldEffectShowMon_WaitFldeff(u8 taskId)
             gFieldEffectArguments[2] = 3;
         ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], GetPlayerAvatarGraphicsIdByCurrentState());
         StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], gFieldEffectArguments[2]);
-        //FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON);
+        if (!gSaveBlock2Ptr->optionsHM)
+            FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON);
         gTasks[taskId].func = Task_FieldEffectShowMon_Cleanup;
     }
 }
