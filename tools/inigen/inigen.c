@@ -592,7 +592,7 @@ int main(int argc, char ** argv)
 
     print("SpecialMusicStatics=[%d,%d,%d,%d,%d,%d,%d]\n", 144, 145, 146, 150, 249, 250, 386); // hardcoded for now
     print("NewIndexToMusicTweak=musicfix/fr_musicfix_11\n"); // hardcoded
-    print("NewIndexToMusicPoolOffset=0x0xA80140\n");
+    print("NewIndexToMusicPoolOffset=0xA80140 // never read or written\n");
 
     print("ShopItemOffsets=[");
     char buffer2[64];
