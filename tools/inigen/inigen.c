@@ -512,9 +512,10 @@ int main(int argc, char ** argv)
     print("InstantTextTweak=instant_text/fr_11_instant_text\n"); // so randomizer doesn't complain
     config_set("CatchingTutorialOpponentMonOffset", get_instr_addr(elfFile, "StartOldManTutorialBattle", IsOldManWeedle) & 0x1FFFFFF);
     config_sym("PCPotionOffset", "gNewGamePCItems");
-    print("PickupTableStartLocator=8B000F00850019008600230087002D\n"); // hardcoded
+    print("PickupTableStartLocator=8B0089008500860056005500870088\n"); // hardcoded
     Elf32_Sym * Fr_gPickupItems = GetSymbolByName("sPickupItems");
-    print("PickupItemCount=%d\n", (Fr_gPickupItems->st_size / 4)); // hardcoded for now
+    Elf32_Sym * Fr_gRarePickupItems = GetSymbolByName("sRarePickupItems");
+    print("PickupItemCount=%d\n", (Fr_gPickupItems->st_size / 2) + (Fr_gRarePickupItems->st_size / 2)); // hardcoded for now
     config_sym("TypeEffectivenessOffset", "gTypeEffectiveness");
     print("DeoxysStatPrefix=7F002301FFFF\n"); // hardcoded
     // These may need some fixing to support dynamic offsets.
