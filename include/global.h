@@ -556,8 +556,7 @@ struct QuestLogObjectEvent
     /*0x02*/ u8 unused:3;
     /*0x03*/ u8 currentElevation:4;
     /*0x03*/ u8 previousElevation:4;
-    /*0x04*/ u8 graphicsId;
-    /*0x05*/ u8 movementType;
+    /*0x04*/ u16 graphicsId;
     /*0x06*/ u8 trainerType;
     /*0x07*/ u8 localId;
     /*0x08*/ u8 mapNum;
@@ -568,6 +567,7 @@ struct QuestLogObjectEvent
     /*0x0f*/ u8 previousMetatileBehavior;
     /*0x10*/ u8 directionSequenceIndex;
     /*0x11*/ u8 animId;
+    /*0x12*/ u8 movementType;
 };
 
 // This represents all the data needed to display a single scene for the "Quest Log" when the player resumes playing.
