@@ -121,7 +121,7 @@ voicegroup163::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 voicegroup163_looctwav::
-	voice_directsound 60, 0, DirectSoundWaveData_puresquare_25, 255, 210, 80, 80
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 210, 80, 80
 	voice_square_2_alt 60, 0, 3, 0, 3, 4, 2
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
