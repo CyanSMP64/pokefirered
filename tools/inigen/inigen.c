@@ -607,6 +607,8 @@ int main(int argc, char ** argv)
 
     print("SkipShops=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 16, 17, 18, 19, 20, 21, 22]\n"); // hardcoded
     print("MainGameShops=[12, 13, 14]\n"); // hardcoded
+    config_sym("EventScriptsStart", "gScriptCmdTable");
+    config_sym("EventScriptsEnd", "CeladonCity_House2_MapScripts");
     print("CRC32=84EE4776\n"); // CRC32 of an official FireRed 1.1 ROM. Unless you change it the rando will tell you that it's unofficial, but it doesn't matter,
 
     DestroyResources();
