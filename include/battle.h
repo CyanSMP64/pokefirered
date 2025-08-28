@@ -74,7 +74,8 @@ struct TrainerMonNoItemDefaultMoves
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
-    //u8 padding:5;
+    u8 forcedGender:3;
+    //u8 padding:2;
     u16 species;
 };
 
@@ -84,7 +85,8 @@ struct TrainerMonItemDefaultMoves
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
-    //u8 padding:5;
+    u8 forcedGender:3;
+    //u8 padding:2;
     u16 species;
     u16 heldItem;
 };
@@ -95,7 +97,8 @@ struct TrainerMonNoItemCustomMoves
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
-    //u8 padding:5;
+    u8 forcedGender:3;
+    //u8 padding:2;
     u16 species;
     u16 moves[MAX_MON_MOVES];
 };
@@ -106,7 +109,8 @@ struct TrainerMonItemCustomMoves
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
-    //u8 padding:5;
+    u8 forcedGender:3;
+    //u8 padding:2;
     u16 species;
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
