@@ -423,7 +423,6 @@ SECTIONS {
         src/battle_anim_smokescreen.o(.rodata);
         src/battle_controller_opponent.o(.rodata);
         src/battle_controller_link_opponent.o(.rodata);
-        src/pokemon.o(.rodata);
         src/data.o(.rodata);
         src/link.o(.rodata);
         src/battle_main.o(.rodata);
@@ -437,12 +436,18 @@ SECTIONS {
         src/trade.o(.rodata);
         src/trade_scene.o(.rodata);
         src/overworld.o(.rodata);
-        src/tilesets.o(.rodata);
-        data/maps.o(.rodata);
         src/fieldmap.o(.rodata);
         src/metatile_behavior.o(.rodata);
         src/field_door.o(.rodata);
         src/field_player_avatar.o(.rodata);
+    } =0
+
+    .rodata_pokemon 0x08250c74 : @ moved gBattleMoves to vanilla address for now
+    SUBALIGN(4)
+    {
+        src/pokemon.o(.rodata);
+        src/tilesets.o(.rodata);
+        data/maps.o(.rodata);
         src/event_object_movement.o(.rodata);
         src/scrcmd.o(.rodata);
         src/coord_event_weather.o(.rodata);
