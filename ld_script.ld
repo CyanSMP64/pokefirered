@@ -442,7 +442,7 @@ SECTIONS {
         src/field_player_avatar.o(.rodata);
     } =0
 
-    .rodata_pokemon 0x08250c74 : @ moved gBattleMoves to vanilla address for now
+    .rodata_pokemon 0x08250c74 : /* moved gBattleMoves to vanilla address for now */
     SUBALIGN(4)
     {
         src/pokemon.o(.rodata);
