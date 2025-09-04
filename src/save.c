@@ -182,6 +182,10 @@ static u8 HandleWriteSector(u16 sectorId, const struct SaveSectorLocation *locat
         ((char *)gSaveDataBufferPtr)[i] = 0;
 
     // fill buffer with save data
+    gSaveDataBufferPtr->saveVersionMajor = NATDEX_VERSION_MAJOR;
+    gSaveDataBufferPtr->saveVersionMinor = NATDEX_VERSION_MINOR;
+    gSaveDataBufferPtr->saveVersionPatch = NATDEX_VERSION_PATCH;
+    gSaveDataBufferPtr->saveVersionBuild = NATDEX_VERSION_BUILD;
     gSaveDataBufferPtr->id = sectorId;
     gSaveDataBufferPtr->signature = SECTOR_SIGNATURE;
     gSaveDataBufferPtr->counter = gSaveCounter;
@@ -304,6 +308,10 @@ static u8 HandleReplaceSector(u16 sectorId, const struct SaveSectorLocation *loc
         ((char *)gSaveDataBufferPtr)[i] = 0;
 
     // fill buffer with save data
+    gSaveDataBufferPtr->saveVersionMajor = NATDEX_VERSION_MAJOR;
+    gSaveDataBufferPtr->saveVersionMinor = NATDEX_VERSION_MINOR;
+    gSaveDataBufferPtr->saveVersionPatch = NATDEX_VERSION_PATCH;
+    gSaveDataBufferPtr->saveVersionBuild = NATDEX_VERSION_BUILD;
     gSaveDataBufferPtr->id = sectorId;
     gSaveDataBufferPtr->signature = SECTOR_SIGNATURE;
     gSaveDataBufferPtr->counter = gSaveCounter;
@@ -454,6 +462,7 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
 {
     u16 sector;
     bool8 signatureValid;
+    bool8 versionMatch;
     u16 checksum;
     u32 slot1saveCounter = 0;
     u32 slot2saveCounter = 0;
@@ -465,6 +474,7 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
     // check save slot 1.
     validSectors = 0;
     signatureValid = FALSE;
+    versionMatch = FALSE;
     for (sector = 0; sector < NUM_SECTORS_PER_SLOT; sector++)
     {
         ReadFlashSector(sector, gSaveDataBufferPtr);
@@ -478,6 +488,12 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
                 validSectors |= 1 << gSaveDataBufferPtr->id;
             }
         }
+        if (gSaveDataBufferPtr->saveVersionMajor == NATDEX_VERSION_MAJOR
+         && gSaveDataBufferPtr->saveVersionMinor == NATDEX_VERSION_MINOR
+         && gSaveDataBufferPtr->saveVersionPatch == NATDEX_VERSION_PATCH
+         && gSaveDataBufferPtr->saveVersionBuild == NATDEX_VERSION_BUILD) {
+            versionMatch = TRUE;
+        }
     }
 
     if (signatureValid)
@@ -490,9 +506,13 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
     else
         slot1Status = SAVE_STATUS_EMPTY;
 
+    if (slot1Status != SAVE_STATUS_EMPTY && !versionMatch)
+        slot1Status = SAVE_STATUS_VERSION_MISMATCH;
+
     // check save slot 2.
     validSectors = 0;
     signatureValid = FALSE;
+    versionMatch = FALSE;
     for (sector = 0; sector < NUM_SECTORS_PER_SLOT; sector++)
     {
         ReadFlashSector(NUM_SECTORS_PER_SLOT + sector, gSaveDataBufferPtr);
@@ -506,6 +526,12 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
                 validSectors |= 1 << gSaveDataBufferPtr->id;
             }
         }
+        if (gSaveDataBufferPtr->saveVersionMajor == NATDEX_VERSION_MAJOR
+         && gSaveDataBufferPtr->saveVersionMinor == NATDEX_VERSION_MINOR
+         && gSaveDataBufferPtr->saveVersionPatch == NATDEX_VERSION_PATCH
+         && gSaveDataBufferPtr->saveVersionBuild == NATDEX_VERSION_BUILD) {
+            versionMatch = TRUE;
+        }
     }
 
     if (signatureValid)
@@ -517,6 +543,9 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
     }
     else
         slot2Status = SAVE_STATUS_EMPTY;
+
+    if (slot2Status != SAVE_STATUS_EMPTY && !versionMatch)
+        slot2Status = SAVE_STATUS_VERSION_MISMATCH;
 
     if (slot1Status == SAVE_STATUS_OK && slot2Status == SAVE_STATUS_OK)
     {
@@ -536,6 +565,31 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
                 gSaveCounter = slot1saveCounter;
         }
         return SAVE_STATUS_OK;
+    }
+
+    if (slot1Status == SAVE_STATUS_VERSION_MISMATCH && slot2Status == SAVE_STATUS_VERSION_MISMATCH)
+    {
+        gSaveCounter = 0;
+        gLastWrittenSector = 0;
+        return SAVE_STATUS_VERSION_MISMATCH;
+    }
+
+    if (slot1Status == SAVE_STATUS_VERSION_MISMATCH)
+    {
+        gSaveCounter = slot2saveCounter;
+        if (slot2Status == SAVE_STATUS_OK)
+            return SAVE_STATUS_OK;
+        else
+            return SAVE_STATUS_VERSION_MISMATCH;
+    }
+
+    if (slot2Status == SAVE_STATUS_VERSION_MISMATCH)
+    {
+        gSaveCounter = slot1saveCounter;
+        if (slot1Status == SAVE_STATUS_OK)
+            return SAVE_STATUS_OK;
+        else
+            return SAVE_STATUS_VERSION_MISMATCH;
     }
 
     if (slot1Status == SAVE_STATUS_OK)

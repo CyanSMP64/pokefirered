@@ -247,6 +247,11 @@ static void Task_SetWin0BldRegsAndCheckSaveFile(u8 taskId)
             gTasks[taskId].tMenuType = MAIN_MENU_NEWGAME;
             PrintSaveErrorStatus(taskId, gText_SaveFileHasBeenDeleted);
             break;
+        case SAVE_STATUS_VERSION_MISMATCH:
+            SetStdFrame0OnBg(0);
+            gTasks[taskId].tMenuType = MAIN_MENU_NEWGAME;
+            PrintSaveErrorStatus(taskId, gText_SaveFileVersionMismatch);
+            break;
         case SAVE_STATUS_ERROR:
             SetStdFrame0OnBg(0);
             gTasks[taskId].tMenuType = MAIN_MENU_CONTINUE;

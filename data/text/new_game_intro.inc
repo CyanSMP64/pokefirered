@@ -11,16 +11,16 @@ gNameChoice_Leaf::
     .string "Leaf$"
 
 gNameChoice_Fire::
-    .string "Dumper$"
+    .string "Sen$"
 
 gNameChoice_Gary::
     .string "Kaizo$"
 
 gNameChoice_Kaz::
-    .string "Fart$"
+    .string "Super$"
 
 gNameChoice_Toru::
-    .string "Skissue$"
+    .string "Fart$"
 
 gNameChoice_Ash::
     .string "Pie$"
@@ -71,7 +71,7 @@ gNameChoice_Tosh::
     .string "Maple$"
 
 gNameChoice_Roak::
-    .string ":)$"
+    .string "Kyle$"
 
 gNameChoice_Omi::
     .string "Ame$"
@@ -80,16 +80,16 @@ gNameChoice_Jodi::
     .string "Zac$"
 
 gNameChoice_Amanda::
-    .string "Shrave$"
+    .string "Ice$"
 
 gNameChoice_Hillary::
     .string "Shorts$"
 
 gNameChoice_Makey::
-    .string "Aaaaaaa$"
+    .string "Staton$"
 
 gNameChoice_Michi::
-    .string "?????$"
+    .string "Isshaku$"
 
 gNameChoice_Paula::
     .string "Paula$"

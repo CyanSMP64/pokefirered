@@ -30,6 +30,7 @@ const u8 gText_SaveFileUpdatedSwapBackup[] = _("レポ-トが こうしんされ
 const u8 gText_FailedUpdateSwapBackup[] = _("レポ-トの こうしんは\nしっぱいしました!\pバックアップカ-トリッジを\nこうかんしてください!\pくわしくは\nにんてんどう サ-ビスセンタ- まで\lおといあわせ ください");
 const u8 gText_SaveFileCorrupted[] = _("The save file is corrupted.\pThe previous save file will be\nloaded.");
 const u8 gText_SaveFileHasBeenDeleted[] = _("The save file has been\ndeleted...");
+const u8 gText_SaveFileVersionMismatch[] = _("The save file was created on a\ndifferent version of the ROM.\pIf you want to continue where you\nleft off, run this save file on\lthe version last played.");
 const u8 gText_1MSubCircuitBoardNotInstalled[] = _("The 1M sub-circuit board is\nnot installed.");
 const u8 gTextJP_InternalBatteryHasRunDry[] = _("でんちぎれの ために\nとけいが うごかなくなりました\pとけいに かんけいする できごとは おきませんが\nゲ-ムを つづけて あそぶことは できます");
 const u8 gText_PlayerUnused[] = _("しゅじんこう");

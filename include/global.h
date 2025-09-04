@@ -327,7 +327,7 @@ struct SaveBlock2
     /*0x3F0*/ struct BerryPickingResults berryPick;
     /*0x400*/ u32 encryptionKey;
     /*0x404*/ struct Mail mail[MAIL_COUNT];
-}; // size: 0x644
+};
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
 

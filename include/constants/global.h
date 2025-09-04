@@ -30,6 +30,12 @@
 #define GAME_LANGUAGE (LANGUAGE_ENGLISH)
 #endif
 
+#define NATDEX_VERSION_MAJOR 1
+#define NATDEX_VERSION_MINOR 1
+#define NATDEX_VERSION_PATCH 3
+// revision number: git describe --tags
+#define NATDEX_VERSION_BUILD 165
+
 // capacities of various saveblock objects
 #define DAYCARE_MON_COUNT   2
 #define PC_ITEMS_COUNT      30
