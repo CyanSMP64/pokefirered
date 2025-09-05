@@ -1342,3 +1342,6 @@ const u8 gText_HM08Dive[] = _("Dive");
 
 const u8 gText_A[] = _("a");
 const u8 gText_An[] = _("an");
+
+const u8 gText_V[] = _("v");
+const u8 gText_DashR[] = _("-r");

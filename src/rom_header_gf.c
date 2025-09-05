@@ -308,7 +308,7 @@ struct GFRomHeader
     u8 romVersionMajor;                                                                         // 0x48c
     u8 romVersionMinor;                                                                         // 0x48d
     u8 romVersionPatch;                                                                         // 0x48e
-    u32 romVersionBuild;                                                                         // 0x48f
+    u32 romVersionBuild;                                                                        // 0x490
 };
 
 // This seems to need to be in the text section for some reason.
