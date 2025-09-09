@@ -114,7 +114,7 @@ struct TrainerMonItemCustomMoves
     u16 species;
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
-};
+} *gTrainerMonItemCustomMoves;
 
 #define NO_ITEM_DEFAULT_MOVES(party) { .NoItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = 0
 #define NO_ITEM_CUSTOM_MOVES(party) { .NoItemCustomMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET
@@ -135,12 +135,12 @@ struct Trainer
     /*0x01*/ u8 trainerClass;
     /*0x02*/ u8 encounterMusic_gender; // last bit is gender
     /*0x03*/ u8 trainerPic;
-    /*0x04*/ u8 trainerName[12];
-    /*0x10*/ u16 items[MAX_TRAINER_ITEMS];
-    /*0x18*/ bool8 doubleBattle;
-    /*0x1C*/ u32 aiFlags;
-    /*0x20*/ u8 partySize;
-    /*0x24*/ const union TrainerMonPtr party;
+    /*0x04*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
+    /*0x14*/ u16 items[MAX_TRAINER_ITEMS];
+    /*0x1C*/ bool8 doubleBattle;
+    /*0x20*/ u32 aiFlags;
+    /*0x24*/ u8 partySize;
+    /*0x28*/ const union TrainerMonPtr party;
 };
 
 extern const struct Trainer gTrainers[];

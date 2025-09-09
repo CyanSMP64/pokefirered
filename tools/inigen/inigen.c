@@ -462,7 +462,7 @@ int main(int argc, char ** argv)
     print("TrainerClassNames=0x%X\n", Fr_gTrainerClassNames->st_value & 0x1FFFFFF);
     print("TrainerClassCount=%d\n", TRAINER_CLASS_COUNT);
     print("TrainerClassNameLength=%d\n", Fr_gTrainerClassNames->st_size / TRAINER_CLASS_COUNT);
-    print("TrainerNameLength=%d\n", 12); // hardcoded for now
+    print("TrainerNameLength=%d\n", 16); // hardcoded for now
     print("DoublesTrainerClasses=[%d, %d, %d, %d, %d, %d, %d, %d, %d, %d]\n",
           TRAINER_CLASS_SR_AND_JR, TRAINER_CLASS_RS_TWINS, TRAINER_CLASS_RS_YOUNG_COUPLE, TRAINER_CLASS_OLD_COUPLE, TRAINER_CLASS_RS_SIS_AND_BRO, // RS
           TRAINER_CLASS_TWINS, TRAINER_CLASS_COOL_COUPLE, TRAINER_CLASS_YOUNG_COUPLE, TRAINER_CLASS_CRUSH_KIN, TRAINER_CLASS_SIS_AND_BRO // FRLG
