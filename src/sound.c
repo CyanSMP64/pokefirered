@@ -83,11 +83,6 @@ void MapMusicMain(void)
         PlayBGM(sCurrentMapMusic);
         break;
     case 2:
-        if (sCurrentMapMusic == MUS_RG_SS_ANNE && FlagGet(FLAG_SUPER_KAIZO)) {
-            m4aMPlayTempoControl(&gMPlayInfo_BGM, 224);
-            m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, -592);
-        }
-        break;
     case 3:
     case 4:
         break;

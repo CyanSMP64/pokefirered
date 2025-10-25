@@ -1,10 +1,6 @@
 PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou::
     .string "Mom: Come here! Quick!$"
 
-PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou::
-    .string "Mom: Are you playing the\n"
-    .string "Super Kaizo ruleset?$"
-
 PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest::
     .string "Mom: {PLAYER}!\n"
     .string "You should take a quick rest.$"
@@ -30,5 +26,5 @@ PalletTown_PlayersHouse_1F_Text_OopsWrongSide::
     .string "Oops, wrong side…$"
 
 PalletTown_PlayersHouse_1F_Text_OkayGoodLuck:
-	.string "Okay, good luck!$"
+	.string "Mom: Want to see a magic trick?$"
 

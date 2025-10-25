@@ -1062,11 +1062,13 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_FAME_CHECKER_KOGA_JOURNAL
 	setflag FLAG_HIDE_FAME_CHECKER_LT_SURGE_JOURNAL
 	setflag FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS
-	setflag FLAG_HIDE_SS_ANNE_SUPER_KAIZO_TRAINERS
-	setflag FLAG_HIDE_CELADON_ROCKET_GRUNT_3
 	setflag FLAG_HIDE_OAK_PALLET_TOWN_BALL_CUTSCENE
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 500
+EventScript_SetHiddenItemSparkleFlag::
+	clearflag FLAG_HIDDEN_ITEM_SPARKLES		@ this flag will be set by a randomizer setting
+EventScript_SetModernExpFlag::
+	clearflag FLAG_MODERN_EXP_SCALE			@ this flag will be set by a randomizer setting
 	end
 
 	.include "data/scripts/hall_of_fame.inc"

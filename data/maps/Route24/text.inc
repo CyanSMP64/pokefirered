@@ -98,17 +98,3 @@ Route24_Text_CaleDefeat::
 
 Route24_Text_CalePostBattle::
     .string "I did my best. I have no regrets!$"
-
-Route24_Text_ShowMeYourCascadeBadge::
-    .string "Hey, you!\n"
-    .string "Show me your Cascade Badge.$"
-
-Route24_Text_NoCascadeBadge::
-    .string "You don't have the Cascade Badge.\p"
-    .string "You have to have it to pass\n"
-    .string "through here.$"
-
-Route24_Text_ThatsTheCascadeBadge::
-    .string "Hey! That's the Cascade Badge!\p"
-    .string "Okay, then.\n"
-    .string "Please, go right ahead.$"
