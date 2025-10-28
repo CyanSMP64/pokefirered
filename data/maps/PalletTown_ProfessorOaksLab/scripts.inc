@@ -36,9 +36,11 @@ PalletTown_ProfessorOaksLab_EventScript_SetNationalDexSceneFinished::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_ReadyOakForStarterScene::
-	setobjectxyperm LOCALID_PROF_OAK, 6, 11
-	setobjectmovementtype LOCALID_PROF_OAK, MOVEMENT_TYPE_FACE_UP
-	savebgm MUS_RG_OAK
+@	setobjectxyperm LOCALID_PROF_OAK, 6, 11
+@	setobjectmovementtype LOCALID_PROF_OAK, MOVEMENT_TYPE_FACE_UP
+@	savebgm MUS_RG_OAK
+	setobjectxy OBJ_EVENT_ID_PLAYER, 9, 0
+	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_ReadyOakForNationalDexScene::
@@ -51,7 +53,8 @@ PalletTown_ProfessorOaksLab_OnWarp::
 	.2byte 0
 
 PalletTown_ProfessorOaksLab_EventScript_ReadyPlayerForStarterScene::
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+@	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	setobjectxy OBJ_EVENT_ID_PLAYER, 9, 0
 	end
 
 PalletTown_ProfessorOaksLab_OnFrame::
@@ -207,17 +210,21 @@ PalletTown_ProfessorOaksLab_Movement_OakBringDexesToDeskSouth::
 PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	lockall
 	textcolor NPC_TEXT_COLOR_MALE
-	applymovement LOCALID_PROF_OAK, PalletTown_ProfessorOaksLab_Movement_OakEnter
-	waitmovement 0
-	removeobject LOCALID_PROF_OAK
-	setobjectxyperm LOCALID_PROF_OAK, 6, 3
-	setobjectmovementtype LOCALID_PROF_OAK, MOVEMENT_TYPE_FACE_DOWN
-	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
+@	applymovement LOCALID_PROF_OAK, PalletTown_ProfessorOaksLab_Movement_OakEnter
+@	waitmovement 0
+@	removeobject LOCALID_PROF_OAK
+@	setobjectxyperm LOCALID_PROF_OAK, 6, 3
+@	setobjectmovementtype LOCALID_PROF_OAK, MOVEMENT_TYPE_FACE_DOWN
+@	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
+	playse SE_WARP_OUT
+	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_ProfessorOaksLab_Movement_PlayerEnter
 	waitmovement 0
+	special RemoveCameraObject
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	savebgm MUS_DUMMY
 	fadedefaultbgm
+	waitse
 	msgbox PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne
 	closemessage
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2
@@ -234,19 +241,17 @@ PalletTown_ProfessorOaksLab_Movement_OakEnter::
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_PlayerEnter::
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_up
+	delay_16
+	face_up
+	disable_anim
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	restore_anim
+	face_up
 	step_end
 
 PalletTown_ProfessorOaksLab_Movement_RivalReact::

@@ -1073,8 +1073,8 @@ bool8 ScrCmd_addobjectat(struct ScriptContext * ctx)
 bool8 ScrCmd_setobjectxy(struct ScriptContext * ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
-    u16 x = VarGet(ScriptReadHalfword(ctx));
-    u16 y = VarGet(ScriptReadHalfword(ctx));
+    s16 x = VarGet(ScriptReadHalfword(ctx));
+    s16 y = VarGet(ScriptReadHalfword(ctx));
 
     TryMoveObjectEventToMapCoords(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
     return FALSE;
@@ -1083,8 +1083,8 @@ bool8 ScrCmd_setobjectxy(struct ScriptContext * ctx)
 bool8 ScrCmd_setobjectxyperm(struct ScriptContext * ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
-    u16 x = VarGet(ScriptReadHalfword(ctx));
-    u16 y = VarGet(ScriptReadHalfword(ctx));
+    s16 x = VarGet(ScriptReadHalfword(ctx));
+    s16 y = VarGet(ScriptReadHalfword(ctx));
 
     SetObjEventTemplateCoords(localId, x, y);
     return FALSE;

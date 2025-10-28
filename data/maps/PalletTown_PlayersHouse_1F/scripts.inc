@@ -10,12 +10,19 @@ PalletTown_PlayersHouse_1F_EventScript_Mom::
 	call PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale
 	closemessage
 	waitdooranim
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_PlayersHouse_1F_Movement_PlayerSpin
+	waitmovement 0
+	playse SE_WARP_IN
+	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_PlayersHouse_1F_Movement_PlayerWarpOut
+	waitmovement 0
+	special RemoveCameraObject
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
 	setvar VAR_MAP_SCENE_PALLET_TOWN_OAK, 1
 	setflag FLAG_HIDE_OAK_IN_PALLET_TOWN
 	setflag FLAG_DONT_TRANSITION_MUSIC
-	warp MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB, 6, 12
+	warpsilent MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB, 9, 6
 	waitstate
 	applymovement LOCALID_MOM, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -67,3 +74,25 @@ PalletTown_PlayersHouse_1F_EventScript_TVScreenMale::
 PalletTown_PlayersHouse_1F_EventScript_TVScreenFemale::
 	msgbox PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad
 	return
+
+PalletTown_PlayersHouse_1F_Movement_PlayerSpin:
+	face_up
+	delay_4
+	face_left
+	delay_4
+	face_down
+	delay_4
+	face_right
+	delay_4
+	step_end
+
+PalletTown_PlayersHouse_1F_Movement_PlayerWarpOut:
+	face_up
+	disable_anim
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	step_end
