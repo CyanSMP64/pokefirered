@@ -1,9 +1,10 @@
 	.equiv ID_NUMBER, 0x68736d53
 
-	.equiv PCM_DMA_BUF_SIZE, 1584
-	.equiv MAX_DIRECTSOUND_CHANNELS, 12
+	.equiv PCM_DMA_BUF_SIZE, 1488
+	.equiv MAX_DIRECTSOUND_CHANNELS, 16
 
 	.equiv C_V, 0x40
+	.equiv C_B, 0x80
 
 	.equiv TONEDATA_TYPE_CGB, 0x07
 	.equiv TONEDATA_TYPE_FIX, 0x08

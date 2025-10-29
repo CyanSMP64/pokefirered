@@ -5862,18 +5862,57 @@ static u16 GetBattleBGM(void)
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_LEADER:
-        case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_GYM_LEADER;
-        case TRAINER_CLASS_BOSS:
-        case TRAINER_CLASS_TEAM_ROCKET:
-        case TRAINER_CLASS_COOLTRAINER:
-        case TRAINER_CLASS_GENTLEMAN:
+        case TRAINER_CLASS_ELITE_FOUR:
+            return MUS_VS_ELITE_FOUR;
+        case TRAINER_CLASS_RIVAL_EARLY:
         case TRAINER_CLASS_RIVAL_LATE:
+            return MUS_VS_RIVAL;
+        case TRAINER_CLASS_BOSS:
+            return MUS_VS_GHETSIS;
+        case TRAINER_CLASS_TEAM_ROCKET:
+            return MUS_VS_PLASMA;
         default:
             return MUS_VS_TRAINER;
         }
     }
-    return MUS_VS_WILD;
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL)) {
+        case SPECIES_ARTICUNO:
+        case SPECIES_ZAPDOS:
+        case SPECIES_MOLTRES:
+        case SPECIES_MEW:
+        case SPECIES_CELEBI:
+        case SPECIES_LATIAS:
+        case SPECIES_LATIOS:
+        case SPECIES_JIRACHI:
+        case SPECIES_DEOXYS:
+            return MUS_VS_LEGEND;
+        case SPECIES_MEWTWO:
+            return MUS_VS_MEWTWO;
+        case SPECIES_RAIKOU:
+            return MUS_VS_RAIKOU;
+        case SPECIES_ENTEI:
+            return MUS_VS_ENTEI;
+        case SPECIES_SUICUNE:
+            return MUS_VS_SUICUNE;
+        case SPECIES_LUGIA:
+            return MUS_VS_LUGIA;
+        case SPECIES_HO_OH:
+            return MUS_VS_HO_OH;
+        case SPECIES_REGIROCK:
+        case SPECIES_REGICE:
+        case SPECIES_REGISTEEL:
+            return MUS_VS_REGI;
+        case SPECIES_KYOGRE:
+        case SPECIES_GROUDON:
+        case SPECIES_RAYQUAZA:
+            return MUS_VS_KYOGRE_GROUDON;
+        default:
+            if (FlagGet(FLAG_SYS_SPECIAL_WILD_BATTLE) || gBattleTypeFlags & BATTLE_TYPE_GHOST_UNVEILED)
+                return MUS_RS_VS_TRAINER;
+            else
+                return MUS_VS_WILD;
+    }
 }
 
 void PlayBattleBGM(void)

@@ -255,83 +255,83 @@ gSongTable::
 	song se_deoxys_move, 1, 1
 	song se_poke_jump_success, 1, 1
 	song se_poke_jump_failure, 1, 1
-	song mus_heal, 2, 2
-	song mus_level_up, 2, 2
-	song mus_obtain_item, 2, 2
-	song mus_evolved, 2, 2
-	song mus_obtain_badge, 2, 2
-	song mus_obtain_tmhm, 2, 2
-	song mus_obtain_berry, 2, 2
-	song mus_evolution_intro, 2, 2
-	song mus_evolution, 0, 0
+	song mus_bw_heal, 2, 2
+	song mus_bw_level_up, 2, 2
+	song mus_bw_obtain_item, 2, 2
+	song mus_bw_evolved, 2, 2
+	song mus_bw_obtain_badge, 2, 2
+	song mus_bw_obtain_tmhm, 2, 2
+	song mus_bw_obtain_berry, 2, 2
+	song mus_bw_evolution_intro, 2, 2
+	song mus_bw_evolution, 0, 0
 	song mus_rs_vs_gym_leader, 0, 0
-	song mus_rs_vs_trainer, 0, 0
+	song mus_bw_vs_strong_wild, 0, 0
 	song mus_school, 0, 0
 	song mus_slots_jackpot, 2, 2
 	song mus_slots_win, 2, 2
-	song mus_move_deleted, 2, 2
+	song mus_bw_move_deleted, 2, 2
 	song mus_too_bad, 2, 2
-	song mus_follow_me, 0, 0
-	song mus_game_corner, 0, 0
-	song mus_rocket_hideout, 0, 0
-	song mus_gym, 0, 0
+	song mus_bw_follow_me, 0, 0
+	song mus_bw_opelucid_black, 0, 0
+	song mus_bw_plasma, 0, 0
+	song mus_bw_gym, 0, 0
 	song mus_jigglypuff, 2, 2
-	song mus_intro_fight, 0, 0
-	song mus_title, 0, 0
+	song mus_bw_intro2, 0, 0
+	song mus_bw_title, 0, 0
 	song mus_cinnabar, 0, 0
-	song mus_lavender, 0, 0
+	song mus_bw_opelucid_white, 0, 0
 	song mus_heal_unused, 0, 0
-	song mus_cycling, 0, 0
-	song mus_encounter_rocket, 0, 0
-	song mus_encounter_girl, 0, 0
-	song mus_encounter_boy, 0, 0
-	song mus_hall_of_fame, 0, 0
-	song mus_viridian_forest, 0, 0
-	song mus_mt_moon, 0, 0
-	song mus_poke_mansion, 0, 0
+	song mus_bw_bicycle, 0, 0
+	song mus_bw_encounter_plasma, 0, 0
+	song mus_bw_encounter_girl, 0, 0
+	song mus_bw_encounter_boy, 0, 0
+	song mus_bw_hall_of_fame, 0, 0
+	song mus_bw_dreamyard, 0, 0
+	song mus_bw_chargestone_cave, 0, 0
+	song mus_bw_cold_storage, 0, 0
 	song mus_credits, 0, 0
-	song mus_route1, 0, 0
-	song mus_route24, 0, 0
-	song mus_route3, 0, 0
-	song mus_route11, 0, 0
-	song mus_victory_road, 0, 0
-	song mus_vs_gym_leader, 0, 0
-	song mus_vs_trainer, 0, 0
-	song mus_vs_wild, 0, 0
-	song mus_vs_champion, 0, 0
-	song mus_pallet, 0, 0
-	song mus_oak_lab, 0, 0
-	song mus_oak, 0, 0
-	song mus_poke_center, 0, 0
-	song mus_ss_anne, 0, 0
-	song mus_surf, 0, 0
-	song mus_poke_tower, 0, 0
-	song mus_silph, 0, 0
-	song mus_fuchsia, 0, 0
-	song mus_celadon, 0, 0
-	song mus_victory_trainer, 0, 0
-	song mus_victory_wild, 0, 0
-	song mus_victory_gym_leader, 0, 0
-	song mus_vermillion, 0, 0
-	song mus_pewter, 0, 0
-	song mus_encounter_rival, 0, 0
-	song mus_rival_exit, 0, 0
-	song mus_dex_rating, 2, 2
-	song mus_obtain_key_item, 2, 2
-	song mus_caught_intro, 2, 2
+	song mus_bw_route1, 0, 0
+	song mus_bw_route4, 0, 0
+	song mus_bw_route2, 0, 0
+	song mus_bw_route6, 0, 0
+	song mus_bw_pokemon_league, 0, 0
+	song mus_bw_vs_gym_leader, 0, 0
+	song mus_bw_vs_trainer, 0, 0
+	song mus_bw_vs_wild, 0, 0
+	song mus_bw_vs_n_final, 0, 0
+	song mus_bw_aspertia, 0, 0
+	song mus_bw_lab, 0, 0
+	song mus_bw_follow_me1, 0, 0
+	song mus_bw_poke_center, 0, 0
+	song mus_bw_royal_unova, 0, 0
+	song mus_bw_surf, 0, 0
+	song mus_bw_dragonspiral_tower, 0, 0
+	song mus_bw_n_castle_bridge, 0, 0
+	song mus_bw_icirrus, 0, 0
+	song mus_bw_driftveil, 0, 0
+	song mus_bw_victory_trainer, 0, 0
+	song mus_bw_victory_wild, 0, 0
+	song mus_bw_victory_gym_leader, 0, 0
+	song mus_bw_castelia, 0, 0
+	song mus_bw_striaton, 0, 0
+	song mus_bw_encounter_n, 0, 0
+	song mus_bw_encounter_n, 0, 0
+	song mus_bw_dex_rating, 2, 2
+	song mus_bw_obtain_key_item, 2, 2
+	song mus_bw_evolved, 2, 2
 	song mus_photo, 2, 2
 	song mus_game_freak, 0, 0
-	song mus_caught, 0, 0
-	song mus_new_game_instruct, 0, 0
-	song mus_new_game_intro, 0, 0
+	song mus_bw_victory_wild, 0, 0
+	song mus_bw_starting, 0, 0
+	song mus_bw_starting2, 0, 0
 	song mus_new_game_exit, 0, 0
 	song mus_poke_jump, 0, 0
 	song mus_union_room, 0, 0
-	song mus_net_center, 0, 0
+	song mus_bw_poke_center, 0, 0
 	song mus_mystery_gift, 0, 0
 	song mus_berry_pick, 0, 0
 	song mus_sevii_cave, 0, 0
-	song mus_teachy_tv_show, 0, 0
+	song mus_bw_follow_me, 0, 0
 	song mus_sevii_route, 0, 0
 	song mus_sevii_dungeon, 0, 0
 	song mus_sevii_123, 0, 0
@@ -339,13 +339,178 @@ gSongTable::
 	song mus_sevii_67, 0, 0
 	song mus_poke_flute, 2, 2
 	song mus_vs_deoxys, 0, 0
-	song mus_vs_mewtwo, 0, 0
-	song mus_vs_legend, 0, 0
+	song mus_bw_vs_kyurem, 0, 0
+	song mus_bw_vs_legend, 0, 0
 	song mus_encounter_gym_leader, 0, 0
 	song mus_encounter_deoxys, 0, 0
 	song mus_trainer_tower, 0, 0
-	song mus_slow_pallet, 0, 0
+	song mus_bw_n_farewell, 0, 0
 	song mus_teachy_tv_menu, 0, 0
+	song mus_bw_obtain_egg, 2, 2
+	song mus_bw_low_hp, 4, 4
+	song mus_bw_vs_n, 0, 0
+	song mus_bw_victory_plasma, 0, 0
+	song mus_bw_victory_boss, 0, 0
+	song mus_bw_mart, 0, 0
+	song mus_bw_gate, 0, 0
+	song mus_bw_nacrene, 0, 0
+	song mus_bw_vs_gym_leader_final, 0, 0
+	song mus_bw_encounter_female, 0, 0
+	song mus_bw_encounter_suspicious, 0, 0
+	song mus_bw_encounter_twins, 0, 0
+	song mus_bw_encounter_intense, 0, 0
+	song mus_bw_encounter_cool, 0, 0
+	song mus_bw_encounter_cyclist, 0, 0
+	song mus_bw_encounter_clerk, 0, 0
+	song mus_bw_encounter_hiker, 0, 0
+	song mus_bw_encounter_pokefan, 0, 0
+	song mus_bw_encounter_rich, 0, 0
+	song mus_bw_encounter_roughneck, 0, 0
+	song mus_bw_vs_plasma, 0, 0
+	song mus_bw_vs_elite_four, 0, 0
+	song mus_bw_vs_ghetsis, 0, 0
+	song mus_hg_vs_raikou, 0, 0
+	song mus_hg_vs_entei, 0, 0
+	song mus_hg_vs_suicune, 0, 0
+	song mus_hg_vs_lugia, 0, 0
+	song mus_hg_vs_ho_oh, 0, 0
+	song mus_hg_vs_kyogre_groudon, 0, 0
+	song mus_bw_vs_regi, 0, 0
+	song mus_bw_accumula, 0, 0
+	song mus_bw_nimbasa, 0, 0
+	song mus_bw_victory_road, 0, 0
+	song mus_bw_someones_entralink, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

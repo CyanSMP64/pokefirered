@@ -66,7 +66,7 @@ SaffronCity_Dojo_EventScript_GiveHitmon::
 SaffronCity_Dojo_EventScript_ReceivedHitmonParty::
 	removeobject VAR_LAST_TALKED
 	bufferspeciesname STR_VAR_1, VAR_TEMP_1
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_EVOLVED
 	message SaffronCity_Dojo_Text_ReceivedMonFromKarateMaster
 	waitmessage
 	waitfanfare
@@ -81,7 +81,7 @@ SaffronCity_Dojo_EventScript_ReceivedHitmonParty::
 SaffronCity_Dojo_EventScript_ReceivedHitmonPC::
 	removeobject VAR_LAST_TALKED
 	bufferspeciesname STR_VAR_1, VAR_TEMP_1
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_EVOLVED
 	message SaffronCity_Dojo_Text_ReceivedMonFromKarateMaster
 	waitmessage
 	waitfanfare

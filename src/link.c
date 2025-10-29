@@ -217,21 +217,21 @@ static const u8 sLinkErrorTextColor[] = { 0x00, 0x01, 0x02 };
 
 bool8 IsWirelessAdapterConnected(void)
 {
-    if (QL_IS_PLAYBACK_STATE)
-        return FALSE;
-
-    SetWirelessCommType1();
-    InitRFUAPI();
-    RfuSetIgnoreError(TRUE);
-    if (rfu_LMAN_REQBN_softReset_and_checkID() == RFU_ID)
-    {
-        rfu_REQ_stopMode();
-        rfu_waitREQComplete();
-        return TRUE;
-    }
-    SetWirelessCommType0_Internal();
-    CloseLink();
-    RestoreSerialTimer3IntrHandlers();
+//    if (QL_IS_PLAYBACK_STATE)
+//        return FALSE;
+//
+//    SetWirelessCommType1();
+//    InitRFUAPI();
+//    RfuSetIgnoreError(TRUE);
+//    if (rfu_LMAN_REQBN_softReset_and_checkID() == RFU_ID)
+//    {
+//        rfu_REQ_stopMode();
+//        rfu_waitREQComplete();
+//        return TRUE;
+//    }
+//    SetWirelessCommType0_Internal();
+//    CloseLink();
+//    RestoreSerialTimer3IntrHandlers();
     return FALSE;
 }
 

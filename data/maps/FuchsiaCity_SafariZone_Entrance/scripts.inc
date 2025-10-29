@@ -117,7 +117,7 @@ FuchsiaCity_SafariZone_Entrance_EventScript_TryEnterSafariZone::
 	updatemoneybox
 	msgbox FuchsiaCity_SafariZone_Entrance_Text_ThatllBe500WeOnlyUseSpecialBalls
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_OBTAIN_ITEM
 	message FuchsiaCity_SafariZone_Entrance_Text_PlayerReceived30SafariBalls
 	waitfanfare
 	call EventScript_RestorePrevTextColor

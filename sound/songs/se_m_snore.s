@@ -2,7 +2,7 @@
 
 	.equ	se_m_snore_grp, voicegroup128
 	.equ	se_m_snore_pri, 4
-	.equ	se_m_snore_rev, reverb_set+50
+	.equ	se_m_snore_rev, 0
 	.equ	se_m_snore_mvl, 127
 	.equ	se_m_snore_key, 0
 	.equ	se_m_snore_tbs, 1
@@ -22,7 +22,7 @@ se_m_snore_1:
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 27*se_m_snore_mvl/mxv
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N10   , An1 , v127
 	.byte	W01
 	.byte		VOL   , 75*se_m_snore_mvl/mxv

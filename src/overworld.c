@@ -213,6 +213,10 @@ static void MovementStatusHandler_TryAdvanceScript(struct LinkPlayerObjectEvent 
 static u8 FlipVerticalAndClearForced(u8 newFacing, u8 oldFacing);
 static u8 LinkPlayerDetectCollision(u8 selfObjEventId, u8 a2, s16 x, s16 y);
 static void SpriteCB_LinkPlayer(struct Sprite *sprite);
+static bool8 IsMapWarpPewterCityIndoors(void);
+static bool8 IsMapWarpPewterCityOutdoors(void);
+static void Task_PewterCityFadeOutAccordion(u8);
+static void Task_PewterCityFadeInAccordion(u8);
 
 extern const struct MapLayout * gMapLayouts[];
 extern const struct MapHeader *const *gMapGroups[];
@@ -1022,7 +1026,7 @@ void Overworld_PlaySpecialMapMusic(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM))
     {
         PlayerGetDestCoords(&x, &y);
-        if (y - 7 < 11 && gMPlayInfo_BGM.songHeader == &mus_victory_gym_leader)
+        if (y - 7 < 11 && gMPlayInfo_BGM.songHeader == &mus_bw_victory_boss)
         {
             FadeInBGM(4);
             return;
@@ -1104,14 +1108,53 @@ static u8 GetMapMusicFadeoutSpeed(void)
         return 4;
 }
 
+#define tVolume data[0]
+
 void TryFadeOutOldMapMusic(void)
 {
     u16 warpMusic = GetWarpDestinationMusic();
+    u8 taskId;
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
         FadeOutMapMusic(GetMapMusicFadeoutSpeed());
     }
+    // current map is pewter city and destination is pewter house or museum 1f
+    else if (IsMapWarpPewterCityIndoors()) {
+        taskId = CreateTask(Task_PewterCityFadeOutAccordion, 0xff);
+        gTasks[taskId].tVolume = 256;
+    }
+    // current map is pewter house or museum 1f and destination is pewter city
+    else if (IsMapWarpPewterCityOutdoors()) {
+        taskId = CreateTask(Task_PewterCityFadeInAccordion, 0xff);
+        gTasks[taskId].tVolume = 0;
+    }
 }
+
+static void Task_PewterCityFadeOutAccordion(u8 taskId)
+{
+    gTasks[taskId].tVolume -= 12;
+    if (gTasks[taskId].tVolume < 0) {
+        gTasks[taskId].tVolume = 0;
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x0300, 0);
+        DestroyTask(taskId);
+    }
+    else
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x0300, gTasks[taskId].tVolume);
+}
+
+static void Task_PewterCityFadeInAccordion(u8 taskId)
+{
+    gTasks[taskId].tVolume += 12;
+    if (gTasks[taskId].tVolume > 256) {
+        gTasks[taskId].tVolume = 256;
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x0300, 256);
+        DestroyTask(taskId);
+    }
+    else
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x0300, gTasks[taskId].tVolume);
+}
+
+#undef tVolume
 
 bool8 BGMusicStopped(void)
 {
@@ -3551,4 +3594,26 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->invisible = ((sprite->data[7] & 4) >> 2);
         sprite->data[7]++;
     }
+}
+
+static bool8 IsMapWarpPewterCityIndoors(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PEWTER_CITY)
+    && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_PEWTER_CITY)
+    && sWarpDestination.mapGroup == MAP_GROUP(MAP_PEWTER_CITY_MUSEUM_1F)) {
+        return TRUE;
+    }
+    else
+        return FALSE;
+}
+
+static bool8 IsMapWarpPewterCityOutdoors(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PEWTER_CITY_MUSEUM_1F)
+    && sWarpDestination.mapGroup == MAP_GROUP(MAP_PEWTER_CITY)
+    && sWarpDestination.mapNum == MAP_NUM(MAP_PEWTER_CITY)) {
+        return TRUE;
+    }
+    else
+        return FALSE;
 }

@@ -1,4 +1,4 @@
-gNumMusicPlayers = 4;
+gNumMusicPlayers = 5;
 gMaxLines = 0;
 
 MEMORY

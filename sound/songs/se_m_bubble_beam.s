@@ -2,7 +2,7 @@
 
 	.equ	se_m_bubble_beam_grp, voicegroup128
 	.equ	se_m_bubble_beam_pri, 4
-	.equ	se_m_bubble_beam_rev, reverb_set+50
+	.equ	se_m_bubble_beam_rev, 0
 	.equ	se_m_bubble_beam_mvl, 127
 	.equ	se_m_bubble_beam_key, 0
 	.equ	se_m_bubble_beam_tbs, 1
@@ -22,7 +22,7 @@ se_m_bubble_beam_1:
 	.byte		BENDR , 2
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 24*se_m_bubble_beam_mvl/mxv
-	.byte		BEND  , c_v-17
+	.byte		BEND  , c_b-(17*2)
 	.byte		N78   , Bn4 , v080
 	.byte	W01
 	.byte		VOL   , 32*se_m_bubble_beam_mvl/mxv

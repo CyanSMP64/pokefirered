@@ -58,6 +58,7 @@ struct TrainerBattleParameter
     u8 ptrType;
 };
 
+static void fillerfunc(void);
 static void DoSafariBattle(void);
 static void DoGhostBattle(void);
 static void DoStandardWildBattle(void);
@@ -263,9 +264,12 @@ void StartRoamerBattle(void)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_ROAMER;
-    CreateBattleStartTask(GetWildBattleTransition(), MUS_VS_LEGEND);
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
+}
+
+static void fillerfunc(void) {
 }
 
 static void DoSafariBattle(void)
@@ -357,20 +361,20 @@ void StartLegendaryBattle(void)
     switch (species)
     {
     case SPECIES_MEWTWO:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_MEWTWO);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     case SPECIES_DEOXYS:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_DEOXYS);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     case SPECIES_MOLTRES:
     case SPECIES_ARTICUNO:
     case SPECIES_ZAPDOS:
     case SPECIES_HO_OH:
     case SPECIES_LUGIA:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     default:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
+        CreateBattleStartTask(B_TRANSITION_BLUR, 0);
         break;
     }
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
@@ -1014,20 +1018,44 @@ void PlayTrainerEncounterMusic(void)
     {
         switch (GetTrainerEncounterMusicId(gTrainerBattleOpponent_A))
         {
-        case TRAINER_ENCOUNTER_MUSIC_FEMALE:
+        case TRAINER_ENCOUNTER_MUSIC_MALE:
+            music = MUS_ENCOUNTER_BOY;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_GIRL:
-        case TRAINER_ENCOUNTER_MUSIC_TWINS:
             music = MUS_ENCOUNTER_GIRL;
             break;
-        case TRAINER_ENCOUNTER_MUSIC_MALE:
+        case TRAINER_ENCOUNTER_MUSIC_FEMALE:
+            music = MUS_ENCOUNTER_FEMALE;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS:
+            music = MUS_ENCOUNTER_SUSPICIOUS;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_TWINS:
+            music = MUS_ENCOUNTER_TWINS;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_INTENSE:
+            music = MUS_ENCOUNTER_INTENSE;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_COOL:
+            music = MUS_ENCOUNTER_COOL;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_SWIMMER:
+            music = MUS_ENCOUNTER_CYCLIST;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR:
+            music = MUS_ENCOUNTER_CLERK;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_HIKER:
+            music = MUS_ENCOUNTER_HIKER;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_INTERVIEWER:
+            music = MUS_ENCOUNTER_POKEFAN;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_RICH:
-            music = MUS_ENCOUNTER_BOY;
+            music = MUS_ENCOUNTER_RICH;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_MAGMA:
+            music = MUS_ENCOUNTER_ROUGHNECK;
             break;
         default:
             music = MUS_ENCOUNTER_ROCKET;

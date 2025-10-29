@@ -2,7 +2,7 @@
 
 	.equ	se_dex_page_grp, voicegroup127
 	.equ	se_dex_page_pri, 5
-	.equ	se_dex_page_rev, reverb_set+50
+	.equ	se_dex_page_rev, 0
 	.equ	se_dex_page_mvl, 127
 	.equ	se_dex_page_key, 0
 	.equ	se_dex_page_tbs, 1
@@ -23,7 +23,7 @@ se_dex_page_1:
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
 	.byte		VOL   , 90*se_dex_page_mvl/mxv
-	.byte		BEND  , c_v+4
+	.byte		BEND  , c_b+(4*2)
 	.byte		N01   , Cn5 , v064
 	.byte	W01
 	.byte		        Cn5 , v020

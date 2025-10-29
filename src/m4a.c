@@ -5,7 +5,8 @@ extern const u8 gCgb3Vol[];
 
 #define BSS_CODE __attribute__((section(".bss.code")))
 
-BSS_CODE ALIGNED(4) char SoundMainRAM_Buffer[0x800] = {0};
+BSS_CODE ALIGNED(4) char SoundMainRAM_Buffer[0xb78] = {0};
+BSS_CODE ALIGNED(4) u32 hq_buffer_ptr[0x160] = {0};
 
 COMMON_DATA struct SoundInfo gSoundInfo = {0};
 COMMON_DATA struct PokemonCrySong gPokemonCrySongs[MAX_POKEMON_CRIES] = {0};
@@ -19,6 +20,7 @@ COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE1 = {0};
 COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE2 = {0};
 COMMON_DATA u8 gMPlayMemAccArea[0x10] = {0};
 COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE3 = {0};
+COMMON_DATA struct MusicPlayerInfo gMPlayInfo_BGM2 = {0};
 
 u32 MidiKeyToFreq(struct WaveData *wav, u8 key, u8 fineAdjust)
 {
@@ -76,9 +78,9 @@ void m4aSoundInit(void)
     SoundInit(&gSoundInfo);
     MPlayExtender(gCgbChans);
     m4aSoundMode(SOUND_MODE_DA_BIT_8
-               | SOUND_MODE_FREQ_13379
+               | SOUND_MODE_FREQ_21024
                | (12 << SOUND_MODE_MASVOL_SHIFT)
-               | (5 << SOUND_MODE_MAXCHN_SHIFT));
+               | (15 << SOUND_MODE_MAXCHN_SHIFT));
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {
@@ -450,7 +452,7 @@ void m4aSoundMode(u32 mode)
     {
         struct SoundChannel *chan;
 
-        soundInfo->maxChans = temp >> SOUND_MODE_MAXCHN_SHIFT;
+        soundInfo->maxChans = (temp >> SOUND_MODE_MAXCHN_SHIFT) + 1;
 
         temp = MAX_DIRECTSOUND_CHANNELS;
         chan = &soundInfo->chans[0];
@@ -792,7 +794,7 @@ void TrkVolPitSet(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *tr
     {
         s32 bend = track->bend * track->bendRange;
         s32 x = (track->tune + bend)
-              * 4
+              * 2
               + (track->keyShift << 8)
               + (track->keyShiftX << 8)
               + track->pitX;

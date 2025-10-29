@@ -374,7 +374,7 @@ $(ELF): $(LD_SCRIPT) $(LD_SCRIPT_DEPS) $(OBJS)
 
 # Builds the rom from the elf file
 $(ROM): $(ELF)
-	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0x9000000 $< $@
+	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0xA000000 $< $@
 
 # Symbol file (`make syms`)
 $(SYM): $(ELF)

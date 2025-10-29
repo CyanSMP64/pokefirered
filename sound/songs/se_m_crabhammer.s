@@ -2,7 +2,7 @@
 
 	.equ	se_m_crabhammer_grp, voicegroup128
 	.equ	se_m_crabhammer_pri, 4
-	.equ	se_m_crabhammer_rev, reverb_set+50
+	.equ	se_m_crabhammer_rev, 0
 	.equ	se_m_crabhammer_mvl, 127
 	.equ	se_m_crabhammer_key, 0
 	.equ	se_m_crabhammer_tbs, 1
@@ -22,22 +22,22 @@ se_m_crabhammer_1:
 	.byte		VOL   , 100*se_m_crabhammer_mvl/mxv
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+2
+	.byte		BEND  , c_b+(2*2)
 	.byte		N02   , Dn3 , v127
 	.byte	W01
 	.byte		PAN   , c_v-10
-	.byte		BEND  , c_v+4
+	.byte		BEND  , c_b+(4*2)
 	.byte	W02
 	.byte		PAN   , c_v+8
-	.byte		BEND  , c_v+6
+	.byte		BEND  , c_b+(6*2)
 	.byte		N02   , Dn3 , v084
 	.byte	W01
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+9
+	.byte		BEND  , c_b+(9*2)
 	.byte	W02
-	.byte		        c_v-1
+	.byte		BEND  , c_b-(1*2)
 	.byte	W02
-	.byte		        c_v+32
+	.byte		BEND  , c_b+(32*2)
 	.byte		N02   , Dn3 , v056
 	.byte	W16
 	.byte	FINE

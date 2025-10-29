@@ -2,7 +2,7 @@
 
 	.equ	se_m_poison_powder_grp, voicegroup128
 	.equ	se_m_poison_powder_pri, 4
-	.equ	se_m_poison_powder_rev, reverb_set+50
+	.equ	se_m_poison_powder_rev, 0
 	.equ	se_m_poison_powder_mvl, 127
 	.equ	se_m_poison_powder_key, 0
 	.equ	se_m_poison_powder_tbs, 1
@@ -22,7 +22,7 @@ se_m_poison_powder_1:
 	.byte		BENDR , 12
 	.byte		VOL   , 55*se_m_poison_powder_mvl/mxv
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+1
+	.byte		BEND  , c_b+(1*2)
 	.byte		N01   , Cn6 , v100
 	.byte	W01
 	.byte		VOL   , 110*se_m_poison_powder_mvl/mxv

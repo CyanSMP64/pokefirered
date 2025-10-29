@@ -2,7 +2,7 @@
 
 	.equ	se_m_psybeam_grp, voicegroup128
 	.equ	se_m_psybeam_pri, 4
-	.equ	se_m_psybeam_rev, reverb_set+50
+	.equ	se_m_psybeam_rev, 0
 	.equ	se_m_psybeam_mvl, 127
 	.equ	se_m_psybeam_key, 0
 	.equ	se_m_psybeam_tbs, 1
@@ -23,7 +23,7 @@ se_m_psybeam_1:
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 38*se_m_psybeam_mvl/mxv
 	.byte		MOD   , 30
-	.byte		BEND  , c_v+1
+	.byte		BEND  , c_b+(1*2)
 	.byte		N42   , As2 , v120
 	.byte	W01
 	.byte		PAN   , c_v+3
@@ -98,7 +98,7 @@ se_m_psybeam_2:
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 38*se_m_psybeam_mvl/mxv
 	.byte		MOD   , 30
-	.byte		BEND  , c_v+1
+	.byte		BEND  , c_b+(1*2)
 	.byte		N42   , As1 , v040
 	.byte	W02
 	.byte		VOL   , 57*se_m_psybeam_mvl/mxv

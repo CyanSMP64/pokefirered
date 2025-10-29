@@ -4,8 +4,11 @@
 #include "battle.h"
 #include "quest_log.h"
 #include "m4a.h"
+#include "event_data.h"
+#include "field_fadetransition.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
+#include "constants/maps.h"
 #include "task.h"
 
 struct Fanfare
@@ -37,6 +40,7 @@ extern struct MusicPlayerInfo gMPlayInfo_BGM;
 extern struct MusicPlayerInfo gMPlayInfo_SE1;
 extern struct MusicPlayerInfo gMPlayInfo_SE2;
 extern struct MusicPlayerInfo gMPlayInfo_SE3;
+extern struct MusicPlayerInfo gMPlayInfo_BGM2;
 extern struct ToneData gCryTable[];
 extern struct ToneData gCryTable_Reverse[];
 
@@ -48,9 +52,9 @@ static void Task_DuckBGMForPokemonCry(u8 taskId);
 static void RestoreBGMVolumeAfterPokemonCry(void);
 
 static const struct Fanfare sFanfares[] = {
-    [FANFARE_LEVEL_UP]      = { MUS_LEVEL_UP,         80 },
+    [FANFARE_LEVEL_UP]      = { MUS_LEVEL_UP,         65 },
     [FANFARE_OBTAIN_ITEM]   = { MUS_OBTAIN_ITEM,     160 },
-    [FANFARE_EVOLVED]       = { MUS_EVOLVED,         220 },
+    [FANFARE_EVOLVED]       = { MUS_EVOLVED,         235 },
     [FANFARE_OBTAIN_TMHM]   = { MUS_OBTAIN_TMHM,     220 },
     [FANFARE_HEAL]          = { MUS_HEAL,            160 },
     [FANFARE_OBTAIN_BADGE]  = { MUS_OBTAIN_BADGE,    340 },
@@ -60,8 +64,9 @@ static const struct Fanfare sFanfares[] = {
     [FANFARE_SLOTS_WIN]     = { MUS_SLOTS_WIN,       150 },
     [FANFARE_TOO_BAD]       = { MUS_TOO_BAD,         160 },
     [FANFARE_POKE_FLUTE]    = { MUS_POKE_FLUTE,      450 },
-    [FANFARE_KEY_ITEM]      = { MUS_OBTAIN_KEY_ITEM, 170 },
-    [FANFARE_DEX_EVAL]      = { MUS_DEX_RATING,      196 }
+    [FANFARE_KEY_ITEM]      = { MUS_OBTAIN_KEY_ITEM, 155 },
+    [FANFARE_DEX_EVAL]      = { MUS_DEX_RATING,      196 },
+    [FANFARE_OBTAIN_EGG]    = { MUS_OBTAIN_EGG,      150 }
 };
 
 void InitMapMusic(void)
@@ -81,6 +86,39 @@ void MapMusicMain(void)
         PlayBGM(sCurrentMapMusic);
         break;
     case 2:
+        if (sCurrentMapMusic == MUS_BW_NACRENE
+        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PEWTER_CITY_MUSEUM_1F)
+        && !(gTasks[FindTaskIdByFunc(Task_Teleport2Warp)].isActive)) {
+            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x0300, 0);
+        }
+        if (sCurrentMapMusic == MUS_BW_VICTORY_ROAD) {
+            switch (VarGet(VAR_MAP_SCENE_ROUTE23)) {
+                case 2:
+                    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x00EF, 0);
+                    break;
+                case 3:
+                    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x00AF, 0);
+                    break;
+                case 4:
+                    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x00AB, 0);
+                    break;
+                case 5:
+                    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x008B, 0);
+                    break;
+                case 6:
+                    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x0083, 0);
+                    break;
+                case 7:
+                    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x0081, 0);
+                    break;
+                case 8:
+                    break;
+                default:
+                    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0x00FF, 0);
+                    break;
+            }
+        }
+        break;
     case 3:
     case 4:
         break;
@@ -190,22 +228,29 @@ bool8 IsNotWaitingForBGMStop(void)
 void PlayFanfareByFanfareNum(u8 fanfareNum)
 {
     u16 songNum;
+    u16 bgm2bit = sFanfareCounter & 0x8000;
     if(gQuestLogState == QL_STATE_PLAYBACK)
     {
-        sFanfareCounter = 0xFF;
+        sFanfareCounter = bgm2bit | 0xFF;
     }
     else
     {
-        m4aMPlayStop(&gMPlayInfo_BGM);
+        if (!IsBGM2PausedOrStopped()) {
+            m4aMPlayStop(&gMPlayInfo_BGM2);
+            sFanfareCounter += 0x8000; //bit 15 indicates that bgm2 was playing
+        }
+        else
+            m4aMPlayStop(&gMPlayInfo_BGM);
         songNum = sFanfares[fanfareNum].songNum;
-        sFanfareCounter = sFanfares[fanfareNum].duration;
+        bgm2bit = sFanfareCounter & 0x8000; 
+        sFanfareCounter = bgm2bit | sFanfares[fanfareNum].duration;
         m4aSongNumStart(songNum);
     }
 }
 
 bool8 WaitFanfare(bool8 stop)
 {
-    if (sFanfareCounter)
+    if (sFanfareCounter & 0x7fff)
     {
         sFanfareCounter--;
         return FALSE;
@@ -213,7 +258,12 @@ bool8 WaitFanfare(bool8 stop)
     else
     {
         if (!stop)
-            m4aMPlayContinue(&gMPlayInfo_BGM);
+            if ((sFanfareCounter & 0x8000) >> 15) {
+                m4aMPlayContinue(&gMPlayInfo_BGM2);
+                sFanfareCounter -= 0x8000;
+            }
+            else
+                m4aMPlayContinue(&gMPlayInfo_BGM);
         else
             m4aSongNumStart(MUS_DUMMY);
 
@@ -255,13 +305,18 @@ bool8 IsFanfareTaskInactive(void)
 
 static void Task_Fanfare(u8 taskId)
 {
-    if (sFanfareCounter)
+    if (sFanfareCounter & 0x7fff)
     {
         sFanfareCounter--;
     }
     else
     {
-        m4aMPlayContinue(&gMPlayInfo_BGM);
+        if ((sFanfareCounter & 0x8000) >> 15) {
+            m4aMPlayContinue(&gMPlayInfo_BGM2);
+            sFanfareCounter -= 0x8000;
+        }
+        else
+            m4aMPlayContinue(&gMPlayInfo_BGM);
         DestroyTask(taskId);
     }
 }
@@ -299,6 +354,15 @@ bool8 IsBGMPausedOrStopped(void)
     return FALSE;
 }
 
+bool8 IsBGM2PausedOrStopped(void)
+{
+    if (gMPlayInfo_BGM2.status & MUSICPLAYER_STATUS_PAUSE)
+        return TRUE;
+    if (!(gMPlayInfo_BGM2.status & MUSICPLAYER_STATUS_TRACK))
+        return TRUE;
+    return FALSE;
+}
+
 void FadeInBGM(u8 speed)
 {
     m4aMPlayFadeIn(&gMPlayInfo_BGM, speed);
@@ -319,6 +383,7 @@ bool8 IsBGMStopped(void)
 void PlayCry_Normal(u16 species, s8 pan)
 {
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM2, TRACKS_ALL, 85);
     PlayCryInternal(species, pan, CRY_VOLUME, CRY_PRIORITY_NORMAL, CRY_MODE_NORMAL);
     gPokemonCryBGMDuckingCounter = 2;
     RestoreBGMVolumeAfterPokemonCry();
@@ -339,6 +404,7 @@ void PlayCry_ByMode(u16 species, s8 pan, u8 mode)
     else
     {
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM2, TRACKS_ALL, 85);
         PlayCryInternal(species, pan, CRY_VOLUME, CRY_PRIORITY_NORMAL, mode);
         gPokemonCryBGMDuckingCounter = 2;
         RestoreBGMVolumeAfterPokemonCry();
@@ -356,6 +422,7 @@ void PlayCry_ReleaseDouble(u16 species, s8 pan, u8 mode)
     {
         if (!(gBattleTypeFlags & BATTLE_TYPE_MULTI))
             m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
+            m4aMPlayVolumeControl(&gMPlayInfo_BGM2, TRACKS_ALL, 85);
         PlayCryInternal(species, pan, CRY_VOLUME, CRY_PRIORITY_NORMAL, mode);
     }
 }
@@ -365,6 +432,7 @@ void PlayCry_Script(u16 species, u8 mode)
     if (!QL_IS_PLAYBACK_STATE) // This check is exclusive to FR/LG
     {
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM2, TRACKS_ALL, 85);
         PlayCryInternal(species, 0, CRY_VOLUME, CRY_PRIORITY_NORMAL, mode);
     }
     gPokemonCryBGMDuckingCounter = 2;
@@ -555,6 +623,7 @@ static void Task_DuckBGMForPokemonCry(u8 taskId)
     if (!IsPokemonCryPlaying(gMPlay_PokemonCry))
     {
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM2, TRACKS_ALL, 256);
         DestroyTask(taskId);
     }
 }
@@ -571,6 +640,8 @@ void PlayBGM(u16 songNum)
         songNum = 0;
     if (songNum == MUS_NONE)
         songNum = 0;
+    if (songNum == MUS_SILPH && !FlagGet(FLAG_HIDE_SAFFRON_ROCKETS))
+        songNum = MUS_ROCKET_HIDEOUT;
     m4aSongNumStart(songNum);
 }
 

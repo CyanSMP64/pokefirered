@@ -432,7 +432,7 @@ static void Task_TitleScreenTimer(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (data[0] >= 2700)
+    if (data[0] >= 4580)
     {
         sTitleScreenTimerTaskId = TASK_NONE;
         DestroyTask(taskId);
@@ -531,7 +531,7 @@ static void SetTitleScreenScene_FadeIn(s16 *data)
         if (data[2] > 10)
         {
             TintPalette_GrayScale2(&gPlttBufferUnfaded[BG_PLTT_ID(13)], 16);
-            BeginNormalPaletteFade(1 << 13, 9, 16, 0, RGB_BLACK);
+            BeginNormalPaletteFade(1 << 13, 19, 16, 0, RGB_BLACK);
             tState++;
         }
         break;
@@ -544,7 +544,7 @@ static void SetTitleScreenScene_FadeIn(s16 *data)
         break;
     case 3:
         data[2]++;
-        if (data[2] > 36)
+        if (data[2] > 56)
         {
             CreateTask(Task_TitleScreen_SlideWin0, 3);
             BlendPalettesGradually(1 << 13, -4, 1, 16, RGB(30, 30, 31), 0, 0);
@@ -561,7 +561,7 @@ static void SetTitleScreenScene_FadeIn(s16 *data)
         break;
     case 5:
         data[2]++;
-        if (data[2] > 20)
+        if (data[2] > 40)
         {
             data[2] = 0;
             BlendPalettesGradually(1 << 13, -4, 1, 16, RGB(30, 30, 31), 0, 0);
@@ -577,7 +577,7 @@ static void SetTitleScreenScene_FadeIn(s16 *data)
         break;
     case 7:
         data[2]++;
-        if (data[2] > 20)
+        if (data[2] > 38)
         {
             data[2] = 0;
             BlendPalettesGradually(1 << 13, -3, 0, 16, RGB(30, 30, 31), 0, 0);
@@ -776,7 +776,7 @@ static void Task_TitleScreen_SlideWin0(u8 taskId)
         break;
     case 2:
         data[3]++;
-        if (data[3] >= 10)
+        if (data[3] >= 25)
         {
             data[3] = 0;
             data[0]++;

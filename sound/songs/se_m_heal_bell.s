@@ -2,7 +2,7 @@
 
 	.equ	se_m_heal_bell_grp, voicegroup128
 	.equ	se_m_heal_bell_pri, 4
-	.equ	se_m_heal_bell_rev, reverb_set+50
+	.equ	se_m_heal_bell_rev, 0
 	.equ	se_m_heal_bell_mvl, 127
 	.equ	se_m_heal_bell_key, 0
 	.equ	se_m_heal_bell_tbs, 1
@@ -22,7 +22,7 @@ se_m_heal_bell_1:
 	.byte		BENDR , 2
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 90*se_m_heal_bell_mvl/mxv
-	.byte		BEND  , c_v+4
+	.byte		BEND  , c_b+(4*2)
 	.byte		N03   , As5 , v100
 	.byte	W01
 	.byte		PAN   , c_v-13

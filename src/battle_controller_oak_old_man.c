@@ -431,6 +431,14 @@ static void Intro_TryShinyAnimShowHealthbox(void)
     }
 }
 
+static void OakOldManHandleSuccessBallThrowAnim(void)
+{
+    gBattleSpritesDataPtr->animationData->ballThrowCaseId = BALL_3_SHAKES_SUCCESS;
+    gDoingBattleAnim = TRUE;
+    InitAndLaunchSpecialAnimation(gActiveBattler, gActiveBattler, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), B_ANIM_BALL_THROW_WITH_TRAINER);
+    gBattlerControllerFuncs[gActiveBattler] = CompleteOnSpecialAnimDone;
+}
+
 static void Intro_WaitForShinyAnimAndHealthbox(void)
 {
     bool32 r4 = FALSE;
@@ -1655,14 +1663,6 @@ static void OakOldManHandleFaintAnimation(void)
 static void OakOldManHandlePaletteFade(void)
 {
     OakOldManBufferExecCompleted();
-}
-
-static void OakOldManHandleSuccessBallThrowAnim(void)
-{
-    gBattleSpritesDataPtr->animationData->ballThrowCaseId = BALL_3_SHAKES_SUCCESS;
-    gDoingBattleAnim = TRUE;
-    InitAndLaunchSpecialAnimation(gActiveBattler, gActiveBattler, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), B_ANIM_BALL_THROW_WITH_TRAINER);
-    gBattlerControllerFuncs[gActiveBattler] = CompleteOnSpecialAnimDone;
 }
 
 static void OakOldManHandleBallThrowAnim(void)

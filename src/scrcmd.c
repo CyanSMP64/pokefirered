@@ -34,6 +34,7 @@
 #include "field_effect.h"
 #include "fieldmap.h"
 #include "field_door.h"
+#include "m4a.h"
 #include "constants/event_objects.h"
 #include "constants/maps.h"
 #include "constants/sound.h"
@@ -45,6 +46,8 @@ extern const u8 *const gStdScriptsEnd[];
 
 static bool8 ScriptContext_NextCommandEndsScript(struct ScriptContext * ctx);
 static u8 ScriptContext_GetQuestLogInput(struct ScriptContext * ctx);
+
+static void Task_VictoryRoadFadeInInstruments(u8);
 
 static EWRAM_DATA ptrdiff_t sAddressOffset = 0; // For relative addressing in vgoto etc., used by saved scripts (e.g. Mystery Event)
 static EWRAM_DATA u8 sQuestLogWaitButtonPressTimer = 0;
@@ -339,11 +342,11 @@ bool8 ScrCmd_setvar(struct ScriptContext * ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_copyvar(struct ScriptContext * ctx)
+bool8 ScrCmd_checkitemtype(struct ScriptContext * ctx)
 {
-    u16 * destPtr = GetVarPointer(ScriptReadHalfword(ctx));
-    u16 * srcPtr = GetVarPointer(ScriptReadHalfword(ctx));
-    *destPtr = *srcPtr;
+    u16 itemId = VarGet(ScriptReadHalfword(ctx));
+
+    gSpecialVar_Result = GetPocketByItemId(itemId);
     return FALSE;
 }
 
@@ -353,6 +356,63 @@ bool8 ScrCmd_setorcopyvar(struct ScriptContext * ctx)
     *destPtr = VarGet(ScriptReadHalfword(ctx));
     return FALSE;
 }
+
+#define tVolume data[0]
+
+bool8 ScrCmd_copyvar(struct ScriptContext * ctx)
+{
+    u16 destVarId = ScriptReadHalfword(ctx);
+    u16 srcVarId = ScriptReadHalfword(ctx);
+    u16 * destPtr = GetVarPointer(destVarId);
+    u16 * srcPtr = GetVarPointer(srcVarId);
+    u8 taskId;
+    if (destVarId == VAR_MAP_SCENE_ROUTE23 && srcVarId == VAR_TEMP_1) {
+        taskId = CreateTask(Task_VictoryRoadFadeInInstruments, 0xff);
+        gTasks[taskId].tVolume = 0;
+    }
+    *destPtr = *srcPtr;
+    return FALSE;
+}
+
+static void Task_VictoryRoadFadeInInstruments(u8 taskId)
+{
+    u16 tracks;
+    switch (VarGet(VAR_TEMP_1)) {
+        case 2:
+            tracks = 0x0010;
+            break;
+        case 3:
+            tracks = 0x0040;
+            break;
+        case 4:
+            tracks = 0x0004;
+            break;
+        case 5:
+            tracks = 0x0020;
+            break;
+        case 6:
+            tracks = 0x0008;
+            break;
+        case 7:
+            tracks = 0x0002;
+            break;
+        case 8:
+            tracks = 0x0081;
+            break;
+        default:
+            break;
+    }
+    gTasks[taskId].tVolume += 12;
+    if (gTasks[taskId].tVolume > 256) {
+        gTasks[taskId].tVolume = 256;
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, tracks, 256);
+        DestroyTask(taskId);
+    }
+    else
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, tracks, gTasks[taskId].tVolume);
+}
+
+#undef tVolume
 
 static u8 Compare(u16 a, u16 b)
 {
@@ -493,14 +553,6 @@ bool8 ScrCmd_checkitem(struct ScriptContext * ctx)
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
     gSpecialVar_Result = CheckBagHasItem(itemId, (u8)quantity);
-    return FALSE;
-}
-
-bool8 ScrCmd_checkitemtype(struct ScriptContext * ctx)
-{
-    u16 itemId = VarGet(ScriptReadHalfword(ctx));
-
-    gSpecialVar_Result = GetPocketByItemId(itemId);
     return FALSE;
 }
 

@@ -3,20 +3,34 @@
 
 #include "constants/opponents.h"
 
-#define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
-#define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
-#define TRAINER_ENCOUNTER_MUSIC_GIRL         2 // used for male Tubers and Young Couples too
-#define TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS   3
-#define TRAINER_ENCOUNTER_MUSIC_INTENSE      4
-#define TRAINER_ENCOUNTER_MUSIC_COOL         5
-#define TRAINER_ENCOUNTER_MUSIC_AQUA         6
-#define TRAINER_ENCOUNTER_MUSIC_MAGMA        7
-#define TRAINER_ENCOUNTER_MUSIC_SWIMMER      8
-#define TRAINER_ENCOUNTER_MUSIC_TWINS        9 // used for other trainer classes too
-#define TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR  10
-#define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // used for other trainer classes too
-#define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12
-#define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
+// youngster, bug catcher, camper
+#define TRAINER_ENCOUNTER_MUSIC_MALE         0 // Youngster
+// beauty, swimmer♀, young couple, pkmn breeder, aroma lady, lady
+#define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // Parasol Lady
+// lass, picnicker, painter
+#define TRAINER_ENCOUNTER_MUSIC_GIRL         2 // Lass
+// super nerd, burglar, scientist
+#define TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS   3 // Scientist
+// pokemaniac, biker, psychic, rocker, black belt, channeler, crush kin, crush girl
+#define TRAINER_ENCOUNTER_MUSIC_INTENSE      4 // Psychic
+// bird keeper, cooltrainer, cool couple, pkmn ranger
+#define TRAINER_ENCOUNTER_MUSIC_COOL         5 // Ace Trainer
+// team rocket
+#define TRAINER_ENCOUNTER_MUSIC_AQUA         6 // Team Plasma
+// cue ball, gamer
+#define TRAINER_ENCOUNTER_MUSIC_MAGMA        7 // Roughneck
+// swimmer♂
+#define TRAINER_ENCOUNTER_MUSIC_SWIMMER      8 // Cyclist
+// twins, sis & bro, tuber
+#define TRAINER_ENCOUNTER_MUSIC_TWINS        9 // Twins
+// engineer
+#define TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR  10 // Clerk
+// sailor, hiker, fisherman, tamer, ruin maniac
+#define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // Backpacker
+// juggler
+#define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12 // Pokéfan
+// gentleman
+#define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Gentleman
 
 #define TRAINER_PIC_AQUA_LEADER_ARCHIE      0
 #define TRAINER_PIC_AQUA_GRUNT_M            1

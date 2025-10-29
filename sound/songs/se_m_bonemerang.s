@@ -2,7 +2,7 @@
 
 	.equ	se_m_bonemerang_grp, voicegroup128
 	.equ	se_m_bonemerang_pri, 4
-	.equ	se_m_bonemerang_rev, reverb_set+50
+	.equ	se_m_bonemerang_rev, 0
 	.equ	se_m_bonemerang_mvl, 127
 	.equ	se_m_bonemerang_key, 0
 	.equ	se_m_bonemerang_tbs, 1
@@ -22,7 +22,7 @@ se_m_bonemerang_1:
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 110*se_m_bonemerang_mvl/mxv
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N01   , Cn5 , v127
 	.byte	W01
 	.byte		PAN   , c_v+10

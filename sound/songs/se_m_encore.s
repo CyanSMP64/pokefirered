@@ -2,7 +2,7 @@
 
 	.equ	se_m_encore_grp, voicegroup128
 	.equ	se_m_encore_pri, 4
-	.equ	se_m_encore_rev, reverb_set+50
+	.equ	se_m_encore_rev, 0
 	.equ	se_m_encore_mvl, 127
 	.equ	se_m_encore_key, 0
 	.equ	se_m_encore_tbs, 1
@@ -22,7 +22,7 @@ se_m_encore_1:
 	.byte		BENDR , 12
 	.byte		VOL   , 110*se_m_encore_mvl/mxv
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N06   , En3 , v127
 	.byte	W01
 	.byte		PAN   , c_v+8

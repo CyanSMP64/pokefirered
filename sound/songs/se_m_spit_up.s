@@ -2,7 +2,7 @@
 
 	.equ	se_m_spit_up_grp, voicegroup128
 	.equ	se_m_spit_up_pri, 4
-	.equ	se_m_spit_up_rev, reverb_set+50
+	.equ	se_m_spit_up_rev, 0
 	.equ	se_m_spit_up_mvl, 127
 	.equ	se_m_spit_up_key, 0
 	.equ	se_m_spit_up_tbs, 1
@@ -22,35 +22,35 @@ se_m_spit_up_1:
 	.byte		BENDR , 12
 	.byte		VOL   , 110*se_m_spit_up_mvl/mxv
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N03   , Gn3 , v112
 	.byte	W01
 	.byte		PAN   , c_v-7
-	.byte		BEND  , c_v-17
+	.byte		BEND  , c_b-(17*2)
 	.byte	W01
 	.byte		PAN   , c_v+8
-	.byte		BEND  , c_v-36
+	.byte		BEND  , c_b-(36*2)
 	.byte	W01
 	.byte	W01
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N03   , Gn4 
 	.byte	W02
 	.byte		PAN   , c_v-7
-	.byte		BEND  , c_v+15
+	.byte		BEND  , c_b+(15*2)
 	.byte	W01
 	.byte		PAN   , c_v+8
-	.byte		BEND  , c_v+28
+	.byte		BEND  , c_b+(28*2)
 	.byte	W02
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N03   , Gn4 , v064
 	.byte	W01
 	.byte		PAN   , c_v-7
-	.byte		BEND  , c_v+15
+	.byte		BEND  , c_b+(15*2)
 	.byte	W02
 	.byte		PAN   , c_v+8
-	.byte		BEND  , c_v+28
+	.byte		BEND  , c_b+(28*2)
 	.byte	W03
 	.byte	FINE
 

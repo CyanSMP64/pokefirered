@@ -2,7 +2,7 @@
 
 	.equ	se_m_cosmic_power_grp, voicegroup128
 	.equ	se_m_cosmic_power_pri, 4
-	.equ	se_m_cosmic_power_rev, reverb_set+50
+	.equ	se_m_cosmic_power_rev, 0
 	.equ	se_m_cosmic_power_mvl, 127
 	.equ	se_m_cosmic_power_key, 0
 	.equ	se_m_cosmic_power_tbs, 1
@@ -22,7 +22,7 @@ se_m_cosmic_power_1:
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 110*se_m_cosmic_power_mvl/mxv
-	.byte		BEND  , c_v-4
+	.byte		BEND  , c_b-(4*2)
 	.byte		N09   , As5 , v112
 	.byte	W06
 	.byte	W03
@@ -123,7 +123,7 @@ se_m_cosmic_power_2:
 	.byte		XCMD  , xIECV , 9
 	.byte		        xIECL , 8
 	.byte		VOL   , 43*se_m_cosmic_power_mvl/mxv
-	.byte		BEND  , c_v-2
+	.byte		BEND  , c_b-(2*2)
 	.byte	W04
 	.byte		N08   , Fn5 , v112
 	.byte	W02

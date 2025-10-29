@@ -2,7 +2,7 @@
 
 	.equ	se_dex_scroll_grp, voicegroup127
 	.equ	se_dex_scroll_pri, 5
-	.equ	se_dex_scroll_rev, reverb_set+50
+	.equ	se_dex_scroll_rev, 0
 	.equ	se_dex_scroll_mvl, 127
 	.equ	se_dex_scroll_key, 0
 	.equ	se_dex_scroll_tbs, 1
@@ -23,7 +23,7 @@ se_dex_scroll_1:
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
 	.byte		VOL   , 40*se_dex_scroll_mvl/mxv
-	.byte		BEND  , c_v+4
+	.byte		BEND  , c_b+(4*2)
 	.byte		N01   , Gn4 , v127
 	.byte	W01
 	.byte		        Gn4 , v020

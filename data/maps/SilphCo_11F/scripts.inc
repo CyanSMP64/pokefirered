@@ -76,6 +76,8 @@ SilphCo_11F_EventScript_BattleGiovanni::
 	setvar VAR_MAP_SCENE_SILPH_CO_11F, 1
 	setflag FLAG_HIDE_SAFFRON_ROCKETS
 	clearflag FLAG_HIDE_SAFFRON_CIVILIANS
+	fadenewbgm MUS_NONE
+	fadenewbgm MUS_SILPH
 	releaseall
 	end
 
@@ -115,7 +117,8 @@ SilphCo_11F_Movement_PlayerFaceGiovanni::
 
 @ Unused
 SilphCo_11F_EventScript_Monitor::
-	msgbox SilphCo_11F_Text_MonitorHasMonsOnIt, MSGBOX_SIGN
+	nop
+	nop
 	end
 
 SilphCo_11F_EventScript_FloorSign::

@@ -1329,7 +1329,6 @@ static void IntroCB_Scene1(struct IntroSequenceData * this)
     case 3:
         if (!gPaletteFade.active)
         {
-            m4aSongNumStart(MUS_INTRO_FIGHT);
             this->timer = 0;
             this->state++;
         }
@@ -1338,6 +1337,7 @@ static void IntroCB_Scene1(struct IntroSequenceData * this)
         if (++this->timer == 20)
         {
             // Start animation for transitioning to the next scene
+            m4aSongNumStart(MUS_INTRO_FIGHT);
             CreateTask(Scene1_Task_BgZoom, 0);
             Scene1_StartGrassScrolling();
         }

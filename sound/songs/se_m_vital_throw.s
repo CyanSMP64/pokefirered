@@ -2,7 +2,7 @@
 
 	.equ	se_m_vital_throw_grp, voicegroup128
 	.equ	se_m_vital_throw_pri, 4
-	.equ	se_m_vital_throw_rev, reverb_set+50
+	.equ	se_m_vital_throw_rev, 0
 	.equ	se_m_vital_throw_mvl, 127
 	.equ	se_m_vital_throw_key, 0
 	.equ	se_m_vital_throw_tbs, 1
@@ -22,20 +22,20 @@ se_m_vital_throw_1:
 	.byte		VOL   , 110*se_m_vital_throw_mvl/mxv
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+16
-	.byte		BEND  , c_v+46
+	.byte		BEND  , c_b+(46*2)
 	.byte		N09   , Cn3 , v127
 	.byte	W03
 	.byte		VOL   , 104*se_m_vital_throw_mvl/mxv
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+23
+	.byte		BEND  , c_b+(23*2)
 	.byte	W03
 	.byte		VOL   , 93*se_m_vital_throw_mvl/mxv
 	.byte		PAN   , c_v-16
-	.byte		BEND  , c_v-15
+	.byte		BEND  , c_b-(15*2)
 	.byte	W03
 	.byte		VOICE , 21
 	.byte		VOL   , 110*se_m_vital_throw_mvl/mxv
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N03   , Gn4 
 	.byte	W06
 	.byte		PAN   , c_v+16

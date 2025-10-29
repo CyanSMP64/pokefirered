@@ -2,7 +2,7 @@
 
 	.equ	se_m_strength_grp, voicegroup128
 	.equ	se_m_strength_pri, 4
-	.equ	se_m_strength_rev, reverb_set+50
+	.equ	se_m_strength_rev, 0
 	.equ	se_m_strength_mvl, 127
 	.equ	se_m_strength_key, 0
 	.equ	se_m_strength_tbs, 1
@@ -22,7 +22,7 @@ se_m_strength_1:
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 110*se_m_strength_mvl/mxv
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N03   , Gn2 , v127
 	.byte	W03
 	.byte		PAN   , c_v+6

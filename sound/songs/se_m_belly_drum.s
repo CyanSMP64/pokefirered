@@ -2,7 +2,7 @@
 
 	.equ	se_m_belly_drum_grp, voicegroup128
 	.equ	se_m_belly_drum_pri, 4
-	.equ	se_m_belly_drum_rev, reverb_set+50
+	.equ	se_m_belly_drum_rev, 0
 	.equ	se_m_belly_drum_mvl, 127
 	.equ	se_m_belly_drum_key, 0
 	.equ	se_m_belly_drum_tbs, 1
@@ -22,25 +22,25 @@ se_m_belly_drum_1:
 	.byte		BENDR , 12
 	.byte		VOL   , 115*se_m_belly_drum_mvl/mxv
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N19   , An2 , v127
 	.byte	W01
-	.byte		BEND  , c_v-6
+	.byte		BEND  , c_b-(6*2)
 	.byte	W01
-	.byte		        c_v-10
+	.byte		BEND  , c_b-(10*2)
 	.byte	W01
-	.byte		        c_v-14
+	.byte		BEND  , c_b-(14*2)
 	.byte	W01
-	.byte		        c_v-12
+	.byte		BEND  , c_b-(12*2)
 	.byte	W02
-	.byte		        c_v-14
+	.byte		BEND  , c_b-(14*2)
 	.byte	W01
-	.byte		        c_v-18
+	.byte		BEND  , c_b-(18*2)
 	.byte	W01
 	.byte		VOL   , 108*se_m_belly_drum_mvl/mxv
-	.byte		BEND  , c_v-20
+	.byte		BEND  , c_b-(20*2)
 	.byte	W01
-	.byte		        c_v-22
+	.byte		BEND  , c_b-(22*2)
 	.byte	W01
 	.byte		VOL   , 94*se_m_belly_drum_mvl/mxv
 	.byte	W03

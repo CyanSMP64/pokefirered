@@ -2,7 +2,7 @@
 
 	.equ	se_m_harden_grp, voicegroup128
 	.equ	se_m_harden_pri, 4
-	.equ	se_m_harden_rev, reverb_set+50
+	.equ	se_m_harden_rev, 0
 	.equ	se_m_harden_mvl, 127
 	.equ	se_m_harden_key, 0
 	.equ	se_m_harden_tbs, 1
@@ -21,12 +21,12 @@ se_m_harden_1:
 	.byte		VOICE , 28
 	.byte		VOL   , 100*se_m_harden_mvl/mxv
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+16
+	.byte		BEND  , c_b+(16*2)
 	.byte		N03   , Gs3 , v080
 	.byte	W01
-	.byte		BEND  , c_v+38
+	.byte		BEND  , c_b+(38*2)
 	.byte	W01
-	.byte		        c_v+62
+	.byte		BEND  , c_b+(62*2)
 	.byte	W02
 	.byte		N17   , Gs4 , v096
 	.byte	W03

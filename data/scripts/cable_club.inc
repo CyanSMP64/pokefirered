@@ -1118,7 +1118,9 @@ CableClub_EventScript_CloseGameCornerBarrier::
 	return
 
 CableClub_OnResume::
-	special InitUnionRoom
+	nop			@ filler
+	nop			@ filler
+	nop			@ filler
 	end
 
 JoyfulGameCorner_EventScript_InfoMan2::

@@ -2,7 +2,7 @@
 
 	.equ	se_wall_hit_grp, voicegroup127
 	.equ	se_wall_hit_pri, 2
-	.equ	se_wall_hit_rev, reverb_set+50
+	.equ	se_wall_hit_rev, 0
 	.equ	se_wall_hit_mvl, 127
 	.equ	se_wall_hit_key, 0
 	.equ	se_wall_hit_tbs, 1
@@ -20,7 +20,7 @@ se_wall_hit_1:
 	.byte	TEMPO , 220*se_wall_hit_tbs/2
 	.byte		VOICE , 89
 	.byte		VOL   , 80*se_wall_hit_mvl/mxv
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N18   , Gn1 , v127
 	.byte	W24
 	.byte	FINE

@@ -96,7 +96,7 @@ void PrintOp(int wait, std::string name, const char *format, ...)
 
     if (format != nullptr)
     {
-        if (!g_compressionEnabled || s_lastOpName != name)
+        if (!g_compressionEnabled || name == "BEND  " || s_lastOpName != name)
         {
             std::fprintf(g_outputFile, "%s, ", name.c_str());
             s_lastOpName = name;
@@ -146,7 +146,7 @@ void PrintWord(const char *format, ...)
 void PrintNote(const Event& event)
 {
     int note = event.note;
-    int velocity = g_noteVelocityLUT[event.param1];
+    int velocity = event.param1; 
     int duration = -1;
 
     if (event.param2 != -1)
@@ -354,9 +354,9 @@ void PrintControllerOp(const Event& event)
     case 0x01:
         PrintOp(event.time, "MOD   ", "%u", event.param2);
         break;
-    case 0x07:
-        PrintOp(event.time, "VOL   ", "%u*%s_mvl/mxv", event.param2, g_asmLabel.c_str());
-        break;
+    // case 0x07: // Volume
+    //     PrintOp(event.time, "VOL   ", "%u*%s_mvl/mxv", event.param2, g_asmLabel.c_str());
+    //     break;
     case 0x0A:
         PrintOp(event.time, "PAN   ", "c_v%+d", event.param2 - 64);
         break;
@@ -432,7 +432,7 @@ void PrintAgbTrack(std::vector<Event>& events)
         if (event.type == EventType::Note)
             break;
 
-        if (event.type == EventType::Controller && event.param1 == 0x07)
+        if (event.type == EventType::Volume)
         {
             foundVolBeforeNote = true;
             break;
@@ -504,17 +504,23 @@ void PrintAgbTrack(std::vector<Event>& events)
             ResetTrackVars();
             break;
         case EventType::Tempo:
-            PrintByte("TEMPO , %u*%s_tbs/2", static_cast<int>(round(60000000.0f / static_cast<float>(event.param2))), g_asmLabel.c_str());
+            if (g_clocksPerBeat > 1)
+                PrintByte("TEMPO , %u*%s_tbs/2", static_cast<int>(round(60000000.0f / static_cast<float>(event.param2))), g_asmLabel.c_str());
+            else
+                PrintByte("TEMPO , (%u*%s_tbs+1)/2", static_cast<int>(round(60000000.0f / static_cast<float>(event.param2))), g_asmLabel.c_str());
             PrintWait(event.time);
             break;
         case EventType::InstrumentChange:
             PrintOp(event.time, "VOICE ", "%u", event.param1);
             break;
         case EventType::PitchBend:
-            PrintOp(event.time, "BEND  ", "c_v%+d", event.param2 - 64);
+            PrintOp(event.time, "BEND  ", "c_b%+d", ((event.param1 >> 6) | (event.param2 << 1)) - 128);
             break;
         case EventType::Controller:
             PrintControllerOp(event);
+            break;
+        case EventType::Volume:
+            PrintOp(event.time, "VOL   ", "%u*%s_mvl/mxv", event.param1, g_asmLabel.c_str());
             break;
         default:
             PrintWait(event.time);

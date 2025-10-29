@@ -2,7 +2,7 @@
 
 	.equ	se_m_earthquake_grp, voicegroup128
 	.equ	se_m_earthquake_pri, 4
-	.equ	se_m_earthquake_rev, reverb_set+50
+	.equ	se_m_earthquake_rev, 0
 	.equ	se_m_earthquake_mvl, 127
 	.equ	se_m_earthquake_key, 0
 	.equ	se_m_earthquake_tbs, 1
@@ -22,7 +22,7 @@ se_m_earthquake_1:
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 110*se_m_earthquake_mvl/mxv
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N03   , Cs2 , v127
 	.byte	W03
 	.byte		PAN   , c_v+6

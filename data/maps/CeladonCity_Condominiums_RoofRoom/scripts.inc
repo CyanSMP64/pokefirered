@@ -18,7 +18,7 @@ CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall::
 
 CeladonCity_Condominiums_RoofRoom_EventScript_GetEeveeParty::
 	removeobject LOCALID_EEVEE_POKEBALL
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_EVOLVED
 	message CeladonCity_Condominiums_RoofRoom_Text_ObtainedAnEevee
 	waitmessage
 	waitfanfare
@@ -32,7 +32,7 @@ CeladonCity_Condominiums_RoofRoom_EventScript_GetEeveeParty::
 
 CeladonCity_Condominiums_RoofRoom_EventScript_GetEeveePC::
 	removeobject LOCALID_EEVEE_POKEBALL
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_EVOLVED
 	message CeladonCity_Condominiums_RoofRoom_Text_ObtainedAnEevee
 	waitmessage
 	waitfanfare

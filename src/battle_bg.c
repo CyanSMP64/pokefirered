@@ -613,17 +613,6 @@ static const struct {
     {MAP_BATTLE_SCENE_LINK,     BATTLE_TERRAIN_LINK}
 };
 
-// Unused
-void CreateUnknownDebugSprite(void)
-{
-    u8 spriteId;
-
-    ResetSpriteData();
-    spriteId = CreateSprite(&gUnknownDebugSprite, 0, 0, 0);
-    gSprites[spriteId].invisible = TRUE;
-    SetMainCallback2(CB2_unused);
-}
-
 static void CB2_unused(void)
 {
     AnimateSprites();

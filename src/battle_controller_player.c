@@ -800,7 +800,7 @@ static void SetLinkBattleEndCallbacks(void)
     {
         if (!gReceivedRemoteLinkPlayers)
         {
-            m4aSongNumStop(SE_LOW_HEALTH);
+            m4aMPlayStop(&gMPlayInfo_BGM2);
             gMain.inBattle = 0;
             gMain.callback1 = gPreBattleCallback1;
             SetMainCallback2(CB2_InitEndLinkBattle);
@@ -809,7 +809,7 @@ static void SetLinkBattleEndCallbacks(void)
     }
     else if (IsLinkTaskFinished())
     {
-        m4aSongNumStop(SE_LOW_HEALTH);
+        m4aMPlayStop(&gMPlayInfo_BGM2);
         gMain.inBattle = 0;
         gMain.callback1 = gPreBattleCallback1;
         SetMainCallback2(CB2_InitEndLinkBattle);
@@ -831,7 +831,7 @@ void SetBattleEndCallbacks(void)
         }
         else
         {
-            m4aSongNumStop(SE_LOW_HEALTH);
+            m4aMPlayStop(&gMPlayInfo_BGM2);
             gMain.inBattle = FALSE;
             gMain.callback1 = gPreBattleCallback1;
             SetMainCallback2(gMain.savedCallback);

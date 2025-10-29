@@ -30,7 +30,6 @@ static void Task_ExitDoor(u8 taskId);
 static void Task_ExitNonAnimDoor(u8 taskId);
 static void Task_ExitNonDoor(u8 taskId);
 static void Task_TeleportWarpIn(u8 taskId);
-static void Task_Teleport2Warp(u8 taskId);
 static void Task_TeleportWarp(u8 taskId);
 static void Task_DoorWarp(u8 taskId);
 static void Task_StairWarp(u8 taskId);
@@ -684,7 +683,7 @@ void ReturnFromLinkRoom(void)
     CreateTask(Task_ReturnFromLinkRoomWarp, 10);
 }
 
-static void Task_Teleport2Warp(u8 taskId)
+void Task_Teleport2Warp(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
     switch (task->data[0])

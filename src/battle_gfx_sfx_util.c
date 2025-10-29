@@ -816,18 +816,29 @@ void HandleLowHpMusicChange(struct Pokemon *mon, u8 battlerId)
     {
         if (!gBattleSpritesDataPtr->battlerData[battlerId].lowHpSong)
         {
-            if (!gBattleSpritesDataPtr->battlerData[battlerId ^ BIT_FLANK].lowHpSong)
-                PlaySE(SE_LOW_HEALTH);
+            if (!gBattleSpritesDataPtr->battlerData[battlerId ^ BIT_FLANK].lowHpSong) {
+                PlayBGM(MUS_BW_LOW_HEALTH);
+                m4aMPlayStop(&gMPlayInfo_BGM);
+                m4aSongNumStart(MUS_BW_LOW_HEALTH);
+            }
             gBattleSpritesDataPtr->battlerData[battlerId].lowHpSong = 1;
         }
     }
     else
     {
         gBattleSpritesDataPtr->battlerData[battlerId].lowHpSong = 0;
-        if (!IsDoubleBattle())
-            m4aSongNumStop(SE_LOW_HEALTH);
-        else if (IsDoubleBattle() && !gBattleSpritesDataPtr->battlerData[battlerId ^ BIT_FLANK].lowHpSong)
-            m4aSongNumStop(SE_LOW_HEALTH);
+        if (!IsDoubleBattle()
+         || (IsDoubleBattle() && !gBattleSpritesDataPtr->battlerData[battlerId ^ BIT_FLANK].lowHpSong)) {
+            m4aMPlayStop(&gMPlayInfo_BGM2);
+            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER
+             && gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_LEADER
+             && GetEnemyMonCount(TRUE) == 1
+             && sFlickerArray[24] == 1) {
+                PlayBGM(MUS_VS_GYM_LEADER_FINAL);
+                sFlickerArray[24] = 2;
+            }
+            m4aMPlayContinue(&gMPlayInfo_BGM);
+        }
     }
 }
 
@@ -838,7 +849,7 @@ void BattleStopLowHpSound(void)
     gBattleSpritesDataPtr->battlerData[playerBattler].lowHpSong = 0;
     if (IsDoubleBattle())
         gBattleSpritesDataPtr->battlerData[playerBattler ^ BIT_FLANK].lowHpSong = 0;
-    m4aSongNumStop(SE_LOW_HEALTH);
+    m4aMPlayStop(&gMPlayInfo_BGM2);
 }
 
 // not used

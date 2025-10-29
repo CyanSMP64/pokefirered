@@ -2,7 +2,7 @@
 
 	.equ	se_m_thunderbolt2_grp, voicegroup128
 	.equ	se_m_thunderbolt2_pri, 4
-	.equ	se_m_thunderbolt2_rev, reverb_set+50
+	.equ	se_m_thunderbolt2_rev, 0
 	.equ	se_m_thunderbolt2_mvl, 127
 	.equ	se_m_thunderbolt2_key, 0
 	.equ	se_m_thunderbolt2_tbs, 1
@@ -22,7 +22,7 @@ se_m_thunderbolt2_1:
 	.byte		VOL   , 100*se_m_thunderbolt2_mvl/mxv
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+0
+	.byte		BEND  , c_b+(0*2)
 	.byte		N03   , Cn4 , v088
 	.byte	W06
 	.byte		PAN   , c_v-9

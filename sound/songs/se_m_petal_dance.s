@@ -2,7 +2,7 @@
 
 	.equ	se_m_petal_dance_grp, voicegroup128
 	.equ	se_m_petal_dance_pri, 4
-	.equ	se_m_petal_dance_rev, reverb_set+50
+	.equ	se_m_petal_dance_rev, 0
 	.equ	se_m_petal_dance_mvl, 127
 	.equ	se_m_petal_dance_key, 0
 	.equ	se_m_petal_dance_tbs, 1
@@ -22,7 +22,7 @@ se_m_petal_dance_1:
 	.byte		VOL   , 95*se_m_petal_dance_mvl/mxv
 	.byte		BENDR , 2
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+15
+	.byte		BEND  , c_b+(15*2)
 	.byte	W03
 	.byte		N06   , Dn6 , v112
 	.byte	W03
@@ -118,7 +118,7 @@ se_m_petal_dance_2:
 	.byte		BENDR , 2
 	.byte		VOL   , 43*se_m_petal_dance_mvl/mxv
 	.byte		PAN   , c_v+0
-	.byte		BEND  , c_v+15
+	.byte		BEND  , c_b+(15*2)
 	.byte		N06   , En6 , v108
 	.byte	W03
 	.byte	W03

@@ -449,17 +449,17 @@ static void Task_ExecuteMainMenuSelection(u8 taskId)
                 menuAction = MAIN_MENU_NEWGAME;
                 break;
             case 2:
-                if (!IsWirelessAdapterConnected())
-                {
-                    SetStdFrame0OnBg(0);
-                    gTasks[taskId].func = Task_MysteryGiftError;
-                    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
-                    return;
-                }
-                else
-                {
+                //if (!IsWirelessAdapterConnected())
+                //{
+                //    SetStdFrame0OnBg(0);
+                //    gTasks[taskId].func = Task_MysteryGiftError;
+                //    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+                //    return;
+                //}
+                //else
+                //{
                     menuAction = MAIN_MENU_MYSTERYGIFT;
-                }
+                //}
                 break;
             }
             break;

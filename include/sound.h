@@ -21,6 +21,7 @@ bool8 IsFanfareTaskInactive(void);
 void FadeInNewBGM(u16 songNum, u8 speed);
 void FadeOutBGMTemporarily(u8 speed);
 bool8 IsBGMPausedOrStopped(void);
+bool8 IsBGM2PausedOrStopped(void);
 void FadeInBGM(u8 speed);
 void FadeOutBGM(u8 speed);
 bool8 IsBGMStopped(void);

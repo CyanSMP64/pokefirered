@@ -353,6 +353,41 @@
 #define MUS_SLOW_PALLET           345 // MUS_SLOWMASARA
 #define MUS_TEACHY_TV_MENU        346 // MUS_TVNOIZE
 
+#define MUS_OBTAIN_EGG            347
+#define MUS_BW_LOW_HEALTH         348
+#define MUS_VS_RIVAL              349
+#define MUS_BW_VICTORY_PLASMA     350
+#define MUS_BW_VICTORY_BOSS       351
+#define MUS_BW_MART               352
+#define MUS_BW_GATE               353
+#define MUS_BW_NACRENE            354
+#define MUS_VS_GYM_LEADER_FINAL   355
+#define MUS_ENCOUNTER_FEMALE      356
+#define MUS_ENCOUNTER_SUSPICIOUS  357
+#define MUS_ENCOUNTER_TWINS       358
+#define MUS_ENCOUNTER_INTENSE     359
+#define MUS_ENCOUNTER_COOL        360
+#define MUS_ENCOUNTER_CYCLIST     361
+#define MUS_ENCOUNTER_CLERK       362
+#define MUS_ENCOUNTER_HIKER       363
+#define MUS_ENCOUNTER_POKEFAN     364
+#define MUS_ENCOUNTER_RICH        365
+#define MUS_ENCOUNTER_ROUGHNECK   366
+#define MUS_VS_PLASMA             367
+#define MUS_VS_ELITE_FOUR         368
+#define MUS_VS_GHETSIS            369
+#define MUS_VS_RAIKOU             370
+#define MUS_VS_ENTEI              371
+#define MUS_VS_SUICUNE            372
+#define MUS_VS_LUGIA              373
+#define MUS_VS_HO_OH              374
+#define MUS_VS_KYOGRE_GROUDON     375
+#define MUS_VS_REGI               376
+#define MUS_BW_ACCUMULA           377
+#define MUS_BW_NIMBASA            378
+#define MUS_BW_VICTORY_ROAD       379
+#define MUS_SAFARI_ZONE           380
+
 #define MUS_NONE                    0xFFFF
 
 #endif  // GUARD_CONSTANTS_SONGS_H

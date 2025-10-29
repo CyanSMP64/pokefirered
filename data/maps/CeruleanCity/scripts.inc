@@ -36,7 +36,7 @@ CeruleanCity_EventScript_RivalTriggerRight::
 CeruleanCity_EventScript_Rival::
 	textcolor NPC_TEXT_COLOR_MALE
 	setvar VAR_MAP_SCENE_ROUTE22, 2
-	playbgm MUS_ENCOUNTER_RIVAL, 0
+	playbgm MUS_ENCOUNTER_RIVAL, 1
 	addobject LOCALID_CERULEAN_RIVAL
 	applymovement LOCALID_CERULEAN_RIVAL, CeruleanCity_Movement_RivalEnter
 	waitmovement 0
@@ -48,7 +48,10 @@ CeruleanCity_EventScript_Rival::
 	famechecker FAMECHECKER_BILL, 0
 	msgbox CeruleanCity_Text_RivalPostBattle
 	closemessage
-	playbgm MUS_RIVAL_EXIT, 0
+	nop			@ filler
+	nop			@ filler
+	nop			@ filler
+	nop			@ filler
 	call_if_eq VAR_TEMP_1, 0, CeruleanCity_EventScript_RivalStartExit
 	call_if_eq VAR_TEMP_1, 1, CeruleanCity_EventScript_RivalStartExit
 	call_if_eq VAR_TEMP_1, 2, CeruleanCity_EventScript_RivalStartExitRight
@@ -178,7 +181,7 @@ CeruleanCity_EventScript_GruntDefeated::
 	msgbox CeruleanCity_Text_OkayIllReturnStolenTM
 	checkitemspace ITEM_TM28
 	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_EventScript_NoRoomForTM28
-	giveitem_msg CeruleanCity_Text_RecoveredTM28FromGrunt, ITEM_TM28
+	giveitem_msg CeruleanCity_Text_RecoveredTM28FromGrunt, ITEM_TM28, 1, MUS_OBTAIN_TMHM
 	msgbox CeruleanCity_Text_BetterGetMovingBye
 	closemessage
 	fadescreen FADE_TO_BLACK

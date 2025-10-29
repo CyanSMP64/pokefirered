@@ -54,7 +54,9 @@ static void Task_ControlsGuide_ChangePage(u8);
 static void Task_ControlsGuide_Clear(u8);
 
 static void Task_PikachuIntro_LoadPage1(u8);
+static void fillerfunc1(void);
 static void Task_PikachuIntro_HandleInput(u8);
+static void fillerfunc3(void);
 static void Task_PikachuIntro_Clear(u8);
 
 static void Task_OakSpeech_Init(u8);
@@ -96,6 +98,7 @@ static void Task_OakSpeech_WaitForFade(u8);
 static void Task_OakSpeech_FreeResources(u8);
 
 static void CB2_ReturnFromNamingScreen(void);
+static void fillerfunc2(void);
 static void CreateNidoranFSprite(u8);
 static void CreatePikachuOrPlatformSprites(u8, u8);
 static void DestroyPikachuOrPlatformSprites(u8, u8);
@@ -784,6 +787,8 @@ static void Task_NewGameScene(u8 taskId)
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
         ShowBg(0);
         ShowBg(1);
+        ShowBg(1); // filler
+        ShowBg(1); // filler
         SetVBlankCallback(VBlankCB_NewGameScene);
         PlayBGM(MUS_NEW_GAME_INSTRUCT);
         gTasks[taskId].func = Task_ControlsGuide_HandleInput;
@@ -949,7 +954,7 @@ static void Task_PikachuIntro_LoadPage1(u8 taskId)
     }
     else
     {
-        PlayBGM(MUS_NEW_GAME_INTRO);
+//        PlayBGM(MUS_NEW_GAME_INTRO);
         ClearTopBarWindow();
         TopBarWindowPrintString(gText_ABUTTONNext, 0, 1);
         sOakSpeechResources->pikachuIntroTilemap = MallocAndDecompress(sPikachuIntro_Background_Tilemap, &size);
@@ -971,7 +976,13 @@ static void Task_PikachuIntro_LoadPage1(u8 taskId)
         CreatePikachuOrPlatformSprites(taskId, SPRITE_TYPE_PIKACHU);
         BeginNormalPaletteFade(PALETTES_ALL, 2, 16, 0, 0);
         gTasks[taskId].func = Task_PikachuIntro_HandleInput;
+        fillerfunc1();
     }
+}
+
+static void fillerfunc1(void)
+{
+    return;
 }
 
 static void Task_PikachuIntro_HandleInput(u8 taskId)
@@ -1050,7 +1061,7 @@ static void Task_PikachuIntro_HandleInput(u8 taskId)
         break;
     case PIKACHU_INTRO_EXIT:
         DestroyTextCursorSprite(gTasks[taskId].tTextCursorSpriteId);
-        PlayBGM(MUS_NEW_GAME_EXIT);
+//        PlayBGM(MUS_NEW_GAME_EXIT);
         tBlendTarget = 24;
         gMain.state++;
         break;
@@ -1073,6 +1084,13 @@ static void Task_PikachuIntro_HandleInput(u8 taskId)
         }
         break;
     }
+}
+
+static void fillerfunc3(void)
+{
+    u8 filler = FALSE;
+    if (IsCryFinished())
+        filler = TRUE;
 }
 
 #undef tBlendTarget
@@ -1113,7 +1131,7 @@ static void Task_OakSpeech_Init(u8 taskId)
         CreateNidoranFSprite(taskId);
         LoadTrainerPic(OAK_PIC, 0);
         CreatePikachuOrPlatformSprites(taskId, SPRITE_TYPE_PLATFORM);
-        PlayBGM(MUS_ROUTE24);
+        PlayBGM(MUS_NEW_GAME_INTRO);
         BeginNormalPaletteFade(PALETTES_ALL, 5, 16, 0, RGB_BLACK);
         tTimer = 80;
         ShowBg(2);
@@ -1878,6 +1896,13 @@ static void CB2_ReturnFromNamingScreen(void)
     }
 
     gMain.state++;
+}
+
+static void fillerfunc2(void)
+{
+    u8 filler = FALSE;
+    if (IsCryFinished())
+        filler = TRUE;
 }
 
 static void CreateNidoranFSprite(u8 taskId)
