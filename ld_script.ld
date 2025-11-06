@@ -64,7 +64,6 @@ SECTIONS {
         src/string_util.o(.text);
         src/link.o(.text);
         src/multiboot.o(.text);
-        src/main_menu.o(.text);
         src/battle_controllers.o(.text);
         src/battle_bg.o(.text);
         src/battle_main.o(.text);
@@ -81,6 +80,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/pokemon.o(.text);
+        src/main_menu.o(.text);
         src/battle_util2.o(.text);
         src/battle_controller_link_opponent.o(.text);
         src/trig.o(.text);
@@ -111,7 +111,6 @@ SECTIONS {
         src/start_menu.o(.text);
         src/tileset_anims.o(.text);
         src/palette.o(.text);
-        src/sound.o(.text);
         src/battle_anim.o(.text);
         src/battle_anim_mons.o(.text);
         src/title_screen.o(.text);
@@ -121,6 +120,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/sound.o(.text);
         src/reshow_battle_screen.o(.text);
         src/event_object_lock.o(.text);
         src/text_window_graphics.o(.text);
@@ -252,7 +252,6 @@ SECTIONS {
         src/save_location.o(.text);
         src/bag.o(.text);
         src/trainer_pokemon_sprites.o(.text);
-        src/vs_seeker.o(.text);
         src/item_pc.o(.text);
         src/mailbox_pc.o(.text);
         src/menu.o(.text);
@@ -281,6 +280,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/roamer.o(.text);
+        src/vs_seeker.o(.text);
         src/wild_pokemon_area.o(.text);
         src/dynamic_placeholder_text_util.o(.text);
         src/menu_indicators.o(.text);
@@ -321,6 +321,7 @@ SECTIONS {
         src/battle_anim_new.o(.text);
         src/debug.o(.text);
         src/debug_pokemon_creator.o(.text);
+        src/form_change.o(.text);
     } =0
 
     script_data :
@@ -622,6 +623,7 @@ SECTIONS {
         src/battle_anim_new.o(.rodata);
         src/debug.o(.rodata);
         src/debug_pokemon_creator.o(.rodata);
+        src/form_change.o(.rodata);
     } =0
 
     lib_rodata :

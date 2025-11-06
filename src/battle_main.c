@@ -15,6 +15,7 @@
 #include "decompress.h"
 #include "event_data.h"
 #include "evolution_scene.h"
+#include "form_change.h"
 #include "graphics.h"
 #include "item.h"
 #include "link.h"
@@ -3076,11 +3077,13 @@ static void BattleIntroPlayerSendsOutMonAnimation(void)
         {
             BtlController_EmitIntroTrainerBallThrow(0);
             MarkBattlerForControllerExec(gActiveBattler);
+            GetBattlerPartyState(gActiveBattler)->sentOut = TRUE;
         }
         if (gBattleTypeFlags & BATTLE_TYPE_MULTI && GetBattlerPosition(gActiveBattler) == B_POSITION_PLAYER_RIGHT)
         {
             BtlController_EmitIntroTrainerBallThrow(0);
             MarkBattlerForControllerExec(gActiveBattler);
+            GetBattlerPartyState(gActiveBattler)->sentOut = TRUE;
         }
     }
     gBattleStruct->switchInAbilitiesCounter = 0;
@@ -4085,6 +4088,7 @@ static void HandleEndTurn_FinishBattle(void)
 {
     if (gCurrentActionFuncId == B_ACTION_TRY_FINISH || gCurrentActionFuncId == B_ACTION_FINISHED)
     {
+        s32 i;
         if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER_TOWER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_OLD_MAN_TUTORIAL | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_SAFARI | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_LINK)))
         {
             for (gActiveBattler = 0; gActiveBattler < gBattlersCount; gActiveBattler++)
@@ -4109,6 +4113,18 @@ static void HandleEndTurn_FinishBattle(void)
             ClearRematchStateByTrainerId();
         BeginFastPaletteFade(3);
         FadeOutMapMusic(5);
+
+        // burmy form change
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE
+            && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) != 0
+            && gBattleStruct->partyState[B_SIDE_PLAYER][i].sentOut)
+            {
+                TryFormChange(&gPlayerParty[i], gBattleTerrain);
+            }
+        }
+        
         gBattleMainFunc = FreeResetData_ReturnToOvOrDoEvolutions;
         gCB2_AfterEvolution = BattleMainCB2;
     }
