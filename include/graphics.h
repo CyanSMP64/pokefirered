@@ -8662,8 +8662,16 @@ extern const u32 gItemIconPalette_PowderJar[];
 extern const u32 gItemIcon_Gem[];
 extern const u32 gItemIconPalette_Ruby[];
 extern const u32 gItemIconPalette_Sapphire[];
-// New Items
+// Emerald-only key items
+extern const u32 gItemIcon_MagmaEmblem[];
+extern const u32 gItemIconPalette_MagmaEmblem[];
+extern const u32 gItemIcon_OldSeaMap[];
+extern const u32 gItemIconPalette_OldSeaMap[];
+// nat dex Items
+extern const u32 gItemIcon_Gracidea[];
+extern const u32 gItemIconPalette_Gracidea[];
 extern const u32 gItemIconPalette_RegionalMineral[];
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

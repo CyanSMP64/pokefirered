@@ -6432,6 +6432,57 @@
       "battleUsage": 0,
       "battleUseFunc": "NULL",
       "secondaryId": 0
+    },
+    {
+      "english": "Magma Emblem",
+      "itemId": "ITEM_MAGMA_EMBLEM",
+      "price": 0,
+      "holdEffect": "HOLD_EFFECT_NONE",
+      "holdEffectParam": 0,
+      "description_english": "A medal-like item in the same\\nshape as Team Magma's mark.",
+      "importance": 1,
+      "grammarAn": 0,
+      "registrability": 1,
+      "pocket": "POCKET_KEY_ITEMS",
+      "type": "ITEM_TYPE_BAG_MENU",
+      "fieldUseFunc": "FieldUseFunc_OakStopsYou",
+      "battleUsage": 0,
+      "battleUseFunc": "NULL",
+      "secondaryId": 0
+    },
+    {
+      "english": "Old Sea Map",
+      "itemId": "ITEM_OLD_SEA_MAP",
+      "price": 0,
+      "holdEffect": "HOLD_EFFECT_NONE",
+      "holdEffectParam": 0,
+      "description_english": "A faded sea chart that shows\\nthe way to a certain island.",
+      "importance": 1,
+      "grammarAn": 1,
+      "registrability": 1,
+      "pocket": "POCKET_KEY_ITEMS",
+      "type": "ITEM_TYPE_BAG_MENU",
+      "fieldUseFunc": "FieldUseFunc_OakStopsYou",
+      "battleUsage": 0,
+      "battleUseFunc": "NULL",
+      "secondaryId": 0
+    },
+    {
+      "english": "Gracidea",
+      "itemId": "ITEM_GRACIDEA",
+      "price": 0,
+      "holdEffect": "HOLD_EFFECT_NONE",
+      "holdEffectParam": 0,
+      "description_english": "A flower sometimes bundled in\\nbouquets to convey gratitude on\\nspecial occasions like birthdays.",
+      "importance": 1,
+      "grammarAn": 0,
+      "registrability": 0,
+      "pocket": "POCKET_KEY_ITEMS",
+      "type": "ITEM_TYPE_BAG_MENU",
+      "fieldUseFunc": "FieldUseFunc_OakStopsYou",
+      "battleUsage": 0,
+      "battleUseFunc": "NULL",
+      "secondaryId": 0
     }
   ]
 }

@@ -449,7 +449,14 @@
 #define ITEM_RUBY 373
 #define ITEM_SAPPHIRE 374
 
-#define ITEMS_COUNT 375
+// Emerald
+#define ITEM_MAGMA_EMBLEM 375
+#define ITEM_OLD_SEA_MAP 376
+
+// nat dex key items
+#define ITEM_GRACIDEA 377
+
+#define ITEMS_COUNT 378
 
 #define ITEM_TO_BERRY(itemId)(((itemId - FIRST_BERRY_INDEX) + 1))
 #define MAIL_NONE 0xFF
@@ -463,6 +470,13 @@
 #define SUPER_ROD 2
 
 // Check if the item is one that can be used on a Pokemon.
-#define IS_POKEMON_ITEM(item) (((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX) || (item) == ITEM_KINGS_ROCK || (item) == ITEM_METAL_COAT || (item) == ITEM_DEEP_SEA_TOOTH || (item) == ITEM_DEEP_SEA_SCALE || (item) == ITEM_DRAGON_SCALE || (item) == ITEM_UP_GRADE)
+#define IS_POKEMON_ITEM(item) \
+    (((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX) || \
+     (item) == ITEM_KINGS_ROCK || \
+     (item) == ITEM_METAL_COAT || \
+     (item) == ITEM_DEEP_SEA_TOOTH || \
+     (item) == ITEM_DEEP_SEA_SCALE || \
+     (item) == ITEM_DRAGON_SCALE || \
+     (item) == ITEM_UP_GRADE)
 
 #endif  // GUARD_CONSTANTS_ITEMS_H
