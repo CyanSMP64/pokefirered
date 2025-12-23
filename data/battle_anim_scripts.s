@@ -913,6 +913,7 @@ gBattleAnims_General::
 	.4byte General_SafariRockThrow          @ B_ANIM_ROCK_THROW
 	.4byte General_SafariReaction           @ B_ANIM_SAFARI_REACTION
 	.4byte General_RainDishHeal             @ B_ANIM_RAIN_DISH_HEAL
+	.4byte General_FormChange				@ B_ANIM_FORM_CHANGE
 
 	.align 2
 gBattleAnims_Special::
@@ -9387,7 +9388,7 @@ Move_TRANSFORM:
 	monbg ANIM_ATTACKER
 	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER, 48
-	createvisualtask AnimTask_TransformMon, 2, 0
+	createvisualtask AnimTask_TransformMon, 2, 0, 0, 1 @ castform flag, skip palette blend, track enemy personality (for Transform)
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
@@ -11874,7 +11875,7 @@ CastformChangeContinue:
 	monbg ANIM_ATTACKER
 	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER, 48
-	createvisualtask AnimTask_TransformMon, 2, 1
+	createvisualtask AnimTask_TransformMon, 2, 1, 0, 0
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
@@ -12250,6 +12251,15 @@ General_RainDishHeal:
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	call HealingEffect
 	waitforvisualfinish
+	end
+
+General_FormChange:
+	monbg ANIM_ATTACKER
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	waitplaysewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER, 48
+	createvisualtask AnimTask_TransformMon, 2, 0, 1, 0 @ castform flag, skip palette blend, track enemy personality (off for form changes)
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
 	end
 
 General_MonScared:

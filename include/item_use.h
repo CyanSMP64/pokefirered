@@ -34,6 +34,8 @@ void BattleUseFunc_StatBooster(u8 taskId);
 void BattleUseFunc_Medicine(u8 taskId);
 void BattleUseFunc_Ether(u8 taskId);
 void BattleUseFunc_PokeDoll(u8 taskId);
+void ItemUseOutOfBattle_FormChange(u8 taskId);
+void ItemUseOutOfBattle_FormChange_ConsumedOnUse(u8 taskId);
 void FieldUseFunc_OakStopsYou(u8 taskId);
 void ItemUseOutOfBattle_EscapeRope(u8 taskId);
 void ItemUseOutOfBattle_EnigmaBerry(u8 taskId);

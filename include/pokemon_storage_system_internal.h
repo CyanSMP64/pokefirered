@@ -565,4 +565,7 @@ void DestroyBoxMonIconAtPosition(u8 boxPosition);
 void SetBoxMonIconObjMode(u8 cursorPos, u8 objMode);
 void SetPartyMonIconObjMode(u8 cursorPos, u8 objMode);
 
+extern EWRAM_DATA bool8 sInPartyMenu;
+extern EWRAM_DATA bool8 sJustOpenedBag;
+
 #endif //GUARD_POKEMON_STORAGE_SYSTEM_INTERNAL_H

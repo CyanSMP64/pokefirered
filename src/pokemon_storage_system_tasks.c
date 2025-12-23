@@ -21,16 +21,19 @@
 #include "text_window.h"
 #include "tilemap_util.h"
 #include "trig.h"
+#include "form_change.h"
 #include "constants/items.h"
 #include "constants/songs.h"
 
 EWRAM_DATA struct PokemonStorageSystemData *gStorage = NULL;
-static EWRAM_DATA bool8 sInPartyMenu = 0;
 static EWRAM_DATA u8 sCurrentBoxOption = 0;
 static EWRAM_DATA u8 sDepositBoxId = 0;
 static EWRAM_DATA u8 sWhichToReshow = 0;
 static EWRAM_DATA u8 sLastUsedBox = 0;
 static EWRAM_DATA u16 sMovingItemId = ITEM_NONE;
+
+EWRAM_DATA bool8 sInPartyMenu = 0;
+EWRAM_DATA bool8 sJustOpenedBag = 0;
 
 static void Task_InitPokeStorage(u8 taskId);
 static void Task_ShowPokeStorage(u8 taskId);
@@ -73,11 +76,9 @@ static void InitPalettesAndSprites(void);
 static void CreateMarkingComboSprite(void);
 static void CreateWaveformSprites(void);
 static void RefreshDisplayMonData(void);
-static void StartDisplayMonMosaic(void);
 static void SpriteCB_DisplayMonMosaic(struct Sprite *sprite);
 static bool8 IsDisplayMonMosaicActive(void);
 static void CreateDisplayMonSprite(void);
-static void LoadDisplayMonGfx(u16 species, u32 personality);
 static void PrintDisplayMonInfo(void);
 static void UpdateWaveformAnimation(void);
 static void InitSupplementalTilemaps(void);
@@ -1418,6 +1419,7 @@ static void Task_TakeItemForMoving(u8 taskId)
         StartCursorAnim(CURSOR_ANIM_OPEN);
         Item_FromMonToMoving(sInPartyMenu ? CURSOR_AREA_IN_PARTY : CURSOR_AREA_IN_BOX, GetBoxCursorPosition());
         gStorage->state++;
+        sJustOpenedBag = FALSE;
         break;
     case 2:
         if (!IsItemIconAnimActive())
@@ -1917,6 +1919,7 @@ static void Task_GiveItemFromBag(u8 taskId)
             sWhichToReshow = SCREEN_CHANGE_ITEM_FROM_BAG - 1;
             gStorage->screenChangeType = SCREEN_CHANGE_ITEM_FROM_BAG;
             SetPokeStorageTask(Task_ChangeScreen);
+            sJustOpenedBag = TRUE;
         }
         break;
     }
@@ -2189,7 +2192,7 @@ static void RefreshDisplayMonData(void)
     ScheduleBgCopyTilemapToVram(0);
 }
 
-static void StartDisplayMonMosaic(void)
+void StartDisplayMonMosaic(void)
 {
     RefreshDisplayMonData();
     if (gStorage->displayMonSprite)
@@ -2263,7 +2266,7 @@ static void CreateDisplayMonSprite(void)
     }
 }
 
-static void LoadDisplayMonGfx(u16 species, u32 personality)
+void LoadDisplayMonGfx(u16 species, u32 personality)
 {
     if (gStorage->displayMonSprite == NULL)
         return;

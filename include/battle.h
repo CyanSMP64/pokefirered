@@ -746,6 +746,18 @@ extern struct MultiBattlePokemonTx gMultiPartnerParty[3];
 extern u16 gRandomTurnNumber;
 extern u8 gBattlerAbility;
 
+static inline bool32 IsBattlerAlive(u32 battler)
+{
+    if (gBattleMons[battler].hp == 0)
+        return FALSE;
+    else if (battler >= gBattlersCount)
+        return FALSE;
+    else if (gAbsentBattlerFlags & (1u << battler))
+        return FALSE;
+    else
+        return TRUE;
+}
+
 static inline u32 GetBattlerPosition_exp(u32 battler)
 {
     return gBattlerPositions[battler];
@@ -754,6 +766,27 @@ static inline u32 GetBattlerPosition_exp(u32 battler)
 static inline u32 GetBattlerSide_exp(u32 battler)
 {
     return GetBattlerPosition_exp(battler) & BIT_SIDE;
+}
+
+static inline bool32 IsOnPlayerSide(u32 battler)
+{
+    return GetBattlerSide_exp(battler) == B_SIDE_PLAYER;
+}
+
+static inline struct Pokemon* GetBattlerMon(u32 battler)
+{
+    u32 index = gBattlerPartyIndexes[battler];
+    return !IsOnPlayerSide(battler) ? &gEnemyParty[index] : &gPlayerParty[index];
+}
+
+static inline struct Pokemon *GetSideParty(u8 side)
+{
+    return side == B_SIDE_PLAYER ? gPlayerParty : gEnemyParty;
+}
+
+static inline struct Pokemon *GetBattlerParty(u32 battler)
+{
+    return GetSideParty(GetBattlerSide_exp(battler));
 }
 
 static inline struct PartyState *GetBattlerPartyState(u32 battler)

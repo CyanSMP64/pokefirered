@@ -23,6 +23,8 @@ bool8 BattleInitAllSprites(u8 *state, u8 *battlerId);
 void ClearSpritesHealthboxAnimData(void);
 void CopyAllBattleSpritesInvisibilities(void);
 void CopyBattleSpriteInvisibility(u8 battlerId);
+void SetSkipPaletteBlend(bool8 skip);
+void SetSkipPaletteBlendOnce(u8 battlerId, bool8 skip);
 void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u8 transformType, bool8 trackEnemyPersonality);
 void BattleLoadSubstituteOrMonSpriteGfx(u8 battlerId, bool8 loadMonSprite);
 void LoadBattleMonGfxAndAnimate(u8 battlerId, bool8 loadMonSprite, u8 spriteId);

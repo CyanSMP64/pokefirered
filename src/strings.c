@@ -306,6 +306,7 @@ const u8 gText_PkmnAdoresBaseVar2Fell[] = _(""); // dummied
 const u8 gText_PkmnFriendlyBaseVar2CantFall[] = _("{STR_VAR_1} became more friendly, and\nits base points for its {STR_VAR_2} stat\lcan't go any lower!{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnSnappedOutOfConfusion[] = _("{STR_VAR_1} snapped out of its\nconfusion.{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnGotOverInfatuation[] = _("{STR_VAR_1} got over its\ninfatuation.{PAUSE_UNTIL_PRESS}");
+const u8 gText_PkmnTransformed[] = _("{STR_VAR_1} transformed!{PAUSE_UNTIL_PRESS}");
 const u8 gText_OnlyPkmnForBattle[] = _("That's your only\nPokémon for battle.");
 ALIGNED(4) const u8 gText_PkmnCantBeTradedNow[] = _("That Pokémon can't be traded\nnow.");
 ALIGNED(4) const u8 gText_EggCantBeTradedNow[] = _("An Egg can't be traded now.");

@@ -910,6 +910,18 @@ void ItemUseInBattle_EnigmaBerry(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_FormChange(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_FormChange;
+    SetUpItemUseCallback(taskId);
+}
+
+void ItemUseOutOfBattle_FormChange_ConsumedOnUse(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_FormChange_ConsumedOnUse;
+    SetUpItemUseCallback(taskId);
+}
+
 void FieldUseFunc_OakStopsYou(u8 taskId)
 {
     if (GetPocketByItemId(gSpecialVar_ItemId) == POCKET_BERRY_POUCH)

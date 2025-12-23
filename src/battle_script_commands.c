@@ -28,6 +28,7 @@
 #include "battle_interface.h"
 #include "debug.h"
 #include "battle_util.h"
+#include "form_change.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_script_commands.h"
@@ -529,6 +530,7 @@ static void Cmd_subattackerhpbydmg(void);
 static void Cmd_removeattackerstatus1(void);
 static void Cmd_finishaction(void);
 static void Cmd_finishturn(void);
+static void Cmd_callnative(void);
 
 void (* const gBattleScriptingCommandsTable[])(void) =
 {
@@ -780,6 +782,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_removeattackerstatus1,                   //0xF5
     Cmd_finishaction,                            //0xF6
     Cmd_finishturn,                              //0xF7
+    Cmd_callnative,                              //0xF8
 };
 
 struct StatFractions
@@ -10251,4 +10254,43 @@ static void Cmd_finishturn(void)
 {
     gCurrentActionFuncId = B_ACTION_FINISHED;
     gCurrentTurnActionNumber = gBattlersCount;
+}
+
+static void Cmd_callnative(void)
+{
+    void (*func)() = (void *)T1_READ_PTR(gBattlescriptCurrInstr + 1);
+    func();
+}
+
+void BS_TryTriggerStatusForm(void)
+{
+    if (TryBattleFormChange(gBattlerTarget, FORM_CHANGE_STATUS))
+    {
+        gBattleScripting.battler = gBattlerTarget;
+        BattleScriptPush(gBattlescriptCurrInstr + 5);
+        gBattlescriptCurrInstr = BattleScript_TargetFormChangeWithStringNoPopup;
+        return;
+    }
+    gBattlescriptCurrInstr += 5;
+}
+
+void BS_HandleFormChange(void)
+{
+    u32 battler = GetBattlerForBattleScript(gBattlescriptCurrInstr[5]);
+    struct Pokemon *mon = GetBattlerMon(battler);
+
+    if (gBattlescriptCurrInstr[6] == 0)
+    {
+        BtlController_EmitSetMonData(BUFFER_A, REQUEST_SPECIES_BATTLE, 1u << gBattlerPartyIndexes[battler], sizeof(gBattleMons[battler].species), &gBattleMons[battler].species);
+        MarkBattlerForControllerExec(battler);
+    }
+    else if (gBattlescriptCurrInstr[6] == 1)
+    {
+        RecalcBattlerStats(battler, mon, FALSE);
+    }
+    else
+    {
+        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], mon, HEALTHBOX_ALL);
+    }
+    gBattlescriptCurrInstr += 7;
 }

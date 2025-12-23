@@ -58,7 +58,6 @@ SECTIONS {
         src/text_printer.o(.text);
         src/window.o(.text);
         src/blit.o(.text);
-        src/window_8bpp.o(.text);
         src/text.o(.text);
         src/sprite.o(.text);
         src/string_util.o(.text);
@@ -80,6 +79,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/pokemon.o(.text);
+        src/window_8bpp.o(.text);
         src/main_menu.o(.text);
         src/battle_util2.o(.text);
         src/battle_controller_link_opponent.o(.text);
@@ -107,7 +107,6 @@ SECTIONS {
         src/field_control_avatar.o(.text);
         src/event_data.o(.text);
         src/coord_event_weather.o(.text);
-        src/field_tasks.o(.text);
         src/start_menu.o(.text);
         src/tileset_anims.o(.text);
         src/palette.o(.text);
@@ -120,6 +119,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/battle_setup.o(.text);
+        src/field_tasks.o(.text);
         src/sound.o(.text);
         src/reshow_battle_screen.o(.text);
         src/event_object_lock.o(.text);
@@ -260,7 +260,6 @@ SECTIONS {
         src/trainer_fan_club.o(.text);
         src/quest_log_events.o(.text);
         src/union_room.o(.text);
-        src/union_room_player_avatar.o(.text);
         src/union_room_battle.o(.text);
         src/pokemon_special_anim.o(.text);
         src/pokemon_special_anim_scene.o(.text);
@@ -280,6 +279,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/roamer.o(.text);
+        src/union_room_player_avatar.o(.text);
         src/vs_seeker.o(.text);
         src/wild_pokemon_area.o(.text);
         src/dynamic_placeholder_text_util.o(.text);

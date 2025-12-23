@@ -8,6 +8,7 @@
 #include "fldeff.h"
 #include "party_menu.h"
 #include "field_poison.h"
+#include "form_change.h"
 #include "constants/battle.h"
 
 static bool32 IsMonValidSpecies(struct Pokemon *pokemon)
@@ -102,8 +103,10 @@ s32 DoPoisonFieldEffect(void)
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
         {
             hp = GetMonData(pokemon, MON_DATA_HP);
-            if (hp == 0 || --hp == 0)
+            if (hp == 0 || --hp == 0) {
+                TryFormChange(&pokemon[i], FORM_CHANGE_FAINT);
                 numFainted++;
+            }
             SetMonData(pokemon, MON_DATA_HP, &hp);
             numPoisoned++;
         }

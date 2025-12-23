@@ -235,6 +235,7 @@ struct SpeciesInfo
  /* 0x1D */ u8 bodyColor : 7;
             u8 noFlip : 1;
  /* 0x1E */ u16 expYield;
+ /* 0x20 */ const struct FormChange *formChangeTable;
 };
 
 struct BattleMove
@@ -366,6 +367,7 @@ u8 GetSecretBaseTrainerNameIndex(void);
 bool8 IsPlayerPartyAndPokemonStorageFull(void);
 void GetSpeciesName(u8 *name, u16 species);
 const u8 *GetSpeciesName_exp(u16 species);
+u8 GetSpeciesType(u16 species, u8 slot);
 u8 CalculatePPWithBonus(u16 move, u8 ppBonuses, u8 moveIndex);
 void RemoveMonPPBonus(struct Pokemon *mon, u8 moveIndex);
 void RemoveBattleMonPPBonus(struct BattlePokemon *mon, u8 moveIndex);
@@ -431,7 +433,9 @@ bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 bank);
 struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 battlePosition, u8 mode);
 void DestroyMonSpritesGfxManager(void);
 u8 *MonSpritesGfxManager_GetSpritePtr(u8 bufferId);
+bool32 DoesSpeciesHaveFormChangeMethod(u16 species, u16 method);
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
+void TryToSetBattleFormChangeMoves(struct Pokemon *mon, u16 method);
 u8 CheckPartyPoison(struct Pokemon *party, u8 selection);
 
 #endif // GUARD_POKEMON_H

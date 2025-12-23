@@ -8,6 +8,7 @@
 #include "pokemon_storage_system_internal.h"
 #include "pokemon_summary_screen.h"
 #include "strings.h"
+#include "form_change.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
@@ -20,6 +21,7 @@ static EWRAM_DATA u8 sMovingMonOrigBoxId = 0;
 static EWRAM_DATA u8 sMovingMonOrigBoxPos = 0;
 static EWRAM_DATA bool8 sInMultiMoveMode = FALSE;
 static EWRAM_DATA u8 sSavedCursorPosition = 0;
+static EWRAM_DATA bool8 sRefreshDisplayMonGfx = FALSE;
 
 static void DoCursorNewPosUpdate(void);
 static bool8 MonPlaceChange_Grab(void);
@@ -47,6 +49,10 @@ static bool8 SetMenuTextsForMon(void);
 static bool8 SetMenuTextsForItem(void);
 static void CreateCursorSprites(void);
 static void ToggleCursorMultiMoveMode(void);
+
+// Form changing
+void SetMonFormPSS(struct BoxPokemon *boxMon, u16 method);
+void UpdateSpeciesSpritePSS(struct BoxPokemon *boxmon);
 
 static const u16 sPokeStorageMisc1Pal[] = INCBIN_U16("graphics/pokemon_storage/misc1.gbapal");
 static const u16 sHandCursorTiles[] = INCBIN_U16("graphics/pokemon_storage/cursor.4bpp");
@@ -586,17 +592,20 @@ static void MoveMon(void)
 static void PlaceMon(void)
 {
     u8 boxId;
+    struct Pokemon *mon = &gPlayerParty[sCursorPosition];
 
     switch (sCursorArea)
     {
     case CURSOR_AREA_IN_PARTY:
         SetPlacedMonData(TOTAL_BOXES_COUNT, sCursorPosition);
         SetPlacedMonSprite(TOTAL_BOXES_COUNT, sCursorPosition);
+        UpdateSpeciesSpritePSS(&mon->box);
         break;
     case CURSOR_AREA_IN_BOX:
         boxId = StorageGetCurrentBox();
         SetPlacedMonData(boxId, sCursorPosition);
         SetPlacedMonSprite(boxId, sCursorPosition);
+        UpdateSpeciesSpritePSS(&mon->box);
         break;
     default:
         return;
@@ -624,12 +633,18 @@ static void SetMovedMonData(u8 boxId, u8 position)
 
 static void SetPlacedMonData(u8 boxId, u8 position)
 {
-    if (boxId == TOTAL_BOXES_COUNT)
+    if (boxId == TOTAL_BOXES_COUNT) {
+        struct Pokemon *mon;
+
         gPlayerParty[position] = gStorage->movingMon;
+        mon = &gPlayerParty[position];
+        SetMonFormPSS(&mon->box, FORM_CHANGE_WITHDRAW);
+    }
     else
     {
         BoxMonRestorePP(&gStorage->movingMon.box);
         SetBoxMonAt(boxId, position, &gStorage->movingMon.box);
+        SetMonFormPSS(&gPokemonStoragePtr->boxes[boxId][position], FORM_CHANGE_DEPOSIT);
     }
 }
 
@@ -1011,6 +1026,16 @@ static void ReshowDisplayMon(void)
         SetDisplayMonData(&sMonBeingCarried, MODE_PARTY);
     else
         TrySetDisplayMonData();
+}
+
+void SetMonFormPSS(struct BoxPokemon *boxMon, u16 method)
+{
+    u16 targetSpecies = GetFormChangeTargetSpeciesBoxMon(boxMon, method, 0);
+    if (targetSpecies != GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL))
+    {
+        SetBoxMonData(boxMon, MON_DATA_SPECIES, &targetSpecies);
+        sRefreshDisplayMonGfx = TRUE;
+    }
 }
 
 #define displayMonNicknameText        displayMonTexts[0]
@@ -2162,4 +2187,39 @@ void RemoveMenu(void)
 {
     ClearStdWindowAndFrameToTransparent(gStorage->menuWindowId, TRUE);
     RemoveWindow(gStorage->menuWindowId);
+}
+
+void UpdateSpeciesSpritePSS(struct BoxPokemon *boxMon)
+{
+    u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+    u32 pid = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
+    u32 otId = GetBoxMonData(boxMon, MON_DATA_OT_ID);
+
+    // Update front sprite
+    gStorage->displayMonSpecies = species;
+    gStorage->displayMonPalette = GetMonSpritePalFromSpeciesAndPersonality(gStorage->displayMonSpecies, otId, gStorage->displayMonPersonality);
+    if (!sJustOpenedBag)
+    {
+        if (sRefreshDisplayMonGfx)
+        {
+            LoadDisplayMonGfx(species, pid);
+            StartDisplayMonMosaic();
+            sRefreshDisplayMonGfx = FALSE;
+        }
+
+        // Recreate icon sprite
+        if (sInPartyMenu)
+        {
+            DestroyAllPartyMonIcons();
+            CreatePartyMonsSprites(TRUE);
+        }
+        else
+        {
+            DestroyBoxMonIconAtPosition(sCursorPosition);
+            CreateBoxMonIconAtPos(sCursorPosition);
+            if (gStorage->boxOption == OPTION_MOVE_ITEMS)
+                SetBoxMonIconObjMode(sCursorPosition, (GetBoxMonData(boxMon, MON_DATA_HELD_ITEM) == ITEM_NONE ? ST_OAM_OBJ_BLEND : ST_OAM_OBJ_NORMAL));
+        }
+    }
+    sJustOpenedBag = FALSE;
 }

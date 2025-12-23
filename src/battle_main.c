@@ -2774,6 +2774,8 @@ void FaintClearSetData(void)
     gBattleResources->flags->flags[gActiveBattler] = 0;
     gBattleMons[gActiveBattler].type1 = gSpeciesInfo[gBattleMons[gActiveBattler].species].types[0];
     gBattleMons[gActiveBattler].type2 = gSpeciesInfo[gBattleMons[gActiveBattler].species].types[1];
+
+    TryBattleFormChange(gActiveBattler, FORM_CHANGE_FAINT);
 }
 
 static void BattleIntroGetMonsData(void)

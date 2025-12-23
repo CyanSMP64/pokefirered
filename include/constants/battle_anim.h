@@ -377,6 +377,7 @@
 #define B_ANIM_ROCK_THROW               26
 #define B_ANIM_SAFARI_REACTION          27
 #define B_ANIM_RAIN_DISH_HEAL           28
+#define B_ANIM_FORM_CHANGE              29
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

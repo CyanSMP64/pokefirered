@@ -1250,6 +1250,11 @@
 	.byte 0xf7
 	.endm
 
+	.macro callnative func:req
+	.byte 0xf8
+	.4byte \func
+	.endm
+
 @ various command changed to more readable macros
 	.macro cancelmultiturnmoves battler:req
 	various \battler, VARIOUS_CANCEL_MULTI_TURN_MOVES
@@ -1394,4 +1399,21 @@
 
 	.macro jumpifnotbattletype flags:req, jumpptr:req
 	jumpifword CMP_NO_COMMON_BITS, gBattleTypeFlags, \flags, \jumpptr
+	.endm
+
+@ nat dex macros
+
+	.macro trytriggerstatusform
+	callnative BS_TryTriggerStatusForm
+	.endm
+
+	.macro flushtextbox
+	printstring STRINGID_EMPTYSTRING3
+	waitmessage 1
+	.endm
+
+	.macro handleformchange battler:req, case_:req
+	callnative BS_HandleFormChange
+	.byte \battler
+	.byte \case_
 	.endm
