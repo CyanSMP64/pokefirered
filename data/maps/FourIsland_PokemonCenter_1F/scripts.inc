@@ -21,6 +21,25 @@ FourIsland_PokemonCenter_1F_EventScript_Woman::
 	msgbox FourIsland_PokemonCenter_1F_Text_DayCarePeopleFoundEggBefore, MSGBOX_NPC
 	end
 
-FourIsland_PokemonCenter_1F_EventScript_Gentleman::
-	msgbox FourIsland_PokemonCenter_1F_Text_NewPokemonJournalHasntArrived, MSGBOX_NPC
+FourIsland_PokemonCenter_1F_EventScript_GracideaWoman::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_GRACIDEA, FourIsland_PokemonCenter_1F_EventScript_GracideaWoman_Explain
+	setvar VAR_0x8004, SPECIES_SHAYMIN
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, FourIsland_PokemonCenter_1F_EventScript_GracideaWoman_Give
+	msgbox FourIsland_PokemonCenter_1F_Text_HaveYouHeardOfGracidea
+	release
+	end
+
+FourIsland_PokemonCenter_1F_EventScript_GracideaWoman_Give::
+	msgbox FourIsland_PokemonCenter_1F_Text_WowShaymin
+	giveitem ITEM_GRACIDEA
+	setflag FLAG_RECEIVED_GRACIDEA
+	release
+	end
+
+FourIsland_PokemonCenter_1F_EventScript_GracideaWoman_Explain::
+	msgbox FourIsland_PokemonCenter_1F_Text_ItsBeenATradition
+	release
 	end

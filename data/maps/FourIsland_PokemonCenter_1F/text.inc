@@ -38,8 +38,32 @@ FourIsland_PokemonCenter_1F_Text_DayCarePeopleFoundEggBefore::
     .string "They said that they'd found Eggs\n"
     .string "before on their property.$"
 
-FourIsland_PokemonCenter_1F_Text_NewPokemonJournalHasntArrived::
-    .string "What's this?\p"
-    .string "The new Pokémon Journal hasn't\n"
-    .string "arrived on this island?$"
+FourIsland_PokemonCenter_1F_Text_HaveYouHeardOfGracidea::
+    .string "Have you heard of the Gracidea\n"
+    .string "flower?\p"
+    .string "It's been a long-standing tradition\n"
+    .string "in the Sinnoh region to give\l"
+    .string "bouquets of them to people as a\l"
+    .string "way of expressing one's appreciation!$"
 
+FourIsland_PokemonCenter_1F_Text_WowShaymin::
+    .string "Oh, wow!\n"
+    .string "It's Shaymin!\p"
+    .string "When I see Shaymin, the first thing\n"
+    .string "that comes to mind is the Gracidea\l"
+    .string "flower!\p"
+    .string "And it just so happens that I have a\n"
+    .string "bunch. I'd be happy to share with\l"
+    .string "you!$"
+
+FourIsland_PokemonCenter_1F_Text_ItsBeenATradition::
+    .string "It's been a tradition since long ago\n"
+    .string "in the Sinnoh region to give\l"
+    .string "bouquets of Gracidea flowers to\l"
+    .string "people as a way of expressing\l"
+    .string "appreciation.\p"
+    .string "Anyone who receives a bouquet of\n"
+    .string "Gracidea flowers will know just how\l"
+    .string "grateful you are!\p"
+    .string "No words are necessary!\n"
+    .string "Isn't it a delightful custom?$"
