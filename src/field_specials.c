@@ -2530,3 +2530,32 @@ void GetHmModeOption(void) {
     else // Classic
         gSpecialVar_Result = 0;
 }
+
+bool16 TryChangeDeoxysForm(void)
+{
+    u16 baseSpecies = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    u16 targetSpecies;
+
+    switch (baseSpecies)
+    {
+        case SPECIES_DEOXYS:
+            targetSpecies = SPECIES_DEOXYS_ATTACK;
+            break;
+        case SPECIES_DEOXYS_ATTACK:
+            targetSpecies = SPECIES_DEOXYS_DEFENSE;
+            break;
+        case SPECIES_DEOXYS_DEFENSE:
+            targetSpecies = SPECIES_DEOXYS_SPEED;
+            break;
+        case SPECIES_DEOXYS_SPEED:
+            targetSpecies = SPECIES_DEOXYS;
+            break;
+        default:
+            gSpecialVar_Result = FALSE;
+            return;
+    }
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, &targetSpecies);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+    gSpecialVar_Result = TRUE;
+    gSpecialVar_0x8007 = targetSpecies;
+}
