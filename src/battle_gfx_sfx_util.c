@@ -338,6 +338,10 @@ void BattleLoadOpponentMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     }
     otId = GetMonData(mon, MON_DATA_OT_ID);
     position = GetBattlerPosition(battlerId);
+
+    if (species == SPECIES_KELDEO && MonKnowsMove(mon, MOVE_SECRET_SWORD))
+        species = SPECIES_KELDEO_RESOLUTE;
+
     HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[species],
                                               gMonSpritesGfxPtr->sprites[position],
                                               species, currentPersonality);
@@ -387,6 +391,10 @@ void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     }
     otId = GetMonData(mon, MON_DATA_OT_ID);
     position = GetBattlerPosition(battlerId);
+
+    if (species == SPECIES_KELDEO && MonKnowsMove(mon, MOVE_SECRET_SWORD))
+        species = SPECIES_KELDEO_RESOLUTE;
+
     if (ShouldIgnoreDeoxysForm(DEOXYS_CHECK_BATTLE_SPRITE, battlerId) == TRUE || gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies != SPECIES_NONE)
         HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[species],
                                                   gMonSpritesGfxPtr->sprites[position],
@@ -735,6 +743,15 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u8 transformType, 
                 personalityValue = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_PERSONALITY);
             otId = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_OT_ID);
 
+            if (targetSpecies == SPECIES_KELDEO)
+            {
+                struct Pokemon *mon = GetBattlerSide(battlerDef) == B_SIDE_OPPONENT
+                                      ? &gEnemyParty[gBattlerPartyIndexes[battlerDef]]
+                                      : &gPlayerParty[gBattlerPartyIndexes[battlerDef]];
+                if (MonKnowsMove(mon, MOVE_SECRET_SWORD))
+                    targetSpecies = SPECIES_KELDEO_RESOLUTE;
+            }
+
             HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[targetSpecies],
                                                       gMonSpritesGfxPtr->sprites[position],
                                                       targetSpecies,
@@ -747,6 +764,15 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u8 transformType, 
             else
                 personalityValue = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_PERSONALITY);
             otId = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_OT_ID);
+
+            if (targetSpecies == SPECIES_KELDEO)
+            {
+                struct Pokemon *mon = GetBattlerSide(battlerDef) == B_SIDE_OPPONENT
+                                      ? &gEnemyParty[gBattlerPartyIndexes[battlerDef]]
+                                      : &gPlayerParty[gBattlerPartyIndexes[battlerDef]];
+                if (MonKnowsMove(mon, MOVE_SECRET_SWORD))
+                    targetSpecies = SPECIES_KELDEO_RESOLUTE;
+            }
 
             HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[targetSpecies],
                                                       gMonSpritesGfxPtr->sprites[position],

@@ -375,6 +375,7 @@ struct PokemonStorageSystemData
     u32 displayMonPersonality;
     u16 displayMonSpecies;
     u16 displayMonItemId;
+    struct Pokemon *displayMonMon;
     u16 displayUnusedVar;
     bool8 setMosaic;
     u8 displayMonMarkings;

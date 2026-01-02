@@ -8630,6 +8630,10 @@ const u32 *GetMonFrontSpritePal(struct Pokemon *mon)
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL);
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+    
+    if (species == SPECIES_KELDEO && MonKnowsMove(mon, MOVE_SECRET_SWORD))
+        species = SPECIES_KELDEO_RESOLUTE;
+    
     return GetMonSpritePalFromSpeciesAndPersonality(species, otId, personality);
 }
 
@@ -8638,7 +8642,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
     u32 shinyValue;
     u16 form;
 
-    if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES && species != SPECIES_KELDEO_RESOLUTE)
         return gMonPaletteTable[SPECIES_NONE].data;
 
     shinyValue = GET_SHINY_VALUE(otId, personality);
@@ -8718,14 +8722,12 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
             }
             return gMonShinyPaletteTable[form].data;
         }
-        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_KELDEO || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
+        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
         {
             if ((personality % 0x200) >= 0x100)
             {
                 if (species == SPECIES_SHELLOS)
                     return gMonShinyPaletteTable[SPECIES_SHELLOS_EAST_SEA].data;
-                else if (species == SPECIES_KELDEO)
-                    return gMonShinyPaletteTable[SPECIES_KELDEO_RESOLUTE].data;
                 else if (species == SPECIES_MAGEARNA)
                     return gMonShinyPaletteTable[SPECIES_MAGEARNA_ORIGINAL_COLOR].data;
                 else if (species == SPECIES_ZARUDE)
@@ -8864,14 +8866,12 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
             }
             return gMonPaletteTable[form].data;
         }
-        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_KELDEO || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
+        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
         {
             if ((personality % 0x200) >= 0x100)
             {
                 if (species == SPECIES_SHELLOS)
                     return gMonPaletteTable[SPECIES_SHELLOS_EAST_SEA].data;
-                else if (species == SPECIES_KELDEO)
-                    return gMonPaletteTable[SPECIES_KELDEO_RESOLUTE].data;
                 else if (species == SPECIES_MAGEARNA)
                     return gMonPaletteTable[SPECIES_MAGEARNA_ORIGINAL_COLOR].data;
                 else if (species == SPECIES_ZARUDE)
@@ -8941,6 +8941,10 @@ const struct CompressedSpritePalette *GetMonSpritePalStruct(struct Pokemon *mon)
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL);
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+    
+    if (species == SPECIES_KELDEO && MonKnowsMove(mon, MOVE_SECRET_SWORD))
+        species = SPECIES_KELDEO_RESOLUTE;
+    
     return GetMonSpritePalStructFromOtIdPersonality(species, otId, personality);
 }
 
@@ -9029,14 +9033,12 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
             }
             return &gMonShinyPaletteTable[form];
         }
-        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_KELDEO || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
+        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
         {
             if ((personality % 0x200) >= 0x100)
             {
                 if (species == SPECIES_SHELLOS)
                     return &gMonShinyPaletteTable[SPECIES_SHELLOS_EAST_SEA];
-                else if (species == SPECIES_KELDEO)
-                    return &gMonShinyPaletteTable[SPECIES_KELDEO_RESOLUTE];
                 else if (species == SPECIES_MAGEARNA)
                     return &gMonShinyPaletteTable[SPECIES_MAGEARNA_ORIGINAL_COLOR];
                 else if (species == SPECIES_ZARUDE)
@@ -9175,14 +9177,12 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
             }
             return &gMonPaletteTable[form];
         }
-        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_KELDEO || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
+        if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
         {
             if ((personality % 0x200) >= 0x100)
             {
                 if (species == SPECIES_SHELLOS)
                     return &gMonPaletteTable[SPECIES_SHELLOS_EAST_SEA];
-                else if (species == SPECIES_KELDEO)
-                    return &gMonPaletteTable[SPECIES_KELDEO_RESOLUTE];
                 else if (species == SPECIES_MAGEARNA)
                     return &gMonPaletteTable[SPECIES_MAGEARNA_ORIGINAL_COLOR];
                 else if (species == SPECIES_ZARUDE)

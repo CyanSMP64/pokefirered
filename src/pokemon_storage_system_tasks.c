@@ -22,8 +22,10 @@
 #include "tilemap_util.h"
 #include "trig.h"
 #include "form_change.h"
+#include "party_menu.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "constants/moves.h"
 
 EWRAM_DATA struct PokemonStorageSystemData *gStorage = NULL;
 static EWRAM_DATA u8 sCurrentBoxOption = 0;
@@ -2273,7 +2275,12 @@ void LoadDisplayMonGfx(u16 species, u32 personality)
 
     if (species != SPECIES_NONE)
     {
-        HandleLoadSpecialPokePic(&gMonFrontPicTable[species], gStorage->tileBuffer, species, personality);
+        // Check if this is a Keldeo with Secret Sword and use Resolute form sprite
+        u16 spriteSpecies = species;
+        if (species == SPECIES_KELDEO && gStorage->displayMonMon != NULL && MonKnowsMove(gStorage->displayMonMon, MOVE_SECRET_SWORD))
+            spriteSpecies = SPECIES_KELDEO_RESOLUTE;
+        
+        HandleLoadSpecialPokePic(&gMonFrontPicTable[spriteSpecies], gStorage->tileBuffer, spriteSpecies, personality);
         LZ77UnCompWram(gStorage->displayMonPalette, gStorage->displayMonPalBuffer);
         CpuCopy32(gStorage->tileBuffer, gStorage->displayMonTilePtr, 0x800);
         LoadPalette(gStorage->displayMonPalBuffer, gStorage->displayMonPalOffset, PLTT_SIZE_4BPP);

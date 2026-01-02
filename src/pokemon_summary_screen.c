@@ -3891,6 +3891,10 @@ static void PokeSum_CreateMonPicSprite(void)
     personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
     trainerId = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_OT_ID);
 
+    // Change Keldeo to Resolute forme if it knows Secret Sword
+    if (species == SPECIES_KELDEO && MonKnowsMove(&sMonSummaryScreen->currentMon, MOVE_SECRET_SWORD))
+        species = SPECIES_KELDEO_RESOLUTE;
+
     if (sMonSummaryScreen->savedCallback == CB2_ReturnToTradeMenuFromSummary)
     {
         if (sMonSummaryScreen->isEnemyParty == TRUE)
@@ -4017,6 +4021,10 @@ static void PokeSum_CreateMonIconSprite(void)
 
     species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG);
     personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
+
+    // Change Keldeo to Resolute forme if it knows Secret Sword
+    if (species == SPECIES_KELDEO && MonKnowsMove(&sMonSummaryScreen->currentMon, MOVE_SECRET_SWORD))
+        species = SPECIES_KELDEO_RESOLUTE;
 
     SafeLoadMonIconPalette(species, personality);
 

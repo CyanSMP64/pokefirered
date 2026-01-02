@@ -49,7 +49,6 @@ SECTIONS {
     {
         src/rom_header.o(.text);
         src/rom_header_gf.o(.text*);
-        src/crt0.o(.text);
         src/main.o(.text);
         src/gpu_regs.o(.text);
         src/dma3_manager.o(.text);
@@ -79,6 +78,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/pokemon.o(.text);
+        src/crt0.o(.text);
         src/window_8bpp.o(.text);
         src/main_menu.o(.text);
         src/battle_util2.o(.text);
