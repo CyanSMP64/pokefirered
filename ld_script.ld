@@ -1231,6 +1231,33 @@ SECTIONS {
         sound/songs/midi/ph_nurse_blend.o(.rodata);
         sound/songs/midi/ph_nurse_held.o(.rodata);
         sound/songs/midi/ph_nurse_solo.o(.rodata);
+    }
+
+    . = 0x08A80000;
+    empty_data_2 :
+    ALIGN(4)
+    {
+        data/emptydata_marowak.o(.rodata);
+    } =0
+
+    . = 0x08A80200;
+    empty_data_4 :
+    ALIGN(4)
+    {
+        data/emptydata_roamers.o(.rodata);
+    } =0
+
+    .rodata_extras :
+    ALIGN(4)
+    {
+        data/sound_data.o(.rodata);
+        data/sound_data_2.o(.rodata);
+        data/sound_data_3.o(.rodata);
+    } =0
+
+    new_songs :
+    ALIGN(4)
+    {
         sound/songs/midi/se_vineboom.o(.rodata);
         sound/songs/midi/mus_dp_vs_dialga_palkia.o(.rodata);
         sound/songs/midi/mus_hg_vs_raikou.o(.rodata);
@@ -1256,28 +1283,6 @@ SECTIONS {
         sound/songs/midi/mus_rbychamp.o(.rodata);
         sound/songs/midi/mus_b2_vs_champion_kanto.o(.rodata);
         sound/songs/midi/mus_bw_vs_world_championships.o(.rodata);
-    }
-
-    . = 0x08A80000;
-    empty_data_2 :
-    ALIGN(4)
-    {
-        data/emptydata_marowak.o(.rodata);
-    } =0
-
-    . = 0x08A80200;
-    empty_data_4 :
-    ALIGN(4)
-    {
-        data/emptydata_roamers.o(.rodata);
-    } =0
-
-    .rodata_extras :
-    ALIGN(4)
-    {
-        data/sound_data.o(.rodata);
-        data/sound_data_2.o(.rodata);
-        data/sound_data_3.o(.rodata);
     } =0
 
     extra :
