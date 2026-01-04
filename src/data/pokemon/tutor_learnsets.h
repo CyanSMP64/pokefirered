@@ -6840,4 +6840,9 @@ static const u16 sTutorLearnsets[] =
                                           |  TUTOR(MOVE_BODY_SLAM)
                                           |  TUTOR(MOVE_DOUBLE_EDGE)
                                           |  TUTOR(MOVE_ROCK_SLIDE),
+
+    [SPECIES_GRENINJA_BATTLE_BOND]        =  TUTOR(MOVE_SUBSTITUTE)
+                                          |  TUTOR(MOVE_SWORDS_DANCE)
+                                          |  TUTOR(MOVE_COUNTER)
+                                          |  TUTOR(MOVE_ROCK_SLIDE),
 };

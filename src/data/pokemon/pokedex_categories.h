@@ -970,6 +970,10 @@ static const u16 sDexCategory_WatersEdgePkmn_Page27[] = {
 	SPECIES_FROAKIE,
 	SPECIES_FROGADIER,
 	SPECIES_GRENINJA,
+};
+
+static const u16 sDexCategory_WatersEdgePkmn_Page27_2[] = {
+	SPECIES_GRENINJA_BATTLE_BOND,
 	SPECIES_GRENINJA_ASH,
 };
 
@@ -2568,6 +2572,7 @@ static const struct PokedexCategoryPage sDexCategory_WatersEdgePkmn[] = {
 	DEX_CATEGORY(WatersEdgePkmn_Page25), 
 	DEX_CATEGORY(WatersEdgePkmn_Page26), 
 	DEX_CATEGORY(WatersEdgePkmn_Page27), 
+	DEX_CATEGORY(WatersEdgePkmn_Page27_2), 
 	DEX_CATEGORY(WatersEdgePkmn_Page28), 
 	DEX_CATEGORY(WatersEdgePkmn_Page29), 
 	DEX_CATEGORY(WatersEdgePkmn_Page30), 
