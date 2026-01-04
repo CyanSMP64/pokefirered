@@ -6483,6 +6483,23 @@
       "battleUsage": 0,
       "battleUseFunc": "NULL",
       "secondaryId": 0
+    },
+    {
+      "english": "Prison Bottle",
+      "itemId": "ITEM_PRISON_BOTTLE",
+      "price": 0,
+      "holdEffect": "HOLD_EFFECT_NONE",
+      "holdEffectParam": 0,
+      "description_english": "A bottle believed to have been\\nused to seal away the power of\\na certain Pokémon long, long ago.",
+      "importance": 1,
+      "grammarAn": 0,
+      "registrability": 0,
+      "pocket": "POCKET_KEY_ITEMS",
+      "type": "ITEM_TYPE_PARTY_MENU",
+      "fieldUseFunc": "ItemUseOutOfBattle_FormChange",
+      "battleUsage": 0,
+      "battleUseFunc": "NULL",
+      "secondaryId": 0
     }
   ]
 }
