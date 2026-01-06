@@ -1,5 +1,21 @@
+.set LOCALID_HOOPA_CLERK, 5
+
 LavenderTown_Mart_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LavenderTown_Mart_OnTransition
 	.byte 0
+
+LavenderTown_Mart_OnTransition:
+	setvar VAR_0x8004, SPECIES_HOOPA
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, LavenderTown_Mart_UnhideHoopaClerk
+	end
+
+LavenderTown_Mart_UnhideHoopaClerk::
+	goto_if_set FLAG_RECEIVED_PRISON_BOTTLE, LavenderTown_Mart_End
+	clearflag FLAG_HIDE_HOOPA_CLERK
+	addobject LOCALID_HOOPA_CLERK
+LavenderTown_Mart_End::
+	end
 
 LavenderTown_Mart_EventScript_BaldingMan::
 	msgbox LavenderTown_Mart_Text_SearchingForStatRaiseItems, MSGBOX_NPC

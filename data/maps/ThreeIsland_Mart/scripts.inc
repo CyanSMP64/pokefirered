@@ -1,4 +1,7 @@
+.set LOCALID_HOOPA_CLERK, 5
+
 ThreeIsland_Mart_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LavenderTown_Mart_OnTransition
 	.byte 0
 
 ThreeIsland_Mart_EventScript_Clerk::

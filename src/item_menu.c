@@ -5,6 +5,7 @@
 #include "berry_pouch.h"
 #include "decompress.h"
 #include "event_scripts.h"
+#include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "field_player_avatar.h"
 #include "graphics.h"
@@ -150,6 +151,9 @@ static void Task_WaitPressAB_AfterSell(u8 taskId);
 static void Task_ItemContext_Deposit(u8 taskId);
 static void Task_SelectQuantityToDeposit(u8 taskId);
 static void Task_TryDoItemDeposit(u8 taskId);
+static bool8 IsPartyMenuKeyItem(u16 itemId);
+static void Task_ShowRegisteredPartyItemError(u8 taskId);
+static void Task_CloseRegisteredPartyItemError(u8 taskId);
 static bool8 BagIsTutorial(void);
 static void Task_Bag_OldManTutorial(u8 taskId);
 static void Task_Pokedude_FadeFromBag(u8 taskId);
@@ -2014,6 +2018,24 @@ static void Task_TryDoItemDeposit(u8 taskId)
     }
 }
 
+static bool8 IsPartyMenuKeyItem(u16 itemId)
+{
+    return ItemId_GetPocket(itemId) == POCKET_KEY_ITEMS && ItemId_GetType(itemId) == ITEM_TYPE_PARTY_MENU;
+}
+
+static void Task_CloseRegisteredPartyItemError(u8 taskId)
+{
+    ClearDialogWindowAndFrame(0, TRUE);
+    DestroyTask(taskId);
+    ClearPlayerHeldMovementAndUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+}
+
+static void Task_ShowRegisteredPartyItemError(u8 taskId)
+{
+    DisplayItemMessageOnField(taskId, FONT_MALE, gText_OakForbidsUseOfItemHere, Task_CloseRegisteredPartyItemError);
+}
+
 bool8 UseRegisteredKeyItemOnField(void)
 {
     u8 taskId;
@@ -2025,6 +2047,15 @@ bool8 UseRegisteredKeyItemOnField(void)
     {
         if (CheckBagHasItem(gSaveBlock1Ptr->registeredItem, 1) == TRUE)
         {
+            if (IsPartyMenuKeyItem(gSaveBlock1Ptr->registeredItem) == TRUE)
+            {
+                LockPlayerFieldControls();
+                FreezeObjectEvents();
+                HandleEnforcedLookDirectionOnPlayerStopMoving();
+                StopPlayerAvatar();
+                CreateTask(Task_ShowRegisteredPartyItemError, 8);
+                return TRUE;
+            }
             LockPlayerFieldControls();
             FreezeObjectEvents();
             HandleEnforcedLookDirectionOnPlayerStopMoving();

@@ -1064,6 +1064,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS
 	setflag FLAG_HIDE_OAK_PALLET_TOWN_BALL_CUTSCENE
 	setflag FLAG_SYS_B_DASH
+	setflag FLAG_HIDE_HOOPA_CLERK
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 500
 EventScript_SetHiddenItemSparkleFlag::
 	clearflag FLAG_HIDDEN_ITEM_SPARKLES		@ this flag will be set by a randomizer setting

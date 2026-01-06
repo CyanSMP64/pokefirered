@@ -1,4 +1,7 @@
+.set LOCALID_HOOPA_CLERK, 4
+
 SixIsland_Mart_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ViridianCity_Mart_OnTransition
 	.byte 0
 
 SixIsland_Mart_EventScript_Clerk::

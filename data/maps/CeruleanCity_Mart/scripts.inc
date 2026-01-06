@@ -1,4 +1,7 @@
+.set LOCALID_HOOPA_CLERK, 4
+
 CeruleanCity_Mart_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ViridianCity_Mart_OnTransition
 	.byte 0
 
 CeruleanCity_Mart_EventScript_Youngster::

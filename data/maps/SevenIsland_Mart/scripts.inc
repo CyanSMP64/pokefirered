@@ -1,4 +1,7 @@
+.set LOCALID_HOOPA_CLERK, 5
+
 SevenIsland_Mart_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LavenderTown_Mart_OnTransition
 	.byte 0
 
 SevenIsland_Mart_EventScript_Clerk::
