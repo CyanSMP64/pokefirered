@@ -2151,6 +2151,7 @@ static const u16 sDexCategory_UrbanPkmn_Page36[] = {
 	SPECIES_TANDEMAUS,
 	SPECIES_MAUSHOLD,
 	SPECIES_SQUAWKABILLY,
+	SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE,
 };
 
 static const u16 sDexCategory_UrbanPkmn_Page37[] = {

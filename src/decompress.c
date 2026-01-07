@@ -87,7 +87,7 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
         || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES
         || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_ALCREMIE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY 
         || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_FURFROU || species == SPECIES_COMBEE
-        || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP
+        || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP || species == SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE
         
         || species == SPECIES_VENUSAUR || species == SPECIES_BUTTERFREE || species == SPECIES_RATTATA || species == SPECIES_RATICATE
         || species == SPECIES_PIKACHU || species == SPECIES_PIKACHU_PARTNER || species == SPECIES_RAICHU || species == SPECIES_ZUBAT
@@ -129,7 +129,8 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
             else
                 i += SPECIES_UNOWN_B - 1;
         }
-        else if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
+        else if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE
+        || species == SPECIES_SQUAWKABILLY || species == SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE)
         {
             i = (personality >> 8) % 2;
             if (!i)
@@ -142,6 +143,10 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
                     i = SPECIES_MAGEARNA_ORIGINAL_COLOR;
                 else if (species == SPECIES_ZARUDE)
                     i = SPECIES_ZARUDE_DADA;
+                else if (species == SPECIES_SQUAWKABILLY)
+                    i = SPECIES_SQUAWKABILLY_BLUE_PLUMAGE;
+                else if (species == SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE)
+                    i = SPECIES_SQUAWKABILLY_WHITE_PLUMAGE;
                 else
                     i = SPECIES_GASTRODON_EAST_SEA;
             }
@@ -159,7 +164,7 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
                     i = SPECIES_DUDUNSPARCE_THREE_SEGMENT;
             }
         }
-        else if (species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_SQUAWKABILLY)
+        else if (species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK)
         {
             i = (personality >> 8) % 4;
             if (!i)
@@ -168,10 +173,8 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
             {
                 if (species == SPECIES_DEERLING)
                     i += SPECIES_DEERLING_SUMMER - 1;
-                else if (species == SPECIES_SAWSBUCK)
-                    i += SPECIES_SAWSBUCK_SUMMER - 1;
                 else
-                    i += SPECIES_SQUAWKABILLY_BLUE_PLUMAGE - 1;
+                    i += SPECIES_SAWSBUCK_SUMMER - 1;
             }
         }
         else if (species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES)
@@ -736,7 +739,7 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
         || species == SPECIES_PYROAR || species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES
         || species == SPECIES_MINIOR_CORE_RED || species == SPECIES_ALCREMIE || species == SPECIES_MAUSHOLD || species == SPECIES_SQUAWKABILLY 
         || species == SPECIES_TATSUGIRI || species == SPECIES_DUDUNSPARCE || species == SPECIES_FURFROU || species == SPECIES_COMBEE
-        || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP
+        || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE || species == SPECIES_PIKACHU_CAP || species == SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE
         
         || species == SPECIES_VENUSAUR || species == SPECIES_BUTTERFREE || species == SPECIES_RATTATA || species == SPECIES_RATICATE
         || species == SPECIES_PIKACHU || species == SPECIES_PIKACHU_PARTNER || species == SPECIES_RAICHU || species == SPECIES_ZUBAT
@@ -778,7 +781,8 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
             else
                 i += SPECIES_UNOWN_B - 1;
         }
-        else if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE)
+        else if (species == SPECIES_SHELLOS || species == SPECIES_GASTRODON || species == SPECIES_MAGEARNA || species == SPECIES_ZARUDE
+        || species == SPECIES_SQUAWKABILLY || species == SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE)
         {
             i = (personality >> 8) % 2;
             if (!i)
@@ -791,6 +795,10 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
                     i = SPECIES_MAGEARNA_ORIGINAL_COLOR;
                 else if (species == SPECIES_ZARUDE)
                     i = SPECIES_ZARUDE_DADA;
+                else if (species == SPECIES_SQUAWKABILLY)
+                    i = SPECIES_SQUAWKABILLY_BLUE_PLUMAGE;
+                else if (species == SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE)
+                    i = SPECIES_SQUAWKABILLY_WHITE_PLUMAGE;
                 else
                     i = SPECIES_GASTRODON_EAST_SEA;
             }
@@ -808,7 +816,7 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
                     i = SPECIES_DUDUNSPARCE_THREE_SEGMENT;
             }
         }
-        else if (species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK || species == SPECIES_SQUAWKABILLY)
+        else if (species == SPECIES_DEERLING || species == SPECIES_SAWSBUCK)
         {
             i = (personality >> 8) % 4;
             if (!i)
@@ -817,10 +825,8 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
             {
                 if (species == SPECIES_DEERLING)
                     i += SPECIES_DEERLING_SUMMER - 1;
-                else if (species == SPECIES_SAWSBUCK)
-                    i += SPECIES_SAWSBUCK_SUMMER - 1;
                 else
-                    i += SPECIES_SQUAWKABILLY_BLUE_PLUMAGE - 1;
+                    i += SPECIES_SAWSBUCK_SUMMER - 1;
             }
         }
         else if (species == SPECIES_FLABEBE || species == SPECIES_FLOETTE || species == SPECIES_FLORGES)

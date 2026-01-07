@@ -5335,6 +5335,10 @@ static const u16 sTutorLearnsets[] =
                                           |  TUTOR(MOVE_DOUBLE_EDGE)
                                           |  TUTOR(MOVE_MIMIC),
 
+    [SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE] =  TUTOR(MOVE_SUBSTITUTE)
+                                          |  TUTOR(MOVE_DOUBLE_EDGE)
+                                          |  TUTOR(MOVE_MIMIC),
+
     [SPECIES_NACLI]                       =  TUTOR(MOVE_SUBSTITUTE)
                                           |  TUTOR(MOVE_BODY_SLAM)
                                           |  TUTOR(MOVE_ROCK_SLIDE),

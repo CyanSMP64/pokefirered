@@ -4650,6 +4650,11 @@ const u8 gSquawkbilyPokedexText[] = _(
     "They form flocks based on the color of\n"
     "their feathers, and fight over territory.");
 
+const u8 gSquawkbilyYellowPlumagePokedexText[] = _(
+    "This Pokémon dislikes being alone. It\n"
+    "has a strong sense of community and\n"
+    "survives by cooperating with allies.");
+
 const u8 gNacliPokedexText[] = _(
     "It was born in a layer of rock salt deep\n"
     "under the earth. They were treasured long\n"

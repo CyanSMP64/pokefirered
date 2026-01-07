@@ -21014,6 +21014,23 @@ static const u32 sTMHMLearnsets[][2] =
                                                         | TMHM(TM12_TAUNT)
                                                         | TMHM(TM40_AERIAL_ACE)),
 
+    [SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE] = TMHM_LEARNSET(TMHM(TM43_SECRET_POWER)
+                                                        | TMHM(TM42_FACADE)
+                                                        | TMHM(TM10_HIDDEN_POWER)
+                                                        | TMHM(TM27_RETURN)
+                                                        | TMHM(TM21_FRUSTRATION)
+                                                        | TMHM(TM45_ATTRACT)
+                                                        | TMHM(TM17_PROTECT)
+                                                        | TMHM(TM44_REST)
+                                                        | TMHM(TM32_DOUBLE_TEAM)
+                                                        | TMHM(HM02_FLY)
+                                                        | TMHM(TM15_HYPER_BEAM)
+                                                        | TMHM(TM46_THIEF)
+                                                        | TMHM(TM11_SUNNY_DAY)
+                                                        | TMHM(TM41_TORMENT)
+                                                        | TMHM(TM12_TAUNT)
+                                                        | TMHM(TM40_AERIAL_ACE)),
+
     [SPECIES_NACLI]                       = TMHM_LEARNSET(TMHM(TM43_SECRET_POWER)
                                                         | TMHM(TM42_FACADE)
                                                         | TMHM(TM10_HIDDEN_POWER)
