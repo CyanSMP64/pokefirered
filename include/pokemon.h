@@ -437,5 +437,9 @@ bool32 DoesSpeciesHaveFormChangeMethod(u16 species, u16 method);
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 void TryToSetBattleFormChangeMoves(struct Pokemon *mon, u16 method);
 u8 CheckPartyPoison(struct Pokemon *party, u8 selection);
+bool8 SpeciesHasPersonalityBasedForm(u16 species);
+u16 GetFormSpeciesIdFromPersonality(u16 species, u32 personality, u8 battlerId);
+bool8 SpeciesHasGenderDifferences(u16 species);
+u16 GetGenderSpeciesId(u16 species, u32 personality, bool8 isBackpic);
 
 #endif // GUARD_POKEMON_H
