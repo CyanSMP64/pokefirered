@@ -3,8 +3,10 @@
 
 #include "global.h"
 #include "constants/battle_string_ids.h"
+#include "constants/battle.h"
 
 #define TEXT_BUFF_ARRAY_COUNT   18
+#define BATTLE_MSG_MAX_WIDTH 223
 
 // for 0xFD
 
@@ -240,7 +242,7 @@ struct BattleMsgData
 
 void BufferStringBattle(u16 stringID);
 u32 BattleStringExpandPlaceholdersToDisplayedString(const u8 *src);
-u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst);
+u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize);
 void BattleHandleAddTextPrinter(const u8 *text, u8 arg1);
 void SetPpNumbersPaletteInMoveSelection(void);
 u8 GetCurrentPpToMaxPpState(u8 currentPp, u8 maxPp);

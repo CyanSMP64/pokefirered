@@ -5,6 +5,7 @@
 #include "graphics.h"
 #include "dynamic_placeholder_text_util.h"
 #include "new_menu_helpers.h"
+#include "strings.h"
 #include "constants/songs.h"
 
 #define TAG_CURSOR 0x8000
@@ -1273,6 +1274,16 @@ s32 (*GetFontWidthFunc(u8 glyphId))(u16 _glyphId, bool32 _isJapanese)
     return NULL;
 }
 
+s32 GetGlyphWidth(u16 glyphId, bool32 isJapanese, u8 fontId)
+{
+    s32 (*func)(u16 fontId, bool32 isJapanese);
+
+    func = GetFontWidthFunc(fontId);
+    if (func == NULL)
+        return 0;
+    return func(glyphId, isJapanese);
+}
+
 s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
 {
     bool8 isJapanese;
@@ -1432,6 +1443,28 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
     if (lineWidth > width)
         return lineWidth;
     return width;
+}
+
+s32 GetStringLineWidth(u8 fontId, const u8 *str, s16 letterSpacing, u32 lineNum, u32 strSize)
+{
+    u32 strWidth = 0, strLen, currLine;
+    u8 strCopy[strSize];
+
+    for (currLine = 1; currLine <= lineNum; currLine++)
+    {
+        strWidth = GetStringWidth(fontId, str, letterSpacing);
+        strLen = StringLineLength(str);
+        memset(strCopy, EOS, strSize);
+        if (currLine == lineNum && strLen != 0)
+        {
+            StringCopyN(strCopy, str, strLen);
+            strWidth = GetStringWidth(fontId, strCopy, letterSpacing);
+            strLen = StringLineLength(strCopy);
+            StringAppend(strCopy, gExpandedPlaceholder_Empty);
+        }
+        str += strLen + 1;
+    }
+    return strWidth;
 }
 
 u8 RenderTextHandleBold(u8 *pixels, u8 fontId, u8 *str, int a3, int a4, int a5, int a6, int a7)

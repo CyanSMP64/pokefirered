@@ -3506,7 +3506,7 @@ static void Cmd_getexp(void)
                     }
                     else
                     {
-                        i = STRINGID_EMPTYSTRING4;
+                        i = STRINGID_EMPTYSTRING3;
                     }
 
                     if (FlagGet(FLAG_MODERN_EXP_SCALE))
