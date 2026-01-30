@@ -3,7 +3,7 @@
 
 #include "global.h"
 
-#define SPECIES_SHINY_TAG 500
+#define SPECIES_SHINY_TAG 2000
 #define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
 
 struct MonCoords
