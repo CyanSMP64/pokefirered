@@ -64,3 +64,4 @@ prefabs.json
 *.ini
 *.toml
 *.ss[0-9]
+*:Zone.Identifier
