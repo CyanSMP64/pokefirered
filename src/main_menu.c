@@ -16,6 +16,7 @@
 #include "text_window.h"
 #include "text_window_graphics.h"
 #include "constants/songs.h"
+#include "gba/flash_internal.h"
 
 enum MainMenuType
 {
@@ -250,7 +251,28 @@ static void Task_SetWin0BldRegsAndCheckSaveFile(u8 taskId)
         case SAVE_STATUS_VERSION_MISMATCH:
             SetStdFrame0OnBg(0);
             gTasks[taskId].tMenuType = MAIN_MENU_NEWGAME;
-            PrintSaveErrorStatus(taskId, gText_SaveFileVersionMismatch);
+            {
+                u8 *ptr = gStringVar1;
+                // Read the first sector to get version info
+                if (gSaveDataBufferPtr == NULL)
+                    gSaveDataBufferPtr = &gSaveDataBuffer;
+                ReadFlash(0, 0, (u8 *)gSaveDataBufferPtr, SECTOR_SIZE);
+                *ptr++ = CHAR_v;
+                ptr = ConvertIntToDecimalStringN(ptr, gSaveDataBufferPtr->saveVersionMajor, STR_CONV_MODE_LEFT_ALIGN, 1);
+                *ptr++ = CHAR_PERIOD;
+                ptr = ConvertIntToDecimalStringN(ptr, gSaveDataBufferPtr->saveVersionMinor, STR_CONV_MODE_LEFT_ALIGN, 1);
+                *ptr++ = CHAR_PERIOD;
+                ptr = ConvertIntToDecimalStringN(ptr, gSaveDataBufferPtr->saveVersionPatch, STR_CONV_MODE_LEFT_ALIGN, 1);
+                if (gSaveDataBufferPtr->saveVersionBuild != 0)
+                {
+                    *ptr++ = CHAR_HYPHEN;
+                    *ptr++ = CHAR_r;
+                    ptr = ConvertIntToDecimalStringN(ptr, gSaveDataBufferPtr->saveVersionBuild, STR_CONV_MODE_LEFT_ALIGN, 4);
+                }
+                *ptr = EOS;
+                StringExpandPlaceholders(gStringVar4, gText_SaveFileVersionMismatch);
+            }
+            PrintSaveErrorStatus(taskId, gStringVar4);
             break;
         case SAVE_STATUS_ERROR:
             SetStdFrame0OnBg(0);
