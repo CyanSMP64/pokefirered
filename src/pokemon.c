@@ -8004,6 +8004,14 @@ u16 SpeciesToCryId(u16 species)
     return sHoennSpeciesIdToCryId[species - ((SPECIES_OLD_UNOWN_Z + 1) - 1)];
 }
 
+u16 GetCrySpeciesByPersonality(u16 species, u32 personality)
+{
+    if (species == SPECIES_MAUSHOLD || species == SPECIES_TATSUGIRI)
+        return GetFormSpeciesIdFromPersonality(species, personality, 0);
+
+    return species;
+}
+
 // Spots can be drawn on Spinda's color indexes 1, 2, or 3
 #define FIRST_SPOT_COLOR 1
 #define LAST_SPOT_COLOR  3

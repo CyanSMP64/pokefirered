@@ -384,6 +384,7 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum);
 u16 SpeciesToNationalPokedexNum(u16 species);
 u16 HoennToNationalOrder(u16 hoennNum);
 u16 SpeciesToCryId(u16 species);
+u16 GetCrySpeciesByPersonality(u16 species, u32 personality);
 void DrawSpindaSpots(u16 species, u32 personality, u8 *dest, bool8 isFrontPic);
 void EvolutionRenameMon(struct Pokemon *mon, u16 oldSpecies, u16 newSpecies);
 bool8 GetPlayerFlankId(void);

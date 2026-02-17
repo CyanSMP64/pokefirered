@@ -5094,10 +5094,14 @@ static void PokeSum_TryPlayMonCry(void)
 {
     if (!GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_IS_EGG))
     {
+        u16 species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG);
+        u32 personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
+
+        species = GetCrySpeciesByPersonality(species, personality);
         if (ShouldPlayNormalMonCry(&sMonSummaryScreen->currentMon) == TRUE)
-            PlayCry_ByMode(GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG), 0, CRY_MODE_NORMAL);
+            PlayCry_ByMode(species, 0, CRY_MODE_NORMAL);
         else
-            PlayCry_ByMode(GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG), 0, CRY_MODE_WEAK);
+            PlayCry_ByMode(species, 0, CRY_MODE_WEAK);
     }
 }
 

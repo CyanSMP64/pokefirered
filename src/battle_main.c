@@ -13,6 +13,7 @@
 #include "data.h"
 #include "debug.h"
 #include "decompress.h"
+#include "pokemon.h"
 #include "event_data.h"
 #include "evolution_scene.h"
 #include "form_change.h"
@@ -1979,7 +1980,7 @@ static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite)
         if (sprite->x2 == 0)
         {
             sprite->callback = SpriteCB_WildMonShowHealthbox;
-            PlayCry_Normal(sprite->data[2], 25);
+            PlayCry_Normal(GetCrySpeciesByPersonality(sprite->data[2], gBattleMons[sprite->sBattler].personality), 25);
         }
     }
 }

@@ -2,6 +2,7 @@
 #include "gflib.h"
 #include "battle.h"
 #include "battle_anim.h"
+#include "pokemon.h"
 #include "task.h"
 #include "constants/battle_anim.h"
 #include "constants/sound.h"
@@ -126,6 +127,8 @@ static void SoundTask_LoopSEAdjustPanning_Step(u8 taskId)
 void SoundTask_PlayCryHighPitch(u8 taskId)
 {
     u16 species = SPECIES_NONE;
+    u32 personality = 0;
+    struct Pokemon *mon = NULL;
     u8 battlerId;
     s8 pan = BattleAnimAdjustPanning(SOUND_PAN_ATTACKER);
 
@@ -147,9 +150,12 @@ void SoundTask_PlayCryHighPitch(u8 taskId)
         return;
     }
     if (GetBattlerSide(battlerId) != B_SIDE_PLAYER)
-        species = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES);
+        mon = &gEnemyParty[gBattlerPartyIndexes[battlerId]];
     else
-        species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES);
+        mon = &gPlayerParty[gBattlerPartyIndexes[battlerId]];
+    species = GetMonData(mon, MON_DATA_SPECIES);
+    personality = GetMonData(mon, MON_DATA_PERSONALITY);
+    species = GetCrySpeciesByPersonality(species, personality);
     if (species != SPECIES_NONE)
         PlayCry_ByMode(species, pan, CRY_MODE_HIGH_PITCH);
     DestroyAnimVisualTask(taskId);
@@ -158,6 +164,8 @@ void SoundTask_PlayCryHighPitch(u8 taskId)
 void SoundTask_PlayDoubleCry(u8 taskId)
 {
     u16 species = SPECIES_NONE;
+    u32 personality = 0;
+    struct Pokemon *mon = NULL;
     u8 battlerId;
     s8 pan = BattleAnimAdjustPanning(SOUND_PAN_ATTACKER);
         
@@ -178,9 +186,12 @@ void SoundTask_PlayDoubleCry(u8 taskId)
         return;
     }
     if (GetBattlerSide(battlerId) != B_SIDE_PLAYER)
-        species = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES);
+        mon = &gEnemyParty[gBattlerPartyIndexes[battlerId]];
     else
-        species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES);
+        mon = &gPlayerParty[gBattlerPartyIndexes[battlerId]];
+    species = GetMonData(mon, MON_DATA_SPECIES);
+    personality = GetMonData(mon, MON_DATA_PERSONALITY);
+    species = GetCrySpeciesByPersonality(species, personality);
     gTasks[taskId].data[0] = gBattleAnimArgs[1];
     gTasks[taskId].data[1] = species;
     gTasks[taskId].data[2] = pan;
@@ -247,6 +258,7 @@ void SoundTask_PlayCryWithEcho(u8 taskId)
     pan = BattleAnimAdjustPanning(SOUND_PAN_ATTACKER);
 
     species = gAnimBattlerSpecies[gBattleAnimAttacker];
+    species = GetCrySpeciesByPersonality(species, gBattleMons[gBattleAnimAttacker].personality);
 
     gTasks[taskId].tSpecies = species;
     gTasks[taskId].tPan = pan;

@@ -2119,7 +2119,9 @@ static void CB2_EggHatch_1(void)
     case 3:
         if (gSprites[sEggHatchData->eggSpriteID].callback == SpriteCallbackDummy)
         {
-            PlayCry_Normal(sEggHatchData->species, 0);
+            u32 personality = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_PERSONALITY);
+
+            PlayCry_Normal(GetCrySpeciesByPersonality(sEggHatchData->species, personality), 0);
             sEggHatchData->CB2_state++;
         }
         break;

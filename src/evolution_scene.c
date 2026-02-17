@@ -676,7 +676,7 @@ void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_MON_ANIM:
         if (!IsTextPrinterActive(0))
         {
-            PlayCry_Normal(gTasks[taskId].tPreEvoSpecies, 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(gTasks[taskId].tPreEvoSpecies, GetMonData(mon, MON_DATA_PERSONALITY)), 0);
             gTasks[taskId].tState++;
         }
         break;
@@ -759,7 +759,7 @@ void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_EVO_MON_ANIM:
         if (!gPaletteFade.active)
         {
-            PlayCry_Normal(gTasks[taskId].tPostEvoSpecies, 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(gTasks[taskId].tPostEvoSpecies, GetMonData(mon, MON_DATA_PERSONALITY)), 0);
             gTasks[taskId].tState++;
         }
         break;
@@ -844,7 +844,7 @@ void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_CANCEL_MON_ANIM:
         if (!gPaletteFade.active)
         {
-            PlayCry_Normal(gTasks[taskId].tPreEvoSpecies, 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(gTasks[taskId].tPreEvoSpecies, GetMonData(mon, MON_DATA_PERSONALITY)), 0);
             gTasks[taskId].tState++;
         }
         break;
@@ -1099,7 +1099,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_INTRO_CRY:
         if (!IsTextPrinterActive(0))
         {
-            PlayCry_Normal(gTasks[taskId].tPreEvoSpecies, 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(gTasks[taskId].tPreEvoSpecies, GetMonData(mon, MON_DATA_PERSONALITY)), 0);
             gTasks[taskId].tState++;
         }
         break;
@@ -1178,7 +1178,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
         if (IsSEPlaying())
         {
 //            Free(sBgAnimPal);
-            PlayCry_Normal(gTasks[taskId].tPostEvoSpecies, 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(gTasks[taskId].tPostEvoSpecies, GetMonData(mon, MON_DATA_PERSONALITY)), 0);
             memcpy(&gPlttBufferUnfaded[BG_PLTT_ID(2)], sEvoStructPtr->savedPalette, sizeof(sEvoStructPtr->savedPalette));
             gTasks[taskId].tState++;
         }
@@ -1248,7 +1248,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_CANCEL_MON_ANIM:
         if (!gPaletteFade.active)
         {
-            PlayCry_Normal(gTasks[taskId].tPreEvoSpecies, 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(gTasks[taskId].tPreEvoSpecies, GetMonData(mon, MON_DATA_PERSONALITY)), 0);
             gTasks[taskId].tState++;
         }
         break;

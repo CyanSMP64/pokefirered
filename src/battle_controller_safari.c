@@ -598,8 +598,10 @@ static void SafariHandlePlayFanfareOrBGM(void)
 
 static void SafariHandleFaintingCry(void)
 {
-    u16 species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPECIES);
+    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[gActiveBattler]];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
 
+    species = GetCrySpeciesByPersonality(species, GetMonData(mon, MON_DATA_PERSONALITY));
     PlayCry_Normal(species, 25);
     SafariBufferExecCompleted();
 }

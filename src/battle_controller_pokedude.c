@@ -1833,6 +1833,7 @@ static void PokedudeHandleFaintingCry(void)
     else
         mon = &gEnemyParty[gBattlerPartyIndexes[gActiveBattler]];
     species = GetMonData(mon, MON_DATA_SPECIES);
+    species = GetCrySpeciesByPersonality(species, GetMonData(mon, MON_DATA_PERSONALITY));
     PlayCry_Normal(species, 25);
     PokedudeBufferExecCompleted();
 }

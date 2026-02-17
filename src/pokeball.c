@@ -5,6 +5,7 @@
 #include "decompress.h"
 #include "graphics.h"
 #include "m4a.h"
+#include "pokemon.h"
 #include "pokeball.h"
 #include "task.h"
 #include "trig.h"
@@ -683,6 +684,8 @@ static void Task_PlayCryWhenReleasedFromBall(u8 taskId)
     s8 pan = gTasks[taskId].tCryTaskPan;
     u16 species = gTasks[taskId].tCryTaskSpecies;
     struct Pokemon *mon = (void *)(u32)((gTasks[taskId].tCryTaskMonPtr1 << 16) | (u16)(gTasks[taskId].tCryTaskMonPtr2));
+
+    species = GetCrySpeciesByPersonality(species, GetMonData(mon, MON_DATA_PERSONALITY));
 
     switch (gTasks[taskId].tCryTaskState)
     {

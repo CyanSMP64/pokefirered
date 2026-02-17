@@ -1366,7 +1366,7 @@ static bool8 DoTradeAnim_Cable(void)
         DrawTextOnTradeWindow(0, gStringVar4, 0);
 
         if (sTradeAnim->monSpecies[TRADE_PLAYER] != SPECIES_EGG)
-            PlayCry_Normal(sTradeAnim->monSpecies[TRADE_PLAYER], 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(sTradeAnim->monSpecies[TRADE_PLAYER], sTradeAnim->monPersonalities[TRADE_PLAYER]), 0);
 
         sTradeAnim->state = STATE_BYE_BYE;
         sTradeAnim->timer = 0;
@@ -1735,7 +1735,7 @@ static bool8 DoTradeAnim_Cable(void)
         if (++sTradeAnim->timer > 60)
         {
             if (sTradeAnim->monSpecies[TRADE_PARTNER] != SPECIES_EGG)
-                PlayCry_Normal(sTradeAnim->monSpecies[TRADE_PARTNER], 0);
+                PlayCry_Normal(GetCrySpeciesByPersonality(sTradeAnim->monSpecies[TRADE_PARTNER], sTradeAnim->monPersonalities[TRADE_PARTNER]), 0);
             sTradeAnim->state = STATE_WAIT_FOR_MON_CRY;
             sTradeAnim->timer = 0;
         }
@@ -1840,7 +1840,7 @@ static bool8 DoTradeAnim_Wireless(void)
         DrawTextOnTradeWindow(0, gStringVar4, 0);
 
         if (sTradeAnim->monSpecies[TRADE_PLAYER] != SPECIES_EGG)
-            PlayCry_Normal(sTradeAnim->monSpecies[TRADE_PLAYER], 0);
+            PlayCry_Normal(GetCrySpeciesByPersonality(sTradeAnim->monSpecies[TRADE_PLAYER], sTradeAnim->monPersonalities[TRADE_PLAYER]), 0);
 
         sTradeAnim->state = STATE_BYE_BYE;
         sTradeAnim->timer = 0;
@@ -2234,7 +2234,7 @@ static bool8 DoTradeAnim_Wireless(void)
         if (++sTradeAnim->timer > 60)
         {
             if (sTradeAnim->monSpecies[TRADE_PARTNER] != SPECIES_EGG)
-                PlayCry_Normal(sTradeAnim->monSpecies[TRADE_PARTNER], 0);
+                PlayCry_Normal(GetCrySpeciesByPersonality(sTradeAnim->monSpecies[TRADE_PARTNER], sTradeAnim->monPersonalities[TRADE_PARTNER]), 0);
             sTradeAnim->state = STATE_WAIT_FOR_MON_CRY;
             sTradeAnim->timer = 0;
         }
