@@ -352,7 +352,7 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(LUGIA),
     SPECIES_TO_HOENN(HO_OH),
     SPECIES_TO_HOENN(CELEBI),
-    SPECIES_TO_HOENN(OLD_UNOWN_B),
+    SPECIES_TO_HOENN(MANAPHY_EGG),
     SPECIES_TO_HOENN(OLD_UNOWN_C),
     SPECIES_TO_HOENN(OLD_UNOWN_D),
     SPECIES_TO_HOENN(OLD_UNOWN_E),
@@ -1640,7 +1640,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(LUGIA),
     SPECIES_TO_NATIONAL(HO_OH),
     SPECIES_TO_NATIONAL(CELEBI),
-    SPECIES_TO_NATIONAL(OLD_UNOWN_B),
+    SPECIES_TO_NATIONAL(MANAPHY_EGG),
     SPECIES_TO_NATIONAL(OLD_UNOWN_C),
     SPECIES_TO_NATIONAL(OLD_UNOWN_D),
     SPECIES_TO_NATIONAL(OLD_UNOWN_E),
@@ -3072,7 +3072,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(LUGIA),
     HOENN_TO_NATIONAL(HO_OH),
     HOENN_TO_NATIONAL(CELEBI),
-    HOENN_TO_NATIONAL(OLD_UNOWN_B),
+    HOENN_TO_NATIONAL(MANAPHY_EGG),
     HOENN_TO_NATIONAL(OLD_UNOWN_C),
     HOENN_TO_NATIONAL(OLD_UNOWN_D),
     HOENN_TO_NATIONAL(OLD_UNOWN_E),
@@ -7995,7 +7995,7 @@ u16 HoennToNationalOrder(u16 hoennNum)
 
 u16 SpeciesToCryId(u16 species)
 {
-    if (species < SPECIES_OLD_UNOWN_B - 1)
+    if (species < SPECIES_MANAPHY_EGG - 1)
         return species;
 
     if (species <= SPECIES_OLD_UNOWN_Z - 1)
@@ -8777,9 +8777,45 @@ void PlayMapChosenOrBattleBGM(u16 songId)
         PlayNewMapMusic(GetBattleBGM());
 }
 
+u16 GetMonSpriteSpecies(struct Pokemon *mon)
+{
+    u16 species;
+
+    if (GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG, NULL))
+        return SPECIES_EGG;
+
+    if (GetMonData(mon, MON_DATA_IS_EGG, NULL))
+    {
+        species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+        if (species == SPECIES_MANAPHY)
+            return SPECIES_MANAPHY_EGG;
+        return SPECIES_EGG;
+    }
+
+    return GetMonData(mon, MON_DATA_SPECIES, NULL);
+}
+
+u16 GetBoxMonSpriteSpecies(struct BoxPokemon *boxMon)
+{
+    u16 species;
+
+    if (GetBoxMonData(boxMon, MON_DATA_SANITY_IS_BAD_EGG, NULL))
+        return SPECIES_EGG;
+
+    if (GetBoxMonData(boxMon, MON_DATA_IS_EGG, NULL))
+    {
+        species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
+        if (species == SPECIES_MANAPHY)
+            return SPECIES_MANAPHY_EGG;
+        return SPECIES_EGG;
+    }
+
+    return GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
+}
+
 const u32 *GetMonFrontSpritePal(struct Pokemon *mon)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL);
+    u16 species = GetMonSpriteSpecies(mon);
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
     
@@ -8807,7 +8843,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
 
 const struct CompressedSpritePalette *GetMonSpritePalStruct(struct Pokemon *mon)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL);
+    u16 species = GetMonSpriteSpecies(mon);
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
     

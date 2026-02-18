@@ -3900,7 +3900,7 @@ static void PokeSum_CreateMonPicSprite(void)
 
     sMonPicBounceState = AllocZeroed(sizeof(struct MonPicBounceState));
 
-    species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG);
+    species = GetMonSpriteSpecies(&sMonSummaryScreen->currentMon);
     personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
     trainerId = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_OT_ID);
 
@@ -4032,7 +4032,7 @@ static void PokeSum_CreateMonIconSprite(void)
     u16 species;
     u32 personality;
 
-    species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG);
+    species = GetMonSpriteSpecies(&sMonSummaryScreen->currentMon);
     personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
 
     // Change Keldeo to Resolute forme if it knows Secret Sword
@@ -4072,7 +4072,9 @@ static void PokeSum_ShowOrHideMonIconSprite(bool8 invisible)
 static void PokeSum_DestroyMonIconSprite(void)
 {
     u16 species;
-    species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES_OR_EGG);
+    species = GetMonSpriteSpecies(&sMonSummaryScreen->currentMon);
+    if (species == SPECIES_KELDEO && MonKnowsMove(&sMonSummaryScreen->currentMon, MOVE_SECRET_SWORD))
+        species = SPECIES_KELDEO_RESOLUTE;
     SafeFreeMonIconPalette(species);
     DestroyMonIcon(&gSprites[sMonSummaryScreen->monIconSpriteId]);
 }
@@ -4102,6 +4104,7 @@ static void CreateMoveSelectionCursorObjs(u16 tileTag, u16 palTag)
         };
 
         struct SpritePalette palette = {.data = sMoveSelectionCursorPals, .tag = palTag};
+
         struct SpriteTemplate template = {
             .tileTag = tileTag + i,
             .paletteTag = palTag,

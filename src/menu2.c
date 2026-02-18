@@ -262,7 +262,7 @@ static const u8 sMonSpriteAnchorCoords[][5] = {
     [SPECIES_LUGIA           - 1] = {0x08, 0x2a, 0x08, 0x14, 0x34},
     [SPECIES_HO_OH           - 1] = {0x0d, 0x25, 0x08, 0x0e, 0x34},
     [SPECIES_CELEBI          - 1] = {0x15, 0x21, 0x08, 0x1a, 0x2b},
-    [SPECIES_OLD_UNOWN_B     - 1] = {0x1f, 0x12, 0x08, 0x1e, 0x1c},
+    [SPECIES_MANAPHY_EGG     - 1] = {0x1f, 0x12, 0x08, 0x1e, 0x1c},
     [SPECIES_OLD_UNOWN_C     - 1] = {0x20, 0x17, 0x08, 0x1f, 0x21},
     [SPECIES_OLD_UNOWN_D     - 1] = {0x1c, 0x19, 0x08, 0x1b, 0x23},
     [SPECIES_OLD_UNOWN_E     - 1] = {0x21, 0x19, 0x08, 0x20, 0x23},
@@ -650,7 +650,7 @@ u8 Menu2_GetMonSpriteAnchorCoord(u16 species, u32 personality, u8 a2)
             species = SPECIES_OLD_UNOWN_QMARK;
             break;
         default:
-            species = SPECIES_OLD_UNOWN_B + unownLetter - 1;
+            species = SPECIES_MANAPHY_EGG + unownLetter - 1;
             break;
         }
     }

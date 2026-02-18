@@ -1855,7 +1855,7 @@ static const u16 sTutorLearnsets[] =
                                           |  TUTOR(MOVE_METRONOME)
                                           |  TUTOR(MOVE_DREAM_EATER),
 
-    [SPECIES_OLD_UNOWN_B]                 = 0,
+    [SPECIES_MANAPHY_EGG]                 = 0,
     [SPECIES_OLD_UNOWN_C]                 = 0,
     [SPECIES_OLD_UNOWN_D]                 = 0,
     [SPECIES_OLD_UNOWN_E]                 = 0,

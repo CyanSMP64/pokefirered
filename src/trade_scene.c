@@ -752,7 +752,7 @@ static void LoadTradeMonPic(u8 whichParty, u8 state)
     {
     case 0:
         // Load graphics
-        species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+        species = GetMonSpriteSpecies(mon);
         personality = GetMonData(mon, MON_DATA_PERSONALITY);
 
         if (whichParty == TRADE_PLAYER)

@@ -2188,7 +2188,7 @@ static void CreateWaveformSprites(void)
 
 static void RefreshDisplayMonData(void)
 {
-    LoadDisplayMonGfx(gStorage->displayMonSpecies, gStorage->displayMonPersonality);
+    LoadDisplayMonGfx(gStorage->displayMonSpriteSpecies, gStorage->displayMonPersonality);
     PrintDisplayMonInfo();
     UpdateWaveformAnimation();
     ScheduleBgCopyTilemapToVram(0);

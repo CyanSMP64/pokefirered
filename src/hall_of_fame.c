@@ -393,7 +393,7 @@ static void Task_Hof_InitMonData(u8 taskId)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
         {
-            sHofMonPtr[0].mon[i].species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+            sHofMonPtr[0].mon[i].species = GetMonSpriteSpecies(&gPlayerParty[i]);
             sHofMonPtr[0].mon[i].tid = GetMonData(&gPlayerParty[i], MON_DATA_OT_ID);
             sHofMonPtr[0].mon[i].personality = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY);
             sHofMonPtr[0].mon[i].lvl = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
@@ -537,7 +537,8 @@ static void Task_Hof_PlayMonCryAndPrintInfo(u8 taskId)
     struct HallofFameMon* currMon = &sHofMonPtr[0].mon[currMonId];
     if (gSprites[gTasks[taskId].data[5 + currMonId]].data[0])
     {
-        if (currMon->species != SPECIES_EGG)
+        if (currMon->species != SPECIES_EGG
+         && currMon->species != SPECIES_MANAPHY_EGG)
             PlayCry_Normal(GetCrySpeciesByPersonality(currMon->species, currMon->personality), 0);
         HallOfFame_PrintMonInfo(currMon, 0, 14);
         gTasks[taskId].data[3] = 120;
@@ -890,7 +891,7 @@ static void Task_HofPC_PrintMonInfo(u8 taskId)
     BlendPalettesUnfaded(sSelectedPaletteIndices, 0xC, HALL_OF_FAME_BG_PAL);
 
     currMon = &savedTeams->mon[gTasks[taskId].data[2]];
-    if (currMon->species != SPECIES_EGG)
+    if (currMon->species != SPECIES_EGG && currMon->species != SPECIES_MANAPHY_EGG)
     {
         StopCryAndClearCrySongs();
         PlayCry_Normal(GetCrySpeciesByPersonality(currMon->species, currMon->personality), 0);
@@ -1022,7 +1023,7 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
     PutWindowTilemap(0);
 
     // dex number
-    if (currMon->species != SPECIES_EGG)
+    if (currMon->species != SPECIES_EGG && currMon->species != SPECIES_MANAPHY_EGG)
     {
         StringCopy(text2, gText_Number);
         dexNumber = SpeciesToPokedexNum(currMon->species);
@@ -1052,12 +1053,12 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
     }
     text[i] = EOS;
     width = GetStringWidth(FONT_NORMAL, text, GetFontAttribute(FONT_NORMAL, FONTATTR_LETTER_SPACING));
-    if (currMon->species == SPECIES_EGG)
+    if (currMon->species == SPECIES_EGG || currMon->species == SPECIES_MANAPHY_EGG)
         x = 0x80 - width / 2;
     else
         x = 0x80 - width;
     AddTextPrinterParameterized3(0, FONT_NORMAL, x, 1, sTextColors[0], 0, text);
-    if (currMon->species != SPECIES_EGG)
+    if (currMon->species != SPECIES_EGG && currMon->species != SPECIES_MANAPHY_EGG)
     {
         text[0] = CHAR_SLASH;
         stringPtr = StringCopy(text + 1, gSpeciesNames[currMon->species]);

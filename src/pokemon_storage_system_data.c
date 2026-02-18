@@ -1050,6 +1050,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
     bool8 sanityIsBagEgg;
 
     gStorage->displayMonItemId = ITEM_NONE;
+    gStorage->displayMonSpriteSpecies = SPECIES_NONE;
     gender = MON_MALE;
     sanityIsBagEgg = FALSE;
     if (mode == MODE_PARTY)
@@ -1060,6 +1061,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
         gStorage->displayMonSpecies = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
         if (gStorage->displayMonSpecies != SPECIES_NONE)
         {
+            gStorage->displayMonSpriteSpecies = GetMonSpriteSpecies(mon);
             sanityIsBagEgg = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);
             if (sanityIsBagEgg)
                 gStorage->displayMonIsEgg = TRUE;
@@ -1086,6 +1088,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
         if (gStorage->displayMonSpecies != SPECIES_NONE)
         {
             u32 otId = GetBoxMonData(boxMon, MON_DATA_OT_ID);
+            gStorage->displayMonSpriteSpecies = GetBoxMonSpriteSpecies(boxMon);
             sanityIsBagEgg = GetBoxMonData(boxMon, MON_DATA_SANITY_IS_BAD_EGG);
             if (sanityIsBagEgg)
                 gStorage->displayMonIsEgg = TRUE;
@@ -1097,7 +1100,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             gStorage->displayMonLevel = GetLevelFromBoxMonExp(boxMon);
             gStorage->displayMonMarkings = GetBoxMonData(boxMon, MON_DATA_MARKINGS);
             gStorage->displayMonPersonality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
-            gStorage->displayMonPalette = GetMonSpritePalFromSpeciesAndPersonality(gStorage->displayMonSpecies, otId, gStorage->displayMonPersonality);
+            gStorage->displayMonPalette = GetMonSpritePalFromSpeciesAndPersonality(gStorage->displayMonSpriteSpecies, otId, gStorage->displayMonPersonality);
             gender = GetGenderFromSpeciesAndPersonality(gStorage->displayMonSpecies, gStorage->displayMonPersonality);
             gStorage->displayMonItemId = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM);
         }
@@ -1106,6 +1109,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
     {
         gStorage->displayMonMon = NULL;
         gStorage->displayMonSpecies = SPECIES_NONE;
+        gStorage->displayMonSpriteSpecies = SPECIES_NONE;
         gStorage->displayMonItemId = ITEM_NONE;
     }
 

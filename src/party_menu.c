@@ -2659,7 +2659,7 @@ static void CreatePartyMonIconSprite(struct Pokemon *mon, struct PartyMenuBox *m
     // If in a multi battle, show partners Deoxys icon as Normal forme
     if (IsMultiBattle() == TRUE && gMain.inBattle)
         handleDeoxys = (sMultiBattlePartnersPartyMask[slot] ^ handleDeoxys) ? TRUE : FALSE;
-    species2 = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+    species2 = GetMonSpriteSpecies(mon);
     
     // Change Keldeo to Resolute forme if it knows Secret Sword
     if (species2 == SPECIES_KELDEO && MonKnowsMove(mon, MOVE_SECRET_SWORD))

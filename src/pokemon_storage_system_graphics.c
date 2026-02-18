@@ -298,7 +298,7 @@ static u8 GetMonIconPriorityByCursorArea(void)
 void CreateMovingMonIcon(void)
 {
     u32 personality = GetMonData(&gStorage->movingMon, MON_DATA_PERSONALITY);
-    u16 species = GetMonData(&gStorage->movingMon, MON_DATA_SPECIES_OR_EGG);
+    u16 species = GetMonSpriteSpecies(&gStorage->movingMon);
     u8 priority = GetMonIconPriorityByCursorArea();
 
     gStorage->movingMonSprite = CreateMonIconSprite(species, personality, 0, 0, priority, 7);
@@ -311,6 +311,7 @@ static void InitBoxMonSprites(u8 boxId)
     u16 i, j, count;
     u16 species;
     u32 personality;
+    struct BoxPokemon *boxMon;
 
     count = 0;
     boxPosition = 0;
@@ -318,10 +319,11 @@ static void InitBoxMonSprites(u8 boxId)
     {
         for (j = 0; j < IN_BOX_COLUMNS; j++)
         {
-            species = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_SPECIES_OR_EGG);
+            boxMon = GetBoxedMonPtr(boxId, boxPosition);
+            species = GetBoxMonSpriteSpecies(boxMon);
             if (species != SPECIES_NONE)
             {
-                personality = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_PERSONALITY);
+                personality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
                 gStorage->boxMonsSprites[count] = CreateMonIconSprite(species, personality, 8 * (3 * j) + 100, 8 * (3 * i) + 44, 2, 19 - j);
             }
             else
@@ -344,13 +346,14 @@ static void InitBoxMonSprites(u8 boxId)
 
 void CreateBoxMonIconAtPos(u8 boxPosition)
 {
-    u16 species = GetCurrentBoxMonData(boxPosition, MON_DATA_SPECIES_OR_EGG);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(StorageGetCurrentBox(), boxPosition);
+    u16 species = GetBoxMonSpriteSpecies(boxMon);
 
     if (species != SPECIES_NONE)
     {
         s16 x = 8 * (3 * (boxPosition % IN_BOX_COLUMNS)) + 100;
         s16 y = 8 * (3 * (boxPosition / IN_BOX_COLUMNS)) + 44;
-        u32 personality = GetCurrentBoxMonData(boxPosition, MON_DATA_PERSONALITY);
+        u32 personality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
 
         gStorage->boxMonsSprites[boxPosition] = CreateMonIconSprite(species, personality, x, y, 2, 19 - (boxPosition % IN_BOX_COLUMNS));
         if (gStorage->boxOption == OPTION_MOVE_ITEMS)
@@ -558,18 +561,21 @@ static bool8 UpdateBoxMonIconScroll(void)
     return TRUE;
 }
 
+// in Em this function is called GetIncomingBoxMonData
 static void SetBoxSpeciesAndPersonalities(u8 boxId)
 {
     s32 i, j, boxPosition;
+    struct BoxPokemon *boxMon;
 
     boxPosition = 0;
     for (i = 0; i < IN_BOX_ROWS; i++)
     {
         for (j = 0; j < IN_BOX_COLUMNS; j++)
         {
-            gStorage->boxSpecies[boxPosition] = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_SPECIES_OR_EGG);
+            boxMon = GetBoxedMonPtr(boxId, boxPosition);
+            gStorage->boxSpecies[boxPosition] = GetBoxMonSpriteSpecies(boxMon);
             if (gStorage->boxSpecies[boxPosition] != SPECIES_NONE)
-                gStorage->boxPersonalities[boxPosition] = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_PERSONALITY);
+                gStorage->boxPersonalities[boxPosition] = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
             boxPosition++;
         }
     }
@@ -597,14 +603,14 @@ void SetBoxMonIconObjMode(u8 boxPosition, u8 objMode)
 void CreatePartyMonsSprites(bool8 visible)
 {
     u16 i, count;
-    u16 species = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES_OR_EGG);
+    u16 species = GetMonSpriteSpecies(&gPlayerParty[0]);
     u32 personality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
 
     gStorage->partySprites[0] = CreateMonIconSprite(species, personality, 104, 64, 1, 12);
     count = 1;
     for (i = 1; i < PARTY_SIZE; i++)
     {
-        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+        species = GetMonSpriteSpecies(&gPlayerParty[i]);
         if (species != SPECIES_NONE)
         {
             personality = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY);

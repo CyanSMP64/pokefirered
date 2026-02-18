@@ -374,6 +374,7 @@ struct PokemonStorageSystemData
     const u32 *displayMonPalette;
     u32 displayMonPersonality;
     u16 displayMonSpecies;
+    u16 displayMonSpriteSpecies;
     u16 displayMonItemId;
     struct Pokemon *displayMonMon;
     u16 displayUnusedVar;
