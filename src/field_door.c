@@ -81,12 +81,12 @@ static const u8 sDoorAnimTiles_HideoutElevator[] = INCBIN_U8("graphics/door_anim
 static const u16 sDoorNullPalette20[16] = {};
 static const u8 sDoorAnimTiles_SSAnne[] = INCBIN_U8("graphics/door_anims/ss_anne.4bpp");
 static const u16 sDoorNullPalette21[16] = {};
+static const u8 sDoorAnimTiles_SSAnneYellow[] = INCBIN_U8("graphics/door_anims/ss_anne_yellow.4bpp");
+static const u16 sDoorNullPalette22[16] = {};
+static const u8 sDoorAnimTiles_SSAnneBlue[] = INCBIN_U8("graphics/door_anims/ss_anne_blue.4bpp");
+static const u16 sDoorNullPalette23[16] = {};
 
 // Doors from R/S dummied below
-static const u8 sDoorAnimTiles_Empty1[256 * 3] = {};
-static const u16 sDoorNullPalette22[16] = {};
-static const u8 sDoorAnimTiles_Empty2[256 * 3] = {};
-static const u16 sDoorNullPalette23[16] = {};
 static const u8 sDoorAnimTiles_Empty3[256 * 3] = {};
 static const u16 sDoorNullPalette24[16] = {};
 static const u8 sDoorAnimTiles_Empty4[256 * 3] = {};
@@ -280,6 +280,8 @@ static const struct DoorGraphics sDoorGraphics[] = {
     {METATILE_PokemonCenter_CableClubDoor,                 DOOR_SOUND_SLIDING, DOOR_SIZE_1x2, sDoorAnimTiles_CableClub, sDoorAnimPalettes_CableClub},
     {METATILE_SilphCo_HideoutElevatorDoor,                 DOOR_SOUND_SLIDING, DOOR_SIZE_1x2, sDoorAnimTiles_HideoutElevator, sDoorAnimPalettes_HideoutElevator},
     {METATILE_SSAnne_Door,                                 DOOR_SOUND_NORMAL,  DOOR_SIZE_1x2, sDoorAnimTiles_SSAnne, sDoorAnimPalettes_SSAnne},
+    {METATILE_SSAnne_DoorYellow,                           DOOR_SOUND_NORMAL,  DOOR_SIZE_1x2, sDoorAnimTiles_SSAnneYellow, sDoorAnimPalettes_SSAnne},
+    {METATILE_SSAnne_DoorBlue,                             DOOR_SOUND_NORMAL,  DOOR_SIZE_1x2, sDoorAnimTiles_SSAnneBlue, sDoorAnimPalettes_SSAnne},
     {METATILE_SilphCo_ElevatorDoor,                        DOOR_SOUND_SLIDING, DOOR_SIZE_1x2, sDoorAnimTiles_SilphCoElevator, sDoorAnimPalettes_SilphCoElevator},
     {METATILE_SeaCottage_Teleporter_Door,                  DOOR_SOUND_SLIDING, DOOR_SIZE_1x2, sDoorAnimTiles_Teleporter, sDoorAnimPalettes_Teleporter},
     {METATILE_TrainerTower_LobbyElevatorDoor,              DOOR_SOUND_SLIDING, DOOR_SIZE_1x2, sDoorAnimTiles_TrainerTowerLobbyElevator, sDoorAnimPalettes_TrainerTowerLobbyElevator},
