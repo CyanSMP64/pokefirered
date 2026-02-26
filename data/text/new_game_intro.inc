@@ -80,7 +80,7 @@ gNameChoice_Jodi::
     .string "Zac$"
 
 gNameChoice_Amanda::
-    .string "Ice$"
+    .string "Rage$"
 
 gNameChoice_Hillary::
     .string "Shorts$"
@@ -98,7 +98,7 @@ gNameChoice_June::
     .string "June$"
 
 gNameChoice_Cassie::
-    .string "CASSIE$"
+    .string "Powa$"
 
 gNameChoice_Rey::
     .string "Rey$"

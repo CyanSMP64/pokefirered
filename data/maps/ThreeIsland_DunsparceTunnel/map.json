@@ -47,33 +47,6 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 18,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "ThreeIsland_DunsparceTunnel_EventScript_Sparkle_Nugget"
-    },
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "ThreeIsland_DunsparceTunnel_EventScript_Sparkle_Nugget"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 1,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "ThreeIsland_DunsparceTunnel_EventScript_Sparkle_Nugget"
-    }
   ],
   "bg_events": [
     {

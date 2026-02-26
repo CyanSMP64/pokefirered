@@ -81,60 +81,6 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SixIsland_EventScript_Sparkle_LeppaBerry"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SixIsland_EventScript_Sparkle_LeppaBerry"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SixIsland_EventScript_Sparkle_LeppaBerry"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SixIsland_EventScript_Sparkle_LeppaBerry"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SixIsland_EventScript_Sparkle_LeppaBerry"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SixIsland_EventScript_Sparkle_LeppaBerry"
-    }
   ],
   "bg_events": [
     {

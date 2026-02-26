@@ -611,6 +611,7 @@ static const u8 *const sMaleNameChoices[] =
     gNameChoice_Hillary,
     gNameChoice_Makey,
     gNameChoice_Michi,
+    gNameChoice_Cassie,
 };
 
 static const u8 *const sRivalNameChoices[] =

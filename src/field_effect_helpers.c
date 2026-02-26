@@ -1344,12 +1344,21 @@ u32 FldEff_Sparkle(void)
     {
         gSprites[spriteId].oam.priority = gFieldEffectArguments[2];
         gSprites[spriteId].coordOffsetEnabled = TRUE;
+        gSprites[spriteId].data[2] = 1;
+        gSprites[spriteId].invisible = TRUE;
     }
     return 0;
 }
 
 void UpdateSparkleFieldEffect(struct Sprite *sprite)
 {
+    if (sprite->data[2])
+    {
+        sprite->data[2]--;
+        if (!sprite->data[2])
+            sprite->invisible = FALSE;
+        return;
+    }
     if (sprite->data[0] == 0)
     {
         if (sprite->animEnded)

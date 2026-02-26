@@ -110,42 +110,6 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 31,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
-    },
-    {
-      "type": "trigger",
-      "x": 32,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
-    },
-    {
-      "type": "trigger",
-      "x": 33,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
-    },
-    {
-      "type": "trigger",
-      "x": 30,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "PokemonMansion_B1F_EventScript_Sparkle_Elixir"
-    }
   ],
   "bg_events": [
     {

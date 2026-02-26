@@ -332,33 +332,6 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 53,
-      "y": 22,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "CeladonCity_EventScript_Sparkle_PPUp"
-    },
-    {
-      "type": "trigger",
-      "x": 54,
-      "y": 23,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "CeladonCity_EventScript_Sparkle_PPUp"
-    },
-    {
-      "type": "trigger",
-      "x": 55,
-      "y": 23,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "CeladonCity_EventScript_Sparkle_PPUp"
-    }
   ],
   "bg_events": [
     {

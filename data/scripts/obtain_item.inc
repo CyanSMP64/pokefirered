@@ -164,12 +164,12 @@ EventScript_TryPickUpHiddenItem::
 	return
 
 EventScript_PickedUpHiddenItem::
+	special SetHiddenItemFlag
 	call_if_eq VAR_0x8006, 1, EventScript_FoundSingleItem
 	call_if_ne VAR_0x8006, 1, EventScript_FoundMultipleItems
 	waitfanfare
 	waitmessage
 	msgbox Text_PutItemAway
-	special SetHiddenItemFlag
 	releaseall
 	end
 

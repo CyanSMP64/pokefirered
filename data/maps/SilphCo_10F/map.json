@@ -145,60 +145,6 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SilphCo_10F_EventScript_Sparkle_HPUp"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SilphCo_10F_EventScript_Sparkle_HPUp"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SilphCo_10F_EventScript_Sparkle_HPUp"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SilphCo_10F_EventScript_Sparkle_HPUp"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SilphCo_10F_EventScript_Sparkle_HPUp"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "SilphCo_10F_EventScript_Sparkle_HPUp"
-    }
   ],
   "bg_events": [
     {

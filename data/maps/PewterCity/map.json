@@ -198,24 +198,6 @@
       "var": "VAR_MAP_SCENE_PEWTER_CITY",
       "var_value": "0",
       "script": "PewterCity_EventScript_GymGuideTriggerRight"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "PewterCity_EventScript_Sparkle_PokeBall"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "PewterCity_EventScript_Sparkle_PokeBall"
     }
   ],
   "bg_events": [
