@@ -50,6 +50,7 @@
 #include "constants/cable_club.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
+#include "constants/items.h"
 #include "constants/maps.h"
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
@@ -3638,6 +3639,9 @@ static void TryStartVisibleHiddenItemSparkles(void)
         s16 itemY;
 
         if (bgEvents[i].kind != BG_EVENT_HIDDEN_ITEM)
+            continue;
+
+        if (GetHiddenItemAttr(bgEvents[i].bgUnion.hiddenItem, HIDDEN_ITEM_ITEM) == ITEM_NONE)
             continue;
 
         if (GetHiddenItemAttr(bgEvents[i].bgUnion.hiddenItem, HIDDEN_ITEM_UNDERFOOT))
