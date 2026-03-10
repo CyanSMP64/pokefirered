@@ -105,6 +105,6 @@ CeladonCity_EventScript_GameCornerSign::
 	msgbox CeladonCity_Text_GameCornerSign, MSGBOX_SIGN
 	end
 
-CeladonCity_EventScript_RocketGrunt3::
-	msgbox CeladonCity_Text_PatheticWeakling, MSGBOX_NPC
+CeladonCity_EventScript_MoveReminderSign::
+	msgbox CeladonCity_Text_MovedToCinnabar, MSGBOX_SIGN
 	end

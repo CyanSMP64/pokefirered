@@ -112,12 +112,6 @@ CeladonCity_Text_SomeoneStoleSilphScope::
     .string "But I lost sight of him!\n"
     .string "Where'd he go?$"
 
-CeladonCity_Text_PatheticWeakling::
-    .string "Who do you think you are,\n"
-    .string "pathetic weakling?\p"
-    .string "I'm guarding the Game Corner so\n"
-    .string "wimps like you can't get in.\p"
-    .string "Perhaps the nearby Gym can\n"
-    .string "test your strength.\p"
-    .string "Maybe if you defeat its Leader\n"
-    .string "I'll move out of the way.$"
+CeladonCity_Text_MovedToCinnabar::
+    .string "Moved to Cinnabar Island\n"
+    .string "-M.M.$"
