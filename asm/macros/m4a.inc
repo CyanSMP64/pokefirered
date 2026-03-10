@@ -1,7 +1,8 @@
-	.macro song label, music_player, unknown
+	.macro song label, music_player, volume, speed
 	.4byte \label
-	.2byte \music_player
-	.2byte \unknown
+	.byte \music_player
+	.byte \volume
+	.2byte \speed
 	.endm
 
 	.macro music_player info_struct, track_struct, unknown_1, unknown_2

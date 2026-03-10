@@ -107,7 +107,7 @@ endif
 
 SHA1 := $(shell { command -v sha1sum || command -v shasum; } 2>/dev/null) -c
 GFX := tools/gbagfx/gbagfx
-AIF := tools/aif2pcm/aif2pcm
+WAV2AGB := tools/wav2agb/wav2agb
 MID := tools/mid2agb/mid2agb
 SCANINC := tools/scaninc/scaninc
 PREPROC := tools/preproc/preproc
@@ -229,7 +229,7 @@ include songs.mk
 %.s: ;
 %.png: ;
 %.pal: ;
-%.aif: ;
+%.wav: ;
 
 %.1bpp: %.png  ; $(GFX) $< $@
 %.4bpp: %.png  ; $(GFX) $< $@
@@ -238,8 +238,8 @@ include songs.mk
 %.gbapal: %.png ; $(GFX) $< $@
 %.lz: % ; $(GFX) $< $@
 %.rl: % ; $(GFX) $< $@
-$(CRY_SUBDIR)/%.bin: $(CRY_SUBDIR)/%.aif ; $(AIF) $< $@ --compress
-sound/%.bin: sound/%.aif ; $(AIF) $< $@
+$(CRY_SUBDIR)/%.bin: $(CRY_SUBDIR)/%.wav ; $(WAV2AGB) -b -c -l 1 $< $@
+sound/%.bin: sound/%.wav ; $(WAV2AGB) -b $< $@
 sound/songs/%.s: sound/songs/%.mid
 	$(MID) $< $@
 
