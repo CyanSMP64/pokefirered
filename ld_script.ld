@@ -272,13 +272,13 @@ SECTIONS {
         src/menu2.o(.text);
         src/oak_speech.o(.text);
         src/tm_case.o(.text);
-        src/pokemon_summary_screen.o(.text);
     } =0
 
     .text_7 0x08141ccc:
     ALIGN(4)
     {
         src/roamer.o(.text);
+        src/pokemon_summary_screen.o(.text);
         src/union_room_player_avatar.o(.text);
         src/vs_seeker.o(.text);
         src/wild_pokemon_area.o(.text);

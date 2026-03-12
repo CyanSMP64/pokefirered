@@ -1029,33 +1029,49 @@ static void Cmd_if_not_in_bytes(void)
 
 static void Cmd_if_in_hwords(void)
 {
-    const u16 *ptr = (const u16 *)T1_READ_PTR(sAIScriptPtr + 1);
+    const u8 *ptr = T1_READ_PTR(sAIScriptPtr + 1);
+    s32 arrayCount = 0;
 
-    while (*ptr != 0xFFFF)
+    while (arrayCount++ <= 0x3ff)
     {
-        if (AI_THINKING_STRUCT->funcResult == *ptr)
+        u16 value = T1_READ_16(ptr);
+        if (value == 0xFFFF)
+        {
+            sAIScriptPtr += 9;
+            return;
+        }
+        if (AI_THINKING_STRUCT->funcResult == value)
         {
             sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 5);
             return;
         }
-        ptr++;
+        ptr += 2;
     }
+
     sAIScriptPtr += 9;
 }
 
 static void Cmd_if_not_in_hwords(void)
 {
-    const u16 *ptr = (const u16 *)T1_READ_PTR(sAIScriptPtr + 1);
+    const u8 *ptr = T1_READ_PTR(sAIScriptPtr + 1);
+    s32 arrayCount = 0;
 
-    while (*ptr != 0xFFFF)
+    while (arrayCount++ <= 0x3ff)
     {
-        if (AI_THINKING_STRUCT->funcResult == *ptr)
+        u16 value = T1_READ_16(ptr);
+        if (value == 0xFFFF)
+        {
+            sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 5);
+            return;
+        }
+        if (AI_THINKING_STRUCT->funcResult == value)
         {
             sAIScriptPtr += 9;
             return;
         }
-        ptr++;
+        ptr += 2;
     }
+
     sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 5);
 }
 
@@ -1806,12 +1822,12 @@ static void Cmd_if_has_move(void)
         break;
     case AI_TARGET:
     case AI_TARGET_PARTNER:
-        for (i = 0; i < 8; i++)
+        for (i = 0; i < MAX_MON_MOVES; i++)
         {
             if (BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] == *movePtr)
                 break;
         }
-        if (i == 8)
+        if (i == MAX_MON_MOVES)
             sAIScriptPtr += 8;
         else
             sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 4);
@@ -1840,12 +1856,12 @@ static void Cmd_if_doesnt_have_move(void)
         break;
     case AI_TARGET:
     case AI_TARGET_PARTNER:
-        for (i = 0; i < 8; i++)
+        for (i = 0; i < MAX_MON_MOVES; i++)
         {
             if (BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] == *movePtr)
                 break;
         }
-        if (i != 8)
+        if (i != MAX_MON_MOVES)
             sAIScriptPtr += 8;
         else
             sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 4);
