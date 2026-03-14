@@ -37,6 +37,7 @@
 #include "constants/hold_effects.h"
 #include "constants/battle_move_effects.h"
 #include "constants/union_room.h"
+#include "constants/map_types.h"
 
 #define SPECIES_TO_HOENN(name)      [SPECIES_##name - 1] = HOENN_DEX_##name
 #define SPECIES_TO_NATIONAL(name)   [SPECIES_##name - 1] = NATIONAL_DEX_##name
@@ -7851,6 +7852,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 break;
             case EVO_LEVEL_REG_ROCK:
                 if (gEvolutionTable[species][i].param <= level && GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_REGIONAL_ROCK)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_LEVEL_IN_CAVE:
+                if (gEvolutionTable[species][i].param <= level && gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }
