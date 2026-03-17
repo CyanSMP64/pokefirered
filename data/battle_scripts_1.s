@@ -3046,7 +3046,6 @@ BattleScript_BattleTowerEtcTrainerBattleWonSkipText::
 	end2
 
 BattleScript_SmokeBallEscape::
-	playanimation BS_ATTACKER, B_ANIM_SMOKEBALL_ESCAPE
 	printstring STRINGID_PKMNFLEDUSINGITS
 	waitmessage 0
 	end2
