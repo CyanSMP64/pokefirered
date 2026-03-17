@@ -30,6 +30,7 @@ CeladonCity_DepartmentStore_5F_XItems::
 	.2byte ITEM_X_DEFEND
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_SPECIAL
+	.2byte ITEM_X_SP_DEF
 	.2byte ITEM_X_ACCURACY
 	.2byte ITEM_GUARD_SPEC
 	.2byte ITEM_DIRE_HIT
