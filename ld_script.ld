@@ -74,7 +74,7 @@ SECTIONS {
         src/battle_ai_switch_items.o(.text);
     } =0
 
-    .text_4 0x0803d990:
+    .text_4 0x0803d988:
     ALIGN(4)
     {
         src/pokemon.o(.text);
