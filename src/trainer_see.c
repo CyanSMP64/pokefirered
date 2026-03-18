@@ -6,11 +6,13 @@
 #include "field_player_avatar.h"
 #include "quest_log.h"
 #include "script.h"
+#include "sound.h"
 #include "task.h"
 #include "util.h"
 #include "constants/battle_setup.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
+#include "constants/songs.h"
 #include "constants/trainer_types.h"
 
 typedef u8 (*TrainerApproachFunc)(struct ObjectEvent *, s16, s16, s16);
@@ -301,6 +303,8 @@ static bool8 TrainerSeeFunc_StartExclMark(u8 taskId, struct Task *task, struct O
     else
     {
         ObjectEventGetLocalIdAndMap(trainerObj, (u8 *)&gFieldEffectArguments[0], (u8 *)&gFieldEffectArguments[1], (u8 *)&gFieldEffectArguments[2]);
+        if (!gSaveBlock2Ptr->optionsBGM)
+            PlaySE(SE_PIN);
         FieldEffectStart(FLDEFF_EXCLAMATION_MARK_ICON);
         action = GetFaceDirectionMovementAction(trainerObj->facingDirection);
         ObjectEventSetHeldMovement(trainerObj, action);
