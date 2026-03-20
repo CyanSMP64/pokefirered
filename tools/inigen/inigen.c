@@ -56,10 +56,6 @@ struct PlotlessKeyItem {
 
 static csh sCapstone;
 
-static Elf32_Shdr * sh_text;
-static Elf32_Shdr * sh_rodata;
-static Elf32_Shdr * sh_scripts;
-
 /*
  * ---------------------------------------------------------
  * Data
@@ -285,21 +281,6 @@ static int IsOldManWeedle(const struct cs_insn * insn)
     return -1;
 }
 
-static int IsRunIndoorsTweakOffset(const struct cs_insn * insn)
-{
-    cs_arm_op * ops = insn->detail->arm.operands;
-    if (insn->id == ARM_INS_AND
-        && ops[0].type == ARM_OP_REG
-        && ops[1].type == ARM_OP_REG
-        && (insn - 1)->id == ARM_INS_MOV
-        && (insn - 1)->detail->arm.operands[0].type == ARM_OP_REG
-        && (insn - 1)->detail->arm.operands[1].type == ARM_OP_IMM
-        && (insn - 1)->detail->arm.operands[0].reg == ops[0].reg
-        && (insn - 1)->detail->arm.operands[1].imm == 2)
-        return insn->address;
-    return -1;
-}
-
 /*
  * ---------------------------------------------------------
  * get_instr_addr(
@@ -323,7 +304,8 @@ static int get_instr_addr(FILE * elfFile, const char * symname, int (*callback)(
 {
     int retval = -1;
     Elf32_Sym * sym = GetSymbolByName(symname);
-    fseek(elfFile, (sym->st_value & ~1) - sh_text->sh_addr + sh_text->sh_offset, SEEK_SET);
+    Elf32_Shdr * section = GetSectionHeader(sym->st_shndx);
+    fseek(elfFile, (sym->st_value & ~1) - section->sh_addr + section->sh_offset, SEEK_SET);
     unsigned char * data = malloc(sym->st_size);
     if (fread(data, 1, sym->st_size, elfFile) != sym->st_size)
         FATAL_ERROR("fread");
@@ -398,9 +380,6 @@ int main(int argc, char ** argv)
     // Initialize Capstone
     cs_open(CS_ARCH_ARM, CS_MODE_THUMB, &sCapstone);
     cs_option(sCapstone, CS_OPT_DETAIL, CS_OPT_ON);
-    sh_text = GetSectionHeaderByName(".text");
-    sh_rodata = GetSectionHeaderByName(".rodata");
-    sh_scripts = GetSectionHeaderByName("script_data");
 
     // Start writing the INI
     print("[%s]\n", romName);
@@ -430,28 +409,28 @@ int main(int argc, char ** argv)
     config_sym("EggMoves", "gEggMoves");
     config_sym("PokemonTMHMCompat", "sTMHMLearnsets");
     config_sym("PokemonEvolutions", "gEvolutionTable");
-//    Elf32_Sym * Fr_gWildMonHeaders = GetSymbolByName("gWildMonHeaders");
+    Elf32_Sym * Fr_gWildMonHeaders = GetSymbolByName("gWildMonHeaders");
     print("BattleTrappersBanned=[");
-//    bool foundTrapBannedMap = false;
-//    int encno = 0;
-//    u8 * wild_headers_raw = elfContents + Fr_gWildMonHeaders->st_value - sh_rodata->sh_addr + sh_rodata->sh_offset;
-//    uint8_t mapGroup;
-//    uint8_t mapNum;
-//    for (int i = 0; i < Fr_gWildMonHeaders->st_size / 20; i++) {
-//        mapGroup = wild_headers_raw[20 * i + 0];
-//        mapNum   = wild_headers_raw[20 * i + 1];
-//        for (int j = 0; j < 4; j++) {
-//            if (read_dword(wild_headers_raw + 20 * i + 4 + 4 * j) != 0) {
-//                if (mapGroup == MAP_GROUP(POKEMON_TOWER_3F) && mapNum >= MAP_NUM(POKEMON_TOWER_3F) && mapNum <= MAP_NUM(POKEMON_TOWER_7F)) {
-//                    if (foundTrapBannedMap) print(",");
-//                    print("%d", encno);
-//                    foundTrapBannedMap = true;
-//                }
-//                encno++;
-//            }
-//        }
-//    }
-    print("55,56,57,58,59"); // dude come on
+    bool foundTrapBannedMap = false;
+    int encno = 0;
+    Elf32_Shdr * section = GetSectionHeader(Fr_gWildMonHeaders->st_shndx);
+    u8 * wild_headers_raw = elfContents + Fr_gWildMonHeaders->st_value - section->sh_addr + section->sh_offset;
+    uint8_t mapGroup;
+    uint8_t mapNum;
+    for (int i = 0; i < Fr_gWildMonHeaders->st_size / 20; i++) {
+        mapGroup = wild_headers_raw[20 * i + 0];
+        mapNum   = wild_headers_raw[20 * i + 1];
+        for (int j = 0; j < 4; j++) {
+            if (read_dword(wild_headers_raw + 20 * i + 4 + 4 * j) != 0) {
+                if (mapGroup == MAP_GROUP(POKEMON_TOWER_3F) && mapNum >= MAP_NUM(POKEMON_TOWER_3F) && mapNum <= MAP_NUM(POKEMON_TOWER_7F)) {
+                    if (foundTrapBannedMap) print(",");
+                    print("%d", encno);
+                    foundTrapBannedMap = true;
+                }
+                encno++;
+            }
+        }
+    }
     print("]\n");
     print("StarterPokemon=0x%X\n", (sym_get("PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall") + 10) & 0x1FFFFFF);
     Elf32_Sym * Fr_gTrainers = GetSymbolByName("gTrainers");
@@ -507,7 +486,6 @@ int main(int argc, char ** argv)
     print("TradeTableOffset=0x%X\n", Fr_gIngameTrades->st_value & 0x1FFFFFF);
     print("TradeTableSize=%d\n", Fr_gIngameTrades->st_size / 60); // hardcoded for now
     print("TradesUnused=[]\n"); // so randomizer doesn't complain
-    config_set("RunIndoorsTweakOffset", get_instr_addr(elfFile, "IsRunningDisallowed", IsRunIndoorsTweakOffset) & 0x1FFFFFF);
     config_sym("TextSpeedValuesOffset", "sTextSpeedFrameDelays");
     print("InstantTextTweak=instant_text/fr_11_instant_text\n"); // so randomizer doesn't complain
     config_set("CatchingTutorialOpponentMonOffset", get_instr_addr(elfFile, "StartOldManTutorialBattle", IsOldManWeedle) & 0x1FFFFFF);
@@ -629,14 +607,14 @@ int main(int argc, char ** argv)
  * addresses unchanged from vanilla FireRed:
  * 
  * src/text_printer.o(ewram_data)
- *         sTextPrinters                       - 0x02020034 (instant text)  // intentional crash, moved
+ *         sTextPrinters                       - 0x02020034 (instant text)  // option removed from randomizer
  * 
  * src/text_printer.o(.text)
- *         RunTextPrinters                     - 0x08002dfc (instant text)  // intentional crash, moved
- *         RenderFont                          - 0x08002e90 (instant text)  // intentional crash, moved
+ *         RunTextPrinters                     - 0x08002dfc (instant text)  // option removed from randomizer
+ *         RenderFont                          - 0x08002e90 (instant text)  // option removed from randomizer
  * 
  * src/window.o(.text)
- *         CopyWindowToVram                    - 0x08003f34 (instant text)  // intentional crash, moved
+ *         CopyWindowToVram                    - 0x08003f34 (instant text)  // option removed from randomizer
  * 
  * src/pokemon.o(.text)
  *         CreateMonWithGenderNatureLetter     - 0x0803de14 (random statics - marowak)
@@ -649,10 +627,10 @@ int main(int argc, char ** argv)
  *         CreateInitialRoamerMon              - 0x08141d0c (random statics - roamers)
  * 
  * *libgcc.a:_call_via_rX.o(.text)
- *         _call_via_r2                        - 0x081e3c20 (instant text)  // intentional crash, moved
+ *         _call_via_r2                        - 0x081e3c20 (instant text)  // option removed from randomizer
  * 
  * src/new_menu_helpers.o(.rodata)
- *         sTextSpeedFrameDelays               - 0x0841f498 (instant text)  // intentional crash, moved
+ *         sTextSpeedFrameDelays               - 0x0841f498 (instant text)  // option removed from randomizer
  * 
  * Also please make sure no data is written to the following addresses:
  * 
