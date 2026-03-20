@@ -2300,11 +2300,11 @@ static void PrintDisplayMonInfo(void)
         AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[0], FONT_NORMAL, 0, WindowWidthPx(0) - 6), gStorage->displayMonTexts[0], 6, 0, TEXT_SKIP_DRAW, NULL);
         AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[1], FONT_NORMAL, 0, WindowWidthPx(0) - 12), gStorage->displayMonTexts[1], 6, 15, TEXT_SKIP_DRAW, NULL);
         AddTextPrinterParameterized(0, FONT_NORMAL, gStorage->displayMonTexts[2], 10, 29, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[3], FONT_SMALL, 0, WindowWidthPx(0) - 22), gStorage->displayMonTexts[3], 6, 43, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[3], FONT_SMALL, 0, WindowWidthPx(0) - 6), gStorage->displayMonTexts[3], 6, 43, TEXT_SKIP_DRAW, NULL);
     }
     else
     {
-        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[3], FONT_SMALL, 0, WindowWidthPx(0) - 22), gStorage->displayMonTexts[3], 6, 0, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[3], FONT_SMALL, 0, WindowWidthPx(0) - 6), gStorage->displayMonTexts[3], 6, 0, TEXT_SKIP_DRAW, NULL);
         AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[0], FONT_NORMAL, 0, WindowWidthPx(0) - 6), gStorage->displayMonTexts[0], 6, 13, TEXT_SKIP_DRAW, NULL);
         AddTextPrinterParameterized(0, GetFontIdToFit(gStorage->displayMonTexts[1], FONT_NORMAL, 0, WindowWidthPx(0) - 12), gStorage->displayMonTexts[1], 6, 28, TEXT_SKIP_DRAW, NULL);
         AddTextPrinterParameterized(0, FONT_NORMAL, gStorage->displayMonTexts[2], 10, 42, TEXT_SKIP_DRAW, NULL);
