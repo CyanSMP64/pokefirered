@@ -19,6 +19,7 @@
 #include "battle_script_commands.h"
 #include "pokemon.h"
 #include "battle.h"
+#include "constants/items.h"
 
 struct GFRomHeader
 {
@@ -329,6 +330,8 @@ struct GFRomHeader
     u16 sizeofTrainerMonWithCustomMoves;                                                        // 0x4b2
     u16 sizeofTrainerItem;                                                                      // 0x4b4
     u16 sizeofTrainerMonCustomMove;                                                             // 0x4b6
+    // misc data
+    u16 itemCount;                                                                              // 0x4b8
 };
 
 // This seems to need to be in the text section for some reason.
@@ -647,4 +650,6 @@ static const struct GFRomHeader sGFRomHeader = {
     .sizeofTrainerMonWithCustomMoves =                      sizeof(struct TrainerMonItemCustomMoves),
     .sizeofTrainerItem =                                    sizeof(gTrainerMonItemCustomMoves->heldItem),
     .sizeofTrainerMonCustomMove =                           sizeof(gTrainerMonItemCustomMoves->moves[0]),
+    // misc data
+    .itemCount =                                            ITEMS_COUNT,
 };
