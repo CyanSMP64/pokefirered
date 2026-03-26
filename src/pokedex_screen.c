@@ -1375,6 +1375,18 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
     s32 i;
     bool8 caught;
     bool8 seen;
+    u16 species;
+    u16 *ndexToSpecies;
+
+    ndexToSpecies = Alloc((NATIONAL_DEX_COUNT + 1) * sizeof(u16));
+    for (i = 0; i <= NATIONAL_DEX_COUNT; i++)
+        ndexToSpecies[i] = 0;
+    for (species = 1; species < NUM_SPECIES; species++)
+    {
+        ndex_num = SpeciesToNationalPokedexNum(species);
+        if (ndex_num != 0 && ndex_num <= NATIONAL_DEX_COUNT)
+            ndexToSpecies[ndex_num] = species;
+    }
 
     switch (orderIdx)
     {
@@ -1383,18 +1395,19 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         for (i = 0; i < KANTO_DEX_COUNT; i++)
         {
             ndex_num = i + 1;
+            species = ndexToSpecies[ndex_num];
             seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
             caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
             if (seen)
             {
-                sPokedexScreenData->listItems[i].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
+                sPokedexScreenData->listItems[i].label = gSpeciesNames[species];
                 ret = ndex_num;
             }
             else
             {
                 sPokedexScreenData->listItems[i].label = gText_5Dashes;
             }
-            sPokedexScreenData->listItems[i].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
+            sPokedexScreenData->listItems[i].index = (caught << 17) + (seen << 16) + species;
         }
         break;
     case DEX_ORDER_ATOZ:
@@ -1407,8 +1420,9 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
                 if (seen)
                 {
-                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
-                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
+                    species = ndexToSpecies[ndex_num];
+                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[species];
+                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + species;
                     ret++;
                 }
             }
@@ -1417,15 +1431,16 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
     case DEX_ORDER_TYPE:
         for (i = 0; i < NUM_SPECIES - 1; i++)
         {
-            ndex_num = SpeciesToNationalPokedexNum(gPokedexOrder_Type[i]);
+            species = gPokedexOrder_Type[i];
+            ndex_num = SpeciesToNationalPokedexNum(species);
             if (ndex_num <= max_n)
             {
                 seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
                 if (caught)
                 {
-                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
-                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
+                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[species];
+                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + species;
                     ret++;
                 }
             }
@@ -1441,8 +1456,9 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
                 if (caught)
                 {
-                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
-                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
+                    species = ndexToSpecies[ndex_num];
+                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[species];
+                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + species;
                     ret++;
                 }
             }
@@ -1458,8 +1474,9 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
                 if (caught)
                 {
-                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
-                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
+                    species = ndexToSpecies[ndex_num];
+                    sPokedexScreenData->listItems[ret].label = gSpeciesNames[species];
+                    sPokedexScreenData->listItems[ret].index = (caught << 17) + (seen << 16) + species;
                     ret++;
                 }
             }
@@ -1468,22 +1485,27 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
     case DEX_ORDER_NUMERICAL_NATIONAL:
         for (i = 0; i < NATIONAL_DEX_COUNT; i++)
         {
+            sPokedexScreenData->listItems[i].label = gText_5Dashes;
+            sPokedexScreenData->listItems[i].index = 0;
+        }
+        for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+        {
             ndex_num = i + 1;
+            species = ndexToSpecies[ndex_num];
+            if (species == 0)
+                continue;
             seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
             caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
             if (seen)
             {
-                sPokedexScreenData->listItems[i].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
+                sPokedexScreenData->listItems[i].label = gSpeciesNames[species];
                 ret = ndex_num;
             }
-            else
-            {
-                sPokedexScreenData->listItems[i].label = gText_5Dashes;
-            }
-            sPokedexScreenData->listItems[i].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
+            sPokedexScreenData->listItems[i].index = (caught << 17) + (seen << 16) + species;
         }
         break;
     }
+    Free(ndexToSpecies);
     return ret;
 }
 
