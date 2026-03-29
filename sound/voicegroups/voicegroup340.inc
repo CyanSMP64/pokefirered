@@ -22,7 +22,7 @@ voicegroup340::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_hg_plugsound_pro_elastik_36, 255, 64, 227, 178	@ 127/125/120/120/ 64
+	voice_directsound 36, 0, DirectSoundWaveData_hg_plugsound_pro_elastik_36, 255, 64, 227, 178	@ 127/125/120/120/ 64
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -33,12 +33,12 @@ voicegroup340::
 	voice_keysplit voicegroup254, KeySplitTable102	@ sampletank 2.5 xl string orchestra
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_hg_plugsound_pro_cello_sus_43, 188, 242, 255, 208	@ 120/100/127/116/ 64
+	voice_directsound 43, 0, DirectSoundWaveData_hg_plugsound_pro_cello_sus_43, 188, 242, 255, 208	@ 120/100/127/116/ 64
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_hg_plugsound_pro_timpani_55, 255, 252, 0, 208	@ 127/ 50/  1/116/ 64
+	voice_directsound 55, 0, DirectSoundWaveData_hg_plugsound_pro_timpani_55, 255, 252, 0, 208	@ 127/ 50/  1/116/ 64
 	voice_keysplit voicegroup315, KeySplitTable71	@ kfl trumpet ensemble
 	voice_keysplit voicegroup285, KeySplitTable18	@ kfl trombone ensemble
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -99,5 +99,5 @@ voicegroup340::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_unknown_suspended_cymbal_40, 255, 0, 255, 237	@ 127/127/127/100/ 64
+	voice_directsound 40, 0, DirectSoundWaveData_bw_unknown_suspended_cymbal_40, 255, 0, 255, 237	@ 127/127/127/100/ 64
 	voice_directsound 60, 0, DirectSoundWaveData_bw_zg_total_drum_bass_160_leonora, 255, 0, 255, 88	@ 127/127/127/124/ 64
