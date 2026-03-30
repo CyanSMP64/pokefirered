@@ -61,6 +61,7 @@ PewterCity_Museum_2F_EventScript_ReleaseEnd::
 
 PewterCity_Museum_2F_EventScript_DeoxysFormChangeSuccess::
 	playmoncry VAR_0x8007, CRY_MODE_NORMAL
+	special BufferMonNickname
 	call_if_eq VAR_0x8007, SPECIES_DEOXYS, PewterCity_Museum_2F_EventScript_DeoxysFormChangeSuccessNormal
 	call_if_eq VAR_0x8007, SPECIES_DEOXYS_ATTACK, PewterCity_Museum_2F_EventScript_DeoxysFormChangeSuccessAttack
 	call_if_eq VAR_0x8007, SPECIES_DEOXYS_DEFENSE, PewterCity_Museum_2F_EventScript_DeoxysFormChangeSuccessDefense
@@ -91,17 +92,17 @@ PewterCity_Museum_2F_Text_DeoxysReactingToMeteorite:
 	.string "your party closer to the meteorite?$"
 
 PewterCity_Museum_2F_Text_DeoxysNormal:
-	.string "Deoxys has changed to have\n"
+	.string "{STR_VAR_1} has changed to have\n"
 	.string "balanced stats!$"
 
 PewterCity_Museum_2F_Text_DeoxysAttack:
-	.string "Deoxys has changed to have\n"
+	.string "{STR_VAR_1} has changed to have\n"
 	.string "superior stats for attacking!$"
 
 PewterCity_Museum_2F_Text_DeoxysDefense:
-	.string "Deoxys has changed to have\n"
+	.string "{STR_VAR_1} has changed to have\n"
 	.string "superior stats when defending!$"
 
 PewterCity_Museum_2F_Text_DeoxysSpeed:
-	.string "Deoxys has changed to have\n"
+	.string "{STR_VAR_1} has changed to have\n"
 	.string "increased Speed!$"

@@ -1302,3 +1302,152 @@ PalletTown_ProfessorOaksLab_EventScript_RightSignAlt::
 	msgbox PalletTown_ProfessorOaksLab_Text_AllMonTypesHaveStrongAndWeakPoints
 	releaseall
 	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomBox::
+	lockall
+	goto_if_lt VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 4, PalletTown_ProfessorOaksLab_EventScript_RotomBoxNonApplicable
+	setvar VAR_0x8004, SPECIES_ROTOM
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomEvent
+	setvar VAR_0x8004, SPECIES_ROTOM_HEAT
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomEvent
+	setvar VAR_0x8004, SPECIES_ROTOM_WASH
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomEvent
+	setvar VAR_0x8004, SPECIES_ROTOM_FROST
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomEvent
+	setvar VAR_0x8004, SPECIES_ROTOM_FAN
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomEvent
+	setvar VAR_0x8004, SPECIES_ROTOM_MOW
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomEvent
+PalletTown_ProfessorOaksLab_EventScript_RotomBoxNonApplicable::
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomBox1
+	releaseall
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomEvent::
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomBox2, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange
+PalletTown_ProfessorOaksLab_EventScript_ReleaseAllEnd::
+	releaseall
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange::
+	special ChoosePartyMon
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, PalletTown_ProfessorOaksLab_EventScript_ReleaseAllEnd
+	special IsChosenMonRotom
+	goto_if_eq VAR_RESULT, FALSE, PalletTown_ProfessorOaksLab_EventScript_ReleaseAllEnd
+	special GetRotomState
+	special BufferMonNickname
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomBoxConfirmed
+	multichoicegrid 4, 0, MULTICHOICE_ROTOM_APPLIANCES, 2, FALSE
+	switch VAR_RESULT
+	case 0, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Heat
+	case 1, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Wash
+	case 2, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Frost
+	case 3, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Fan
+	case 4, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Mow
+	case 5, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Recall
+	case 127, PalletTown_ProfessorOaksLab_EventScript_ReleaseAllEnd
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Heat::
+	setvar VAR_0x8005, SPECIES_ROTOM_HEAT
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_CheckMove
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Wash::
+	setvar VAR_0x8005, SPECIES_ROTOM_WASH
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_CheckMove
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Frost::
+	setvar VAR_0x8005, SPECIES_ROTOM_FROST
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_CheckMove
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Fan::
+	setvar VAR_0x8005, SPECIES_ROTOM_FAN
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_CheckMove
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Mow::
+	setvar VAR_0x8005, SPECIES_ROTOM_MOW
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_CheckMove
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Recall::
+	setvar VAR_0x8005, SPECIES_ROTOM
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Recall2
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_CheckMove::
+	goto_if_eq VAR_0x8005, VAR_0x8007, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_AlreadyEntered
+	special GetRotomNewSpecialMove
+	special ChangeMonSpecies
+	playmoncry VAR_0x8005, CRY_MODE_NORMAL
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomEnterMotor
+	specialvar VAR_RESULT, DoesRotomKnowSpecialMove
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_DeleteMove
+	special GetNumMovesSelectedMonHas
+	goto_if_eq VAR_RESULT, MAX_MON_MOVES, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_ChooseMoveToForget
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_LearnMove::
+	special TeachRotomMove
+	bufferpartymonnick 0, VAR_0x8004
+	buffermovename 1, VAR_0x8006
+	playfanfare MUS_LEVEL_UP
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomLearnedMove
+	waitfanfare
+	releaseall
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_DeleteMove::
+	special RotomForgetSpecialMove
+	bufferpartymonnick 0, VAR_0x8004
+	buffermovename 1, VAR_0x8008
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomForgotMove2
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_LearnMove
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_ChooseMoveToForget::
+	buffermovename 1, VAR_0x8006
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomTryLearnMove, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_GaveUp
+	msgbox FuchsiaCity_House3_Text_WhichMoveShouldBeForgotten
+	fadescreen FADE_TO_BLACK
+	special SelectMoveDeleterMove
+	fadescreen FADE_FROM_BLACK
+	goto_if_eq VAR_0x8005, MAX_MON_MOVES, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_GaveUp
+	special BufferMoveDeleterNicknameAndMove
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomForgotMove
+	special MoveDeleterForgetMove
+	goto PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_LearnMove
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_Recall2::
+	goto_if_eq VAR_0x8007, SPECIES_ROTOM, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_HasntEntered
+	special GetRotomNewSpecialMove
+	special ChangeMonSpecies
+	specialvar VAR_RESULT, RotomForgetSpecialMove
+	goto_if_eq VAR_RESULT, FALSE, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_SkipForgotMoveText
+	bufferpartymonnick 0, VAR_0x8004
+	buffermovename 1, VAR_0x8008
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomForgotMove2
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_SkipForgotMoveText::
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomEmerged
+	releaseall
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_AlreadyEntered::
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomAlreadyEntered
+	releaseall
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_GaveUp::
+	copyvar VAR_0x8005, VAR_0x8007
+	special ChangeMonSpecies
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomGaveUp
+	releaseall
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_HasntEntered::
+	msgbox PalletTown_ProfessorOaksLab_Text_RotomHasntEntered
+	releaseall
+	end

@@ -18,13 +18,13 @@ gSpecials::
 	def_special FieldUseFly
 	def_special GetHmModeOption
 	def_special TryChangeDeoxysForm
-	def_special NullFieldSpecial
-	def_special NullFieldSpecial
-	def_special NullFieldSpecial
-	def_special NullFieldSpecial
-	def_special NullFieldSpecial
-	def_special NullFieldSpecial
-	def_special NullFieldSpecial
+	def_special IsChosenMonRotom
+	def_special GetRotomNewSpecialMove
+	def_special ChangeMonSpecies
+	def_special DoesRotomKnowSpecialMove
+	def_special RotomForgetSpecialMove
+	def_special TeachRotomMove
+	def_special GetRotomState
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial

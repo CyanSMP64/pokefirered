@@ -337,3 +337,56 @@ PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex::
     .string "One Island first…\p"
     .string "Anyways, I'm outta here!$"
 
+PalletTown_ProfessorOaksLab_Text_RotomBox1::
+    .string "It's full of cardboard boxes with\n"
+    .string "electrical appliances in them.$"
+
+PalletTown_ProfessorOaksLab_Text_RotomBox2::
+    .string "It's full of cardboard boxes with\n"
+    .string "electrical appliances in them.\p"
+    .string "Oh? Rotom would like to investigate\n"
+    .string "the motors of the electrical\l"
+    .string "appliances… Is that OK?$"
+
+PalletTown_ProfessorOaksLab_Text_RotomBoxConfirmed::
+    .string "Which appliance's motor will you\n"
+    .string "allow {STR_VAR_1} to enter?$"
+
+PalletTown_ProfessorOaksLab_Text_RotomAlreadyEntered::
+    .string "{STR_VAR_1} has already entered\n"
+    .string "that appliance motor.$"
+
+PalletTown_ProfessorOaksLab_Text_RotomEnterMotor::
+    .string "{STR_VAR_1} entered the motor.$"
+
+PalletTown_ProfessorOaksLab_Text_RotomLearnedMove::
+    .string "{STR_VAR_1} learned {STR_VAR_2}!$"
+
+PalletTown_ProfessorOaksLab_Text_RotomForgotMove::
+    .string "One…{PAUSE 20}two…{PAUSE 20}and…{PAUSE 38}{PLAY_SE SE_BALL_BOUNCE_1}ta-da!\p"
+    .string "{STR_VAR_1} forgot how to\n"
+    .string "use {STR_VAR_2}.\p"
+    .string "And…$"
+
+PalletTown_ProfessorOaksLab_Text_RotomForgotMove2::
+    .string "{STR_VAR_1} forgot {STR_VAR_2}…$"
+
+PalletTown_ProfessorOaksLab_Text_RotomTryLearnMove::
+    .string "{STR_VAR_1} wants to learn the\n"
+    .string "move {STR_VAR_2}.\p"
+    .string "However, {STR_VAR_1} already\n"
+    .string "knows four moves.\p"
+    .string "Should a move be deleted and\n"
+    .string "replaced with {STR_VAR_2}?$"
+
+PalletTown_ProfessorOaksLab_Text_RotomHasntEntered::
+    .string "{STR_VAR_1} hasn't entered a\n"
+    .string "motor.$"
+
+PalletTown_ProfessorOaksLab_Text_RotomEmerged::
+    .string "{STR_VAR_1} emerged from the\n"
+    .string "motor.$"
+
+PalletTown_ProfessorOaksLab_Text_RotomGaveUp::
+    .string "{STR_VAR_1} reluctantly gave up\n"
+    .string "on entering a motor…$"
