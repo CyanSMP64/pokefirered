@@ -224,6 +224,9 @@ static void HandleInputChooseAction(void)
     }
     else if (JOY_NEW(B_BUTTON))
     {
+        if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            && IsMonShiny(&gEnemyParty[gBattlerPartyIndexes[GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)]]))
+            return;
         PlaySE(SE_SELECT);
         BtlController_EmitTwoReturnValues(1, B_ACTION_SAFARI_RUN, 0);
         SafariBufferExecCompleted();
