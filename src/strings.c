@@ -112,6 +112,7 @@ ALIGNED(4) const u8 gText_Number[] = _("No. ");
 ALIGNED(4) const u8 gText_Level[] = _("Lv. ");
 ALIGNED(4) const u8 gText_Name[] = _("Name");
 ALIGNED(4) const u8 gText_IDNumber[] = _("IDNo.");
+ALIGNED(4) const u8 gText_YoureWinner[] = _("YOU'RE WINNER !");
 const u8 gText_BirchInTrouble[] = _("{HIGHLIGHT DYNAMIC_COLOR6}{COLOR WHITE}オダマキはかせが ピンチだ!\nポケモンを だして たすけてあげよう!");
 const u8 gText_ConfirmStarterChoice[] = _("{HIGHLIGHT DYNAMIC_COLOR6}{COLOR WHITE}このポケモンにしますか?");
 const u8 gText_Pokemon4[] = _("ポケモン");

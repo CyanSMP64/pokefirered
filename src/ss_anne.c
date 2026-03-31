@@ -82,6 +82,7 @@ static const struct SpriteTemplate sSmokeSpriteTemplate = {
     SmokeSpriteCallback
 };
 
+// FUN event: ship sails backwards -- i chose 1 because it was the first FUN event i added
 void DoSSAnneDepartureCutscene(void)
 {
     u8 taskId;

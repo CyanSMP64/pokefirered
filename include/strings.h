@@ -897,6 +897,7 @@ extern const u8 gText_Level[];
 extern const u8 gText_IDNumber[];
 extern const u8 gText_Name[];
 extern const u8 gText_MainMenuTime[];
+extern const u8 gText_YoureWinner[];
 
 // learn_move
 extern const u8 gText_TeachWhichMoveToMon[];
