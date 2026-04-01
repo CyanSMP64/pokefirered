@@ -286,7 +286,7 @@ gFldEffScript_Bubbles::
 	end 
 
 gFldEffScript_Sparkle::
-	loadfadedpal_callnative gSpritePalette_SmallSparkle, FldEff_Sparkle
+	callnative FldEff_Sparkle
 	end 
 
 gFldEffScript_SecretPowerCave::
