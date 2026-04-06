@@ -1283,6 +1283,7 @@ SECTIONS {
         sound/songs/midi/mus_rbychamp.o(.rodata);
         sound/songs/midi/mus_b2_vs_champion_kanto.o(.rodata);
         sound/songs/midi/mus_bw_vs_world_championships.o(.rodata);
+        sound/songs/midi/mus_hg_vs_wild_kanto.o(.rodata);
     } =0
 
     extra :

@@ -1337,3 +1337,6 @@ $(MID_SUBDIR)/mus_b2_vs_champion_kanto.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_bw_vs_world_championships.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G340 -V082
+
+$(MID_SUBDIR)/mus_hg_vs_wild_kanto.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G215 -V103 -X -S

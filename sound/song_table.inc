@@ -508,6 +508,7 @@ gSongTable::
 	song mus_rbychamp, 0, 64, 1024
 	song mus_b2_vs_champion_kanto, 0, 64, 1024
 	song mus_bw_vs_world_championships, 0, 64, 1024
+	song mus_hg_vs_wild_kanto, 0, 64, 1024
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

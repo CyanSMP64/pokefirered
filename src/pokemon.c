@@ -8629,9 +8629,9 @@ static u16 GetBattleBGM(void)
     if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON)
         return MUS_RG_VS_WILD;
     if (gBattleTypeFlags & BATTLE_TYPE_REGI)
-        return MUS_VS_TRAINER;
+        return MUS_HG_VS_WILD_KANTO;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
-        return MUS_VS_TRAINER;
+        return MUS_HG_VS_WILD_KANTO;
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
@@ -8759,7 +8759,11 @@ static u16 GetBattleBGM(void)
         case SPECIES_KYUREM_BLACK:
             return MUS_B2_VS_BLACK_WHITE_KYUREM;
         default:
-            return MUS_RG_VS_WILD;
+            if (FlagGet(FLAG_SYS_SPECIAL_WILD_BATTLE) || gBattleTypeFlags & BATTLE_TYPE_GHOST_UNVEILED
+                || gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+                return MUS_HG_VS_WILD_KANTO;
+            else
+                return MUS_RG_VS_WILD;
         }
     }
 }

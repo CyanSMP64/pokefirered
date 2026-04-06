@@ -503,8 +503,9 @@
 #define MUS_RBYCHAMP                    506
 #define MUS_B2_VS_CHAMPION_KANTO        507
 #define MUS_BW_VS_WORLD_CHAMPIONSHIPS   508
+#define MUS_HG_VS_WILD_KANTO            509
 
-#define END_MUS MUS_BW_VS_WORLD_CHAMPIONSHIPS
+#define END_MUS MUS_HG_VS_WILD_KANTO
 
 #define MUS_NONE                    0xFFFF
 
