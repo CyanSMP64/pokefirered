@@ -1070,6 +1070,8 @@ EventScript_SetHiddenItemSparkleFlag::
 	clearflag FLAG_HIDDEN_ITEM_SPARKLES		@ this flag will be set by a randomizer setting
 EventScript_SetModernExpFlag::
 	clearflag FLAG_MODERN_EXP_SCALE			@ this flag will be set by a randomizer setting
+EventScript_SetEvoEveryLevelFlag::
+	clearflag FLAG_EVO_EVERY_LEVEL			@ this flag will be set by a randomizer setting
 	end
 
 	.include "data/scripts/hall_of_fame.inc"

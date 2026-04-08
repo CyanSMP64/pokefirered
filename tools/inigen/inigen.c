@@ -589,6 +589,7 @@ int main(int argc, char ** argv)
     config_sym("EventScriptsEnd", "CeladonCity_House2_MapScripts");
     config_sym("HiddenItemSparkleFlagScript", "EventScript_SetHiddenItemSparkleFlag");
     config_sym("ModernExpFlagScript", "EventScript_SetModernExpFlag");
+    config_sym("EvoEveryLevelFlagScript", "EventScript_SetEvoEveryLevelFlag");
     print("CRC32=84EE4776\n"); // CRC32 of an official FireRed 1.1 ROM. Unless you change it the rando will tell you that it's unofficial, but it doesn't matter,
 
     DestroyResources();

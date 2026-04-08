@@ -38,6 +38,7 @@
 #include "constants/battle_move_effects.h"
 #include "constants/union_room.h"
 #include "constants/map_types.h"
+#include "constants/flags.h"
 
 #define SPECIES_TO_HOENN(name)      [SPECIES_##name - 1] = HOENN_DEX_##name
 #define SPECIES_TO_NATIONAL(name)   [SPECIES_##name - 1] = NATIONAL_DEX_##name
@@ -7741,6 +7742,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
     u8 level;
     u16 friendship;
+    u8 friendshipRequired = 220;
     u8 beauty = GetMonData(mon, MON_DATA_BEAUTY, NULL);
     u16 upperPersonality = personality >> 16;
     u8 holdEffect;
@@ -7757,6 +7759,20 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
     switch (type)
     {
     case EVO_MODE_NORMAL:
+        // NATDEX: evo every level mode
+        if (FlagGet(FLAG_EVO_EVERY_LEVEL))
+        {
+            for (;;)
+            {
+                targetSpecies = (Random() % (NUM_SPECIES));
+                if (gSpeciesInfo[targetSpecies].growthRate != gSpeciesInfo[species].growthRate)
+                    continue;
+                if (gSpeciesInfo[targetSpecies].expYield < 2)
+                    continue;
+                break;
+            }
+            break;
+        }
         level = GetMonData(mon, MON_DATA_LEVEL, NULL);
         friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
 
@@ -7765,21 +7781,21 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
             switch (gEvolutionTable[species][i].method)
             {
             case EVO_FRIENDSHIP:
-                if (friendship >= 220)
+                if (friendship >= friendshipRequired)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             // FR/LG removed the time of day evolutions due to having no RTC.
             case EVO_FRIENDSHIP_DAY:
                 /*
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220)
+                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= friendshipRequired)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 */
                 break;
             case EVO_FRIENDSHIP_NIGHT:
                 /*
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220)
+                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= friendshipRequired)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 */
                 break;
