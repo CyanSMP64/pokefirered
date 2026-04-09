@@ -7742,7 +7742,6 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
     u8 level;
     u16 friendship;
-    u8 friendshipRequired = 220;
     u8 beauty = GetMonData(mon, MON_DATA_BEAUTY, NULL);
     u16 upperPersonality = personality >> 16;
     u8 holdEffect;
@@ -7781,21 +7780,21 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
             switch (gEvolutionTable[species][i].method)
             {
             case EVO_FRIENDSHIP:
-                if (friendship >= friendshipRequired)
+                if (friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             // FR/LG removed the time of day evolutions due to having no RTC.
             case EVO_FRIENDSHIP_DAY:
                 /*
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= friendshipRequired)
+                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 */
                 break;
             case EVO_FRIENDSHIP_NIGHT:
                 /*
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= friendshipRequired)
+                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 */
                 break;
