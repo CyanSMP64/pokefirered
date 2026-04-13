@@ -252,18 +252,6 @@ static void DoStandardWildBattle(void)
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
 
-void StartRoamerBattle(void)
-{
-    LockPlayerFieldControls();
-    FreezeObjectEvents();
-    StopPlayerAvatar();
-    gMain.savedCallback = CB2_EndWildBattle;
-    gBattleTypeFlags = BATTLE_TYPE_ROAMER;
-    CreateBattleStartTask(GetWildBattleTransition(), 0);
-    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
-    IncrementGameStat(GAME_STAT_WILD_BATTLES);
-}
-
 static void DoSafariBattle(void)
 {
     LockPlayerFieldControls();
@@ -272,19 +260,6 @@ static void DoSafariBattle(void)
     gMain.savedCallback = CB2_EndSafariBattle;
     gBattleTypeFlags = BATTLE_TYPE_SAFARI;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
-}
-
-static void DoGhostBattle(void)
-{
-    LockPlayerFieldControls();
-    FreezeObjectEvents();
-    StopPlayerAvatar();
-    gMain.savedCallback = CB2_EndWildBattle;
-    gBattleTypeFlags = BATTLE_TYPE_GHOST;
-    CreateBattleStartTask(GetWildBattleTransition(), 0);
-    SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, gText_Ghost);
-    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
-    IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
 
 static void DoTrainerBattle(void)
@@ -313,6 +288,40 @@ void StartScriptedWildBattle(void)
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
 
+static void Task_BattleStart_Debug(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    switch (tState)
+    {
+    case 0:
+        if (!FldEffPoison_IsActive()) // is poison not active?
+        {
+            BattleTransition_StartOnField(tTransition);
+            tState++; // go to case 1.
+        }
+        break;
+    case 1:
+        if (IsBattleTransitionDone() == TRUE)
+        {
+            CleanupOverworldWindowsAndTilemaps();
+            SetMainCallback2(CB2_InitBattle);
+            RestartWildEncounterImmunitySteps();
+            ClearPoisonStepCounter();
+            DestroyTask(taskId);
+        }
+        break;
+    }
+}
+
+static void CreateBattleStartTask_Debug(u8 transition, u16 song)
+{
+    u8 taskId = CreateTask(Task_BattleStart_Debug, 1);
+
+    gTasks[taskId].tTransition = transition;
+    PlayMapChosenOrBattleBGM(song);
+}
+
 void StartMarowakBattle(void)
 {
     LockPlayerFieldControls();
@@ -326,6 +335,31 @@ void StartMarowakBattle(void)
     {
         gBattleTypeFlags = BATTLE_TYPE_GHOST;
     }
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
+    SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, gText_Ghost);
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+}
+
+void StartRoamerBattle(void)
+{
+    LockPlayerFieldControls();
+    FreezeObjectEvents();
+    StopPlayerAvatar();
+    gMain.savedCallback = CB2_EndWildBattle;
+    gBattleTypeFlags = BATTLE_TYPE_ROAMER;
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+}
+
+static void DoGhostBattle(void)
+{
+    LockPlayerFieldControls();
+    FreezeObjectEvents();
+    StopPlayerAvatar();
+    gMain.savedCallback = CB2_EndWildBattle;
+    gBattleTypeFlags = BATTLE_TYPE_GHOST;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, gText_Ghost);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
@@ -371,40 +405,6 @@ void StartLegendaryBattle(void)
     }
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
-}
-
-static void Task_BattleStart_Debug(u8 taskId)
-{
-    s16 *data = gTasks[taskId].data;
-
-    switch (tState)
-    {
-    case 0:
-        if (!FldEffPoison_IsActive()) // is poison not active?
-        {
-            BattleTransition_StartOnField(tTransition);
-            tState++; // go to case 1.
-        }
-        break;
-    case 1:
-        if (IsBattleTransitionDone() == TRUE)
-        {
-            CleanupOverworldWindowsAndTilemaps();
-            SetMainCallback2(CB2_InitBattle);
-            RestartWildEncounterImmunitySteps();
-            ClearPoisonStepCounter();
-            DestroyTask(taskId);
-        }
-        break;
-    }
-}
-
-static void CreateBattleStartTask_Debug(u8 transition, u16 song)
-{
-    u8 taskId = CreateTask(Task_BattleStart_Debug, 1);
-
-    gTasks[taskId].tTransition = transition;
-    PlayMapChosenOrBattleBGM(song);
 }
 
 void DoStandardWildBattle_Debug(void)
