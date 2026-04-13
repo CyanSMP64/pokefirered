@@ -32,7 +32,7 @@ static bool8 ShouldSwitchIfPerishSong(void)
 static bool8 ShouldSwitchIfWonderGuard(void)
 {
     u8 opposingBattler;
-    u8 moveFlags;
+    u16 moveFlags;
     s32 i, j;
     u16 move;
 
@@ -177,7 +177,7 @@ static bool8 HasSuperEffectiveMoveAgainstOpponents(bool8 noRng)
 {
     u8 opposingBattler;
     s32 i;
-    u8 moveFlags;
+    u16 moveFlags;
     u16 move;
 
     opposingBattler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
@@ -238,7 +238,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u8 flags, u8 moduloPercent)
     u8 battlerIn1, battlerIn2;
     s32 i, j;
     u16 move;
-    u8 moveFlags;
+    u16 moveFlags;
 
     if (gLastLandedMoves[gActiveBattler] == 0)
         return FALSE;

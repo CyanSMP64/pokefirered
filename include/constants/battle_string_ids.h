@@ -388,8 +388,10 @@
 #define STRINGID_HITXTIME 387
 #define STRINGID_STATDRASTICALLY 388
 #define STRINGID_STATSEVERELY 389
+#define STRINGID_EXTREMELYEFFECTIVE 390
+#define STRINGID_MOSTLYINEFFECTIVE 391
 
-#define BATTLESTRINGS_COUNT     390
+#define BATTLESTRINGS_COUNT     392
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
