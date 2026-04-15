@@ -440,13 +440,13 @@ SECTIONS {
         src/fieldmap.o(.rodata);
         src/metatile_behavior.o(.rodata);
         src/field_door.o(.rodata);
-        src/field_player_avatar.o(.rodata);
     } =0
 
     .rodata_pokemon 0x08250c74 : /* moved gBattleMoves to vanilla address for now */
     SUBALIGN(4)
     {
         src/pokemon.o(.rodata);
+        src/field_player_avatar.o(.rodata);
         src/tilesets.o(.rodata);
         data/maps.o(.rodata);
         src/event_object_movement.o(.rodata);
