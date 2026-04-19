@@ -247,6 +247,7 @@ extern const u8 BattleScript_IntimidateActivationAnimLoop[];
 extern const u8 BattleScript_IntimidateAbilityFail_End[];
 extern const u8 BattleScript_AbilityPreventsPhasingOut[];
 extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
+extern const u8 BattleScript_AbilityPopUp[];
 
 extern const u8 *const gBattleScriptsForMoveEffects[];
 extern const u8 *const gBattlescriptsForBallThrow[];
