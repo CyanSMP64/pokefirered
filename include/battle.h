@@ -70,7 +70,9 @@ enum {
 
 struct TrainerMonNoItemDefaultMoves
 {
-    u16 iv;
+    u8 iv;
+    u8 pokeBallId:5;
+    //u8 padding:3;
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
@@ -81,7 +83,9 @@ struct TrainerMonNoItemDefaultMoves
 
 struct TrainerMonItemDefaultMoves
 {
-    u16 iv;
+    u8 iv;
+    u8 pokeBallId:5;
+    //u8 padding:3;
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
@@ -93,7 +97,9 @@ struct TrainerMonItemDefaultMoves
 
 struct TrainerMonNoItemCustomMoves
 {
-    u16 iv;
+    u8 iv;
+    u8 pokeBallId:5;
+    //u8 padding:3;
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
@@ -105,7 +111,9 @@ struct TrainerMonNoItemCustomMoves
 
 struct TrainerMonItemCustomMoves
 {
-    u16 iv;
+    u8 iv;
+    u8 pokeBallId:5;
+    //u8 padding:3;
     u8 lvl;
     u8 ability:2;
     u8 isShiny:1;
