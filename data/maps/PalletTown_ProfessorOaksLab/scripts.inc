@@ -1387,6 +1387,8 @@ PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_CheckMove::
 	playmoncry VAR_0x8005, CRY_MODE_NORMAL
 	msgbox PalletTown_ProfessorOaksLab_Text_RotomEnterMotor
 	specialvar VAR_RESULT, DoesRotomKnowSpecialMove
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_ReleaseAllEnd
+	specialvar VAR_RESULT, RotomForgetSpecialMove
 	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_DeleteMove
 	special GetNumMovesSelectedMonHas
 	goto_if_eq VAR_RESULT, MAX_MON_MOVES, PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_ChooseMoveToForget
@@ -1401,7 +1403,6 @@ PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_LearnMove::
 	end
 
 PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_DeleteMove::
-	special RotomForgetSpecialMove
 	bufferpartymonnick 0, VAR_0x8004
 	buffermovename 1, VAR_0x8008
 	msgbox PalletTown_ProfessorOaksLab_Text_RotomForgotMove2
@@ -1443,6 +1444,7 @@ PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_AlreadyEntered::
 PalletTown_ProfessorOaksLab_EventScript_RotomFormChange_GaveUp::
 	copyvar VAR_0x8005, VAR_0x8007
 	special ChangeMonSpecies
+	bufferpartymonnick 0, VAR_0x8004
 	msgbox PalletTown_ProfessorOaksLab_Text_RotomGaveUp
 	releaseall
 	end

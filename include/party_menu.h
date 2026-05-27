@@ -87,5 +87,6 @@ u8 GetPartyIdFromBattlePartyId(u8 battlePartyId);
 void ShowPartyMenuToShowcaseMultiBattleParty(void);
 void ChooseMonForDaycare(void);
 void ChoosePartyMonByMenuType(u8 menuType);
+void ShiftMoveSlot(struct Pokemon *, u8, u8);
 
 #endif // GUARD_PARTY_MENU_H
