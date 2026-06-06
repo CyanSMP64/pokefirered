@@ -694,6 +694,19 @@ extern const u8 gText_Calcium_1000[];
 extern const u8 gText_Zinc_1000[];
 extern const u8 gText_HpUp_1000[];
 extern const u8 gText_PpUp_3000[];
+extern const u8 gText_Browt[];
+extern const u8 gText_Pombon[];
+extern const u8 gText_Gecqua[];
+extern const u8 gText_WhoAreYou[];
+extern const u8 gText_SorryIllLeave[];
+extern const u8 gText_Music[];
+extern const u8 gText_NatDex2[];
+extern const u8 gText_Gen10[];
+extern const u8 gText_SpeakJapanese[];
+extern const u8 gText_Nothing[];
+extern const u8 gText_LovedThem[];
+extern const u8 gText_HatedThem[];
+extern const u8 gText_HaventSeen[];
 
 // script_menu
 extern const u8 Text_AccessWhichPC[];

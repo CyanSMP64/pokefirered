@@ -5278,7 +5278,12 @@ static void FaceDirection(struct ObjectEvent *objectEvent, struct Sprite *sprite
 {
     SetObjectEventDirection(objectEvent, direction);
     ShiftStillObjectEventCoords(objectEvent);
-    SetStepAnim(objectEvent, sprite, GetMoveDirectionAnimNum(objectEvent->facingDirection));
+    if (objectEvent->graphicsId == OBJ_EVENT_GFX_CYAN) {
+        StartSpriteAnim(sprite, GetFaceDirectionAnimNum(direction));
+        SeekSpriteAnim(sprite, 0);
+    }
+    else
+        SetStepAnim(objectEvent, sprite, GetMoveDirectionAnimNum(objectEvent->facingDirection));
     sprite->animPaused = TRUE;
     sprite->data[2] = 1;
 }

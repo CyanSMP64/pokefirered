@@ -499,13 +499,15 @@
 #define MUS_B2_VICTORY_PWT              502
 #define SE_UTVANISH                     503
 #define MUS_SMWEND                      504
-#define SE_AMERICANO                    505
+#define MUS_PENIS                       505
 #define MUS_RBYCHAMP                    506
 #define MUS_B2_VS_CHAMPION_KANTO        507
 #define MUS_BW_VS_WORLD_CHAMPIONSHIPS   508
 #define MUS_HG_VS_WILD_KANTO            509
+#define MUS_UNTITLED                    510
+#define MUS_CRITTER_BOSS                511
 
-#define END_MUS MUS_HG_VS_WILD_KANTO
+#define END_MUS MUS_CRITTER_BOSS
 
 #define MUS_NONE                    0xFFFF
 

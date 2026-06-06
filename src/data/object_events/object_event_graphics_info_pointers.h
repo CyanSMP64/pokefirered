@@ -150,6 +150,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysD;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysA;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cyan;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Stereo;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SubstituteDoll;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CyndaquilDoll;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -305,4 +309,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_A]                 = &gObjectEventGraphicsInfo_DeoxysA,
     [OBJ_EVENT_GFX_DEOXYS_N]                 = &gObjectEventGraphicsInfo_DeoxysN,
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
+    [OBJ_EVENT_GFX_CYAN]                     = &gObjectEventGraphicsInfo_Cyan,
+    [OBJ_EVENT_GFX_STEREO]                   = &gObjectEventGraphicsInfo_Stereo,
+    [OBJ_EVENT_GFX_SUBSTITUTE_DOLL]          = &gObjectEventGraphicsInfo_SubstituteDoll,
+    [OBJ_EVENT_GFX_CYNDAQUIL_DOLL]           = &gObjectEventGraphicsInfo_CyndaquilDoll,
 };

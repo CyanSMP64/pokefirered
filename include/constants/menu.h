@@ -47,12 +47,12 @@
 #define MULTICHOICE_LINK_WIRELESS                              40
 #define MULTICHOICE_GAME_CORNER_BATTLE_ITEM_PRIZES             41
 #define MULTICHOICE_ROCKET_HIDEOUT_ELEVATOR                    42
-#define MULTICHOICE_LINKED_DIRECT_UNION                        43
+#define MULTICHOICE_GEN_10_STARTERS                            43
 #define MULTICHOICE_ISLAND_23                                  44
 #define MULTICHOICE_ISLAND_13                                  45
 #define MULTICHOICE_ISLAND_12                                  46
 #define MULTICHOICE_TRADE_COLOSSEUM_CRUSH                      47
-#define MULTICHOICE_48                                         48
+#define MULTICHOICE_WHO_ARE_YOU                                48
 #define MULTICHOICE_POKEJUMP_DODRIO                            49
 #define MULTICHOICE_TRADE_COLOSSEUM_2                          50
 #define MULTICHOICE_MUSHROOMS                                  51
@@ -66,11 +66,12 @@
 #define MULTICHOICE_SEAGALLOP_V13                              59
 #define MULTICHOICE_SEAGALLOP_V12                              60
 #define MULTICHOICE_SEAGALLOP_VERMILION                        61
-#define MULTICHOICE_62                                         62
+#define MULTICHOICE_CYAN_CHAT                                  62
 #define MULTICHOICE_JOIN_OR_LEAD                               63
 #define MULTICHOICE_TRAINER_TOWER_MODE                         64
 #define MULTICHOICE_HM_MOVES                                   65
 #define MULTICHOICE_ROTOM_APPLIANCES                           66
+#define MULTICHOICE_ART_OPINIONS                               67
 
 #define MULTICHOICE_NONE                                      255
 

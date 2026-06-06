@@ -1,10 +1,273 @@
+.set LOCALID_FURRET, 1
 .set LOCALID_EEVEE_POKEBALL, 2
 
 CeladonCity_Condominiums_RoofRoom_MapScripts::
 	.byte 0
 
-CeladonCity_Condominiums_RoofRoom_EventScript_BlackBelt::
-	msgbox CeladonCity_Condominiums_RoofRoom_Text_TheresNothingIDontKnow, MSGBOX_NPC
+@	VAR_TEMP_0:  current song playing; 0: untitled; 1: battle; 2: eek
+@	VAR_TEMP_1:  number of times song has changed
+@	VAR_TEMP_2:  number of times stereo is interacted with BGM off
+@	VAR_TEMP_3:  number of times the "music" option is selected
+@	VAR_TEMP_4:  number of times the "nat dex 2" option is selected
+@	VAR_TEMP_5:  number of times the "gen 10" option is selected
+@	VAR_TEMP_6:  number of times the "speak japanese" option is selected
+
+CeladonCity_Condominiums_RoofRoom_EventScript_Cyan::
+	lock
+	faceplayer
+	goto_if_set FLAG_TALKED_TO_CYAN, CeladonCity_Condominiums_RoofRoom_EventScript_CyanWhatsUp
+	setflag FLAG_TALKED_TO_CYAN
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_FURRET, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_FURRET, Common_Movement_Delay48
+	waitmovement 0
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanAaaah, MSGBOX_DEFAULT
+	closemessage
+	multichoice 25, 10, MULTICHOICE_WHO_ARE_YOU, TRUE
+	switch VAR_RESULT
+	case 0, CeladonCity_Condominiums_RoofRoom_EventScript_CyanWhoAreYou
+	case 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanSorryIllLeave
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanSorryIllLeave::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanHeyWait, MSGBOX_DEFAULT
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanWhoAreYou::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanIntro, MSGBOX_DEFAULT
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanChatOptions::
+	closemessage
+	multichoice 25, 0, MULTICHOICE_CYAN_CHAT, TRUE
+	switch VAR_RESULT
+	case 0, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic
+	case 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex
+	case 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10
+	case 3, CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese
+	case 4, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanWhatsUp::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanIntro2, MSGBOX_DEFAULT
+	goto CeladonCity_Condominiums_RoofRoom_EventScript_CyanChatOptions
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic::
+	special GetBGMOption
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusicOff
+	goto_if_eq VAR_TEMP_0, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic5
+	goto_if_ge VAR_TEMP_3, 3, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic4
+	goto_if_eq VAR_TEMP_3, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic3
+	goto_if_eq VAR_TEMP_3, 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic2
+	addvar VAR_TEMP_3, 1
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic1, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic2::
+	addvar VAR_TEMP_3, 1
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic2, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic3::
+	addvar VAR_TEMP_3, 1
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic3, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic4::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic4, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic5::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic5, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusicOff::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusicOff, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex::
+	goto_if_ge VAR_TEMP_4, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex3
+	goto_if_eq VAR_TEMP_4, 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex2
+	addvar VAR_TEMP_4, 1
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanNatDex1, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex2::
+	addvar VAR_TEMP_4, 1
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex2b::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanNatDex2, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex3::
+	random 10
+	goto_if_ne VAR_RESULT, 0, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNatDex2b
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanNatDex3, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10::
+	goto_if_ge VAR_TEMP_5, 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_2
+	addvar VAR_TEMP_5, 1
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanGenX1, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_2::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanGenX2, MSGBOX_DEFAULT
+	closemessage
+	multichoice 25, 0, MULTICHOICE_ART_OPINIONS, TRUE
+	switch VAR_RESULT
+	case 0, CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_Loved
+	case 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_Hated
+	case 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_HaventSeen
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_Loved::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanGenXLoved, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_Hated::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanGenXHated, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanGen10_HaventSeen::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanGenXUnseen, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese::
+	goto_if_ge VAR_TEMP_6, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese3
+	goto_if_eq VAR_TEMP_6, 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese2
+	addvar VAR_TEMP_6, 1
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanJapanese1, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese2::
+	addvar VAR_TEMP_6, 1
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese2b::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanJapanese2, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese3::
+	random 10
+	goto_if_ne VAR_RESULT, 0, CeladonCity_Condominiums_RoofRoom_EventScript_CyanJapanese2b
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanJapanese3, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing::
+	goto_if_ge VAR_TEMP_6, 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothingAlt
+	random 3
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothingb::
+	goto_if_eq VAR_RESULT, 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing2
+	goto_if_eq VAR_RESULT, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing3
+	goto_if_eq VAR_RESULT, 3, CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing4
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanNothing1, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothingAlt::
+	random 4
+	goto CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothingb
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing2::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanNothing2, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing3::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanNothing3, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanNothing4::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanNothing4, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_Test::
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_Stereo::
+	lock
+	special GetBGMOption
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsgOffGetRandom
+	call_if_eq VAR_TEMP_0, 0, CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsg1
+	call_if_eq VAR_TEMP_0, 1, CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsg2
+	call_if_eq VAR_TEMP_0, 2, CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsg3
+	goto_if_eq VAR_RESULT, YES, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsg1::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_Song1Playing, MSGBOX_YESNO
+	return
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsg2::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_Song2Playing, MSGBOX_YESNO
+	return
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsg3::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_Song3Playing, MSGBOX_YESNO
+	return
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsgOffGetRandom::
+	addvar VAR_TEMP_2, 1
+	goto_if_le VAR_TEMP_2, 3, CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsgOff1
+	random 5
+	goto_if_eq VAR_RESULT, 0, CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsgOff2
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsgOff1::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_SongBGMOff1, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsgOff2::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_SongBGMOff2, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong::
+	addvar VAR_TEMP_1, 1
+	goto_if_eq VAR_TEMP_1, 69, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong3
+	goto_if_eq VAR_TEMP_0, 0, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong1
+	goto_if_eq VAR_TEMP_0, 1, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong2
+	goto_if_ge VAR_TEMP_0, 2, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong2
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong1::
+	playbgm MUS_CRITTER_BOSS, TRUE
+	setvar VAR_TEMP_0, 1
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong2::
+	playbgm MUS_UNTITLED, TRUE
+	setvar VAR_TEMP_0, 0
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong3::
+	closemessage
+	playbgm MUS_PENIS, TRUE
+	setvar VAR_TEMP_0, 2
+	delay 60
+	playse SE_LEDGE
+	applymovement LOCALID_FURRET, Movement_JumpInPlaceLeft
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_FURRET, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_FURRET, Common_Movement_Delay48
+	waitmovement 0
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanPenisReact, MSGBOX_DEFAULT
+	release
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall::
@@ -61,23 +324,10 @@ CeladonCity_Condominiums_RoofRoom_EventScript_TMsPamphlet::
 
 CeladonCity_Condominiums_RoofRoom_EventScript_Blackboard::
 	lockall
-	msgbox CeladonCity_Condominiums_RoofRoom_Text_WirelessAdapterLecture
 	message CeladonCity_Condominiums_RoofRoom_Text_ReadWhichHeading
 	waitmessage
 	setvar VAR_0x8004, 4
-	multichoice 0, 0, MULTICHOICE_LINKED_DIRECT_UNION, FALSE
-	switch VAR_RESULT
-	case 0, CeladonCity_Condominiums_RoofRoom_EventScript_WirelessClub
-	case 1, CeladonCity_Condominiums_RoofRoom_EventScript_DirectCorner
-	case 2, CeladonCity_Condominiums_RoofRoom_EventScript_UnionRoom
-	case 3, CeladonCity_Condominiums_RoofRoom_EventScript_ExitBlackboard
-	case 127, CeladonCity_Condominiums_RoofRoom_EventScript_ExitBlackboard
-	end
-
-CeladonCity_Condominiums_RoofRoom_EventScript_ReadAnotherHeading::
-	message CeladonCity_Condominiums_RoofRoom_Text_ReadWhichHeading
-	waitmessage
-	multichoice 0, 0, MULTICHOICE_LINKED_DIRECT_UNION, FALSE
+	multichoice 0, 0, MULTICHOICE_GEN_10_STARTERS, FALSE
 	switch VAR_RESULT
 	case 0, CeladonCity_Condominiums_RoofRoom_EventScript_WirelessClub
 	case 1, CeladonCity_Condominiums_RoofRoom_EventScript_DirectCorner
@@ -87,20 +337,37 @@ CeladonCity_Condominiums_RoofRoom_EventScript_ReadAnotherHeading::
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_WirelessClub::
-	msgbox CeladonCity_Condominiums_RoofRoom_Text_ExplainWirelessClub
-	goto CeladonCity_Condominiums_RoofRoom_EventScript_ReadAnotherHeading
+	closemessage
+	showmonpic SPECIES_CHALKBOARD_1, 10, 3
+	waitbuttonpress
+	hidemonpic
+	goto CeladonCity_Condominiums_RoofRoom_EventScript_ExitBlackboard
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_DirectCorner::
-	msgbox CeladonCity_Condominiums_RoofRoom_Text_ExplainDirectCorner
-	goto CeladonCity_Condominiums_RoofRoom_EventScript_ReadAnotherHeading
+	closemessage
+	showmonpic SPECIES_CHALKBOARD_2, 10, 3
+	waitbuttonpress
+	hidemonpic
+	goto CeladonCity_Condominiums_RoofRoom_EventScript_ExitBlackboard
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_UnionRoom::
-	msgbox CeladonCity_Condominiums_RoofRoom_Text_ExplainUnionRoom
-	goto CeladonCity_Condominiums_RoofRoom_EventScript_ReadAnotherHeading
+	closemessage
+	showmonpic SPECIES_CHALKBOARD_3, 10, 3
+	waitbuttonpress
+	hidemonpic
+	goto CeladonCity_Condominiums_RoofRoom_EventScript_ExitBlackboard
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_ExitBlackboard::
 	releaseall
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyndaquilDoll::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyndaquilDoll, MSGBOX_SIGN
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_SubstituteDoll::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_SubstituteDoll, MSGBOX_SIGN
 	end

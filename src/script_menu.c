@@ -351,10 +351,10 @@ static const struct MenuAction sMultichoiceList_RocketHideoutElevator[] = {
 };
 
 static const struct MenuAction sMultichoiceList_LinkedDirectUnion[] = {
-    { gText_LinkedGamePlay },
-    { gText_DirectCorner },
-    { gText_UnionRoom },
-    { gOtherText_Quit }
+    { gText_Browt },
+    { gText_Pombon },
+    { gText_Gecqua },
+    { gOtherText_Exit }
 };
 
 static const struct MenuAction sMultichoiceList_Island23[] = {
@@ -383,9 +383,8 @@ static const struct MenuAction sMultichoiceList_TradeColosseumCrush[] = {
 };
 
 static const struct MenuAction sMultichoiceList_48[] = {
-    { gText_EmptyLinkService1 },
-    { gText_EmptyLinkService2 },
-    { gOtherText_Exit }
+    { gText_WhoAreYou },
+    { gText_SorryIllLeave }
 };
 
 static const struct MenuAction sMultichoiceList_TradeColosseum_2[] = {
@@ -473,9 +472,11 @@ static const struct MenuAction sMultichoiceList_SeagallopVermilion[] = {
 };
 
 static const struct MenuAction sMultichoiceList_62[] = {
-    { gText_Multichoice_Empty1 },
-    { gText_Multichoice_Empty2 },
-    { gOtherText_Exit }
+    { gText_Music },
+    { gText_NatDex2 },
+    { gText_Gen10 },
+    { gText_SpeakJapanese },
+    { gText_Nothing }
 };
 
 static const struct MenuAction sMultichoiceList_JoinOrLead[] = {
@@ -510,6 +511,12 @@ static const struct MenuAction sMultichoiceList_RotomAppliances[] = {
     { gText_Lawnmower },
     { gText_Recall },
     { gFameCheckerText_Cancel },
+};
+
+static const struct MenuAction sMultichoiceList_ArtOpinions[] = {
+    { gText_LovedThem },
+    { gText_HatedThem },
+    { gText_HaventSeen }
 };
 
 static const struct MenuAction sMultichoiceList_Exit[] = {
@@ -560,12 +567,12 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_LINK_WIRELESS]                              = MULTICHOICE(sMultichoiceList_Link_Wireless),
     [MULTICHOICE_GAME_CORNER_BATTLE_ITEM_PRIZES]             = MULTICHOICE(sMultichoiceList_GameCornerBattleItemPrizes),
     [MULTICHOICE_ROCKET_HIDEOUT_ELEVATOR]                    = MULTICHOICE(sMultichoiceList_RocketHideoutElevator),
-    [MULTICHOICE_LINKED_DIRECT_UNION]                        = MULTICHOICE(sMultichoiceList_LinkedDirectUnion),
+    [MULTICHOICE_GEN_10_STARTERS]                            = MULTICHOICE(sMultichoiceList_LinkedDirectUnion),
     [MULTICHOICE_ISLAND_23]                                  = MULTICHOICE(sMultichoiceList_Island23),
     [MULTICHOICE_ISLAND_13]                                  = MULTICHOICE(sMultichoiceList_Island13),
     [MULTICHOICE_ISLAND_12]                                  = MULTICHOICE(sMultichoiceList_Island12),
     [MULTICHOICE_TRADE_COLOSSEUM_CRUSH]                      = MULTICHOICE(sMultichoiceList_TradeColosseumCrush),
-    [MULTICHOICE_48]                                         = MULTICHOICE(sMultichoiceList_48),
+    [MULTICHOICE_WHO_ARE_YOU]                                = MULTICHOICE(sMultichoiceList_48),
     [MULTICHOICE_POKEJUMP_DODRIO]                            = MULTICHOICE(sMultichoiceList_PokejumpDodrio),
     [MULTICHOICE_TRADE_COLOSSEUM_2]                          = MULTICHOICE(sMultichoiceList_TradeColosseum_2),
     [MULTICHOICE_MUSHROOMS]                                  = MULTICHOICE(sMultichoiceList_Mushrooms),
@@ -579,11 +586,12 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_SEAGALLOP_V13]                              = MULTICHOICE(sMultichoiceList_SeagallopV13),
     [MULTICHOICE_SEAGALLOP_V12]                              = MULTICHOICE(sMultichoiceList_SeagallopV12),
     [MULTICHOICE_SEAGALLOP_VERMILION]                        = MULTICHOICE(sMultichoiceList_SeagallopVermilion),
-    [MULTICHOICE_62]                                         = MULTICHOICE(sMultichoiceList_62),
+    [MULTICHOICE_CYAN_CHAT]                                  = MULTICHOICE(sMultichoiceList_62),
     [MULTICHOICE_JOIN_OR_LEAD]                               = MULTICHOICE(sMultichoiceList_JoinOrLead),
     [MULTICHOICE_TRAINER_TOWER_MODE]                         = MULTICHOICE(sMultichoiceList_TrainerTowerMode),
     [MULTICHOICE_HM_MOVES]                                   = MULTICHOICE(sMultichoiceList_HMMoves),
     [MULTICHOICE_ROTOM_APPLIANCES]                           = MULTICHOICE(sMultichoiceList_RotomAppliances),
+    [MULTICHOICE_ART_OPINIONS]                               = MULTICHOICE(sMultichoiceList_ArtOpinions),
 };
 
 // From Cool to Berries goes unused

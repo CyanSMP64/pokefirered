@@ -258,6 +258,9 @@
 .include "sound/voicegroups/voicegroup256.inc"
 .include "sound/voicegroups/voicegroup257.inc"
 .include "sound/voicegroups/voicegroup258.inc"
+.include "sound/voicegroups/voicegroup259.inc" @ the penis (eek!)
+.include "sound/voicegroups/voicegroup260.inc" @ untitled
+.include "sound/voicegroups/voicegroup261.inc" @ critter boss
 .include "sound/voicegroups/voicegroup267.inc"
 .include "sound/voicegroups/voicegroup268.inc"
 .include "sound/voicegroups/voicegroup271.inc"

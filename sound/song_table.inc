@@ -504,11 +504,13 @@ gSongTable::
 	song mus_b2_victory_pwt, 0, 64, 1024
 	song se_utvanish, 1, 64, 1024
 	song mus_smwend, 0, 64, 1024
-	song se_americano, 1, 64, 1024
+	song mus_penis, 0, 64, 1024
 	song mus_rbychamp, 0, 64, 1024
 	song mus_b2_vs_champion_kanto, 0, 64, 1024
 	song mus_bw_vs_world_championships, 0, 64, 1024
 	song mus_hg_vs_wild_kanto, 0, 64, 1024
+	song mus_untitled, 0, 64, 1024
+	song mus_critter_boss, 0, 64, 1024
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

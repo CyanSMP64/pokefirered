@@ -1279,11 +1279,13 @@ SECTIONS {
         sound/songs/midi/mus_b2_victory_pwt.o(.rodata);
         sound/songs/midi/se_utvanish.o(.rodata);
         sound/songs/midi/mus_smwend.o(.rodata);
-        sound/songs/midi/se_americano.o(.rodata);
+        sound/songs/midi/mus_penis.o(.rodata);
         sound/songs/midi/mus_rbychamp.o(.rodata);
         sound/songs/midi/mus_b2_vs_champion_kanto.o(.rodata);
         sound/songs/midi/mus_bw_vs_world_championships.o(.rodata);
         sound/songs/midi/mus_hg_vs_wild_kanto.o(.rodata);
+        sound/songs/midi/mus_untitled.o(.rodata);
+        sound/songs/midi/mus_critter_boss.o(.rodata);
     } =0
 
     extra :

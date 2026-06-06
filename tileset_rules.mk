@@ -94,7 +94,7 @@ $(TILESETGFXDIR)/secondary/pokemon_tower/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 128 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/school/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 50 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 56 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/dummy_3/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 2 -Wnum_tiles

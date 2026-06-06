@@ -8684,6 +8684,13 @@ const u32 gMonFrontPic_ZarudeDada[] = INCBIN_U32("graphics/pokemon/zarude/dada/f
 
 const u32 gMonFrontPic_EggManaphy[] = INCBIN_U32("graphics/pokemon/egg/manaphy_front.4bpp.lz");
 
+const u32 gMonPalette_Chalkboard[] = INCBIN_U32("graphics/pokemon/chalkboard/normal.gbapal.lz");
+const u32 gMonShinyPalette_Chalkboard[] = INCBIN_U32("graphics/pokemon/chalkboard/shiny.gbapal.lz");
+
+const u32 gMonFrontPic_Chalkboard1[] = INCBIN_U32("graphics/pokemon/chalkboard/browt.4bpp.lz");
+const u32 gMonFrontPic_Chalkboard2[] = INCBIN_U32("graphics/pokemon/chalkboard/pombon.4bpp.lz");
+const u32 gMonFrontPic_Chalkboard3[] = INCBIN_U32("graphics/pokemon/chalkboard/gecqua.4bpp.lz");
+
 const u32 gMonFrontPic_UnownB[] = INCBIN_U32("graphics/pokemon/unown/b/front.4bpp.lz");
 const u32 gMonFrontPic_UnownC[] = INCBIN_U32("graphics/pokemon/unown/c/front.4bpp.lz");
 const u32 gMonFrontPic_UnownD[] = INCBIN_U32("graphics/pokemon/unown/d/front.4bpp.lz");

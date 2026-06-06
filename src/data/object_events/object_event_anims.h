@@ -302,6 +302,46 @@ static const union AnimCmd sAnim_GoFastestEast[] = {
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_CyanGoSouth[] = {
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(4, 12),
+    ANIMCMD_FRAME(5, 12),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_CyanGoNorth[] = {
+    ANIMCMD_FRAME(6, 4),
+    ANIMCMD_FRAME(7, 12),
+    ANIMCMD_FRAME(8, 12),
+    ANIMCMD_FRAME(6, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_CyanGoWest[] = {
+    ANIMCMD_FRAME(9, 4),
+    ANIMCMD_FRAME(10, 12),
+    ANIMCMD_FRAME(11, 12),
+    ANIMCMD_FRAME(9, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_CyanGoEast[] = {
+    ANIMCMD_FRAME(9, 4, .hFlip = TRUE),
+    ANIMCMD_FRAME(10, 12, .hFlip = TRUE),
+    ANIMCMD_FRAME(11, 12, .hFlip = TRUE),
+    ANIMCMD_FRAME(9, 4, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_StereoLoop[] = {
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(2, 16),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_JUMP(1),
+};
+
 // For indicating a VS Seeker rematch
 static const union AnimCmd sAnim_RaiseHand[] = {
     ANIMCMD_FRAME(9, 0),
@@ -1267,6 +1307,40 @@ static const union AnimCmd *const sAnimTable_RedGreenFish[] = {
     [ANIM_HOOKED_POKEMON_EAST] = sAnim_HookedPokemonEast,
 };
 
+static const union AnimCmd *const sAnimTable_Cyan[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
+    [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
+    [ANIM_STD_FACE_EAST] = sAnim_FaceEast,
+    [ANIM_STD_GO_SOUTH] = sAnim_CyanGoSouth,
+    [ANIM_STD_GO_NORTH] = sAnim_CyanGoNorth,
+    [ANIM_STD_GO_WEST] = sAnim_CyanGoWest,
+    [ANIM_STD_GO_EAST] = sAnim_CyanGoEast,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_CyanGoSouth,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_CyanGoNorth,
+    [ANIM_STD_GO_FAST_WEST] = sAnim_CyanGoWest,
+    [ANIM_STD_GO_FAST_EAST] = sAnim_CyanGoEast,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_CyanGoSouth,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_CyanGoNorth,
+    [ANIM_STD_GO_FASTER_WEST] = sAnim_CyanGoWest,
+    [ANIM_STD_GO_FASTER_EAST] = sAnim_CyanGoEast,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_CyanGoSouth,
+    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_CyanGoNorth,
+    [ANIM_STD_GO_FASTEST_WEST] = sAnim_CyanGoWest,
+    [ANIM_STD_GO_FASTEST_EAST] = sAnim_CyanGoEast,
+};
+
+static const union AnimCmd *const sAnimTable_Stereo[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_StereoLoop,
+    [ANIM_STD_FACE_NORTH] = sAnim_StereoLoop,
+    [ANIM_STD_FACE_WEST] = sAnim_StereoLoop,
+    [ANIM_STD_FACE_EAST] = sAnim_StereoLoop,
+    [ANIM_STD_GO_SOUTH] = sAnim_StereoLoop,
+    [ANIM_STD_GO_NORTH] = sAnim_StereoLoop,
+    [ANIM_STD_GO_WEST] = sAnim_StereoLoop,
+    [ANIM_STD_GO_EAST] = sAnim_StereoLoop,
+};
+
 static const struct StepAnimTable sStepAnimTables[] = {
     {
         .anims = sAnimTable_QuintyPlump,
@@ -1300,5 +1374,12 @@ static const struct StepAnimTable sStepAnimTables[] = {
         .anims = sAnimTable_Unknown,
         .animPos = {3, 7, 0, 4},
     },
-    {}
+    {
+        .anims = sAnimTable_Cyan,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_Stereo,
+        .animPos = {1, 3, 0, 2},
+    },
 };

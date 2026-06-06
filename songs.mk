@@ -1326,8 +1326,8 @@ $(MID_SUBDIR)/mus_bw_vs_zekrom.s: %.s: %.mid
 $(MID_SUBDIR)/se_vineboom.s: %.s: %.mid
 	$(MID) $< $@ -E -G128 -V127 -p5
 
-$(MID_SUBDIR)/se_americano.s: %.s: %.mid
-	$(MID) $< $@ -E -G128 -V127 -p5
+$(MID_SUBDIR)/mus_penis.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G259 -V088
 
 $(MID_SUBDIR)/mus_rbychamp.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G275 -V054
@@ -1340,3 +1340,9 @@ $(MID_SUBDIR)/mus_bw_vs_world_championships.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_hg_vs_wild_kanto.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G215 -V103 -X -S
+
+$(MID_SUBDIR)/mus_untitled.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G260 -V110 -S
+
+$(MID_SUBDIR)/mus_critter_boss.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G261 -V117 -S

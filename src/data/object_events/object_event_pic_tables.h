@@ -1744,3 +1744,55 @@ static const struct SpriteFrameImage sPicTable_Mom[] = {
     overworld_frame(gObjectEventPic_Mom, 2, 4, 2),
     overworld_frame(gObjectEventPic_Mom, 2, 4, 2),
 };
+
+static const struct SpriteFrameImage sPicTable_Cyan[] = {
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 5),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 6),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 7),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 8),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 9),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 10),
+    overworld_frame(gObjectEventPic_Cyan, 4, 4, 11),
+};
+
+static const struct SpriteFrameImage sPicTable_Stereo[] = {
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Stereo, 2, 2, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_SubstituteDoll[] = {
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SubstituteDoll, 2, 4, 0),
+};
+
+static const struct SpriteFrameImage sPicTable_CyndaquilDoll[] = {
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+    overworld_frame(gObjectEventPic_CyndaquilDoll, 2, 2, 0),
+};

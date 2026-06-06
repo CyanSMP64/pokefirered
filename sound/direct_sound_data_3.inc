@@ -195,8 +195,20 @@ DirectSoundWaveData_bw_unknown_synth_kick_wcs::
 	.incbin "sound/direct_sound_samples/wb/kick_groove_02_32.bin"
 
 	.align 2
+DirectSoundWaveData_bw_plugsound_pro_analog_kick::
+	.incbin "sound/direct_sound_samples/wb/kick_analog_kit_32.bin"
+
+	.align 2
+DirectSoundWaveData_bw_plugsound_pro_analog_snare_d2::
+	.incbin "sound/direct_sound_samples/wb/snare1_analog_kit_32.bin"
+
+	.align 2
 DirectSoundWaveData_bw_plugsound_pro_analog_snare_e2::
 	.incbin "sound/direct_sound_samples/wb/snare2_analog_kit_32.bin"
+
+	.align 2
+DirectSoundWaveData_bw_plugsound_pro_analog_crash::
+	.incbin "sound/direct_sound_samples/wb/crashcym1_analog_kit_32.bin"
 
 	.align 2
 DirectSoundWaveData_bw_plugsound_pro_analog_hihat_closed::
@@ -299,10 +311,6 @@ DirectSoundWaveData_vineboom::
 	.incbin "sound/direct_sound_samples/cries/notcries/vineboom.bin"
 
 	.align 2
-DirectSoundWaveData_americano::
-	.incbin "sound/direct_sound_samples/cries/notcries/americano.bin"
-
-	.align 2
 DirectSoundWaveData_smwbass::
 	.incbin "sound/direct_sound_samples/smwbass.bin"
 
@@ -349,6 +357,154 @@ DirectSoundWaveData_smwstring1::
 	.align 2
 DirectSoundWaveData_smwstring2::
 	.incbin "sound/direct_sound_samples/smwstring2.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_fantasia_c6::
+	.incbin "sound/direct_sound_samples/pmd1/fantasia_c6.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_octarhodes_c6::
+	.incbin "sound/direct_sound_samples/pmd1/octarhodes_c6.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_musicbox_c5::
+	.incbin "sound/direct_sound_samples/pmd1/musicbox_c5.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_synstring_c6::
+	.incbin "sound/direct_sound_samples/pmd1/synstring_c6.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_percorgan_c4::
+	.incbin "sound/direct_sound_samples/pmd1/percorgan_c4.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_violin_cs4::
+	.incbin "sound/direct_sound_samples/pmd1/violin_cs4.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_violin_g4::
+	.incbin "sound/direct_sound_samples/pmd1/violin_g4.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_violin_g5::
+	.incbin "sound/direct_sound_samples/pmd1/violin_g5.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_frenchhorn_f4::
+	.incbin "sound/direct_sound_samples/pmd1/frenchhorn_f4.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_strings_c4::
+	.incbin "sound/direct_sound_samples/pmd1_ds/90.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_strings_c5::
+	.incbin "sound/direct_sound_samples/pmd1/strings_c5.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_kick::
+	.incbin "sound/direct_sound_samples/pmd1/kick.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_snare6::
+	.incbin "sound/direct_sound_samples/pmd1/snare6.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_tom::
+	.incbin "sound/direct_sound_samples/pmd1/tom.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_crashcym::
+	.incbin "sound/direct_sound_samples/pmd1/crashcym.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_crashcym2::
+	.incbin "sound/direct_sound_samples/pmd1_ds/30.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_hihat_closed::
+	.incbin "sound/direct_sound_samples/pmd1_ds/143.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_hihat_open::
+	.incbin "sound/direct_sound_samples/pmd1_ds/145.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_synthbass1_c2::
+	.incbin "sound/direct_sound_samples/pmd1_ds/149.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_panflute2_c6::
+	.incbin "sound/direct_sound_samples/pmd1_ds/67.bin"
+
+	.align 2
+DirectSoundWaveData_pmd2_slapbass_c2::
+	.incbin "sound/direct_sound_samples/pmd2/0138_adpcm.bin"
+
+	.align 2
+DirectSoundWaveData_pmd2_square::
+	.incbin "sound/direct_sound_samples/pmd2/0182_pcm16.bin"
+
+	.align 2
+DirectSoundWaveData_pmd2_sine::
+	.incbin "sound/direct_sound_samples/pmd2/0184_pcm16.bin"
+
+	.align 2
+DirectSoundWaveData_pmd2_brassoctave_g4::
+	.incbin "sound/direct_sound_samples/pmd2/0610_adpcm.bin"
+
+	.align 2
+DirectSoundWaveData_pmd2_cymbal_loop::
+	.incbin "sound/direct_sound_samples/pmd2/0702_adpcm.bin"
+
+	.align 2
+DirectSoundWaveData_penis_chh::
+	.incbin "sound/direct_sound_samples/penis_chh.bin"
+
+	.align 2
+DirectSoundWaveData_penis_crash::
+	.incbin "sound/direct_sound_samples/penis_crash.bin"
+
+	.align 2
+DirectSoundWaveData_penis_kick::
+	.incbin "sound/direct_sound_samples/penis_kick.bin"
+
+	.align 2
+DirectSoundWaveData_penis_ohh::
+	.incbin "sound/direct_sound_samples/penis_ohh.bin"
+
+	.align 2
+DirectSoundWaveData_penis_saw::
+	.incbin "sound/direct_sound_samples/penis_saw.bin"
+
+	.align 2
+DirectSoundWaveData_penis_screm::
+	.incbin "sound/direct_sound_samples/penis_screm.bin"
+
+	.align 2
+DirectSoundWaveData_penis_snare::
+	.incbin "sound/direct_sound_samples/penis_snare.bin"
+
+	.align 2
+DirectSoundWaveData_penis_square::
+	.incbin "sound/direct_sound_samples/penis_square.bin"
+
+	.align 2
+DirectSoundWaveData_penis_bass::
+	.incbin "sound/direct_sound_samples/penis_bass.bin"
+
+	.align 2
+DirectSoundWaveData_penis_string::
+	.incbin "sound/direct_sound_samples/penis_string.bin"
+
+	.align 2
+DirectSoundWaveData_penis_tom::
+	.incbin "sound/direct_sound_samples/penis_tom.bin"
+
+	.align 2
+DirectSoundWaveData_penis_tri::
+	.incbin "sound/direct_sound_samples/penis_tri.bin"
 
 	.align 2
 Cry_Turtwig::

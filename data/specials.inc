@@ -25,7 +25,7 @@ gSpecials::
 	def_special RotomForgetSpecialMove
 	def_special TeachRotomMove
 	def_special GetRotomState
-	def_special NullFieldSpecial
+	def_special GetBGMOption
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial

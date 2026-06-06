@@ -1528,7 +1528,8 @@ bool8 ScrCmd_showmonpic(struct ScriptContext * ctx)
     u8 y = ScriptReadByte(ctx);
 
     ScriptMenu_ShowPokemonPic(species, x, y);
-    PlayCry_Script(species, CRY_MODE_NORMAL);
+    if (species < SPECIES_MANAPHY_EGG && species > SPECIES_OLD_UNOWN_Z)
+        PlayCry_Script(species, CRY_MODE_NORMAL);
     return FALSE;
 }
 

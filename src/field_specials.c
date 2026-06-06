@@ -1246,7 +1246,7 @@ static const u8 *const sListMenuLabels[][12] = {
         gText_1F,
         gOtherText_Exit,
     }, 
-    [LISTMENU_WIRELESS_LECTURE_HEADERS] = // Unnecessary, MULTICHOICE_LINKED_DIRECT_UNION is used instead
+    [LISTMENU_WIRELESS_LECTURE_HEADERS] = // Unnecessary, MULTICHOICE_GEN_10_STARTERS is used instead
     {
         gText_LinkedGamePlay,
         gText_DirectCorner,
@@ -2529,6 +2529,13 @@ void GetHmModeOption(void) {
         gSpecialVar_Result = 1;
     else // Classic
         gSpecialVar_Result = 0;
+}
+
+void GetBGMOption(void) {
+    if (gSaveBlock2Ptr->optionsBGM == TRUE)
+        gSpecialVar_Result = 1; // ON
+    else
+        gSpecialVar_Result = 0; // OFF
 }
 
 bool16 TryChangeDeoxysForm(void)
