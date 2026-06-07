@@ -1411,7 +1411,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         }
         break;
     case DEX_ORDER_ATOZ:
-        for (i = 0; i < NUM_SPECIES - 1; i++)
+        for (i = 0; i < ARRAY_COUNT(gPokedexOrder_Alphabetical); i++)
         {
             ndex_num = gPokedexOrder_Alphabetical[i];
             if (ndex_num <= max_n)
@@ -1429,7 +1429,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         }
         break;
     case DEX_ORDER_TYPE:
-        for (i = 0; i < NUM_SPECIES - 1; i++)
+        for (i = 0; i < ARRAY_COUNT(gPokedexOrder_Type); i++)
         {
             species = gPokedexOrder_Type[i];
             ndex_num = SpeciesToNationalPokedexNum(species);
@@ -1447,7 +1447,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         }
         break;
     case DEX_ORDER_LIGHTEST:
-        for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+        for (i = 0; i < ARRAY_COUNT(gPokedexOrder_Weight); i++)
         {
             ndex_num = gPokedexOrder_Weight[i];
             if (ndex_num <= max_n)
@@ -1465,7 +1465,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         }
         break;
     case DEX_ORDER_SMALLEST:
-        for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+        for (i = 0; i < ARRAY_COUNT(gPokedexOrder_Height); i++)
         {
             ndex_num = gPokedexOrder_Height[i];
             if (ndex_num <= max_n)
@@ -2687,7 +2687,7 @@ void DexScreen_DexPageZoomEffectFrame(u8 bg, u8 scale)
 void DexScreen_PrintMonCategory(u8 windowId, u16 species, u8 x, u8 y)
 {
     u8 * categoryName;
-    u8 index, categoryStr[12];
+    u8 index, categoryStr[13];
 
     species = SpeciesToNationalPokedexNum(species);
 
@@ -2695,11 +2695,7 @@ void DexScreen_PrintMonCategory(u8 windowId, u16 species, u8 x, u8 y)
     index = 0;
     if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
     {
-#if REVISION == 0
-        while ((categoryName[index] != CHAR_SPACE) && (index < 11))
-#else
-        while ((categoryName[index] != EOS) && (index < 12))
-#endif
+        while ((categoryName[index] != EOS) && (index < 13))
         {
             categoryStr[index] = categoryName[index];
             index++;
@@ -2707,7 +2703,7 @@ void DexScreen_PrintMonCategory(u8 windowId, u16 species, u8 x, u8 y)
     }
     else
     {
-        while (index < 12)
+        while (index < 13)
         {
             categoryStr[index] = CHAR_QUESTION_MARK;
             index++;

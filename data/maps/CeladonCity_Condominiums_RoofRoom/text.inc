@@ -110,7 +110,7 @@ CeladonCity_Condominiums_RoofRoom_Text_CyanJapanese1::
     .string "{JPN}こんにちは！\p"
     .string "えっと…\n"
     .string "ボクは　サイアンです。\p"
-    .string "この　ハックロムを　つくった。\p"
+    .string "この　ロムハックを　つくりました。\p"
     .string "…\p"
     .string "ボクの　にほんごは…\n"
     .string "じょうず　だったの？$"

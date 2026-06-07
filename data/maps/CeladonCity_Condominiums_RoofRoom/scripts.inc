@@ -5,12 +5,12 @@ CeladonCity_Condominiums_RoofRoom_MapScripts::
 	.byte 0
 
 @	VAR_TEMP_0:  current song playing; 0: untitled; 1: battle; 2: eek
-@	VAR_TEMP_1:  number of times song has changed
 @	VAR_TEMP_2:  number of times stereo is interacted with BGM off
 @	VAR_TEMP_3:  number of times the "music" option is selected
 @	VAR_TEMP_4:  number of times the "nat dex 2" option is selected
 @	VAR_TEMP_5:  number of times the "gen 10" option is selected
 @	VAR_TEMP_6:  number of times the "speak japanese" option is selected
+@	VAR_TEMP_7:  number of times song has changed
 
 CeladonCity_Condominiums_RoofRoom_EventScript_Cyan::
 	lock
@@ -235,8 +235,8 @@ CeladonCity_Condominiums_RoofRoom_EventScript_StereoMsgOff2::
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong::
-	addvar VAR_TEMP_1, 1
-	goto_if_eq VAR_TEMP_1, 69, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong3
+	addvar VAR_TEMP_7, 1
+	goto_if_eq VAR_TEMP_7, 69, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong3
 	goto_if_eq VAR_TEMP_0, 0, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong1
 	goto_if_eq VAR_TEMP_0, 1, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong2
 	goto_if_ge VAR_TEMP_0, 2, CeladonCity_Condominiums_RoofRoom_EventScript_StereoSwitchSong2
