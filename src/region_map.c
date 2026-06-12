@@ -4021,6 +4021,9 @@ static void SetFlyWarpDestination(u16 mapsec)
 
 // added 7/23/21, luma~
 u8* GetMapName_HandleVersion(u8* dest, u16 mapsec, u8 version) {
+    if (mapsec >= MAPSECS_KANTO && mapsec < MAPSEC_NONE)
+        return GetMapNameGeneric(dest, mapsec);
+
 	switch (version)
     {
 	default:
@@ -4052,4 +4055,6 @@ u8* GetMapName_HandleVersion(u8* dest, u16 mapsec, u8 version) {
 		}
 		// TODO: expand R/S Aqua Hideout placeholder
     }
+
+    return StringFill(dest, CHAR_SPACE, 18);
 }
