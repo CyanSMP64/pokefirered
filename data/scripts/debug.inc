@@ -10,7 +10,7 @@ Debug_CheatStart::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
-	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_HIDE_PEWTER_CITY_RUNNING_SHOES_GUY
 	setflag FLAG_SYS_B_DASH
 	specialvar VAR_RESULT, CalculatePlayerPartyCount
 	goto_if_eq VAR_RESULT, 0, Debug_CheatStart2
