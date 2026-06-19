@@ -28,6 +28,17 @@ Debug_CheatStart2::
 	end
 
 Debug_Script_1::
+@	lockall
+@	setvar VAR_0x8005, 1
+@Debug_Script_1a::
+@	special HealPlayerParty
+@	setvar VAR_0x8004, 0
+@	special ChangeMonSpecies
+@	setwildbattle VAR_0x8005, 1
+@	dowildbattle
+@	addvar VAR_0x8005, 1
+@	goto_if_lt VAR_0x8005, SPECIES_EGG, Debug_Script_1a
+@	releaseall
 	end
 
 Debug_Script_2::
