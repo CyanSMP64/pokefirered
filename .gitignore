@@ -60,7 +60,6 @@ porymap.*.cfg
 prefabs.json
 .vscode/*.*
 *.js
-*.sym
 *.ini
 *.toml
 *.ss[0-9]

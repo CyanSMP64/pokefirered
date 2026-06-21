@@ -31,10 +31,10 @@
 #endif
 
 #define NATDEX_VERSION_MAJOR 1
-#define NATDEX_VERSION_MINOR 1
-#define NATDEX_VERSION_PATCH 3
+#define NATDEX_VERSION_MINOR 2
+#define NATDEX_VERSION_PATCH 0
 // revision number: git describe --tags
-#define NATDEX_VERSION_BUILD 286
+#define NATDEX_VERSION_BUILD 0
 
 // capacities of various saveblock objects
 #define DAYCARE_MON_COUNT   2
