@@ -44,7 +44,7 @@ static void ApplyCleanseTagEncounterRateMod(u32 *rate);
 static bool8 IsLeadMonHoldingCleanseTag(void);
 static u16 WildEncounterRandom(void);
 static void AddToWildEncounterRateBuff(u8 encouterRate);
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex);
+static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex, u32 size);
 static bool8 IsAbilityAllowingEncounter(u8 level);
 
 #include "data/wild_encounters.h"
@@ -328,6 +328,8 @@ enum
 #define WILD_CHECK_REPEL    0x1
 #define WILD_CHECK_KEEN_EYE 0x2
 
+#define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr, count)
+
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo * info, u8 area, u8 flags)
 {
     u8 slot = 0;
@@ -335,15 +337,15 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * info, u8 area, u8
     switch (area)
     {
     case WILD_AREA_LAND:
-        if (TryGetAbilityInfluencedWildMonIndex(info->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &slot))
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(info->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &slot, LAND_WILD_COUNT))
             break;
-        if (TryGetAbilityInfluencedWildMonIndex(info->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &slot))
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(info->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &slot, LAND_WILD_COUNT))
             break;
 
         slot = ChooseWildMonIndex_Land();
         break;
     case WILD_AREA_WATER:
-        if (TryGetAbilityInfluencedWildMonIndex(info->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &slot))
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(info->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &slot, WATER_WILD_COUNT))
             break;
 
         slot = ChooseWildMonIndex_WaterRock();
@@ -902,7 +904,7 @@ static bool8 TryGetRandomWildMonIndexByType(const struct WildPokemon *wildMon, u
     return TRUE;
 }
 
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex)
+static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex, u32 size)
 {
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         return FALSE;
@@ -911,7 +913,7 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildM
     else if (Random() % 2 != 0)
         return FALSE;
 
-    return TryGetRandomWildMonIndexByType(wildMon, type, LAND_WILD_COUNT, monIndex);
+    return TryGetRandomWildMonIndexByType(wildMon, type, size, monIndex);
 }
 
 bool8 StandardWildEncounter_Debug(void)
