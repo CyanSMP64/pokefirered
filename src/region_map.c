@@ -6,6 +6,7 @@
 #include "overworld.h"
 #include "event_data.h"
 #include "region_map.h"
+#include "load_save.h"
 #include "party_menu.h"
 #include "field_effect.h"
 #include "new_menu_helpers.h"
@@ -243,6 +244,9 @@ struct MapIconSprite
     u16 tileTag;
     u16 palTag;
 };
+
+static u8 sFlyMapSaveBlock2Prefix[0x0C];
+static bool8 sFlyMapSaveBlock2PrefixValid;
 
 struct MapIcons
 {
@@ -3859,6 +3863,8 @@ static void ClearOrDrawTopBar(bool8 clear)
 
 void CB2_OpenFlyMap(void)
 {
+    memcpy(sFlyMapSaveBlock2Prefix, &gSaveBlock2, sizeof(sFlyMapSaveBlock2Prefix));
+    sFlyMapSaveBlock2PrefixValid = TRUE;
     InitFlyMap();
     InitRegionMap(REGIONMAP_TYPE_FLY);
 }
@@ -3991,6 +3997,12 @@ static void InitFlyMap(void)
 
 static void FreeFlyMap(u8 taskId)
 {
+    if (sFlyMapSaveBlock2PrefixValid)
+    {
+        memcpy(&gSaveBlock2, sFlyMapSaveBlock2Prefix, sizeof(sFlyMapSaveBlock2Prefix));
+        sFlyMapSaveBlock2PrefixValid = FALSE;
+    }
+
     if (GetRegionMapPermission(MAPPERM_HAS_OPEN_ANIM) == TRUE)
         FreeMapOpenCloseAnim();
     FreeMapIcons();
