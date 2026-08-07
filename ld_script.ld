@@ -428,7 +428,6 @@ SECTIONS {
         src/link.o(.rodata);
         src/battle_main.o(.rodata);
         src/battle_controller_player.o(.rodata);
-        src/trig.o(.rodata);
         src/util.o(.rodata);
         src/daycare.o(.rodata);
         src/battle_gfx_sfx_util.o(.rodata);
@@ -446,6 +445,7 @@ SECTIONS {
     SUBALIGN(4)
     {
         src/pokemon.o(.rodata);
+        src/trig.o(.rodata);
         src/field_player_avatar.o(.rodata);
         src/tilesets.o(.rodata);
         data/maps.o(.rodata);
