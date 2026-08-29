@@ -3,6 +3,7 @@
 #include "battle.h"
 #include "battle_anim.h"
 #include "decompress.h"
+#include "event_data.h"
 #include "graphics.h"
 #include "m4a.h"
 #include "pokemon.h"
@@ -12,6 +13,7 @@
 #include "util.h"
 #include "link.h"
 #include "battle_gfx_sfx_util.h"
+#include "constants/flags.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
 
@@ -903,7 +905,7 @@ static void SpriteCB_BallThrow_CaptureMon(struct Sprite *sprite)
         if (gSaveBlock2Ptr->optionsBGM == TRUE)
             PlaySE(MUS_RG_CAUGHT_INTRO);
     }
-    else if (sprite->data[4] == 315)
+    else if (sprite->data[4] == (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 500 : 315))
     {
         FreeOamMatrix(gSprites[gBattlerSpriteIds[sprite->sBattler]].oam.matrixNum);
         DestroySprite(&gSprites[gBattlerSpriteIds[sprite->sBattler]]);

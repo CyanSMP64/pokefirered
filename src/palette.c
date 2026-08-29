@@ -3,6 +3,13 @@
 #include "util.h"
 #include "decompress.h"
 #include "task.h"
+#include "title_screen.h"
+#include "intro.h"
+#include "credits.h"
+#include "hall_of_fame.h"
+#include "event_data.h"
+#include "main.h"
+#include "constants/flags.h"
 
 enum
 {
@@ -53,6 +60,30 @@ static u8 UpdateHardwarePaletteFade(void);
 static void UpdateBlendRegisters(void);
 static bool8 IsSoftwarePaletteFadeFinishing(void);
 static void Task_BlendPalettesGradually(u8 taskId);
+extern bool8 IsBattleBackgroundFadeActive(void);
+
+bool8 IsDoubleSpeedBlockedContext(void)
+{
+    if (IsOpeningMovieOrIntroActive())
+        return TRUE;
+    if (IsTitleScreenActive())
+        return TRUE;
+    if (IsEndCreditsActive())
+        return TRUE;
+    if (IsHallOfFameScreenActive())
+        return TRUE;
+
+    return FALSE;
+}
+
+static u8 GetPaletteFadeStepMultiplier(void)
+{
+    if (!FlagGet(FLAG_DOUBLE_SPEED))
+        return 1;
+    if (IsDoubleSpeedBlockedContext())
+        return 1;
+    return 2;
+}
 
 ALIGNED(4) EWRAM_DATA u16 gPlttBufferUnfaded[PLTT_BUFFER_SIZE] = {0};
 ALIGNED(4) EWRAM_DATA u16 gPlttBufferFaded[PLTT_BUFFER_SIZE] = {0};
@@ -394,6 +425,7 @@ static u8 UpdateNormalPaletteFade(void)
 {
     u16 paletteOffset;
     u16 selectedPalettes;
+    u8 stepMultiplier = GetPaletteFadeStepMultiplier();
 
     if (!gPaletteFade.active)
         return PALETTE_FADE_STATUS_DONE;
@@ -447,7 +479,7 @@ static u8 UpdateNormalPaletteFade(void)
                 if (!gPaletteFade.yDec)
                 {
                     val = gPaletteFade.y;
-                    val += gPaletteFade.deltaY;
+                    val += gPaletteFade.deltaY * stepMultiplier;
                     if (val > gPaletteFade.targetY)
                         val = gPaletteFade.targetY;
                     gPaletteFade.y = val;
@@ -455,7 +487,7 @@ static u8 UpdateNormalPaletteFade(void)
                 else
                 {
                     val = gPaletteFade.y;
-                    val -= gPaletteFade.deltaY;
+                    val -= gPaletteFade.deltaY * stepMultiplier;
                     if (val < gPaletteFade.targetY)
                         val = gPaletteFade.targetY;
                     gPaletteFade.y = val;
@@ -552,6 +584,8 @@ static u8 UpdateFastPaletteFade(void)
     u16 i;
     u16 paletteOffsetStart, paletteOffsetEnd;
     s8 r0, g0, b0, r, g, b;
+    u8 stepMultiplier = GetPaletteFadeStepMultiplier();
+    s8 colorStep = stepMultiplier * 2;
 
     if (!gPaletteFade.active)
         return PALETTE_FADE_STATUS_DONE;
@@ -580,9 +614,9 @@ static u8 UpdateFastPaletteFade(void)
             g0 = unfaded->g;
             b0 = unfaded->b;
             faded = (struct PlttData *)&gPlttBufferFaded[i];
-            r = faded->r - 2;
-            g = faded->g - 2;
-            b = faded->b - 2;
+            r = faded->r - colorStep;
+            g = faded->g - colorStep;
+            b = faded->b - colorStep;
             if (r < r0)
                 r = r0;
             if (g < g0)
@@ -597,9 +631,9 @@ static u8 UpdateFastPaletteFade(void)
         {
             struct PlttData *data = (struct PlttData *)&gPlttBufferFaded[i];
 
-            r = data->r + 2;
-            g = data->g + 2;
-            b = data->b + 2;
+            r = data->r + colorStep;
+            g = data->g + colorStep;
+            b = data->b + colorStep;
             if (r > 31)
                 r = 31;
             if (g > 31)
@@ -620,9 +654,9 @@ static u8 UpdateFastPaletteFade(void)
             g0 = unfaded->g;
             b0 = unfaded->b;
             faded = (struct PlttData *)&gPlttBufferFaded[i];
-            r = faded->r + 2;
-            g = faded->g + 2;
-            b = faded->b + 2;
+            r = faded->r + colorStep;
+            g = faded->g + colorStep;
+            b = faded->b + colorStep;
             if (r > r0)
                 r = r0;
             if (g > g0)
@@ -637,9 +671,9 @@ static u8 UpdateFastPaletteFade(void)
         {
             struct PlttData *data = (struct PlttData *)&gPlttBufferFaded[i];
 
-            r = data->r - 2;
-            g = data->g - 2;
-            b = data->b - 2;
+            r = data->r - colorStep;
+            g = data->g - colorStep;
+            b = data->b - colorStep;
             if (r < 0)
                 r = 0;
             if (g < 0)
@@ -654,10 +688,10 @@ static u8 UpdateFastPaletteFade(void)
         // gPaletteFade.active cannot change since the last time it was checked. So this
         // is equivalent to `return PALETTE_FADE_STATUS_ACTIVE;`
         return gPaletteFade.active ? PALETTE_FADE_STATUS_ACTIVE : PALETTE_FADE_STATUS_DONE;
-    if (gPaletteFade.y - gPaletteFade.deltaY < 0)
+    if (gPaletteFade.y - (gPaletteFade.deltaY * stepMultiplier) < 0)
         gPaletteFade.y = 0;
     else
-        gPaletteFade.y -= gPaletteFade.deltaY;
+        gPaletteFade.y -= gPaletteFade.deltaY * stepMultiplier;
     if (gPaletteFade.y == 0)
     {
         switch (gPaletteFade_submode)
@@ -700,6 +734,8 @@ void BeginHardwarePaletteFade(u8 blendCnt, u8 delay, u8 y, u8 targetY, u8 should
 
 static u8 UpdateHardwarePaletteFade(void)
 {
+    u8 stepMultiplier = GetPaletteFadeStepMultiplier();
+
     if (!gPaletteFade.active)
         return PALETTE_FADE_STATUS_DONE;
     if (gPaletteFade.delayCounter < gPaletteFade_delay)
@@ -710,19 +746,20 @@ static u8 UpdateHardwarePaletteFade(void)
     gPaletteFade.delayCounter = 0;
     if (!gPaletteFade.yDec)
     {
-        gPaletteFade.y++;
+        gPaletteFade.y += stepMultiplier;
         if (gPaletteFade.y > gPaletteFade.targetY)
         {
             gPaletteFade.hardwareFadeFinishing++;
-            gPaletteFade.y--;
+            gPaletteFade.y -= stepMultiplier;
         }
     }
     else
     {
-        if (gPaletteFade.y-- - 1 < gPaletteFade.targetY)
+        s32 y = gPaletteFade.y -= stepMultiplier;
+        if (y - stepMultiplier < gPaletteFade.targetY)
         {
             gPaletteFade.hardwareFadeFinishing++;
-            gPaletteFade.y++;
+            gPaletteFade.y += stepMultiplier;
         }
     }
 

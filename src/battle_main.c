@@ -4069,6 +4069,7 @@ void ReturnFromBattleToOverworld(void)
                 SetRoamerInactive();
         }
         m4aSongNumStop(SE_LOW_HEALTH);
+        StopCryAndClearCrySongs();
         SetMainCallback2(gMain.savedCallback);
     }
 }

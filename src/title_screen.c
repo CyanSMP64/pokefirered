@@ -1288,3 +1288,13 @@ static void SpriteCallback_Slash(struct Sprite *sprite)
 #undef sState
 #undef sTimer
 #undef sDeactivate
+
+bool8 IsTitleScreenActive(void)
+{
+    return gMain.callback2 == CB2_InitTitleScreen
+        || gMain.callback2 == CB2_TitleScreenRun
+        || gMain.callback2 == CB2_FadeOutTransitionToSaveClearScreen
+        || gMain.callback2 == CB2_InitCopyrightScreenAfterTitleScreen
+        || gMain.callback2 == CB2_InitMainMenu
+        || gMain.callback2 == CB2_SaveClearScreen_Init;
+}

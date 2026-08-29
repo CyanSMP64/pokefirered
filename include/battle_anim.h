@@ -326,5 +326,6 @@ extern const union AnimCmd *const gRazorLeafParticleAnimTable[];
 extern const union AffineAnimCmd *const gAffineAnims_PoisonProjectile[];
 
 void AnimNeedleArmSpike(struct Sprite *sprite);
+bool8 IsBattleBackgroundFadeActive(void);
 
 #endif // GUARD_BATTLE_ANIM_H

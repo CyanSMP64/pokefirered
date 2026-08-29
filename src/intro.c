@@ -2881,3 +2881,12 @@ static void LoadFightSceneSpriteGraphics(void)
         LoadCompressedSpriteSheet(&sFightSceneSpriteSheets[i]);
     LoadSpritePalettes(sFightSceneSpritePalettes);
 }
+
+bool8 IsOpeningMovieOrIntroActive(void)
+{
+    return gMain.callback2 == CB2_InitCopyrightScreenAfterBootup
+        || gMain.callback2 == CB2_InitCopyrightScreenAfterTitleScreen
+        || gMain.callback2 == CB2_SetUpIntro
+        || gMain.callback2 == CB2_Intro
+        || gMain.callback2 == CB2_WaitFadeBeforeSetUpIntro;
+}

@@ -1305,3 +1305,10 @@ static bool8 Hof_SpawnConfetti(void)
 
     return FALSE;
 }
+
+bool8 IsHallOfFameScreenActive(void)
+{
+    return gMain.callback2 == CB2_DoHallOfFameScreen
+        || gMain.callback2 == CB2_DoHallOfFameScreenDontSaveData
+        || gMain.callback2 == CB2_HofIdle;
+}

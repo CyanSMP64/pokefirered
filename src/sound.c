@@ -5,6 +5,7 @@
 #include "quest_log.h"
 #include "m4a.h"
 #include "event_data.h"
+#include "constants/flags.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
 #include "task.h"
@@ -200,7 +201,7 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
     {
         m4aMPlayStop(&gMPlayInfo_BGM);
         songNum = sFanfares[fanfareNum].songNum;
-        sFanfareCounter = sFanfares[fanfareNum].duration;
+        sFanfareCounter = sFanfares[fanfareNum].duration * (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1);
         m4aSongNumStart(songNum);
     }
 }
@@ -415,7 +416,7 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     case CRY_MODE_NORMAL:
         break;
     case CRY_MODE_DOUBLES:
-        length = 20;
+        length = FlagGet(FLAG_DOUBLE_SPEED) ? 12 : 20;
         release = 225;
         break;
     case CRY_MODE_ENCOUNTER:
@@ -471,7 +472,7 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
         pitch = 15200;
         break;
     case CRY_MODE_WEAK_DOUBLES:
-        length = 20;
+        length = FlagGet(FLAG_DOUBLE_SPEED) ? 12 : 20;
         release = 225;
         // fallthrough
     case CRY_MODE_WEAK:

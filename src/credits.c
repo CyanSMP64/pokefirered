@@ -1444,3 +1444,8 @@ static void LoadPlayerOrRivalSprite(u8 whichScene)
         gSprites[data->groundSpriteId].subpriority = 1;
     }
 }
+
+bool8 IsEndCreditsActive(void)
+{
+    return gMain.callback2 == CB2_Credits || VarGet(VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR) == 1;
+}

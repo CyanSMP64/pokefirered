@@ -1,4 +1,5 @@
 #include "global.h"
+#include "main.h"
 
 static EWRAM_DATA struct {
     const u16 *src;
@@ -7,6 +8,7 @@ static EWRAM_DATA struct {
 } sTilesetDMA3TransferBuffer[20] = {0};
 
 static u8 sTilesetDMA3TransferBufferSize;
+static u32 sLastTilesetAnimVBlankCounter;
 static u16 sPrimaryTilesetAnimCounter;
 static u16 sPrimaryTilesetAnimCounterMax;
 static u16 sSecondaryTilesetAnimCounter;
@@ -164,6 +166,7 @@ void TransferTilesetAnimsBuffer(void)
 void InitTilesetAnimations(void)
 {
     ResetTilesetAnimBuffer();
+    sLastTilesetAnimVBlankCounter = *gMain.vblankCounter1;
     _InitPrimaryTilesetAnimation();
     _InitSecondaryTilesetAnimation();
 }
@@ -175,7 +178,12 @@ void InitSecondaryTilesetAnimation(void)
 
 void UpdateTilesetAnimations(void)
 {
-    ResetTilesetAnimBuffer();
+    if (sLastTilesetAnimVBlankCounter != *gMain.vblankCounter1)
+    {
+        ResetTilesetAnimBuffer();
+        sLastTilesetAnimVBlankCounter = *gMain.vblankCounter1;
+    }
+
     if (++sPrimaryTilesetAnimCounter >= sPrimaryTilesetAnimCounterMax)
         sPrimaryTilesetAnimCounter = 0;
     if (++sSecondaryTilesetAnimCounter >= sSecondaryTilesetAnimCounterMax)

@@ -19,4 +19,6 @@ extern bool8 gHasHallOfFameRecords;
 #define CREDITSOVWLDEND \
     { CREDITSOVWLDCMD_END, CREDITSOVWLDCMD_END, CREDITSOVWLDCMD_END }
 
+bool8 IsEndCreditsActive(void);
+
 #endif //GUARD_CREDITS_H

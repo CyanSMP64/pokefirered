@@ -1377,7 +1377,7 @@
 #define FLAG_EVO_EVERY_LEVEL                                        (SYS_FLAGS + 0x2B)
 #define FLAG_SYS_GAME_CLEAR                                         (SYS_FLAGS + 0x2C)
 #define FLAG_SYS_SET_TRAINER_CARD_PROFILE                           (SYS_FLAGS + 0x2D)
-#define FLAG_0x82E                                                  (SYS_FLAGS + 0x2E)
+#define FLAG_DOUBLE_SPEED                                           (SYS_FLAGS + 0x2E)
 #define FLAG_SYS_B_DASH                                             (SYS_FLAGS + 0x2F)
 #define FLAG_SYS_ON_CYCLING_ROAD                                    (SYS_FLAGS + 0x30)
 #define FLAG_0x831                                                  (SYS_FLAGS + 0x31)

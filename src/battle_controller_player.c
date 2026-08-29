@@ -893,7 +893,7 @@ static void Intro_WaitForShinyAnimAndHealthbox(void)
          && gSprites[gHealthboxSpriteIds[gActiveBattler ^ BIT_FLANK]].callback == SpriteCallbackDummy)
             var = TRUE;
     }
-    if (IsCryPlayingOrClearCrySongs())
+    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && IsCryPlayingOrClearCrySongs())
         var = FALSE;
     if (var && gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].finishedShinyMonAnim
         && gBattleSpritesDataPtr->healthBoxesData[gActiveBattler ^ BIT_FLANK].finishedShinyMonAnim)

@@ -16,6 +16,8 @@
 #include "trainer_pokemon_sprites.h"
 #include "scanline_effect.h"
 #include "event_object_movement.h"
+#include "event_data.h"
+#include "constants/flags.h"
 #include "constants/songs.h"
 
 #define PALTAG_UNUSED_MUGSHOT 0x100A
@@ -705,7 +707,7 @@ static void Task_Intro(u8 taskId)
     if (gTasks[taskId].tState == 0)
     {
         gTasks[taskId].tState++;
-        CreateIntroTask(0, 0, 2, 2, 2);
+        CreateIntroTask(0, 0, 2, FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 4 : 2, FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 4 : 2);
     }
     else if (IsIntroTaskDone())
     {
@@ -743,7 +745,7 @@ static bool8 Blur_Main(struct Task *task)
     }
     else
     {
-        task->tDelay = 2;
+        task->tDelay = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 1 : 2;
         if (++task->tCounter == 10)
             BeginNormalPaletteFade(PALETTES_ALL, -1, 0, 16, RGB_BLACK);
         SetGpuReg(REG_OFFSET_MOSAIC, (task->tCounter & 0xF) + ((task->tCounter & 0xF) << 4));
@@ -791,8 +793,8 @@ static bool8 Swirl_Init(struct Task *task)
 static bool8 Swirl_End(struct Task *task)
 {
     sTransitionData->vblankDma = FALSE;
-    task->tSinIndex += 4;
-    task->tAmplitude += 8;
+    task->tSinIndex += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 8 : 4;
+    task->tAmplitude += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 16 : 8;
     SetSinWave(gScanlineEffectRegBuffers[0], sTransitionData->cameraX, task->tSinIndex, 2, task->tAmplitude, 160);
     if (!gPaletteFade.active)
         DestroyTask(FindTaskIdByFunc(Task_Swirl));
@@ -852,10 +854,10 @@ static bool8 Shuffle_End(struct Task *task)
     sTransitionData->vblankDma = FALSE;
     sinVal = task->tSinVal;
     amplitude = task->tAmplitude >> 8;
-    task->tSinVal += 4224;
-    task->tAmplitude += 384;
+    task->tSinVal += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 8448 : 4224;
+    task->tAmplitude += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 768 : 384;
 
-    for (i = 0; i < DISPLAY_HEIGHT; i++, sinVal += 4224)
+    for (i = 0; i < DISPLAY_HEIGHT; i++, sinVal += (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 8448 : 4224))
         gScanlineEffectRegBuffers[0][i] = sTransitionData->cameraY + Sin(sinVal / 256, amplitude);
 
     if (!gPaletteFade.active)
@@ -963,15 +965,15 @@ static bool8 PatternWeave_Blend1(struct Task *task)
     sTransitionData->vblankDma = FALSE;
     if (task->tBlendDelay == 0 || --task->tBlendDelay == 0)
     {
-        task->tBlendTarget2++;
+        task->tBlendTarget2 += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1;
         task->tBlendDelay = 1; // Broken logic. This makes the condition always TRUE.
     }
     sTransitionData->bldAlpha = BLDALPHA_BLEND(task->tBlendTarget2, task->tBlendTarget1);
     // Increment eva until it reaches 50% coeff
     if (task->tBlendTarget2 > 15)
         task->tState++;
-    task->tSinIndex += 12;
-    task->tAmplitude -= 384;
+    task->tSinIndex += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 24 : 12;
+    task->tAmplitude -= FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 768 : 384;
     // Assign a very high frequency value so that 2 adjacent values in gScanlineEffectRegBuffers[0] will have different sign. 
     SetSinWave(gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude >> 8, DISPLAY_HEIGHT);
     sTransitionData->vblankDma++;
@@ -983,7 +985,7 @@ static bool8 PatternWeave_Blend2(struct Task *task)
     sTransitionData->vblankDma = FALSE;
     if (task->tBlendDelay == 0 || --task->tBlendDelay == 0)
     {
-        task->tBlendTarget1--;
+        task->tBlendTarget1 -= FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1;
         task->tBlendDelay = 2;
     }
     sTransitionData->bldAlpha = BLDALPHA_BLEND(task->tBlendTarget2, task->tBlendTarget1);
@@ -991,8 +993,8 @@ static bool8 PatternWeave_Blend2(struct Task *task)
         task->tState++;
     if (task->tAmplitude > 0)
     {
-        task->tSinIndex += 12;
-        task->tAmplitude -= 384;
+        task->tSinIndex += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 24 : 12;
+        task->tAmplitude -= FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 768 : 384;
     }
     else
     {
@@ -1008,8 +1010,8 @@ static bool8 PatternWeave_FinishAppear(struct Task *task)
     sTransitionData->vblankDma = FALSE;
     if (task->tAmplitude > 0)
     {
-        task->tSinIndex += 12;
-        task->tAmplitude -= 384;
+        task->tSinIndex += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 24 : 12;
+        task->tAmplitude -= FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 768 : 384;
     }
     else
     {
@@ -1031,8 +1033,8 @@ static bool8 PatternWeave_FinishAppear(struct Task *task)
 static bool8 PatternWeave_CircularMask(struct Task *task)
 {
     sTransitionData->vblankDma = FALSE;
-    if (task->tRadiusDelta < (8 << 8))
-        task->tRadiusDelta += (1 << 8);
+    if (task->tRadiusDelta < (8 << (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 9 : 8)))
+        task->tRadiusDelta += (1 << (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 9 : 8));
     if (task->tRadius != 0)
     {
         task->tRadius -= (task->tRadiusDelta >> 8);
@@ -1129,7 +1131,7 @@ static bool8 PokeballsTrail_Main(struct Task *task)
         gFieldEffectArguments[0] = startX[side];    // x
         gFieldEffectArguments[1] = (i * 32) + 16;   // y
         gFieldEffectArguments[2] = side;
-        gFieldEffectArguments[3] = delays[i];
+        gFieldEffectArguments[3] = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? (delays[i] / 2) : (delays[i]);
         FieldEffectStart(FLDEFF_POKEBALL);
     }
     task->tState++;
@@ -1171,28 +1173,33 @@ static void SpriteCB_FldEffPokeballTrail(struct Sprite *sprite)
     }
     else
     {
-        if (sprite->x >= 0 && sprite->x <= DISPLAY_WIDTH)
+        u8 iterations = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1;
+        u8 i;
+        for (i = 0; i < iterations; i++)
         {
-            // Set Pokéball position
-            s16 posX = sprite->x >> 3;
-            s16 posY = sprite->y >> 3;
-
-            // If Pokéball moved forward clear trail behind it
-            if (posX != sprite->sPrevX)
+            if (sprite->x >= 0 && sprite->x <= DISPLAY_WIDTH)
             {
-                u16 *ptr;
+                // Set Pokéball position
+                s16 posX = sprite->x >> 3;
+                s16 posY = sprite->y >> 3;
 
-                sprite->sPrevX = posX;
-                ptr = (u16 *)BG_SCREEN_ADDR((GetGpuReg(REG_OFFSET_BG0CNT) >> 8) & 0x1F);
-                SET_TILE(ptr, posY - 2, posX, 1);
-                SET_TILE(ptr, posY - 1, posX, 1);
-                SET_TILE(ptr, posY - 0, posX, 1);
-                SET_TILE(ptr, posY + 1, posX, 1);
+                // If Pokéball moved forward clear trail behind it
+                if (posX != sprite->sPrevX)
+                {
+                    u16 *ptr;
+
+                    sprite->sPrevX = posX;
+                    ptr = (u16 *)BG_SCREEN_ADDR((GetGpuReg(REG_OFFSET_BG0CNT) >> 8) & 0x1F);
+                    SET_TILE(ptr, posY - 2, posX, 1);
+                    SET_TILE(ptr, posY - 1, posX, 1);
+                    SET_TILE(ptr, posY - 0, posX, 1);
+                    SET_TILE(ptr, posY + 1, posX, 1);
+                }
             }
+            sprite->x += speeds[sprite->sSide];
+            if (sprite->x < -15 || sprite->x > DISPLAY_WIDTH + 15)
+                FieldEffectStop(sprite, FLDEFF_POKEBALL);
         }
-        sprite->x += speeds[sprite->sSide];
-        if (sprite->x < -15 || sprite->x > DISPLAY_WIDTH + 15)
-            FieldEffectStop(sprite, FLDEFF_POKEBALL);
     }
 }
 
@@ -1237,7 +1244,7 @@ static bool8 ClockwiseWipe_TopRight(struct Task *task)
     }
     while (!UpdateBlackWipe(sTransitionData->data, TRUE, TRUE));
 
-    sTransitionData->tWipeEndX += 32;
+    sTransitionData->tWipeEndX += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 64 : 32;
     if (sTransitionData->tWipeEndX >= DISPLAY_WIDTH)
     {
         sTransitionData->tWipeEndY = 0;
@@ -1268,7 +1275,7 @@ static bool8 ClockwiseWipe_Right(struct Task *task)
             break;
         finished = UpdateBlackWipe(sTransitionData->data, TRUE, TRUE);
     }
-    sTransitionData->tWipeEndY += 16;
+    sTransitionData->tWipeEndY += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 32 : 16;
     if (sTransitionData->tWipeEndY >= DISPLAY_HEIGHT)
     {
         sTransitionData->tWipeEndX = DISPLAY_WIDTH;
@@ -1292,7 +1299,7 @@ static bool8 ClockwiseWipe_Bottom(struct Task *task)
         gScanlineEffectRegBuffers[0][sTransitionData->tWipeCurrY] = (sTransitionData->tWipeCurrX << 8) | DISPLAY_WIDTH;
     }
     while (!UpdateBlackWipe(sTransitionData->data, TRUE, TRUE));
-    sTransitionData->tWipeEndX -= 32;
+    sTransitionData->tWipeEndX -= FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 64 : 32;
     if (sTransitionData->tWipeEndX <= 0)
     {
         sTransitionData->tWipeEndY = DISPLAY_HEIGHT;
@@ -1337,7 +1344,7 @@ static bool8 ClockwiseWipe_Left(struct Task *task)
             break;
         finished = UpdateBlackWipe(sTransitionData->data, TRUE, TRUE);
     }
-    sTransitionData->tWipeEndY -= 16;
+    sTransitionData->tWipeEndY -= FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 32 : 16;
     if (sTransitionData->tWipeEndY <= 0)
     {
         sTransitionData->tWipeEndX = 0;
@@ -1368,7 +1375,7 @@ static bool8 ClockwiseWipe_TopLeft(struct Task *task)
         gScanlineEffectRegBuffers[0][sTransitionData->tWipeCurrY] = WIN_RANGE2(start, end);
     }
     while (!UpdateBlackWipe(sTransitionData->data, TRUE, TRUE));
-    sTransitionData->tWipeEndX += 32;
+    sTransitionData->tWipeEndX += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 64 : 32;
     if (sTransitionData->tWipeCurrX > DISPLAY_WIDTH / 2)
         task->tState++;
     sTransitionData->vblankDma++;
@@ -1434,16 +1441,16 @@ static bool8 Ripple_Main(struct Task *task)
     sTransitionData->vblankDma = FALSE;
     amplitude = task->tAmplitude >> 8;
     sinVal = task->tSinVal;
-    speed = 384;
-    task->tSinVal += 0x400;
+    speed = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 768 : 384;
+    task->tSinVal += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 0x800 : 0x400;
     if (task->tAmplitude <= 0x1FFF)
-        task->tAmplitude += 384;
+        task->tAmplitude += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 768 : 384;
     for (i = 0; i < DISPLAY_HEIGHT; i++, sinVal += speed)
     {
         s16 sinIndex = sinVal >> 8;
         gScanlineEffectRegBuffers[0][i] = sTransitionData->cameraY + Sin(sinIndex & 0xFFFF, amplitude);
     }
-    if (++task->tTimer == 41)
+    if (++task->tTimer == FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 21 : 41)
     {
         task->tFadeStarted++;
         BeginNormalPaletteFade(PALETTES_ALL, -8, 0, 16, RGB_BLACK);
@@ -1513,9 +1520,9 @@ static bool8 Wave_Main(struct Task *task)
     sTransitionData->vblankDma = FALSE;
     winVal = gScanlineEffectRegBuffers[0];
     sinIndex = task->tSinIndex;
-    task->tSinIndex += 16;
+    task->tSinIndex += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 32 : 16;
     task->tX += 8;
-    for (i = 0, finished = TRUE; i < DISPLAY_HEIGHT; i++, sinIndex += 4, winVal++)
+    for (i = 0, finished = TRUE; i < DISPLAY_HEIGHT; i++, sinIndex += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 8 : 4, winVal++)
     {
         s16 x = task->tX + Sin(sinIndex, 40);
         if (x < 0)
@@ -1760,6 +1767,8 @@ static bool8 Spiral_Init(struct Task *task)
 static bool8 Spiral_End(struct Task *task)
 {
     s16 win_top, win_bottom;
+    s16 angleStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1;
+    s16 expandStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 64 : 32;
 
     Spiral_UpdateFrame(task->data[2], task->data[1], 1);
     sTransitionData->vblankDma |= TRUE;
@@ -1773,7 +1782,7 @@ static bool8 Spiral_End(struct Task *task)
         if (win_bottom > 255)
             win_bottom = 255;
         sTransitionData->win0V = win_top | win_bottom; // UB: win_top should be shifted
-        task->data[2] += 32;
+        task->data[2] += expandStep;
         task->data[1] = 0;
         Spiral_UpdateFrame(task->data[2], 0, 1);
         win_top = 48 - task->data[2];
@@ -1789,6 +1798,10 @@ static bool8 Spiral_End(struct Task *task)
             sTransitionData->counter = 1;
             FadeScreenBlack();
         }
+    }
+    else
+    {
+        task->data[1] += angleStep - 1;
     }
     return FALSE;
 }
@@ -1925,6 +1938,7 @@ static bool8 Mugshot_ShowBanner(struct Task *task)
     u16 *winVal;
     s16 x;
     s32 mergedValue;
+    s16 bannerStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 16 : 8;
 
     sTransitionData->vblankDma = FALSE;
 
@@ -1955,8 +1969,8 @@ static bool8 Mugshot_ShowBanner(struct Task *task)
     }
 
     // Slide banners across screen
-    task->tTopBannerX += 8;
-    task->tBottomBannerX -= 8;
+    task->tTopBannerX += bannerStep;
+    task->tBottomBannerX -= bannerStep;
 
     if (task->tTopBannerX > DISPLAY_WIDTH)
         task->tTopBannerX = DISPLAY_WIDTH;
@@ -1967,8 +1981,8 @@ static bool8 Mugshot_ShowBanner(struct Task *task)
     if (mergedValue == DISPLAY_WIDTH)
         task->tState++;
 
-    sTransitionData->bg0HOfsOpponent -= 8;
-    sTransitionData->bg0HOfsPlayer += 8;
+    sTransitionData->bg0HOfsOpponent -= bannerStep;
+    sTransitionData->bg0HOfsPlayer += bannerStep;
     sTransitionData->vblankDma++;
     return FALSE;
 }
@@ -1977,6 +1991,7 @@ static bool8 Mugshot_StartOpponentSlide(struct Task *task)
 {
     u8 i;
     u16 *winVal;
+    s16 slideStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 16 : 8;
 
     sTransitionData->vblankDma = FALSE;
     for (i = 0, winVal = gScanlineEffectRegBuffers[0]; i < DISPLAY_HEIGHT; i++, winVal++)
@@ -1988,8 +2003,8 @@ static bool8 Mugshot_StartOpponentSlide(struct Task *task)
     task->tTopBannerX = 0;
     task->tBottomBannerX = 0;
 
-    sTransitionData->bg0HOfsOpponent -= 8;
-    sTransitionData->bg0HOfsPlayer += 8;
+    sTransitionData->bg0HOfsOpponent -= slideStep;
+    sTransitionData->bg0HOfsPlayer += slideStep;
 
     SetTrainerPicSlideDirection(task->tOpponentSpriteId, 0);
     SetTrainerPicSlideDirection(task->tPlayerSpriteId, 1);
@@ -2003,8 +2018,10 @@ static bool8 Mugshot_StartOpponentSlide(struct Task *task)
 
 static bool8 Mugshot_WaitStartPlayerSlide(struct Task *task)
 {
-    sTransitionData->bg0HOfsOpponent -= 8;
-    sTransitionData->bg0HOfsPlayer += 8;
+    s16 slideStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 16 : 8;
+
+    sTransitionData->bg0HOfsOpponent -= slideStep;
+    sTransitionData->bg0HOfsPlayer += slideStep;
 
     // Start player's slide in once the opponent is finished
     if (IsTrainerPicSlideDone(task->tOpponentSpriteId))
@@ -2017,8 +2034,10 @@ static bool8 Mugshot_WaitStartPlayerSlide(struct Task *task)
 
 static bool8 Mugshot_WaitPlayerSlide(struct Task *task)
 {
-    sTransitionData->bg0HOfsOpponent -= 8;
-    sTransitionData->bg0HOfsPlayer += 8;
+    s16 slideStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 16 : 8;
+
+    sTransitionData->bg0HOfsOpponent -= slideStep;
+    sTransitionData->bg0HOfsPlayer += slideStep;
 
     if (IsTrainerPicSlideDone(task->tPlayerSpriteId))
     {
@@ -2041,14 +2060,16 @@ static bool8 Mugshot_WaitPlayerSlide(struct Task *task)
 static bool8 Mugshot_GradualWhiteFade(struct Task *task)
 {
     bool32 active;
+    s16 slideStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 16 : 8;
+    s16 fadeStep = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 4 : 2;
 
     sTransitionData->vblankDma = FALSE;
     active = TRUE;
-    sTransitionData->bg0HOfsOpponent -= 8;
-    sTransitionData->bg0HOfsPlayer += 8;
+    sTransitionData->bg0HOfsOpponent -= slideStep;
+    sTransitionData->bg0HOfsPlayer += slideStep;
 
     if (task->tFadeSpread < DISPLAY_HEIGHT / 2)
-        task->tFadeSpread += 2;
+        task->tFadeSpread += fadeStep;
     if (task->tFadeSpread > DISPLAY_HEIGHT / 2)
         task->tFadeSpread = DISPLAY_HEIGHT / 2;
 
@@ -2319,11 +2340,11 @@ static bool8 Slice_Main(struct Task *task)
     u16 i;
 
     sTransitionData->vblankDma = FALSE;
-    task->tEffectX += (task->tSpeed >> 8);
+    task->tEffectX += (task->tSpeed >> 8) * (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1);
     if (task->tEffectX > DISPLAY_WIDTH)
         task->tEffectX = DISPLAY_WIDTH;
     if (task->tSpeed <= 0xFFF)
-        task->tSpeed += task->tAccel;
+        task->tSpeed += (task->tAccel) * (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1);
     if (task->tAccel < 128)
         task->tAccel <<= 1;
 
@@ -2435,7 +2456,7 @@ static bool8 WhiteBarsFade_StartBars(struct Task *task)
         sprite = &gSprites[CreateInvisibleSprite(SpriteCB_WhiteBarFade)];
         sprite->x = DISPLAY_WIDTH;
         sprite->y = posY;
-        sprite->sDelay = delays[i];
+        sprite->sDelay = delays[i] / (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1);
     }
 
     // Set on one sprite only. This one will enable the DMA
@@ -2544,8 +2565,8 @@ static void SpriteCB_WhiteBarFade(struct Sprite *sprite)
         }
         if (sprite->x == 0 && sprite->sFade == FADE_TARGET)
             sprite->sFinished = TRUE;
-        sprite->x -= 24;
-        sprite->sFade += 192;
+        sprite->x -= FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 48 : 24;
+        sprite->sFade += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 384 : 192;
         if (sprite->x < 0)
             sprite->x = 0;
         if (sprite->sFade > FADE_TARGET)
@@ -2601,12 +2622,12 @@ static bool8 GridSquares_Main(struct Task *task)
     {
         GetBg0TilemapDst(&tileset);
         task->tDelay = 3;
-        task->tShrinkStage++;
+        task->tShrinkStage += FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1;
         CpuCopy16(&sGridSquare_Gfx[task->tShrinkStage * 8], tileset, 0x20);
         if (task->tShrinkStage > 13)
         {
             task->tState++;
-            task->tDelay = 16;
+            task->tDelay = FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 8 : 16;
         }
     }
     task->tDelay--;
@@ -2675,7 +2696,7 @@ static bool8 AngledWipes_DoWipe(struct Task *task)
     bool8 finished;
 
     sTransitionData->vblankDma = FALSE;
-    for (i = 0, finished = FALSE; i < 16; i++)
+    for (i = 0, finished = FALSE; i < (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 32 : 16); i++)
     {
         s16 left = gScanlineEffectRegBuffers[0][sTransitionData->tWipeCurrY] >> 8;
         s16 right = gScanlineEffectRegBuffers[0][sTransitionData->tWipeCurrY] & 0xFF;
@@ -3030,4 +3051,9 @@ static bool8 UpdateBlackWipe(s16 *data, bool8 xExact, bool8 yExact)
         return TRUE;
     else
         return FALSE;
+}
+
+bool8 IsBattleTransitionTaskActive(void)
+{
+    return FindTaskIdByFunc(Task_BattleTransition) != TASK_NONE;
 }

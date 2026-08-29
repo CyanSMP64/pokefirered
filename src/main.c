@@ -14,6 +14,10 @@
 #include "scanline_effect.h"
 #include "save_failed_screen.h"
 #include "quest_log.h"
+#include "battle_transition.h"
+#include "palette.h"
+#include "event_data.h"
+#include "constants/flags.h"
 
 extern u32 intr_main[];
 
@@ -187,6 +191,15 @@ void AgbMain()
                 gLinkTransferringData = TRUE;
                 UpdateLinkAndCallCallbacks();
                 gLinkTransferringData = FALSE;
+            }
+            else if (FlagGet(FLAG_DOUBLE_SPEED) == TRUE
+                  && IsBattleTransitionTaskActive() == FALSE
+                  && IsDoubleSpeedBlockedContext() == FALSE)
+            {
+                gMain.newKeys = 0;
+                gMain.newKeysRaw = 0;
+                gMain.newAndRepeatedKeys = 0;
+                UpdateLinkAndCallCallbacks();
             }
         }
 

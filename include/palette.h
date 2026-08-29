@@ -85,6 +85,7 @@ void CopyPaletteInvertedTint(const u16 *src, u16 *dst, u16 count, u8 tone);
 void BlendPalettesGradually(u32 selectedPalettes, s8 delay, u8 coeff, u8 coeffTarget, u16 color, u8 priority, u8 id);
 bool32 IsBlendPalettesGraduallyTaskActive(u8 var);
 void DestroyBlendPalettesGraduallyTask(void);
+bool8 IsDoubleSpeedBlockedContext(void);
 
 static inline void SetBackdropFromColor(u16 color)
 {
