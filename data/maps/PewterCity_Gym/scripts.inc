@@ -21,6 +21,10 @@ PewterCity_Gym_EventScript_DefeatedBrock::
 	end
 
 PewterCity_Gym_EventScript_GiveTM39::
+	message PewterCity_Gym_Text_ReceiveBoulderBadge
+	waitmessage
+	call EventScript_GymBadgeFanfare
+	msgbox PewterCity_Gym_Text_BrockDefeat2
 	msgbox PewterCity_Gym_Text_TakeThisWithYou
 	checkitemspace ITEM_TM39
 	goto_if_eq VAR_RESULT, FALSE, PewterCity_Gym_EventScript_NoRoomForTM39

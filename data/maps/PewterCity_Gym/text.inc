@@ -14,17 +14,18 @@ PewterCity_Gym_Text_BrockIntro::
     .string "Fine, then!\n"
     .string "Show me your best!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
 
-@ NOTE: This defeat text actually causes a buffer overflow. It's too long for the gDisplayedStringBattle
-@ buffer that it's put into, and it stomps all over the gBattleTextBuffs after, as well as the otherwise
-@ unused array after that, sFlickerArray. Perhaps that's the reason why said array exists.
 PewterCity_Gym_Text_BrockDefeat::
     .string "I took you for granted, and so\n"
     .string "I lost.\p"
     .string "As proof of your victory, I confer\n"
     .string "on you this…the official IronMON\l"
-    .string "DLC.\p"
+    .string "DLC.$"
+
+PewterCity_Gym_Text_ReceiveBoulderBadge::
     .string "{FONT_NORMAL}{PLAYER} received the IronMON DLC\n"
-    .string "from Brock!{PAUSE_MUSIC}{PLAY_BGM}{MUS_OBTAIN_BADGE}{PAUSE 0xFE}{PAUSE 0x56}{RESUME_MUSIC}\p"
+    .string "from Brock!\p"
+
+PewterCity_Gym_Text_BrockDefeat2::
     .string "{FONT_MALE}Just having the DLC makes\n"
     .string "your Pokémon more powerful.\p"
     .string "It also enables the use of the\n"

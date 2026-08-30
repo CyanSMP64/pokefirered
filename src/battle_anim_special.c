@@ -7,12 +7,14 @@
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "decompress.h"
+#include "event_data.h"
 #include "graphics.h"
 #include "m4a.h"
 #include "pokeball.h"
 #include "task.h"
 #include "trig.h"
 #include "util.h"
+#include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
@@ -1200,7 +1202,7 @@ static void SpriteCB_ThrowBall_DoClick(struct Sprite *sprite)
         if (gSaveBlock2Ptr->optionsBGM == TRUE)
             PlaySE(MUS_RG_CAUGHT_INTRO);
     }
-    else if (sprite->data[4] == 315)
+    else if (sprite->data[4] == (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 500 : 315))
     {
         FreeOamMatrix(gSprites[gBattlerSpriteIds[*battler]].oam.matrixNum);
         DestroySprite(&gSprites[gBattlerSpriteIds[*battler]]);

@@ -9,6 +9,7 @@
 #include "hall_of_fame.h"
 #include "event_data.h"
 #include "main.h"
+#include "save.h"
 #include "constants/flags.h"
 
 enum
@@ -71,6 +72,11 @@ bool8 IsDoubleSpeedBlockedContext(void)
     if (IsEndCreditsActive())
         return TRUE;
     if (IsHallOfFameScreenActive())
+        return TRUE;
+    if (gSaveFileStatus == SAVE_STATUS_INVALID
+     || gSaveFileStatus == SAVE_STATUS_VERSION_MISMATCH
+     || gSaveFileStatus == SAVE_STATUS_ERROR
+     || gSaveFileStatus == SAVE_STATUS_NO_FLASH)
         return TRUE;
 
     return FALSE;
