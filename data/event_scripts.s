@@ -1089,7 +1089,6 @@ Common_ShowEasyChatScreen::
 	.include "data/scripts/set_gym_trainers.inc"
 	.include "data/scripts/bag_full.inc"
 
-@ Unused
 EventScript_GymBadgeFanfare::
 	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare

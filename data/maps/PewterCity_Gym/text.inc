@@ -23,7 +23,7 @@ PewterCity_Gym_Text_BrockDefeat::
 
 PewterCity_Gym_Text_ReceiveBoulderBadge::
     .string "{FONT_NORMAL}{PLAYER} received the IronMON DLC\n"
-    .string "from Brock!\p"
+    .string "from Brock!$"
 
 PewterCity_Gym_Text_BrockDefeat2::
     .string "{FONT_MALE}Just having the DLC makes\n"

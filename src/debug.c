@@ -559,6 +559,15 @@ static const u8 digitInidicator_10000[] =           _("{LEFT_ARROW}+10000{RIGHT_
 static const u8 digitInidicator_100000[] =          _("{LEFT_ARROW}+100000{RIGHT_ARROW}   ");
 static const u8 digitInidicator_1000000[] =         _("{LEFT_ARROW}+1000000{RIGHT_ARROW}  ");
 static const u8 digitInidicator_10000000[] =        _("{LEFT_ARROW}+10000000{RIGHT_ARROW} ");
+
+static const u8 digitInidicatorHex_1[] =               _("{LEFT_ARROW}+0x1{RIGHT_ARROW}        ");
+static const u8 digitInidicatorHex_10[] =              _("{LEFT_ARROW}+0x10{RIGHT_ARROW}       ");
+static const u8 digitInidicatorHex_100[] =             _("{LEFT_ARROW}+0x100{RIGHT_ARROW}      ");
+static const u8 digitInidicatorHex_1000[] =            _("{LEFT_ARROW}+0x1000{RIGHT_ARROW}     ");
+static const u8 digitInidicatorHex_10000[] =           _("{LEFT_ARROW}+0x10000{RIGHT_ARROW}    ");
+static const u8 digitInidicatorHex_100000[] =          _("{LEFT_ARROW}+0x100000{RIGHT_ARROW}   ");
+static const u8 digitInidicatorHex_1000000[] =         _("{LEFT_ARROW}+0x1000000{RIGHT_ARROW}  ");
+static const u8 digitInidicatorHex_10000000[] =        _("{LEFT_ARROW}+0x10000000{RIGHT_ARROW} ");
 const u8 * const gText_DigitIndicator[] =
 {
     digitInidicator_1,
@@ -569,6 +578,17 @@ const u8 * const gText_DigitIndicator[] =
     digitInidicator_100000,
     digitInidicator_1000000,
     digitInidicator_10000000
+};
+const u8 * const gText_DigitIndicatorHex[] =
+{
+    digitInidicatorHex_1,
+    digitInidicatorHex_10,
+    digitInidicatorHex_100,
+    digitInidicatorHex_1000,
+    digitInidicatorHex_10000,
+    digitInidicatorHex_100000,
+    digitInidicatorHex_1000000,
+    digitInidicatorHex_10000000
 };
 static const s32 sPowersOfTen[] =
 {
@@ -582,6 +602,17 @@ static const s32 sPowersOfTen[] =
       10000000,
      100000000,
     1000000000,
+};
+static const s32 sPowersOfSixteen[] =
+{
+           0x1,
+          0x10,
+         0x100,
+        0x1000,
+       0x10000,
+      0x100000,
+     0x1000000,
+    0x10000000,
 };
 
 // *******************************
@@ -2139,13 +2170,13 @@ static void DebugAction_FlagsVars_Flags(u8 taskId)
 
     //Display initial Flag
     ConvertIntToDecimalStringN(gStringVar1, 1, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_FLAGS);
-    ConvertIntToHexStringN(gStringVar2, 1, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToHexStringN(gStringVar2, 1, STR_CONV_MODE_LEADING_ZEROS, 3);
     StringExpandPlaceholders(gStringVar1, sDebugText_FlagsVars_FlagHex);
     if (FlagGet(FLAG_TEMP_1))
         StringCopyPadded(gStringVar2, sDebugText_True, CHAR_SPACE, 15);
     else
         StringCopyPadded(gStringVar2, sDebugText_False, CHAR_SPACE, 15);
-    StringCopy(gStringVar3, gText_DigitIndicator[0]);
+    StringCopy(gStringVar3, gText_DigitIndicatorHex[0]);
     StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_Flag);
     AddTextPrinterParameterized(windowId, 1, gStringVar4, 1, 1, 0, NULL);
 
@@ -2168,7 +2199,7 @@ static void DebugAction_FlagsVars_FlagsSelect(u8 taskId)
     if (JOY_NEW(DPAD_UP))
     {
         PlaySE(SE_SELECT);
-        gTasks[taskId].data[3] += sPowersOfTen[gTasks[taskId].data[4]];
+        gTasks[taskId].data[3] += sPowersOfSixteen[gTasks[taskId].data[4]];
         if (gTasks[taskId].data[3] >= FLAGS_COUNT){
             gTasks[taskId].data[3] = FLAGS_COUNT - 1;
         }
@@ -2176,7 +2207,7 @@ static void DebugAction_FlagsVars_FlagsSelect(u8 taskId)
     if (JOY_NEW(DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
-        gTasks[taskId].data[3] -= sPowersOfTen[gTasks[taskId].data[4]];
+        gTasks[taskId].data[3] -= sPowersOfSixteen[gTasks[taskId].data[4]];
         if (gTasks[taskId].data[3] < 1){
             gTasks[taskId].data[3] = 1;
         }
@@ -2203,13 +2234,13 @@ static void DebugAction_FlagsVars_FlagsSelect(u8 taskId)
     if (JOY_NEW(DPAD_ANY) || JOY_NEW(A_BUTTON))
     {
         ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_FLAGS);
-        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, 3);
         StringExpandPlaceholders(gStringVar1, sDebugText_FlagsVars_FlagHex);
         if (FlagGet(gTasks[taskId].data[3]) == TRUE)
             StringCopyPadded(gStringVar2, sDebugText_True, CHAR_SPACE, 15);
         else
             StringCopyPadded(gStringVar2, sDebugText_False, CHAR_SPACE, 15);
-        StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].data[4]]);
+        StringCopy(gStringVar3, gText_DigitIndicatorHex[gTasks[taskId].data[4]]);
         StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_Flag);
         AddTextPrinterParameterized(gTasks[taskId].data[2], 1, gStringVar4, 1, 1, 0, NULL);
     }
@@ -2235,7 +2266,7 @@ static void DebugAction_FlagsVars_Vars(u8 taskId)
     StringExpandPlaceholders(gStringVar1, sDebugText_FlagsVars_VariableHex);
     ConvertIntToDecimalStringN(gStringVar3, 0, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VARIABLES);
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
-    StringCopy(gStringVar2, gText_DigitIndicator[0]);
+    StringCopy(gStringVar2, gText_DigitIndicatorHex[0]);
     StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_Variable);
     AddTextPrinterParameterized(windowId, 1, gStringVar4, 1, 1, 0, NULL);
 
@@ -2250,14 +2281,14 @@ static void DebugAction_FlagsVars_Select(u8 taskId)
 {
     if (JOY_NEW(DPAD_UP))
     {
-        gTasks[taskId].data[3] += sPowersOfTen[gTasks[taskId].data[4]];
+        gTasks[taskId].data[3] += sPowersOfSixteen[gTasks[taskId].data[4]];
         if (gTasks[taskId].data[3] > VARS_END){
             gTasks[taskId].data[3] = VARS_END;
         }
     }
     if (JOY_NEW(DPAD_DOWN))
     {
-        gTasks[taskId].data[3] -= sPowersOfTen[gTasks[taskId].data[4]];
+        gTasks[taskId].data[3] -= sPowersOfSixteen[gTasks[taskId].data[4]];
         if (gTasks[taskId].data[3] < VARS_START){
             gTasks[taskId].data[3] = VARS_START;
         }
@@ -2284,14 +2315,14 @@ static void DebugAction_FlagsVars_Select(u8 taskId)
         PlaySE(SE_SELECT);
 
         ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VARIABLES);
-        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEFT_ALIGN, 4);
+        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, 4);
         StringExpandPlaceholders(gStringVar1, sDebugText_FlagsVars_VariableHex);
         if (VarGetIfExist(gTasks[taskId].data[3]) == 65535) //Current value, if 65535 the value hasnt been set
             gTasks[taskId].data[5] = 0;
         else
             gTasks[taskId].data[5] = VarGet(gTasks[taskId].data[3]);
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].data[5], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VARIABLES);
-        StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].data[4]]); //Current digit
+        StringCopy(gStringVar2, gText_DigitIndicatorHex[gTasks[taskId].data[4]]); //Current digit
 
         //Combine str's to full window string
         StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_Variable);
@@ -2305,7 +2336,7 @@ static void DebugAction_FlagsVars_Select(u8 taskId)
         PlaySE(SE_SELECT);
 
         ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VARIABLES);
-        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEFT_ALIGN, 4);
+        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, 4);
         StringExpandPlaceholders(gStringVar1, sDebugText_FlagsVars_VariableHex);
         if (VarGetIfExist(gTasks[taskId].data[3]) == 65535) //Current value if 65535 the value hasnt been set
             gTasks[taskId].data[5] = 0;
@@ -2313,7 +2344,7 @@ static void DebugAction_FlagsVars_Select(u8 taskId)
             gTasks[taskId].data[5] = VarGet(gTasks[taskId].data[3]);
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].data[5], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VARIABLES);
         StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
-        StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].data[4]]); //Current digit
+        StringCopy(gStringVar2, gText_DigitIndicatorHex[gTasks[taskId].data[4]]); //Current digit
         StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_VariableValueSet);
         AddTextPrinterParameterized(gTasks[taskId].data[2], 1, gStringVar4, 1, 1, 0, NULL);
 
@@ -2380,7 +2411,7 @@ static void DebugAction_FlagsVars_SetValue(u8 taskId)
         PlaySE(SE_SELECT);
 
         ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VARIABLES);
-        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEFT_ALIGN, 4);
+        ConvertIntToHexStringN(gStringVar2, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, 4);
         StringExpandPlaceholders(gStringVar1, sDebugText_FlagsVars_VariableHex);
         StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].data[6], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VARIABLES);
