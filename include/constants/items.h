@@ -456,8 +456,9 @@
 // nat dex key items
 #define ITEM_GRACIDEA 377
 #define ITEM_PRISON_BOTTLE 378
+#define ITEM_ACCELERATOR 379
 
-#define ITEMS_COUNT 379
+#define ITEMS_COUNT 380
 
 #define ITEM_TO_BERRY(itemId)(((itemId - FIRST_BERRY_INDEX) + 1))
 #define MAIL_NONE 0xFF

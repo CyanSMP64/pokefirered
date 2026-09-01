@@ -38,6 +38,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/field_weather.h"
+#include "constants/flags.h"
 
 static EWRAM_DATA void (*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -945,4 +946,26 @@ void ItemUse_SetQuestLogEvent(u8 eventId, struct Pokemon *pokemon, u16 itemId, u
         data->species = 0xFFFF;
     SetQuestLogEvent(eventId, (void *)data);
     Free(data);
+}
+
+void ItemUseOutOfBattle_Accelerator(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    if (data[3] == TRUE)
+    {
+        PrintNotTheTimeToUseThat(taskId, gTasks[taskId].data[3]);
+        return;
+    }
+
+    if (FlagGet(FLAG_DOUBLE_SPEED) == TRUE)
+    {
+        FlagClear(FLAG_DOUBLE_SPEED);
+        DisplayItemMessageInBag(taskId, FONT_NORMAL, gText_AcceleratorDeactivated, Task_ReturnToBagFromContextMenu);
+    }
+    else
+    {
+        FlagSet(FLAG_DOUBLE_SPEED);
+        DisplayItemMessageInBag(taskId, FONT_NORMAL, gText_AcceleratorActivated, Task_ReturnToBagFromContextMenu);
+    }
 }
