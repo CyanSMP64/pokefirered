@@ -3,9 +3,12 @@
 #include "scanline_effect.h"
 #include "text_window_graphics.h"
 #include "menu.h"
+#include "menu_indicators.h"
+#include "list_menu.h"
 #include "task.h"
 #include "overworld.h"
 #include "text_window.h"
+#include "window.h"
 #include "strings.h"
 #include "field_fadetransition.h"
 #include "sound.h"
@@ -34,14 +37,19 @@ enum
     WIN_OPTIONS
 };
 
+#define OPTION_ROW_HEIGHT 13
+#define OPTIONS_ON_SCREEN 7
+
 // RAM symbols
 struct OptionMenu
 {
     /*0x00*/ u16 option[MENUITEM_COUNT];
     /*0x0E*/ u16 cursorPos;
-    /*0x10*/ u8 loadState;
-    /*0x11*/ u8 state;
-    /*0x12*/ u8 loadPaletteState;
+    /*0x10*/ u16 visibleCursorPos;
+    /*0x12*/ u8 loadState;
+    /*0x13*/ u8 state;
+    /*0x14*/ u8 loadPaletteState;
+    /*0x15*/ u8 arrowTaskId;
 };
 
 static EWRAM_DATA struct OptionMenu *sOptionMenuPtr = NULL;
@@ -65,6 +73,8 @@ static void PrintOptionMenuHeader(void);
 static void DrawOptionMenuBg(void);
 static void LoadOptionMenuItemNames(void);
 static void UpdateSettingSelectionDisplay(u16 selection);
+static void DrawOptionMenuItems(u16 firstItem);
+static void ScrollOptionMenu(u8 direction);
 
 // Data Definitions
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -205,6 +215,8 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->loadPaletteState = 0;
     sOptionMenuPtr->state = 0;
     sOptionMenuPtr->cursorPos = 0;
+    sOptionMenuPtr->visibleCursorPos = 0;
+    sOptionMenuPtr->arrowTaskId = TASK_NONE;
     sOptionMenuPtr->option[MENUITEM_TEXTSPEED] = gSaveBlock2Ptr->optionsTextSpeed;
     sOptionMenuPtr->option[MENUITEM_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
     sOptionMenuPtr->option[MENUITEM_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
@@ -260,8 +272,6 @@ static void CB2_OptionMenu(void)
         LoadOptionMenuItemNames();
         break;
     case 7:
-        for (i = 0; i < MENUITEM_COUNT; i++)
-            BufferOptionMenuString(i);
         break;
     case 8:
         UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
@@ -279,6 +289,8 @@ static void CB2_OptionMenu(void)
 static void SetOptionMenuTask(void)
 {
     CreateTask(Task_OptionMenu, 0);
+    sOptionMenuPtr->arrowTaskId = AddScrollIndicatorArrowPairParameterized(
+        SCROLL_ARROW_UP, 200, 48, 152, MENUITEM_COUNT - 1, 110, 110, &sOptionMenuPtr->cursorPos);
     SetMainCallback2(CB2_InitOptionMenu);
 }
 
@@ -384,7 +396,7 @@ static void Task_OptionMenu(u8 taskId)
             BufferOptionMenuString(sOptionMenuPtr->cursorPos);
             break;
         case 3:
-            UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
+            UpdateSettingSelectionDisplay(sOptionMenuPtr->visibleCursorPos);
             break;
         case 4:
             BufferOptionMenuString(sOptionMenuPtr->cursorPos);
@@ -438,17 +450,37 @@ static u8 OptionMenu_ProcessInput(void)
     else if (JOY_REPT(DPAD_UP))
     {
         if (sOptionMenuPtr->cursorPos == MENUITEM_TEXTSPEED)
+        {
             sOptionMenuPtr->cursorPos = MENUITEM_CANCEL;
+            sOptionMenuPtr->visibleCursorPos = OPTIONS_ON_SCREEN - 1;
+            DrawOptionMenuItems(MENUITEM_COUNT - OPTIONS_ON_SCREEN);
+        }
         else
+        {
             sOptionMenuPtr->cursorPos = sOptionMenuPtr->cursorPos - 1;
+            if (sOptionMenuPtr->visibleCursorPos != 0)
+                sOptionMenuPtr->visibleCursorPos--;
+            else
+                ScrollOptionMenu(1);
+        }
         return 3;        
     }
     else if (JOY_REPT(DPAD_DOWN))
     {
         if (sOptionMenuPtr->cursorPos == MENUITEM_CANCEL)
+        {
             sOptionMenuPtr->cursorPos = MENUITEM_TEXTSPEED;
+            sOptionMenuPtr->visibleCursorPos = 0;
+            DrawOptionMenuItems(MENUITEM_TEXTSPEED);
+        }
         else
+        {
             sOptionMenuPtr->cursorPos = sOptionMenuPtr->cursorPos + 1;
+            if (sOptionMenuPtr->visibleCursorPos < OPTIONS_ON_SCREEN - 1)
+                sOptionMenuPtr->visibleCursorPos++;
+            else
+                ScrollOptionMenu(0);
+        }
         return 3;
     }
     else if (JOY_NEW(B_BUTTON) || JOY_NEW(A_BUTTON))
@@ -470,7 +502,7 @@ static void BufferOptionMenuString(u8 selection)
     
     memcpy(dst, sOptionMenuTextColor, 3);
     x = 0x82;
-    y = ((GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) - 1) * selection) + 2;
+    y = (OPTION_ROW_HEIGHT * sOptionMenuPtr->visibleCursorPos) + 2;
     FillWindowPixelRect(1, 1, x, y, 0x46, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT));
 
     switch (selection)
@@ -519,6 +551,8 @@ static void CloseAndSaveOptionMenu(u8 taskId)
     else if (IsBGMPlaying() != TRUE)
         StopMapMusic();
         Overworld_PlaySpecialMapMusic();
+    RemoveScrollIndicatorArrowPair(sOptionMenuPtr->arrowTaskId);
+    sOptionMenuPtr->arrowTaskId = TASK_NONE;
     FREE_AND_SET_NULL(sOptionMenuPtr);
     DestroyTask(taskId);
 }
@@ -557,13 +591,47 @@ static void DrawOptionMenuBg(void)
 
 static void LoadOptionMenuItemNames(void)
 {
-    u8 i;
-    
+    DrawOptionMenuItems(MENUITEM_TEXTSPEED);
+}
+
+static void DrawOptionMenuItems(u16 firstItem)
+{
+    u16 i;
+
     FillWindowPixelBuffer(1, PIXEL_FILL(1));
-    for (i = 0; i < MENUITEM_COUNT; i++)
+    for (i = 0; i < OPTIONS_ON_SCREEN; i++)
     {
-        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i], 8, (u8)((i * (GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT))) + 2) - i, TEXT_SKIP_DRAW, NULL);    
+        u16 menuItem = firstItem + i;
+        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[menuItem], 8, (i * OPTION_ROW_HEIGHT) + 2, TEXT_SKIP_DRAW, NULL);
+        sOptionMenuPtr->visibleCursorPos = i;
+        BufferOptionMenuString(menuItem);
     }
+    sOptionMenuPtr->visibleCursorPos = sOptionMenuPtr->cursorPos - firstItem;
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void ScrollOptionMenu(u8 direction)
+{
+    u16 menuItem;
+    u16 row;
+
+    if (direction == 0)
+    {
+        menuItem = sOptionMenuPtr->cursorPos;
+        row = OPTIONS_ON_SCREEN - 1;
+    }
+    else
+    {
+        menuItem = sOptionMenuPtr->cursorPos;
+        row = 0;
+    }
+
+    ScrollWindow(WIN_OPTIONS, direction, OPTION_ROW_HEIGHT, PIXEL_FILL(1));
+    FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 0, row * OPTION_ROW_HEIGHT, 26 * 8, OPTION_ROW_HEIGHT);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[menuItem], 8, (row * OPTION_ROW_HEIGHT) + 2, TEXT_SKIP_DRAW, NULL);
+    sOptionMenuPtr->visibleCursorPos = row;
+    BufferOptionMenuString(menuItem);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
 }
 
 static void UpdateSettingSelectionDisplay(u16 selection)
@@ -571,7 +639,7 @@ static void UpdateSettingSelectionDisplay(u16 selection)
     u16 maxLetterHeight, y;
     
     maxLetterHeight = GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT);
-    y = selection * (maxLetterHeight - 1) + 0x3A;
+    y = selection * OPTION_ROW_HEIGHT + 0x3A;
     SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(y, y + maxLetterHeight));
     SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0x10, 0xE0));
 }
