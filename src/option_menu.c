@@ -46,10 +46,11 @@ struct OptionMenu
     /*0x00*/ u16 option[MENUITEM_COUNT];
     /*0x0E*/ u16 cursorPos;
     /*0x10*/ u16 visibleCursorPos;
-    /*0x12*/ u8 loadState;
-    /*0x13*/ u8 state;
-    /*0x14*/ u8 loadPaletteState;
-    /*0x15*/ u8 arrowTaskId;
+    /*0x12*/ u16 scrollOffset;
+    /*0x14*/ u8 loadState;
+    /*0x15*/ u8 state;
+    /*0x16*/ u8 loadPaletteState;
+    /*0x17*/ u8 arrowTaskId;
 };
 
 static EWRAM_DATA struct OptionMenu *sOptionMenuPtr = NULL;
@@ -216,6 +217,7 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->state = 0;
     sOptionMenuPtr->cursorPos = 0;
     sOptionMenuPtr->visibleCursorPos = 0;
+    sOptionMenuPtr->scrollOffset = 0;
     sOptionMenuPtr->arrowTaskId = TASK_NONE;
     sOptionMenuPtr->option[MENUITEM_TEXTSPEED] = gSaveBlock2Ptr->optionsTextSpeed;
     sOptionMenuPtr->option[MENUITEM_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
@@ -289,8 +291,9 @@ static void CB2_OptionMenu(void)
 static void SetOptionMenuTask(void)
 {
     CreateTask(Task_OptionMenu, 0);
-    sOptionMenuPtr->arrowTaskId = AddScrollIndicatorArrowPairParameterized(
-        SCROLL_ARROW_UP, 200, 48, 152, MENUITEM_COUNT - 1, 110, 110, &sOptionMenuPtr->cursorPos);
+    if (MENUITEM_COUNT > OPTIONS_ON_SCREEN)
+        sOptionMenuPtr->arrowTaskId = AddScrollIndicatorArrowPairParameterized(
+            SCROLL_ARROW_UP, 200, 48, 152, MENUITEM_COUNT - OPTIONS_ON_SCREEN, 110, 110, &sOptionMenuPtr->scrollOffset);
     SetMainCallback2(CB2_InitOptionMenu);
 }
 
@@ -316,7 +319,7 @@ static void InitOptionMenuBg(void)
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_BLEND | BLDCNT_EFFECT_LIGHTEN);
     SetGpuReg(REG_OFFSET_BLDY, BLDCNT_TGT1_BG1);
     SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG0);
-    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_CLR);
+    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | DISPCNT_WIN0_ON);
     ShowBg(0);
     ShowBg(1);
@@ -551,8 +554,11 @@ static void CloseAndSaveOptionMenu(u8 taskId)
     else if (IsBGMPlaying() != TRUE)
         StopMapMusic();
         Overworld_PlaySpecialMapMusic();
-    RemoveScrollIndicatorArrowPair(sOptionMenuPtr->arrowTaskId);
-    sOptionMenuPtr->arrowTaskId = TASK_NONE;
+    if (sOptionMenuPtr->arrowTaskId != TASK_NONE)
+    {
+        RemoveScrollIndicatorArrowPair(sOptionMenuPtr->arrowTaskId);
+        sOptionMenuPtr->arrowTaskId = TASK_NONE;
+    }
     FREE_AND_SET_NULL(sOptionMenuPtr);
     DestroyTask(taskId);
 }
@@ -598,6 +604,7 @@ static void DrawOptionMenuItems(u16 firstItem)
 {
     u16 i;
 
+    sOptionMenuPtr->scrollOffset = firstItem;
     FillWindowPixelBuffer(1, PIXEL_FILL(1));
     for (i = 0; i < OPTIONS_ON_SCREEN; i++)
     {
@@ -630,6 +637,7 @@ static void ScrollOptionMenu(u8 direction)
     FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 0, row * OPTION_ROW_HEIGHT, 26 * 8, OPTION_ROW_HEIGHT);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[menuItem], 8, (row * OPTION_ROW_HEIGHT) + 2, TEXT_SKIP_DRAW, NULL);
     sOptionMenuPtr->visibleCursorPos = row;
+    sOptionMenuPtr->scrollOffset = sOptionMenuPtr->cursorPos - row;
     BufferOptionMenuString(menuItem);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
 }
