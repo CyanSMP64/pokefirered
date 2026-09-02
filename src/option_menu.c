@@ -24,6 +24,7 @@ enum
     MENUITEM_BATTLESCENE,
     MENUITEM_BATTLESTYLE,
     MENUITEM_SOUND,
+    MENUITEM_BATTLEBGM,
     MENUITEM_BUTTONMODE,
     MENUITEM_FRAMETYPE,
     MENUITEM_CANCEL,
@@ -142,7 +143,7 @@ static const struct BgTemplate sOptionMenuBgTemplates[] =
 };
 
 static const u16 sOptionMenuPalette[] = INCBIN_U16("graphics/misc/option_menu.gbapal");
-static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 2, 10, 0};
+static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 2, 10, 0};
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -150,6 +151,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_BATTLESCENE] = gText_BattleScene,
     [MENUITEM_BATTLESTYLE] = gText_BattleStyle,
     [MENUITEM_SOUND]       = gText_Sound,
+    [MENUITEM_BATTLEBGM]   = gText_BattleBGM,
     [MENUITEM_BUTTONMODE]  = gText_ButtonMode,
     [MENUITEM_FRAMETYPE]   = gText_Frame,
     [MENUITEM_CANCEL]      = gText_OptionMenuCancel,
@@ -178,6 +180,13 @@ static const u8 *const sSoundOptions[] =
 {
     gText_SoundMono, 
     gText_SoundStereo
+};
+
+static const u8 *const sBattleBGMOptions[] =
+{
+    gText_BattleBGMDefault,
+    gText_BattleBGMContextualRandom,
+    gText_BattleBGMPureRandom,
 };
 
 static const u8 *const sButtonTypeOptions[] =
@@ -223,6 +232,7 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option[MENUITEM_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
     sOptionMenuPtr->option[MENUITEM_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
     sOptionMenuPtr->option[MENUITEM_SOUND] = gSaveBlock2Ptr->optionsBGM;
+    sOptionMenuPtr->option[MENUITEM_BATTLEBGM] = gSaveBlock2Ptr->optionsBattleBGM;
     sOptionMenuPtr->option[MENUITEM_BUTTONMODE] = gSaveBlock2Ptr->optionsHM;
     sOptionMenuPtr->option[MENUITEM_FRAMETYPE] = gSaveBlock2Ptr->optionsWindowFrameType;
     
@@ -504,9 +514,9 @@ static void BufferOptionMenuString(u8 selection)
     u8 x, y;
     
     memcpy(dst, sOptionMenuTextColor, 3);
-    x = 0x82;
+    x = 0x6e;
     y = (OPTION_ROW_HEIGHT * sOptionMenuPtr->visibleCursorPos) + 2;
-    FillWindowPixelRect(1, 1, x, y, 0x46, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT));
+    FillWindowPixelRect(1, 1, x, y, 0x61, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT));
 
     switch (selection)
     {
@@ -521,6 +531,9 @@ static void BufferOptionMenuString(u8 selection)
         break;
     case MENUITEM_SOUND:
         AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, sSoundOptions[sOptionMenuPtr->option[selection]]);
+        break;
+    case MENUITEM_BATTLEBGM:
+        AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, sBattleBGMOptions[sOptionMenuPtr->option[selection]]);
         break;
     case MENUITEM_BUTTONMODE:
         AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, sButtonTypeOptions[sOptionMenuPtr->option[selection]]);
@@ -547,6 +560,7 @@ static void CloseAndSaveOptionMenu(u8 taskId)
     gSaveBlock2Ptr->optionsBattleSceneOff = sOptionMenuPtr->option[MENUITEM_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle = sOptionMenuPtr->option[MENUITEM_BATTLESTYLE];
     gSaveBlock2Ptr->optionsBGM = sOptionMenuPtr->option[MENUITEM_SOUND];
+    gSaveBlock2Ptr->optionsBattleBGM = sOptionMenuPtr->option[MENUITEM_BATTLEBGM];
     gSaveBlock2Ptr->optionsHM = sOptionMenuPtr->option[MENUITEM_BUTTONMODE];
     gSaveBlock2Ptr->optionsWindowFrameType = sOptionMenuPtr->option[MENUITEM_FRAMETYPE];
     if (gSaveBlock2Ptr->optionsBGM == FALSE)

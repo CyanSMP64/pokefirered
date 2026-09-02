@@ -1141,6 +1141,8 @@ PalletTown_ProfessorOaksLab_EventScript_ChoseStarter::
 	waitfanfare
 	random 100		@ set fun value
 	copyvar VAR_FUN, VAR_RESULT
+	random 65535	@ set wild bgm
+	copyvar VAR_RANDOM_WILD_BGM, VAR_RESULT
 	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_GiveNicknameToStarter
 	goto_if_eq VAR_RESULT, NO, PalletTown_ProfessorOaksLab_EventScript_RivalPicksStarter
