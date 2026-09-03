@@ -506,8 +506,18 @@
 #define MUS_HG_VS_WILD_KANTO            509
 #define MUS_UNTITLED                    510
 #define MUS_CRITTER_BOSS                511
+#define MUS_DP_VS_WILD                  512
+#define MUS_DP_VS_GYM_LEADER            513
+#define MUS_DP_VS_TRAINER               514
+#define MUS_DP_VS_GALACTIC_LEADER       515
+#define MUS_DP_VS_GALACTIC              516
+#define MUS_DP_VS_RIVAL                 517
+#define MUS_DP_VS_GALACTIC_ADMIN        518
+#define MUS_DP_VS_ELITE_FOUR            519
+#define MUS_DP_VS_FRONTIER_BRAIN        520
+#define MUS_HG_VS_WILD_JOHTO            521
 
-#define END_MUS MUS_CRITTER_BOSS
+#define END_MUS MUS_HG_VS_WILD_JOHTO
 
 #define MUS_NONE                    0xFFFF
 

@@ -511,6 +511,16 @@ gSongTable::
 	song mus_hg_vs_wild_kanto, 0, 64, 1024
 	song mus_untitled, 0, 64, 1024
 	song mus_critter_boss, 0, 64, 1024
+	song mus_dp_vs_wild, 0, 64, 1024
+	song mus_dp_vs_gym_leader, 0, 64, 1024
+	song mus_dp_vs_trainer, 0, 64, 1024
+	song mus_dp_vs_galactic_leader, 0, 64, 1024
+	song mus_dp_vs_galactic, 0, 64, 1024
+	song mus_dp_vs_rival, 0, 64, 1024
+	song mus_dp_vs_galactic_admin, 0, 64, 1024
+	song mus_dp_vs_elite_four, 0, 64, 1024
+	song mus_dp_vs_frontier_brain, 0, 64, 1024
+	song mus_hg_vs_wild_johto, 0, 64, 1024
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

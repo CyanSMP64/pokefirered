@@ -469,6 +469,34 @@ DirectSoundWaveData_dp_sd90_room2_tom::
 	.incbin "sound/direct_sound_samples/pl/tom1_16.bin"
 	
 	.align 2
+DirectSoundWaveData_dp_closehight::
+	.incbin "sound/direct_sound_samples/pl/closehight_16.bin"
+	
+	.align 2
+DirectSoundWaveData_dp_sne1_roop::
+	.incbin "sound/direct_sound_samples/pl/sne1_roop.bin"
+	
+	.align 2
+DirectSoundWaveData_dp_rim1_roop::
+	.incbin "sound/direct_sound_samples/pl/rim1_roop.bin"
+	
+	.align 2
+DirectSoundWaveData_dp_dis_gt_c1_16::
+	.incbin "sound/direct_sound_samples/pl/dis_gt_c1_16.bin"
+	
+	.align 2
+DirectSoundWaveData_dp_dis_gt_c2_16::
+	.incbin "sound/direct_sound_samples/pl/dis_gt_c2_16.bin"
+	
+	.align 2
+DirectSoundWaveData_dp_dis_gt_c3_16::
+	.incbin "sound/direct_sound_samples/pl/dis_gt_c3_16.bin"
+	
+	.align 2
+DirectSoundWaveData_dp_dis_gt_c4_16::
+	.incbin "sound/direct_sound_samples/pl/dis_gt_c4_16.bin"
+
+	.align 2
 DirectSoundWaveData_dp_zg_panned_hats_ped3::
 	.incbin "sound/direct_sound_samples/pl/pedalhight.bin"
 	
