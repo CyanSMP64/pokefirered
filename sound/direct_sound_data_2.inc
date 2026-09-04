@@ -581,6 +581,30 @@ DirectSoundWaveData_dp_sy77_clarinet_60::
 	.incbin "sound/direct_sound_samples/pl/sy_clarinet_c3_16.bin"
 
 	.align 2
+DirectSoundWaveData_dp_bongo_16::
+	.incbin "sound/direct_sound_samples/pl/bongo_16.bin"
+
+	.align 2
+DirectSoundWaveData_dp_africa_dr_16::
+	.incbin "sound/direct_sound_samples/pl/africa_dr_16.bin"
+
+	.align 2
+DirectSoundWaveData_dp_handclup1::
+	.incbin "sound/direct_sound_samples/pl/handclup1.bin"
+
+	.align 2
+DirectSoundWaveData_dp_tengan_wind::
+	.incbin "sound/direct_sound_samples/pl/tengan_wind.bin"
+
+	.align 2
+DirectSoundWaveData_dp_altosax_c3_16::
+	.incbin "sound/direct_sound_samples/pl/altosax_c3_16.bin"
+
+	.align 2
+DirectSoundWaveData_dp_slapbass_g1_16::
+	.incbin "sound/direct_sound_samples/pl/slapbass_g1_16.bin"
+
+	.align 2
 DirectSoundWaveData_hg_sampletank_string_orchestra_60::
 	.incbin "sound/direct_sound_samples/wb/strings_c4_22.bin"
 

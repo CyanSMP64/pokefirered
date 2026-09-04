@@ -521,6 +521,18 @@ gSongTable::
 	song mus_dp_vs_elite_four, 0, 64, 1024
 	song mus_dp_vs_frontier_brain, 0, 64, 1024
 	song mus_hg_vs_wild_johto, 0, 64, 1024
+	song mus_dp_vs_champion, 0, 64, 1024
+	song mus_dp_battle_arcade, 0, 64, 1024
+	song mus_dp_vs_regi, 0, 64, 1024
+	song mus_hg_vs_trainer_johto, 0, 64, 1024
+	song mus_hg_vs_gym_leader_johto, 0, 64, 1024
+	song mus_hg_vs_rival, 0, 64, 1024
+	song mus_hg_vs_rocket, 0, 64, 1024
+	song mus_hg_vs_champion, 0, 64, 1024
+	song mus_hg_vs_trainer_kanto, 0, 64, 1024
+	song mus_hg_vs_gym_leader_kanto, 0, 64, 1024
+	song mus_hg_pokeathlon_finals, 0, 64, 1024
+	song mus_hg_vs_kyogre_groudon, 0, 64, 1024
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

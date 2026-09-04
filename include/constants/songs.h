@@ -516,8 +516,20 @@
 #define MUS_DP_VS_ELITE_FOUR            519
 #define MUS_DP_VS_FRONTIER_BRAIN        520
 #define MUS_HG_VS_WILD_JOHTO            521
+#define MUS_DP_VS_CHAMPION              522
+#define MUS_DP_BATTLE_ARCADE            523
+#define MUS_DP_VS_REGI                  524
+#define MUS_HG_VS_TRAINER_JOHTO         525
+#define MUS_HG_VS_GYM_LEADER_JOHTO      526
+#define MUS_HG_VS_RIVAL                 527
+#define MUS_HG_VS_ROCKET                528
+#define MUS_HG_VS_CHAMPION              529
+#define MUS_HG_VS_TRAINER_KANTO         530
+#define MUS_HG_VS_GYM_LEADER_KANTO      531
+#define MUS_HG_POKEATHLON_FINALS        532
+#define MUS_HG_VS_KYOGRE_GROUDON        533
 
-#define END_MUS MUS_HG_VS_WILD_JOHTO
+#define END_MUS MUS_HG_VS_KYOGRE_GROUDON
 
 #define MUS_NONE                    0xFFFF
 
