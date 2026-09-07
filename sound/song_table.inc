@@ -533,6 +533,29 @@ gSongTable::
 	song mus_hg_vs_gym_leader_kanto, 0, 64, 1024
 	song mus_hg_pokeathlon_finals, 0, 64, 1024
 	song mus_hg_vs_kyogre_groudon, 0, 64, 1024
+	song mus_b2_vs_wild, 0, 64, 1024
+	song mus_bw_vs_strong_wild, 0, 64, 1024
+	song mus_b2_vs_trainer, 0, 64, 1024
+	song mus_bw_vs_subway_trainer, 0, 64, 1024
+	song mus_b2_vs_gym_leader, 0, 64, 1024
+	song mus_bw_vs_rival, 0, 64, 1024
+	song mus_bw_vs_elite_four, 0, 64, 1024
+	song mus_bw_vs_champion, 0, 64, 1024
+	song mus_b2_vs_n, 0, 64, 1024
+	song mus_b2_vs_regi, 0, 64, 1024
+	song mus_bw_vs_cynthia, 0, 64, 1024
+	song mus_b2_vs_gym_leader_kanto, 0, 64, 1024
+	song mus_b2_vs_gym_leader_johto, 0, 64, 1024
+	song mus_b2_vs_champion_johto, 0, 64, 1024
+	song mus_b2_vs_gym_leader_hoenn, 0, 64, 1024
+	song mus_b2_vs_gym_leader_sinnoh, 0, 64, 1024
+	song mus_b2_vs_champion_sinnoh, 0, 64, 1024
+	song mus_b2_vs_pwt_finals, 0, 64, 1024
+	song mus_b2_vs_plasma, 0, 64, 1024
+	song mus_b2_vs_colress, 0, 64, 1024
+	song mus_b2_vs_ghetsis, 0, 64, 1024
+	song mus_b2_vs_iris, 0, 64, 1024
+	song mus_b2_vs_hugh, 0, 64, 1024
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

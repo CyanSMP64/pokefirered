@@ -1,5 +1,11 @@
 	.align 2
 voicegroup197::
-	voice_directsound 60, 0, DirectSoundWaveData_dp_sd90_marimba2_60, 255, 246, 0, 216	@ 127/ 90/  0/114/ 64
-	voice_directsound 72, 0, DirectSoundWaveData_dp_sd90_marimba2_72, 255, 246, 0, 216	@ 127/ 90/  0/114/ 64
-	voice_directsound 84, 0, DirectSoundWaveData_dp_sd90_marimba2_84, 255, 246, 0, 216	@ 127/ 90/  0/114/ 64
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 0, 255, 44 @ straight
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 222, 0, 44 @ fade 1
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 235, 0, 44 @ fade 2
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 242, 0, 44 @ fade 3
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 246, 0, 44 @ fade 4
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 248, 0, 44 @ fade 5
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 250, 0, 44 @ fade 6
+	voice_directsound 60, 0, DirectSoundSynthData_squ75, 255, 251, 0, 44 @ fade 7
+	voice_directsound 60, 0, DirectSoundWaveData_gbwave01,      255, 0, 255, 44

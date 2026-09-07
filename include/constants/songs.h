@@ -528,8 +528,31 @@
 #define MUS_HG_VS_GYM_LEADER_KANTO      531
 #define MUS_HG_POKEATHLON_FINALS        532
 #define MUS_HG_VS_KYOGRE_GROUDON        533
+#define MUS_B2_VS_WILD                  534
+#define MUS_BW_VS_STRONG_WILD           535
+#define MUS_B2_VS_TRAINER               536
+#define MUS_BW_VS_SUBWAY_TRAINER        537
+#define MUS_B2_VS_GYM_LEADER            538
+#define MUS_BW_VS_RIVAL                 539
+#define MUS_BW_VS_ELITE_FOUR            540
+#define MUS_BW_VS_CHAMPION              541
+#define MUS_B2_VS_N                     542
+#define MUS_B2_VS_REGI                  543
+#define MUS_BW_VS_CYNTHIA               544
+#define MUS_B2_VS_GYM_LEADER_KANTO      545
+#define MUS_B2_VS_GYM_LEADER_JOHTO      546
+#define MUS_B2_VS_CHAMPION_JOHTO        547
+#define MUS_B2_VS_GYM_LEADER_HOENN      548
+#define MUS_B2_VS_GYM_LEADER_SINNOH     549
+#define MUS_B2_VS_CHAMPION_SINNOH       550
+#define MUS_B2_VS_PWT_FINALS            551
+#define MUS_B2_VS_PLASMA                552
+#define MUS_B2_VS_COLRESS               553
+#define MUS_B2_VS_GHETSIS               554
+#define MUS_B2_VS_IRIS                  555
+#define MUS_B2_VS_HUGH                  556
 
-#define END_MUS MUS_HG_VS_KYOGRE_GROUDON
+#define END_MUS MUS_B2_VS_HUGH
 
 #define MUS_NONE                    0xFFFF
 
