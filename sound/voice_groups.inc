@@ -197,3 +197,6 @@
 .include "sound/voicegroups/voicegroup195.inc" @ untitled
 .include "sound/voicegroups/voicegroup196.inc" @ critter boss
 .include "sound/voicegroups/voicegroup197.inc" @ RBY champion battle
+
+.include "sound/voicegroups/voicegroup200.inc" @ BW vs wild (beta 15815)
+.include "sound/voicegroups/voicegroup201.inc" @ BW vs wild

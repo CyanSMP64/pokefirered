@@ -556,6 +556,15 @@ gSongTable::
 	song mus_b2_vs_ghetsis, 0, 64, 1024
 	song mus_b2_vs_iris, 0, 64, 1024
 	song mus_b2_vs_hugh, 0, 64, 1024
+	song mus_bw_vs_wild_15815, 0, 64, 1024
+	song mus_bw_vs_wild, 0, 64, 1024
+	song mus_bw_vs_trainer, 0, 64, 1024
+	song mus_bw_vs_gym_leader, 0, 64, 1024
+	song mus_bw_vs_plasma, 0, 64, 1024
+	song mus_bw_vs_n, 0, 64, 1024
+	song mus_bw_vs_n_final, 0, 64, 1024
+	song mus_bw_vs_ghetsis, 0, 64, 1024
+	song mus_bw_vs_final_mon, 0, 64, 1024
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

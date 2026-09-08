@@ -551,8 +551,17 @@
 #define MUS_B2_VS_GHETSIS               554
 #define MUS_B2_VS_IRIS                  555
 #define MUS_B2_VS_HUGH                  556
+#define MUS_BW_VS_WILD_15815            557
+#define MUS_BW_VS_WILD                  558
+#define MUS_BW_VS_TRAINER               559
+#define MUS_BW_VS_GYM_LEADER            560
+#define MUS_BW_VS_PLASMA                561
+#define MUS_BW_VS_N                     562
+#define MUS_BW_VS_N_FINAL               563
+#define MUS_BW_VS_GHETSIS               564
+#define MUS_BW_VS_FINAL_MON             565
 
-#define END_MUS MUS_B2_VS_HUGH
+#define END_MUS MUS_BW_VS_FINAL_MON
 
 #define MUS_NONE                    0xFFFF
 
