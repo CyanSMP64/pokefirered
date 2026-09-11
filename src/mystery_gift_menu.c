@@ -441,16 +441,6 @@ void CB2_InitMysteryGift(void)
     }
 }
 
-void CB2_InitEReader(void)
-{
-    if (HandleMysteryGiftOrEReaderSetup(TRUE))
-    {
-        SetMainCallback2(CB2_MysteryGiftEReader);
-        gGiftIsFromEReader = TRUE;
-        CreateEReaderTask();
-    }
-}
-
 void MainCB_FreeAllBuffersAndReturnToInitTitleScreen(void)
 {
     gGiftIsFromEReader = FALSE;

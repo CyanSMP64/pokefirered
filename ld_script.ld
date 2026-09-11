@@ -679,13 +679,6 @@ SECTIONS {
         . = ALIGN(4);
     } =0
 
-    multiboot_data :
-    ALIGN(4)
-    {
-        data/multiboot_ereader.o(.rodata);
-        data/multiboot_pokemon_colosseum.o(.rodata);
-    } =0
-
     gfx_data :
     ALIGN(4)
     {

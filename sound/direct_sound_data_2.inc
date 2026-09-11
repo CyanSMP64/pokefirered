@@ -931,7 +931,11 @@ DirectSoundWaveData_hg_kfl_harp_60::
 	.align 2
 DirectSoundWaveData_hg_kfl_harp_72::
 	.incbin "sound/direct_sound_samples/wb/harp_c5_22.bin"
-	
+
+	.align 2
+DirectSoundWaveData_hg_kfl_harp_84::
+	.incbin "sound/direct_sound_samples/wb/harp_c6_22.bin"
+
 	.align 2
 DirectSoundWaveData_hg_plugsound_pro_acoustic_grand_piano_oct_36::
 	.incbin "sound/direct_sound_samples/wb/oct_piano_c2_22.bin"
