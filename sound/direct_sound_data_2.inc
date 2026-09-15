@@ -634,19 +634,19 @@ DirectSoundWaveData_hg_kfl_french_horn_71::
 
 	.align 2
 DirectSoundWaveData_bw_kfl_french_horn_ensemble_48::
-	.incbin "sound/direct_sound_samples/wb/french_horn_c3_b_32.bin"
+	.incbin "sound/direct_sound_samples/wb/french_horn_c3_b_22.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_kfl_french_horn_ensemble_53::
-	.incbin "sound/direct_sound_samples/wb/french_horn_f3_b_32.bin"
+	.incbin "sound/direct_sound_samples/wb/french_horn_f3_b_22.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_kfl_french_horn_ensemble_62::
-	.incbin "sound/direct_sound_samples/wb/french_horn_d4_b_32.bin"
+	.incbin "sound/direct_sound_samples/wb/french_horn_d4_b_22.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_kfl_french_horn_ensemble_71::
-	.incbin "sound/direct_sound_samples/wb/french_horn_b4_b_32.bin"
+	.incbin "sound/direct_sound_samples/wb/french_horn_b4_b_22.bin"
 
 	.align 2
 DirectSoundWaveData_hg_kfl_trumpet_ensemble_60::
