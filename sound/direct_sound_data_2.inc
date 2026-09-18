@@ -650,15 +650,16 @@ DirectSoundWaveData_hg_kfl_french_horn_ensemble_71::
 
 	.align 2
 DirectSoundWaveData_hg_kfl_trumpet_ensemble_60::
-	.incbin "sound/direct_sound_samples/wb/trumpet_section_c4_22.bin"
+	.incbin "sound/direct_sound_samples/wb/trumpet_section_c4_32.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_kfl_trumpet_ensemble_69::
-	.incbin "sound/direct_sound_samples/wb/trumpet_section_a4_22.bin"
+	.incbin "sound/direct_sound_samples/wb/trumpet_section_a4_32.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_kfl_trumpet_ensemble_79::
-	.incbin "sound/direct_sound_samples/wb/trumpet_section_g5_22.bin"
+DirectSoundWaveData_bw_atc_pet_sect_g5_32::
+	.incbin "sound/direct_sound_samples/wb/trumpet_section_g5_32.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_plugsound_pro_jazz_double_bass_hard_36::
@@ -710,11 +711,11 @@ DirectSoundWaveData_hg_plugsound_pro_cello_sus_60::
 	
 	.align 2
 DirectSoundWaveData_hg_plugsound_pro_elastik_36::
-	.incbin "sound/direct_sound_samples/wb/synth_bass_c2_22.bin"
+	.incbin "sound/direct_sound_samples/wb/synth_bass_c2_32.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_plugsound_pro_elastik_48::
-	.incbin "sound/direct_sound_samples/wb/synth_bass_c3_22.bin"
+	.incbin "sound/direct_sound_samples/wb/synth_bass_c3_32.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_kfl_trombone_ensemble_43::
@@ -811,6 +812,10 @@ DirectSoundWaveData_hg_plugsound_pro_vibraphone1_60::
 	.align 2
 DirectSoundWaveData_hg_plugsound_pro_vibraphone1_72::
 	.incbin "sound/direct_sound_samples/wb/vibraphone_c5_22.bin"
+	
+	.align 2
+DirectSoundWaveData_hg_plugsound_pro_vibraphone1_84::
+	.incbin "sound/direct_sound_samples/wb/vibraphone_c6_22.bin"
 	
 	.align 2
 DirectSoundWaveData_hg_kfl_glockenspiel_60::
