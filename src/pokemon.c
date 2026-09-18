@@ -9043,8 +9043,9 @@ static u16 GetBattleBGM(void)
         case SPECIES_KYUREM_BLACK:
             return MUS_B2_VS_BLACK_WHITE_KYUREM;
         default:
-            if (FlagGet(FLAG_SYS_SPECIAL_WILD_BATTLE) || gBattleTypeFlags & BATTLE_TYPE_GHOST_UNVEILED
+            if ((FlagGet(FLAG_SYS_SPECIAL_WILD_BATTLE) || gBattleTypeFlags & BATTLE_TYPE_GHOST_UNVEILED
                 || gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+                && gSaveBlock2Ptr->optionsBattleBGM == OPTIONS_BATTLE_BGM_DEFAULT)
                 return MUS_HG_VS_WILD_KANTO;
             else {
                 switch (gSaveBlock2Ptr->optionsBattleBGM)
