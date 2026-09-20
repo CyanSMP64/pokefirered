@@ -3,19 +3,21 @@
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_setup.h"
+#include "event_data.h"
 #include "scanline_effect.h"
 #include "task.h"
 #include "trig.h"
+#include "constants/flags.h"
 
 static EWRAM_DATA u16 sBgCnt = 0;
 
 extern const u8 gBattleAnimRegOffsBgCnt[];
 extern const u8 gBattleIntroRegOffsBgCnt[];
 
-void BattleIntroSlide1(u8 taskId);
-void BattleIntroSlide2(u8 taskId);
-void BattleIntroSlide3(u8 taskId);
-void BattleIntroSlideLink(u8 taskId);
+static void BattleIntroSlide1(u8 taskId);
+static void BattleIntroSlide2(u8 taskId);
+static void BattleIntroSlide3(u8 taskId);
+static void BattleIntroSlideLink(u8 taskId);
 
 static const TaskFunc sBattleIntroSlideFuncs[] =
 {
@@ -30,6 +32,11 @@ static const TaskFunc sBattleIntroSlideFuncs[] =
     BattleIntroSlide3, // BATTLE_TERRAIN_BUILDING
     BattleIntroSlide3, // BATTLE_TERRAIN_PLAIN
 };
+
+static u8 GetBattleIntroSpeed(void)
+{
+    return FlagGet(FLAG_DOUBLE_SPEED) ? 4 : 2;
+}
 
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)
 {
@@ -118,6 +125,14 @@ void HandleIntroSlide(u8 terrain)
     gTasks[taskId].data[6] = 0;
 }
 
+bool8 IsBattleIntroSlideTaskActive(void)
+{
+    return FindTaskIdByFunc(BattleIntroSlide1) != TASK_NONE
+        || FindTaskIdByFunc(BattleIntroSlide2) != TASK_NONE
+        || FindTaskIdByFunc(BattleIntroSlide3) != TASK_NONE
+        || FindTaskIdByFunc(BattleIntroSlideLink) != TASK_NONE;
+}
+
 void BattleIntroSlideEnd(u8 taskId)
 {
     DestroyTask(taskId);
@@ -132,11 +147,11 @@ void BattleIntroSlideEnd(u8 taskId)
     SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR | WINOUT_WINOBJ_BG_ALL | WINOUT_WINOBJ_OBJ | WINOUT_WINOBJ_CLR);
 }
 
-void BattleIntroSlide1(u8 taskId)
+static void BattleIntroSlide1(u8 taskId)
 {
     s32 i;
 
-    gBattle_BG1_X += 6;
+    gBattle_BG1_X += 6 * GetBattleIntroSpeed();
     switch (gTasks[taskId].data[0])
     {
     case 0:
@@ -159,7 +174,7 @@ void BattleIntroSlide1(u8 taskId)
         }
         break;
     case 2:
-        gBattle_WIN0V -= 0xFF;
+        gBattle_WIN0V -= 0xFF * GetBattleIntroSpeed();
         if ((gBattle_WIN0V & 0xFF00) == 0x3000)
         {
             ++gTasks[taskId].data[0];
@@ -178,17 +193,17 @@ void BattleIntroSlide1(u8 taskId)
             if (gTasks[taskId].data[1] == 1)
             {
                 if (gBattle_BG1_Y != 0xFFB0)
-                    gBattle_BG1_Y -= 2;
+                    gBattle_BG1_Y -= 2 * GetBattleIntroSpeed();
             }
             else if (gBattle_BG1_Y != 0xFFC8)
             {
-                    gBattle_BG1_Y -= 1;
+                    gBattle_BG1_Y -= 1 * GetBattleIntroSpeed();
             }
         }
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x3FC;
+            gBattle_WIN0V -= 0x3FC * GetBattleIntroSpeed();
         if (gTasks[taskId].data[2])
-            gTasks[taskId].data[2] -= 2;
+            gTasks[taskId].data[2] -= 2 * GetBattleIntroSpeed();
         // Scanline settings have already been set in CB2_InitBattleInternal
         for (i = 0; i < 80; ++i)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = gTasks[taskId].data[2];
@@ -211,7 +226,7 @@ void BattleIntroSlide1(u8 taskId)
     }
 }
 
-void BattleIntroSlide2(u8 taskId)
+static void BattleIntroSlide2(u8 taskId)
 {
     s32 i;
 
@@ -219,19 +234,19 @@ void BattleIntroSlide2(u8 taskId)
     {
     case 2:
     case 4:
-        gBattle_BG1_X += 8;
+        gBattle_BG1_X += 8 * GetBattleIntroSpeed();
         break;
     case 3:
-        gBattle_BG1_X += 6;
+        gBattle_BG1_X += 6 * GetBattleIntroSpeed();
         break;
     }
     if (gTasks[taskId].data[1] == 4)
     {
         gBattle_BG1_Y = Cos2(gTasks[taskId].data[6]) / 512 - 8;
         if (gTasks[taskId].data[6] < 180)
-            gTasks[taskId].data[6] += 4;
+            gTasks[taskId].data[6] += 4 * GetBattleIntroSpeed();
         else
-            gTasks[taskId].data[6] += 6;
+            gTasks[taskId].data[6] += 6 * GetBattleIntroSpeed();
         if (gTasks[taskId].data[6] == 360)
             gTasks[taskId].data[6] = 0;
     }
@@ -258,7 +273,7 @@ void BattleIntroSlide2(u8 taskId)
         }
         break;
     case 2:
-        gBattle_WIN0V -= 0xFF;
+        gBattle_WIN0V -= 0xFF * GetBattleIntroSpeed();
         if ((gBattle_WIN0V & 0xFF00) == 0x3000)
         {
             ++gTasks[taskId].data[0];
@@ -284,10 +299,10 @@ void BattleIntroSlide2(u8 taskId)
                 gTasks[taskId].data[5] = 4;
         }
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x3FC;
+            gBattle_WIN0V -= 0x3FC * GetBattleIntroSpeed();
 
         if (gTasks[taskId].data[2])
-            gTasks[taskId].data[2] -= 2;
+            gTasks[taskId].data[2] -= 2 * GetBattleIntroSpeed();
         // Scanline settings have already been set in CB2_InitBattleInternal()
         for (i = 0; i < 80; ++i)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = gTasks[taskId].data[2];
@@ -312,11 +327,11 @@ void BattleIntroSlide2(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[4], 0));
 }
 
-void BattleIntroSlide3(u8 taskId)
+static void BattleIntroSlide3(u8 taskId)
 {
     s32 i;
 
-    gBattle_BG1_X += 8;
+    gBattle_BG1_X += 8 * GetBattleIntroSpeed();
     switch (gTasks[taskId].data[0])
     {
     case 0:
@@ -343,7 +358,7 @@ void BattleIntroSlide3(u8 taskId)
         }
         break;
     case 2:
-        gBattle_WIN0V -= 0xFF;
+        gBattle_WIN0V -= 0xFF * GetBattleIntroSpeed();
         if ((gBattle_WIN0V & 0xFF00) == 0x3000)
         {
             ++gTasks[taskId].data[0];
@@ -364,9 +379,9 @@ void BattleIntroSlide3(u8 taskId)
             gTasks[taskId].data[5] = 6;
         }
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x3FC;
+            gBattle_WIN0V -= 0x3FC * GetBattleIntroSpeed();
         if (gTasks[taskId].data[2])
-            gTasks[taskId].data[2] -= 2;
+            gTasks[taskId].data[2] -= 2 * GetBattleIntroSpeed();
         // Scanline settings have already been set in CB2_InitBattleInternal()
         for (i = 0; i < 80; ++i)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = gTasks[taskId].data[2];
@@ -391,7 +406,7 @@ void BattleIntroSlide3(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[4], 0));
 }
 
-void BattleIntroSlideLink(u8 taskId)
+static void BattleIntroSlideLink(u8 taskId)
 {
     s32 i;
 
@@ -401,8 +416,8 @@ void BattleIntroSlideLink(u8 taskId)
 
         if (var0 || gBattle_BG1_X < 80)
         {
-            gBattle_BG1_X += 3;
-            gBattle_BG2_X -= 3;
+            gBattle_BG1_X += 3 * GetBattleIntroSpeed();
+            gBattle_BG2_X -= 3 * GetBattleIntroSpeed();
         }
         else
         {
@@ -430,7 +445,7 @@ void BattleIntroSlideLink(u8 taskId)
         }
         break;
     case 2:
-        gBattle_WIN0V -= 0xFF;
+        gBattle_WIN0V -= 0xFF * GetBattleIntroSpeed();
         if ((gBattle_WIN0V & 0xFF00) == 0x3000)
         {
             ++gTasks[taskId].data[0];
@@ -441,9 +456,9 @@ void BattleIntroSlideLink(u8 taskId)
         break;
     case 3:
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x3FC;
+            gBattle_WIN0V -= 0x3FC * GetBattleIntroSpeed();
         if (gTasks[taskId].data[2])
-            gTasks[taskId].data[2] -= 2;
+            gTasks[taskId].data[2] -= 2 * GetBattleIntroSpeed();
         // Scanline settings have already been set in CB2_InitBattleInternal()
         for (i = 0; i < 80; ++i)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = gTasks[taskId].data[2];

@@ -62,6 +62,7 @@ static void UpdateBlendRegisters(void);
 static bool8 IsSoftwarePaletteFadeFinishing(void);
 static void Task_BlendPalettesGradually(u8 taskId);
 extern bool8 IsBattleBackgroundFadeActive(void);
+extern bool8 IsBattleIntroSlideTaskActive(void);
 
 bool8 IsDoubleSpeedBlockedContext(void)
 {
@@ -70,6 +71,8 @@ bool8 IsDoubleSpeedBlockedContext(void)
     if (IsTitleScreenActive())
         return TRUE;
     if (IsEndCreditsActive())
+        return TRUE;
+    if (IsBattleIntroSlideTaskActive())
         return TRUE;
     if (IsHallOfFameScreenActive())
         return TRUE;

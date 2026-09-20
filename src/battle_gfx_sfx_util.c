@@ -13,7 +13,9 @@
 #include "battle_main.h"
 #include "battle_anim.h"
 #include "battle_interface.h"
+#include "event_data.h"
 #include "constants/battle_anim.h"
+#include "constants/flags.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
 
@@ -162,7 +164,7 @@ void SpriteCB_TrainerSlideIn(struct Sprite *sprite)
 {
     if (!(gIntroSlideFlags & 1))
     {
-        sprite->x2 += sprite->data[0] * 2;
+        sprite->x2 += sprite->data[0] * (FlagGet(FLAG_DOUBLE_SPEED) ? 4 : 2);
         if (sprite->x2 == 0)
             sprite->callback = SpriteCallbackDummy;
     }

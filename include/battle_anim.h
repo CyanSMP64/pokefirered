@@ -203,6 +203,7 @@ void RelocateBattleBgPal(u16 paletteNum, u16 *dest, s32 offset, u8 largeScreen);
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value);
 s32 GetAnimBgAttribute(u8 bgId, u8 attributeId);
 void HandleIntroSlide(u8 terrain);
+bool8 IsBattleIntroSlideTaskActive(void);
 void BattleIntroSlideEnd(u8 taskId);
 void CopyBattlerSpriteToBg(s32 bgId, u8 x, u8 y, u8 battlerPosition, u8 palno, u8 *tilesDest, u16 *tilemapDest, u16 tilesOffset);
 void SetSpriteNextToMonHead(u8 battler, struct Sprite* sprite);

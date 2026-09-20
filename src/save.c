@@ -488,7 +488,10 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
                 validSectors |= 1 << gSaveDataBufferPtr->id;
             }
         }
-       {
+        if (gSaveDataBufferPtr->saveVersionMajor == NATDEX_VERSION_MAJOR
+         && gSaveDataBufferPtr->saveVersionMinor == NATDEX_VERSION_MINOR
+         && gSaveDataBufferPtr->saveVersionPatch == NATDEX_VERSION_PATCH
+         && gSaveDataBufferPtr->saveVersionBuild == NATDEX_VERSION_BUILD) {
             versionMatch = TRUE;
         }
     }
@@ -523,7 +526,10 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
                 validSectors |= 1 << gSaveDataBufferPtr->id;
             }
         }
-        {
+        if (gSaveDataBufferPtr->saveVersionMajor == NATDEX_VERSION_MAJOR
+         && gSaveDataBufferPtr->saveVersionMinor == NATDEX_VERSION_MINOR
+         && gSaveDataBufferPtr->saveVersionPatch == NATDEX_VERSION_PATCH
+         && gSaveDataBufferPtr->saveVersionBuild == NATDEX_VERSION_BUILD){
             versionMatch = TRUE;
         }
     }
