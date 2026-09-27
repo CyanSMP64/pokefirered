@@ -163,6 +163,7 @@ void AgbMain()
     for (;;)
     {
         ReadKeys();
+        gBattleResultsMoveJustUpdated = FALSE;
 
         if (gSoftResetDisabled == FALSE
          && (gMain.heldKeysRaw & A_BUTTON)

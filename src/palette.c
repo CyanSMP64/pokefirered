@@ -10,6 +10,7 @@
 #include "event_data.h"
 #include "main.h"
 #include "save.h"
+#include "battle.h"
 #include "constants/flags.h"
 
 enum
@@ -75,6 +76,9 @@ bool8 IsDoubleSpeedBlockedContext(void)
     if (IsBattleIntroSlideTaskActive())
         return TRUE;
     if (IsHallOfFameScreenActive())
+        return TRUE;
+    // potential tracker failsafe
+    if (gBattleResultsMoveJustUpdated)
         return TRUE;
     if (gSaveFileStatus == SAVE_STATUS_INVALID
      || gSaveFileStatus == SAVE_STATUS_VERSION_MISMATCH

@@ -30,6 +30,7 @@
 #include "pokemon_jump.h"
 #include "event_scripts.h"
 #include "constants/items.h"
+#include "save.h"
 
 // this file's functions
 static void ResetMiniGamesResults(void);
@@ -112,6 +113,7 @@ void NewGameInitData(void)
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
 
     StringCopy(rivalName, gSaveBlock1Ptr->rivalName);
+    gSaveFileStatus = SAVE_STATUS_EMPTY;
     gDifferentSaveFile = TRUE;
     gSaveBlock2Ptr->encryptionKey = 0;
     ZeroPlayerPartyMons();

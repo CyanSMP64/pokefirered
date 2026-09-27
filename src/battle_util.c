@@ -13,6 +13,7 @@
 #include "battle_anim.h"
 #include "battle_scripts.h"
 #include "battle_message.h"
+#include "battle_main.h"
 #include "constants/battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_ai_script_commands.h"
@@ -3128,8 +3129,7 @@ void ClearFuryCutterDestinyBondGrudge(u8 battlerId)
 
 void HandleAction_RunBattleScript(void) // identical to RunBattleScriptCommands
 {
-    if (gBattleControllerExecFlags == 0)
-        gBattleScriptingCommandsTable[*gBattlescriptCurrInstr]();
+    RunBattleScriptCommands();
 }
 
 u8 GetMoveTarget(u16 move, u8 setTarget)

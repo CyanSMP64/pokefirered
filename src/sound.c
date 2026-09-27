@@ -5,6 +5,7 @@
 #include "quest_log.h"
 #include "m4a.h"
 #include "event_data.h"
+#include "palette.h"
 #include "constants/flags.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
@@ -201,7 +202,7 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
     {
         m4aMPlayStop(&gMPlayInfo_BGM);
         songNum = sFanfares[fanfareNum].songNum;
-        sFanfareCounter = sFanfares[fanfareNum].duration * (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 2 : 1);
+        sFanfareCounter = sFanfares[fanfareNum].duration * ((FlagGet(FLAG_DOUBLE_SPEED) == TRUE && !IsDoubleSpeedBlockedContext()) ? 2 : 1);
         m4aSongNumStart(songNum);
     }
 }

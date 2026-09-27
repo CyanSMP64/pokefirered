@@ -42,6 +42,7 @@
 #include "constants/hold_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/battle_script_commands.h"
 #include "constants/pokemon.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -79,6 +80,7 @@ static void CB2_EndLinkBattle(void);
 static void EndLinkBattleInSteps(void);
 static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite);
 static void SpriteCB_WildMonShowHealthbox(struct Sprite *sprite);
+static void SpriteCB_WildMonAnimate(struct Sprite *sprite);
 static void SpriteCB_Flicker(struct Sprite *sprite);
 static void SpriteCB_AnimFaintOpponent(struct Sprite *sprite);
 static void SpriteCB_BlinkVisible(struct Sprite *sprite);
@@ -106,6 +108,7 @@ static void HandleEndTurn_FinishBattle(void);
 static void FreeResetData_ReturnToOvOrDoEvolutions(void);
 static void TryEvolvePokemon(void);
 static void WaitForEvoSceneToFinish(void);
+static bool8 ShouldBypassDoubleSpeedBattleScriptDelay(u8 cmdId);
 
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
@@ -190,6 +193,7 @@ EWRAM_DATA struct SideTimer gSideTimers[2] = {0};
 EWRAM_DATA u32 gStatuses3[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct DisableStruct gDisableStructs[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gPauseCounterBattle = 0;
+EWRAM_DATA bool8 gBattleScriptCommandDelay = FALSE;
 EWRAM_DATA u16 gPaydayMoney = 0;
 EWRAM_DATA u16 gRandomTurnNumber = 0;
 EWRAM_DATA u8 gBattleCommunication[BATTLE_COMMUNICATION_ENTRIES_COUNT] = {0};
@@ -223,6 +227,7 @@ EWRAM_DATA u8 gBattleMonForms[MAX_BATTLERS_COUNT] = {0};
 void (*gPreBattleCallback1)(void);
 void (*gBattleMainFunc)(void);
 struct BattleResults gBattleResults;
+EWRAM_DATA bool8 gBattleResultsMoveJustUpdated = FALSE;
 u8 gLeveledUpInBattle;
 void (*gBattlerControllerFuncs[MAX_BATTLERS_COUNT])(void);
 u8 gHealthboxSpriteIds[MAX_BATTLERS_COUNT];
@@ -2393,6 +2398,7 @@ static void BattleStartClearSetData(void)
         gBattleCommunication[i] = 0;
 
     gPauseCounterBattle = 0;
+    gBattleScriptCommandDelay = FALSE;
     gBattleMoveDamage = 0;
     gIntroSlideFlags = 0;
     gBattleScripting.animTurn = 0;
@@ -4092,8 +4098,23 @@ void RunBattleScriptCommands_PopCallbacksStack(void)
 
 void RunBattleScriptCommands(void)
 {
-    if (gBattleControllerExecFlags == 0)
-        gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
+    u8 cmdId;
+
+    if (gBattleControllerExecFlags != 0)
+        return;
+
+    cmdId = gBattlescriptCurrInstr[0];
+
+    if (FlagGet(FLAG_DOUBLE_SPEED)
+     && gBattleScriptCommandDelay
+     && cmdId != 0xf3) // Cmd_trygivecaughtmonnick
+    {
+        gBattleScriptCommandDelay = FALSE;
+        return;
+    }
+
+    gBattleScriptingCommandsTable[cmdId]();
+    gBattleScriptCommandDelay = (FlagGet(FLAG_DOUBLE_SPEED) && cmdId != 0xf3); // Cmd_trygivecaughtmonnick
 }
 
 static void HandleAction_UseMove(void)
@@ -4154,10 +4175,15 @@ static void HandleAction_UseMove(void)
     {
         gCurrentMove = gChosenMove = gBattleMons[gBattlerAttacker].moves[gCurrMovePos];
     }
-    if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
-        gBattleResults.lastUsedMovePlayer = gCurrentMove;
-    else
-        gBattleResults.lastUsedMoveOpponent = gCurrentMove;
+    if (gBattleMons[gBattlerAttacker].hp != 0)
+    {
+        if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
+            gBattleResults.lastUsedMovePlayer = gCurrentMove;
+        else
+            gBattleResults.lastUsedMoveOpponent = gCurrentMove;
+    }
+    gBattleResultsMoveJustUpdated = TRUE;
+
     // choose target
     side = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
     if (gSideTimers[side].followmeTimer != 0
