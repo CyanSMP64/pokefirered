@@ -306,6 +306,11 @@ static const struct MenuAction sMultichoiceList_Eeveelutions[] = {
     { gText_Flareon },
     { gText_Jolteon },
     { gText_Vaporeon },
+    { gText_Espeon },
+    { gText_Umbreon },
+    { gText_Leafeon },
+    { gText_Glaceon },
+    { gText_Sylveon },
     { gText_QuitLooking }
 };
 

@@ -235,13 +235,18 @@ Route25_SeaCottage_EventScript_OpenBillsMonList::
 Route25_SeaCottage_EventScript_BillsMonList::
 	message Route25_SeaCottage_Text_SeeWhichMon
 	waitmessage
-	multichoice 0, 0, MULTICHOICE_EEVEELUTIONS, FALSE
+	multichoicegrid 0, 0, MULTICHOICE_EEVEELUTIONS, 2, FALSE
 	switch VAR_RESULT
 	case 0, Route25_SeaCottage_EventScript_ViewEevee
 	case 1, Route25_SeaCottage_EventScript_ViewFlareon
 	case 2, Route25_SeaCottage_EventScript_ViewJolteon
 	case 3, Route25_SeaCottage_EventScript_ViewVaporeon
-	case 4, Route25_SeaCottage_EventScript_ExitBillsMonList
+	case 4, Route25_SeaCottage_EventScript_ViewEspeon
+	case 5, Route25_SeaCottage_EventScript_ViewUmbreon
+	case 6, Route25_SeaCottage_EventScript_ViewLeafeon
+	case 7, Route25_SeaCottage_EventScript_ViewGlaceon
+	case 8, Route25_SeaCottage_EventScript_ViewSylveon
+	case 9, Route25_SeaCottage_EventScript_ExitBillsMonList
 	case 127, Route25_SeaCottage_EventScript_ExitBillsMonList
 	end
 
@@ -277,6 +282,51 @@ Route25_SeaCottage_EventScript_ViewVaporeon::
 	waitbuttonpress
 	hidemonpic
 	setvar VAR_0x8004, SPECIES_VAPOREON
+	special SetSeenMon
+	goto Route25_SeaCottage_EventScript_BillsMonList
+	end
+
+Route25_SeaCottage_EventScript_ViewEspeon::
+	showmonpic SPECIES_ESPEON, 10, 3
+	waitbuttonpress
+	hidemonpic
+	setvar VAR_0x8004, SPECIES_ESPEON
+	special SetSeenMon
+	goto Route25_SeaCottage_EventScript_BillsMonList
+	end
+
+Route25_SeaCottage_EventScript_ViewUmbreon::
+	showmonpic SPECIES_UMBREON, 10, 3
+	waitbuttonpress
+	hidemonpic
+	setvar VAR_0x8004, SPECIES_UMBREON
+	special SetSeenMon
+	goto Route25_SeaCottage_EventScript_BillsMonList
+	end
+
+Route25_SeaCottage_EventScript_ViewLeafeon::
+	showmonpic SPECIES_LEAFEON, 10, 3
+	waitbuttonpress
+	hidemonpic
+	setvar VAR_0x8004, SPECIES_LEAFEON
+	special SetSeenMon
+	goto Route25_SeaCottage_EventScript_BillsMonList
+	end
+
+Route25_SeaCottage_EventScript_ViewGlaceon::
+	showmonpic SPECIES_GLACEON, 10, 3
+	waitbuttonpress
+	hidemonpic
+	setvar VAR_0x8004, SPECIES_GLACEON
+	special SetSeenMon
+	goto Route25_SeaCottage_EventScript_BillsMonList
+	end
+
+Route25_SeaCottage_EventScript_ViewSylveon::
+	showmonpic SPECIES_SYLVEON, 10, 3
+	waitbuttonpress
+	hidemonpic
+	setvar VAR_0x8004, SPECIES_SYLVEON
 	special SetSeenMon
 	goto Route25_SeaCottage_EventScript_BillsMonList
 	end
