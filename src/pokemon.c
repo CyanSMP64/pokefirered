@@ -8736,8 +8736,8 @@ static const u16 sAllBattleBGM[] =
 
 static const u16 sFinalBattleBGM[] =
 {
-    MUS_VS_CHAMPION,
     MUS_RG_VS_CHAMPION,
+    MUS_VS_CHAMPION,
     MUS_DP_VS_CHAMPION,
     MUS_HG_VS_CHAMPION,
     MUS_BW_VS_CHAMPION,
@@ -8755,12 +8755,12 @@ static const u16 sFinalBattleBGM[] =
 
 static const u16 sBossBattleBGM[] =
 {
+    MUS_RG_VS_GYM_LEADER,
     MUS_VS_GYM_LEADER,
     MUS_VS_REGI,
     MUS_VS_KYOGRE_GROUDON,
     MUS_VS_ELITE_FOUR,
     MUS_VS_AQUA_MAGMA_LEADER,
-    MUS_RG_VS_GYM_LEADER,
     MUS_RG_VS_DEOXYS,
     MUS_VS_FRONTIER_BRAIN,
     MUS_DP_VS_GYM_LEADER,
@@ -8801,10 +8801,10 @@ static const u16 sBossBattleBGM[] =
 
 static const u16 sTrainerBattleBGM[] =
 {
+    MUS_RG_VS_TRAINER,
     MUS_VS_AQUA_MAGMA,
     MUS_VS_TRAINER,
     MUS_VS_RIVAL,
-    MUS_RG_VS_TRAINER,
     MUS_DP_VS_TRAINER,
     MUS_DP_VS_GALACTIC,
     MUS_DP_VS_RIVAL,
