@@ -383,7 +383,6 @@ struct BattleResults
 };
 
 extern struct BattleResults gBattleResults;
-extern bool8 gBattleResultsMoveJustUpdated;
 
 struct LinkBattlerHeader
 {

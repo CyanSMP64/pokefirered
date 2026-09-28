@@ -77,9 +77,6 @@ bool8 IsDoubleSpeedBlockedContext(void)
         return TRUE;
     if (IsHallOfFameScreenActive())
         return TRUE;
-    // potential tracker failsafe
-    if (gBattleResultsMoveJustUpdated)
-        return TRUE;
     if (gSaveFileStatus == SAVE_STATUS_INVALID
      || gSaveFileStatus == SAVE_STATUS_VERSION_MISMATCH
      || gSaveFileStatus == SAVE_STATUS_ERROR
