@@ -34,13 +34,13 @@
 #define NATDEX_VERSION_MINOR 2
 #define NATDEX_VERSION_PATCH 1
 // revision number: git describe --tags
-#define NATDEX_VERSION_BUILD 29
+#define NATDEX_VERSION_BUILD 30
 
 // capacities of various saveblock objects
 #define DAYCARE_MON_COUNT   2
 #define PC_ITEMS_COUNT      30
 #define BAG_ITEMS_COUNT     120
-#define BAG_KEYITEMS_COUNT  30
+#define BAG_KEYITEMS_COUNT  32
 #define BAG_POKEBALLS_COUNT 13
 #define BAG_TMHM_COUNT      58
 #define BAG_BERRIES_COUNT   43
