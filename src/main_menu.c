@@ -67,6 +67,9 @@ static void LoadUserFrameToBg(u8 bgId);
 static void SetStdFrame0OnBg(u8 bgId);
 static void MainMenu_DrawWindow(const struct WindowTemplate * template);
 static void MainMenu_EraseWindow(const struct WindowTemplate * template);
+static u16 MainMenu_CalculateChecksum(const void *data, u16 size);
+static bool8 MainMenu_IsVersionHigher(const struct SaveSector *candidate, const struct SaveSector *currentBest);
+static bool8 MainMenu_LoadHighestVersionSector(void);
 
 static const u8 sString_Dummy[] = _("");
 static const u8 sString_Newline[] = _("\n");
@@ -213,6 +216,64 @@ static bool32 MainMenuGpuInit(u8 a0)
     return FALSE;
 }
 
+static u16 MainMenu_CalculateChecksum(const void *data, u16 size)
+{
+    u16 i;
+    u32 checksum = 0;
+    const u8 *bytes = data;
+
+    for (i = 0; i < (size / 4); i++)
+    {
+        checksum += *((const u32 *)bytes);
+        bytes += sizeof(u32);
+    }
+
+    return ((checksum >> 16) + checksum);
+}
+
+static bool8 MainMenu_IsVersionHigher(const struct SaveSector *candidate, const struct SaveSector *currentBest)
+{
+    if (candidate->saveVersionMajor != currentBest->saveVersionMajor)
+        return candidate->saveVersionMajor > currentBest->saveVersionMajor;
+    if (candidate->saveVersionMinor != currentBest->saveVersionMinor)
+        return candidate->saveVersionMinor > currentBest->saveVersionMinor;
+    if (candidate->saveVersionPatch != currentBest->saveVersionPatch)
+        return candidate->saveVersionPatch > currentBest->saveVersionPatch;
+    return candidate->saveVersionBuild > currentBest->saveVersionBuild;
+}
+
+static bool8 MainMenu_LoadHighestVersionSector(void)
+{
+    u16 i;
+    u16 checksum;
+    bool8 found = FALSE;
+    struct SaveSector bestSector;
+
+    for (i = 0; i < NUM_SECTORS_PER_SLOT * NUM_SAVE_SLOTS; i++)
+    {
+        ReadFlash(i, 0, (u8 *)gSaveDataBufferPtr, SECTOR_SIZE);
+        if (gSaveDataBufferPtr->signature != SECTOR_SIGNATURE)
+            continue;
+        if (gSaveDataBufferPtr->id >= NUM_SECTORS_PER_SLOT)
+            continue;
+
+        checksum = MainMenu_CalculateChecksum(gSaveDataBufferPtr->data, gRamSaveSectorLocations[gSaveDataBufferPtr->id].size);
+        if (gSaveDataBufferPtr->checksum != checksum)
+            continue;
+
+        if (!found || MainMenu_IsVersionHigher(gSaveDataBufferPtr, &bestSector))
+        {
+            bestSector = *gSaveDataBufferPtr;
+            found = TRUE;
+        }
+    }
+
+    if (found)
+        *gSaveDataBufferPtr = bestSector;
+
+    return found;
+}
+
 /*
  * The entire screen is darkened slightly except at WIN0 to indicate
  * the player cursor position.
@@ -253,10 +314,11 @@ static void Task_SetWin0BldRegsAndCheckSaveFile(u8 taskId)
             gTasks[taskId].tMenuType = MAIN_MENU_NEWGAME;
             {
                 u8 *ptr = gStringVar1;
-                // Read the first sector to get version info
                 if (gSaveDataBufferPtr == NULL)
                     gSaveDataBufferPtr = &gSaveDataBuffer;
-                ReadFlash(0, 0, (u8 *)gSaveDataBufferPtr, SECTOR_SIZE);
+                // use the highest version found in either save slot
+                if (!MainMenu_LoadHighestVersionSector())
+                    ReadFlash(0, 0, (u8 *)gSaveDataBufferPtr, SECTOR_SIZE);
                 *ptr++ = CHAR_v;
                 ptr = ConvertIntToDecimalStringN(ptr, gSaveDataBufferPtr->saveVersionMajor, STR_CONV_MODE_LEFT_ALIGN, 1);
                 *ptr++ = CHAR_PERIOD;

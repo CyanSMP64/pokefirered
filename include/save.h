@@ -91,6 +91,7 @@ extern struct SaveSector *gSaveDataBufferPtr; // the pointer is in fast IWRAM bu
 extern u16 gSaveFileStatus;
 extern void (*gGameContinueCallback)(void);
 extern u16 gSaveAttemptStatus;
+extern struct SaveSectorLocation gRamSaveSectorLocations[];
 
 extern struct SaveSector gSaveDataBuffer;
 
