@@ -139,9 +139,9 @@ const struct StaticPokemon gStaticPokemon[][5] = {
 };
 
 const struct StaticPokemon gRoamingPokemon[][9] = {
-    {{"gEmptyDataRoamers_Start", 0x24, "CreateInitialRoamerMon", 0x33, " // Raikou"}, {"sRoamerPairs", 0x8, "CreateInitialRoamerMon", 0x47, NULL}},
-    {{"gEmptyDataRoamers_Start", 0x1C, "CreateInitialRoamerMon", 0x33, " // Entei"}, {"sRoamerPairs", 0x0, "CreateInitialRoamerMon", 0x47, NULL}},
-    {{"gEmptyDataRoamers_Start", 0x20, "CreateInitialRoamerMon", 0x33, " // Suicune"}, {"sRoamerPairs", 0x4, "CreateInitialRoamerMon", 0x47, NULL}},
+    {{"gRoamerSpecies", 0x0, "gRoamerLevels", 0x0, " // Raikou"}, {"sRoamerPairs", 0x8, "gRoamerLevels", 0x0, NULL}},
+    {{"gRoamerSpecies", 0x2, "gRoamerLevels", 0x1, " // Entei"}, {"sRoamerPairs", 0x0, "gRoamerLevels", 0x1, NULL}},
+    {{"gRoamerSpecies", 0x4, "gRoamerLevels", 0x2, " // Suicune"}, {"sRoamerPairs", 0x4, "gRoamerLevels", 0x2, NULL}},
 };
 
 const struct TMText gTMTexts[] = {
@@ -553,13 +553,13 @@ int main(int argc, char ** argv)
           ((sym_get("CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveKabuto") + 0x14) & 0x1FFFFFF));
     print("GhostMarowakTweak=hardcoded_statics/fr_marowak_11\n"); // hardcoded
     print("GhostMarowakSpeciesOffsets=[0x%X, 0x%X, 0x%X]\n",
-          ((sym_get("gEmptyDataMarowak_Start") + 0x24) & 0x1FFFFFF),
+          (sym_get("gGhostMarowakSpecies") & 0x1FFFFFF),
           ((sym_get("PokemonTower_6F_EventScript_MarowakGhost") + 0x1a) & 0x1FFFFFF),
           ((sym_get("PokemonTower_6F_EventScript_DefeatedMarowakGhost") + 0x8) & 0x1FFFFFF));
     print("GhostMarowakLevelOffsets=[0x%X, 0x%X]\n",
-          ((sym_get("gEmptyDataMarowak_Start") + 0x12) & 0x1FFFFFF),
+          (sym_get("gGhostMarowakLevel") & 0x1FFFFFF),
           ((sym_get("PokemonTower_6F_EventScript_MarowakGhost") + 0x1c) & 0x1FFFFFF));
-    print("GhostMarowakGenderOffset=0x%X\n", (sym_get("gEmptyDataMarowak_Start") + 0x4) & 0x1FFFFFF);
+    print("GhostMarowakGenderOffset=0x%X\n", sym_get("gGhostMarowakGender") & 0x1FFFFFF);
     print("GhostMarowakOffset=25\n"); // hardcoded
 
     for (int i = 0; i < len(gTMTexts); i++) {
@@ -599,6 +599,7 @@ int main(int argc, char ** argv)
 }
 
 
+// everything here is now dummied for nat dex
 /******************************************************************************
  * 
  * IMPORTANT!!

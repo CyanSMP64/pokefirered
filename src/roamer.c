@@ -79,30 +79,35 @@ void ClearRoamerData(void)
     }
 }
 
-#define GetRoamerSpecies() ({\
-    u16 a;\
-    switch (GetStarterSpecies())\
-    {\
-    default:\
-        a = SPECIES_RAIKOU;\
-        break;\
-    case SPECIES_BULBASAUR:\
-        a = SPECIES_ENTEI;\
-        break;\
-    case SPECIES_CHARMANDER:\
-        a = SPECIES_SUICUNE;\
-        break;\
-    }\
-    a;\
-})
+const u16 gRoamerSpecies[] = {
+    SPECIES_RAIKOU,
+    SPECIES_ENTEI,
+    SPECIES_SUICUNE,
+};
+const u8 gRoamerLevels[] = {50, 50, 50};
+
+static u32 GetInitialRoamerIndex(void)
+{
+    switch (GetStarterSpecies())
+    {
+    case SPECIES_BULBASAUR:
+        return 1;
+    case SPECIES_CHARMANDER:
+        return 2;
+    default:
+        return 0;
+    }
+}
 
 void CreateInitialRoamerMon(void)
 {
     struct Pokemon * mon = &gEnemyParty[0];
-    u16 species = GetRoamerSpecies();
-    CreateMon(mon, species, 50, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    u32 roamerIndex = GetInitialRoamerIndex();
+    u16 species = *(volatile const u16 *)&gRoamerSpecies[roamerIndex];
+    u8 level = *(volatile const u8 *)&gRoamerLevels[roamerIndex];
+    CreateMon(mon, species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
     ROAMER->species = species;
-    ROAMER->level = 50;
+    ROAMER->level = level;
     ROAMER->status = 0;
     ROAMER->active = TRUE;
     ROAMER->ivs = GetMonData(mon, MON_DATA_IVS);

@@ -72,11 +72,6 @@ SECTIONS {
         src/battle_gfx_sfx_util.o(.text);
         src/battle_controller_opponent.o(.text);
         src/battle_ai_switch_items.o(.text);
-    } =0
-
-    .text_4 0x0803d988:
-    ALIGN(4)
-    {
         src/pokemon.o(.text);
         src/crt0.o(.text);
         src/window_8bpp.o(.text);
@@ -113,11 +108,6 @@ SECTIONS {
         src/battle_anim.o(.text);
         src/battle_anim_mons.o(.text);
         src/title_screen.o(.text);
-    } =0
-
-    .text_5 0x0807f63c:
-    ALIGN(4)
-    {
         src/battle_setup.o(.text);
         src/field_tasks.o(.text);
         src/sound.o(.text);
@@ -272,11 +262,6 @@ SECTIONS {
         src/menu2.o(.text);
         src/oak_speech.o(.text);
         src/tm_case.o(.text);
-    } =0
-
-    .text_7 0x08141ccc:
-    ALIGN(4)
-    {
         src/roamer.o(.text);
         src/pokemon_summary_screen.o(.text);
         src/union_room_player_avatar.o(.text);
@@ -439,6 +424,7 @@ SECTIONS {
         src/fieldmap.o(.rodata);
         src/metatile_behavior.o(.rodata);
         src/field_door.o(.rodata);
+        src/tileset_anims.o(.rodata);
     } =0
 
     .rodata_pokemon 0x08250c74 : /* moved gBattleMoves to vanilla address for now */
@@ -454,7 +440,6 @@ SECTIONS {
         src/coord_event_weather.o(.rodata);
         src/field_tasks.o(.rodata);
         src/start_menu.o(.rodata);
-        src/tileset_anims.o(.rodata);
         src/palette.o(.rodata);
         src/sound.o(.rodata);
         src/battle_anim.o(.rodata);
@@ -1225,20 +1210,6 @@ SECTIONS {
         sound/songs/midi/ph_nurse_held.o(.rodata);
         sound/songs/midi/ph_nurse_solo.o(.rodata);
     }
-
-    . = 0x08A80000;
-    empty_data_2 :
-    ALIGN(4)
-    {
-        data/emptydata_marowak.o(.rodata);
-    } =0
-
-    . = 0x08A80200;
-    empty_data_4 :
-    ALIGN(4)
-    {
-        data/emptydata_roamers.o(.rodata);
-    } =0
 
     .rodata_extras :
     ALIGN(4)

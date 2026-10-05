@@ -322,6 +322,10 @@ static void CreateBattleStartTask_Debug(u8 transition, u16 song)
     PlayMapChosenOrBattleBGM(song);
 }
 
+const u16 gGhostMarowakSpecies = SPECIES_MAROWAK;
+const u8 gGhostMarowakLevel = 30;
+const u8 gGhostMarowakGender = MON_FEMALE;
+
 void StartMarowakBattle(void)
 {
     LockPlayerFieldControls();
@@ -329,7 +333,12 @@ void StartMarowakBattle(void)
     if (CheckBagHasItem(ITEM_SILPH_SCOPE, 1))
     {
         gBattleTypeFlags = BATTLE_TYPE_GHOST | BATTLE_TYPE_GHOST_UNVEILED;
-        CreateMonWithGenderNatureLetter(gEnemyParty, SPECIES_MAROWAK, 30, 31, MON_FEMALE, NATURE_SERIOUS, 0);
+        CreateMonWithGenderNatureLetter(gEnemyParty,
+                                        *(volatile const u16 *)&gGhostMarowakSpecies,
+                                        *(volatile const u8 *)&gGhostMarowakLevel,
+                                        31,
+                                        *(volatile const u8 *)&gGhostMarowakGender,
+                                        NATURE_SERIOUS, 0);
     }
     else
     {
