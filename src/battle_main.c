@@ -108,7 +108,6 @@ static void HandleEndTurn_FinishBattle(void);
 static void FreeResetData_ReturnToOvOrDoEvolutions(void);
 static void TryEvolvePokemon(void);
 static void WaitForEvoSceneToFinish(void);
-static bool8 ShouldBypassDoubleSpeedBattleScriptDelay(u8 cmdId);
 
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
@@ -197,7 +196,7 @@ EWRAM_DATA u16 gPaydayMoney = 0;
 EWRAM_DATA u16 gRandomTurnNumber = 0;
 EWRAM_DATA u8 gBattleCommunication[BATTLE_COMMUNICATION_ENTRIES_COUNT] = {0};
 EWRAM_DATA u8 gBattleOutcome = 0;
-EWRAM_DATA bool8 gBattleScriptCommandDelay = FALSE;
+//EWRAM_DATA bool8 gBattleScriptCommandDelay = FALSE;
 EWRAM_DATA struct ProtectStruct gProtectStructs[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct SpecialStatus gSpecialStatuses[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gBattleWeather = 0;
@@ -2397,7 +2396,7 @@ static void BattleStartClearSetData(void)
         gBattleCommunication[i] = 0;
 
     gPauseCounterBattle = 0;
-    gBattleScriptCommandDelay = FALSE;
+    //gBattleScriptCommandDelay = FALSE;
     gBattleMoveDamage = 0;
     gIntroSlideFlags = 0;
     gBattleScripting.animTurn = 0;
@@ -4097,23 +4096,25 @@ void RunBattleScriptCommands_PopCallbacksStack(void)
 
 void RunBattleScriptCommands(void)
 {
-    u8 cmdId;
-
-    if (gBattleControllerExecFlags != 0)
-        return;
-
-    cmdId = gBattlescriptCurrInstr[0];
-
-    if (FlagGet(FLAG_DOUBLE_SPEED)
-     && gBattleScriptCommandDelay
-     && cmdId != 0xf3) // Cmd_trygivecaughtmonnick
-    {
-        gBattleScriptCommandDelay = FALSE;
-        return;
-    }
-
-    gBattleScriptingCommandsTable[cmdId]();
-    gBattleScriptCommandDelay = (FlagGet(FLAG_DOUBLE_SPEED) && cmdId != 0xf3); // Cmd_trygivecaughtmonnick
+    if (gBattleControllerExecFlags == 0)
+        gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
+//    u8 cmdId;
+//
+//    if (gBattleControllerExecFlags != 0)
+//        return;
+//
+//    cmdId = gBattlescriptCurrInstr[0];
+//
+//    if (FlagGet(FLAG_DOUBLE_SPEED)
+//     && gBattleScriptCommandDelay
+//     && cmdId != 0xf3) // Cmd_trygivecaughtmonnick
+//    {
+//        gBattleScriptCommandDelay = FALSE;
+//        return;
+//    }
+//
+//    gBattleScriptingCommandsTable[cmdId]();
+//    gBattleScriptCommandDelay = (FlagGet(FLAG_DOUBLE_SPEED) && cmdId != 0xf3); // Cmd_trygivecaughtmonnick
 }
 
 static void HandleAction_UseMove(void)
