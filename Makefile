@@ -366,7 +366,7 @@ leafgreen_rev1_modern: ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_REVISION=1 MODERN=
 modern: ; @$(MAKE) MODERN=1
 
 $(INI): $(ROM)
-	$(INIGEN) $(ELF) $@ --name "Fire Red (U) 1.1" --code $(GAME_CODE)
+	$(INIGEN) $(ELF) $@ --rom $(ROM) --name "Fire Red (U) 1.1" --code $(GAME_CODE)
 
 ###################
 ### Symbol file ###
