@@ -60,7 +60,16 @@ CeladonCity_Condominiums_RoofRoom_Text_CyanMusicOff::
 CeladonCity_Condominiums_RoofRoom_Text_CyanNatDex1::
     .string "nat dex 2morrow.\p"
     .string "just kidding, i don't have an eta.\n"
-    .string "sorry to disappoint$"
+    .string "sorry to disappoint\p"
+    .string "but if you really want a progress\n"
+    .string "update, get this\p"
+    .string "if this version goes a month or so\n"
+    .string "without any game breaking bugs\l"
+    .string "reported AGAIN…\p"
+    .string "then i will finally start working on\n"
+    .string "it\p"
+    .string "it has always been my dream goal,\n"
+    .string "after all$"
 
 CeladonCity_Condominiums_RoofRoom_Text_CyanNatDex2::
     .string "nat dex 2morrow :)$"
@@ -108,12 +117,14 @@ CeladonCity_Condominiums_RoofRoom_Text_CyanJapanese1::
     .string "okay, um…\p"
     .string "…\p"
     .string "{JPN}こんにちは！\p"
-    .string "えっと…\n"
-    .string "ボクは　サイアンです。\p"
+    .string "ボクは　サイアンです。\n"
     .string "この　ロムハックを　つくりました。\p"
-    .string "…\p"
-    .string "ボクの　にほんごは…\n"
-    .string "じょうず　だったの？$"
+    .string "にほんごは　すこし　わかりますが\n"
+    .string "まだまだです…\p"
+    .string "れんしゅうを　つづけて\n"
+    .string "いつか　ペラペラに　なります¥！\p"
+    .string "ふふふ…\n"
+    .string "がんばるね。$"
 
 CeladonCity_Condominiums_RoofRoom_Text_CyanJapanese2::
     .string "{JPN}こんにちは！$"
