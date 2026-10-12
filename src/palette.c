@@ -67,15 +67,11 @@ extern bool8 IsBattleIntroSlideTaskActive(void);
 
 bool8 IsDoubleSpeedBlockedContext(void)
 {
-    if (IsOpeningMovieOrIntroActive())
-        return TRUE;
-    if (IsTitleScreenActive())
-        return TRUE;
-    if (IsEndCreditsActive())
-        return TRUE;
-    if (IsBattleIntroSlideTaskActive())
-        return TRUE;
-    if (IsHallOfFameScreenActive())
+    if (IsOpeningMovieOrIntroActive()
+     || IsTitleScreenActive()
+     || IsEndCreditsActive()
+     || IsBattleIntroSlideTaskActive()
+     || IsHallOfFameScreenActive())
         return TRUE;
     if (gSaveFileStatus == SAVE_STATUS_INVALID
      || gSaveFileStatus == SAVE_STATUS_VERSION_MISMATCH
