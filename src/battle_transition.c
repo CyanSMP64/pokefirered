@@ -1450,7 +1450,7 @@ static bool8 Ripple_Main(struct Task *task)
         s16 sinIndex = sinVal >> 8;
         gScanlineEffectRegBuffers[0][i] = sTransitionData->cameraY + Sin(sinIndex & 0xFFFF, amplitude);
     }
-    if (++task->tTimer == FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 21 : 41)
+    if (++task->tTimer == (FlagGet(FLAG_DOUBLE_SPEED) == TRUE ? 21 : 41))
     {
         task->tFadeStarted++;
         BeginNormalPaletteFade(PALETTES_ALL, -8, 0, 16, RGB_BLACK);
