@@ -4182,6 +4182,8 @@ static void SetUsedFieldMoveQuestLogEvent(struct Pokemon *mon, u8 fieldMove)
 
 void SetUsedFlyQuestLogEvent(const u8 *healLocCtrlData)
 {
+    u8 slot = GetCursorSelectionMonId();
+
     const struct MapHeader *mapHeader;
     struct QuestLogEvent_FieldMove *data;
     struct
@@ -4197,7 +4199,9 @@ void SetUsedFlyQuestLogEvent(const u8 *healLocCtrlData)
     Free(map);
 
     data = Alloc(sizeof(*data));
-    data->species = GetMonData(&gPlayerParty[GetCursorSelectionMonId()], MON_DATA_SPECIES_OR_EGG);
+    data->species = (slot < PARTY_SIZE)
+            ? GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES_OR_EGG)
+            : GetMonData(&gPlayerParty[0], MON_DATA_SPECIES_OR_EGG);
     data->fieldMove = FIELD_MOVE_FLY;
     data->mapSec = mapHeader->regionMapSectionId;
     SetQuestLogEvent(QL_EVENT_USED_FIELD_MOVE, (const u16 *)data);
