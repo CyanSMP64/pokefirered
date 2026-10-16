@@ -39,6 +39,10 @@ VermilionCity_Gym_Text_LtSurgeDefeat::
     .string "You're the real deal, kid!\p"
     .string "Fine, then, take the Thunder Badge!$"
 
+VermilionCity_Gym_Text_ReceiveThunderBadge::
+    .string "{FONT_NORMAL}{PLAYER} received the Thunder Badge\n"
+    .string "from Lt. Surge!$"
+
 VermilionCity_Gym_Text_TuckerIntro::
     .string "When I was in the Army, Lt. Surge\n"
     .string "was my strict CO.\p"

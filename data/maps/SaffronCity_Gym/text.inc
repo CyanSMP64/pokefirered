@@ -15,6 +15,10 @@ SaffronCity_Gym_Text_SabrinaDefeat::
     .string "Your victory has earned you the\n"
     .string "Marsh Badge.$"
 
+SaffronCity_Gym_Text_ReceiveMarshBadge::
+    .string "{FONT_NORMAL}{PLAYER} received the Marsh Badge\n"
+    .string "from Sabrina!$"
+
 SaffronCity_Gym_Text_SabrinaPostBattle::
     .string "Psychic power isn't something that\n"
     .string "only a few people have.\p"

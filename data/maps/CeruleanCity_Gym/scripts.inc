@@ -19,6 +19,9 @@ CeruleanCity_Gym_EventScript_MistyDefeated::
 	end
 
 CeruleanCity_Gym_EventScript_GiveTM03::
+	message CeruleanCity_Gym_Text_ReceiveCascadeBadge
+	waitmessage
+	call EventScript_GymBadgeFanfare
 	msgbox CeruleanCity_Gym_Text_ExplainCascadeBadge
 	checkitemspace ITEM_TM03
 	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_Gym_EventScript_NoRoomForTM03

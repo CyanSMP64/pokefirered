@@ -13,8 +13,11 @@ ViridianCity_Gym_Text_GiovanniDefeat::
     .string "Ha!\n"
     .string "That was a truly intense fight.\l"
     .string "You have won!\p"
-    .string "As proof, here is the Earth Badge!\n"
-    .string "{PAUSE_MUSIC}{PLAY_BGM}{MUS_OBTAIN_BADGE}{PAUSE 0xFE}{PAUSE 0x56}{RESUME_MUSIC}$"
+    .string "As proof, here is the Earth Badge!$"
+
+ViridianCity_Gym_Text_ReceiveEarthBadge::
+    .string "{FONT_NORMAL}{PLAYER} received the Earth Badge\n"
+    .string "from Giovanni!$"
 
 ViridianCity_Gym_Text_GiovanniPostBattle::
     .string "Having lost in this fashion, \n"

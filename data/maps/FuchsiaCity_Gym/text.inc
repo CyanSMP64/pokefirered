@@ -17,6 +17,10 @@ FuchsiaCity_Gym_Text_KogaDefeat::
     .string "Here!\n"
     .string "Take the Soul Badge!$"
 
+FuchsiaCity_Gym_Text_ReceiveSoulBadge::
+    .string "{FONT_NORMAL}{PLAYER} received the Soul Badge\n"
+    .string "from Koga!$"
+
 FuchsiaCity_Gym_Text_KogaPostBattle::
     .string "When afflicted by Toxic, a Pokémon\n"
     .string "suffers more and more.\p"

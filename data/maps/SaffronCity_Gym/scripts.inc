@@ -20,6 +20,9 @@ SaffronCity_Gym_EventScript_DefeatedSabrina::
 	end
 
 SaffronCity_Gym_EventScript_GiveTM04::
+	message SaffronCity_Gym_Text_ReceiveMarshBadge
+	waitmessage
+	call EventScript_GymBadgeFanfare
 	msgbox SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis
 	checkitemspace ITEM_TM04
 	goto_if_eq VAR_RESULT, FALSE, SaffronCity_Gym_EventScript_NoRoomForTM04

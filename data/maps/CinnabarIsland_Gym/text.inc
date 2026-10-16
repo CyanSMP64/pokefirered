@@ -13,6 +13,10 @@ CinnabarIsland_Gym_Text_BlaineDefeat::
     .string "Not even ashes remain!\p"
     .string "You have earned the Volcano Badge.$"
 
+CinnabarIsland_Gym_Text_ReceiveVolcanoBadge::
+    .string "{FONT_NORMAL}{PLAYER} received the Volcano Badge\n"
+    .string "from Blaine!$"
+
 CinnabarIsland_Gym_Text_FireBlastIsUltimateFireMove::
     .string "Fire Blast is the ultimate fire\n"
     .string "technique.\p"

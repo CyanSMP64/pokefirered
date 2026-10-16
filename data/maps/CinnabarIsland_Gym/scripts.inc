@@ -72,6 +72,9 @@ CinnabarIsland_Gym_EventScript_DefeatedBlaine::
 	end
 
 CinnabarIsland_Gym_EventScript_GiveTM38::
+	message CinnabarIsland_Gym_Text_ReceiveVolcanoBadge
+	waitmessage
+	call EventScript_GymBadgeFanfare
 	msgbox CinnabarIsland_Gym_Text_ExplainVolcanoBadge
 	checkitemspace ITEM_TM38
 	goto_if_eq VAR_RESULT, FALSE, CinnabarIsland_Gym_EventScript_NoRoomForTM38

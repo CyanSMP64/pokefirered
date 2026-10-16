@@ -20,6 +20,9 @@ CeladonCity_Gym_EventScript_DefeatedErika::
 	end
 
 CeladonCity_Gym_EventScript_GiveTM19::
+	message CeladonCity_Gym_Text_ReceiveRainbowBadge
+	waitmessage
+	call EventScript_GymBadgeFanfare
 	msgbox CeladonCity_Gym_Text_ExplainRainbowBadgeTakeThis
 	checkitemspace ITEM_TM19
 	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Gym_EventScript_NoRoomForTM19

@@ -226,6 +226,9 @@ VermilionCity_Gym_EventScript_ShowOaksAide::
 	return
 
 VermilionCity_Gym_EventScript_GiveTM34::
+	message VermilionCity_Gym_Text_ReceiveThunderBadge
+	waitmessage
+	call EventScript_GymBadgeFanfare
 	msgbox VermilionCity_Gym_Text_ExplainThunderBadgeTakeThis
 	checkitemspace ITEM_TM34
 	goto_if_eq VAR_RESULT, FALSE, VermilionCity_Gym_EventScript_NoRoomForTM34

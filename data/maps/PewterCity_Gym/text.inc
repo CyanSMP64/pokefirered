@@ -18,8 +18,7 @@ PewterCity_Gym_Text_BrockDefeat::
     .string "I took you for granted, and so\n"
     .string "I lost.\p"
     .string "As proof of your victory, I confer\n"
-    .string "on you this…the official IronMON\l"
-    .string "DLC.$"
+    .string "on you this…the official IronMON DLC.$"
 
 PewterCity_Gym_Text_ReceiveBoulderBadge::
     .string "{FONT_NORMAL}{PLAYER} received the IronMON DLC\n"

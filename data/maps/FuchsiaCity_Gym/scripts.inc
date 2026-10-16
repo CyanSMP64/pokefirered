@@ -19,6 +19,9 @@ FuchsiaCity_Gym_EventScript_DefeatedKoga::
 	end
 
 FuchsiaCity_Gym_EventScript_GiveTM06::
+	message FuchsiaCity_Gym_Text_ReceiveSoulBadge
+	waitmessage
+	call EventScript_GymBadgeFanfare
 	msgbox FuchsiaCity_Gym_Text_KogaExplainSoulBadge
 	checkitemspace ITEM_TM06
 	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_Gym_EventScript_NoRoomForTM06

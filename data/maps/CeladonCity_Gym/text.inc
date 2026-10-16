@@ -21,6 +21,10 @@ CeladonCity_Gym_Text_ErikaDefeat::
     .string "I must confer on you the\n"
     .string "Rainbow Badge.$"
 
+CeladonCity_Gym_Text_ReceiveRainbowBadge::
+    .string "{FONT_NORMAL}{PLAYER} received the Rainbow Badge\n"
+    .string "from Erika!$"
+
 CeladonCity_Gym_Text_ErikaPostBattle::
     .string "You are cataloging Pokémon?\n"
     .string "I must say I'm impressed.\p"
