@@ -25,7 +25,10 @@ Route23_EventScript_AlreadyRecognizedBoulderBadge::
 	end
 
 Route23_EventScript_AlreadyRecognizedBadge::
-	msgbox Text_OnlyPassWithBadgeOhGoAhead
+	message Text_OnlyPassWithBadgeOhGoAhead
+	waitmessage
+	call EventScript_ReceivedItemFanfare3
+	msgbox Text_OnlyPassWithBadgeOhGoAhead2
 	release
 	end
 
@@ -107,7 +110,10 @@ Route23_EventScript_RecognizeBoulderBadge::
 	end
 
 Route23_EventScript_RecognizeBadge::
-	msgbox Text_OnlyPassWithBadgeOhGoAhead
+	message Text_OnlyPassWithBadgeOhGoAhead
+	waitmessage
+	call EventScript_ReceivedItemFanfare3
+	msgbox Text_OnlyPassWithBadgeOhGoAhead2
 	copyvar VAR_MAP_SCENE_ROUTE23, VAR_TEMP_1
 	release
 	end
@@ -202,7 +208,10 @@ Route23_EventScript_RecognizeBoulderBadgeTrigger::
 	end
 
 Route23_EventScript_RecognizeBadgeTrigger::
-	msgbox Text_OnlyPassWithBadgeOhGoAhead
+	message Text_OnlyPassWithBadgeOhGoAhead
+	waitmessage
+	call EventScript_ReceivedItemFanfare3
+	msgbox Text_OnlyPassWithBadgeOhGoAhead2
 	copyvar VAR_MAP_SCENE_ROUTE23, VAR_TEMP_1
 	releaseall
 	end

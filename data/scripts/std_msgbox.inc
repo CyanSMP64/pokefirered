@@ -53,6 +53,11 @@ EventScript_ReceivedItemFanfare2::
 	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	return
 
+EventScript_ReceivedItemFanfare3::
+	playfanfare MUS_LEVEL_UP
+	waitfanfare
+	return
+
 EventScript_ReceivedItemWaitFanfare::
 	delay 50
 	return
