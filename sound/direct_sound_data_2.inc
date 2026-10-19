@@ -605,6 +605,22 @@ DirectSoundWaveData_dp_slapbass_g1_16::
 	.incbin "sound/direct_sound_samples/pl/slapbass_g1_16.bin"
 
 	.align 2
+DirectSoundWaveData_dp_midipi_c2_16::
+	.incbin "sound/direct_sound_samples/pl/midipi_c2_16.bin"
+
+	.align 2
+DirectSoundWaveData_dp_midipi_c3_16::
+	.incbin "sound/direct_sound_samples/pl/midipi_c3_16.bin"
+
+	.align 2
+DirectSoundWaveData_dp_midipi_c4_16::
+	.incbin "sound/direct_sound_samples/pl/midipi_c4_16.bin"
+
+	.align 2
+DirectSoundWaveData_dp_midipi_c5_16::
+	.incbin "sound/direct_sound_samples/pl/midipi_c5_16.bin"
+
+	.align 2
 DirectSoundWaveData_hg_sampletank_string_orchestra_60::
 	.incbin "sound/direct_sound_samples/wb/strings_c4_32.bin"
 

@@ -561,7 +561,15 @@
 #define MUS_BW_VS_GHETSIS               564
 #define MUS_BW_VS_FINAL_MON             565
 
-#define END_MUS MUS_BW_VS_FINAL_MON
+#define MUS_COLO_VS_FIRST              566
+#define MUS_COLO_VS_CIPHER_ADMIN       567
+#define MUS_COLO_VS_FINAL              568
+#define MUS_COLO_VS_NORMAL             569
+#define MUS_COLO_VS_CIPHER_PEON        570
+#define MUS_COLO_VS_MIROR_B            571
+#define MUS_COLO_VS_SEMIFINAL          572
+
+#define END_MUS MUS_COLO_VS_SEMIFINAL
 
 #define MUS_NONE                    0xFFFF
 

@@ -565,6 +565,13 @@ gSongTable::
 	song mus_bw_vs_n_final, 0, 64, 1024
 	song mus_bw_vs_ghetsis, 0, 64, 1024
 	song mus_bw_vs_final_mon, 0, 64, 1024
+	song mus_colo_vs_first, 0, 64, 1024
+	song mus_colo_vs_cipher_admin, 0, 64, 1024
+	song mus_colo_vs_final, 0, 64, 1024
+	song mus_colo_vs_normal, 0, 64, 1024
+	song mus_colo_vs_cipher_peon, 0, 64, 1024
+	song mus_colo_vs_miror_b, 0, 64, 1024
+	song mus_colo_vs_semifinal, 0, 64, 1024
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

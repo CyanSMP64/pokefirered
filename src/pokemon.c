@@ -8732,6 +8732,13 @@ static const u16 sAllBattleBGM[] =
     MUS_B2_VS_GHETSIS,
     MUS_B2_VS_IRIS,
     MUS_B2_VS_HUGH,
+    MUS_COLO_VS_FIRST,
+//    MUS_COLO_VS_NORMAL,
+//    MUS_COLO_VS_CIPHER_PEON,
+//    MUS_COLO_VS_SEMIFINAL,
+//    MUS_COLO_VS_CIPHER_ADMIN,
+//    MUS_COLO_VS_MIROR_B,
+//    MUS_COLO_VS_FINAL,
 };
 
 static const u16 sFinalBattleBGM[] =
@@ -8753,6 +8760,7 @@ static const u16 sFinalBattleBGM[] =
     MUS_B2_VS_CHAMPION_SINNOH,
     MUS_B2_VS_PWT_FINALS,
     MUS_B2_VS_IRIS,
+//    MUS_COLO_VS_FINAL,
 };
 
 static const u16 sBossBattleBGM[] =
@@ -8797,6 +8805,9 @@ static const u16 sBossBattleBGM[] =
     MUS_B2_VS_BLACK_WHITE_KYUREM,
     MUS_B2_VS_COLRESS,
     MUS_B2_VS_GHETSIS,
+//    MUS_COLO_VS_SEMIFINAL,
+//    MUS_COLO_VS_CIPHER_ADMIN,
+//    MUS_COLO_VS_MIROR_B,
 };
 
 static const u16 sTrainerBattleBGM[] =
@@ -8820,6 +8831,9 @@ static const u16 sTrainerBattleBGM[] =
     MUS_B2_VS_TRAINER,
     MUS_B2_VS_PLASMA,
     MUS_B2_VS_HUGH,
+    MUS_COLO_VS_FIRST,
+//    MUS_COLO_VS_NORMAL,
+//    MUS_COLO_VS_CIPHER_PEON,
 };
 
 static const u16 sWildBattleBGM[] =
