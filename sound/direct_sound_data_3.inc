@@ -896,6 +896,11 @@ DirectSoundWaveData_b2_drumloop_colress::
 DirectSoundWaveData_b2_drumloop_iris::
 	.incbin "sound/direct_sound_samples/drumloop_iris.bin"
 
+@ drum loops have their sample rate reduced by (59.7275/60)x
+	.align 2
+DirectSoundWaveData_colo_loop::
+	.incbin "sound/direct_sound_samples/cries/notcries/colo_loop.bin"
+
 	.align 2
 DirectSoundWaveData_undertale_vanish::
 	.incbin "sound/direct_sound_samples/undertale_vanish.bin"
