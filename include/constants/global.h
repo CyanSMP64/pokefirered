@@ -34,7 +34,7 @@
 #define NATDEX_VERSION_MINOR 2
 #define NATDEX_VERSION_PATCH 1
 // revision number: git describe --tags
-#define NATDEX_VERSION_BUILD 52
+#define NATDEX_VERSION_BUILD 53
 
 // capacities of various saveblock objects
 #define DAYCARE_MON_COUNT   2
