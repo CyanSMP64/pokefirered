@@ -425,11 +425,6 @@ SECTIONS {
         src/metatile_behavior.o(.rodata);
         src/field_door.o(.rodata);
         src/tileset_anims.o(.rodata);
-    } =0
-
-    .rodata_pokemon 0x08250c74 : /* moved gBattleMoves to vanilla address for now */
-    SUBALIGN(4)
-    {
         src/pokemon.o(.rodata);
         src/trig.o(.rodata);
         src/field_player_avatar.o(.rodata);
