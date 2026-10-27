@@ -662,6 +662,12 @@ static bool8 HandleMenuInput(u8 taskId)
         }
         else {
             PlaySE(SE_SELECT);
+            FlagClear(FLAG_SYS_DEBUG_MODE);
+            FlagClear(FLAG_SYS_NO_COLLISION);
+            FlagClear(FLAG_SYS_NO_ENCOUNTER);
+            FlagClear(FLAG_SYS_NO_TRAINER_SEE);
+            FlagClear(FLAG_SYS_PC_FROM_DEBUG_MENU);
+            FlagClear(FLAG_SYS_NO_BATTLE_DMG);
         }
         IsWirelessAdapterConnected(); // called for its side effects only
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
