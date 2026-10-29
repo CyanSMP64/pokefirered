@@ -51,8 +51,9 @@ CeladonCity_Condominiums_RoofRoom_EventScript_CyanWhatsUp::
 CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic::
 	special GetBGMOption
 	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusicOff
-	goto_if_eq VAR_TEMP_0, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic5
-	goto_if_ge VAR_TEMP_3, 3, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic4
+	goto_if_eq VAR_TEMP_0, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic6
+	goto_if_ge VAR_TEMP_3, 4, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic5
+	goto_if_eq VAR_TEMP_3, 3, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic4
 	goto_if_eq VAR_TEMP_3, 2, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic3
 	goto_if_eq VAR_TEMP_3, 1, CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic2
 	addvar VAR_TEMP_3, 1
@@ -73,12 +74,18 @@ CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic3::
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic4::
+	addvar VAR_TEMP_3, 1
 	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic4, MSGBOX_DEFAULT
 	release
 	end
 
 CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic5::
 	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic5, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Condominiums_RoofRoom_EventScript_CyanMusic6::
+	msgbox CeladonCity_Condominiums_RoofRoom_Text_CyanMusic6, MSGBOX_DEFAULT
 	release
 	end
 

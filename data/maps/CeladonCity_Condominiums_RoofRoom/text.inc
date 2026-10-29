@@ -40,16 +40,26 @@ CeladonCity_Condominiums_RoofRoom_Text_CyanMusic2::
     .string "oh, the music i made only plays\n"
     .string "in this room.\p"
     .string "i didn't write any of the other\n"
-    .string "music in the game…$"
+    .string "music in the game…\p"
+    .string "i did however port music from the\n"
+    .string "ds games as accurately as possible\p"
+    .string "and faithfully recreated some songs\n"
+    .string "from colosseum using what sounds i\l"
+    .string "have at my disposal\p"
+    .string "expect me to do the same with x and\n"
+    .string "y and more in the future$"
 
 CeladonCity_Condominiums_RoofRoom_Text_CyanMusic3::
     .string "i made another song, you can change\n"
     .string "it with the stereo over there…$"
 
 CeladonCity_Condominiums_RoofRoom_Text_CyanMusic4::
-    .string "i made this!$"
+    .string "music is toys to me$"
 
 CeladonCity_Condominiums_RoofRoom_Text_CyanMusic5::
+    .string "i made this!$"
+
+CeladonCity_Condominiums_RoofRoom_Text_CyanMusic6::
     .string "i didn't make this!$"
 
 CeladonCity_Condominiums_RoofRoom_Text_CyanMusicOff::
