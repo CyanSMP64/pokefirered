@@ -8738,7 +8738,7 @@ static const u16 sAllBattleBGM[] =
     MUS_COLO_VS_SEMIFINAL,
     MUS_COLO_VS_CIPHER_ADMIN,
     MUS_COLO_VS_MIROR_B,
-//    MUS_COLO_VS_FINAL,
+    MUS_COLO_VS_FINAL,
 };
 
 static const u16 sFinalBattleBGM[] =
@@ -8760,7 +8760,7 @@ static const u16 sFinalBattleBGM[] =
     MUS_B2_VS_CHAMPION_SINNOH,
     MUS_B2_VS_PWT_FINALS,
     MUS_B2_VS_IRIS,
-//    MUS_COLO_VS_FINAL,
+    MUS_COLO_VS_FINAL,
 };
 
 static const u16 sBossBattleBGM[] =
@@ -8886,17 +8886,17 @@ static u16 SelectContextualRandomWildBattleBGM(void)
 
 static u16 SelectPureRandomWildBattleBGM(void)
 {
-    return sAllBattleBGM[(VarGet(VAR_RANDOM_WILD_BGM) / ARRAY_COUNT(sWildBattleBGM)) % ARRAY_COUNT(sAllBattleBGM)];
+    return sAllBattleBGM[VarGet(VAR_RANDOM_WILD_BGM) % ARRAY_COUNT(sAllBattleBGM)];
 }
 
 static u16 GetBattleBGM(void)
 {
-    if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON)
-        return MUS_RG_VS_WILD;
-    if (gBattleTypeFlags & BATTLE_TYPE_REGI)
-        return MUS_HG_VS_WILD_KANTO;
+//    if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON)
+//        return MUS_RG_VS_WILD;
+//    if (gBattleTypeFlags & BATTLE_TYPE_REGI)
+//        return MUS_HG_VS_WILD_KANTO;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
-        return MUS_HG_VS_WILD_KANTO;
+        return MUS_VS_TRAINER;
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
@@ -8960,6 +8960,7 @@ static u16 GetBattleBGM(void)
     }
     else
     {
+        u16 songId;
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {    
         case SPECIES_ARTICUNO:
@@ -8968,56 +8969,70 @@ static u16 GetBattleBGM(void)
         case SPECIES_ARTICUNO_GALARIAN:
         case SPECIES_ZAPDOS_GALARIAN:
         case SPECIES_MOLTRES_GALARIAN:
-            return MUS_RG_VS_LEGEND;
+            songId = MUS_RG_VS_LEGEND;
+            break;
         case SPECIES_MEWTWO:
         case SPECIES_MEWTWO_MEGA_X:
         case SPECIES_MEWTWO_MEGA_Y:
-            return MUS_RG_VS_MEWTWO;
+            songId = MUS_RG_VS_MEWTWO;
+            break;
         case SPECIES_MEW:
-            return MUS_VS_MEW;
+            songId = MUS_VS_MEW;
+            break;
         case SPECIES_RAIKOU:
-            return MUS_HG_VS_RAIKOU;
+            songId = MUS_HG_VS_RAIKOU;
+            break;
         case SPECIES_ENTEI:
-            return MUS_HG_VS_ENTEI;
+            songId = MUS_HG_VS_ENTEI;
+            break;
         case SPECIES_SUICUNE:
-            return MUS_HG_VS_SUICUNE;
+            songId = MUS_HG_VS_SUICUNE;
+            break;
         case SPECIES_LUGIA:
-            return MUS_HG_VS_LUGIA;
+            songId = MUS_HG_VS_LUGIA;
+            break;
         case SPECIES_HO_OH:
-            return MUS_HG_VS_HO_OH;
+            songId = MUS_HG_VS_HO_OH;
+            break;
         case SPECIES_REGIROCK:
         case SPECIES_REGICE:
         case SPECIES_REGISTEEL:
         case SPECIES_REGIGIGAS:
         case SPECIES_REGIDRAGO:
         case SPECIES_REGIELEKI:
-            return MUS_VS_REGI;
+            songId = MUS_VS_REGI;
+            break;
         case SPECIES_LATIAS:
         case SPECIES_LATIOS:
         case SPECIES_LATIAS_MEGA:
         case SPECIES_LATIOS_MEGA:
-            return MUS_VS_WILD;
+            songId = MUS_VS_WILD;
+            break;
         case SPECIES_GROUDON:
         case SPECIES_KYOGRE:
         case SPECIES_RAYQUAZA:
         case SPECIES_GROUDON_PRIMAL:
         case SPECIES_KYOGRE_PRIMAL:
         case SPECIES_RAYQUAZA_MEGA:
-            return MUS_VS_KYOGRE_GROUDON;
+            songId = MUS_VS_KYOGRE_GROUDON;
+            break;
         case SPECIES_DEOXYS:
         case SPECIES_DEOXYS_ATTACK:
         case SPECIES_DEOXYS_DEFENSE:
         case SPECIES_DEOXYS_SPEED:
-            return MUS_RG_VS_DEOXYS;
+            songId = MUS_RG_VS_DEOXYS;
+            break;
         case SPECIES_UXIE:
         case SPECIES_MESPRIT:
         case SPECIES_AZELF:
-            return MUS_DP_VS_UXIE_MESPRIT_AZELF;
+            songId = MUS_DP_VS_UXIE_MESPRIT_AZELF;
+            break;
         case SPECIES_DIALGA:
         case SPECIES_PALKIA:
         case SPECIES_DIALGA_ORIGIN:
         case SPECIES_PALKIA_ORIGIN:
-            return MUS_DP_VS_DIALGA_PALKIA;
+            songId = MUS_DP_VS_DIALGA_PALKIA;
+            break;
         case SPECIES_HEATRAN:
         case SPECIES_MANAPHY:
         case SPECIES_DARKRAI:
@@ -9025,12 +9040,15 @@ static u16 GetBattleBGM(void)
         case SPECIES_PHIONE:
         case SPECIES_SHAYMIN:
         case SPECIES_SHAYMIN_SKY:
-            return MUS_DP_VS_LEGEND;
+            songId = MUS_DP_VS_LEGEND;
+            break;
         case SPECIES_GIRATINA:
         case SPECIES_GIRATINA_ORIGIN:
-            return MUS_PL_VS_GIRATINA;
+            songId = MUS_PL_VS_GIRATINA;
+            break;
         case SPECIES_ARCEUS:
-            return MUS_DP_VS_ARCEUS;
+            songId = MUS_DP_VS_ARCEUS;
+            break;
         case SPECIES_VICTINI:
         case SPECIES_COBALION:
         case SPECIES_TERRAKION:
@@ -9045,33 +9063,58 @@ static u16 GetBattleBGM(void)
         case SPECIES_MELOETTA:
         case SPECIES_MELOETTA_PIROUETTE:
         case SPECIES_GENESECT:
-            return MUS_BW_VS_LEGEND;
+            songId = MUS_BW_VS_LEGEND;
+            break;
         case SPECIES_RESHIRAM:
-            return MUS_BW_VS_RESHIRAM;
+            songId = MUS_BW_VS_RESHIRAM;
+            break;
         case SPECIES_ZEKROM:
-            return MUS_BW_VS_ZEKROM;
+            songId = MUS_BW_VS_ZEKROM;
+            break;
         case SPECIES_KYUREM:
-            return MUS_BW_VS_KYUREM;
+            songId = MUS_BW_VS_KYUREM;
+            break;
         case SPECIES_KYUREM_WHITE:
         case SPECIES_KYUREM_BLACK:
-            return MUS_B2_VS_BLACK_WHITE_KYUREM;
+            songId = MUS_B2_VS_BLACK_WHITE_KYUREM;
+            break;
         default:
-            if ((FlagGet(FLAG_SYS_SPECIAL_WILD_BATTLE) || gBattleTypeFlags & BATTLE_TYPE_GHOST_UNVEILED
-                || gBattleTypeFlags & BATTLE_TYPE_ROAMER)
-                && gSaveBlock2Ptr->optionsBattleBGM == OPTIONS_BATTLE_BGM_DEFAULT)
-                return MUS_HG_VS_WILD_KANTO;
+            if (FlagGet(FLAG_SYS_SPECIAL_WILD_BATTLE) || gBattleTypeFlags & BATTLE_TYPE_GHOST_UNVEILED
+            || gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+            {
+                switch (gSaveBlock2Ptr->optionsBattleBGM)
+                {
+                case OPTIONS_BATTLE_BGM_CONTEXTUAL_RANDOM:
+                    songId = SelectContextualRandomWildBattleBGM();
+                    break;
+                case OPTIONS_BATTLE_BGM_PURE_RANDOM:
+                    songId = SelectPureRandomWildBattleBGM();
+                    break;
+                default:
+                    songId = MUS_HG_VS_WILD_KANTO;
+                    break;
+                }
+                if (songId == MUS_RG_VS_WILD)
+                    songId = MUS_HG_VS_WILD_KANTO;
+                else if (songId == MUS_BW_VS_WILD || songId == MUS_B2_VS_WILD)
+                    songId = MUS_BW_VS_STRONG_WILD;
+            }
             else {
                 switch (gSaveBlock2Ptr->optionsBattleBGM)
                 {
                 case OPTIONS_BATTLE_BGM_CONTEXTUAL_RANDOM:
-                    return SelectContextualRandomWildBattleBGM();
+                    songId = SelectContextualRandomWildBattleBGM();
+                    break;
                 case OPTIONS_BATTLE_BGM_PURE_RANDOM:
-                    return SelectPureRandomWildBattleBGM();
+                    songId = SelectPureRandomWildBattleBGM();
+                    break;
                 default:
-                    return MUS_RG_VS_WILD;
+                    songId = MUS_RG_VS_WILD;
+                    break;
                 }
             }
         }
+        return songId;
     }
 }
 
