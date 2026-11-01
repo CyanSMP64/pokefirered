@@ -227,12 +227,12 @@ DirectSoundWaveData_bw_unknown_suspended_cymbal_40::
 @ this specific drum loop also has its sample rate set (174/173)x
 	.align 2
 DirectSoundWaveData_bw_zg_total_drum_bass_160_leonora::
-	.incbin "sound/direct_sound_samples/wb/drum_loop_wcs_01_22.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drum_loop_wcs_01_22.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_bw_drum_loop_subway01_22::
-	.incbin "sound/direct_sound_samples/wb/drum_loop_subway01_22.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drum_loop_subway01_22.bin"
 
 	.align 2
 DirectSoundWaveData_bw_zg_dpt_orch_snare_16_18_02::
@@ -849,52 +849,52 @@ DirectSoundWaveData_b2_colress_voice5::
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_gs_leader_22::
-	.incbin "sound/direct_sound_samples/drumloop_gs_leader_22.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_gs_leader_22.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_gs_champ::
-	.incbin "sound/direct_sound_samples/drumloop_gs_champ.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_gs_champ.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_gs_champ_flange::
-	.incbin "sound/direct_sound_samples/drumloop_gs_champ_flange.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_gs_champ_flange.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_rs_leader1_l::
-	.incbin "sound/direct_sound_samples/drumloop_rs_leader1_l.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_rs_leader1_l.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_rs_leader1_r::
-	.incbin "sound/direct_sound_samples/drumloop_rs_leader1_r.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_rs_leader1_r.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_rs_leader2_l::
-	.incbin "sound/direct_sound_samples/drumloop_rs_leader2_l.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_rs_leader2_l.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_rs_leader2_r::
-	.incbin "sound/direct_sound_samples/drumloop_rs_leader2_r.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_rs_leader2_r.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_dp_leader::
-	.incbin "sound/direct_sound_samples/drumloop_dp_leader.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_dp_leader.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_colress::
-	.incbin "sound/direct_sound_samples/drumloop_colress.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_colress.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
 DirectSoundWaveData_b2_drumloop_iris::
-	.incbin "sound/direct_sound_samples/drumloop_iris.bin"
+	.incbin "sound/direct_sound_samples/cries/notcries/drumloop_iris.bin"
 
 @ drum loops have their sample rate reduced by (59.7275/60)x
 	.align 2
@@ -1051,7 +1051,7 @@ DirectSoundWaveData_pmd1_frenchhorn_f4::
 
 	.align 2
 DirectSoundWaveData_pmd1_strings_c4::
-	.incbin "sound/direct_sound_samples/pmd1_ds/90.bin"
+	.incbin "sound/direct_sound_samples/pmd1/strings_c5oct.bin"
 
 	.align 2
 DirectSoundWaveData_pmd1_strings_c5::
@@ -1060,6 +1060,14 @@ DirectSoundWaveData_pmd1_strings_c5::
 	.align 2
 DirectSoundWaveData_pmd1_kick::
 	.incbin "sound/direct_sound_samples/pmd1/kick.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_snare2::
+	.incbin "sound/direct_sound_samples/pmd1/snare2.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_snare3::
+	.incbin "sound/direct_sound_samples/pmd1/snare3.bin"
 
 	.align 2
 DirectSoundWaveData_pmd1_snare6::
@@ -1074,6 +1082,22 @@ DirectSoundWaveData_pmd1_crashcym::
 	.incbin "sound/direct_sound_samples/pmd1/crashcym.bin"
 
 	.align 2
+DirectSoundWaveData_pmd1_pwmsynth_c4::
+	.incbin "sound/direct_sound_samples/pmd1/pwmsynth_c4.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_supersaw_c5::
+	.incbin "sound/direct_sound_samples/pmd1/supersaw_c5.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_bodhranlo::
+	.incbin "sound/direct_sound_samples/pmd1/bodhranlo.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_tambourine::
+	.incbin "sound/direct_sound_samples/pmd1/tambourine.bin"
+
+	.align 2
 DirectSoundWaveData_pmd1_crashcym2::
 	.incbin "sound/direct_sound_samples/pmd1_ds/30.bin"
 
@@ -1084,6 +1108,10 @@ DirectSoundWaveData_pmd1_hihat_closed::
 	.align 2
 DirectSoundWaveData_pmd1_hihat_open::
 	.incbin "sound/direct_sound_samples/pmd1_ds/145.bin"
+
+	.align 2
+DirectSoundWaveData_pmd1_shaker::
+	.incbin "sound/direct_sound_samples/pmd1_ds/147.bin"
 
 	.align 2
 DirectSoundWaveData_pmd1_synthbass1_c2::
@@ -1100,6 +1128,10 @@ DirectSoundWaveData_pmd2_slapbass_c2::
 	.align 2
 DirectSoundWaveData_pmd2_square::
 	.incbin "sound/direct_sound_samples/pmd2/0182_pcm16.bin"
+
+	.align 2
+DirectSoundWaveData_pmd2_saw::
+	.incbin "sound/direct_sound_samples/pmd2/0183_pcm16.bin"
 
 	.align 2
 DirectSoundWaveData_pmd2_sine::

@@ -7,7 +7,7 @@ voicegroup195::
 	voice_directsound 81, 0, DirectSoundWaveData_pmd2_square, 255, 0, 255, 0
 	voice_directsound 84, 0, DirectSoundWaveData_bw_plugsound_pro_acoustic_grand_piano_84, A(127), D(75), S(1), R(116)
 	voice_keysplit_all voicegroup260_kit - 36 * 0xc
-	voice_directsound 60, 0, DirectSoundWaveData_bw_zg_total_drum_bass_160_leonora, 255, 0, 255, 0
+	voice_directsound_comp 60, 0, DirectSoundWaveData_bw_zg_total_drum_bass_160_leonora, 255, 0, 255, 0
 	voice_directsound 42, 0, DirectSoundWaveData_bw_plugsound_pro_analog_hihat_closed, 255, 0, 255, 127
 
 voicegroup260_kit::

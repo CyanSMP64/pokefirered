@@ -569,7 +569,14 @@
 #define MUS_COLO_VS_MIROR_B            571
 #define MUS_COLO_VS_SEMIFINAL          572
 
-#define END_MUS MUS_COLO_VS_SEMIFINAL
+#define MUS_PMD2_VS_BOSS               573
+#define MUS_PMD2_MONSTER_HOUSE         574
+#define MUS_PMD2_VS_DUSKNOIR           575
+#define MUS_PMD2_VS_DIALGA             576
+#define MUS_PMD2_VS_RAYQUAZA           577
+#define MUS_PMD2_VS_PALKIA             578
+
+#define END_MUS MUS_PMD2_VS_PALKIA
 
 #define MUS_NONE                    0xFFFF
 
