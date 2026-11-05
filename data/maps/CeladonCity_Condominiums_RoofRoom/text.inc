@@ -46,8 +46,8 @@ CeladonCity_Condominiums_RoofRoom_Text_CyanMusic2::
     .string "and faithfully recreated some songs\n"
     .string "from colosseum using what sounds i\l"
     .string "have at my disposal\p"
-    .string "expect me to do the same with x and\n"
-    .string "y and more in the future$"
+    .string "expect me to do the same with x/y\n"
+    .string "and more in the future$"
 
 CeladonCity_Condominiums_RoofRoom_Text_CyanMusic3::
     .string "i made another song, you can change\n"
