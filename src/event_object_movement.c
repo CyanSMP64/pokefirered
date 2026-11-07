@@ -5121,8 +5121,11 @@ void UpdateObjectEventCurrentMovement(struct ObjectEvent *objectEvent, struct Sp
     DoGroundEffects_OnBeginStep(objectEvent, sprite);
     DoGroundEffects_OnFinishStep(objectEvent, sprite);
     UpdateObjectEventSpriteAnimPause(objectEvent, sprite);
-    UpdateObjectEventVisibility(objectEvent, sprite);
-    ObjectEventUpdateSubpriority(objectEvent, sprite);
+    if (!gOverworldSkipRender)
+    {
+        UpdateObjectEventVisibility(objectEvent, sprite);
+        ObjectEventUpdateSubpriority(objectEvent, sprite);
+    }
 }
 
 void QL_UpdateObjectEventCurrentMovement(struct ObjectEvent *objectEvent, struct Sprite *sprite)
@@ -5142,8 +5145,11 @@ void QL_UpdateObjectEventCurrentMovement(struct ObjectEvent *objectEvent, struct
     DoGroundEffects_OnBeginStep(objectEvent, sprite);
     DoGroundEffects_OnFinishStep(objectEvent, sprite);
     UpdateObjectEventSpriteAnimPause(objectEvent, sprite);
-    UpdateObjectEventVisibility(objectEvent, sprite);
-    ObjectEventUpdateSubpriority(objectEvent, sprite);
+    if (!gOverworldSkipRender)
+    {
+        UpdateObjectEventVisibility(objectEvent, sprite);
+        ObjectEventUpdateSubpriority(objectEvent, sprite);
+    }
 }
 
 #define dirn_to_anim(name, table)                   \
@@ -7983,7 +7989,10 @@ static void CalcWhetherObjectIsOffscreen(struct ObjectEvent *objectEvent, struct
     s16 var;
 
     objectEvent->offScreen = FALSE;
-    graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
+    if (objectEvent->graphicsId < NUM_OBJ_EVENT_GFX)
+        graphicsInfo = gObjectEventGraphicsInfoPointers[objectEvent->graphicsId];
+    else
+        graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
     if (sprite->coordOffsetEnabled)
     {
         x = sprite->x + sprite->x2 + sprite->centerToCornerVecX + gSpriteCoordOffsetX;

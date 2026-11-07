@@ -7,6 +7,7 @@
 #include "field_weather_effects.h"
 #include "task.h"
 #include "trig.h"
+#include "overworld.h"
 #include "constants/field_weather.h"
 #include "constants/weather.h"
 #include "constants/songs.h"
@@ -218,6 +219,9 @@ static void Task_WeatherInit(u8 taskId)
 
 static void Task_WeatherMain(u8 taskId)
 {
+    if (gOverworldSkipRender)
+        return;
+
     if (gWeatherPtr->currWeather != gWeatherPtr->nextWeather)
     {
         if (!sWeatherFuncs[gWeatherPtr->currWeather].finish()
