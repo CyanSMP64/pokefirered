@@ -1590,6 +1590,7 @@ static u8 PokeSum_IsPageFlipFinished(u8 a0)
         pageDelta = -1;
 
     if (sMonSummaryScreen->curPageIndex == PSS_PAGE_MOVES_INFO)
+    {
         if (sMonSummaryScreen->flipPagesBgHofs <= 0)
         {
             sMonSummaryScreen->flipPagesBgHofs = 0;
@@ -1598,8 +1599,9 @@ static u8 PokeSum_IsPageFlipFinished(u8 a0)
             sMonSummaryScreen->flippingPages = FALSE;
             return TRUE;
         }
-
-    if ((sMonSummaryScreen->curPageIndex + pageDelta) == PSS_PAGE_MOVES_INFO)
+    }
+    else if ((sMonSummaryScreen->curPageIndex + pageDelta) == PSS_PAGE_MOVES_INFO)
+    {
         if (sMonSummaryScreen->flipPagesBgHofs >= 240)
         {
             sMonSummaryScreen->flipPagesBgHofs = 240;
@@ -1607,8 +1609,8 @@ static u8 PokeSum_IsPageFlipFinished(u8 a0)
             sMonSummaryScreen->flippingPages = FALSE;
             return TRUE;
         }
-
-    if (sMonSummaryScreen->pageFlipDirection == 1)
+    }
+    else if (sMonSummaryScreen->pageFlipDirection == 1)
     {
         if (sMonSummaryScreen->flipPagesBgHofs >= 240)
         {
