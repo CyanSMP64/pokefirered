@@ -2769,8 +2769,13 @@ static void PokeSum_PrintSelectedMoveStats(void)
 {
     if (sMoveSelectionCursorPos < 5)
     {
+        u16 moveId;
+        u8 categoryIconIdx;
+
         if (sMonSummaryScreen->mode != PSS_MODE_SELECT_MOVE && sMoveSelectionCursorPos == 4)
             return;
+
+        moveId = sMonSummaryScreen->moveIds[sMoveSelectionCursorPos];
 
         AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_NORMAL,
                                      57, 1,
@@ -2781,12 +2786,31 @@ static void PokeSum_PrintSelectedMoveStats(void)
                                      57, 15,
                                      sLevelNickTextColors[0], TEXT_SKIP_DRAW,
                                      sMonSummaryScreen->summary.moveAccuracyStrBufs[sMoveSelectionCursorPos]);
+        
+        if (moveId != MOVE_NONE)
+        {
+            switch (gBattleMoves[moveId].category)
+            {
+            case CATEGORY_PHYSICAL:
+                categoryIconIdx = MENU_INFO_ICON_PHYSICAL;
+                break;
+            case CATEGORY_SPECIAL:
+                categoryIconIdx = MENU_INFO_ICON_SPECIAL;
+                break;
+            default: // CATEGORY_STATUS
+                categoryIconIdx = MENU_INFO_ICON_STATUS;
+                break;
+            }
+
+            BlitMenuInfoIcon(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO],
+                             categoryIconIdx, 84, 2);
+        }
 
         AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_NORMAL,
                                      7, 42,
                                      0, 0,
                                      sLevelNickTextColors[0], TEXT_SKIP_DRAW,
-                                     gMoveDescriptionPointers[sMonSummaryScreen->moveIds[sMoveSelectionCursorPos] - 1]);
+                                     gMoveDescriptionPointers[moveId - 1]);
     }
 }
 
