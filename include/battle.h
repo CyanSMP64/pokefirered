@@ -484,6 +484,8 @@ struct BattleStruct
     u8 wishPerishSongBattlerId;
     u8 lastAttackerToFaintOpponent;
     u8 abilityPopUpSpriteIds[MAX_BATTLERS_COUNT][2];    // two per battler
+    u8 partyHealStatuses[PARTY_SIZE];
+    u8 partyHealIndex;
 };
 
 extern struct BattleStruct *gBattleStruct;
