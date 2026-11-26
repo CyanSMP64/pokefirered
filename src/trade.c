@@ -2754,23 +2754,11 @@ static u32 CanTradeSelectedMon(struct Pokemon * playerParty, int partyCount, int
     // Cant trade Eggs or non-Kanto mons if player doesn't have National Dex
     if (!IsNationalPokedexEnabled())
     {
-        // See comment below
-    #ifdef BUGFIX
         if (species2[monIdx] == SPECIES_EGG)
             return CANT_TRADE_EGG_YET;
-    #endif
 
         if (species2[monIdx] > KANTO_SPECIES_END)
             return CANT_TRADE_NATIONAL;
-
-        // This is meant to be SPECIES_EGG. There are obviously no circumstances
-        // where you're allowed to trade SPECIES_NONE, so it wouldn't make sense to
-        // only check this if the National Dex is missing. SPECIES_EGG will accidentally
-        // be handled instead by the conditional above. Both of these problems are fixed in Emerald.
-    #ifndef BUGFIX
-        if (species2[monIdx] == SPECIES_NONE)
-            return CANT_TRADE_EGG_YET;
-    #endif
     }
 
     partner = &gLinkPlayers[GetMultiplayerId() ^ 1];

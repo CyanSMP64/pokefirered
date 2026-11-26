@@ -54,11 +54,7 @@ const struct TextWindowGraphics gUserFrames[] = {
 
 const struct TextWindowGraphics *GetUserWindowGraphics(u8 idx)
 {
-#ifdef BUGFIX
     if (idx >= ARRAY_COUNT(gUserFrames))
-#else
-    if (idx >= 20) // Using the RSE number of elements
-#endif
         return &gUserFrames[0];
     else
         return &gUserFrames[idx];

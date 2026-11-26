@@ -619,13 +619,13 @@ static void RecordLastUsedMoveByTarget(void)
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] == gLastMoves[gBattlerTarget])
-            return;
+        if (BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i] == gLastMoves[gBattlerTarget])
+            break;
 
-        if (BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] == MOVE_NONE)
+        if (BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i] == MOVE_NONE)
         {
-            BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] = gLastMoves[gBattlerTarget];
-            return;
+            BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i] = gLastMoves[gBattlerTarget];
+            break;
         }
     }
 }
@@ -635,20 +635,18 @@ static void ClearBattlerMoveHistory(u8 battlerId)
 {
     s32 i;
 
-    for (i = 0; i < 8; i++)
-        BATTLE_HISTORY->usedMoves[battlerId / 2][i] = MOVE_NONE;
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        BATTLE_HISTORY->usedMoves[battlerId].moves[i] = MOVE_NONE;
 }
 
 void RecordAbilityBattle(u8 battlerId, u16 abilityId)
 {
-    if (GetBattlerSide(battlerId) == 0)
-        BATTLE_HISTORY->abilities[GET_BATTLER_SIDE(battlerId)] = abilityId;
+    BATTLE_HISTORY->abilities[battlerId] = abilityId;
 }
 
 void RecordItemEffectBattle(u8 battlerId, u8 itemEffect)
 {
-    if (GetBattlerSide(battlerId) == 0)
-        BATTLE_HISTORY->itemEffects[GET_BATTLER_SIDE(battlerId)] = itemEffect;
+    BATTLE_HISTORY->itemEffects[battlerId] = itemEffect;
 }
 
 static void Cmd_if_random_less_than(void)
@@ -1353,13 +1351,11 @@ static void Cmd_get_ability(void)
     else
         battlerId = gBattlerTarget;
 
-    if (GetBattlerSide(battlerId) == AI_TARGET)
+    if (gActiveBattler != battlerId)
     {
-        u16 side = GET_BATTLER_SIDE(battlerId);
-
-        if (BATTLE_HISTORY->abilities[side] != 0)
+        if (BATTLE_HISTORY->abilities[battlerId] != 0)
         {
-            AI_THINKING_STRUCT->funcResult = BATTLE_HISTORY->abilities[side];
+            AI_THINKING_STRUCT->funcResult = BATTLE_HISTORY->abilities[battlerId];
             sAIScriptPtr += 2;
             return;
         }
@@ -1632,10 +1628,8 @@ static void Cmd_if_status_not_in_party(void)
         // everytime the status is found, the AI's logic jumps further and further past its intended destination. this results in a broken AI macro and is probably why it is unused.
         if (species != SPECIES_NONE && species != SPECIES_EGG && hp != 0 && status == statusToCompareTo)
         {
-            sAIScriptPtr += 10; // doesnt return?
-            #ifdef UBFIX
+            sAIScriptPtr += 10;
             return;
-            #endif
         }
     }
     sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 6);
@@ -1824,7 +1818,7 @@ static void Cmd_if_has_move(void)
     case AI_TARGET_PARTNER:
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
-            if (BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] == *movePtr)
+            if (BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i] == *movePtr)
                 break;
         }
         if (i == MAX_MON_MOVES)
@@ -1858,7 +1852,7 @@ static void Cmd_if_doesnt_have_move(void)
     case AI_TARGET_PARTNER:
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
-            if (BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] == *movePtr)
+            if (BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i] == *movePtr)
                 break;
         }
         if (i != MAX_MON_MOVES)
@@ -1889,16 +1883,15 @@ static void Cmd_if_has_move_with_effect(void)
         break;
     case AI_TARGET:
     case AI_TARGET_PARTNER:
-        for (i = 0; i < 8; i++)
+        for (i = 0; i < MAX_MON_MOVES; i++)
         {
-            if (gBattleMons[gBattlerTarget].moves[i] != 0 && gBattleMoves[BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i]].effect == T1_READ_16(sAIScriptPtr + 2))
+            if (gBattleMoves[BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i]].effect == T1_READ_16(sAIScriptPtr + 2))
                 break;
         }
         if (i == MAX_MON_MOVES)
             sAIScriptPtr += 8;
         else
             sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 4);
-        break;
     }
 }
 
@@ -1922,16 +1915,15 @@ static void Cmd_if_doesnt_have_move_with_effect(void)
         break;
     case AI_TARGET:
     case AI_TARGET_PARTNER:
-        for (i = 0; i < 8; i++)
+        for (i = 0; i < MAX_MON_MOVES; i++)
         {
-            if (BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i] != 0 && gBattleMoves[BATTLE_HISTORY->usedMoves[gBattlerTarget >> 1][i]].effect == T1_READ_16(sAIScriptPtr + 2))
+            if (BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i] && gBattleMoves[BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i]].effect == T1_READ_16(sAIScriptPtr + 2))
                 break;
         }
         if (i != MAX_MON_MOVES)
             sAIScriptPtr += 8;
         else
             sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 4);
-        break;
     }
 }
 
@@ -2031,11 +2023,8 @@ static void Cmd_get_hold_effect(void)
     else
         battlerId = gBattlerTarget;
 
-    if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
-    {
-        side = GET_BATTLER_SIDE(battlerId);
-        AI_THINKING_STRUCT->funcResult = BATTLE_HISTORY->itemEffects[side];
-    }
+    if (gActiveBattler != battlerId)
+        AI_THINKING_STRUCT->funcResult = BATTLE_HISTORY->itemEffects[battlerId];
     else
         AI_THINKING_STRUCT->funcResult = ItemId_GetHoldEffect(gBattleMons[battlerId].item);
 
@@ -2056,14 +2045,7 @@ static void Cmd_if_holds_item(void)
     itemHi = sAIScriptPtr[2];
     itemLo = sAIScriptPtr[3];
 
-#ifdef BUGFIX
-    // This bug doesn't affect the vanilla game because this script command
-    // is only used to check ITEM_PERSIM_BERRY, whose high byte happens to
-    // be 0.
     if (((itemHi << 8) | itemLo) == item)
-#else
-    if ((itemLo | itemHi) == item)
-#endif
         sAIScriptPtr = T1_READ_PTR(sAIScriptPtr + 4);
     else
         sAIScriptPtr += 8;

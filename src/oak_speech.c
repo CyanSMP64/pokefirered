@@ -1787,13 +1787,7 @@ static void CB2_ReturnFromNamingScreen(void)
         FreeAllWindowBuffers();
         InitStandardTextBoxWindows();
         InitTextBoxGfxAndPrinters();
-        // Below is reading 48 colors beyond the background palette (into the tiles that follow it).
-        // This color range is used by the player and rival pic, which will overwrite them with the correct colors.
-#ifdef BUGFIX
         LoadPalette(sOakSpeech_Background_Pals, BG_PLTT_ID(0), sizeof(sOakSpeech_Background_Pals));
-#else
-        LoadPalette(sOakSpeech_Background_Pals, BG_PLTT_ID(0), sizeof(sOakSpeech_Background_Pals) + PLTT_SIZEOF(48));
-#endif
         break;
     case 4:
         DecompressAndCopyTileDataToVram(1, sOakSpeech_Background_Tiles, 0, 0, 0);

@@ -504,11 +504,7 @@ static void DestroyCardSprites(void)
             if (sWonderCardData->stampSpriteIds[i][0] != SPRITE_NONE)
             {
                 DestroySprite(&gSprites[sWonderCardData->stampSpriteIds[i][0]]);
-            #ifdef BUGFIX
                 if (sWonderCardData->stampSpriteIds[i][1] != SPRITE_NONE)
-            #else
-                if (sWonderCardData->stampSpriteIds[i][0] != SPRITE_NONE)
-            #endif
                     DestroyMonIcon(&gSprites[sWonderCardData->stampSpriteIds[i][1]]);
             }
         }

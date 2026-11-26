@@ -76,6 +76,9 @@ void SetWhiteoutRespawnWarpAndHealerNpc(struct WarpData * warp)
     else
     {
         healLocationIdx = GetHealLocationIndexFromMapGroupAndNum(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
+        // Avoid out of bounds read
+        if (healLocationIdx == 0) // HEAL_LOCATION_NONE
+            return;
         warp->mapGroup = sWhiteoutRespawnHealCenterMapIdxs[healLocationIdx - 1][0];
         warp->mapNum = sWhiteoutRespawnHealCenterMapIdxs[healLocationIdx - 1][1];
         warp->warpId = 0xFF;

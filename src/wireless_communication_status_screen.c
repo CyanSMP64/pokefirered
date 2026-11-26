@@ -449,9 +449,7 @@ static bool32 UpdateCommunicationCounts(u32 * groupCounts, u32 * prevGroupCounts
     groupCounts[GROUPTYPE_TOTAL] = groupCounts[GROUPTYPE_TRADE]
                                  + groupCounts[GROUPTYPE_BATTLE]
                                  + groupCounts[GROUPTYPE_UNION]
-                            #ifdef BUGFIX
-                                 + groupCounts[GROUPTYPE_TOTAL] // Missing count for activities not in above groups
-                            #endif
+                                 + groupCounts[GROUPTYPE_TOTAL]
                                  ;
     return TRUE;
 }

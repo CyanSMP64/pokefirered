@@ -872,20 +872,13 @@ static const struct CompressedSpriteSheet sFightSceneSpriteSheets[] = {
 	{sScene3_RecoilDust_Gfx,   0x200,  GFXTAG_SCENE3_RECOIL_DUST}
 };
 
-// POTENTIAL UB
-// This array is passed to LoadSpritePalettes in LoadFightSceneSpriteGraphics.
-// LoadSpritePalettes uses a {0} entry to signal end of array.
-// Because such an entry is absent in this case, the function
-// continues reading into the next .rodata section.
 static const struct SpritePalette sFightSceneSpritePalettes[] = {
 	{sGengar_Pal,            PALTAG_GENGAR},
 	{sNidorino_Pal,          PALTAG_NIDORINO},
 	{sScene3_Grass_Pal,      PALTAG_SCENE3_GRASS},
 	{sScene3_Swipe_Pal,      PALTAG_SCENE3_SWIPE},
 	{sScene3_RecoilDust_Pal, PALTAG_SCENE3_RECOIL_DUST},
-#ifdef BUGFIX
     {0}
-#endif
 };
 
 static void VBlankCB_Copyright(void)
