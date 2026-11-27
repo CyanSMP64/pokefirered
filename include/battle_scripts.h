@@ -292,6 +292,10 @@ extern const u8 BattleScript_AbilityPreventsPhasingOut_tr[];
 extern const u8 BattleScript_MoveUsedLoafingAroundMsg_tr[];
 extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
 extern const u8 BattleScript_AbilityPopUp[];
+extern const u8 BattleScript_SapSipper[];
+extern const u8 BattleScript_SapSipper_tr1[];
+extern const u8 BattleScript_SapSipper_tr2[];
+extern const u8 BattleScript_SapSipper_PPLoss[];
 
 extern const u8 *const gBattleScriptsForMoveEffects[];
 extern const u8 *const gBattlescriptsForBallThrow[];

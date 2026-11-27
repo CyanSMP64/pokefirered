@@ -446,6 +446,10 @@ static const u8 sText_Evasiveness[] = _("evasiveness");
 static const u8 sText_Mist[] = _("mist");
 static const u8 sText_A[] = _("a");
 static const u8 sText_An[] = _("an");
+static const u8 sText_StatsWontIncreaseDef[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_BUFF1} won't go any higher!");
+static const u8 sText_StatsWontDecreaseAtk[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_BUFF1} won't go any lower!");
+static const u8 sText_StatsWontIncrease2Def[] = _("{B_DEF_NAME_WITH_PREFIX}'s stats won't go any higher!");
+static const u8 sText_StatsWontDecrease2Atk[] = _("{B_ATK_NAME_WITH_PREFIX}'s stats won't go any lower!");
 
 const u8 *const gStatNamesTable[] = {
     sText_HP2,
@@ -909,6 +913,10 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_EXTREMELYEFFECTIVE - BATTLESTRINGS_TABLE_START]            = sText_ExtremelyEffective,
     [STRINGID_MOSTLYINEFFECTIVE - BATTLESTRINGS_TABLE_START]             = sText_MostlyIneffective,
     [STRINGID_PARTYMONSTATUSCURED - BATTLESTRINGS_TABLE_START]           = sText_PartyMonStatusCured,
+    [STRINGID_STATSWONTINCREASEDEF - BATTLESTRINGS_TABLE_START] = sText_StatsWontIncreaseDef,
+    [STRINGID_STATSWONTDECREASEATK - BATTLESTRINGS_TABLE_START] = sText_StatsWontDecreaseAtk,
+    [STRINGID_STATSWONTINCREASE2DEF - BATTLESTRINGS_TABLE_START] = sText_StatsWontIncrease2Def,
+    [STRINGID_STATSWONTDECREASE2ATK - BATTLESTRINGS_TABLE_START] = sText_StatsWontDecrease2Atk,
 };
 
 const u16 gMissStringIds[] =

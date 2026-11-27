@@ -486,6 +486,8 @@ struct BattleStruct
     u8 abilityPopUpSpriteIds[MAX_BATTLERS_COUNT][2];    // two per battler
     u8 partyHealStatuses[PARTY_SIZE];
     u8 partyHealIndex;
+    bool8 partyHealSapSipper;
+    u8 partyHealSavedTarget;
 };
 
 extern struct BattleStruct *gBattleStruct;
